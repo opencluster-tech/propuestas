@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cotiza con OpenCluster Tech</title>
+<style>
+  :root{ --navy:#001A60; --sky:#06B3FD; --naranja:#FF7E00; --linea:#E5E9F0; --texto:#1F2937; --suave:#6B7280; }
+  *{box-sizing:border-box}
+  body{margin:0;background:#FAFBFC;color:var(--texto);
+    font-family:Manrope,'Segoe UI',Tahoma,Arial,sans-serif;line-height:1.55;}
+  .barra{background:var(--navy);color:#fff;padding:16px 20px;}
+  .barra .in{max-width:680px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .barra b{font-size:15px;letter-spacing:.3px}
+  .barra a{color:#9FC6F5;font-size:12px;text-decoration:none}
+  .caja{max-width:680px;margin:22px auto 40px;padding:0 16px;}
+  .tarjeta{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:22px;}
+  h1{font-size:22px;line-height:1.25;color:var(--navy);margin:0 0 6px}
+  .sub{font-size:14px;color:var(--suave);margin:0 0 18px}
+  .prod{display:flex;gap:16px;align-items:center;border:1px solid var(--linea);border-radius:12px;padding:14px;background:#F7F9FC}
+  .prod img{width:110px;height:auto;border-radius:8px;background:#fff}
+  .prod .n{font-weight:800;color:var(--navy);font-size:15px}
+  .prod .c{font-size:12px;color:var(--suave);margin-top:2px}
+  .prod .p{font-size:20px;font-weight:800;color:var(--navy);margin-top:6px}
+  .prod .p s{font-size:13px;font-weight:500;color:var(--suave);margin-left:6px}
+  .pill{display:inline-block;background:var(--naranja);color:#fff;border-radius:999px;
+    padding:3px 10px;font-size:11px;font-weight:800;margin-left:6px;vertical-align:middle}
+  label{display:block;font-size:12.5px;font-weight:700;color:var(--navy);margin:16px 0 6px}
+  label span{font-weight:400;color:var(--suave)}
+  input,textarea{width:100%;padding:11px 13px;border:1px solid #D7DEE8;border-radius:10px;
+    font-family:inherit;font-size:14px;color:var(--texto);background:#fff}
+  input:focus,textarea{outline:none}
+  input:focus{border-color:var(--sky)}
+  textarea{min-height:70px;resize:vertical}
+  .nota{background:#E6F1FB;border-radius:10px;padding:12px 14px;font-size:12.5px;color:#042C53;margin-top:8px}
+  .btn{display:inline-block;width:100%;text-align:center;background:var(--naranja);color:#fff;border:none;
+    border-radius:999px;padding:14px 20px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:20px}
+  .btn:disabled{opacity:.6;cursor:default}
+  .btn.navy{background:var(--navy)}
+  .op{display:block;width:100%;text-align:left;background:#fff;border:1px solid #D7DEE8;border-radius:12px;
+    padding:14px 16px;font-size:14.5px;font-family:inherit;color:var(--texto);cursor:pointer;margin-top:10px}
+  .op:hover{border-color:var(--sky);background:#F4FAFF}
+  .estado{font-size:13px;margin-top:12px;min-height:18px}
+  .pie{max-width:680px;margin:0 auto;padding:0 16px 40px;font-size:12.5px;color:var(--suave)}
+  .web{display:block;background:var(--navy);color:#fff;text-align:center;border-radius:12px;
+    padding:16px;text-decoration:none;margin-top:18px}
+  .web b{display:block;font-size:17px;letter-spacing:.3px}
+  .web span{font-size:12px;color:#9FC6F5}
+  @media(max-width:520px){ .prod{flex-direction:column;align-items:flex-start} .prod img{width:100%;max-width:220px} }
+</style>
+</head>
+<body>
+<div class="barra"><div class="in"><b>OpenCluster Tech</b>
+  <a href="https://www.opencluster-tech.cl" target="_blank" rel="noopener">www.opencluster-tech.cl</a></div></div>
+
+<div class="caja"><div class="tarjeta" id="app">Cargando…</div></div>
+
+<div class="pie">
+  <a class="web" href="https://www.opencluster-tech.cl" target="_blank" rel="noopener">
+    <b>www.opencluster-tech.cl</b><span>Todo nuestro catálogo, con fichas y fotos</span></a>
+  <p style="margin-top:14px">Roberto Cáceres · Ejecutivo Comercial · Distribuidores y ortopedias<br>
+  +56 9 3461 9240 · roberto.caceres@opencluster-tech.cl</p>
+</div>
+
+<script>
+const API = "https://script.google.com/macros/s/AKfycbzP8Lxz3jabPra4Ugj5D3NdKYWMUxiufT842Zfdd4z02SayuHt7t7htWTE5Sq5ZFEqx/exec";
+const BASE_LISTAS = "https://rayenogalde-design.github.io/opencluster-ejecutivos/";
+const LISTA_ROBERTO = "PreciosProductosRoberto.html";
+const CORREO_ROBERTO = "roberto.caceres@opencluster-tech.cl";
+const PRODUCTOS = {
+  "OC-0768": {
+    "nombre": "Colchón Clínico CIC Med Home",
+    "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_colchon_main.jpg",
+    "lista": 53908,
+    "oferta": 51212,
+    "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026."
+  },
+  "OC-1107": {
+    "nombre": "Grúa eléctrica plegable HES-108",
+    "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_grua_main.jpg",
+    "lista": 775309,
+    "oferta": 736544,
+    "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026."
+  }
+};
+
+const q = new URLSearchParams(location.search);
+const cod = (q.get('p') || Object.keys(PRODUCTOS)[0]).toUpperCase();
+const P = PRODUCTOS[cod] || PRODUCTOS[Object.keys(PRODUCTOS)[0]];
+const app = document.getElementById('app');
+const clp = n => '$' + Number(n || 0).toLocaleString('es-CL');
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* el mismo paquete que usan las listas de cliente, para que el botón del correo
+   abra el precotizador de Roberto con el producto y la cantidad puestos */
+function aB64(s){ const u = new TextEncoder().encode(s); let b=''; for(let i=0;i<u.length;i++) b += String.fromCharCode(u[i]);
+  return btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+function enlacePrecotizador(codigo, qty, cl){
+  const m = String(codigo).match(/^OC-0*(\d{1,4})$/);
+  const corto = (m ? m[1] : encodeURIComponent(codigo)) + (qty > 1 ? 'x' + qty : '');
+  const d = { v:1, n:'Oferta de la semana · ortopedias',
+    cl:{ i: cl.nombre||'', n: cl.nombre||'', e:'', t: cl.telefono||'', d: cl.direccion||'' }, i: corto };
+  return BASE_LISTAS + LISTA_ROBERTO + '#precot=' + aB64(JSON.stringify(d));
+}
+
+function correoHtml(cl, qty){
+  const sub = P.oferta * qty;
+  return '<div style="font-family:Arial,sans-serif;color:#182233;max-width:600px;">' +
+    '<h2 style="color:#0a2e8a;">Solicitud de cotización — oferta de la semana</h2>' +
+    '<p><b>Nombre:</b> ' + esc(cl.nombre) + '<br>' +
+    '<b>Teléfono:</b> ' + esc(cl.telefono || '—') + '<br>' +
+    '<b>Dirección de destino:</b> ' + esc(cl.direccion) + '</p>' +
+    (cl.comentario ? '<p><b>Comentario:</b> ' + esc(cl.comentario) + '</p>' : '') +
+    '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:10px;">' +
+    '<thead><tr style="background:#eef1f5;text-align:left;">' +
+    '<th style="padding:8px 6px;">Producto</th><th style="padding:8px 6px;">Cant.</th>' +
+    '<th style="padding:8px 6px;text-align:right;">Precio oferta</th>' +
+    '<th style="padding:8px 6px;text-align:right;">Subtotal</th></tr></thead><tbody>' +
+    '<tr style="border-bottom:1px solid #e5e9f0;">' +
+    '<td style="padding:8px 6px;">' + esc(P.nombre) +
+    '<div style="font-family:monospace;font-size:11px;color:#8b96a5;">' + esc(cod) + '</div></td>' +
+    '<td style="padding:8px 6px;text-align:center;">' + qty + '</td>' +
+    '<td style="padding:8px 6px;text-align:right;">' + clp(P.oferta) + '</td>' +
+    '<td style="padding:8px 6px;text-align:right;font-weight:700;">' + clp(sub) + '</td>' +
+    '</tr></tbody></table>' +
+    '<p style="text-align:right;font-size:15px;font-weight:800;margin-top:10px;">Total: ' + clp(sub) + '</p>' +
+    '<p style="font-size:11.5px;color:#8b96a5;">Precio de la oferta de la semana, con IVA incluido. ' +
+    'El despacho se calcula con la dirección de destino.</p>' +
+    '<div style="margin-top:20px;padding:16px 18px;background:#fff6ee;border:1px solid #ffd7b3;border-radius:12px;">' +
+      '<p style="margin:0 0 12px;font-size:13px;color:#5b4632;">Este pedido ya viene armado: ábrelo en tu ' +
+      'precotizador con el producto, la cantidad y tus márgenes puestos.</p>' +
+      '<a href="' + enlacePrecotizador(cod, qty, cl) + '" style="display:inline-block;background:#ff7a1a;' +
+      'color:#ffffff;font-weight:bold;font-size:14px;padding:13px 20px;border-radius:9px;text-decoration:none;">' +
+      'Abrir esta lista en el precotizador</a></div></div>';
+}
+
+function tarjetaProducto(){
+  return '<div class="prod"><img src="' + P.img + '" alt="' + esc(P.nombre) + '">' +
+    '<div><div class="n">' + esc(P.nombre) + '</div>' +
+    '<div class="c">Código ' + esc(cod) + '</div>' +
+    '<div class="p">' + clp(P.oferta) + ' <s>' + clp(P.lista) + '</s>' +
+    '<span class="pill">−5%</span></div>' +
+    '<div class="c">IVA incluido · ' + esc(P.vigencia) + '</div></div></div>';
+}
+
+function vistaGracias(titulo, texto){
+  app.innerHTML = '<h1>' + esc(titulo) + '</h1><p class="sub">' + texto + '</p>' +
+    '<p style="font-size:13.5px;">Saludos cordiales,<br>Roberto Cáceres · Ejecutivo Comercial<br>' +
+    'Distribuidores y ortopedias · OpenCluster Tech<br>+56 9 3461 9240</p>' +
+    '<a class="web" href="https://www.opencluster-tech.cl" target="_blank" rel="noopener">' +
+    '<b>www.opencluster-tech.cl</b><span>Mira el resto de nuestros productos</span></a>';
+  window.scrollTo(0, 0);
+}
+
+/* ── 1 · la mini cotización ──────────────────────────────────────────────── */
+function vistaCotizar(){
+  app.innerHTML =
+    '<h1>Cotiza este producto</h1>' +
+    '<p class="sub">Completa estos datos y Roberto te responde con la cotización formal.</p>' +
+    tarjetaProducto() +
+    '<label>Cantidad</label><input id="f_qty" type="number" min="1" value="1" inputmode="numeric">' +
+    '<label>Nombre <span>· tuyo o de la ortopedia</span></label><input id="f_nombre" type="text" placeholder="Ortopedia Ejemplo / María Pérez">' +
+    '<label>Teléfono <span>· opcional</span></label><input id="f_tel" type="tel" placeholder="+56 9 ...">' +
+    '<label>Dirección exacta de destino</label><input id="f_dir" type="text" placeholder="Calle 123, comuna, ciudad">' +
+    '<div class="nota">Con la dirección exacta calculamos el despacho. Tenemos transporte y logística propios en todo ' +
+    'Chile, así que según el destino y la cantidad puede salir sin costo, o con un valor muy por debajo del transporte normal.</div>' +
+    '<label>Comentario <span>· opcional</span></label><textarea id="f_com" placeholder="Algo que debamos saber"></textarea>' +
+    '<button class="btn" id="enviar">Solicitar cotización</button>' +
+    '<div class="estado" id="estado"></div>';
+
+  document.getElementById('enviar').addEventListener('click', async function(){
+    const cl = {
+      nombre: document.getElementById('f_nombre').value.trim(),
+      telefono: document.getElementById('f_tel').value.trim(),
+      direccion: document.getElementById('f_dir').value.trim(),
+      comentario: document.getElementById('f_com').value.trim()
+    };
+    const qty = Math.max(1, parseInt(document.getElementById('f_qty').value, 10) || 1);
+    const estado = document.getElementById('estado');
+    if(!cl.nombre){ estado.style.color = '#C0392B'; estado.textContent = 'Falta tu nombre.'; return; }
+    if(!cl.direccion){ estado.style.color = '#C0392B'; estado.textContent = 'Falta la dirección de destino.'; return; }
+    this.disabled = true; estado.style.color = '#6B7280'; estado.textContent = 'Enviando…';
+    try{
+      const r = await fetch(API, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify({
+          accion:'cotizacion_enviar', correoEjecutivo: CORREO_ROBERTO,
+          distribuidora: cl.nombre, contacto: cl.nombre, correoContacto: '',
+          telefono: cl.telefono, direccion: cl.direccion, comentario: cl.comentario,
+          items: [{ codigo: cod, nombre: P.nombre, qty: qty, unit: P.oferta, sub: P.oferta * qty }],
+          total: P.oferta * qty, emailHtml: correoHtml(cl, qty)
+        })
+      });
+      const j = await r.json();
+      if(j && j.ok){
+        vistaGracias('Listo, recibimos tu solicitud',
+          'Roberto te va a responder con la cotización formal, ya con el despacho calculado para tu dirección.');
+      } else {
+        this.disabled = false; estado.style.color = '#C0392B';
+        estado.textContent = 'No se pudo enviar. Escríbele directamente a ' + CORREO_ROBERTO;
+      }
+    }catch(e){
+      this.disabled = false; estado.style.color = '#C0392B';
+      estado.textContent = 'No se pudo enviar. Escríbele directamente a ' + CORREO_ROBERTO;
+    }
+  });
+}
+
+/* ── 2 · no me interesa por ahora ────────────────────────────────────────── */
+const MOTIVOS = [
+  'Tengo mi distribuidor',
+  'No vendo este producto',
+  'Me puede interesar en el futuro',
+  'Muéstrame otras opciones de productos'
+];
+
+function vistaNoInteresa(){
+  app.innerHTML =
+    '<h1>Gracias por responder</h1>' +
+    '<p class="sub">¿Puedes compartir con nosotros por qué no te interesa este producto? Nos ayudas a mejorar.</p>' +
+    MOTIVOS.map((m, i) => '<button class="op" data-i="' + i + '">' + esc(m) + '</button>').join('') +
+    '<div class="estado" id="estado"></div>';
+
+  app.querySelectorAll('.op').forEach(b => b.addEventListener('click', async function(){
+    const motivo = MOTIVOS[Number(this.dataset.i)];
+    app.querySelectorAll('.op').forEach(x => x.disabled = true);
+    try{
+      await fetch(API, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify({ accion:'interes_marcar', codigo: cod, nombre: P.nombre,
+          nota: 'NO LE INTERESA — ' + motivo + ' · campaña semanal ortopedias' }) });
+    }catch(e){}
+    vistaGracias('Muchas gracias por tu comentario',
+      'Lo tendré muy presente. Gracias por darte el tiempo de responder.' +
+      (motivo === MOTIVOS[3] ? ' Te voy a hacer llegar otras opciones de productos.' : ''));
+  }));
+}
+
+(q.get('r') === 'no') ? vistaNoInteresa() : vistaCotizar();
+</script>
+</body>
+</html>
