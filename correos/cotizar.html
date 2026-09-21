@@ -266,7 +266,8 @@ function vistaNoInteresa(){
       await fetch(API, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
         body: JSON.stringify({
           accion:'cotizacion_enviar', correoEjecutivo: CORREO_ROBERTO,
-          distribuidora: 'RESPUESTA · ' + quien, contacto: quien, correoContacto: '',
+          distribuidora: 'Respuesta al correo de la semana · ' + elegido + ' · ' + quien,
+          contacto: quien, correoContacto: '',
           telefono: '', direccion: '', comentario: 'Marcó: ' + elegido,
           items: [{ codigo: cod, nombre: 'Respuesta al correo de ' + P.nombre, qty: 1, unit: 0, sub: 0 }],
           total: 0, emailHtml: correoRespuestaHtml(elegido, quien)
