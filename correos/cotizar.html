@@ -73,14 +73,16 @@ const PRODUCTOS = {
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_colchon_main.jpg",
     "lista": 53908,
     "oferta": 51212,
-    "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026."
+    "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026.",
+    "semana": "2026-09-21"
   },
   "OC-1107": {
     "nombre": "Grúa eléctrica plegable HES-108",
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_grua_main.jpg",
     "lista": 775309,
     "oferta": 736544,
-    "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026."
+    "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026.",
+    "semana": "2026-09-21"
   }
 };
 
@@ -212,25 +214,68 @@ const MOTIVOS = [
   'Muéstrame otras opciones de productos'
 ];
 
+function correoRespuestaHtml(motivo, quien){
+  return '<div style="font-family:Arial,sans-serif;color:#182233;max-width:600px;">' +
+    '<h2 style="color:#0a2e8a;">Respuesta al correo de la semana</h2>' +
+    '<p style="font-size:15px;"><b>' + esc(quien) + '</b> marcó la alternativa:</p>' +
+    '<p style="font-size:17px;font-weight:800;color:#b4600f;background:#fff6ee;border:1px solid #ffd7b3;' +
+    'border-radius:10px;padding:14px 16px;margin:0 0 16px;">' + esc(motivo) + '</p>' +
+    '<p style="font-size:14px;"><b>Producto del correo:</b> ' + esc(P.nombre) + ' (' + esc(cod) + ')<br>' +
+    '<b>Campaña:</b> oferta de la semana del ' + esc(P.semana || '') + '<br>' +
+    '<b>Respondió el:</b> ' + new Date().toLocaleString('es-CL') + '</p>' +
+    '<p style="font-size:12.5px;color:#5b6779;">Esto no es una cotización: es la respuesta de un contacto ' +
+    'al botón «No me interesa por ahora» del correo semanal de ortopedias. Queda además registrada en ' +
+    'la planilla de la campaña.</p></div>';
+}
+
 function vistaNoInteresa(){
   app.innerHTML =
     '<h1>Gracias por responder</h1>' +
     '<p class="sub">¿Puedes compartir con nosotros por qué no te interesa este producto? Nos ayudas a mejorar.</p>' +
     MOTIVOS.map((m, i) => '<button class="op" data-i="' + i + '">' + esc(m) + '</button>').join('') +
+    '<div id="paso2" style="display:none;margin-top:18px;">' +
+      '<label>¿De qué ortopedia nos escribes? <span>· así Roberto sabe quién respondió</span></label>' +
+      '<input id="f_quien" type="text" placeholder="Ortopedia Ejemplo / María Pérez">' +
+      '<button class="btn navy" id="enviarResp">Enviar respuesta</button>' +
+    '</div>' +
     '<div class="estado" id="estado"></div>';
 
-  app.querySelectorAll('.op').forEach(b => b.addEventListener('click', async function(){
-    const motivo = MOTIVOS[Number(this.dataset.i)];
-    app.querySelectorAll('.op').forEach(x => x.disabled = true);
+  let elegido = null;
+  app.querySelectorAll('.op').forEach(b => b.addEventListener('click', function(){
+    elegido = MOTIVOS[Number(this.dataset.i)];
+    app.querySelectorAll('.op').forEach(x => {
+      x.style.borderColor = '#D7DEE8'; x.style.background = '#fff'; x.style.fontWeight = '400';
+    });
+    this.style.borderColor = '#06B3FD'; this.style.background = '#F4FAFF'; this.style.fontWeight = '800';
+    document.getElementById('paso2').style.display = 'block';
+    document.getElementById('f_quien').focus();
+  }));
+
+  document.getElementById('enviarResp').addEventListener('click', async function(){
+    if(!elegido) return;
+    const quien = document.getElementById('f_quien').value.trim() || 'Contacto sin nombre';
+    const estado = document.getElementById('estado');
+    this.disabled = true; estado.style.color = '#6B7280'; estado.textContent = 'Enviando…';
+    /* Dos rastros: la planilla de la campaña y el correo a Roberto. */
     try{
       await fetch(API, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
         body: JSON.stringify({ accion:'interes_marcar', codigo: cod, nombre: P.nombre,
-          nota: 'NO LE INTERESA — ' + motivo + ' · campaña semanal ortopedias' }) });
+          nota: 'NO LE INTERESA — ' + elegido + ' — ' + quien + ' · correo semanal ortopedias ' + (P.semana||'') }) });
+    }catch(e){}
+    try{
+      await fetch(API, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify({
+          accion:'cotizacion_enviar', correoEjecutivo: CORREO_ROBERTO,
+          distribuidora: 'RESPUESTA · ' + quien, contacto: quien, correoContacto: '',
+          telefono: '', direccion: '', comentario: 'Marcó: ' + elegido,
+          items: [{ codigo: cod, nombre: 'Respuesta al correo de ' + P.nombre, qty: 1, unit: 0, sub: 0 }],
+          total: 0, emailHtml: correoRespuestaHtml(elegido, quien)
+        }) });
     }catch(e){}
     vistaGracias('Muchas gracias por tu comentario',
       'Lo tendré muy presente. Gracias por darte el tiempo de responder.' +
-      (motivo === MOTIVOS[2] ? ' Te voy a hacer llegar otras opciones de productos.' : ''));
-  }));
+      (elegido === MOTIVOS[2] ? ' Te voy a hacer llegar otras opciones de productos.' : ''));
+  });
 }
 
 (q.get('r') === 'no') ? vistaNoInteresa() : vistaCotizar();
