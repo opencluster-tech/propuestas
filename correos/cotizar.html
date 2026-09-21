@@ -209,7 +209,6 @@ function vistaCotizar(){
 const MOTIVOS = [
   'Tengo mi distribuidor',
   'No vendo este producto',
-  'Me puede interesar en el futuro',
   'Muéstrame otras opciones de productos'
 ];
 
@@ -230,7 +229,7 @@ function vistaNoInteresa(){
     }catch(e){}
     vistaGracias('Muchas gracias por tu comentario',
       'Lo tendré muy presente. Gracias por darte el tiempo de responder.' +
-      (motivo === MOTIVOS[3] ? ' Te voy a hacer llegar otras opciones de productos.' : ''));
+      (motivo === MOTIVOS[2] ? ' Te voy a hacer llegar otras opciones de productos.' : ''));
   }));
 }
 
