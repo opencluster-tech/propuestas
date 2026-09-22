@@ -1236,6 +1236,11 @@ details.op:not([open])::before{display:none}
 .grupo-d{font-size:13px;color:var(--suave);margin:0 0 14px;line-height:1.55}
 .tarj .textra{display:block;margin-top:6px;font-size:10px;font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;color:#B45309}
+/* El uso del producto, dentro de la tarjeta y en otro color, en vez de separar la
+   grilla en cinco secciones (Rayen, 21-sep-2026). */
+.tarj .tcon{border-top:none;margin-top:5px;padding-top:0;text-align:center;
+  font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.03em;
+  color:#0F7A5F;text-transform:uppercase}
 
 .preg{display:flex;gap:13px;padding:0 54px;margin-top:7mm}
 .preg-n{flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:#0B76C4;color:#fff;
@@ -1324,13 +1329,17 @@ details.op:not([open])::before{display:none}
     break-before:page;page-break-before:always;break-inside:avoid}
   .cierre-firma{margin-top:auto;break-inside:avoid;page-break-inside:avoid;padding-bottom:0}
 
-  /* «hacerlas más pequeñas para que quepan más en una misma hoja» */
-  .op-grid .tarj{width:calc(25% - 8px);padding:8px 8px 9px}
-  .tarj .tf{height:96px;padding:6px;margin-bottom:6px}
-  .tarj .tf img{max-height:82px}
-  .tarj h4{font-size:10.5px;min-height:0;margin-bottom:3px}
-  .tarj .ttx{font-size:9px;line-height:1.4;-webkit-line-clamp:3;margin-top:4px}
-  .tarj .textra{font-size:8.5px;margin-top:4px}
+  /* «tarjetas gigantes»: en papel van cinco por fila y bien compactas. */
+  .op-grid{gap:7px}
+  .op-grid .tarj{width:calc(20% - 6px);padding:6px 6px 7px}
+  .tarj .tf{height:74px;padding:4px;margin-bottom:5px}
+  .tarj .tf img{max-height:64px}
+  .tarj h4{font-size:9px;min-height:0;margin-bottom:2px;line-height:1.2}
+  .tarj .ttx{font-size:7.5px;line-height:1.35;-webkit-line-clamp:3;margin-top:3px}
+  .tarj .tcon{font-size:7px;margin-top:3px}
+  .tarj .textra{font-size:7px;margin-top:3px}
+  .tarj .tsello svg,.tarj .tsello .ic{width:15px;height:15px}
+  .grupo{margin-top:6mm}
   .exec-card{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .tarj,.serv,.seg-c,.preg,.obra-c{break-inside:avoid;page-break-inside:avoid}
   /* Rayen, 21-sep-2026: en el PDF quedaban medias hojas en blanco. Chrome no sabe
@@ -1662,20 +1671,22 @@ details.op:not([open])::before{display:none}
     });
   });
 
-  /* La grilla es la misma .op-grid con las mismas .tarj: no se toca el diseño. */
-  document.getElementById('grupos').innerHTML = GRUPOS.map(function(g){
-    return '<div class="grupo">' +
-      '<h3 class="grupo-t">' + esc(g.t) + '</h3>' +
-      '<p class="grupo-d">' + esc(g.d) + '</p>' +
-      '<div class="op-grid">' + g.items.map(function(it){
-        var h = tarjeta(it);
-        if(it.extra){
-          h = h.replace('<span class="tver">', '<span class="textra">Se suma a la sala</span><span class="tver">');
-        }
-        return h;
-      }).join('') + '</div>' +
-    '</div>';
-  }).join('');
+  /* Rayen, 21-sep-2026: «no me separes por uso de productos, se lleva más espacio;
+     mejor que en la tarjeta le pongas el uso con un color diferente». Una sola grilla
+     con las mismas .tarj de siempre: el uso viaja en el campo con, que la tarjeta ya
+     sabe pintar, así no hay que tocar la función. */
+  var TODOS = [];
+  GRUPOS.forEach(function(g){
+    g.items.forEach(function(it){ it.con = g.t; TODOS.push(it); });
+  });
+  document.getElementById('grupos').innerHTML =
+    '<div class="grupo"><div class="op-grid">' + TODOS.map(function(it){
+      var h = tarjeta(it);
+      if(it.extra){
+        h = h.replace('<span class="tver">', '<span class="textra">Se suma a la sala</span><span class="tver">');
+      }
+      return h;
+    }).join('') + '</div></div>';
 
   /* ── La ficha del producto, en ventana ──────────────────────────
      Se arma con los mismos datos y los mismos helpers que usaba la ficha del final. */
