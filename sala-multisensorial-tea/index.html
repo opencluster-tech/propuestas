@@ -1317,63 +1317,69 @@ details.op:not([open])::before{display:none}
 .btn-pdf:hover{background:var(--naranja)}
 .btn-pdf svg{width:15px;height:15px}
 
+/* ── Las hojas que armamos nosotros para el PDF ──────────────────────────
+   Viven fuera de la pantalla, al ancho real del papel, para poder medirlas.
+   Solo aparecen al imprimir. */
+#impresion{position:absolute;left:-20000px;top:0;width:210mm;background:#fff}
+/* Con ?imprimir=1 las hojas se ven en pantalla, una debajo de otra, para revisarlas. */
+body.ver-hojas .hoja,body.ver-hojas .btn-pdf{display:none !important}
+body.ver-hojas #impresion{position:static;left:auto;margin:0 auto}
+body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
+.pg{width:210mm;height:297mm;padding:0 10mm 12mm;box-sizing:border-box;
+  display:flex;flex-direction:column;overflow:hidden;background:#fff}
+.pg .filo{margin:0 -10mm 0}
+.pg>.portada{margin-top:0}
+.pg-final>.cierre-firma{margin-top:auto}
+/* Dentro de la hoja el margen lo pone .pg, así que los bloques van sin el suyo. */
+.pg .intro,.pg .servicios,.pg .obra,.pg .grupo,.pg .preg,.pg .portada-pie{
+  padding-left:0;padding-right:0}
+.pg .resumen,.pg .cierre-firma,.pg .seg{margin-left:0;margin-right:0}
+.pg .grupo[data-fila]{margin-top:7px}
+
+/* ── EL PAPEL ────────────────────────────────────────────────────────────
+   Estas reglas cuelgan de .pg, no de @media print, porque las hojas se arman
+   y se MIDEN antes de imprimir: si el layout del papel viviera solo dentro de
+   la consulta de impresión, mediríamos una cosa e imprimiríamos otra.
+   La hoja mide 190 mm de ancho útil, o sea menos de 760 px, así que hay que
+   desarmar a mano los cortes de teléfono del documento. */
+.pg .op-grid{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch}
+.pg .op-grid .tarj{width:calc(20% - 6px);box-sizing:border-box;padding:6px 6px 7px}
+.pg .tarj .tf{height:74px;padding:4px;margin-bottom:5px}
+.pg .tarj .tf img{max-height:64px}
+.pg .tarj h4{font-size:9px;min-height:0;margin-bottom:2px;line-height:1.2}
+.pg .tarj .ttx{font-size:7.5px;line-height:1.35;-webkit-line-clamp:3;margin-top:3px}
+.pg .tarj .tcon{font-size:7px;margin-top:3px}
+.pg .tarj .textra{font-size:7px;margin-top:3px}
+.pg .tarj .tsello svg,.pg .tarj .tsello .ic{width:15px;height:15px}
+.pg .tver{display:none}
+
+.pg .serv-grid{display:flex;flex-wrap:wrap;gap:9px}
+.pg .serv-grid .serv{width:calc(33.333% - 6px);box-sizing:border-box}
+.pg .seg-grid{display:flex;flex-wrap:wrap;gap:9px}
+.pg .seg-grid .seg-c{width:calc(50% - 5px);box-sizing:border-box}
+
+.pg .obra-grid{display:flex;flex-wrap:wrap;gap:8px}
+.pg .obra-grid .obra-c{width:calc(25% - 6px);box-sizing:border-box}
+.pg .obra-c .obra-que{font-size:8.5px;line-height:1.35;padding:6px 8px 8px}
+.pg .obra-lugar{font-size:9.5px}
+.pg .obra-donde{font-size:8px}
+.pg .puerta{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;padding:14px}
+.pg .puerta-foto{max-width:200px}
+.pg .puerta-tx h3{font-size:15px}
+.pg .puerta-tx p{font-size:10.5px}
+.pg .hoja-final{display:block;min-height:0}
+.pg .cierre-firma{padding-bottom:0}
+
 @media print{
-  @page{size:A4;margin:12mm 10mm}
+  @page{size:A4;margin:0}
   body{background:#fff}
-  .hoja{max-width:none;box-shadow:none}
+  body.imprimiendo .hoja{display:none !important}
+  #impresion{position:static;left:auto;top:auto;width:auto}
+  .pg{page-break-after:always;break-after:page}
+  .pg:last-child{page-break-after:avoid;break-after:avoid}
   .btn-pdf,.subir{display:none !important}
   .fx,.lb{display:none !important}
-  /* Rayen, 21-sep-2026: «la firma tiene que quedar anclada al fondo de la última hoja,
-     aunque sean 3, 4 o 5 páginas». Es el mismo truco del cotizador: la última hoja es
-     un contenedor del alto de la página, en columna, y la firma se empuja con
-     margin-top:auto. Así queda abajo del todo, no flotando a media hoja. */
-  .hoja-final{display:flex;flex-direction:column;min-height:262mm;
-    break-before:page;page-break-before:always;break-inside:avoid}
-  .cierre-firma{margin-top:auto;break-inside:avoid;page-break-inside:avoid;padding-bottom:0}
-
-  /* «tarjetas gigantes»: en papel van cinco por fila y bien compactas. */
-  .op-grid{gap:7px}
-  .op-grid .tarj{width:calc(20% - 6px);padding:6px 6px 7px}
-  .tarj .tf{height:74px;padding:4px;margin-bottom:5px}
-  .tarj .tf img{max-height:64px}
-  .tarj h4{font-size:9px;min-height:0;margin-bottom:2px;line-height:1.2}
-  .tarj .ttx{font-size:7.5px;line-height:1.35;-webkit-line-clamp:3;margin-top:3px}
-  .tarj .tcon{font-size:7px;margin-top:3px}
-  .tarj .textra{font-size:7px;margin-top:3px}
-  .tarj .tsello svg,.tarj .tsello .ic{width:15px;height:15px}
-  .grupo{margin-top:6mm}
-  .exec-card{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .tarj,.serv,.seg-c,.preg,.obra-c{break-inside:avoid;page-break-inside:avoid}
-  /* Rayen, 21-sep-2026: en el PDF quedaban medias hojas en blanco. Chrome no sabe
-     partir una grilla CSS entre páginas: empuja la grilla entera a la hoja siguiente.
-     En papel la misma grilla se arma con flex, que sí fluye, y el título del grupo
-     se queda pegado a su primera fila. */
-  .grupo{break-inside:auto}
-  .grupo-t,.grupo-d{break-after:avoid;page-break-after:avoid}
-  .op-grid{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
-  .op-grid .tarj{width:calc(33.333% - 7px);box-sizing:border-box}
-  .serv-grid,.seg-grid{display:flex;flex-wrap:wrap;gap:10px}
-  .serv-grid .serv{width:calc(33.333% - 7px);box-sizing:border-box}
-  .seg-grid .seg-c{width:calc(50% - 5px);box-sizing:border-box}
-  .servicios,.seg,.intro,.obra{break-inside:auto}
-  h2,h3{break-after:avoid;page-break-after:avoid}
-  /* La portada se imprime EXACTAMENTE como se ve en pantalla. El 21-sep la estiré a
-     hoja completa por mi cuenta, sin que Rayen lo pidiera, y le cambió el diseño.
-     No se toca. */
-  .portada{break-after:page;page-break-after:always}
-  /* Rayen: «los videos salen gigantes». La hoja mide ~190 mm, o sea menos de 760 px,
-     así que al imprimir se activaban los breakpoints de teléfono y todo se apilaba a
-     una columna. En papel se fuerza la misma disposición que en pantalla. */
-  .obra-grid{display:flex;flex-wrap:wrap;gap:8px}
-  .obra-grid .obra-c{width:calc(25% - 6px);box-sizing:border-box}
-  .obra-c .obra-que{font-size:8.5px;line-height:1.35;padding:6px 8px 8px}
-  .obra-lugar{font-size:9.5px}
-  .obra-donde{font-size:8px}
-  .puerta{display:grid;grid-template-columns:210px minmax(0,1fr);gap:16px;padding:14px}
-  .puerta-foto{max-width:210px}
-  .puerta-tx h3{font-size:15px}
-  .puerta-tx p{font-size:10.5px}
-  .tver{display:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 @media (max-width:760px){
   .grupo,.preg{padding-left:20px;padding-right:20px}
@@ -1767,6 +1773,158 @@ details.op:not([open])::before{display:none}
   var elF = document.getElementById('mFecha');
   if (elF) elF.textContent = fecha();
 
+  /* ──────────────────────────────────────────────────────────────────────
+     LAS HOJAS LAS ARMAMOS NOSOTROS, como en el cotizador.
+     Rayen, 22-sep-2026: «aprende del convertidor a PDF del cotizador, ahí
+     pasaste todos estos problemas antes y aprendiste».
+     Dejarle la paginación al navegador es lo que dejaba medias hojas en
+     blanco y soltaba la firma a media página. Acá se mide cada bloque al
+     ancho real del papel y se va llenando hoja por hoja; la firma entra en
+     la última y se empuja al fondo con margin-top:auto.
+     ────────────────────────────────────────────────────────────────────── */
+  var ALTO_HOJA = 297 * 96 / 25.4;              /* A4 en px a 96 dpi */
+  var MARGEN = 12 * 96 / 25.4;                  /* 12 mm arriba y abajo */
+  var ALTO_UTIL = ALTO_HOJA - MARGEN * 2 - 4;   /* 4 px de holgura por redondeo */
+
+  /* Parte un bloque que tiene una grilla adentro en: el bloque sin la grilla, y
+     después una pieza por fila. Si no se parten, un bloque grande deja media hoja
+     vacía cuando no cabe entero. */
+  function partirPorGrilla(el, selGrilla, porFila){
+    var grid = el.querySelector(selGrilla);
+    if (!grid || grid.children.length <= porFila) return null;
+    var hijos = [].slice.call(grid.children);
+    var piezas = [];
+
+    function caja(sinAire){
+      var c = el.cloneNode(false);              /* mismo tag y clases, vacío */
+      if (sinAire){ c.style.paddingTop = '0'; c.style.paddingBottom = '0'; c.style.marginTop = '0'; }
+      return c;
+    }
+    /* 1) lo que va ANTES de la grilla */
+    var antes = caja(false), hayAntes = false;
+    for (var n = el.firstChild; n && n !== grid; n = n.nextSibling){
+      antes.appendChild(n.cloneNode(true)); hayAntes = true;
+    }
+    if (hayAntes){ antes.style.paddingBottom = '0'; piezas.push(antes); }
+
+    /* 2) la grilla, fila por fila */
+    for (var i = 0; i < hijos.length; i += porFila){
+      var c = caja(true);
+      var fila = grid.cloneNode(false);
+      hijos.slice(i, i + porFila).forEach(function(x){ fila.appendChild(x.cloneNode(true)); });
+      c.appendChild(fila);
+      piezas.push(c);
+    }
+
+    /* 3) lo que va DESPUÉS de la grilla */
+    var desp = caja(true), hayDesp = false;
+    for (var m = grid.nextSibling; m; m = m.nextSibling){
+      desp.appendChild(m.cloneNode(true)); hayDesp = true;
+    }
+    if (hayDesp) piezas.push(desp);
+
+    return piezas;
+  }
+
+  function atomos(hoja){
+    var lista = [];
+    [].forEach.call(hoja.children, function(el){
+      if (el.classList.contains('filo')) return;
+
+      /* el cierre entra suelto: la firma tiene que ser hija directa de la hoja
+         para que margin-top:auto la pegue al fondo */
+      if (el.classList.contains('hoja-final')){
+        [].forEach.call(el.children, function(h){ lista.push(h.cloneNode(true)); });
+        return;
+      }
+
+      /* los seis pasos: tres por fila */
+      if (el.classList.contains('servicios') && el.querySelector('.serv-grid')){
+        var p1 = partirPorGrilla(el, '.serv-grid', 3);
+        if (p1) { p1.forEach(function(x){ lista.push(x); }); return; }
+      }
+      /* los cuatro videos: una fila */
+      if (el.classList.contains('obra')){
+        var p2 = partirPorGrilla(el, '.obra-grid', 4);
+        if (p2) { p2.forEach(function(x){ lista.push(x); }); return; }
+      }
+      /* las cuatro tarjetas de materialidad: dos por fila */
+      if (el.classList.contains('seg')){
+        var p3 = partirPorGrilla(el, '.seg-grid', 2);
+        if (p3) { p3.forEach(function(x){ lista.push(x); }); return; }
+      }
+
+      if (el.id === 'grupos'){
+        /* la grilla se parte en filas, si no no cabe en ninguna hoja */
+        var grid = el.querySelector('.op-grid');
+        if (!grid) { lista.push(el.cloneNode(true)); return; }
+        var tarjetas = [].slice.call(grid.children), POR_FILA = 5;
+        for (var i = 0; i < tarjetas.length; i += POR_FILA){
+          var caja = document.createElement('div');
+          caja.className = 'grupo';
+          var fila = document.createElement('div');
+          fila.className = 'op-grid';
+          tarjetas.slice(i, i + POR_FILA).forEach(function(t){ fila.appendChild(t.cloneNode(true)); });
+          caja.appendChild(fila);
+          caja.dataset.fila = '1';
+          lista.push(caja);
+        }
+        return;
+      }
+      lista.push(el.cloneNode(true));
+    });
+    return lista;
+  }
+
+  function paginar(){
+    var viejo = document.getElementById('impresion');
+    if (viejo) viejo.parentNode.removeChild(viejo);
+
+    var cont = document.createElement('div');
+    cont.id = 'impresion';
+    document.body.appendChild(cont);
+
+    var hoja = document.querySelector('.hoja');
+    var piezas = atomos(hoja);
+
+    var pagina = null, usado = 0;
+    function nuevaHoja(){
+      pagina = document.createElement('div');
+      pagina.className = 'pg';
+      var filo = document.createElement('div');
+      filo.className = 'filo';
+      pagina.appendChild(filo);
+      cont.appendChild(pagina);
+      usado = filo.offsetHeight;
+      return pagina;
+    }
+    nuevaHoja();
+
+    piezas.forEach(function(p){
+      /* la portada manda: va sola en la primera hoja */
+      if (p.classList && p.classList.contains('portada')){
+        pagina.appendChild(p);
+        usado = ALTO_UTIL;
+        return;
+      }
+      pagina.appendChild(p);
+      var h = p.offsetHeight + (parseFloat(getComputedStyle(p).marginTop) || 0);
+      if (usado + h > ALTO_UTIL && usado > 40){
+        /* no cabe: se lo lleva la hoja siguiente */
+        nuevaHoja();
+        pagina.appendChild(p);
+        usado += p.offsetHeight;
+      } else {
+        usado += h;
+      }
+    });
+
+    /* La firma se queda en la última hoja, pegada abajo. */
+    var ultima = cont.lastChild;
+    if (ultima) ultima.classList.add('pg-final');
+    return cont;
+  }
+
   var bp = document.getElementById('btnPdf');
   if (bp) bp.addEventListener('click', function(){
     /* Se cierra lo que esté abierto encima, si no sale impreso en la hoja. */
@@ -1774,10 +1932,29 @@ details.op:not([open])::before{display:none}
     if (f) f.hidden = true;
     if (l) { l.hidden = true; document.getElementById('lbCuerpo').innerHTML = ''; }
     document.body.style.overflow = '';
-    /* Las fichas se abren en ventana, así que en el PDF no van: el papel lleva
-       las tarjetas y el texto. */
+    document.body.classList.add('imprimiendo');
+    paginar();
     window.print();
   });
+  window.addEventListener('afterprint', function(){
+    document.body.classList.remove('imprimiendo');
+    var c = document.getElementById('impresion');
+    if (c) c.parentNode.removeChild(c);
+  });
+  /* Si alguien imprime con Ctrl+P sin pasar por el botón, igual se pagina. */
+  window.addEventListener('beforeprint', function(){
+    if (document.getElementById('impresion')) return;
+    document.body.classList.add('imprimiendo');
+    paginar();
+  });
+
+  /* ?imprimir=1 deja la página ya paginada al cargar. Sirve para generar el PDF
+     desde fuera (Chrome headless no dispara beforeprint) y para revisar las hojas
+     en pantalla antes de publicar. */
+  if (/[?&]imprimir=1/.test(location.search)){
+    document.body.classList.add('imprimiendo', 'ver-hojas');
+    paginar();
+  }
 })();
 </script>
 <script>
