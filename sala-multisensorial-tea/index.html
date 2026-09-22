@@ -1279,6 +1279,10 @@ details.op:not([open])::before{display:none}
 .tarj:focus-visible .tver{background:#06b3fd;border-color:#06b3fd;color:#fff}
 .tarj:hover .tver svg{color:#fff}
 
+/* Rayen, 21-sep-2026: «si las tarjetas no tienen precio, quita el código OC: no es
+   necesario que se vea y con eso ahorras espacio». */
+.tarj .toc{display:none}
+
 /* ── La materialidad, destacada con caligrafía ── */
 .caligrafia{font-family:'Petit Formal Script',cursive;font-size:1.55em;line-height:1;
   color:#0F7A5F;font-weight:400;padding:0 2px;letter-spacing:.01em}
@@ -1312,12 +1316,44 @@ details.op:not([open])::before{display:none}
   .hoja{max-width:none;box-shadow:none}
   .btn-pdf,.subir{display:none !important}
   .fx,.lb{display:none !important}
-  /* Rayen: la firma SIEMPRE al final, aunque sean 3, 4 o 5 páginas. */
-  .cierre-firma{break-inside:avoid;page-break-inside:avoid;break-before:auto;margin-top:10mm}
+  /* Rayen, 21-sep-2026: «la firma tiene que quedar anclada al fondo de la última hoja,
+     aunque sean 3, 4 o 5 páginas». Es el mismo truco del cotizador: la última hoja es
+     un contenedor del alto de la página, en columna, y la firma se empuja con
+     margin-top:auto. Así queda abajo del todo, no flotando a media hoja. */
+  .hoja-final{display:flex;flex-direction:column;min-height:262mm;
+    break-before:page;page-break-before:always;break-inside:avoid}
+  .cierre-firma{margin-top:auto;break-inside:avoid;page-break-inside:avoid;padding-bottom:0}
+
+  /* «hacerlas más pequeñas para que quepan más en una misma hoja» */
+  .op-grid .tarj{width:calc(25% - 8px);padding:8px 8px 9px}
+  .tarj .tf{height:96px;padding:6px;margin-bottom:6px}
+  .tarj .tf img{max-height:82px}
+  .tarj h4{font-size:10.5px;min-height:0;margin-bottom:3px}
+  .tarj .ttx{font-size:9px;line-height:1.4;-webkit-line-clamp:3;margin-top:4px}
+  .tarj .textra{font-size:8.5px;margin-top:4px}
   .exec-card{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .tarj,.serv,.seg-c,.preg,.obra-c{break-inside:avoid;page-break-inside:avoid}
+  /* Rayen, 21-sep-2026: en el PDF quedaban medias hojas en blanco. Chrome no sabe
+     partir una grilla CSS entre páginas: empuja la grilla entera a la hoja siguiente.
+     En papel la misma grilla se arma con flex, que sí fluye, y el título del grupo
+     se queda pegado a su primera fila. */
   .grupo{break-inside:auto}
-  .portada{break-after:page;page-break-after:always}
+  .grupo-t,.grupo-d{break-after:avoid;page-break-after:avoid}
+  .op-grid{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+  .op-grid .tarj{width:calc(33.333% - 7px);box-sizing:border-box}
+  .serv-grid,.seg-grid{display:flex;flex-wrap:wrap;gap:10px}
+  .serv-grid .serv{width:calc(33.333% - 7px);box-sizing:border-box}
+  .seg-grid .seg-c{width:calc(50% - 5px);box-sizing:border-box}
+  .servicios,.seg,.intro,.obra{break-inside:auto}
+  h2,h3{break-after:avoid;page-break-after:avoid}
+  /* Rayen, 21-sep-2026: en el PDF la portada dejaba media hoja en blanco. En pantalla
+     mide 286 px; en papel ocupa la hoja completa y el mosaico se estira con ella. */
+  .portada{height:232mm;break-after:page;page-break-after:always}
+  .portada-centro{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%)}
+  .portada img.logo{height:128px}
+  .portada h1{font-size:30px}
+  .hoja .filo{break-after:avoid}
+  .portada-pie{padding-top:14mm}
   .obra-grid{grid-template-columns:repeat(2,1fr)}
   .op-grid{grid-template-columns:repeat(3,1fr)}
   .tver{display:none}
@@ -1445,13 +1481,14 @@ details.op:not([open])::before{display:none}
   </div>
   <div class="preg"><div class="preg-n">1</div><div class="preg-tx"><h3>Qué componentes cubre la sala y cuáles se cotizan aparte</h3><p>La Sala Multisensorial TEA con Tecnología SHX, tal como está publicada, cubre siete de los nueve elementos de su lista: la columna de burbujas y la fibra óptica vienen integradas en el Rincón Luminea; el sistema de reproducción de sonido, el proyector de efectos y el software de gestión y control forman parte del Sistema SHX Compact; la piscina sensorial de pelotas es la Piscina Luminea vibroacústica; y el puff de posicionamiento es el Puff transformable vibroacústico. Los dos que faltaban —la difusión aromática y las baldosas sensoriales— van sumados en esta propuesta, junto con un haz de fibra óptica adicional de 3 metros. Todo lo que ve en este documento está incluido en la cotización que acompaña a esta propuesta: no hay elementos que se coticen aparte.</p></div></div><div class="preg"><div class="preg-n">2</div><div class="preg-tx"><h3>Si entregamos ficha técnica oficial de fabricante de cada componente</h3><p>Sí. Cada elemento de este documento trae su ficha con los datos del fabricante: qué es, qué se trabaja con él, para quién está indicado, qué incluye la entrega y sus características técnicas. Los elementos SHX y Luminea los fabrica Qinera, nuestro partner europeo, del que somos representantes exclusivos en Chile. Los tres columpios los fabrica Southpaw Enterprises, en Estados Unidos: el Columpio Flexor es su modelo WG0084, el Columpio Hamaca para adulto el WG0170 y la Plataforma de Balanceo Modificada el WG0124.</p></div></div><div class="preg"><div class="preg-n">3</div><div class="preg-tx"><h3>Si el servicio incluye instalación, capacitación y garantía</h3><p>Nuestro trabajo parte antes de elegir el primer elemento y sigue después de instalarlo: evaluamos la necesidad con nuestros terapeutas, diseñamos el proyecto sin costo, adecuamos el lugar cuando hace falta, instalamos, capacitamos a todo el equipo que vaya a usar la sala y entregamos un protocolo de cuidado y mantención. La garantía legal es de 12 meses. La instalación, el transporte y la capacitación van valorizados en la cotización que acompaña a esta propuesta.</p></div></div><div class="preg"><div class="preg-n">4</div><div class="preg-tx"><h3>Costo y plazo de despacho a Iquique</h3><p>El despacho a la Región de Tarapacá va valorizado en la cotización, junto con la instalación y la capacitación. Tenemos experiencia trabajando en el norte: este año implementamos dos salas en la Región de Antofagasta, con equipo en terreno durante toda la semana de instalación.</p></div></div><div class="preg"><div class="preg-n">5</div><div class="preg-tx"><h3>Plazo de entrega total desde la orden de compra</h3><p>El plazo va indicado en la cotización. Conviene tener presente que los tres columpios, el Kit de Estimulación Sensorial y el Saco Propioceptivo se traen bajo pedido, con un tiempo estimado de 25 a 30 días; el resto de los elementos sale de nuestro stock en Chile. La instalación se coordina una vez que el espacio esté adecuado y disponible.</p></div></div>
 
-  <div class="intro" style="margin-top:10mm;border-bottom:none">
-    <h2>Quedamos atentos</h2>
-    <p>Esta propuesta va acompañada de la cotización formal, con los valores de cada elemento, el despacho a Iquique, la instalación y la capacitación. Cualquier ajuste en la composición de la sala lo podemos ver juntos: las salas son escalables y se pueden adaptar al espacio y al presupuesto del proyecto.</p>
-    <p class="intro-nota">Los tres columpios requieren anclaje al techo o un pórtico. La distribución definitiva de la sala y las condiciones del espacio las definimos en la visita técnica, antes de la instalación.</p>
+  <div class="hoja-final">
+    <div class="intro" style="margin-top:10mm;border-bottom:none">
+      <h2>Quedamos atentos</h2>
+      <p>Esta propuesta va acompañada de la cotización formal, con los valores de cada elemento, el despacho a Iquique, la instalación y la capacitación. Cualquier ajuste en la composición de la sala lo podemos ver juntos: las salas son escalables y se pueden adaptar al espacio y al presupuesto del proyecto.</p>
+      <p class="intro-nota">Los tres columpios requieren anclaje al techo o un pórtico. La distribución definitiva de la sala y las condiciones del espacio las definimos en la visita técnica, antes de la instalación.</p>
+    </div>
+    <div class="cierre-firma"><div class="exec-card"><div class="exec-avatar">RO</div><div class="exec-info"><div class="exec-name">Rayen Ogalde</div><div class="exec-role">Encargada Vínculos Institucionales</div><div class="exec-dept">OpenCluster Tech</div></div><div class="exec-contacts"><div class="exec-contact"><span>☎</span> <span>+56 9 5629 4723</span></div><div class="exec-contact"><span>✉</span> <span>rayen.ogalde@opencluster-tech.cl</span></div><div class="exec-contact"><span>⚙</span> <span>www.opencluster-tech.cl</span></div></div></div></div>
   </div>
-
-  <div class="cierre-firma"><div class="exec-card"><div class="exec-avatar">RO</div><div class="exec-info"><div class="exec-name">Rayen Ogalde</div><div class="exec-role">Encargada Vínculos Institucionales</div><div class="exec-dept">OpenCluster Tech</div></div><div class="exec-contacts"><div class="exec-contact"><span>☎</span> <span>+56 9 5629 4723</span></div><div class="exec-contact"><span>✉</span> <span>rayen.ogalde@opencluster-tech.cl</span></div><div class="exec-contact"><span>⚙</span> <span>www.opencluster-tech.cl</span></div></div></div><div class="razon"><b>Razón Social:</b> OpenCluster Tech SpA &nbsp;·&nbsp; <b>RUT:</b> 76.868.961-K &nbsp;·&nbsp; <b>Dirección:</b> Freire 1388 Depto #31, Quilpué &nbsp;·&nbsp; <b>Giro:</b> Venta al por menor y mayor de elementos ortopédicos.</div></div>
 </div>
 
 <button type="button" class="btn-pdf" id="btnPdf">
