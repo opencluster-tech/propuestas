@@ -527,7 +527,6 @@ html{scroll-behavior:smooth}
 .tarj:hover .tf img{transform:scale(1.05)}
 .tarj .tf img{transition:transform .3s}
 .tarj:hover .tver{background:var(--naranja);border-color:var(--naranja);color:#fff}
-.tarj:hover .tver{color:var(--naranja)}
 /* pastilla visible siempre, para que se note que hay algo que abrir */
 .tver{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:10px;
   font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.02em;
@@ -1220,6 +1219,42 @@ details.op:not([open])::before{display:none}
 .fx-precio{padding:13px 15px;background:#F6FAFF;border:1px solid #E3EBF5;border-radius:11px;
   margin:14px 0 2px;gap:10px}
 .fx-iva{margin-top:6px;padding-left:2px}
+
+/* ── Rayen, 21-sep-2026: «esto aplica a los dos diseños de propuesta». Lo mismo que se le
+   corrigió a NeuroMed, traído aquí el 22-sep. ── */
+.serv-baja,.obra-baja,.seg-baja{max-width:none}
+.serv .sn{color:#fff;display:flex;align-items:center;justify-content:center}
+.serv .sn svg{width:15px;height:15px;display:block}
+.seg-t{display:flex;align-items:center;gap:7px}
+.seg-ic{flex:none;color:#0F7A5F;display:flex}
+.seg-ic svg{width:17px;height:17px;display:block}
+/* «un poquito más grande el ticket de la materialidad segura» */
+.seg-li .ic{width:26px;height:26px}
+.seg-pie .ic{width:22px;height:22px}
+.tarj .tsello svg,.tarj .tsello .ic{width:22px;height:22px}
+.fx .sellos svg,.fx .sellos .ic{width:18px;height:18px}
+/* «algunas imágenes están muy chiquititas»: la foto usa el ancho de la tarjeta */
+.tarj .tf{height:152px;background:#F7FAFD;border:1px solid #EEF2F8;border-radius:9px;
+  padding:9px;box-sizing:border-box;margin-bottom:9px}
+.tarj .tf img{max-height:132px;max-width:100%;width:auto}
+/* El hover de «Ver la ficha»: una sola regla, celeste de la página web, texto blanco.
+   Antes eran dos y la segunda pintaba el texto del mismo naranja del fondo. */
+.tarj:hover .tver,.tarj:focus-visible .tver{background:#06b3fd;border-color:#06b3fd;color:#fff}
+.tarj:hover .tver svg{color:#fff}
+/* El lettering va en el TÍTULO de la sección: la palabra «Materiales» */
+.seg-rot{font-family:'Kaushan Script',cursive !important;font-size:27px !important;
+  font-weight:400 !important;letter-spacing:0 !important;text-transform:none !important;
+  color:#0F7A5F;line-height:1.1;margin-bottom:6px}
+@media (max-width:560px){ .seg-rot{font-size:23px !important} }
+/* Rayen, 22-sep-2026, viendo las tarjetas de NeuroMed: el botón quedaba a media tarjeta y abajo
+   sobraba espacio. La descripción se estira y el uso, el escudo y «Ver la ficha» van al pie,
+   parejos en toda la fila. */
+.tarj .ttx{flex-grow:1}
+.tarj:not(:has(.ttx)) .tver{margin-top:auto}
+@media print{
+  .tarj .tf{height:74px;padding:4px;margin-bottom:5px}
+  .tarj .tf img{max-height:64px}
+}
 </style>
 
 <style>
