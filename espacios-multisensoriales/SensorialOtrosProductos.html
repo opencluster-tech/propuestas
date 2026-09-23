@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{ --navy:#001A60; --sky:#06B3FD; --naranja:#FF7E00; --texto:#1F2937; --suave:#6B7280; --linea:#93B5D6; }
+:root{ --navy:#001A60; --sky:#2FC1FF; --naranja:#FF7E00; --texto:#1F2937; --suave:#6B7280; --linea:#93B5D6; }
 *{box-sizing:border-box}
 body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;color:var(--texto);font-size:13px;line-height:1.6}
 .hoja{
@@ -30,7 +30,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
   background:#fff;transition:background .18s,color .18s,border-color .18s;
 }
 .volver svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.volver:hover{background:var(--naranja);border-color:var(--naranja);color:#fff}
+.volver:hover{background:#2FC1FF;border-color:#2FC1FF;color:#fff}
 .barra-rot{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.015em;color:var(--sky)}
 
 /* ── Portada: corta y sobria ──────────────────────────── */
@@ -72,7 +72,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
   border:1px solid #CBE4F7;background:#fff;border-radius:999px;padding:7px 14px;
   font-size:12px;color:var(--navy);transition:border-color .18s,box-shadow .18s,transform .18s;
 }
-.ix a:hover{border-color:var(--naranja);box-shadow:0 6px 16px rgba(0,26,96,.13);transform:translateY(-2px)}
+.ix a:hover{border-color:#2FC1FF;box-shadow:0 6px 16px rgba(0,26,96,.13);transform:translateY(-2px)}
 .ix a b{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;color:var(--sky);font-variant-numeric:tabular-nums}
 
 /* ── Cada categoría ───────────────────────────────────── */
@@ -104,7 +104,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
   transition:box-shadow .2s,transform .2s,border-color .2s;
 }
 .tarj:hover{border-color:#BFE4FB;box-shadow:0 8px 20px rgba(0,26,96,.12);transform:translateY(-2px)}
-.tarj:hover .tver{color:var(--naranja)}
+.tarj:hover .tver{background:#2FC1FF;border-color:#2FC1FF;color:#fff}
 .tarj h4,.tarj .toc,.tarj .tpre,.tarj .ttx{overflow-wrap:anywhere}
 .tarj .tf{height:168px;display:flex;align-items:center;justify-content:center;margin-bottom:11px;
   background:#FAFCFE;border-radius:8px;overflow:hidden}
@@ -153,7 +153,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
 .fx-x{position:absolute;right:12px;top:12px;z-index:2;width:34px;height:34px;border-radius:999px;
   border:1px solid #E3E9F2;background:#fff;color:var(--navy);font:400 18px/1 'Manrope',sans-serif;
   cursor:pointer;box-shadow:0 2px 8px rgba(0,26,96,.12);transition:background .2s,color .2s,transform .2s}
-.fx-x:hover{background:var(--naranja);border-color:var(--naranja);color:#fff;transform:rotate(90deg)}
+.fx-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:#fff;transform:rotate(90deg)}
 .fx-cuerpo{overflow-y:auto;display:grid;grid-template-columns:302px minmax(0,1fr)}
 .fx-izq{padding:22px 18px;background:#F7FAFD;border-right:1px solid #EDF1F7}
 .fx-foto{background:#fff;border:1px solid #EDF1F7;border-radius:12px;height:238px;display:flex;
@@ -304,6 +304,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
 .fx-precio{padding:13px 15px;background:#F6FAFF;border:1px solid #E3EBF5;border-radius:11px;
   margin:14px 0 2px;gap:10px}
 .fx-iva{margin-top:6px;padding-left:2px}
+.fx-reg{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0A8FCC;margin:12px 0 -6px}
 </style>
 </head>
 <body>
@@ -545,7 +546,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
         }).join('') + '</div>'
       : '';
     var precio = p.iva
-      ? '<div class="fx-precio"><span class="fx-v">' + pesos(dto(p.iva)) + '</span>' +
+      ? '<div class="fx-reg">Valor regular</div><div class="fx-precio"><span class="fx-v">' + pesos(dto(p.iva)) + '</span>' +
         '<span class="fx-a">' + pesos(p.iva) + '</span></div>' +
         '<div class="fx-iva">IVA incluido, con la rebaja del 10% ya aplicada</div>'
       : '<div class="fx-precio"><span class="fx-v">A consultar</span></div>';
