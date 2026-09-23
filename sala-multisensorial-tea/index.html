@@ -1370,6 +1370,9 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
   display:flex;flex-direction:column;overflow:hidden;background:#fff}
 .pg .filo{margin:0 -10mm 0}
 .pg>.portada{margin-top:0}
+/* Rayen, 23-sep: el encabezado va de extremo a extremo, igual que la línea de color
+   de arriba; con el margen de la hoja quedaba blanco a los lados y no calzaba. */
+.pg>.portada{margin-left:-10mm;margin-right:-10mm}
 .pg-final>.cierre-firma{margin-top:auto}
 /* Dentro de la hoja el margen lo pone .pg, así que los bloques van sin el suyo. */
 .pg .intro,.pg .servicios,.pg .obra,.pg .grupo,.pg .preg,.pg .portada-pie{
