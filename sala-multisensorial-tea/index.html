@@ -1267,6 +1267,34 @@ details.op:not([open])::before{display:none}
 .seg-faq[open]>summary::after{content:'−'}
 /* en el papel no se toca: sin el botón de abrir y cerrar */
 .pg .seg-faq>summary::after{display:none}
+/* ── «¿Qué significa?» en tarjeta flotante (Rayen, 23-sep-2026: «que la información esté flotando
+   en pantalla, en vez de que se abra hacia abajo»). En pantalla el texto del <details> no se despliega;
+   se muestra en #segPop. En el papel (.pg y @media print) sigue impreso debajo, como antes. ── */
+.seg-faq>p{display:none}
+.pg .seg-faq>p{display:block}
+@media print{ .seg-faq>p{display:block} }
+.seg-faq.activo>summary{text-decoration:underline;text-underline-offset:3px}
+.seg-pop{position:fixed;z-index:70;width:min(360px,calc(100vw - 32px));background:#fff;color:#2F3B4A;
+  border-radius:14px;box-shadow:0 18px 50px rgba(0,26,96,.28),0 2px 8px rgba(0,26,96,.12);
+  padding:18px 20px 18px;border-top:4px solid #0F7A5F;opacity:0;transform:translateY(6px);
+  transition:opacity .18s ease,transform .18s ease;pointer-events:none}
+.seg-pop.on{opacity:1;transform:none;pointer-events:auto}
+.seg-pop-t{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 8px;
+  font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800;color:var(--navy)}
+.seg-pop-t small{display:block;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:#0F7A5F;margin-bottom:2px}
+.seg-pop-x{all:unset;cursor:pointer;flex:none;width:28px;height:28px;border-radius:50%;display:flex;
+  align-items:center;justify-content:center;background:#EEF7F3;color:#0F7A5F;font-size:14px}
+.seg-pop-x:focus-visible{outline:2px solid #06b3fd}
+.seg-pop-tx{margin:0;font-size:13px;line-height:1.7}
+.seg-pop-f{position:absolute;width:14px;height:14px;background:#fff;transform:rotate(45deg);
+  box-shadow:-3px -3px 6px rgba(0,26,96,.06)}
+@media (max-width:560px){
+  .seg-pop{left:16px!important;right:16px;width:auto;top:auto!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .seg-pop-f{display:none}
+}
+@media (prefers-reduced-motion:reduce){ .seg-pop{transition:none} }
+@media print{ .seg-pop{display:none!important} }
 /* ── Materiales, opción C (23-sep-2026): un destacado y cuatro sellos ── */
 .sl-dest{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center;background:var(--navy);
   color:#fff;border-radius:14px;padding:26px 30px;margin:0 0 20px}
@@ -2208,5 +2236,60 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 })();
 
 </script>
+<!--POP-INI · la tarjeta flotante; gen_propuesta.js la copia para NeuroMed -->
+<div class="seg-pop" id="segPop" role="dialog" aria-modal="false" aria-labelledby="segPopT" hidden>
+  <span class="seg-pop-f" id="segPopF"></span>
+  <div class="seg-pop-t"><div id="segPopT"></div><button type="button" class="seg-pop-x" id="segPopX" aria-label="Cerrar">&#10005;</button></div>
+  <p class="seg-pop-tx" id="segPopTx"></p>
+</div>
+<script>
+/* «¿Qué significa?» flotante. Rayen, 23-sep-2026. */
+(function(){
+  var pop = document.getElementById('segPop'); if (!pop) return;
+  var tit = document.getElementById('segPopT'), tx = document.getElementById('segPopTx'),
+      fl = document.getElementById('segPopF'), actual = null;
+  function cerrar(){
+    pop.classList.remove('on');
+    if (actual) { actual.classList.remove('activo'); actual.querySelector('summary').focus({preventScroll:true}); }
+    actual = null;
+    setTimeout(function(){ if (!actual) pop.hidden = true; }, 180);
+  }
+  function abrir(d){
+    var s = d.querySelector('summary'), p = d.querySelector('p');
+    var bloque = d.closest('.sl,.sl-dest');
+    var h = bloque && bloque.querySelector('h4,h3');
+    tit.innerHTML = '<small>' + (h ? h.textContent : 'Materiales') + '</small>' + s.textContent;
+    tx.textContent = p.textContent;
+    if (actual) actual.classList.remove('activo');
+    actual = d; d.classList.add('activo');
+    pop.hidden = false;
+    /* se ubica bajo el botón, sin salirse de la pantalla; si no cabe abajo, va arriba */
+    var r = s.getBoundingClientRect(), w = pop.offsetWidth, hh = pop.offsetHeight, m = 16;
+    var x = Math.min(Math.max(m, r.left + r.width / 2 - w / 2), innerWidth - w - m);
+    var abajo = r.bottom + 14 + hh < innerHeight - m;
+    var y = abajo ? r.bottom + 14 : Math.max(m, r.top - 14 - hh);
+    pop.style.left = x + 'px'; pop.style.top = y + 'px';
+    fl.style.left = Math.min(Math.max(14, r.left + r.width / 2 - x - 7), w - 28) + 'px';
+    fl.style.top = abajo ? '-7px' : 'auto'; fl.style.bottom = abajo ? 'auto' : '-7px';
+    requestAnimationFrame(function(){ pop.classList.add('on'); });
+    document.getElementById('segPopX').focus({preventScroll:true});
+  }
+  document.querySelectorAll('.seg-faq').forEach(function(d){
+    d.querySelector('summary').addEventListener('click', function(e){
+      if (document.body.classList.contains('imprimiendo')) return;
+      e.preventDefault();
+      if (actual === d) cerrar(); else abrir(d);
+    });
+  });
+  document.getElementById('segPopX').addEventListener('click', cerrar);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && actual) cerrar(); });
+  document.addEventListener('click', function(e){
+    if (actual && !pop.contains(e.target) && !actual.contains(e.target)) cerrar();
+  });
+  addEventListener('scroll', function(){ if (actual) cerrar(); }, {passive:true});
+  addEventListener('resize', function(){ if (actual) cerrar(); });
+})();
+</script>
+<!--POP-FIN-->
 </body>
 </html>
