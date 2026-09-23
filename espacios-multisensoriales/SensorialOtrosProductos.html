@@ -305,6 +305,14 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
   margin:14px 0 2px;gap:10px}
 .fx-iva{margin-top:6px;padding-left:2px}
 .fx-reg{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0A8FCC;margin:12px 0 -6px}
+/* Rayen, 23-sep-2026: «para mí el bullet no es el punto delante de toda una frase: es la pastilla en la
+   que se envuelve un título, un subtítulo; el texto está demasiado plano». Los títulos de las fichas y
+   de la descripción de cada sala van en pastilla calipso con letra blanca. */
+body .fx-der .seccion .heading{display:inline-flex;align-items:center;gap:0;
+  background:#2FC1FF;color:#fff;border-radius:999px;padding:5px 13px;line-height:1.2;
+  font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+body .fx-der .seccion .heading::before,body .fx-der .seccion.sec-clave .heading::before{display:none}
+body .fx-der .seccion.sec-clave .heading{color:#fff}
 </style>
 </head>
 <body>
