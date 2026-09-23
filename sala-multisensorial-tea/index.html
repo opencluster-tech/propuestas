@@ -1401,8 +1401,10 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
    desarmar a mano los cortes de teléfono del documento. */
 .pg .op-grid{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch}
 .pg .op-grid .tarj{width:calc(20% - 6px);box-sizing:border-box;padding:6px 6px 7px}
-.pg .tarj .tf{height:74px;padding:4px;margin-bottom:5px}
-.pg .tarj .tf img{max-height:64px}
+/* Rayen, 23-sep: los 20 elementos, con su título, en una sola hoja: foto un poco más baja */
+.pg .tarj .tf{height:60px;padding:3px;margin-bottom:4px}
+.pg .tarj .tf img{max-height:54px}
+.pg .resumen{margin-top:8px;margin-bottom:0;padding-top:10px;padding-bottom:10px}
 .pg .tarj h4{font-size:9px;min-height:0;margin-bottom:2px;line-height:1.2}
 .pg .tarj .ttx{font-size:7.5px;line-height:1.35;-webkit-line-clamp:3;margin-top:3px}
 .pg .tarj .tcon{font-size:7px;margin-top:3px}
@@ -1975,6 +1977,15 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
       }
       lista.push(el.cloneNode(true));
     });
+    /* Rayen, 23-sep: «Elemento por elemento», sus números y las tarjetas van
+       JUNTOS en una misma hoja. Se marcan para que paginar() los mueva en bloque. */
+    lista.forEach(function(p, i){
+      if (p.classList && p.classList.contains('resumen')){
+        p.dataset.junto = '1';
+        if (lista[i - 1]) lista[i - 1].dataset.junto = '1';
+      }
+      if (p.dataset && p.dataset.fila) p.dataset.junto = '1';
+    });
     return lista;
   }
 
@@ -2018,6 +2029,16 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
       if (p.querySelectorAll) [].forEach.call(p.querySelectorAll('details'), function(d){ d.open = true; });
     });
     piezas.forEach(function(p, i){
+      /* el bloque que va junto: si no cabe entero en lo que queda, parte en hoja nueva */
+      if (p.dataset.junto && !(piezas[i - 1] && piezas[i - 1].dataset.junto) && usado > 40){
+        var total = 0;
+        for (var k = i; k < piezas.length && piezas[k].dataset.junto; k++){
+          pagina.appendChild(piezas[k]);
+          total += piezas[k].offsetHeight + (parseFloat(getComputedStyle(piezas[k]).marginTop) || 0);
+        }
+        for (var k2 = i; k2 < k; k2++) pagina.removeChild(piezas[k2]);
+        if (usado + total > ALTO_UTIL && total <= ALTO_UTIL) nuevaHoja();
+      }
       if (esTitulo(p) && piezas[i + 1] && usado > 40){
         pagina.appendChild(p);
         var sig = piezas[i + 1];
