@@ -1267,6 +1267,13 @@ details.op:not([open])::before{display:none}
 .seg-faq[open]>summary::after{content:'−'}
 /* en el papel no se toca: sin el botón de abrir y cerrar */
 .pg .seg-faq>summary::after{display:none}
+/* Rayen, 23-sep-2026: «todos los videos que se abren quedan flotando en pantalla» y con un botón
+   visible para cerrarlos. */
+.lb-pie{display:flex;justify-content:center;padding:12px 0 2px}
+.lb-cerrar{all:unset;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;
+  color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  padding:8px 18px}
+.lb-cerrar:hover,.lb-cerrar:focus-visible{background:#2FC1FF;border-color:#2FC1FF}
 /* Rayen, 23-sep-2026: «para mí el bullet no es el punto delante de toda una frase: es la pastilla en la
    que se envuelve un título, un subtítulo; el texto está demasiado plano». Los títulos de las fichas y
    de la descripción de cada sala van en pastilla calipso con letra blanca. */
@@ -2107,13 +2114,12 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
                 var fuente = x.drive ? 'https://drive.google.com/file/d/' + esc(x.drive) + '/preview'
                   : x.yt ? 'https://www.youtube-nocookie.com/embed/' + esc(x.yt)
                   : 'https://www.instagram.com/p/' + esc(x.ig) + '/embed/';
-                return '<button type="button" class="vitrina-fila" data-video="' + id + '" data-src="' + fuente + '">' +
+                /* Rayen, 23-sep-2026: el video flota en el visor #lb, no se despliega hacia abajo */
+                var fmt = x.ig ? 'ig' : ((x.vert || x.drive) ? 'vert' : 'yt');
+                return '<button type="button" class="vitrina-fila" data-lb-src="' + fuente + '" data-lb-fmt="' + fmt + '" data-lb-lugar="' + esc(s.n) + '" data-lb-donde="">' +
                     (x.mini ? '<span class="vitrina-foto"><img src="' + esc(x.mini) + '" alt="" loading="lazy"></span>' : '') +
                     '<span class="vitrina-t">' + esc(x.txt) + '</span>' +
-                  '</button>' +
-                  '<div class="invita-marco' + ((x.ig || x.vert) ? ' invita-vert' : '') + '" id="' + id + '" hidden>' +
-                    '<iframe src="about:blank" loading="lazy" scrolling="no" allow="encrypted-media" ' +
-                      'allowfullscreen title="Video de la sala"></iframe></div>';
+                  '</button>';
               }).join('') +
             '</div>';
           })(s.vid) +
@@ -2323,6 +2329,8 @@ document.addEventListener('click',function(ev){
       <button type="button" class="lb-x" id="lbX" aria-label="Cerrar">&#10005;</button>
     </div>
     <div class="lb-cuerpo" id="lbCuerpo"></div>
+    <!-- Rayen, 23-sep-2026: un botón visible para cerrar el video, además de la ✕ -->
+    <div class="lb-pie"><button type="button" class="lb-cerrar" id="lbCerrar">Cerrar el video</button></div>
   </div>
 </div>
 <script>
@@ -2354,7 +2362,7 @@ document.addEventListener('click',function(ev){
   document.addEventListener('click',function(ev){
     var b=ev.target.closest && ev.target.closest('[data-lb-src]');
     if(b){ abrir(b); return; }
-    if(ev.target===lb || (ev.target.closest && ev.target.closest('#lbX'))) cerrar();
+    if(ev.target===lb || (ev.target.closest && ev.target.closest('#lbX, #lbCerrar'))) cerrar();
   });
   document.addEventListener('keydown',function(ev){ if(ev.key==='Escape') cerrar(); });
 })();
