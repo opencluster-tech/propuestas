@@ -1567,7 +1567,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 .pg .op-lo{margin-top:10px}
 .pg .op-lo-tit{font-size:12px;margin-bottom:6px}
 .pg .op-grid{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch}
-.pg .op-grid .tarj{width:calc(20% - 6px);box-sizing:border-box;padding:6px 6px 7px}
+.pg .op-grid .tarj{width:calc(16.666% - 6px);box-sizing:border-box;padding:5px 5px 6px}
 .pg .tarj .tf{height:64px;padding:3px;margin-bottom:4px}
 .pg .tarj .tf img{max-height:58px}
 .pg .tarj h4{font-size:9px;min-height:0;margin-bottom:2px;line-height:1.2}
@@ -1586,6 +1586,44 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 .pg .puerta-foto{max-width:150px}
 .pg .puerta-tx h3{font-size:13.5px}
 .pg .puerta-tx p{font-size:9.5px;margin:3px 0}
+</style>
+<style>
+/* Papel compacto (Rayen, 23-sep-2026) */
+.pg .seg.seg-trozo{border-top:0;border-bottom:0;border-radius:0;box-shadow:none;margin-top:0 !important;padding-top:4px;padding-bottom:4px}
+.pg .seg.seg-ini{border-top:1px solid #BFE9FF;border-radius:16px 16px 0 0;padding-top:16px;margin-top:10px !important}
+.pg .seg.seg-fin{border-bottom:1px solid #BFE9FF;border-radius:0 0 16px 16px;padding-bottom:14px}
+.pg .sl-grid{gap:8px}
+.pg .sl-grid .sl{width:calc(25% - 6px)}
+.pg .sl p,.pg .sl .seg-faq p{font-size:7.6px;line-height:1.38}
+.pg .sl .sl-c{width:62px;height:62px}
+.pg .seg-baja{font-size:9.5px;line-height:1.45}
+.pg .sl-dest{padding:12px 14px;gap:12px}
+.pg .sl-dest p,.pg .sl-dest .seg-faq p{font-size:8.4px;line-height:1.4}
+.pg .t1 tbody td{padding:4px 6px;font-size:9px}
+.pg .t1-g td{padding:5px 6px}
+.pg .op-foto img{object-fit:cover}
+.pg .op-txt{font-size:10px;line-height:1.5}
+.pg .evi-p{font-size:8.4px;line-height:1.4;margin:0 0 5px}
+.pg .evi-cab{padding:7px 12px;font-size:11px}
+.pg .evi-c{padding:8px 12px}
+.pg .evi-f{padding:6px 12px;font-size:7.5px}
+.pg .c2-lista li{font-size:8.6px;padding:1px 0}
+.pg .c2-cab{padding:7px 12px}
+.pg .c2-bloque{padding:6px 12px}
+.pg .sala-chips span{font-size:7.8px;padding:2px 7px}
+.pg .op-cols .et{font-size:8px}
+.pg .op-foto img{max-height:150px}
+.pg .op-aviso{font-size:8.4px;padding:8px 12px}
+.pg .vitrina-fila{padding:5px 0}
+.pg .vitrina-foto img{width:80px;height:46px;object-fit:cover}
+.pg .sl p,.pg .sl .seg-faq p{font-size:7px;line-height:1.33}
+.pg .sl .sl-c{width:52px;height:52px}
+.pg .sl-dest{padding:10px 12px}
+.pg .sl-dest p,.pg .sl-dest .seg-faq p{font-size:7.8px;line-height:1.36}
+.pg .seg-rot{font-size:22px !important}
+.pg .t1 tbody td{padding:3px 6px;font-size:8.4px}
+.pg .t1-g td{padding:4px 6px;font-size:8px}
+.pg .t1 thead th{padding:6px 6px 5px}
 </style>
 </head>
 <body>
@@ -1973,7 +2011,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 
   /* Los mismos trece renglones de arriba, ordenados en bloques para que el cuadro se lea.
      Se apunta por posición: no se repite ni un texto ni un dato. */
-  var GRUPOS_CAP = [["Para qué sirve",[0]],["Los estímulos de la sala",[1,2,3,4,5]],["Cuerpo y movimiento",[6]],["Quién gobierna la sala",[7,8,9,10,11]],["Lo que suma cada una",[12]]];
+  var GRUPOS_CAP = [["Para qué sirve",[0]],["Los estímulos de la sala",[1,2,3,4,5,12]],["Cuerpo y movimiento",[6]],["Quién gobierna la sala",[7,8,9,10,11]]];
 
   /* Rayen, 21-sep-2026: «me gustaron las dos cosas, impleméntalas juntas»: el cuadro comparativo
      antes de las salas, y dentro de cada sala su propia ficha de lo que sí y lo que no. */
@@ -2407,10 +2445,9 @@ document.addEventListener('click',function(ev){
       c.style.marginTop = '9px';
       c.appendChild(fila); piezas.push(c);
     }
-    for (var m = grid.nextSibling; m; m = m.nextSibling){
-      if (m.nodeType !== 1) continue;
-      var suelta = caja(true); suelta.appendChild(m.cloneNode(true)); suelta.style.marginTop = '9px'; piezas.push(suelta);
-    }
+    var desp = caja(true), hayDesp = false;
+    for (var m = grid.nextSibling; m; m = m.nextSibling){ desp.appendChild(m.cloneNode(true)); hayDesp = true; }
+    if (hayDesp){ desp.style.marginTop = '9px'; piezas.push(desp); }
     return piezas;
   }
 
@@ -2430,19 +2467,19 @@ document.addEventListener('click',function(ev){
     piezas.push(primero);
     hijos.forEach(function(x){
       var g = x.classList && x.classList.contains('op-lo') ? x.querySelector('.op-grid') : null;
-      if (!g || g.children.length <= 5) { piezas.push(enCuerpo(x)); return; }
+      if (!g || g.children.length <= 6) { piezas.push(enCuerpo(x)); return; }
       var tarjetas = [].slice.call(g.children), tit = x.querySelector('.op-lo-tit');
-      for (var i = 0; i < tarjetas.length; i += 5){
+      for (var i = 0; i < tarjetas.length; i += 6){
         var lo = document.createElement('div'); lo.className = 'op-lo';
         if (i === 0 && tit) lo.appendChild(tit.cloneNode(true)); else lo.style.marginTop = '7px';
         var fila = document.createElement('div'); fila.className = 'op-grid';
-        tarjetas.slice(i, i + 5).forEach(function(t){ fila.appendChild(t.cloneNode(true)); });
+        tarjetas.slice(i, i + 6).forEach(function(t){ fila.appendChild(t.cloneNode(true)); });
         lo.appendChild(fila); piezas.push(enCuerpo(lo));
       }
     });
     /* lo que va después del cuerpo (el aviso de lo que no incluye el valor) */
     for (var n = (cuerpo || cab).nextSibling; n; n = n.nextSibling){
-      if (n.nodeType === 1) { var t = trozo(); t.appendChild(n.cloneNode(true)); piezas.push(t); }
+      if (n.nodeType === 1) { var t = trozo(); t.appendChild(n.cloneNode(true)); var jj = 'aviso' + piezas.length, prev = piezas[piezas.length - 1]; if (prev && !prev.classList.contains('op-arriba')) prev.dataset.junto = jj; t.dataset.junto = jj; piezas.push(t); }
     }
     return piezas;
   }
@@ -2455,7 +2492,7 @@ document.addEventListener('click',function(ev){
       if (el.classList.contains('intro')){ lista.push.apply(lista, partirHijos(el, 3)); return; }
       if (el.classList.contains('servicios')){ var a = partirPorGrilla(el, '.serv-grid', 3); if (a){ lista.push.apply(lista, a); return; } }
       if (el.classList.contains('obra')){ var b = partirPorGrilla(el, '.obra-grid', 4); if (b){ lista.push.apply(lista, b); return; } }
-      if (el.classList.contains('seg')){ var c = partirPorGrilla(el, '.seg-grid', 2); if (c){ lista.push.apply(lista, c); return; } }
+      if (el.classList.contains('seg')){ var c = partirPorGrilla(el, '.seg-grid', 4); if (c){ c.forEach(function(x, n){ x.dataset.junto = 'materiales'; x.classList.add('seg-trozo'); if (n === 0) x.classList.add('seg-ini'); if (n === c.length - 1) x.classList.add('seg-fin'); }); lista.push.apply(lista, c); return; } }
       if (el.id === 'salas'){
         [].forEach.call(el.children, function(s){
           if (s.classList.contains('salas-intro')){
@@ -2466,7 +2503,7 @@ document.addEventListener('click',function(ev){
               if (q && ult.children.length === 1) p.pop(); else q = null;
               /* Rayen, 23-sep: «Las opciones» y sus 4 tarjetas van juntas en la misma hoja */
               p.forEach(function(x){ x.dataset.junto = 'opciones'; });
-              if (q) p = p.concat(partirTabla(q));
+              if (q) p = p.concat(partirTabla(q).map(function(x){ x.dataset.junto = 'opciones'; return x; }));
               lista.push.apply(lista, p);
               return;
             }
@@ -2568,6 +2605,8 @@ document.addEventListener('click',function(ev){
     function sola(){ return pagina.children.length <= 2; }   /* el filo + esta pieza */
 
     piezas.forEach(function(p, i){
+      /* Rayen, 23-sep: cada opción de sala parte en una hoja nueva */
+      if (p.classList && p.classList.contains('op-arriba') && pagina.children.length > 1) nuevaHoja();
       /* un bloque que va junto: si no cabe entero en lo que queda, parte en hoja nueva */
       var j = p.dataset && p.dataset.junto;
       if (j && !(piezas[i - 1] && piezas[i - 1].dataset.junto === j) && !(pagina.children.length <= 1)){
