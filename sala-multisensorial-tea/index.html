@@ -1272,6 +1272,16 @@ details.op:not([open])::before{display:none}
 .seg-faq[open]>summary::after{content:'−'}
 /* en el papel no se toca: sin el botón de abrir y cerrar */
 .pg .seg-faq>summary::after{display:none}
+/* Rayen, 23-sep-2026: «estos botones, cuando uno va a ver las fichas o la sala, sin importar cuál sea
+   la propuesta, no los quiero en naranja; los quiero en el celeste de nuestra marca». Todos los botones
+   pasan al calipso al pasar el cursor. Las etiquetas de descuento siguen naranjas: no son botones.
+   Con «body» delante, para ganarle a las reglas que vienen más abajo (el PDF y NeuroMed). */
+body .p2:hover .p2-ir,body .comp:hover .comp-ir,body .mas:hover .mas-ir,body .tarj:hover .tver,
+body .ficha-pleg>summary:hover .ver-ficha,body .vid-btn:hover,body .subir:hover,body .puerta:hover .puerta-btn,
+body .btn-pdf:hover{background:#2FC1FF;border-color:#2FC1FF;color:#fff}
+body .comp:hover .comp-letra{color:#2FC1FF}
+body .obra-c:hover .obra-play,body .puerta:hover .puerta-play{background:#2FC1FF;border-color:#2FC1FF}
+body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:#fff}
 /* Rayen, 23-sep-2026: «las preguntas tienen que ir dentro de un bullet celeste, como el que hemos usado
    muchas otras veces»: la misma pastilla de «Ver la ficha». */
 .fx-reg{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
