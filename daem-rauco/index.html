@@ -1272,6 +1272,9 @@ details.op:not([open])::before{display:none}
 .seg-faq[open]>summary::after{content:'−'}
 /* en el papel no se toca: sin el botón de abrir y cerrar */
 .pg .seg-faq>summary::after{display:none}
+/* Rayen, 23-sep-2026: «en todas las propuestas achica el primer video» (Para empezar) */
+body .puerta{grid-template-columns:220px minmax(0,1fr)}
+@media(max-width:820px){ body .puerta{grid-template-columns:minmax(0,1fr)} body .puerta-foto{max-width:260px;width:100%} }
 /* Rayen, 23-sep-2026: «estos botones, cuando uno va a ver las fichas o la sala, sin importar cuál sea
    la propuesta, no los quiero en naranja; los quiero en el celeste de nuestra marca». Todos los botones
    pasan al calipso al pasar el cursor. Las etiquetas de descuento siguen naranjas: no son botones.
