@@ -1272,6 +1272,18 @@ details.op:not([open])::before{display:none}
 .seg-faq[open]>summary::after{content:'−'}
 /* en el papel no se toca: sin el botón de abrir y cerrar */
 .pg .seg-faq>summary::after{display:none}
+/* Rayen, 23-sep-2026: «las preguntas tienen que ir dentro de un bullet celeste, como el que hemos usado
+   muchas otras veces»: la misma pastilla de «Ver la ficha». */
+.fx-reg{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:#0A8FCC;margin:0 0 4px}
+.seg .seg-faq>summary{border:1px solid #9EDCFF;background:#fff;border-radius:999px;padding:5px 12px 5px 13px;
+  font-size:11px;transition:background .2s,color .2s,border-color .2s}
+.seg .seg-faq>summary:hover,.seg .seg-faq>summary:focus-visible,.seg .seg-faq.activo>summary{background:#2FC1FF;
+  border-color:#2FC1FF;color:#fff;text-decoration:none}
+.seg .sl-dest .seg-faq>summary{background:rgba(255,255,255,.06);border-color:rgba(127,217,255,.55)}
+.seg .sl-dest .seg-faq>summary:hover,.seg .sl-dest .seg-faq.activo>summary{background:#2FC1FF;color:var(--navy)}
+.seg .sl-dest .seg-faq+.seg-faq{margin-top:8px}
+.pg .seg .seg-faq>summary{border:none;padding:0;background:none}
 /* el círculo del destacado, con la foto del bebé */
 .seg .sl-foto{border:none;padding:0;position:relative;overflow:visible;box-shadow:0 0 0 3px #2FC1FF,0 10px 26px rgba(0,0,0,.28)}
 .seg .sl-foto img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
@@ -2162,7 +2174,8 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
         }).join('') + '</div>'
       : '';
     var precio = p.iva
-      ? '<div class="fx-precio"><span class="fx-v">' + pesos(dto(p.iva)) + '</span>' +
+      /* Rayen, 23-sep-2026: «todas las fichas deben decir valor regular» (en una sala puede haber precio especial) */
+      ? '<div class="fx-reg">Valor regular</div><div class="fx-precio"><span class="fx-v">' + pesos(dto(p.iva)) + '</span>' +
         '<span class="fx-a">' + pesos(p.iva) + '</span></div>' +
         '<div class="fx-iva">IVA incluido, con la rebaja del 10% ya aplicada</div>'
       : '<div class="fx-precio"><span class="fx-v">A consultar</span></div>';
@@ -2193,6 +2206,10 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
   }
 
   document.addEventListener('click', function(ev){
+    /* Rayen, 23-sep-2026: «Ver el detalle» no hacía nada con la ficha abierta encima */
+    var md = ev.target.closest && ev.target.closest('#fx a[href="#materiales"]');
+    if (md) { ev.preventDefault(); cierraFicha(); var sm = document.getElementById('materiales');
+      if (sm) sm.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
     var t = ev.target.closest && ev.target.closest('[data-ficha]');
     if (t) { abreFicha(t.dataset.ficha); return; }
     var m = ev.target.closest && ev.target.closest('[data-foto]');
