@@ -1770,7 +1770,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
   /* Rayen, 16-sep-2026: «es el único costo que no podemos darles; aparte de eso, ese debe ser
      el valor de la sala». Va en cada opción, no solo una vez al principio. */
   function avisoDe(s){
-    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Todos los elementos que se detallan, con el descuento ya aplicado ({productos}), más el transporte, la instalación y la capacitación en Rauco ({servicio}). No contempla los trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valores con IVA incluido, válidos por 30 días."
+    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Todos los elementos que se detallan ({productos}), más el transporte, la instalación y la capacitación en Rauco ({servicio}). No contempla los trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valores con IVA incluido, válidos por 30 días."
       .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)) + '</div>';
   }
   var numFicha = 0;                       /* la numeración corre por todo el documento */
