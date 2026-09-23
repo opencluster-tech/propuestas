@@ -1690,7 +1690,8 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     return '<button type="button" class="tarj" data-ficha="' + esc(it.n) + '">' +
       '<div class="tf">' + foto + '</div>' +
       '<h4>' + esc(it.n) + (it.cant > 1 ? ' <span style="color:#0B76C4">×' + it.cant + '</span>' : '') + '</h4>' +
-      ((it.oc || p.oc) ? '<div class="toc">' + esc(it.oc || p.oc) + '</div>' : '') +
+      /* Rayen, 22-sep-2026: «código OC fuera siempre, no lo necesitan». */
+      
       (corto(p) ? '<div class="ttx">' + esc(corto(p)) + '</div>' : '') +
       (it.con ? '<div class="tcon">' + esc(it.con) + '</div>' : '') +
       ((p.sellos && p.sellos.length) ? '<span class="tsello" title="Materiales con respaldo europeo">' +
@@ -1792,7 +1793,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
       '<div class="fx-izq"><div class="fx-foto">' + foto + '</div>' + mini + '</div>' +
       '<div class="fx-der">' +
         '<h2 class="fx-n">' + esc(p.n) + '</h2>' +
-        (p.oc ? '<div class="fx-oc">' + esc(p.oc) + '</div>' : '') +
+        
         precio +
         seccion('Qué es y para qué sirve', p.que ? '<p class="parrafo">' + esc(p.que) + '</p>' : '') +
         seccion('Qué se trabaja con él', p.trab ? chips(p.trab) : '') +
