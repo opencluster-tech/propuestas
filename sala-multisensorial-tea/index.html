@@ -1267,6 +1267,44 @@ details.op:not([open])::before{display:none}
 .seg-faq[open]>summary::after{content:'−'}
 /* en el papel no se toca: sin el botón de abrir y cerrar */
 .pg .seg-faq>summary::after{display:none}
+/* ── Materiales, opción C (23-sep-2026): un destacado y cuatro sellos ── */
+.sl-dest{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center;background:var(--navy);
+  color:#fff;border-radius:14px;padding:26px 30px;margin:0 0 20px}
+.sl-sello-g{width:140px;height:140px;padding:0 18px;box-sizing:border-box;border-radius:50%;border:2px dashed rgba(255,255,255,.55);display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center}
+.sl-sello-g svg{width:32px;height:32px;color:#7FE3C2;margin-bottom:4px}
+.sl-sello-g span{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;line-height:1.45}
+.sl-dest-tx h3{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;margin:0 0 6px;color:#fff;text-wrap:balance}
+.sl-dest-tx>p{margin:0 0 8px;font-size:13px;line-height:1.7;color:#DDE6F7}
+.sl-dest .seg-faq>summary{color:#7FE3C2}
+.sl-dest .seg-faq>p{background:rgba(255,255,255,.08);color:#DDE6F7}
+.seg-grid.sl-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.sl{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+.sl-c{width:84px;height:84px;border-radius:50%;background:#EEF7F3;border:1.5px solid #A9DCC9;display:flex;
+  align-items:center;justify-content:center;color:#0F7A5F}
+.sl-c svg{width:30px;height:30px}
+.sl h4{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--navy);margin:0}
+.sl>p{font-size:12px;line-height:1.55;margin:0;color:#3C4A44}
+.sl .seg-faq{margin-top:auto;width:100%}
+.sl .seg-faq>p{text-align:left}
+@media (max-width:820px){
+  .sl-dest{grid-template-columns:minmax(0,1fr);justify-items:start;padding:22px 20px}
+  .seg-grid.sl-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
+}
+/* en el papel: los sellos de a dos por fila, así la hoja se parte por filas */
+.pg .sl-grid{gap:12px}
+.pg .sl-grid .sl{width:calc(50% - 6px);box-sizing:border-box}
+.pg .sl .seg-faq{margin-top:0}
+.pg .sl-dest{padding:18px 20px;gap:16px}
+/* La franja del respaldo europeo, sobre las tarjetas de materiales */
+.seg-resp{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0 0 14px}
+.seg-resp-t{width:100%;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;color:#0F7A5F;margin-bottom:2px}
+.seg-chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #A9DCC9;
+  border-radius:999px;padding:5px 12px 5px 9px;font-size:11.5px;font-weight:700;color:#04342C}
+.seg-chip svg{width:15px;height:15px;color:#0F7A5F;flex:none}
+.seg-c .seg-faq+.seg-faq{margin-top:4px}
 @media print{ .seg-faq>summary::after{display:none} }
 .seg-faq>p{margin:6px 0 0;padding:9px 12px;background:#EEF7F3;border-radius:8px;
   font-size:12.3px;line-height:1.6;color:#2F4F46}
@@ -1561,7 +1599,28 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
       succionan todo lo que tienen cerca. Y cada elemento lo usa un niño después de otro. Por eso la
       materialidad no es para nosotros un dato técnico al final de la ficha: es lo primero que
       miramos al elegir un producto, y es la razón por la que trabajamos con fabricación europea.</p>
-    <div class="seg-grid"><div class="seg-c"><div class="seg-t"><span class="seg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6s5.4 5.9 5.4 9.4a5.4 5.4 0 0 1-10.8 0C6.6 9.5 12 3.6 12 3.6z"/><path d="M4.5 19.5L19.5 4.5"/></svg></span>Tejido</div><p>Impermeable a líquidos, incluidas la transpiración, la saliva, la orina y la sangre · Apto para el contacto directo con la piel · Comportamiento al fuego ensayado · Las tres propiedades verificadas en laboratorio europeo.</p></div><div class="seg-c"><div class="seg-t"><span class="seg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2l8 4.1-8 4.1-8-4.1 8-4.1z"/><path d="M4 12.1l8 4.1 8-4.1"/><path d="M4 16.6l8 4.1 8-4.1"/></svg></span>Espuma</div><p>Espuma de poliuretano con certificación europea en su clase más exigente, la de artículos para bebés · Sin metales pesados ni aditivos contra el fuego restringidos en Europa.</p></div><div class="seg-c"><div class="seg-t"><span class="seg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h8L18.5 8v12.5H6z"/><path d="M14 3.5V8h4.5"/><path d="M9 12.8h6"/><path d="M9 16.2h4"/></svg></span>Declaración del fabricante</div><p>Tratamiento antimicrobiano incorporado al tejido desde su fabricación · Sin las sustancias químicas restringidas en Europa.</p></div><div class="seg-c"><div class="seg-t"><span class="seg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 3L6.2 13.6h5L10.6 21l7.2-10.6h-5L13.4 3z"/></svg></span>Seguridad eléctrica</div><p>Marcado CE de la Unión Europea en seguridad eléctrica y compatibilidad electromagnética.</p></div><div class="seg-c seg-ancha"><div class="seg-t"><span class="seg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.2"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.2"/><path d="M12 3.5l4.3 7H7.7z"/></svg></span>Seguridad de juguetes</div><p>Tejido conforme a la norma europea de seguridad de juguetes, sin ftalatos ni metales pesados, con plastificantes aptos para el contacto con alimentos y para artículos de bebé.</p><details class="seg-faq"><summary>¿Qué son los ftalatos?</summary><p>Son sustancias que se agregan al plástico, como el PVC, para que quede blando y flexible. Algunos pueden alterar el sistema hormonal o causar alergias, y por eso Europa restringe varios de ellos en juguetes y en artículos para bebés, sobre todo en los que un niño puede llevarse a la boca. Nuestro tejido se fabrica con plastificantes sin ftalatos.</p></details></div></div>
+    <!--MAT-INI · Rayen, 23-sep-2026, eligió la opción C: «¡este, hermoso!». Un destacado para lo más
+         fuerte en niños y cuatro sellos. NeuroMed copia este bloque desde aquí (gen_propuesta.js). -->
+    <div class="sl-dest">
+      <div class="sl-sello-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.2"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.2"/><path d="M12 3.5l4.3 7H7.7z"/></svg><span>Norma europea<br>de juguetes</span></div>
+      <div class="sl-dest-tx">
+        <h3>Seguro aunque se lo lleven a la boca</h3>
+        <p>Tejido conforme a la norma europea de seguridad de juguetes, sin ftalatos ni metales pesados, con plastificantes aptos para el contacto con alimentos y para artículos de bebé.</p>
+        <details class="seg-faq"><summary>¿Qué significa?</summary><p>La norma europea de seguridad de juguetes fija cuánto de ciertos elementos, como el plomo, puede soltar un material si un niño lo chupa o lo muerde. Que el tejido la cumpla significa que queda bajo esos límites.</p></details>
+        <details class="seg-faq"><summary>¿Qué son los ftalatos?</summary><p>Son sustancias que se agregan al plástico, como el PVC, para que quede blando y flexible. Algunos pueden alterar el sistema hormonal o causar alergias, y por eso Europa restringe varios de ellos en juguetes y en artículos para bebés, sobre todo en los que un niño puede llevarse a la boca. Nuestro tejido se fabrica con plastificantes sin ftalatos.</p></details>
+      </div>
+    </div>
+    <div class="seg-grid sl-grid">
+      <div class="sl"><div class="sl-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6s5.4 5.9 5.4 9.4a5.4 5.4 0 0 1-10.8 0C6.6 9.5 12 3.6 12 3.6z"/><path d="M4.5 19.5L19.5 4.5"/></svg></div><h4>Tejido</h4><p>Impermeable a líquidos, incluidas la transpiración, la saliva, la orina y la sangre.</p>
+        <details class="seg-faq"><summary>¿Qué significa?</summary><p>Un laboratorio europeo independiente sometió el tejido a orina y sangre, y comprobó que no deja pasar líquidos: lo que cae se queda en la superficie y se retira con un paño. Otro ensayo confirmó que no contiene sustancias dañinas por encima de los límites permitidos, por eso puede estar en contacto directo con la piel. Y también se ensayó cómo se comporta frente al fuego.</p></details></div>
+      <div class="sl"><div class="sl-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2l8 4.1-8 4.1-8-4.1 8-4.1z"/><path d="M4 12.1l8 4.1 8-4.1"/><path d="M4 16.6l8 4.1 8-4.1"/></svg></div><h4>Espuma</h4><p>Espuma de poliuretano con certificación europea en su clase más exigente, la de artículos para bebés.</p>
+        <details class="seg-faq"><summary>¿Qué significa?</summary><p>La espuma del interior está certificada en la clase que se exige a los artículos para bebés, la más estricta que existe: se controla que no tenga sustancias que puedan dañar la salud, pensando en quienes se llevan todo a la boca. Además, otra certificación europea acredita que no lleva metales pesados ni los aditivos contra el fuego que Europa restringe.</p></details></div>
+      <div class="sl"><div class="sl-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h8L18.5 8v12.5H6z"/><path d="M14 3.5V8h4.5"/><path d="M9 12.8h6"/><path d="M9 16.2h4"/></svg></div><h4>Antimicrobiano</h4><p>Tratamiento antimicrobiano incorporado al tejido desde su fabricación.</p>
+        <details class="seg-faq"><summary>¿Qué significa?</summary><p>El fabricante del tejido declara que lleva, desde su fabricación, un tratamiento que frena la proliferación de bacterias, hongos y levaduras sobre el propio material. Ayuda a conservarlo en buen estado aunque lo usen muchos niños cada día, y no reemplaza la limpieza habitual. El fabricante de los equipos, por su parte, declara que no contienen las sustancias químicas que el reglamento europeo restringe.</p></details></div>
+      <div class="sl"><div class="sl-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 3L6.2 13.6h5L10.6 21l7.2-10.6h-5L13.4 3z"/></svg></div><h4>Seguridad eléctrica</h4><p>Marcado CE de la Unión Europea en seguridad eléctrica y compatibilidad electromagnética.</p>
+        <details class="seg-faq"><summary>¿Qué significa?</summary><p>El marcado CE indica que el equipo cumple las exigencias de la Unión Europea para poder venderse allí. En seguridad eléctrica, que está diseñado para proteger a las personas de descargas y recalentamientos. En compatibilidad electromagnética, que no interfiere con otros aparatos del centro ni se ve afectado por ellos. Además, cada componente del sistema, como los altavoces, el reproductor de audio o el receptor inalámbrico, trae la declaración de su propio fabricante.</p></details></div>
+    </div>
+    <!--MAT-FIN-->
     <div class="seg-limpieza">
       <span class="seg-li"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
       <span><b>La limpieza del día a día es un paño húmedo.</b> Al ser impermeable, el tejido no
