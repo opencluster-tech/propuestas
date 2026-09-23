@@ -2407,9 +2407,10 @@ document.addEventListener('click',function(ev){
       c.style.marginTop = '9px';
       c.appendChild(fila); piezas.push(c);
     }
-    var desp = caja(true), hayDesp = false;
-    for (var m = grid.nextSibling; m; m = m.nextSibling){ desp.appendChild(m.cloneNode(true)); hayDesp = true; }
-    if (hayDesp){ desp.style.marginTop = '9px'; piezas.push(desp); }
+    for (var m = grid.nextSibling; m; m = m.nextSibling){
+      if (m.nodeType !== 1) continue;
+      var suelta = caja(true); suelta.appendChild(m.cloneNode(true)); suelta.style.marginTop = '9px'; piezas.push(suelta);
+    }
     return piezas;
   }
 
@@ -2427,7 +2428,18 @@ document.addEventListener('click',function(ev){
     if (cab){ var c2 = document.createElement('div'); c2.className = cab.className; c2.innerHTML = cab.innerHTML; primero.appendChild(c2); }
     if (hijos.length){ var c3 = document.createElement('div'); c3.className = 'op-cuerpo'; c3.appendChild(hijos.shift()); primero.appendChild(c3); }
     piezas.push(primero);
-    hijos.forEach(function(x){ piezas.push(enCuerpo(x)); });
+    hijos.forEach(function(x){
+      var g = x.classList && x.classList.contains('op-lo') ? x.querySelector('.op-grid') : null;
+      if (!g || g.children.length <= 5) { piezas.push(enCuerpo(x)); return; }
+      var tarjetas = [].slice.call(g.children), tit = x.querySelector('.op-lo-tit');
+      for (var i = 0; i < tarjetas.length; i += 5){
+        var lo = document.createElement('div'); lo.className = 'op-lo';
+        if (i === 0 && tit) lo.appendChild(tit.cloneNode(true)); else lo.style.marginTop = '7px';
+        var fila = document.createElement('div'); fila.className = 'op-grid';
+        tarjetas.slice(i, i + 5).forEach(function(t){ fila.appendChild(t.cloneNode(true)); });
+        lo.appendChild(fila); piezas.push(enCuerpo(lo));
+      }
+    });
     /* lo que va después del cuerpo (el aviso de lo que no incluye el valor) */
     for (var n = (cuerpo || cab).nextSibling; n; n = n.nextSibling){
       if (n.nodeType === 1) { var t = trozo(); t.appendChild(n.cloneNode(true)); piezas.push(t); }
