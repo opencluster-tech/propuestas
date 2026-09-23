@@ -1140,7 +1140,8 @@ details.op:not([open])::before{display:none}
   .banner{break-after:avoid}
   .alto{break-inside:avoid}
   .seccion{break-inside:avoid}
-  .portada{break-after:page}
+  /* Rayen, 22-sep: no es portada, es el encabezado; el contenido sigue en la misma hoja. */
+  .portada{break-after:auto}
 }
 /* ── Tableta ─────────────────────────────────────────── */
 @media(max-width:820px){
@@ -1983,12 +1984,24 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     }
     nuevaHoja();
 
-    piezas.forEach(function(p){
-      /* la portada manda: va sola en la primera hoja */
-      if (p.classList && p.classList.contains('portada')){
+    /* Un bloque que es solo título (rótulo + h2) no se queda solo al pie de la
+       hoja: si lo que viene después no cabe con él, se van juntos a la siguiente. */
+    function esTitulo(p){
+      return p.querySelector && p.querySelector('h2') && !p.dataset.fila &&
+        !p.querySelector('.preg,.op-grid,.serv-grid,.obra-grid,.seg-grid,img,video');
+    }
+
+    /* Rayen, 22-sep: lo de arriba no es una portada, es el encabezado. Ya no va
+       solo en la primera hoja: el contenido sigue debajo. */
+    piezas.forEach(function(p, i){
+      if (esTitulo(p) && piezas[i + 1] && usado > 40){
         pagina.appendChild(p);
-        usado = ALTO_UTIL;
-        return;
+        var sig = piezas[i + 1];
+        pagina.appendChild(sig);
+        var juntos = p.offsetHeight + sig.offsetHeight + (parseFloat(getComputedStyle(p).marginTop) || 0);
+        pagina.removeChild(sig);
+        pagina.removeChild(p);
+        if (usado + juntos > ALTO_UTIL) nuevaHoja();
       }
       pagina.appendChild(p);
       var h = p.offsetHeight + (parseFloat(getComputedStyle(p).marginTop) || 0);
@@ -2005,7 +2018,22 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     /* La firma se queda en la última hoja, pegada abajo. */
     var ultima = cont.lastChild;
     if (ultima) ultima.classList.add('pg-final');
+    /* Las fotos venían con loading="lazy": en las hojas nadie hace scroll hasta
+       ellas, así que nunca cargaban y el PDF salía con los recuadros vacíos. */
+    [].forEach.call(cont.querySelectorAll('img'), function(im){ im.loading = 'eager'; });
     return cont;
+  }
+
+  /* Espera a que todas las fotos de las hojas estén cargadas (máx. 10 s). */
+  function fotosListas(cont){
+    var imgs = [].slice.call(cont.querySelectorAll('img'));
+    return Promise.race([
+      Promise.all(imgs.map(function(im){
+        if (im.complete && im.naturalWidth) return Promise.resolve();
+        return new Promise(function(ok){ im.addEventListener('load', ok); im.addEventListener('error', ok); });
+      })),
+      new Promise(function(ok){ setTimeout(ok, 10000); })
+    ]);
   }
 
   var bp = document.getElementById('btnPdf');
@@ -2016,8 +2044,8 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     if (l) { l.hidden = true; document.getElementById('lbCuerpo').innerHTML = ''; }
     document.body.style.overflow = '';
     document.body.classList.add('imprimiendo');
-    paginar();
-    window.print();
+    bp.disabled = true;
+    fotosListas(paginar()).then(function(){ bp.disabled = false; window.print(); });
   });
   window.addEventListener('afterprint', function(){
     document.body.classList.remove('imprimiendo');
