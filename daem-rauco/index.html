@@ -1051,11 +1051,6 @@ details.op:not([open])::before{display:none}
 .sala-chips{display:flex;flex-wrap:wrap;gap:5px}
 .sala-chips span{border:1px solid #CBE4F7;background:#F4F9FF;color:var(--navy);border-radius:999px;padding:3px 10px;font-size:11px;font-weight:600;line-height:1.5}
 .sala-chips.perfil span{border-color:#E5E9F0;background:#fff;color:#334155;font-weight:400}
-/* Rayen, 23-sep-2026: «tampoco tienes bullets aquí». El mismo punto de las fichas: celeste en lo que
-   trabaja la sala, naranja en a quién ayuda (como «Indicado para»). */
-.sala-chips span{display:inline-flex;align-items:center;gap:7px;padding:4px 12px 4px 10px}
-.sala-chips span::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sky);flex:none}
-.sala-chips.perfil span::before{background:var(--naranja)}
 .op-nota{font-size:11.5px;color:var(--suave);font-style:italic;margin-top:14px}
 
 /* El combo: las fotos de todo lo que entra en la sala, como las opciones A/B/C
@@ -1272,6 +1267,15 @@ details.op:not([open])::before{display:none}
 .seg-faq[open]>summary::after{content:'−'}
 /* en el papel no se toca: sin el botón de abrir y cerrar */
 .pg .seg-faq>summary::after{display:none}
+/* Rayen, 23-sep-2026: «para mí el bullet no es el punto delante de toda una frase: es la pastilla en la
+   que se envuelve un título, un subtítulo; el texto está demasiado plano». Los títulos de las fichas y
+   de la descripción de cada sala van en pastilla calipso con letra blanca. */
+body .fx-der .seccion .heading,body .op-cols .et{display:inline-flex;align-items:center;gap:0;
+  background:#2FC1FF;color:#fff;border-radius:999px;padding:5px 13px;line-height:1.2;
+  font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+body .fx-der .seccion .heading::before,body .fx-der .seccion.sec-clave .heading::before{display:none}
+body .fx-der .seccion.sec-clave .heading{color:#fff}
+body .op-cols .et{margin-bottom:8px}
 /* Rayen, 23-sep-2026: «en todas las propuestas achica el primer video» (Para empezar) */
 body .puerta{grid-template-columns:220px minmax(0,1fr)}
 @media(max-width:820px){ body .puerta{grid-template-columns:minmax(0,1fr)} body .puerta-foto{max-width:260px;width:100%} }
@@ -1526,6 +1530,19 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 </style>
 
 <style>
+/* Valor regular · descuento · valor final (Rayen, 23-sep-2026) */
+.p2-fila-reg{margin-bottom:3px}
+.p2-reg{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:var(--suave);font-variant-numeric:tabular-nums}
+.p2-dto{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--naranja);font-variant-numeric:tabular-nums}
+.p2-fila-fin{margin-top:7px;padding-top:7px;border-top:1px dashed #D3DEEE}
+.op-valor .op-regular{font-size:11.5px;opacity:.9;font-variant-numeric:tabular-nums;white-space:nowrap}
+.op-valor .op-regular b{font-weight:700}
+.op-valor .op-regular .op-dto{color:#FFB266}
+.op-valor .op-sep{margin:0 7px;opacity:.6}
+.pg .p2-reg,.pg .p2-dto{font-size:9.5px}
+.pg .op-valor .op-regular{font-size:9.5px}
+</style>
+<style>
 /* La imagen de arriba de cada opción */
 .p2-portada{display:block;height:150px;overflow:hidden;background:#EEF2F8}
 .p2-portada img{display:block;width:100%;height:100%;object-fit:cover}
@@ -1533,12 +1550,13 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 @media (max-width:560px){.p2-portada{height:130px}}
 </style>
 <style>
-/* 2 opciones, lado a lado */
-.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* 3 opciones, lado a lado */
+@media (min-width:821px){.g2{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.g2{grid-template-columns:1fr}}
 </style>
 <style>
-/* En papel: 2 opciones por fila, y las tarjetas de producto compactas */
-.pg .g2 .p2{width:calc(50.000% - 7px)}
+/* En papel: 3 opciones por fila, y las tarjetas de producto compactas */
+.pg .g2 .p2{width:calc(33.333% - 7px)}
 .pg .op-lo{margin-top:10px}
 .pg .op-lo-tit{font-size:12px;margin-bottom:6px}
 .pg .op-grid{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch}
@@ -1577,7 +1595,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
   </div>
   <div class="portada-pie">
       <span class="estilo">Preparado para el DAEM de Rauco</span>
-    <p class="bajada">Dos opciones de sala para la Escuela Luis Leyton y la Escuela Los Almendros, con su valor cerrado, el detalle de cada elemento que las compone y la forma en que trabajamos un proyecto de principio a fin.</p>
+    <p class="bajada">Tres opciones de sala para la Escuela Luis Leyton y la Escuela Los Almendros, con su valor cerrado, el detalle de cada elemento que las compone y la forma en que trabajamos un proyecto de principio a fin.</p>
     <div class="meta">
       <div><b>Para</b><span>Jorge Ibarra · Pablo Díaz</span></div>
       <div><b>Fecha</b><span id="mFecha">—</span></div>
@@ -1594,8 +1612,8 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     </div>
     <h2>Un proyecto que hemos construido juntos</h2>
     <p>Jorge y Pablo, gracias por todo este tiempo de trabajo compartido. Desde que Hernán visitó la Escuela Luis Leyton, y luego la Escuela Los Almendros, hemos ido afinando con ustedes qué espacio necesita cada comunidad escolar y cómo hacerlo posible con los recursos del DAEM.</p>
-    <p>Con el presupuesto de <b>$20.000.000</b> que nos indicaron, armamos dos opciones de sala con su valor cerrado. Cada una cuesta exactamente ese monto e incluye el transporte, la instalación y la capacitación del equipo. La distribución de cada sala la definimos en la visita técnica a la escuela donde se vaya a implementar.</p>
-    <p class="intro-dto">Para que cada sala calce exactamente con su presupuesto, aplicamos un descuento directo sobre uno de los productos de cada opción. Lo van a ver marcado en su tarjeta, con el valor de lista tachado.</p>
+    <p>Con el presupuesto de <b>$20.000.000</b> que nos indicaron, armamos tres opciones de sala con su valor cerrado. Cada una cuesta exactamente ese monto e incluye el transporte, la instalación y la capacitación del equipo. La distribución de cada sala la definimos en la visita técnica a la escuela donde se vaya a implementar.</p>
+    <p class="intro-dto">Para que cada sala calce exactamente con su presupuesto, a cada opción le aplicamos un descuento sobre su valor regular. Lo van a ver en el valor de cada opción: el valor regular, el descuento y el valor final.</p>
     <div class="puerta">
       <button type="button" class="puerta-foto"
         data-lb-src="https://www.instagram.com/p/DbwQFPURW0-/embed/" data-lb-fmt="ig"
@@ -1866,7 +1884,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
   /* Rayen, 16-sep-2026: «es el único costo que no podemos darles; aparte de eso, ese debe ser
      el valor de la sala». Va en cada opción, no solo una vez al principio. */
   function avisoDe(s){
-    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Todos los elementos que se detallan ({productos}), más el transporte, la instalación y la capacitación en Rauco ({servicio}). No contempla los trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valores con IVA incluido, válidos por 30 días."
+    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Todos los elementos que se detallan, más el transporte, la instalación y la capacitación en Rauco ({servicio}). No contempla los trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valores con IVA incluido, válidos por 30 días."
       .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)) + '</div>';
   }
   var numFicha = 0;                       /* la numeración corre por todo el documento */
@@ -1904,9 +1922,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
       /* Rayen, 22-sep-2026: «código OC fuera siempre, no lo necesitan». */
       
       '<div class="tpre">' + (valor
-        ? (it.dto
-            ? '<span class="antes">' + pesos(lineaDe(it)) + '</span>' + pesos(lineaDe(it) - it.dto)
-            : pesos(lineaDe(it)))
+        ? pesos(lineaDe(it))
         : 'A consultar') + '</div>' +
       (corto(p) ? '<div class="ttx">' + esc(corto(p)) + '</div>' : '') +
       (it.con ? '<div class="tcon">' + esc(it.con) + '</div>' : '') +
@@ -1936,11 +1952,11 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
     '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg>';
 
-  var CAPACIDADES = [["Bajar la activación y volver a la calma",1,1],["Vibración de la música en el cuerpo",1,1],["Luz y color que cambian",1,1],["Luz ultravioleta y material que brilla",1,0],["Estimulación táctil con texturas",1,1],["Trabajo frente al espejo",1,1],["Causa-efecto con un pulsador",1,0],["Imagen y video proyectados en la pared",0,1],["Toda la sala gobernada desde una tableta",0,1],["Encenderla acercando un objeto o una tarjeta",0,1]];
+  var CAPACIDADES = [["Bajar la activación y volver a la calma",1,1,1],["Vibración de la música en el cuerpo",1,1,1],["Luz y color que cambian",1,1,1],["Luz ultravioleta y material que brilla",1,1,0],["Estrellas de luz en el techo",0,0,1],["Estimulación táctil con texturas",1,0,1],["Trabajo frente al espejo",1,1,1],["Causa-efecto con un pulsador",1,0,1],["Cambiar la luz lanzando un dado",0,0,1],["Toda la sala gobernada desde una tableta",0,1,1],["Encenderla acercando un objeto o una tarjeta",0,1,0],["Imagen y video proyectados en la pared",0,1,1]];
 
   /* Los mismos trece renglones de arriba, ordenados en bloques para que el cuadro se lea.
      Se apunta por posición: no se repite ni un texto ni un dato. */
-  var GRUPOS_CAP = [["Para qué sirve",[0]],["Los estímulos de la sala",[1,2,3,4]],["Cuerpo y movimiento",[5]],["Quién gobierna la sala",[6,8,9]],["Lo que suma cada una",[7]]];
+  var GRUPOS_CAP = [["Para qué sirve",[0]],["Los estímulos de la sala",[1,2,3,4,5]],["Cuerpo y movimiento",[6]],["Quién gobierna la sala",[7,8,9,10]],["Lo que suma cada una",[11]]];
 
   /* Rayen, 21-sep-2026: «me gustaron las dos cosas, impleméntalas juntas»: el cuadro comparativo
      antes de las salas, y dentro de cada sala su propia ficha de lo que sí y lo que no. */
@@ -1964,9 +1980,9 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
   if(SALAS.length){
     /* 1 · Las cuatro opciones juntas, para decidir de una mirada */
     var hs = '<div class="salas-intro">' +
-      '<div class="rot" id="opciones">Dos formas de armar el espacio</div>' +
+      '<div class="rot" id="opciones">Tres formas de armar el espacio</div>' +
       '<h2>Las opciones</h2>' +
-      '<p>Las dos tienen un valor cerrado de <b>$20.000.000 con IVA</b>, con el transporte, la instalación y la capacitación incluidos y con el descuento ya aplicado. Más abajo va el detalle de cada una, producto por producto.</p>' +
+      '<p>Las tres tienen un valor cerrado de <b>$20.000.000 con IVA</b>, con el transporte, la instalación y la capacitación incluidos y con el descuento ya aplicado. Más abajo va el detalle de cada una, producto por producto.</p>' +
       /* Rayen, 16-sep-2026: «quiero que sean clickeables, para ir directo a la opción que busco» */
       '<div class="g2">' + SALAS.map(function(s, k){
         return '<a class="p2' + (k === SALAS.length - 1 ? ' p2-des' : '') + '" href="#opcion-' + LETRA[k] + '">' +
@@ -1978,10 +1994,13 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
             '<span class="p2-prod">' + IC_CAJA + '<span>' + s.items.length + ' productos</span></span>' +
           '</span>' +
           '<span class="p2-banda">' +
-            '<span class="p2-fila"><span class="p2-lab">Valor con IVA</span>' +
+            '<span class="p2-fila p2-fila-reg"><span class="p2-lab">Valor regular</span>' +
+              '<span class="p2-reg">' + pesos(s.total) + '</span></span>' +
+            '<span class="p2-fila p2-fila-reg"><span class="p2-lab">Descuento</span>' +
+              '<span class="p2-dto">−' + pesos(s.total - totalConDto(s)) + '</span></span>' +
+            '<span class="p2-fila p2-fila-fin"><span class="p2-lab">Valor final con IVA</span>' +
               '<span class="p2-badge">Precio especial</span></span>' +
             '<span class="p2-v">' + pesos(totalConDto(s)) + '</span>' +
-            '<span class="p2-antes"><s>' + pesos(s.total) + '</s></span>' +
             '<span class="p2-ir">Ver esta sala' + IC_FLECHA + '</span>' +
           '</span>' +
         '</a>';
@@ -2035,10 +2054,10 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
             '<div class="op-meta"><span>' + s.items.length + ' productos</span></div></div>' +
 
           '<div class="op-valor">' +
-            '<span class="op-rot">Valor con IVA incluido</span>' +
-            '<span class="op-num">' + pesos(totalConDto(s)) + '</span>' +
-            '<span class="op-linea"><s class="op-antes">' + pesos(s.total) + '</s>' +
-            '<span class="op-badge">Descuento aplicado</span></span></div>' +
+            '<span class="op-regular">Valor regular <b>' + pesos(s.total) + '</b>' +
+              '<span class="op-sep">·</span>Descuento <b class="op-dto">−' + pesos(s.total - totalConDto(s)) + '</b></span>' +
+            '<span class="op-rot">Valor final con IVA incluido</span>' +
+            '<span class="op-num">' + pesos(totalConDto(s)) + '</span></div>' +
           '<span class="op-plegar"><span class="op-plegar-t">Expandir</span>' +
             '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" ' +
             'stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>' +
