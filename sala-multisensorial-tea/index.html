@@ -1448,6 +1448,14 @@ body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:
   .tarj .tf img{max-height:64px}
 }
 :root{color-scheme:only light}
+/* 23-sep-2026: en el celular la firma se apretaba y los contactos se montaban sobre el nombre */
+@media screen and (max-width:640px){
+  body .firma{padding-left:0;padding-right:0}
+  body .exec-card{flex-wrap:wrap;align-items:center;row-gap:12px;padding:16px}
+  body .exec-info{flex:1 1 0;min-width:0}
+  body .exec-contacts{flex:1 1 100%;align-items:flex-start;padding-top:10px;border-top:1px solid rgba(255,255,255,.15)}
+  body .exec-contact{word-break:break-word}
+}
 </style>
 
 <style>
