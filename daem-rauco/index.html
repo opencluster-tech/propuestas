@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="only light">
+<meta name="color-scheme" content="light dark">
 <title>Salas Multisensoriales · DAEM Rauco</title>
 <link rel="icon" href="isotipo-oct.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1447,7 +1447,7 @@ body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:
   .tarj .tf{height:74px;padding:4px;margin-bottom:5px}
   .tarj .tf img{max-height:64px}
 }
-:root{color-scheme:only light}
+:root{color-scheme:light dark}
 /* 23-sep-2026: en el celular la firma se apretaba y los contactos se montaban sobre el nombre */
 @media screen and (max-width:640px){
   body .firma{padding-left:0;padding-right:0}
@@ -2755,5 +2755,84 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 <!--POP-FIN-->
+<!-- TEMA-OSCURO-INI · 23-sep-2026: si el celular está en modo oscuro, la propuesta se muestra en NUESTRA
+     versión oscura (azul marino, textos claros, calipso) en vez de que el navegador la oscurezca a su manera
+     (Rayen lo vio así en su celular: fondo negro y el logo negro). En el PDF siempre sale clara. -->
+<style>
+/* Rayen, 23-sep-2026: «agranda nuestro logo en la portada, está muy pequeño» */
+body .portada img.logo{height:124px;margin-bottom:18px}
+@media(max-width:560px){body .portada img.logo{height:104px;margin-bottom:14px}}
+body .pg .portada img.logo{height:112px;margin-bottom:14px}
+@media screen and (prefers-color-scheme: dark){
+  html.tema-oscuro, html.tema-oscuro body{background:#0A1430 !important;color:#DCE4F2}
+}
+</style>
+<script>
+(function(){
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var guardado = [];
+  function rgb(s){ var m = /rgba?\(([^)]+)\)/.exec(s || ''); if(!m) return null; var p = m[1].split(/[ ,/]+/).map(parseFloat); return {r:p[0], g:p[1], b:p[2], a:(p.length > 3 && !isNaN(p[3])) ? p[3] : 1}; }
+  function luz(c){ return (0.2126*c.r + 0.7152*c.g + 0.0722*c.b) / 255; }
+  function sat(c){ var mx = Math.max(c.r,c.g,c.b), mn = Math.min(c.r,c.g,c.b); return mx ? (mx - mn) / mx : 0; }
+  /* fondos claros → azules marinos; mientras más blanco, más oscuro */
+  function fondo(c){
+    var l = luz(c);
+    if (l > 0.97) return 'rgba(17,30,66,' + c.a + ')';          /* blanco: tarjeta */
+    if (l > 0.90) return 'rgba(21,36,78,' + c.a + ')';          /* casi blanco: recuadro */
+    return 'rgba(28,46,96,' + c.a + ')';                        /* celeste pálido */
+  }
+  function texto(c){
+    var l = luz(c), s = sat(c);
+    if (l < 0.18 && c.b > c.r + 20) return '#FFFFFF';           /* azul marino de títulos */
+    if (l < 0.45 && s < 0.35) return l < 0.25 ? '#E8EEF8' : '#B9C5D9';  /* grises de texto */
+    if (l < 0.45) return '#7FD9FF';                             /* azules oscuros: calipso claro */
+    return null;
+  }
+  function poner(el, prop, val){ guardado.push([el, prop, el.style.getPropertyValue(prop), el.style.getPropertyPriority(prop)]); el.style.setProperty(prop, val, 'important'); }
+  function aplicar(){
+    if (document.documentElement.classList.contains('tema-oscuro')) return;
+    if (document.body.classList.contains('imprimiendo')) return;
+    document.documentElement.classList.add('tema-oscuro');
+    var todos = document.body.getElementsByTagName('*');
+    for (var i = 0; i < todos.length; i++){
+      var el = todos[i], t = el.tagName;
+      if (t === 'IMG' || t === 'VIDEO' || t === 'IFRAME' || t === 'SCRIPT' || t === 'STYLE' || t === 'svg' || el.closest('svg')) continue;
+      if (el.closest('#impresion')) continue;
+      var cs = getComputedStyle(el);
+      var bi = cs.backgroundImage;
+      if (bi && bi.indexOf('gradient') > -1 && bi.indexOf('url(') < 0){
+        var cols = bi.match(/rgba?\([^)]+\)/g) || [];
+        if (cols.length && cols.every(function(x){ var c = rgb(x); return c && (luz(c) > 0.85 || c.a < 0.05); })) poner(el, 'background-image', 'none');
+      }
+      var bg = rgb(cs.backgroundColor);
+      if (bg && bg.a > 0.05 && luz(bg) > 0.82) poner(el, 'background-color', fondo(bg));
+      var co = rgb(cs.color);
+      if (co){ var n = texto(co); if (n) poner(el, 'color', n); }
+      ['borderTopColor','borderBottomColor','borderLeftColor','borderRightColor'].forEach(function(k){
+        var b = rgb(cs[k]); if (b && b.a > 0.05 && luz(b) > 0.78 && cs[k.replace('Color','Width')] !== '0px')
+          poner(el, k.replace(/[A-Z]/g, function(m){ return '-' + m.toLowerCase(); }), 'rgba(127,217,255,.18)');
+      });
+    }
+  }
+  function quitar(){
+    guardado.reverse().forEach(function(g){ if (g[2]) g[0].style.setProperty(g[1], g[2], g[3]); else g[0].style.removeProperty(g[1]); });
+    guardado = [];
+    document.documentElement.classList.remove('tema-oscuro');
+  }
+  function revisar(){ if (mq && mq.matches) aplicar(); else if (document.documentElement.classList.contains('tema-oscuro')) quitar(); }
+  window.__temaOscuro = {aplicar: aplicar, quitar: quitar, revisar: revisar};
+  /* las fichas y ventanas que se arman después también se oscurecen */
+  var tMo = null;
+  if (window.MutationObserver) new MutationObserver(function(){
+    if (!document.documentElement.classList.contains('tema-oscuro')) return;
+    clearTimeout(tMo); tMo = setTimeout(function(){ quitar(); aplicar(); }, 60);
+  }).observe(document.body, {childList: true, subtree: true});
+  window.addEventListener('beforeprint', quitar);
+  window.addEventListener('afterprint', function(){ setTimeout(revisar, 300); });
+  if (mq){ if (mq.addEventListener) mq.addEventListener('change', revisar); else if (mq.addListener) mq.addListener(revisar); }
+  if (document.readyState === 'complete') setTimeout(revisar, 50); else window.addEventListener('load', function(){ setTimeout(revisar, 50); });
+})();
+</script>
+<!-- TEMA-OSCURO-FIN -->
 </body>
 </html>
