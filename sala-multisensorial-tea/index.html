@@ -1901,17 +1901,16 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     var pvc = /transpiraci|contacto directo/i.test(s);
     var tapiz = pvc || /antimicrob|antibacter|antimic|abrasi|ign[ií]fug/i.test(s);
     var espuma = /beb[eé]s/i.test(s);
-    var lab = /laboratorio/i.test(s) ? ' Ambas propiedades verificadas en laboratorio europeo.' : '';
     if (tapiz || espuma) L.push(['Materiales', [tapiz ? (pvc ? 'Tejido de PVC' : 'Tapizado en tejido técnico') : '', espuma ? 'espuma de poliuretano' : (/cama de agua/i.test(p.n || '') ? 'colchón de agua' : '')].filter(Boolean).join(' y ').replace(/^./, function(c){ return c.toUpperCase(); }) + '.']);
-    if (/transpiraci/i.test(s)) L.push(['Tejido impermeable', 'No lo traspasan los líquidos, incluidas la transpiración, la saliva, la orina y la sangre.' + (/contacto directo/i.test(s) ? '' : lab)]);
-    if (/contacto directo con la piel/i.test(s)) L.push(['Apto para el contacto directo con la piel', 'El tejido no tiene sustancias dañinas por encima de los límites permitidos.' + (/transpiraci/i.test(s) ? lab : lab.replace('Ambas propiedades verificadas', 'Verificado'))]);
-    if (/antimicrob|antibacter|antimic/i.test(s)) L.push(['Tratamiento antimicrobiano', 'Viene incorporado al tejido desde su fabricación y frena el crecimiento de bacterias' + (/antimic[oó]tico|hongos/i.test(s) ? ' y hongos' : '') + ' sobre el material, según declara su fabricante. No reemplaza la limpieza habitual.']);
-    if (espuma) L.push(['Espuma con certificación de artículos para bebés', 'Tiene la certificación europea en su clase más exigente, la de los artículos para bebés' + (/metales pesados/i.test(s) ? ', sin metales pesados' + (/aditivos contra el fuego/i.test(s) ? ' ni aditivos contra el fuego restringidos en Europa' : '') : '') + '.']);
-    if (/71-3/.test(s)) L.push(['Norma europea de seguridad de juguetes', 'El material no suelta plomo ni otros metales por encima de lo permitido, aunque un niño se lo lleve a la boca.']);
-    if (/ign[ií]fug/i.test(s)) L.push(['Material ignífugo', 'Le cuesta encenderse y no propaga fácilmente la llama, según declara el fabricante.']);
-    if (/abrasi/i.test(s)) L.push(['Resistente al roce', 'Tejido de alta resistencia al desgaste por el uso, según el fabricante.']);
-    if (/REACH|sustancias qu/i.test(s)) L.push(['Sin químicos restringidos', 'El fabricante declara que no usa las sustancias químicas que Europa prohíbe o limita.']);
-    if (/Marcado CE/i.test(s)) L.push(['Marcado CE', 'Cumple las reglas europeas de seguridad eléctrica y no interfiere con otros aparatos electrónicos.']);
+    if (/contacto directo con la piel/i.test(s)) L.push(['Tapizado seguro al contacto, analizado en un laboratorio europeo', 'Es seguro frente a las sustancias químicas que más preocupan en productos infantiles: los colorantes que pueden liberar compuestos dañinos, el formaldehído, metales como el plomo y el cadmio, y los ftalatos, que se agregan para ablandar el plástico. En los residuos derivados del petróleo cumple incluso el requisito más estricto que existe: el de los artículos para bebés.']);
+    if (/transpiraci/i.test(s)) L.push(['Tapizado impermeable', 'No deja pasar la orina ni la sangre: lo que cae queda sobre la superficie y se limpia con un paño, sin empapar el relleno. Comprobado en un laboratorio europeo.']);
+    if (/antimicrob|antibacter|antimic/i.test(s)) L.push(['Protección antimicrobiana desde fábrica', 'El tejido viene tratado desde su fabricación para protegerse frente a bacterias, hongos y levaduras, lo que ayuda a conservarlo en buen estado aunque lo usen muchos niños cada día. No reemplaza la limpieza habitual.']);
+    if (espuma) L.push(['Relleno con el sello de salud más estricto', 'La espuma del interior tiene un sello europeo que certifica que es segura para la salud, en su categoría más exigente: la de los artículos para bebés.' + (/metales pesados/i.test(s) ? ' Además, se fabrica sin metales pesados y sin los químicos contra el fuego que Europa considera dañinos.' : '')]);
+    if (/71-3/.test(s)) L.push(['Norma europea de seguridad de juguetes', 'La misma que se exige a los objetos que un niño puede llevarse a la boca. Sus plastificantes no tienen ftalatos, no contiene metales pesados y es apto para artículos de bebé.']);
+    if (/ign[ií]fug/i.test(s)) L.push(['Resiste el fuego', 'Le cuesta encenderse y no propaga la llama, según declara su fabricante.']);
+    if (/abrasi/i.test(s)) L.push(['Resistente al roce', 'Tejido de alta resistencia al desgaste por el uso diario, según su fabricante.']);
+    if (/REACH|sustancias qu/i.test(s)) L.push(['Cumple las reglas europeas de sustancias químicas', 'Su fabricante declara que está hecho sin las sustancias que Europa prohíbe o limita.']);
+    if (/Marcado CE/i.test(s)) L.push(['Seguridad eléctrica europea', 'Lleva el marcado CE: cumple las reglas de seguridad eléctrica de Europa y convive sin interferencias con los demás aparatos electrónicos.']);
     if (/^Foco de luz UV LED( SHX)?$/.test(p.n || '')) L.push(['Luz ultravioleta segura', 'Su fabricante alemán declara la seguridad de la luz para la vista y la piel, y de exposición a campos electromagnéticos, según norma europea.']);
     return L;
   }
