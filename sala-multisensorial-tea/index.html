@@ -1268,6 +1268,26 @@ details.op:not([open])::before{display:none}
 .seg-faq[open]>summary::after{content:'−'}
 /* en el papel no se toca: sin el botón de abrir y cerrar */
 .pg .seg-faq>summary::after{display:none}
+:root{color-scheme:light dark}
+/* El apartado «Certificaciones» de cada ficha (23-sep-2026) */
+.cert-lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.cert-lista li{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;line-height:1.55;color:#334155}
+.cert-lista li svg{width:17px;height:17px;color:#B8860B;flex:none;margin-top:1px}
+/* Rayen, 23-sep-2026: «destácalo en gold lo de certificaciones» */
+body .fx-der .seccion.sec-cert{margin-top:18px;padding:13px 14px;border:1.5px solid #D4A017;border-radius:12px;
+  background:#FFF8E6;-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid}
+body .fx-der .seccion.sec-cert .heading{background:#D4A017;color:#0B1F3A}
+body .fx-der .seccion.sec-cert .cert-lista li{color:#334155}
+body .fx-der .seccion.sec-cert .cert-lista li b{color:#0B1F3A}
+body .fx-der .seccion.sec-cert .cert-mas{color:#8A6508}
+
+.cert-lista li b{color:var(--navy)}
+.cert-mas{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#0A8FCC}
+/* «Los acompañamos siempre», debajo de los seis pasos */
+.serv-acomp{display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 16px;border-radius:12px;
+  background:#EAF8FF;border:1.5px solid #2FC1FF;font-size:13px;line-height:1.55;color:#1F2937}
+.serv-acomp svg{width:22px;height:22px;color:#2FC1FF;flex:none}
+.serv-acomp b{color:var(--navy)}
 /* Rayen, 23-sep-2026: «todos los videos que se abren quedan flotando en pantalla» y con un botón
    visible para cerrarlos. */
 .lb-pie{display:flex;justify-content:center;padding:12px 0 2px}
@@ -1447,7 +1467,6 @@ body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:
   .tarj .tf{height:74px;padding:4px;margin-bottom:5px}
   .tarj .tf img{max-height:64px}
 }
-:root{color-scheme:light dark}
 /* 23-sep-2026: en el celular la firma se apretaba y los contactos se montaban sobre el nombre */
 @media screen and (max-width:640px){
   body .firma{padding-left:0;padding-right:0}
@@ -1720,6 +1739,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     <p class="serv-baja">Nuestro trabajo parte antes de elegir el primer elemento y sigue después de
       instalarlo.</p>
     <div class="serv-grid"><div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M21 21l-5.6-5.6"/><path d="M8 10.5h5"/><path d="M10.5 8v5"/></svg></div><h3>Evaluamos la necesidad</h3><p>Hacemos disponibles a nuestros terapeutas para evaluar las necesidades de la comunidad que va a utilizar la sala.</p></div><div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/><path d="M4 20l1.2-4"/></svg></div><h3>Diseñamos el proyecto</h3><p>Diseñamos el espacio y el proyecto de sala adecuado a esas necesidades, y presentamos los productos y elementos que responden a la necesidad principal, para que realmente la sala cumpla un objetivo terapéutico. El diseño no tiene costo.</p></div><div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="11" height="5" rx="1.3"/><path d="M14 6.5h3.6a2 2 0 0 1 2 2v2.2a2 2 0 0 1-2 2H12"/><rect x="9.8" y="14.5" width="4.4" height="5.5" rx="1.2"/></svg></div><h3>Adecuamos el lugar</h3><p>Cuando es necesario hacemos los trabajos de preinstalación, para que el espacio físico sea exactamente lo que se necesita para implementar la sala. Como cada lugar llega en una condición distinta, ese trabajo se valoriza aparte y se suma como un ítem adicional en la cotización: lo ejecutamos nosotros, pero no está incluido en el valor de la sala.</p></div><div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg></div><h3>Instalamos</h3><p>Nos encargamos de la instalación y de la implementación del espacio, en todo el país. Tenemos stock propio, así que la entrega no queda esperando una importación.</p></div><div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20a5.8 5.8 0 0 1 11.6 0"/><path d="M16.2 5.4a3.2 3.2 0 0 1 0 5.2"/><path d="M18 20a5.6 5.6 0 0 0-2.7-4.8"/></svg></div><h3>Capacitamos</h3><p>Realizamos capacitaciones a todos aquellos que vayan a estar en contacto directo con el uso de la sala y de sus elementos.</p></div><div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5h9L19 8v12.5H5.5z"/><path d="M14.5 3.5V8H19"/><path d="M8.8 14.2l2 2 4-4"/></svg></div><h3>Protocolo de cuidado</h3><p>Presentamos un protocolo de cuidado y mantención, para evitar daños y para que los productos y elementos tengan una vida útil mayor.</p></div></div>
+    <div class="serv-acomp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg><span><b>Los acompañamos siempre</b>, ya sea que tengan alguna duda en el uso de los productos o que quieran mejorar la sala.</span></div>
     <div class="serv-pie">Las salas son escalables: se puede partir con un espacio e ir
       agregando elementos poco a poco.</div>
   </div>
@@ -1862,29 +1882,34 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
   }
   function seccion(titulo, cuerpo){ return cuerpo ? '<div class="seccion"><div class="heading">'+titulo+'</div>'+cuerpo+'</div>' : ''; }
 
-  /* Los materiales: primero los sellos, que es lo que se lee de un vistazo, y debajo el
-     detalle con el texto que Rayen aprobó. */
+  /* Rayen, 23-sep-2026: el apartado «Certificaciones» de cada ficha, en palabras simples. Cada línea
+     sale de los sellos del producto (lo que acredita un papel o declara su fabricante). */
+  function certificacionesDe(p){
+    var s = (p.sellos || []).join(' | '), L = [];
+    var pvc = /transpiraci|contacto directo/i.test(s);
+    var tapiz = pvc || /antimicrob|antibacter|antimic|abrasi|ign[ií]fug/i.test(s);
+    var espuma = /beb[eé]s/i.test(s);
+    var lab = /laboratorio/i.test(s) ? ' Ambas propiedades verificadas en laboratorio europeo.' : '';
+    if (tapiz || espuma) L.push(['Materiales', [tapiz ? (pvc ? 'Tejido de PVC' : 'Tapizado en tejido técnico') : '', espuma ? 'espuma de poliuretano' : ''].filter(Boolean).join(' y ').replace(/^./, function(c){ return c.toUpperCase(); }) + '.']);
+    if (/transpiraci/i.test(s)) L.push(['Tejido impermeable', 'No lo traspasan los líquidos, incluidas la transpiración, la saliva, la orina y la sangre.' + (/contacto directo/i.test(s) ? '' : lab)]);
+    if (/contacto directo con la piel/i.test(s)) L.push(['Apto para el contacto directo con la piel', 'El tejido no tiene sustancias dañinas por encima de los límites permitidos.' + (/transpiraci/i.test(s) ? lab : lab.replace('Ambas propiedades verificadas', 'Verificado'))]);
+    if (/antimicrob|antibacter|antimic/i.test(s)) L.push(['Tratamiento antimicrobiano', 'Viene incorporado al tejido desde su fabricación y frena el crecimiento de bacterias' + (/antimic[oó]tico|hongos/i.test(s) ? ' y hongos' : '') + ' sobre el material, según declara su fabricante. No reemplaza la limpieza habitual.']);
+    if (espuma) L.push(['Espuma con certificación de artículos para bebés', 'Tiene la certificación europea en su clase más exigente, la de los artículos para bebés' + (/metales pesados/i.test(s) ? ', sin metales pesados' + (/aditivos contra el fuego/i.test(s) ? ' ni aditivos contra el fuego restringidos en Europa' : '') : '') + '.']);
+    if (/71-3/.test(s)) L.push(['Norma europea de seguridad de juguetes', 'El material no suelta plomo ni otros metales por encima de lo permitido, aunque un niño se lo lleve a la boca.']);
+    if (/ign[ií]fug/i.test(s)) L.push(['Material ignífugo', 'Le cuesta encenderse y no propaga fácilmente la llama, según declara el fabricante.']);
+    if (/abrasi/i.test(s)) L.push(['Resistente al roce', 'Tejido de alta resistencia al desgaste por el uso, según el fabricante.']);
+    if (/REACH|sustancias qu/i.test(s)) L.push(['Sin químicos restringidos', 'El fabricante declara que no usa las sustancias químicas que Europa prohíbe o limita.']);
+    if (/Marcado CE/i.test(s)) L.push(['Marcado CE', 'Cumple las reglas europeas de seguridad eléctrica y no interfiere con otros aparatos electrónicos.']);
+    if (/^Foco de luz UV LED( SHX)?$/.test(p.n || '')) L.push(['Luz ultravioleta segura', 'Su fabricante alemán declara la seguridad de la luz para la vista y la piel, y de exposición a campos electromagnéticos, según norma europea.']);
+    return L;
+  }
   function bloqueMateriales(p){
-    /* basta con que tenga sellos: hay productos cuyo ignífugo y antimicótico vienen de las
-       características del fabricante y no traen texto de materialidad aparte */
-    var uv = esUV(p) ? '<div class="mat mat-linea mat-uv"><span class="mat-esc">' + OJO + '</span>' +
-      '<span><b>Luz ultravioleta segura.</b> Seguridad de la luz para la vista y la piel, y de exposición ' +
-      'a campos electromagnéticos, según norma europea · Declarada por su fabricante alemán.</span></div>' : '';
-    if(!p.mat && !(p.sellos && p.sellos.length)) return uv;
-    var lineas = String(p.mat || '').split('\n').filter(Boolean).map(function(l){
-      var i = l.indexOf(':');
-      return i > 0
-        ? '<div><b>' + esc(l.slice(0, i + 1)) + '</b> ' + esc(l.slice(i + 1).trim()) + '</div>'
-        : '<div>' + esc(l) + '</div>';
-    }).join('');
-    /* Rayen, 21-sep-2026: el detalle de materialidad se cuenta una sola vez, arriba del documento.
-       Aquí queda el concepto, para no repetir los mismos ocho sellos en cada ficha. */
-    return '<div class="mat mat-linea">' +
-      '<span class="mat-esc">' + ESCUDO + '</span>' +
-      '<span>Cumple la normativa europea de materiales y cuenta con certificación de materialidad ' +
-      'segura al contacto.' + (esJuguete(p) ? ' Cumple además la norma europea de seguridad de juguetes.' : '') +
-      ' <a href="#materiales">Ver el detalle</a>.</span>' +
-    '</div>' + uv;
+    var L = certificacionesDe(p);
+    if (!L.length) return '';
+    var ic = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>';
+    return '<div class="seccion sec-cert"><div class="heading">Certificaciones</div><ul class="cert-lista">' +
+      L.map(function(x){ return '<li>' + ic + '<span><b>' + esc(x[0]) + '.</b> ' + esc(x[1]) + '</span></li>'; }).join('') +
+      '</ul><a class="cert-mas" href="#materiales">Ver más sobre los materiales</a></div>';
   }
 
   /* ── Las 3 salas, antes de los productos ───────────────────── */

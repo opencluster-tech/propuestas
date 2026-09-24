@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="only light">
+<meta name="color-scheme" content="only light"><!-- 23-sep-2026: el celular en modo oscuro no la oscurece (se veía el logo negro sobre fondo oscuro) -->
 <title>Productos para complementar la sala</title>
 <link rel="icon" href="isotipo-oct.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -314,7 +314,20 @@ body .fx-der .seccion .heading{display:inline-flex;align-items:center;gap:0;
   font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 body .fx-der .seccion .heading::before,body .fx-der .seccion.sec-clave .heading::before{display:none}
 body .fx-der .seccion.sec-clave .heading{color:#fff}
-:root{color-scheme:only light}
+/* El apartado «Certificaciones» de cada ficha (23-sep-2026) */
+.cert-lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.cert-lista li{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;line-height:1.55;color:#334155}
+.cert-lista li svg{width:17px;height:17px;color:#B8860B;flex:none;margin-top:1px}
+/* Rayen, 23-sep-2026: «destácalo en gold lo de certificaciones» */
+body .fx-der .seccion.sec-cert{margin-top:18px;padding:13px 14px;border:1.5px solid #D4A017;border-radius:12px;
+  background:#FFF8E6;-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid}
+body .fx-der .seccion.sec-cert .heading{background:#D4A017;color:#0B1F3A}
+body .fx-der .seccion.sec-cert .cert-lista li{color:#334155}
+body .fx-der .seccion.sec-cert .cert-lista li b{color:#0B1F3A}
+body .fx-der .seccion.sec-cert .cert-mas{color:#8A6508}
+
+.cert-lista li b{color:var(--navy)}
+.cert-mas{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#0A8FCC}
 </style>
 </head>
 <body>
@@ -436,21 +449,34 @@ body .fx-der .seccion.sec-clave .heading{color:#fff}
     return '<div class="chips">' + p.map(function(x){ return '<span>' + esc(x) + '</span>'; }).join('') + '</div>';
   }
   function seccion(titulo, cuerpo){ return cuerpo ? '<div class="seccion"><div class="heading">'+titulo+'</div>'+cuerpo+'</div>' : ''; }
-  /* Rayen, 21-sep-2026: el detalle de materialidad se cuenta una sola vez, en la propuesta.
-     Aquí queda el concepto, para no repetir los mismos ocho sellos en cada ficha. */
+  /* Rayen, 23-sep-2026: el apartado «Certificaciones» de cada ficha, en palabras simples. Cada línea
+     sale de los sellos del producto (lo que acredita un papel o declara su fabricante). */
+  function certificacionesDe(p){
+    var s = (p.sellos || []).join(' | '), L = [];
+    var pvc = /transpiraci|contacto directo/i.test(s);
+    var tapiz = pvc || /antimicrob|antibacter|antimic|abrasi|ign[ií]fug/i.test(s);
+    var espuma = /beb[eé]s/i.test(s);
+    var lab = /laboratorio/i.test(s) ? ' Ambas propiedades verificadas en laboratorio europeo.' : '';
+    if (tapiz || espuma) L.push(['Materiales', [tapiz ? (pvc ? 'Tejido de PVC' : 'Tapizado en tejido técnico') : '', espuma ? 'espuma de poliuretano' : ''].filter(Boolean).join(' y ').replace(/^./, function(c){ return c.toUpperCase(); }) + '.']);
+    if (/transpiraci/i.test(s)) L.push(['Tejido impermeable', 'No lo traspasan los líquidos, incluidas la transpiración, la saliva, la orina y la sangre.' + (/contacto directo/i.test(s) ? '' : lab)]);
+    if (/contacto directo con la piel/i.test(s)) L.push(['Apto para el contacto directo con la piel', 'El tejido no tiene sustancias dañinas por encima de los límites permitidos.' + (/transpiraci/i.test(s) ? lab : lab.replace('Ambas propiedades verificadas', 'Verificado'))]);
+    if (/antimicrob|antibacter|antimic/i.test(s)) L.push(['Tratamiento antimicrobiano', 'Viene incorporado al tejido desde su fabricación y frena el crecimiento de bacterias' + (/antimic[oó]tico|hongos/i.test(s) ? ' y hongos' : '') + ' sobre el material, según declara su fabricante. No reemplaza la limpieza habitual.']);
+    if (espuma) L.push(['Espuma con certificación de artículos para bebés', 'Tiene la certificación europea en su clase más exigente, la de los artículos para bebés' + (/metales pesados/i.test(s) ? ', sin metales pesados' + (/aditivos contra el fuego/i.test(s) ? ' ni aditivos contra el fuego restringidos en Europa' : '') : '') + '.']);
+    if (/71-3/.test(s)) L.push(['Norma europea de seguridad de juguetes', 'El material no suelta plomo ni otros metales por encima de lo permitido, aunque un niño se lo lleve a la boca.']);
+    if (/ign[ií]fug/i.test(s)) L.push(['Material ignífugo', 'Le cuesta encenderse y no propaga fácilmente la llama, según declara el fabricante.']);
+    if (/abrasi/i.test(s)) L.push(['Resistente al roce', 'Tejido de alta resistencia al desgaste por el uso, según el fabricante.']);
+    if (/REACH|sustancias qu/i.test(s)) L.push(['Sin químicos restringidos', 'El fabricante declara que no usa las sustancias químicas que Europa prohíbe o limita.']);
+    if (/Marcado CE/i.test(s)) L.push(['Marcado CE', 'Cumple las reglas europeas de seguridad eléctrica y no interfiere con otros aparatos electrónicos.']);
+    if (/^Foco de luz UV LED( SHX)?$/.test(p.n || '')) L.push(['Luz ultravioleta segura', 'Su fabricante alemán declara la seguridad de la luz para la vista y la piel, y de exposición a campos electromagnéticos, según norma europea.']);
+    return L;
+  }
   function bloqueMateriales(p){
-    if(!p.mat && !(p.sellos && p.sellos.length)) return '';
-    return '<div class="mat mat-linea">' +
-      '<span class="mat-esc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
-      'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-      '<path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/>' +
-      '</svg></span>' +
-      '<span>Cumple la normativa europea de materiales y cuenta con certificación de materialidad ' +
-      'segura al contacto.' +
-      /* Rayen, 22-sep-2026: los que declaran la norma europea de seguridad de juguetes lo dicen. */
-      (((p.sellos || []).some(function(s){ return /EN 71-3/.test(s); })) ? ' Cumple además la norma europea de seguridad de juguetes.' : '') +
-      ' <a href="index.html#materiales">Ver el detalle</a>.</span>' +
-    '</div>';
+    var L = certificacionesDe(p);
+    if (!L.length) return '';
+    var ic = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>';
+    return '<div class="seccion sec-cert"><div class="heading">Certificaciones</div><ul class="cert-lista">' +
+      L.map(function(x){ return '<li>' + ic + '<span><b>' + esc(x[0]) + '.</b> ' + esc(x[1]) + '</span></li>'; }).join('') +
+      '</ul><a class="cert-mas" href="index.html#materiales">Ver más sobre los materiales</a></div>';
   }
   function buscaProd(nombre){ return P.filter(function(x){ return x.n === nombre; })[0]; }
   function corto(p){
