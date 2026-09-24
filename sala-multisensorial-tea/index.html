@@ -1901,7 +1901,8 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     var pvc = /transpiraci|contacto directo/i.test(s);
     var tapiz = pvc || /antimicrob|antibacter|antimic|abrasi|ign[ií]fug/i.test(s);
     var espuma = /beb[eé]s/i.test(s);
-    if (tapiz || espuma) L.push(['Materiales', [tapiz ? (pvc ? 'Tejido de PVC' : 'Tapizado en tejido técnico') : '', espuma ? 'espuma de poliuretano' : (/cama de agua/i.test(p.n || '') ? 'colchón de agua' : '')].filter(Boolean).join(' y ').replace(/^./, function(c){ return c.toUpperCase(); }) + '.']);
+    if (p.matQ) L.push(['Materiales', p.matQ + '.']);
+    else if (tapiz || espuma) L.push(['Materiales', [tapiz ? (pvc ? 'Tejido de PVC' : 'Tapizado en tejido técnico') : '', espuma ? 'espuma de poliuretano' : (/cama de agua/i.test(p.n || '') ? 'colchón de agua' : '')].filter(Boolean).join(' y ').replace(/^./, function(c){ return c.toUpperCase(); }) + '.']);
     if (/transpiraci/i.test(s)) L.push(['Impermeable de verdad', 'Ni el sudor, ni la saliva, ni la orina, ni la sangre traspasan el tapizado: todo queda en la superficie y sale con un paño. En segundos queda listo para el siguiente niño, sin que el relleno se moje.']);
     if (/contacto directo con la piel/i.test(s)) L.push(['Seguro para la piel de los niños', 'Pensado para estar en contacto directo con la piel todo el día. Un laboratorio europeo lo analizó y confirmó que está libre de lo que más preocupa en productos infantiles: formaldehído, plomo, cadmio, colorantes dañinos y ftalatos. En algunas pruebas cumple incluso la exigencia de los artículos para bebés.']);
     if (/antimicrob|antibacter|antimic/i.test(s)) L.push(['Higiénico desde fábrica', 'El tejido trae incorporada una protección contra bacterias, hongos y levaduras, que lo mantiene en buen estado aunque lo usen muchos niños cada día.']);
