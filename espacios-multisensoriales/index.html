@@ -1577,6 +1577,30 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 }
 </style>
 
+<style>
+/* ── Tarjetas de «Las opciones»: la letra y el nombre DENTRO de la foto (Rayen, 23-sep-2026) ──
+   «Se me hace extraño imagen arriba y el azul abajo… prefiero que el nombre de la sala y la letra
+   estén dentro de la imagen». Sin el bloque azul; la foto se aclara al mostrarla (el archivo no se toca). */
+.p2-portada{display:block;overflow:hidden;background:#0A0F1E}
+.p2-portada img{display:block;width:100%;height:100%;object-fit:cover;filter:brightness(1.18) saturate(1.06)}
+body .g2 .p2.p2-foto{position:relative}
+body .g2 .p2.p2-foto .p2-portada{height:190px}
+body .g2 .p2.p2-foto .p2-cab{position:absolute;top:0;left:0;right:0;height:190px;min-height:0;box-sizing:border-box;
+  justify-content:flex-end;gap:4px;padding:0 16px 14px;
+  background:linear-gradient(180deg,rgba(0,26,96,0) 36%,rgba(0,26,96,.55) 66%,rgba(0,26,96,.86) 100%);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+body .g2 .p2.p2-foto .p2-l{height:auto;padding:0;background:none;border-radius:0;color:#8FDDFF;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+body .g2 .p2.p2-foto .p2-n{font-size:19px;text-shadow:0 1px 8px rgba(0,26,96,.35)}
+/* tarjeta angosta (4 opciones, o 2 por fila en el celular): el nombre más chico para que no tape la foto */
+@container (max-width:260px){body .g2 .p2.p2-foto .p2-n{font-size:15.5px}body .g2 .p2.p2-foto .p2-cab{padding:0 12px 11px;background:linear-gradient(180deg,rgba(0,26,96,0) 18%,rgba(0,26,96,.6) 52%,rgba(0,26,96,.9) 100%)}}
+body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
+@media (max-width:560px){body .g2 .p2.p2-foto .p2-portada,body .g2 .p2.p2-foto .p2-cab{height:170px}}
+.pg .g2 .p2.p2-foto .p2-portada,.pg .g2 .p2.p2-foto .p2-cab{height:110px}
+.pg .g2 .p2.p2-foto .p2-cab{padding:0 11px 9px}
+.pg .g2 .p2.p2-foto .p2-l{font-size:8px}
+.pg .g2 .p2.p2-foto .p2-n{font-size:13px}
+</style>
 </head>
 <body>
 <div class="hoja">
@@ -2057,7 +2081,11 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
       'en la cotización final según el lugar donde se implemente la sala.</p>' +
       /* Rayen, 16-sep-2026: «quiero que sean clickeables, para ir directo a la opción que busco» */
       '<div class="g2">' + SALAS.map(function(s, k){
-        return '<a class="p2' + (k === SALAS.length - 1 ? ' p2-des' : '') + '" href="#opcion-' + LETRA[k] + '">' +
+        /* Rayen, 23-sep-2026: la letra y el nombre van DENTRO de la foto de la opción (campo portada; si no
+           trae, la primera foto de la sala) */
+        var pf = s.portada || (Array.isArray(s.img) ? s.img[0] : s.img) || '';
+        return '<a class="p2' + (k === SALAS.length - 1 ? ' p2-des' : '') + (pf ? ' p2-foto' : '') + '" href="#opcion-' + LETRA[k] + '">' +
+          (pf ? '<span class="p2-portada"><img src="' + esc(pf) + '" alt="' + esc(s.n) + '" loading="eager"></span>' : '') +
           '<span class="p2-cab"><span class="p2-l">Opción ' + LETRA[k] + '</span>' +
             '<span class="p2-n">' + esc(s.n) + '</span></span>' +
           '<span class="p2-cuerpo">' +
