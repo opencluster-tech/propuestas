@@ -457,7 +457,7 @@ body .fx-der .seccion.sec-cert .cert-mas{color:#8A6508}
     var tapiz = pvc || /antimicrob|antibacter|antimic|abrasi|ign[ií]fug/i.test(s);
     var espuma = /beb[eé]s/i.test(s);
     var lab = /laboratorio/i.test(s) ? ' Ambas propiedades verificadas en laboratorio europeo.' : '';
-    if (tapiz || espuma) L.push(['Materiales', [tapiz ? (pvc ? 'Tejido de PVC' : 'Tapizado en tejido técnico') : '', espuma ? 'espuma de poliuretano' : ''].filter(Boolean).join(' y ').replace(/^./, function(c){ return c.toUpperCase(); }) + '.']);
+    if (tapiz || espuma) L.push(['Materiales', [tapiz ? (pvc ? 'Tejido de PVC' : 'Tapizado en tejido técnico') : '', espuma ? 'espuma de poliuretano' : (/cama de agua/i.test(p.n || '') ? 'colchón de agua' : '')].filter(Boolean).join(' y ').replace(/^./, function(c){ return c.toUpperCase(); }) + '.']);
     if (/transpiraci/i.test(s)) L.push(['Tejido impermeable', 'No lo traspasan los líquidos, incluidas la transpiración, la saliva, la orina y la sangre.' + (/contacto directo/i.test(s) ? '' : lab)]);
     if (/contacto directo con la piel/i.test(s)) L.push(['Apto para el contacto directo con la piel', 'El tejido no tiene sustancias dañinas por encima de los límites permitidos.' + (/transpiraci/i.test(s) ? lab : lab.replace('Ambas propiedades verificadas', 'Verificado'))]);
     if (/antimicrob|antibacter|antimic/i.test(s)) L.push(['Tratamiento antimicrobiano', 'Viene incorporado al tejido desde su fabricación y frena el crecimiento de bacterias' + (/antimic[oó]tico|hongos/i.test(s) ? ' y hongos' : '') + ' sobre el material, según declara su fabricante. No reemplaza la limpieza habitual.']);
