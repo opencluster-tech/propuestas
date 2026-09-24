@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Manrope:wght@400;500;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
 <style>
-:root{ --navy:#001A60; --sky:#2FC1FF; --naranja:#FF7E00; --texto:#1F2937; --suave:#6B7280; --linea:#93B5D6; }
+:root{ --navy:#001A60; --sky:#08ACF2; --naranja:#FF7E00; --texto:#1F2937; --suave:#6B7280; --linea:#93B5D6; }
 *{box-sizing:border-box}
 body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;color:var(--texto);font-size:13px;line-height:1.6}
 .hoja{
@@ -33,7 +33,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
 .portada-velo{
   position:absolute;inset:0;
   /* aclarado y virado al calipso de la marca, para que las fotos se vean */
-  background:radial-gradient(ellipse at center,rgba(0,26,96,.68) 0%,rgba(12,105,190,.52) 45%,rgba(47,193,255,.32) 100%);
+  background:radial-gradient(ellipse at center,rgba(0,26,96,.68) 0%,rgba(12,105,190,.52) 45%,rgba(8,172,242,.32) 100%);
 }
 .portada-centro{
   position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -135,7 +135,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
 .ficha-pleg:not([open])>summary .ver-ficha::after{content:' ▾'}
 @media print{ .ficha-pleg>summary .ver-ficha{display:none} }
 .banner{
-  background:linear-gradient(170deg,#0A0F1E,#001a60 35%,#0A2E8A 60%,#2FC1FF);
+  background:linear-gradient(170deg,#0A0F1E,#001a60 35%,#0A2E8A 60%,#08ACF2);
   border-bottom:3px solid var(--naranja);border-radius:8px 8px 0 0;
   padding:13px 18px;display:flex;align-items:center;gap:14px;
 }
@@ -686,7 +686,7 @@ html{scroll-behavior:smooth}
 .p2:active{transform:translateY(-2px)}
 .p2-cab{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:14px 14px 13px;
   min-height:92px;background:linear-gradient(120deg,#001A60 0%,#0A4FB0 100%)}
-.p2-des .p2-cab{background:linear-gradient(120deg,#02358F 0%,#2FC1FF 115%)}
+.p2-des .p2-cab{background:linear-gradient(120deg,#02358F 0%,#08ACF2 115%)}
 /* la letra, como etiqueta chica sobre el nombre: el protagonista es el nombre */
 .p2-l{display:inline-flex;align-items:center;justify-content:center;height:19px;padding:0 9px;flex:none;
   border-radius:999px;background:rgba(255,255,255,.18);color:#fff;letter-spacing:.09em;
@@ -1003,7 +1003,7 @@ details.op:not([open])::before{display:none}
 .op + .op::before{content:"";display:block;height:1px;background:var(--linea);margin:0 0 44px}
 .op-cab{
   /* navy casi plano: el degradado de cuatro colores se veía de plantilla */
-  background:linear-gradient(120deg,#001A60 0%,#0A4BAE 50%,#2FC1FF 100%);
+  background:linear-gradient(120deg,#001A60 0%,#0A4BAE 50%,#08ACF2 100%);
   border-bottom:3px solid var(--naranja);border-radius:10px 10px 0 0;
   /* grid, no flex: así la columna del medio absorbe y el valor nunca se sale del recuadro */
   padding:22px 24px;display:grid;grid-template-columns:54px minmax(0,1fr) auto auto;
@@ -1240,7 +1240,7 @@ details.op:not([open])::before{display:none}
 .tarj .tf img{max-height:132px;max-width:100%;width:auto}
 /* El hover de «Ver la ficha»: una sola regla, celeste de la página web, texto blanco.
    Antes eran dos y la segunda pintaba el texto del mismo naranja del fondo. */
-.tarj:hover .tver,.tarj:focus-visible .tver{background:#06b3fd;border-color:#06b3fd;color:#fff}
+.tarj:hover .tver,.tarj:focus-visible .tver{background:#08ACF2;border-color:#08ACF2;color:#fff}
 .tarj:hover .tver svg{color:#fff}
 /* El lettering va en el TÍTULO de la sección: la palabra «Materiales» */
 .seg-rot{font-family:'Kaushan Script',cursive !important;font-size:27px !important;
@@ -1285,8 +1285,8 @@ body .fx-der .seccion.sec-cert .cert-mas{color:#8A6508}
 .cert-mas{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#0A8FCC}
 /* «Los acompañamos siempre», debajo de los seis pasos */
 .serv-acomp{display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 16px;border-radius:12px;
-  background:#EAF8FF;border:1.5px solid #2FC1FF;font-size:13px;line-height:1.55;color:#1F2937}
-.serv-acomp svg{width:22px;height:22px;color:#2FC1FF;flex:none}
+  background:#EAF8FF;border:1.5px solid #08ACF2;font-size:13px;line-height:1.55;color:#1F2937}
+.serv-acomp svg{width:22px;height:22px;color:#08ACF2;flex:none}
 .serv-acomp b{color:var(--navy)}
 /* Rayen, 23-sep-2026: «todos los videos que se abren quedan flotando en pantalla» y con un botón
    visible para cerrarlos. */
@@ -1294,12 +1294,12 @@ body .fx-der .seccion.sec-cert .cert-mas{color:#8A6508}
 .lb-cerrar{all:unset;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;
   color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);border-radius:999px;
   padding:8px 18px}
-.lb-cerrar:hover,.lb-cerrar:focus-visible{background:#2FC1FF;border-color:#2FC1FF}
+.lb-cerrar:hover,.lb-cerrar:focus-visible{background:#08ACF2;border-color:#08ACF2}
 /* Rayen, 23-sep-2026: «para mí el bullet no es el punto delante de toda una frase: es la pastilla en la
    que se envuelve un título, un subtítulo; el texto está demasiado plano». Los títulos de las fichas y
    de la descripción de cada sala van en pastilla calipso con letra blanca. */
 body .fx-der .seccion .heading,body .op-cols .et{display:inline-flex;align-items:center;gap:0;
-  background:#2FC1FF;color:#fff;border-radius:999px;padding:5px 13px;line-height:1.2;
+  background:#08ACF2;color:#fff;border-radius:999px;padding:5px 13px;line-height:1.2;
   font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 body .fx-der .seccion .heading::before,body .fx-der .seccion.sec-clave .heading::before{display:none}
 body .fx-der .seccion.sec-clave .heading{color:#fff}
@@ -1313,27 +1313,27 @@ body .puerta{grid-template-columns:220px minmax(0,1fr)}
    Con «body» delante, para ganarle a las reglas que vienen más abajo (el PDF y NeuroMed). */
 body .p2:hover .p2-ir,body .comp:hover .comp-ir,body .mas:hover .mas-ir,body .tarj:hover .tver,
 body .ficha-pleg>summary:hover .ver-ficha,body .vid-btn:hover,body .subir:hover,body .puerta:hover .puerta-btn,
-body .btn-pdf:hover{background:#2FC1FF;border-color:#2FC1FF;color:#fff}
-body .comp:hover .comp-letra{color:#2FC1FF}
-body .obra-c:hover .obra-play,body .puerta:hover .puerta-play{background:#2FC1FF;border-color:#2FC1FF}
-body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:#fff}
+body .btn-pdf:hover{background:#08ACF2;border-color:#08ACF2;color:#fff}
+body .comp:hover .comp-letra{color:#08ACF2}
+body .obra-c:hover .obra-play,body .puerta:hover .puerta-play{background:#08ACF2;border-color:#08ACF2}
+body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:#fff}
 /* Rayen, 23-sep-2026: «las preguntas tienen que ir dentro de un bullet celeste, como el que hemos usado
    muchas otras veces»: la misma pastilla de «Ver la ficha». */
 .fx-reg{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
   color:#0A8FCC;margin:0 0 4px}
 .seg .seg-faq>summary{border:1px solid #9EDCFF;background:#fff;border-radius:999px;padding:5px 12px 5px 13px;
   font-size:11px;transition:background .2s,color .2s,border-color .2s}
-.seg .seg-faq>summary:hover,.seg .seg-faq>summary:focus-visible,.seg .seg-faq.activo>summary{background:#2FC1FF;
-  border-color:#2FC1FF;color:#fff;text-decoration:none}
+.seg .seg-faq>summary:hover,.seg .seg-faq>summary:focus-visible,.seg .seg-faq.activo>summary{background:#08ACF2;
+  border-color:#08ACF2;color:#fff;text-decoration:none}
 .seg .sl-dest .seg-faq>summary{background:rgba(255,255,255,.06);border-color:rgba(127,217,255,.55)}
-.seg .sl-dest .seg-faq>summary:hover,.seg .sl-dest .seg-faq.activo>summary{background:#2FC1FF;color:var(--navy)}
+.seg .sl-dest .seg-faq>summary:hover,.seg .sl-dest .seg-faq.activo>summary{background:#08ACF2;color:var(--navy)}
 .seg .sl-dest .seg-faq+.seg-faq{margin-top:8px}
 .pg .seg .seg-faq>summary{border:none;padding:0;background:none}
 /* el círculo del destacado, con la foto del bebé */
-.seg .sl-foto{border:none;padding:0;position:relative;overflow:visible;box-shadow:0 0 0 3px #2FC1FF,0 10px 26px rgba(0,0,0,.28)}
+.seg .sl-foto{border:none;padding:0;position:relative;overflow:visible;box-shadow:0 0 0 3px #08ACF2,0 10px 26px rgba(0,0,0,.28)}
 .seg .sl-foto img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
 .seg .sl-badge{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);width:128px;text-align:center;white-space:normal;line-height:1.25 !important;
-  background:#2FC1FF;color:var(--navy);font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;
+  background:#08ACF2;color:var(--navy);font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;
   letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:999px;line-height:1}
 .seg .sl-dest{row-gap:28px}
 /* El aviso de los columpios en la Sala de Integración Sensorial (23-sep-2026) */
@@ -1345,10 +1345,10 @@ body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:
 .op-colum p{margin:0 0 7px;font-size:13px;line-height:1.65;color:#334155}
 .op-colum p:last-child{margin-bottom:0;font-weight:600;color:var(--navy)}
 /* ── Materiales en el calipso de la marca (Rayen, 23-sep-2026) ──
-   #2FC1FF es el de la página web. Para letra chica sobre blanco se usa un calipso más hondo (#0A8FCC):
+   #08ACF2 es el de la página web. Para letra chica sobre blanco se usa un calipso más hondo (#0A8FCC):
    el de la marca, como texto, casi no se lee. ── */
 .seg{border-color:#BFE9FF;background:linear-gradient(180deg,#F2FBFF 0%,#fff 60%)}
-.seg-rot{color:#2FC1FF !important}
+.seg-rot{color:#08ACF2 !important}
 .seg h2 em{color:#0A8FCC}
 .seg-baja{color:#334155}
 .seg-baja b{color:var(--navy)}
@@ -1356,29 +1356,29 @@ body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:
 .sl-dest .seg-faq>summary{color:#7FD9FF}
 .sl-sello-g svg{color:#7FD9FF}
 .sl-c{width:92px;height:92px;background:#E8F7FF;border:3px solid #fff;box-sizing:border-box;
-  box-shadow:0 0 0 2px #2FC1FF,0 6px 16px rgba(0,26,96,.12);overflow:hidden}
+  box-shadow:0 0 0 2px #08ACF2,0 6px 16px rgba(0,26,96,.12);overflow:hidden}
 .sl-c img{width:100%;height:100%;object-fit:cover;display:block}
 .sl h4{display:inline-flex;align-items:center;gap:6px}
-.sl-ic{display:flex;color:#2FC1FF}
+.sl-ic{display:flex;color:#08ACF2}
 .sl-ic svg{width:17px;height:17px}
-.seg-limpieza{background:#F2FBFF;border-color:#BFE9FF;border-left-color:#2FC1FF}
+.seg-limpieza{background:#F2FBFF;border-color:#BFE9FF;border-left-color:#08ACF2}
 .seg-limpieza b{color:var(--navy)}
-.seg-li{color:#2FC1FF}
+.seg-li{color:#08ACF2}
 .seg-pie{border-top-color:#BFE9FF}
-.seg-pie .ic{color:#2FC1FF}
-.seg-pop{border-top-color:#2FC1FF}
+.seg-pie .ic{color:#08ACF2}
+.seg-pop{border-top-color:#08ACF2}
 .seg-pop-t small{color:#0A8FCC}
 .seg-pop-x{background:#E8F7FF;color:#0A8FCC}
-.gar{border-color:#2FC1FF}
+.gar{border-color:#08ACF2}
 .gar-n{border-right-color:#BFE9FF}
-.gar-n b{color:#2FC1FF}
+.gar-n b{color:#08ACF2}
 /* Rayen, 23-sep-2026: «estas tarjetas las quiero con borde de color» (los seis pasos) */
-.serv{border:1.5px solid #2FC1FF}
+.serv{border:1.5px solid #08ACF2}
 /* con más especificidad: las reglas de la opción C van más abajo y ganaban */
 .seg .sl-dest .seg-faq>summary{color:#7FD9FF}
 .seg .sl-sello-g svg{color:#7FD9FF}
-.seg .gar-n b{color:#2FC1FF}
-.seg .gar{border-color:#2FC1FF}
+.seg .gar-n b{color:#08ACF2}
+.seg .gar{border-color:#08ACF2}
 .seg .sl-c{border:3px solid #fff}
 /* La garantía de 3 años, al cierre de Materiales (23-sep-2026) */
 .gar{display:flex;align-items:center;gap:22px;margin:22px 0 0;padding:18px 24px;border-radius:14px;
@@ -1412,7 +1412,7 @@ body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:
   color:#0F7A5F;margin-bottom:2px}
 .seg-pop-x{all:unset;cursor:pointer;flex:none;width:28px;height:28px;border-radius:50%;display:flex;
   align-items:center;justify-content:center;background:#EEF7F3;color:#0F7A5F;font-size:14px}
-.seg-pop-x:focus-visible{outline:2px solid #06b3fd}
+.seg-pop-x:focus-visible{outline:2px solid #08ACF2}
 .seg-pop-tx{margin:0;font-size:13px;line-height:1.7}
 .seg-pop-f{position:absolute;width:14px;height:14px;background:#fff;transform:rotate(45deg);
   box-shadow:-3px -3px 6px rgba(0,26,96,.06)}
@@ -1481,12 +1481,13 @@ body .serv-acomp svg{margin-top:2px}
 body .serv-acomp>span{display:block}
 body .serv-acomp .acomp-tit{display:block;font-family:'Montserrat',sans-serif;font-size:14px;margin-bottom:6px}
 body .serv-acomp .acomp-lista{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:4px}
-body .serv-acomp .acomp-lista li::marker{color:#2FC1FF}
+body .serv-acomp .acomp-lista li::marker{color:#08ACF2}
 body .serv-acomp .acomp-fin{display:block;margin-top:8px}
 /* Rayen, 23-sep-2026: «la palabra Materiales debería ir más grande para llamar más la atención» */
 body .seg-rot{font-size:44px !important;line-height:1.1 !important}
 @media(max-width:560px){body .seg-rot{font-size:38px !important}}
 body .pg .seg-rot{font-size:36px !important}
+/* 24-sep-2026: el celeste es el «celeste saturado» de la web, #08ACF2 (paleta de la persona de diseño) */
 </style>
 
 <style>
@@ -1545,10 +1546,10 @@ body .pg .seg-rot{font-size:36px !important}
 
 /* ── Rayen, 21-sep-2026: al pasar el cursor la pastilla se ponía naranja y el texto
    también, así que «Ver la ficha» desaparecía. Eran dos reglas encima: la segunda
-   pisaba el color. Ahora se llena del celeste de la página web (#06b3fd), una sola
+   pisaba el color. Ahora se llena del celeste de la página web (#08ACF2), una sola
    regla, con el texto en blanco. */
 .tarj:hover .tver,
-.tarj:focus-visible .tver{background:#06b3fd;border-color:#06b3fd;color:#fff}
+.tarj:focus-visible .tver{background:#08ACF2;border-color:#08ACF2;color:#fff}
 .tarj:hover .tver svg{color:#fff}
 
 /* Rayen, 21-sep-2026: «si las tarjetas no tienen precio, quita el código OC: no es
