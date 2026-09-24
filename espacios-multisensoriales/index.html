@@ -1475,9 +1475,14 @@ body .fx-x:hover,body .lb-x:hover{background:#2FC1FF;border-color:#2FC1FF;color:
   body .exec-contacts{flex:1 1 100%;align-items:flex-start;padding-top:10px;border-top:1px solid rgba(255,255,255,.15)}
   body .exec-contact{word-break:break-word}
 }
-/* 23-sep-2026: el recuadro de la visión es un párrafo; el corazón va arriba */
-body .serv-acomp{align-items:flex-start;padding:16px 18px;line-height:1.65}
+/* 23-sep-2026: el recuadro de la visión, por etapas; el corazón va arriba */
+body .serv-acomp{align-items:flex-start;padding:16px 18px;line-height:1.6}
 body .serv-acomp svg{margin-top:2px}
+body .serv-acomp>span{display:block}
+body .serv-acomp .acomp-tit{display:block;font-family:'Montserrat',sans-serif;font-size:14px;margin-bottom:6px}
+body .serv-acomp .acomp-lista{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:4px}
+body .serv-acomp .acomp-lista li::marker{color:#2FC1FF}
+body .serv-acomp .acomp-fin{display:block;margin-top:8px}
 </style>
 <style id="papel-pdf">
 /* ══ EL PDF: LAS HOJAS LAS ARMAMOS NOSOTROS (Rayen, 23-sep-2026) ══════════════
@@ -1678,7 +1683,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
           productos y elementos tengan una vida útil mayor.</p></div>
     </div>
     <!-- La terapeuta de Rayen, 23-sep-2026: «te acompañamos siempre» -->
-    <div class="serv-acomp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg><span><b>Nuestra visión: acompañarlos en todo el camino.</b> Desde el primer contacto nos reunimos con ustedes, respondemos sus preguntas y, cuando es posible, visitamos el lugar. Los ayudamos a definir el perfil de quienes van a usar la sala, para que el espacio responda de verdad a sus necesidades, y elaboramos la propuesta, los planos y el proyecto, ajustándolos las veces que haga falta. Luego los guiamos en los trabajos de preinstalación, implementamos la sala y capacitamos a su equipo. Y seguimos a su lado años después, para que la sala crezca con ustedes y se transforme, año a año, en un espacio cada vez más a la medida de quienes la usan. <b>Para nosotros, la relación no termina con la venta.</b></span></div>
+    <div class="serv-acomp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg><span><b class="acomp-tit">Nuestra visión: acompañarlos en todo el camino.</b><ul class="acomp-lista"><li><b>Desde el primer contacto:</b> nos reunimos con ustedes, respondemos sus preguntas y, cuando es posible, visitamos sus instalaciones.</li><li><b>Antes de elegir un producto:</b> los ayudamos a categorizar a la población que usará la sala, para definir bien sus necesidades y que obtengan el espacio sensorial adecuado a su perfil.</li><li><b>En el diseño:</b> elaboramos las propuestas y los planos, y hacemos todas las modificaciones que esas necesidades pidan. Cuando hay un proyecto de por medio, lo elaboramos con ustedes.</li><li><b>En la implementación:</b> los aconsejamos y guiamos en los trabajos de preinstalación que requiere el espacio, instalamos la sala y capacitamos a su equipo.</li><li><b>Y después:</b> seguimos acompañando a quienes nos eligen, años después de haber comprado su sala, para que puedan seguir escalándola y transformándola año a año en un espacio cada vez más adecuado a sus necesidades.</li></ul><b class="acomp-fin">Para nosotros, la relación no termina con la venta.</b></span></div>
     <div class="serv-pie">Las salas son escalables: se puede partir con un espacio e ir
       agregando elementos poco a poco.</div>
   </div>
