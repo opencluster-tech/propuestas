@@ -2363,6 +2363,8 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
         (p.desc ? '<div class="fx-desc"><p>' + descHTML(p.desc) + '</p>' +
           (document.getElementById('materiales') ? '<a class="fx-mas" href="#materiales">Más información sobre los materiales →</a>' : '') +
           '</div>' : '') +
+        /* Rayen, 25-sep-2026: las certificaciones, justo bajo el resumen */
+        bloqueMateriales(p) +
         
         precio +
         seccion('Qué es y para qué sirve', p.que ? '<p class="parrafo">' + esc(p.que) + '</p>' : '') +
@@ -2372,7 +2374,6 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
         seccion('Qué incluye la entrega', p.inc ? '<p class="parrafo">' + esc(p.inc) + '</p>' : '') +
         seccion('Características técnicas', p.tec ? '<p class="parrafo">' + esc(p.tec) + '</p>' : '') +
         seccion('Características', p.car ? chips(p.car) : '') +
-        bloqueMateriales(p) +
       '</div>';
     fx.hidden = false;
     document.body.style.overflow = 'hidden';
