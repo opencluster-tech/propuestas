@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Salas Multisensoriales para Escuelas</title>
-<meta name="description" content="Salas multisensoriales para escuelas, diseñadas por terapeutas: salas con su valor, una sala SHX en cuatro etapas, videos, materiales y cómo trabajamos.">
+<meta name="description" content="Salas multisensoriales para escuelas, diseñadas por terapeutas: salas con su valor, una sala SHX en tres etapas, videos, materiales y cómo trabajamos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Manrope:wght@400;500;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
@@ -1693,8 +1693,13 @@ body.con-sala .barra{transform:translateY(-110%)}
 @media (max-width:820px){.go-in{padding:38px 20px 34px}.go-letra{font-size:40px}.go-pasos{grid-template-columns:1fr}.go-pie{grid-template-columns:1fr}.go-foto{height:200px}}
 @media (max-width:560px){.go-in{padding:34px 16px 30px}.go-letra{font-size:34px}}
 
-/* La sala en 4 etapas (Rayen, 25-sep-2026) */
-.et-ruta{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:et}
+/* La sala en etapas (Rayen, 25-sep-2026) */
+.et-chica{display:flex;gap:14px;align-items:flex-start;margin-top:12px;padding:14px 18px;border-radius:14px;background:#FFF8EF;border:1px solid #FFD9B0}
+.et-chica-ic{flex:none;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#FF7E00;color:#fff}
+.et-chica-ic svg{width:20px;height:20px}
+.et-chica p{margin:0;font-size:12.8px;line-height:1.65;color:#374151}
+.et-chica b{color:var(--navy)}
+.et-ruta{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:et}
 .et-c{position:relative;display:flex;flex-direction:column;border:1px solid #E3E9F2;border-radius:16px;background:#fff;overflow:hidden;
   box-shadow:0 12px 28px -22px rgba(0,26,96,.45)}
 .et-c::after{content:'';position:absolute;top:34px;right:-15px;width:16px;height:2px;background:#08ACF2;z-index:2}
@@ -1735,7 +1740,7 @@ body.con-sala .barra{transform:translateY(-110%)}
 .sv-et-cab .et-sello{margin:0}
 .sv-et-fila .et-sello{background:#E6F6FE;color:#0A8FCC}
 .sv-et-cab.mayor .sv-et-fila .et-sello{background:#FFF3E6;color:#B45309}
-@media (max-width:980px){.et-ruta{grid-template-columns:repeat(2,minmax(0,1fr))}.et-c:nth-child(2n)::after{display:none}}
+@media (max-width:980px){.et-ruta{grid-template-columns:1fr}.et-c::after{display:none}}
 @media (max-width:560px){
   .et-ruta{grid-template-columns:1fr;gap:18px}
   .et-c::after{display:block !important;top:auto;bottom:-17px;right:auto;left:30px;width:2px;height:16px}
@@ -1977,7 +1982,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   <div class="portada-pie">
     <span class="estilo">Diseñadas para cada escuela</span>
     <p class="bajada">Espacios diseñados por nuestro equipo de terapeutas para los estudiantes que los van a usar:
-      salas ya diseñadas con su valor, una sala SHX completa en cuatro etapas, salas funcionando en centros
+      salas ya diseñadas con su valor, una sala SHX completa en tres etapas, salas funcionando en centros
       educativos, los materiales que elegimos y la forma en que trabajamos un proyecto de principio a fin.</p>
     <div class="meta">
       <div><b>Partner europeo</b><span>Qinera · representantes exclusivos en Chile</span></div>
@@ -2002,7 +2007,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
         y a los diagnósticos con los que trabaja su equipo de integración. Cada elemento lo elige nuestro equipo de terapeutas
         por lo que logra en los estudiantes que lo van a usar.</p>
     </div>
-    <div class="pz-grid"><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5a3 3 0 0 0-3 3v.3A3.2 3.2 0 0 0 4 13a3.2 3.2 0 0 0 2.4 3.1A3 3 0 0 0 9.5 19.5H12V4.5z"/><path d="M15 4.5a3 3 0 0 1 3 3v.3a3.2 3.2 0 0 1 2 5.2 3.2 3.2 0 0 1-2.4 3.1 3 3 0 0 1-3.1 3.4H12"/></svg></span><h3>Según los diagnósticos</h3><p>Nuestros terapeutas parten por los estudiantes que van a usar la sala y los diagnósticos con que trabaja el equipo de integración, y eligen los elementos que responden a la necesidad principal.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><rect x="9" y="13" width="6" height="7"/></svg></span><h3>Según el espacio</h3><p>Una sala completa, un rincón dentro de una sala que ya existe o una estación sensorial móvil cuando la escuela no tiene un espacio fijo: la sala se adapta al lugar.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span><h3>Según el presupuesto</h3><p>Se puede partir con pocos elementos, por etapas que caben en una Compra Ágil. Y si buscan financiamiento público, los asesoramos sobre los fondos disponibles y elaboramos el proyecto para postularlo.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><h3>Crece con el tiempo</h3><p>Las salas son escalables: lo que se compra hoy se integra a lo que venga después, y cada año se pueden sumar nuevos elementos.</p></div></div>
+    <div class="pz-grid"><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5a3 3 0 0 0-3 3v.3A3.2 3.2 0 0 0 4 13a3.2 3.2 0 0 0 2.4 3.1A3 3 0 0 0 9.5 19.5H12V4.5z"/><path d="M15 4.5a3 3 0 0 1 3 3v.3a3.2 3.2 0 0 1 2 5.2 3.2 3.2 0 0 1-2.4 3.1 3 3 0 0 1-3.1 3.4H12"/></svg></span><h3>Según los diagnósticos</h3><p>Nuestros terapeutas parten por los estudiantes que van a usar la sala y los diagnósticos con que trabaja el equipo de integración, y eligen los elementos que responden a la necesidad principal.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><rect x="9" y="13" width="6" height="7"/></svg></span><h3>Según el espacio</h3><p>Una sala completa, un rincón dentro de una sala que ya existe o una estación sensorial móvil cuando la escuela no tiene un espacio fijo: la sala se adapta al lugar.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span><h3>Según el presupuesto</h3><p>Se puede partir con pocos elementos y crecer por etapas. Y si buscan financiamiento público, los asesoramos sobre los fondos disponibles y elaboramos el proyecto para postularlo.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><h3>Crece con el tiempo</h3><p>Las salas son escalables: lo que se compra hoy se integra a lo que venga después, y cada año se pueden sumar nuevos elementos.</p></div></div>
     <div class="tera">
       <span class="tera-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/><path d="M17.5 19.5a5.4 5.4 0 0 0-2.6-4.6"/><path d="M19 3v4M17 5h4"/></svg></span>
       <div>
@@ -2112,7 +2117,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       <div class="ley-op-t">¿Cómo lo hacen realidad? Tres formas de tener su espacio</div>
       <div class="ley-op-g">
         <a href="#salas"><b>Una sala completa</b><span>Elijan una de nuestras salas ya diseñadas o diseñemos la suya.</span></a>
-        <a href="#etapas"><b>Una sala por etapas</b><span>Cuatro proyectos; tres caben en una Compra Ágil.</span></a>
+        <a href="#etapas"><b>Una sala por etapas</b><span>Tres proyectos, que pueden financiar por separado.</span></a>
         <a href="#sin-espacio"><b>Una estación sensorial móvil</b><span>Si no tienen espacio para una sala, la sala va a ustedes.</span></a>
       </div>
     </div>
@@ -2138,7 +2143,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       <div class="fo-guia-t">Guía rápida para escuelas municipales</div>
       <ol>
         <li><b>Definan la necesidad</b> con su equipo de integración y de convivencia: quiénes usarán la sala y para qué.</li>
-        <li><b>Elijan el camino:</b> incluirla en su PME con la SEP, o conversarlo con su sostenedor (municipio, corporación o Servicio Local) para usar la subvención PIE o el FAEP.</li>
+        <li><b>Elijan el camino:</b> incluirla en su PME con la SEP, o conversarlo con su sostenedor (DAEM, corporación o Servicio Local) para usar la subvención PIE o el FAEP.</li>
         <li><b>Si no saben por dónde partir o necesitan un fondo concursable,</b> los asesoramos sobre los fondos disponibles, elaboramos el proyecto y lo postulamos con ustedes.</li>
       </ol>
     </div>
@@ -2213,16 +2218,25 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   <!-- ── La sala en 4 etapas ──────────────────────────────── -->
   <div class="nx et" id="etapas">
     <div class="rot">Por etapas</div>
-    <h2>Una sala SHX completa,<br><em>en cuatro proyectos</em></h2>
-    <p class="nx-baja">Cada etapa es un proyecto propio, que pueden diseñar, financiar e implementar por separado.
-      <b>Tres de ellas caben en una Compra Ágil.</b> Nada se repite y todo se suma: lo que compran en una etapa
-      sigue funcionando en la siguiente, y con la cuarta tienen una sala SHX completa. Nuestro equipo de terapeutas
-      los acompaña a definir el orden y, si lo necesitan, a postular a fondos.</p>
+    <h2>Una sala SHX completa,<br><em>en tres proyectos</em></h2>
+    <p class="nx-baja"><b>No necesitan juntar el valor de la sala completa de una vez.</b> Cada etapa es un proyecto propio,
+      que pueden financiar e implementar por separado, a medida que tengan los recursos. La sala funciona desde la primera
+      etapa, nada se repite y todo se suma: lo que compran en una etapa sigue funcionando en la siguiente, y con la tercera
+      tienen una sala SHX completa. Nuestro equipo de terapeutas los acompaña a definir el orden, les prepara el proyecto
+      y, si lo necesitan, los asesora para postular a fondos.</p>
     <ol class="et-ruta" id="etRuta"></ol>
     <div class="et-total">
-      <div><span class="et-total-l">Sala SHX completa</span><b>$30.993.276</b><span class="et-total-s">IVA incluido, en 4 etapas</span></div>
+      <div><span class="et-total-l">Sala SHX completa</span><b>$30.993.276</b><span class="et-total-s">IVA incluido, en 3 etapas</span></div>
       <p><b>Capacitación, instalación y transporte:</b> se cobran en cada visita al establecimiento, según la región
         donde está la escuela, y no están incluidos en estos valores.</p>
+    </div>
+    <div class="et-chica">
+      <span class="et-chica-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 3.5h5l-1.3 3.2h-2.4z"/><path d="M8.6 6.7h6.8c2.6 2.4 4.1 5.3 4.1 7.9a5 5 0 0 1-5 5H9.5a5 5 0 0 1-5-5c0-2.6 1.5-5.5 4.1-7.9z"/><path d="M12 10v7.5"/><path d="M14.3 11.4h-3a1.3 1.3 0 0 0 0 2.6h1.4a1.3 1.3 0 0 1 0 2.6H9.7"/></svg></span>
+      <p><b>¿Tienen un monto anual más pequeño?</b> Si su escuela cuenta con unos $5 o 6 millones al año, por ejemplo de la
+        SEP o del PIE, también les armamos un proyecto más chico, pensado para comprarse por <b>Compra Ágil</b>: la forma
+        más simple y rápida de comprar por Mercado Público, sin licitación, para montos de hasta unos $7,2 millones con todo
+        incluido. La compra la hace la oficina de adquisiciones de su municipio, DAEM o Servicio Local, y nosotros les
+        enviamos la cotización y las especificaciones técnicas que necesitan.</p>
     </div>
   </div>
 
@@ -2337,7 +2351,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   <div class="fin"><img src="oct-logo-blanco.png" alt="OpenCluster Tech · Construyendo inclusión"><span>www.opencluster-tech.cl</span></div>
 </div>
 
-<button type="button" class="mnu-btn" id="mnuBtn" aria-expanded="false" aria-controls="mnu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Contenido</span></button><div class="mnu-velo" id="mnuVelo" hidden></div><nav class="mnu" id="mnu" aria-label="Contenido de la propuesta" aria-hidden="true"><div class="mnu-cab"><span>En esta propuesta</span><button type="button" class="mnu-x" id="mnuX" aria-label="Cerrar el menú">&#10005;</button></div><div class="mnu-l"><a href="#inicio" data-ir="inicio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/></svg></span><span><b>Nuestras salas</b><i>100% personalizables, diseñadas por terapeutas</i></span></a><a href="#materiales" data-ir="materiales"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><b>Materiales</b><i>Seguros aunque se los lleven a la boca</i></span></a><a href="#ley" data-ir="ley"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7h6z"/><path d="M19 7l-3 7h6z"/></svg></span><span><b>Lo que pide la ley</b><i>Ley TEA e inclusión escolar</i></span></a><a href="#fondos" data-ir="fondos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span><span><b>Cómo financiarla</b><i>Fondos del Estado y proyectos</i></span></a><a href="#pasos" data-ir="pasos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/></svg></span><span><b>Cómo trabajamos</b><i>De la evaluación a la instalación</i></span></a><a href="#salas" data-ir="salas"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>Salas ya diseñadas</b><i>Seis salas con su valor</i></span></a><a href="#etapas" data-ir="etapas"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><span><b>Por etapas</b><i>Una sala SHX en cuatro proyectos</i></span></a><a href="#sin-espacio" data-ir="sin-espacio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 9h14"/><circle cx="8" cy="20.5" r="1.3"/><circle cx="16" cy="20.5" r="1.3"/></svg></span><span><b>Estación sensorial móvil</b><i>Si no tienen espacio para una sala</i></span></a><a href="#videos" data-ir="videos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span><b>Videos</b><i>Salas en centros educativos</i></span></a><a href="#compromiso" data-ir="compromiso"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><span><b>Nuestro compromiso</b><i>Los acompañamos en todo el camino</i></span></a></div></nav>
+<button type="button" class="mnu-btn" id="mnuBtn" aria-expanded="false" aria-controls="mnu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Contenido</span></button><div class="mnu-velo" id="mnuVelo" hidden></div><nav class="mnu" id="mnu" aria-label="Contenido de la propuesta" aria-hidden="true"><div class="mnu-cab"><span>En esta propuesta</span><button type="button" class="mnu-x" id="mnuX" aria-label="Cerrar el menú">&#10005;</button></div><div class="mnu-l"><a href="#inicio" data-ir="inicio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/></svg></span><span><b>Nuestras salas</b><i>100% personalizables, diseñadas por terapeutas</i></span></a><a href="#materiales" data-ir="materiales"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><b>Materiales</b><i>Seguros aunque se los lleven a la boca</i></span></a><a href="#ley" data-ir="ley"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7h6z"/><path d="M19 7l-3 7h6z"/></svg></span><span><b>Lo que pide la ley</b><i>Ley TEA e inclusión escolar</i></span></a><a href="#fondos" data-ir="fondos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span><span><b>Cómo financiarla</b><i>Fondos del Estado y proyectos</i></span></a><a href="#pasos" data-ir="pasos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/></svg></span><span><b>Cómo trabajamos</b><i>De la evaluación a la instalación</i></span></a><a href="#salas" data-ir="salas"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>Salas ya diseñadas</b><i>Seis salas con su valor</i></span></a><a href="#etapas" data-ir="etapas"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><span><b>Por etapas</b><i>Una sala SHX en tres proyectos</i></span></a><a href="#sin-espacio" data-ir="sin-espacio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 9h14"/><circle cx="8" cy="20.5" r="1.3"/><circle cx="16" cy="20.5" r="1.3"/></svg></span><span><b>Estación sensorial móvil</b><i>Si no tienen espacio para una sala</i></span></a><a href="#videos" data-ir="videos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span><b>Videos</b><i>Salas en centros educativos</i></span></a><a href="#compromiso" data-ir="compromiso"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><span><b>Nuestro compromiso</b><i>Los acompañamos en todo el camino</i></span></a></div></nav>
 <button type="button" class="arriba" id="btnArriba" aria-label="Subir">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   Subir
@@ -2523,7 +2537,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
 
   /* 1b · La sala en 4 etapas */
   var ETP = window.NUESTRAS_ETAPAS || [];
-  function selloEtapa(e){ return '<span class="et-sello">' + (e.ca ? 'Cabe en una Compra Ágil' : 'Para postular a fondos') + '</span>'; }
+  function selloEtapa(e){ return ''; }
   var etRuta = document.getElementById('etRuta');
   if (etRuta) etRuta.innerHTML = ETP.map(function(e, j){
     var fotos = e.items.map(function(it){ var p = buscaProd(it.n) || {}; return p.img; }).filter(Boolean).slice(0, 4);
