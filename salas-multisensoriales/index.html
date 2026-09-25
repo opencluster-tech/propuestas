@@ -1587,6 +1587,53 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   .sv-vids{grid-template-columns:1fr}
   .arriba{right:12px;bottom:12px;padding:10px 14px}
 }
+/* ── Nuestro compromiso (25-sep-2026) ── */
+.cp{position:relative;overflow:hidden;padding:46px 54px 40px;color:#fff;
+  background:radial-gradient(120% 90% at 100% 0%,rgba(8,172,242,.28) 0%,rgba(8,172,242,0) 55%),
+    linear-gradient(160deg,#001A60 0%,#00297F 100%)}
+.cp-cab{margin:0 0 30px}
+.cp-rot{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#08ACF2;margin-bottom:8px}
+.cp-h{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;text-wrap:balance}
+.cp-letra{font-family:'Kaushan Script',cursive;font-weight:400;font-size:54px;line-height:1.05;color:#fff}
+.cp-sub{font-family:'Montserrat',sans-serif;font-style:italic;font-weight:700;font-size:21px;color:#8FDDFF}
+.cp-ruta{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 0}
+.cp-e{position:relative;padding-right:26px}
+.cp-e::before{content:'';position:absolute;left:52px;right:8px;top:23px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,rgba(8,172,242,.75),rgba(8,172,242,.12))}
+.cp-e:nth-child(3n)::before{display:none}
+.cp-ic{position:relative;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;
+  border:2px solid #08ACF2;background:#001A60;color:#8FDDFF;box-shadow:0 0 0 6px rgba(8,172,242,.08)}
+.cp-ic svg{width:21px;height:21px}
+.cp-n{display:block;margin:14px 0 4px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#08ACF2}
+.cp-e h3{margin:0 0 6px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;line-height:1.3;color:#fff}
+.cp-e p{margin:0;font-size:12.8px;line-height:1.65;color:rgba(255,255,255,.8);max-width:34ch}
+.cp-e:last-child .cp-ic{background:#08ACF2;color:#fff}
+.cp-fin{display:flex;align-items:center;gap:16px;margin-top:34px;padding:18px 22px;border-radius:14px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(143,221,255,.28)}
+.cp-fin-ic{flex:none;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#FF7E00;color:#fff}
+.cp-fin-ic svg{width:22px;height:22px;fill:currentColor;stroke:none}
+.cp-fin p{margin:0;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88)}
+.cp-fin b{color:#fff;font-family:'Montserrat',sans-serif;font-weight:800}
+@media (max-width:820px){
+  .cp{padding:38px 20px 32px}
+  .cp-letra{font-size:44px}
+  .cp-ruta{grid-template-columns:1fr;gap:0}
+  .cp-e{padding:0 0 26px 64px;min-height:46px}
+  .cp-ic{position:absolute;left:0;top:0}
+  .cp-n{margin-top:2px}
+  .cp-e::before,.cp-e:nth-child(3n)::before{display:block;left:22px;right:auto;top:52px;bottom:4px;width:2px;height:auto;
+    background:linear-gradient(180deg,rgba(8,172,242,.75),rgba(8,172,242,.15))}
+  .cp-e:last-child{padding-bottom:0}
+  .cp-e:last-child::before{display:none}
+  .cp-e p{max-width:none}
+}
+@media (max-width:560px){
+  .cp{padding:34px 16px 28px}
+  .cp-letra{font-size:38px}
+  .cp-sub{font-size:17px}
+  .cp-fin{align-items:flex-start;padding:16px}
+}
+@media (prefers-reduced-motion:reduce){.g3 .p2 .p2-portada img{transition:none}}
 @media print{.arriba,.sv{display:none !important}}
 </style>
 </head>
@@ -1658,83 +1705,6 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     </div>
   </div>
 
-  <!-- ── Las salas ya diseñadas ─────────────────────────── -->
-  <div class="nx" id="salas">
-    <div class="rot">Salas ya diseñadas</div>
-    <h2>Elijan una sala,<br><em>o partamos desde ella</em></h2>
-    <p class="nx-baja">Junto con los proyectos a la medida, hemos preparado salas ya diseñadas para
-      instituciones en Chile, pensadas para distintas necesidades y presupuestos. Pueden elegirlas tal
-      como están o usarlas como punto de partida: a cualquiera se le pueden sumar, cambiar o quitar
-      elementos. <b>Toquen una sala para conocerla</b>: qué la hace especial, qué se logra con ella, a
-      quién puede ayudar y cada uno de sus elementos.</p>
-    <div class="g3" id="gSalas"></div>
-  </div>
-
-  <!-- ── Los videos ─────────────────────────────────────── -->
-  <div class="nx obra" id="videos" style="border-top:0">
-    <div class="rot">Salas funcionando</div>
-    <h2>No es una idea:<br><em>ya está funcionando</em></h2>
-    <p class="nx-baja">Salas que implementamos en Chile y salas de nuestro partner europeo, Qinera, en
-      escuelas, centros de rehabilitación y centros para personas mayores. Elijan lo que quieren ver.</p>
-    <div class="vf" role="group" aria-label="Filtrar videos">
-      <button type="button" data-filtro="todos" aria-pressed="true">Todos</button>
-      <button type="button" data-filtro="chile" aria-pressed="false">En Chile</button>
-      <button type="button" data-filtro="escuelas" aria-pressed="false">Escuelas</button>
-      <button type="button" data-filtro="rehabilitacion" aria-pressed="false">Rehabilitación y clínicas</button>
-      <button type="button" data-filtro="mayores" aria-pressed="false">Personas mayores</button>
-      <button type="button" data-filtro="portatil" aria-pressed="false">Sin espacio fijo</button>
-      <button type="button" data-filtro="europa" aria-pressed="false">Partner europeo</button>
-    </div>
-    <div class="vf-cuenta" id="vfCuenta"></div>
-    <div class="obra-grid" id="vGrid">
-      <button type="button" class="obra-c" data-tags="chile escuelas" data-lb-src="https://www.youtube-nocookie.com/embed/orv3mD-avH4?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Escuela Amapolas" data-lb-donde="Santiago · Chile"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-amapolas.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Escuela Amapolas</span><span class="obra-donde">Santiago · Chile</span></span></span><span class="obra-que">María José Nilo, educadora diferencial, recorre la sala.</span></button>
-      <button type="button" class="obra-c" data-tags="chile rehabilitacion" data-lb-src="https://www.instagram.com/p/DZgW3ypDKcm/embed/" data-lb-fmt="ig" data-lb-lugar="Teletón" data-lb-donde="Rancagua · Chile"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-teleton.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Teletón</span><span class="obra-donde">Rancagua · Chile</span></span></span><span class="obra-que">La fonoaudióloga del centro cuenta cómo la usan en rehabilitación.</span></button>
-      <button type="button" class="obra-c" data-tags="chile rehabilitacion" data-lb-src="https://drive.google.com/file/d/1iaBBnH_QaNp7UqivCF60ILV2288Eyp5z/preview" data-lb-fmt="vert" data-lb-lugar="Clínica MEDS" data-lb-donde="Santiago · Chile"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-meds.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Clínica MEDS</span><span class="obra-donde">Santiago · Chile</span></span></span><span class="obra-que">Un rincón de calma dentro de una clínica en funcionamiento.</span></button>
-      <button type="button" class="obra-c" data-tags="europa escuelas" data-lb-src="https://www.youtube-nocookie.com/embed/4TCPc5Bjs-M?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Bienestar y aprendizaje" data-lb-donde="Qinera · Europa"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/yt-4TCPc5Bjs-M.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Bienestar y aprendizaje</span><span class="obra-donde">Qinera · Europa</span></span></span><span class="obra-que">Una sala multisensorial en una escuela, con niños usándola en grupo.</span></button>
-      <button type="button" class="obra-c" data-tags="europa escuelas" data-lb-src="https://www.youtube-nocookie.com/embed/gvoZQB7fANI?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Escuela primaria" data-lb-donde="Lituania · Qinera"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-lituania.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Escuela primaria</span><span class="obra-donde">Lituania · Qinera</span></span></span><span class="obra-que">Una sala implementada por nuestro partner europeo en una escuela primaria.</span></button>
-      <button type="button" class="obra-c" data-tags="europa rehabilitacion" data-lb-src="https://www.youtube-nocookie.com/embed/epNy_tmD-y8?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Sala de estimulación Amencer" data-lb-donde="Vigo · Qinera"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/yt-epNy_tmD-y8.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Sala de estimulación Amencer</span><span class="obra-donde">Vigo · Qinera</span></span></span><span class="obra-que">Terapias de rehabilitación en una sala de estimulación sensorial.</span></button>
-      <button type="button" class="obra-c" data-tags="europa mayores" data-lb-src="https://www.youtube-nocookie.com/embed/OtfA9g2l_OQ?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Centro STIMA Embajadores" data-lb-donde="Madrid · Qinera"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/yt-OtfA9g2l_OQ.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Centro STIMA Embajadores</span><span class="obra-donde">Madrid · Qinera</span></span></span><span class="obra-que">La sala multisensorial SHX de un centro para personas mayores.</span></button>
-      <button type="button" class="obra-c" data-tags="europa portatil escuelas" data-lb-src="https://www.youtube-nocookie.com/embed/dBjlS_rI_c0?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Sala multisensorial portátil" data-lb-donde="Qinera · Europa"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/yt-dBjlS_rI_c0.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Sala multisensorial portátil</span><span class="obra-donde">Qinera · Europa</span></span></span><span class="obra-que">Así funciona el Sensory Go, un carrito para quienes no tienen un espacio fijo para la sala.</span></button>
-      <button type="button" class="obra-c" data-tags="europa portatil" data-lb-src="https://www.youtube-nocookie.com/embed/wrFScWAnDqg?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Sensory Go en ASPASIM" data-lb-donde="Qinera · Europa"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-aspasim.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Sensory Go en ASPASIM</span><span class="obra-donde">Qinera · Europa</span></span></span><span class="obra-que">Alessia y Leo juegan con el Sensory Go, la versión portátil de la tecnología SHX.</span></button>
-      <button type="button" class="obra-c" data-tags="europa tecnologia" data-lb-src="https://www.youtube-nocookie.com/embed/Q9uYpvsxzDU?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde="Qinera · Europa"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-proximity.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">SHX Proximity</span><span class="obra-donde">Qinera · Europa</span></span></span><span class="obra-que">Los objetos reales cobran vida: se acerca un objeto y la sala responde.</span></button>
-    </div>
-  </div>
-
-  <div class="servicios">
-    <div class="rot">Cómo trabajamos un proyecto</div>
-    <h2>Nos hacemos cargo del espacio completo</h2>
-    <p class="serv-baja">Nuestro trabajo parte antes de elegir el primer elemento y sigue después de
-      instalarlo.</p>
-    <div class="serv-grid">
-      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M21 21l-5.6-5.6"/><path d="M8 10.5h5"/><path d="M10.5 8v5"/></svg></div><h3>Evaluamos la necesidad</h3>
-        <p>Hacemos disponibles a nuestros terapeutas para evaluar las necesidades de la comunidad
-          que va a utilizar la sala.</p></div>
-      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/><path d="M4 20l1.2-4"/></svg></div><h3>Diseñamos el proyecto</h3>
-        <p>Diseñamos el espacio y el proyecto de sala adecuado a esas necesidades, y presentamos los
-          productos y elementos que responden a la necesidad principal, para que realmente la sala
-          cumpla un objetivo terapéutico. El diseño no tiene costo.</p></div>
-      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="11" height="5" rx="1.3"/><path d="M14 6.5h3.6a2 2 0 0 1 2 2v2.2a2 2 0 0 1-2 2H12"/><rect x="9.8" y="14.5" width="4.4" height="5.5" rx="1.2"/></svg></div><h3>Adecuamos el lugar</h3>
-        <p>Cuando es necesario hacemos los trabajos de preinstalación, para que el espacio físico sea
-          exactamente lo que se necesita para implementar la sala. Como cada lugar llega en una
-          condición distinta, ese trabajo se valoriza aparte y se suma como un ítem adicional en la
-          cotización: lo ejecutamos nosotros, pero no está incluido en el valor de la sala.</p></div>
-      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg></div><h3>Instalamos</h3>
-        <p>Nos encargamos de la instalación y de la implementación del espacio, en todo el país.
-          Tenemos stock propio, así que la entrega no queda esperando una importación.</p></div>
-      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20a5.8 5.8 0 0 1 11.6 0"/><path d="M16.2 5.4a3.2 3.2 0 0 1 0 5.2"/><path d="M18 20a5.6 5.6 0 0 0-2.7-4.8"/></svg></div><h3>Capacitamos</h3>
-        <p>Realizamos capacitaciones a todos aquellos que vayan a estar en contacto directo con el
-          uso de la sala y de sus elementos.</p></div>
-      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5h9L19 8v12.5H5.5z"/><path d="M14.5 3.5V8H19"/><path d="M8.8 14.2l2 2 4-4"/></svg></div><h3>Protocolo de cuidado</h3>
-        <p>Presentamos un protocolo de cuidado y mantención, para evitar daños y para que los
-          productos y elementos tengan una vida útil mayor.</p></div>
-    </div>
-    <!-- La terapeuta de Rayen, 23-sep-2026: «te acompañamos siempre» -->
-    <div class="serv-acomp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg><span><b class="acomp-tit">Nuestro compromiso: los acompañamos en todo el camino.</b><ul class="acomp-lista"><li><b>Para conocerlos:</b> los acompañamos desde el primer contacto, reuniéndonos con ustedes las veces que sea necesario, respondiendo sus preguntas y, cuando es posible, visitando sus instalaciones, para entender bien sus necesidades.</li><li><b>Para definir la sala:</b> los acompañamos a categorizar a la población que la usará, para que obtengan el espacio sensorial adecuado a su perfil.</li><li><b>Una propuesta personalizada:</b> los acompañamos con una propuesta adaptada a cada uno de nuestros clientes, con sus planos, que vamos mejorando a medida que los conocemos más.</li><li><b>Si buscan fondos públicos:</b> los acompañamos en la elaboración del proyecto y postulamos juntos para conseguir el financiamiento de su espacio.</li><li><b>En la implementación:</b> los acompañamos aconsejándolos y guiándolos en los trabajos de preinstalación que requiere el espacio, instalamos la sala y capacitamos a su equipo.</li><li><b>Y después:</b> los seguimos acompañando años después de haber comprado su sala, para que puedan seguir escalándola y transformándola año a año en un espacio cada vez más adecuado a sus necesidades.</li></ul><span class="acomp-fin"><b>Los acompañamos permanentemente.</b> Cuando algo falla o cuando surgen dudas, seguimos presentes.</span></span></div>
-    <div class="serv-pie">Las salas son escalables: se puede partir con un espacio e ir
-      agregando elementos poco a poco.</div>
-  </div>
-
-
   <div class="seg" id="materiales">
     <div class="seg-rot">Materiales</div>
     <h2>Lo que va a estar en contacto con ellos<br><em>lo elegimos con conciencia, porque nos importa</em></h2>
@@ -1796,6 +1766,84 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   </div>
 
 
+  <div class="servicios">
+    <div class="rot">Cómo trabajamos un proyecto</div>
+    <h2>Nos hacemos cargo del espacio completo</h2>
+    <p class="serv-baja">Nuestro trabajo parte antes de elegir el primer elemento y sigue después de
+      instalarlo.</p>
+    <div class="serv-grid">
+      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M21 21l-5.6-5.6"/><path d="M8 10.5h5"/><path d="M10.5 8v5"/></svg></div><h3>Evaluamos la necesidad</h3>
+        <p>Hacemos disponibles a nuestros terapeutas para evaluar las necesidades de la comunidad
+          que va a utilizar la sala.</p></div>
+      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/><path d="M4 20l1.2-4"/></svg></div><h3>Diseñamos el proyecto</h3>
+        <p>Diseñamos el espacio y el proyecto de sala adecuado a esas necesidades, y presentamos los
+          productos y elementos que responden a la necesidad principal, para que realmente la sala
+          cumpla un objetivo terapéutico. El diseño no tiene costo.</p></div>
+      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="11" height="5" rx="1.3"/><path d="M14 6.5h3.6a2 2 0 0 1 2 2v2.2a2 2 0 0 1-2 2H12"/><rect x="9.8" y="14.5" width="4.4" height="5.5" rx="1.2"/></svg></div><h3>Adecuamos el lugar</h3>
+        <p>Cuando es necesario hacemos los trabajos de preinstalación, para que el espacio físico sea
+          exactamente lo que se necesita para implementar la sala. Como cada lugar llega en una
+          condición distinta, ese trabajo se valoriza aparte y se suma como un ítem adicional en la
+          cotización: lo ejecutamos nosotros, pero no está incluido en el valor de la sala.</p></div>
+      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg></div><h3>Instalamos</h3>
+        <p>Nos encargamos de la instalación y de la implementación del espacio, en todo el país.
+          Tenemos stock propio, así que la entrega no queda esperando una importación.</p></div>
+      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20a5.8 5.8 0 0 1 11.6 0"/><path d="M16.2 5.4a3.2 3.2 0 0 1 0 5.2"/><path d="M18 20a5.6 5.6 0 0 0-2.7-4.8"/></svg></div><h3>Capacitamos</h3>
+        <p>Realizamos capacitaciones a todos aquellos que vayan a estar en contacto directo con el
+          uso de la sala y de sus elementos.</p></div>
+      <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5h9L19 8v12.5H5.5z"/><path d="M14.5 3.5V8H19"/><path d="M8.8 14.2l2 2 4-4"/></svg></div><h3>Protocolo de cuidado</h3>
+        <p>Presentamos un protocolo de cuidado y mantención, para evitar daños y para que los
+          productos y elementos tengan una vida útil mayor.</p></div>
+    </div>
+
+    <div class="serv-pie">Las salas son escalables: se puede partir con un espacio e ir
+      agregando elementos poco a poco.</div>
+  </div>
+
+
+  <!-- ── Las salas ya diseñadas ─────────────────────────── -->
+  <div class="nx" id="salas">
+    <div class="rot">Salas ya diseñadas</div>
+    <h2>Elijan una sala,<br><em>o partamos desde ella</em></h2>
+    <p class="nx-baja">Junto con los proyectos a la medida, hemos preparado salas ya diseñadas para
+      instituciones en Chile, pensadas para distintas necesidades y presupuestos. Pueden elegirlas tal
+      como están o usarlas como punto de partida: a cualquiera se le pueden sumar, cambiar o quitar
+      elementos. <b>Toquen una sala para conocerla</b>: qué la hace especial, qué se logra con ella, a
+      quién puede ayudar y cada uno de sus elementos.</p>
+    <div class="g3" id="gSalas"></div>
+  </div>
+
+  <!-- ── Los videos ─────────────────────────────────────── -->
+  <div class="nx obra" id="videos" style="border-top:0">
+    <div class="rot">Salas funcionando</div>
+    <h2>No es una idea:<br><em>ya está funcionando</em></h2>
+    <p class="nx-baja">Salas que implementamos en Chile y salas de nuestro partner europeo, Qinera, en
+      escuelas, centros de rehabilitación y centros para personas mayores. Elijan lo que quieren ver.</p>
+    <div class="vf" role="group" aria-label="Filtrar videos">
+      <button type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+      <button type="button" data-filtro="chile" aria-pressed="false">En Chile</button>
+      <button type="button" data-filtro="escuelas" aria-pressed="false">Escuelas</button>
+      <button type="button" data-filtro="rehabilitacion" aria-pressed="false">Salud y rehabilitación</button>
+      <button type="button" data-filtro="mayores" aria-pressed="false">Personas mayores</button>
+      <button type="button" data-filtro="portatil" aria-pressed="false">Sin espacio fijo</button>
+      <button type="button" data-filtro="europa" aria-pressed="false">Partner europeo</button>
+    </div>
+    <div class="vf-cuenta" id="vfCuenta"></div>
+    <div class="obra-grid" id="vGrid">
+      <button type="button" class="obra-c" data-tags="chile rehabilitacion" data-lb-src="videos/cesfam-thomas-fenton.mp4" data-lb-fmt="mp4" data-lb-lugar="CESFAM Thomas Fenton" data-lb-donde="Punta Arenas · Chile"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-fenton.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">CESFAM Thomas Fenton</span><span class="obra-donde">Punta Arenas · Chile</span></span></span><span class="obra-que">La sala multisensorial que implementamos en un centro de salud familiar.</span></button>
+      <button type="button" class="obra-c" data-tags="chile escuelas" data-lb-src="https://www.youtube-nocookie.com/embed/orv3mD-avH4?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Escuela Amapolas" data-lb-donde="Santiago · Chile"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-amapolas.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Escuela Amapolas</span><span class="obra-donde">Santiago · Chile</span></span></span><span class="obra-que">María José Nilo, educadora diferencial, recorre la sala.</span></button>
+      <button type="button" class="obra-c" data-tags="chile rehabilitacion" data-lb-src="https://www.instagram.com/p/DZgW3ypDKcm/embed/" data-lb-fmt="ig" data-lb-lugar="Teletón" data-lb-donde="Rancagua · Chile"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-teleton.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Teletón</span><span class="obra-donde">Rancagua · Chile</span></span></span><span class="obra-que">La fonoaudióloga del centro cuenta cómo la usan en rehabilitación.</span></button>
+      <button type="button" class="obra-c" data-tags="chile rehabilitacion" data-lb-src="https://drive.google.com/file/d/1iaBBnH_QaNp7UqivCF60ILV2288Eyp5z/preview" data-lb-fmt="vert" data-lb-lugar="Clínica MEDS" data-lb-donde="Santiago · Chile"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-meds.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Clínica MEDS</span><span class="obra-donde">Santiago · Chile</span></span></span><span class="obra-que">Un rincón de calma dentro de una clínica en funcionamiento.</span></button>
+      <button type="button" class="obra-c" data-tags="europa escuelas" data-lb-src="https://www.youtube-nocookie.com/embed/4TCPc5Bjs-M?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Bienestar y aprendizaje" data-lb-donde="Qinera · Europa"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/yt-4TCPc5Bjs-M.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Bienestar y aprendizaje</span><span class="obra-donde">Qinera · Europa</span></span></span><span class="obra-que">Una sala multisensorial en una escuela, con niños usándola en grupo.</span></button>
+      <button type="button" class="obra-c" data-tags="europa escuelas" data-lb-src="https://www.youtube-nocookie.com/embed/gvoZQB7fANI?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Escuela primaria" data-lb-donde="Lituania · Qinera"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-lituania.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Escuela primaria</span><span class="obra-donde">Lituania · Qinera</span></span></span><span class="obra-que">Una sala implementada por nuestro partner europeo en una escuela primaria.</span></button>
+      <button type="button" class="obra-c" data-tags="europa rehabilitacion" data-lb-src="https://www.youtube-nocookie.com/embed/epNy_tmD-y8?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Sala de estimulación Amencer" data-lb-donde="Vigo · Qinera"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/yt-epNy_tmD-y8.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Sala de estimulación Amencer</span><span class="obra-donde">Vigo · Qinera</span></span></span><span class="obra-que">Terapias de rehabilitación en una sala de estimulación sensorial.</span></button>
+      <button type="button" class="obra-c" data-tags="europa mayores" data-lb-src="https://www.youtube-nocookie.com/embed/OtfA9g2l_OQ?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Centro STIMA Embajadores" data-lb-donde="Madrid · Qinera"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/yt-OtfA9g2l_OQ.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Centro STIMA Embajadores</span><span class="obra-donde">Madrid · Qinera</span></span></span><span class="obra-que">La sala multisensorial SHX de un centro para personas mayores.</span></button>
+      <button type="button" class="obra-c" data-tags="europa portatil escuelas" data-lb-src="https://www.youtube-nocookie.com/embed/dBjlS_rI_c0?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Sala multisensorial portátil" data-lb-donde="Qinera · Europa"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/yt-dBjlS_rI_c0.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Sala multisensorial portátil</span><span class="obra-donde">Qinera · Europa</span></span></span><span class="obra-que">Así funciona el Sensory Go, un carrito para quienes no tienen un espacio fijo para la sala.</span></button>
+      <button type="button" class="obra-c" data-tags="europa portatil" data-lb-src="https://www.youtube-nocookie.com/embed/wrFScWAnDqg?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Sensory Go en ASPASIM" data-lb-donde="Qinera · Europa"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-aspasim.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">Sensory Go en ASPASIM</span><span class="obra-donde">Qinera · Europa</span></span></span><span class="obra-que">Alessia y Leo juegan con el Sensory Go, la versión portátil de la tecnología SHX.</span></button>
+      <button type="button" class="obra-c" data-tags="europa tecnologia" data-lb-src="https://www.youtube-nocookie.com/embed/Q9uYpvsxzDU?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde="Qinera · Europa"><span class="obra-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-proximity.jpg" alt="" loading="lazy"><span class="obra-velo"></span><span class="obra-play"></span><span class="obra-rotulo"><span class="obra-lugar">SHX Proximity</span><span class="obra-donde">Qinera · Europa</span></span></span><span class="obra-que">Los objetos reales cobran vida: se acerca un objeto y la sala responde.</span></button>
+    </div>
+  </div>
+
+  <section class="cp" id="compromiso"><div class="cp-cab"><div class="cp-rot">Nuestro compromiso</div><h2 class="cp-h"><span class="cp-letra">Los acompañamos</span><span class="cp-sub">en todo el camino</span></h2></div><ol class="cp-ruta"><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M2.8 19.5a5.2 5.2 0 0 1 10.4 0"/><path d="M14 19.5a4.4 4.4 0 0 1 7.2-3.4"/></svg></span><span class="cp-n">Etapa 1</span><h3>Para conocerlos</h3><p>Los acompañamos desde el primer contacto, reuniéndonos con ustedes las veces que sea necesario, respondiendo sus preguntas y, cuando es posible, visitando sus instalaciones, para entender bien sus necesidades.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="cp-n">Etapa 2</span><h3>Para definir la sala</h3><p>Los acompañamos a categorizar a la población que la usará, para que obtengan el espacio sensorial adecuado a su perfil.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5 9 3.5l6 2 5-2v15l-5 2-6-2-5 2z"/><path d="M9 3.5v15"/><path d="M15 5.5v15"/></svg></span><span class="cp-n">Etapa 3</span><h3>Una propuesta personalizada</h3><p>Los acompañamos con una propuesta adaptada a cada uno de nuestros clientes, con sus planos, que vamos mejorando a medida que los conocemos más.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9.5 12 4l8.5 5.5"/><path d="M5.5 10v7"/><path d="M10 10v7"/><path d="M14 10v7"/><path d="M18.5 10v7"/><path d="M3.5 20h17"/></svg></span><span class="cp-n">Etapa 4</span><h3>Si buscan fondos públicos</h3><p>Los acompañamos en la elaboración del proyecto y postulamos juntos para conseguir el financiamiento de su espacio.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0 4.8 5.2l-8.6 8.6a2.1 2.1 0 0 1-3-3l8.6-8.6"/><path d="M5 5l3.5 3.5"/><path d="M3.5 7.5 7.5 3.5"/></svg></span><span class="cp-n">Etapa 5</span><h3>En la implementación</h3><p>Los acompañamos aconsejándolos y guiándolos en los trabajos de preinstalación que requiere el espacio, instalamos la sala y capacitamos a su equipo.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-8"/><path d="M12 12c0-4 2.8-6.5 7-6.5 0 4-2.8 6.5-7 6.5z"/><path d="M12 14.5c0-3-2.2-5-5.5-5 0 3 2.2 5 5.5 5z"/></svg></span><span class="cp-n">Etapa 6</span><h3>Y después</h3><p>Los seguimos acompañando años después de haber comprado su sala, para que puedan seguir escalándola y transformándola año a año en un espacio cada vez más adecuado a sus necesidades.</p></li></ol><div class="cp-fin"><span class="cp-fin-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><p><b>Los acompañamos permanentemente.</b> Cuando algo falla o cuando surgen dudas, seguimos presentes.</p></div></section>
 
   <!-- ── El cierre ──────────────────────────────────────── -->
   <div class="cz">
@@ -2259,6 +2307,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     donde.style.display=d.lbDonde?'block':'none';
     caja.className='lb-caja';
     lb.className='lb lb-'+(d.lbFmt||'yt');
+    if(d.lbFmt==='mp4'){ lb.className='lb lb-vert'; var v=document.createElement('video'); v.src=d.lbSrc; v.controls=true; v.autoplay=true; v.setAttribute('playsinline',''); v.style.cssText='width:100%;height:100%;background:#000;display:block'; cuerpo.innerHTML=''; cuerpo.appendChild(v); lb.hidden=false; document.body.style.overflow='hidden'; return; }
     var i=document.createElement('iframe');
     i.setAttribute('allow','autoplay; encrypted-media; fullscreen');
     i.setAttribute('allowfullscreen','');
