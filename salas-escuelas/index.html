@@ -1484,8 +1484,10 @@ body .pg .seg-rot{font-size:36px !important}
 /* La tarjeta de contacto del final (Rayen, 25-sep-2026) */
 .ct{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:center;margin-top:18px;padding:22px 24px;border-radius:18px;
   background:linear-gradient(150deg,#001A60 0%,#02358F 100%);color:#fff;box-shadow:0 18px 40px -26px rgba(0,26,96,.7)}
-.ct-foto{width:92px;height:92px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px #08ACF2;background:#08ACF2;display:flex;align-items:center;justify-content:center}
-.ct-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.ct-foto{position:relative;width:104px;height:104px;border-radius:50%;box-shadow:0 0 0 3px #FF7E00;background:#08ACF2;display:flex;align-items:center;justify-content:center}
+.ct-foto>img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.ct-logo{position:absolute;right:-8px;bottom:-6px;width:42px;height:42px;border-radius:50%;background:#001A60;box-shadow:0 0 0 2px #08ACF2;display:flex;align-items:center;justify-content:center}
+.ct-logo img{width:28px;height:auto;display:block}
 .ct-foto span{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:#fff}
 .ct-tx{display:flex;flex-direction:column;gap:3px}
 .ct-tx b{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#fff}
@@ -2268,7 +2270,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       Con eso nuestro equipo de terapeutas les prepara una propuesta a la medida: puede partir de una de
       estas salas o armarse desde cero, y siempre se ajusta a su presupuesto.</p>
     <div class="ct">
-      <div class="ct-foto" id="ctFoto"><span>RO</span></div>
+      <div class="ct-foto" id="ctFoto"><img src="rayen-ogalde.jpg" alt="Rayen Ogalde"><span class="ct-logo"><img src="isotipo-oct-blanco.png" alt="OpenCluster Tech"></span></div>
       <div class="ct-tx">
         <b>Rayen Ogalde</b>
         <span class="ct-rol">Encargada de Proyectos de Sala</span>
