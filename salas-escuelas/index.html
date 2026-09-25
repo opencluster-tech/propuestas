@@ -1476,6 +1476,38 @@ body .pg .seg-rot{font-size:36px !important}
 .g3 .p2-val b{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;margin:2px 0}
 .sv-dato-v b{font-size:18px}
 
+/* Lo que pide la ley */
+.ley-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:4px}
+.ley-c{display:flex;flex-direction:column;border:1px solid #E3E9F2;border-radius:14px;padding:16px 18px;background:#fff}
+.ley-tipo{align-self:flex-start;font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;background:var(--navy);border-radius:999px;padding:4px 10px}
+.ley-tipo.ori{background:#E6F6FE;color:#0A8FCC}
+.ley-n{margin:10px 0 6px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--navy);line-height:1.3}
+.ley-c blockquote{margin:0 0 10px;padding:0 0 0 12px;border-left:2px solid #08ACF2;font-size:12.8px;line-height:1.6;font-style:italic;color:#1F2937}
+.ley-c p{margin:0 0 10px;font-size:12.6px;line-height:1.6;color:#374151;flex:1}
+.ley-c a,.fo-c a,.fo-dest a{font-size:10.5px;color:#0A8FCC;text-decoration:underline;text-underline-offset:2px}
+.ley-nota{margin:14px 0 0;font-size:12px;line-height:1.6;color:var(--suave);font-style:italic}
+/* Fondos */
+.fo-dest{display:flex;gap:22px;align-items:center;margin:4px 0 14px;padding:20px 22px;border-radius:16px;color:#fff;
+  background:linear-gradient(130deg,#001A60 0%,#02358F 60%,#0B76C4 100%)}
+.fo-dest-n{flex:none;display:flex;flex-direction:column;max-width:150px}
+.fo-dest-n b{font-family:'Montserrat',sans-serif;font-size:38px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.fo-dest-n span{font-size:11px;line-height:1.35;color:#BFE9FF;margin-top:4px}
+.fo-dest-rot{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8FDDFF;margin-bottom:6px}
+.fo-dest blockquote{margin:0 0 8px;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;line-height:1.45;color:#fff}
+.fo-dest p{margin:0;font-size:12.4px;line-height:1.6;color:rgba(255,255,255,.85)}
+.fo-dest a{color:#8FDDFF}
+.fo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fo-c{position:relative;display:flex;flex-direction:column;border:1px solid #E3E9F2;border-radius:14px;padding:16px 16px 14px;background:#fff}
+.fo-i{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#08ACF2;color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;margin-bottom:10px}
+.fo-c h3{margin:0 0 6px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--navy);line-height:1.3}
+.fo-c p{margin:0 0 10px;font-size:12.4px;line-height:1.6;color:#374151;flex:1}
+.fo-q{font-size:11.5px;line-height:1.5;color:#1F2937;margin-bottom:8px;padding:8px 10px;border-radius:8px;background:#F4F9FF}
+.fo-q b{color:var(--navy)}
+@media (max-width:820px){.ley-grid{grid-template-columns:1fr}.fo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fo-dest{flex-direction:column;align-items:flex-start;gap:12px}}
+@media (max-width:560px){.fo-grid{grid-template-columns:1fr}.fo-dest{padding:18px 16px}.fo-dest blockquote{font-size:14.5px}}
+
 /* Sin sala libre: el carrito */
 .go{position:relative;overflow:hidden;background:radial-gradient(90% 70% at 0% 0%,rgba(8,172,242,.22),rgba(8,172,242,0) 60%),linear-gradient(165deg,#001A60 0%,#00297F 100%);color:#fff}
 .go-in{padding:46px 54px 44px}
@@ -1923,6 +1955,18 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   </div>
 
 
+  <!-- ── Lo que pide la ley (Rayen, 25-sep-2026) ─────────── -->
+  <div class="nx ley" id="ley">
+    <div class="rot">Inclusión en la escuela</div>
+    <h2>Lo que pide la ley,<br><em>y cómo les ayuda una sala</em></h2>
+    <p class="nx-baja">Ninguna ley chilena exige hoy una sala sensorial. Lo que sí exigen es que la escuela atienda la
+      diversidad de sus estudiantes y aborde las desregulaciones emocionales con un plan y un protocolo.
+      <b>Un espacio sensorial es una herramienta concreta para cumplirlo.</b></p>
+    <div class="ley-grid"><div class="ley-c"><span class="ley-tipo">Obligación</span><div class="ley-n">Ley TEA · Ley 21.545, art. 18</div><blockquote>«efectuarán los ajustes necesarios en sus reglamentos y procedimientos internos, que consideren la diversidad de sus estudiantes y permitan el abordaje de desregulaciones emocionales y conductuales»</blockquote><p>Desde 2023, cada escuela tiene que estar preparada para abordar las desregulaciones emocionales y conductuales de sus estudiantes. Un espacio sensorial le da al equipo un lugar concreto y preparado para hacerlo.</p><a href="https://www.bcn.cl/leychile/navegar?idNorma=1190123" target="_blank" rel="noopener">BCN, Ley 21.545 (2023)</a></div><div class="ley-c"><span class="ley-tipo ori">Instrucción y orientación</span><div class="ley-n">Superintendencia de Educación · Circular 586 y orientaciones del Mineduc</div><blockquote>«apoyos visuales, espacios de calma y bienestar, rutinas predecibles, tiempos de descanso»</blockquote><p>La Superintendencia pide a cada escuela un plan de acompañamiento emocional para sus estudiantes autistas y un protocolo ante desregulaciones. Las orientaciones del Mineduc nombran los espacios de calma y bienestar entre los apoyos posibles.</p><a href="https://especial.mineduc.cl/wp-content/uploads/sites/31/2025/05/Orientaciones-PAECOK.pdf" target="_blank" rel="noopener">Mineduc, Orientaciones PAEC (2025), p. 10</a></div><div class="ley-c"><span class="ley-tipo">Obligación</span><div class="ley-n">Ley 20.422 de inclusión de personas con discapacidad, art. 36</div><blockquote>«deberán incorporar las innovaciones y adecuaciones curriculares, de infraestructura y los materiales de apoyo necesarios»</blockquote><p>Las escuelas tienen que incorporar los materiales de apoyo y las adecuaciones que sus estudiantes con discapacidad necesitan para aprender y permanecer. El equipamiento sensorial es un material de apoyo de ese tipo.</p><a href="https://www.bcn.cl/leychile/navegar?idNorma=1010903" target="_blank" rel="noopener">BCN, Ley 20.422 (2010)</a></div><div class="ley-c"><span class="ley-tipo">Obligación</span><div class="ley-n">Ley General de Educación, art. 11</div><blockquote>«deberá otorgar todos los apoyos necesarios para asegurar la plena inclusión […] facilitando ambientes de aprendizaje que permitan atender las necesidades educativas especiales»</blockquote><p>La ley pide ambientes de aprendizaje que atiendan las necesidades educativas especiales y promuevan las habilidades emocionales y sociales. Un espacio sensorial es un ambiente así, disponible para todo el curso.</p><a href="https://www.bcn.cl/leychile/navegar?idNorma=1014974" target="_blank" rel="noopener">BCN, DFL 2 de 2009 (texto vigente)</a></div></div>
+    <p class="ley-nota">En el Congreso hay un proyecto de ley, todavía en su primera etapa, que propone que las escuelas
+      cuenten con infraestructura para la regulación emocional y sensorial. Hoy no es obligatorio.</p>
+  </div>
+
   <div class="servicios">
     <div class="rot">Cómo trabajamos un proyecto</div>
     <h2>Nos hacemos cargo del espacio completo</h2>
@@ -1986,6 +2030,29 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     </div>
   </div>
 
+  <!-- ── Cómo financiarla (Rayen, 25-sep-2026) ──────────────── -->
+  <div class="nx fo" id="fondos">
+    <div class="rot">Cómo financiarla</div>
+    <h2>Fondos del Estado<br><em>para su sala</em></h2>
+    <p class="nx-baja">Muchas escuelas no tienen recursos propios para una sala, pero sí tienen caminos para financiarla.
+      Estos son los principales. Nuestro equipo los acompaña a elegir el camino y, si lo necesitan, a preparar el proyecto
+      y postularlo.</p>
+    <div class="fo-dest">
+      <div class="fo-dest-n"><b>7.775</b><span>comunidades educativas con convenio SEP</span></div>
+      <div class="fo-dest-tx">
+        <div class="fo-dest-rot">El Ministerio de Educación lo dice con todas sus letras</div>
+        <blockquote>«Adquirir equipamiento para responder a diversas necesidades de los estudiantes, para habilitar espacios
+          tales como salas multisensoriales y rincones de calma…»</blockquote>
+        <p>Así lo nombran las orientaciones del Plan de Mejoramiento Educativo 2026 entre los gastos posibles con la
+          Subvención Escolar Preferencial.
+          <a href="https://liderazgoeducativo.mineduc.cl/wp-content/uploads/sites/55/2026/01/Orientaciones-PME-2026.pdf" target="_blank" rel="noopener">Mineduc, Orientaciones PME 2026, cuenta 410 700</a></p>
+      </div>
+    </div>
+    <div class="fo-grid"><div class="fo-c"><span class="fo-i">1</span><h3>Subvención Escolar Preferencial (SEP)</h3><p>La pueden usar las escuelas con convenio SEP, incorporando la sala como una acción de su Plan de Mejoramiento (PME), ligada a una estrategia de mejora. Este año las acciones se pueden ajustar hasta el 27 de noviembre; si no alcanza, entra en el PME 2027.</p><div class="fo-q"><b>Quién lo gestiona:</b> La escuela la incluye en su PME y el sostenedor la aprueba</div><a href="https://liderazgoeducativo.mineduc.cl/wp-content/uploads/sites/55/2026/01/Orientaciones-PME-2026.pdf" target="_blank" rel="noopener">Mineduc, Orientaciones PME 2026</a></div><div class="fo-c"><span class="fo-i">2</span><h3>SEP para estudiantes con necesidades educativas especiales</h3><p>La normativa permite destinar recursos SEP a apoyos directos para estudiantes con necesidades educativas especiales, siempre que la acción esté en el PME y beneficie a estudiantes prioritarios y preferentes.</p><div class="fo-q"><b>Quién lo gestiona:</b> El sostenedor</div><a href="https://liderazgoeducativo.mineduc.cl/wp-content/uploads/sites/55/2026/01/Orientaciones-PME-2026.pdf" target="_blank" rel="noopener">Circular N°74/2025, citada en las Orientaciones PME 2026</a></div><div class="fo-c"><span class="fo-i">3</span><h3>Subvención del Programa de Integración (PIE)</h3><p>Permite adquirir «equipamientos o materiales específicos» y especializados para el aprendizaje. No cubre construir salas, pero sí equipar un espacio que ya existe. Consulten con su sostenedor cómo aplicarla.</p><div class="fo-q"><b>Quién lo gestiona:</b> La escuela y su sostenedor</div><a href="https://www.bcn.cl/leychile/navegar?idNorma=1012570" target="_blank" rel="noopener">Decreto 170, art. 86</a></div><div class="fo-c"><span class="fo-i">4</span><h3>Fondo de Apoyo a la Educación Pública (FAEP)</h3><p>Para escuelas municipales y de Servicios Locales: el fondo ha incluido la compra y renovación de equipamiento y mobiliario. Se conversa con el Departamento de Educación Municipal, la corporación o el Servicio Local.</p><div class="fo-q"><b>Quién lo gestiona:</b> El municipio o el SLEP</div><a href="https://www.dipres.gob.cl/597/articles-341567_r_ejecutivo_institucional.pdf" target="_blank" rel="noopener">DIPRES, evaluación del FAEP (2024)</a></div><div class="fo-c"><span class="fo-i">5</span><h3>Fondos regionales (FNDR 8%)</h3><p>Los gobiernos regionales abren cada año concursos donde postulan municipios u organizaciones. Los de 2026 ya cerraron en la mayoría de las regiones: es el momento de preparar el proyecto para el próximo llamado.</p><div class="fo-q"><b>Quién lo gestiona:</b> El municipio o una organización</div><a href="https://fondos.gob.cl/" target="_blank" rel="noopener">Gobiernos regionales</a></div><div class="fo-c"><span class="fo-i">6</span><h3>Donaciones de empresas</h3><p>Una empresa puede financiar la sala con beneficio tributario, por la ley de donaciones con fines educacionales o, a través de una fundación, por la ley de donaciones sociales.</p><div class="fo-q"><b>Quién lo gestiona:</b> La escuela o fundación, con una empresa donante</div><a href="https://www.sii.cl/contribuyentes/actividades_especiales/donaciones.htm" target="_blank" rel="noopener">SII, donaciones</a></div></div>
+    <p class="ley-nota">Las etapas de esta propuesta están pensadas para esto: tres de ellas caben en una Compra Ágil, y cada una
+      puede financiarse por un camino distinto.</p>
+  </div>
+
   <!-- ── Sin sala libre: el carrito (Rayen, 25-sep-2026) ─────── -->
   <section class="go" id="sin-espacio">
     <div class="go-in">
@@ -1997,7 +2064,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
           conscientes, y para el que encontramos una solución: <b>un carrito sensorial</b>, que guarda todos sus
           elementos juntos y se lleva de una sala a otra. Donde llega, se convierte en un espacio sensorial.</p>
       </div>
-      <div class="go-datos"><div class="go-dato"><b>1,1 m²</b><p>es todo el espacio que la norma chilena exige por estudiante en una sala de clases. La OCDE recomienda 2,3 m², más del doble.</p><a href="https://www.radioudec.cl/wp-content/uploads/2026/03/DPP-No46-Infraestructura-Escolar-y-Bienestar-Educativo.pdf" target="_blank" rel="noopener">CEDEUS UC, Documento de Política Pública N°46, 2026</a></div><div class="go-dato"><b>473.834</b><p>estudiantes recibieron apoyos del Programa de Integración Escolar en 2025, el 13,4% de la matrícula. Cada año son más, en los mismos edificios.</p><a href="https://www.maray.cl/pais/07/08/2026/programa-de-integracion-escolar-alcanza-cifra-record-mas-de-473-mil-estudiantes-reciben-apoyos-en-chile/" target="_blank" rel="noopener">Centro de Estudios Mineduc, citado por Radio Maray, 2026</a></div><div class="go-dato"><b>Ley TEA</b><p>obliga a los colegios a acompañar las desregulaciones emocionales y conductuales de sus estudiantes (Ley 21.545, art. 18). Un espacio sensorial es una herramienta concreta para hacerlo.</p><a href="https://especial.mineduc.cl/wp-content/uploads/sites/31/2023/09/TEA.pdf" target="_blank" rel="noopener">Mineduc, Preguntas frecuentes Ley N°21.545</a></div></div>
+      <div class="go-datos"><div class="go-dato"><b>1,1 m²</b><p>es todo el espacio que la norma chilena exige por estudiante en una sala de clases. La OCDE recomienda 2,3 m², más del doble.</p><a href="https://www.radioudec.cl/wp-content/uploads/2026/03/DPP-No46-Infraestructura-Escolar-y-Bienestar-Educativo.pdf" target="_blank" rel="noopener">CEDEUS UC, Documento de Política Pública N°46, 2026</a></div><div class="go-dato"><b>473.834</b><p>estudiantes recibieron apoyos del Programa de Integración Escolar en 2025, el 13,4% de la matrícula. Cada año son más, en los mismos edificios.</p><a href="https://www.maray.cl/pais/07/08/2026/programa-de-integracion-escolar-alcanza-cifra-record-mas-de-473-mil-estudiantes-reciben-apoyos-en-chile/" target="_blank" rel="noopener">Centro de Estudios Mineduc, citado por Radio Maray, 2026</a></div><div class="go-dato"><b>Ley TEA</b><p>pide a cada escuela ajustar sus procedimientos para abordar las desregulaciones emocionales y conductuales de sus estudiantes (Ley 21.545, art. 18). Un espacio sensorial, aunque sea móvil, es una herramienta concreta para hacerlo.</p><a href="https://www.bcn.cl/leychile/navegar?idNorma=1190123" target="_blank" rel="noopener">BCN, Ley 21.545 (2023)</a></div></div>
       <ol class="go-pasos">
         <li><span class="go-foto"><img src="SalasMultisensoriales_Recortadas/sensory-go-guardado-rincon.jpg" alt="El carrito guardado en la esquina de una sala" loading="lazy" style="object-position:50% 35%"></span>
           <span class="go-n">1</span><h3>Se guarda en un rincón</h3><p>Así se ve de verdad: guardado en una esquina, con todos sus elementos juntos, en un mueble de 46 × 96 cm.</p></li>
