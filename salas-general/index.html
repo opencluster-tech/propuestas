@@ -1169,6 +1169,23 @@ details.op:not([open])::before{display:none}
   border-left:4px solid #08ACF2;font-family:'Manrope',sans-serif;font-size:14px;line-height:1.62;font-weight:500;
   color:#001A60;text-wrap:pretty}
 .fx-desc b{font-weight:800;color:#0A8FCC}
+.fx-desc p{margin:0}
+.fx-desc .fx-mas{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:'Montserrat',sans-serif;
+  font-size:11.5px;font-weight:800;letter-spacing:.02em;color:#0A8FCC;text-decoration:none}
+.fx-desc .fx-mas:hover{text-decoration:underline}
+/* Rayen, 25-sep-2026: al llegar a Materiales desde una ficha, un botón para volver exactamente a donde estaba */
+.fx-volver{position:fixed;left:50%;bottom:22px;z-index:80;display:flex;align-items:center;gap:4px;max-width:min(560px,calc(100% - 44px));
+  transform:translate(-50%,12px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+  background:#001A60;border:2px solid #08ACF2;border-radius:999px;box-shadow:0 10px 28px rgba(0,26,96,.38);padding:3px}
+.fx-volver.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.fx-volver button{border:0;background:transparent;color:#fff;cursor:pointer;font-family:'Montserrat',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.02em;border-radius:999px;transition:background .2s}
+.fx-volver .fxv-ir{padding:10px 14px 10px 16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;text-align:left}
+.fx-volver .fxv-x{flex:none;width:34px;height:34px;font-size:17px;line-height:1;padding:0}
+.fx-volver button:hover,.fx-volver button:focus-visible{background:#08ACF2;color:#fff;outline:none}
+@media(max-width:640px){.fx-volver{bottom:66px;left:12px;right:12px;max-width:none;transform:translateY(12px)}
+  .fx-volver.on{transform:translateY(0)} .fx-volver .fxv-ir{flex:1;font-size:11.5px;padding:10px 12px}}
+@media print{.fx-volver{display:none !important}}
 @media(max-width:700px){.fx-desc{font-size:13.5px;padding:12px 13px 12px 13px}}
 
 .fx-precio{padding:13px 15px;background:#F6FAFF;border:1px solid #E3EBF5;border-radius:11px;
@@ -2193,7 +2210,11 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   document.addEventListener('click', function(ev){
     var t = ev.target;
     /* «Ver más sobre los materiales» en una ficha abierta desde la sala: se cierra también la sala */
-    if (t.closest && t.closest('#fx a[href="#materiales"]') && abierta >= 0){ cerrarVista(); conHistoria = false; try { history.replaceState(null, '', location.pathname); } catch(e){} }
+    if (t.closest && t.closest('#fx a[href="#materiales"]') && abierta >= 0){
+      /* Rayen, 25-sep-2026: el botón «Volver a la ficha» devuelve a la misma sala o etapa, con su scroll */
+      var kV = abierta, topV = sv.scrollTop;
+      window.__antesDeVolverFicha = function(){ abrirSala(kV); sv.scrollTop = topV; };
+      cerrarVista(); conHistoria = false; try { history.replaceState(null, '', location.pathname); } catch(e){} }
   }, true);
   document.addEventListener('click', function(ev){
     var t = ev.target;
@@ -2236,8 +2257,49 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     return esc(t).replace(/(^|\. )(Tejido|Espuma|Materiales|Luz ultravioleta|Seguridad eléctrica):/g,
       function(m, a, b){ return a + '<b>' + b + ':</b>'; });
   }
+  /* «← Volver a la ficha de …»: se recuerda la ficha, el scroll de la página y el de la ficha. Las páginas
+     que abren fichas desde otra ventana (salas, etapas) dejan en window.__antesDeVolverFicha cómo reabrirla. */
+  var fichaActual = '', volverA = null, fxvTimer = null, fxvBoton = null;
+  function fxvEl(){
+    if (fxvBoton) return fxvBoton;
+    fxvBoton = document.createElement('div'); fxvBoton.className = 'fx-volver'; fxvBoton.id = 'fxVolver';
+    fxvBoton.innerHTML = '<button type="button" class="fxv-ir"></button><button type="button" class="fxv-x" aria-label="Cerrar">×</button>';
+    document.body.appendChild(fxvBoton);
+    fxvBoton.querySelector('.fxv-ir').addEventListener('click', volverAFicha);
+    fxvBoton.querySelector('.fxv-x').addEventListener('click', function(){ ocultaVolver(); });
+    return fxvBoton;
+  }
+  function ocultaVolver(){
+    volverA = null; window.__antesDeVolverFicha = null; clearTimeout(fxvTimer);
+    window.removeEventListener('scroll', vigilaVolver);
+    if (fxvBoton) fxvBoton.classList.remove('on');
+  }
+  /* si la persona sigue navegando lejos de Materiales, el botón se va solo a los pocos segundos */
+  function vigilaVolver(){
+    var sm = document.getElementById('materiales'); if (!sm || !volverA) return;
+    var r = sm.getBoundingClientRect(), fuera = r.bottom < 0 || r.top > innerHeight;
+    if (fuera && !fxvTimer) fxvTimer = setTimeout(ocultaVolver, 2500);
+    if (!fuera && fxvTimer) { clearTimeout(fxvTimer); fxvTimer = null; }
+  }
+  function muestraVolver(v){
+    volverA = v; var b = fxvEl();
+    b.querySelector('.fxv-ir').textContent = '← Volver a la ficha: ' + v.n;
+    b.classList.add('on'); clearTimeout(fxvTimer); fxvTimer = null;
+    setTimeout(function(){ if (volverA === v) window.addEventListener('scroll', vigilaVolver, { passive: true }); }, 1500);
+  }
+  function volverAFicha(){
+    var v = volverA, antes = window.__antesDeVolverFicha;
+    if (!v) return;
+    window.__antesDeVolverFicha = null; ocultaVolver();
+    window.scrollTo(0, v.y);
+    if (typeof antes === 'function') antes();
+    abreFicha(v.n);
+    if (fxCuerpo) fxCuerpo.scrollTop = v.top;
+  }
   function abreFicha(nombre){
     if (!fxEls()) return;
+    if (volverA) ocultaVolver();
+    fichaActual = nombre;
     var p = buscaProd(nombre);
     if (!p) return;
     var fotos = fotosDe(p);
@@ -2257,7 +2319,9 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       '<div class="fx-izq"><div class="fx-foto">' + foto + '</div>' + mini + '</div>' +
       '<div class="fx-der">' +
         '<h2 class="fx-n">' + esc(p.n) + '</h2>' +
-        (p.desc ? '<p class="fx-desc">' + descHTML(p.desc) + '</p>' : '') +
+        (p.desc ? '<div class="fx-desc"><p>' + descHTML(p.desc) + '</p>' +
+          (document.getElementById('materiales') ? '<a class="fx-mas" href="#materiales">Más información sobre los materiales →</a>' : '') +
+          '</div>' : '') +
         
         precio +
         seccion('Qué es y para qué sirve', p.que ? '<p class="parrafo">' + esc(p.que) + '</p>' : '') +
@@ -2282,8 +2346,13 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   document.addEventListener('click', function(ev){
     /* Rayen, 23-sep-2026: «Ver el detalle» no hacía nada con la ficha abierta encima */
     var md = ev.target.closest && ev.target.closest('#fx a[href="#materiales"]');
-    if (md) { ev.preventDefault(); cierraFicha(); var sm = document.getElementById('materiales');
-      if (sm) sm.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (md) { ev.preventDefault();
+      var vAntes = window.__antesDeVolverFicha;
+      var v = { n: fichaActual, y: window.scrollY, top: fxCuerpo ? fxCuerpo.scrollTop : 0 };
+      cierraFicha(); var sm = document.getElementById('materiales');
+      if (sm) sm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (v.n) { muestraVolver(v); window.__antesDeVolverFicha = vAntes; }
+      return; }
     var t = ev.target.closest && ev.target.closest('[data-ficha]');
     if (t) { abreFicha(t.dataset.ficha); return; }
     var m = ev.target.closest && ev.target.closest('[data-foto]');
