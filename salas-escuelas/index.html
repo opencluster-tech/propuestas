@@ -1506,6 +1506,7 @@ body.con-sala .mnu-btn{display:none}
 .mnu-l i{display:block;font-style:normal;font-size:11px;line-height:1.35;color:var(--suave);margin-top:2px}
 @media (prefers-reduced-motion:reduce){.mnu{transition:none}}
 @media print{.mnu-btn,.mnu,.mnu-velo{display:none !important}}
+@media (max-width:560px){.mnu-btn.chico{padding:10px}.mnu-btn.chico span{display:none}}
 
 /* (antes: el índice en tarjetas; quedó solo el ícono redondo, que usa el menú) */
 .idx{padding:26px 54px 8px}
@@ -1557,9 +1558,11 @@ body.con-sala .barra{transform:translateY(-110%)}
 .fo-cta h3{margin:0 0 12px;font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;line-height:1.25;color:#fff}
 .fo-cta-letra{font-family:'Kaushan Script',cursive;font-weight:400;font-size:36px;color:#fff}
 .fo-cta ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
-.fo-cta li{display:flex;gap:9px;font-size:13px;line-height:1.5;color:rgba(255,255,255,.9)}
-.fo-cta li::before{content:'';flex:none;width:8px;height:8px;margin-top:6px;border-radius:50%;background:#08ACF2}
+.fo-cta li{position:relative;display:block;padding-left:17px;font-size:13px;line-height:1.55;color:rgba(255,255,255,.9)}
+.fo-cta li::before{content:'';position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:#08ACF2}
 .fo-cta-acc{display:flex;flex-direction:column;gap:10px}
+.fo-cta-pide{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#fff;text-align:center;margin-bottom:2px}
+.fo-cta li b{color:#fff}
 .fo-btn{display:flex;align-items:center;justify-content:center;padding:13px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;
   font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800}
 .fo-btn.prim{background:#fff;color:var(--navy);border-color:#fff}
@@ -1955,7 +1958,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
         y a los diagnósticos con los que trabaja su equipo de integración. Cada elemento lo elige nuestro equipo de terapeutas
         por lo que logra en los estudiantes que lo van a usar.</p>
     </div>
-    <div class="pz-grid"><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5a3 3 0 0 0-3 3v.3A3.2 3.2 0 0 0 4 13a3.2 3.2 0 0 0 2.4 3.1A3 3 0 0 0 9.5 19.5H12V4.5z"/><path d="M15 4.5a3 3 0 0 1 3 3v.3a3.2 3.2 0 0 1 2 5.2 3.2 3.2 0 0 1-2.4 3.1 3 3 0 0 1-3.1 3.4H12"/></svg></span><h3>Según los diagnósticos</h3><p>Nuestros terapeutas parten por los estudiantes que van a usar la sala y los diagnósticos con que trabaja el equipo de integración, y eligen los elementos que responden a la necesidad principal.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><rect x="9" y="13" width="6" height="7"/></svg></span><h3>Según el espacio</h3><p>Una sala completa, un rincón dentro de una sala que ya existe o un carrito portátil cuando la escuela no tiene un espacio fijo: la sala se adapta al lugar.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span><h3>Según el presupuesto</h3><p>Se puede partir con pocos elementos, por etapas que caben en una Compra Ágil, y si buscan financiamiento público los acompañamos a elaborar el proyecto y a postularlo.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><h3>Crece con el tiempo</h3><p>Las salas son escalables: lo que se compra hoy se integra a lo que venga después, y cada año se pueden sumar nuevos elementos.</p></div></div>
+    <div class="pz-grid"><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5a3 3 0 0 0-3 3v.3A3.2 3.2 0 0 0 4 13a3.2 3.2 0 0 0 2.4 3.1A3 3 0 0 0 9.5 19.5H12V4.5z"/><path d="M15 4.5a3 3 0 0 1 3 3v.3a3.2 3.2 0 0 1 2 5.2 3.2 3.2 0 0 1-2.4 3.1 3 3 0 0 1-3.1 3.4H12"/></svg></span><h3>Según los diagnósticos</h3><p>Nuestros terapeutas parten por los estudiantes que van a usar la sala y los diagnósticos con que trabaja el equipo de integración, y eligen los elementos que responden a la necesidad principal.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><rect x="9" y="13" width="6" height="7"/></svg></span><h3>Según el espacio</h3><p>Una sala completa, un rincón dentro de una sala que ya existe o un carrito portátil cuando la escuela no tiene un espacio fijo: la sala se adapta al lugar.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span><h3>Según el presupuesto</h3><p>Se puede partir con pocos elementos, por etapas que caben en una Compra Ágil. Y si buscan financiamiento público, los asesoramos sobre los fondos disponibles y elaboramos el proyecto para postularlo.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><h3>Crece con el tiempo</h3><p>Las salas son escalables: lo que se compra hoy se integra a lo que venga después, y cada año se pueden sumar nuevos elementos.</p></div></div>
     <div class="tera">
       <span class="tera-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/><path d="M17.5 19.5a5.4 5.4 0 0 0-2.6-4.6"/><path d="M19 3v4M17 5h4"/></svg></span>
       <div>
@@ -2075,6 +2078,8 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   <div class="nx fo" id="fondos">
     <div class="rot">Cómo financiarla</div>
     <h2>Fondos del Estado<br><em>para su sala</em></h2>
+    <p class="nx-baja">Las escuelas tienen caminos para financiar su sala. <b>Los asesoramos para elegir el fondo que les
+      conviene y elaboramos el proyecto para postularlo.</b></p>
     <div class="fo-dest">
       <div class="fo-dest-n"><b>7.775</b><span>comunidades educativas con convenio SEP</span></div>
       <div class="fo-dest-tx">
@@ -2090,23 +2095,24 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       <ol>
         <li><b>Definan la necesidad</b> con su equipo de integración y de convivencia: quiénes usarán la sala y para qué.</li>
         <li><b>Elijan el camino:</b> incluirla en su PME con la SEP, o conversarlo con su sostenedor (municipio, corporación o Servicio Local) para usar la subvención PIE o el FAEP.</li>
-        <li><b>Si necesitan un fondo concursable,</b> nosotros preparamos el proyecto y lo postulamos con ustedes.</li>
+        <li><b>Si no saben por dónde partir o necesitan un fondo concursable,</b> los asesoramos sobre los fondos disponibles, elaboramos el proyecto y lo postulamos con ustedes.</li>
       </ol>
     </div>
     <div class="fo-mini"><a class="fo-m" href="https://liderazgoeducativo.mineduc.cl/wp-content/uploads/sites/55/2026/01/Orientaciones-PME-2026.pdf" target="_blank" rel="noopener"><b>Subvención Escolar Preferencial (SEP)</b><span>Incluyan la sala en su Plan de Mejoramiento (PME): el Mineduc la nombra como gasto posible.</span><i>Mineduc, Orientaciones PME 2026</i></a><a class="fo-m" href="https://liderazgoeducativo.mineduc.cl/wp-content/uploads/sites/55/2026/01/Orientaciones-PME-2026.pdf" target="_blank" rel="noopener"><b>SEP para estudiantes con necesidades educativas especiales</b><span>Apoyos directos para estudiantes con necesidades educativas especiales, si están en el PME.</span><i>Circular N°74/2025, citada en las Orientaciones PME 2026</i></a><a class="fo-m" href="https://www.bcn.cl/leychile/navegar?idNorma=1012570" target="_blank" rel="noopener"><b>Subvención del Programa de Integración (PIE)</b><span>Equipamiento y materiales especializados para equipar un espacio que ya existe.</span><i>Decreto 170, art. 86</i></a><a class="fo-m" href="https://www.dipres.gob.cl/597/articles-341567_r_ejecutivo_institucional.pdf" target="_blank" rel="noopener"><b>Fondo de Apoyo a la Educación Pública (FAEP)</b><span>Escuelas municipales y de Servicios Locales: equipamiento y mobiliario, a través de su sostenedor.</span><i>DIPRES, evaluación del FAEP (2024)</i></a><a class="fo-m" href="https://fondos.gob.cl/" target="_blank" rel="noopener"><b>Fondos regionales (FNDR 8%)</b><span>Concursos regionales de cada año: preparen el proyecto para el próximo llamado.</span><i>Gobiernos regionales</i></a><a class="fo-m" href="https://www.sii.cl/contribuyentes/actividades_especiales/donaciones.htm" target="_blank" rel="noopener"><b>Donaciones de empresas</b><span>Empresas que aportan con beneficio tributario, directo o a través de una fundación.</span><i>SII, donaciones</i></a></div>
     <div class="fo-cta">
       <div class="fo-cta-tx">
-        <div class="fo-cta-rot">Nosotros lo hacemos por ustedes</div>
-        <h3><span class="fo-cta-letra">Elaboramos su proyecto</span><br>para postular a fondos</h3>
+        <div class="fo-cta-rot">Nosotros lo hacemos con ustedes</div>
+        <h3><span class="fo-cta-letra">Asesoría y proyectos</span><br>para obtener fondos</h3>
         <ul>
-          <li>Nuestros terapeutas definen la sala según sus estudiantes y sus diagnósticos</li>
-          <li>Preparamos el proyecto, las especificaciones técnicas y la cotización</li>
-          <li>Postulamos con ustedes y los acompañamos hasta instalar la sala</li>
+          <li><b>Los asesoramos sobre los fondos disponibles:</b> cuáles puede usar su escuela, cuál le conviene y cuándo postular</li>
+          <li><b>Elaboramos el proyecto para postular:</b> nuestros terapeutas definen la sala según sus estudiantes, y preparamos el proyecto, las especificaciones técnicas y la cotización</li>
+          <li><b>Postulamos con ustedes</b> y los acompañamos hasta instalar la sala</li>
         </ul>
       </div>
       <div class="fo-cta-acc">
-        <a class="fo-btn prim" href="https://wa.me/56956294723?text=Hola%2C%20vi%20la%20propuesta%20de%20salas%20multisensoriales%20para%20escuelas%20y%20quiero%20saber%20c%C3%B3mo%20financiar%20una%20sala%20para%20nuestra%20escuela." target="_blank" rel="noopener">Escríbanos por WhatsApp</a>
-        <a class="fo-btn" href="mailto:rayen.ogalde@opencluster-tech.cl?subject=Financiamiento%20de%20una%20sala%20multisensorial&body=Hola%2C%20quiero%20saber%20c%C3%B3mo%20financiar%20una%20sala%20multisensorial%20para%20nuestra%20escuela.">Escríbanos un correo</a>
+        <div class="fo-cta-pide">Pidan su asesoría o su proyecto</div>
+        <a class="fo-btn prim" href="https://wa.me/56956294723?text=Hola%2C%20vi%20la%20propuesta%20de%20salas%20multisensoriales%20para%20escuelas.%20Quiero%20una%20asesor%C3%ADa%20sobre%20fondos%20y%20saber%20si%20pueden%20elaborar%20el%20proyecto%20para%20postular." target="_blank" rel="noopener">Escríbanos por WhatsApp</a>
+        <a class="fo-btn" href="mailto:rayen.ogalde@opencluster-tech.cl?subject=Asesor%C3%ADa%20sobre%20fondos%20y%20proyecto%20para%20una%20sala%20multisensorial&body=Hola%2C%20quiero%20una%20asesor%C3%ADa%20sobre%20los%20fondos%20disponibles%20para%20nuestra%20escuela%20y%20saber%20si%20pueden%20elaborar%20el%20proyecto%20para%20postular%20a%20una%20sala%20multisensorial.">Escríbanos un correo</a>
         <span class="fo-cta-dato">+56 9 5629 4723 · rayen.ogalde@opencluster-tech.cl</span>
       </div>
     </div>
@@ -2799,6 +2805,8 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     [].forEach.call(mnu.querySelectorAll('.mnu-l a'), function(a, i){ a.classList.toggle('act', i === activa); });
   }
   window.addEventListener('scroll', marcar, {passive: true});
+  function achicar(){ mnuBtn.classList.toggle('chico', window.scrollY > 300); }
+  window.addEventListener('scroll', achicar, {passive: true}); achicar();
   marcar();
 
   /* 4 · Subir */
