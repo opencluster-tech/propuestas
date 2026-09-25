@@ -1216,6 +1216,12 @@ details.op:not([open])::before{display:none}
 .fx-der .seccion.sec-clave .chips span::before{background:var(--naranja)}
 .fx-der .parrafo{margin:0;font-size:12.5px;line-height:1.65;color:#334155}
 .fx-der .fx-n{margin-bottom:2px}
+/* Rayen, 25-sep-2026: bajo el nombre, la descripción destacada: «la gente no siempre lee todo hacia abajo, pero lee arriba» */
+.fx-desc{margin:12px 0 4px;padding:14px 16px 14px 15px;border-radius:12px;background:#EEF8FE;border:1px solid #CDEBFB;
+  border-left:4px solid #08ACF2;font-family:'Manrope',sans-serif;font-size:14px;line-height:1.62;font-weight:500;
+  color:#001A60;text-wrap:pretty}
+.fx-desc b{font-weight:800;color:#0A8FCC}
+@media(max-width:700px){.fx-desc{font-size:13.5px;padding:12px 13px 12px 13px}}
 /* el precio, con su franja */
 .fx-precio{padding:13px 15px;background:#F6FAFF;border:1px solid #E3EBF5;border-radius:11px;
   margin:14px 0 2px;gap:10px}
@@ -2014,7 +2020,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
      para que buscaProd() y la ficha los encuentren igual que a los demás.
      clonarDe copia la ficha de otro y sólo le cambia el rótulo: sirve para los dos
      que en la cotización se llaman distinto, sin tocar la función tarjeta(). */
-  var EXTRA = [{"clonarDe":"Saco de danza propioceptivo talla M","n":"Saco Propioceptivo"},{"clonarDe":"Kit de masaje","n":"Kit de Estimulación Sensorial"},{"n":"Suelo Sensorial En Gel","oc":"OC-1867","img":"SalasMultisensoriales_Recortadas/suelo-sensorial-losetas-de-gel-2.jpg","que":"Losetas rellenas de líquido de colores que se desplaza al pisarlas o presionarlas, creando efectos visuales dinámicos bajo el pie. Se disponen libremente en el suelo y no requieren instalación.","trab":"Percepción sensorial · Reconocimiento de colores · Exploración del entorno · Atención visual · Comunicación durante el juego · Psicomotricidad · Movimiento y participación","ind":"Parálisis cerebral · Trastorno del espectro autista · Daño cerebral (ictus, traumatismo craneoencefálico) · Discapacidad intelectual · Personas mayores · Discapacidad visual · Niños pequeños, atención temprana","inc":"Set de 6 losetas de 30 × 30 cm, que cubren 0,54 m².","tec":"Losetas de 30 × 30 cm, 6 unidades por set, en seis colores distintos. Relleno de líquido de colores no tóxico. Base antideslizante. No requiere instalación ni alimentación eléctrica.","car":"Seis placas con seis colores diferentes · Base antideslizante · Relleno no tóxico · No requiere instalación"}];
+  var EXTRA = [{"clonarDe":"Saco de danza propioceptivo talla M","n":"Saco Propioceptivo"},{"clonarDe":"Kit de masaje","n":"Kit de Estimulación Sensorial"},{"n":"Suelo Sensorial En Gel","desc":"Set de 6 losetas de 30 × 30 cm, en seis colores, rellenas de un líquido de colores no tóxico que se desplaza al pisarlas o presionarlas y crea efectos visuales bajo el pie. Tienen base antideslizante y se disponen libremente en el suelo, sin instalación ni electricidad: trabajan la percepción sensorial, la atención visual y el movimiento.","oc":"OC-1867","img":"SalasMultisensoriales_Recortadas/suelo-sensorial-losetas-de-gel-2.jpg","que":"Losetas rellenas de líquido de colores que se desplaza al pisarlas o presionarlas, creando efectos visuales dinámicos bajo el pie. Se disponen libremente en el suelo y no requieren instalación.","trab":"Percepción sensorial · Reconocimiento de colores · Exploración del entorno · Atención visual · Comunicación durante el juego · Psicomotricidad · Movimiento y participación","ind":"Parálisis cerebral · Trastorno del espectro autista · Daño cerebral (ictus, traumatismo craneoencefálico) · Discapacidad intelectual · Personas mayores · Discapacidad visual · Niños pequeños, atención temprana","inc":"Set de 6 losetas de 30 × 30 cm, que cubren 0,54 m².","tec":"Losetas de 30 × 30 cm, 6 unidades por set, en seis colores distintos. Relleno de líquido de colores no tóxico. Base antideslizante. No requiere instalación ni alimentación eléctrica.","car":"Seis placas con seis colores diferentes · Base antideslizante · Relleno no tóxico · No requiere instalación"}];
   EXTRA.forEach(function(x){
     if (buscaProd(x.n)) return;
     if (x.clonarDe) {
@@ -2072,6 +2078,11 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
     return l;
   }
 
+  /* los rótulos de materiales van en negrita dentro del párrafo */
+  function descHTML(t){
+    return esc(t).replace(/(^|\. )(Tejido|Espuma|Materiales|Luz ultravioleta|Seguridad eléctrica):/g,
+      function(m, a, b){ return a + '<b>' + b + ':</b>'; });
+  }
   function abreFicha(nombre){
     if (!fxEls()) return;
     var p = buscaProd(nombre);
@@ -2093,6 +2104,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
       '<div class="fx-izq"><div class="fx-foto">' + foto + '</div>' + mini + '</div>' +
       '<div class="fx-der">' +
         '<h2 class="fx-n">' + esc(p.n) + '</h2>' +
+        (p.desc ? '<p class="fx-desc">' + descHTML(p.desc) + '</p>' : '') +
         
         precio +
         seccion('Qué es y para qué sirve', p.que ? '<p class="parrafo">' + esc(p.que) + '</p>' : '') +

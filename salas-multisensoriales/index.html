@@ -1165,6 +1165,12 @@ details.op:not([open])::before{display:none}
 .fx-der .parrafo{margin:0;font-size:12.5px;line-height:1.65;color:#334155}
 .fx-der .fx-n{margin-bottom:2px}
 
+.fx-desc{margin:12px 0 4px;padding:14px 16px 14px 15px;border-radius:12px;background:#EEF8FE;border:1px solid #CDEBFB;
+  border-left:4px solid #08ACF2;font-family:'Manrope',sans-serif;font-size:14px;line-height:1.62;font-weight:500;
+  color:#001A60;text-wrap:pretty}
+.fx-desc b{font-weight:800;color:#0A8FCC}
+@media(max-width:700px){.fx-desc{font-size:13.5px;padding:12px 13px 12px 13px}}
+
 .fx-precio{padding:13px 15px;background:#F6FAFF;border:1px solid #E3EBF5;border-radius:11px;
   margin:14px 0 2px;gap:10px}
 .fx-iva{margin-top:6px;padding-left:2px}
@@ -2225,6 +2231,11 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     return l;
   }
 
+  /* los rótulos de materiales van en negrita dentro del párrafo */
+  function descHTML(t){
+    return esc(t).replace(/(^|\. )(Tejido|Espuma|Materiales|Luz ultravioleta|Seguridad eléctrica):/g,
+      function(m, a, b){ return a + '<b>' + b + ':</b>'; });
+  }
   function abreFicha(nombre){
     if (!fxEls()) return;
     var p = buscaProd(nombre);
@@ -2246,6 +2257,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       '<div class="fx-izq"><div class="fx-foto">' + foto + '</div>' + mini + '</div>' +
       '<div class="fx-der">' +
         '<h2 class="fx-n">' + esc(p.n) + '</h2>' +
+        (p.desc ? '<p class="fx-desc">' + descHTML(p.desc) + '</p>' : '') +
         
         precio +
         seccion('Qué es y para qué sirve', p.que ? '<p class="parrafo">' + esc(p.que) + '</p>' : '') +
