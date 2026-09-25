@@ -1446,6 +1446,21 @@ body .pg .seg-rot{font-size:36px !important}
 .pz h3{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--navy);margin:0 0 5px}
 .pz p{margin:0;font-size:11.8px;line-height:1.55;color:#4B5563}
 
+/* El equipo de terapeutas (Rayen, 25-sep-2026) */
+.tera{display:flex;gap:18px;align-items:flex-start;margin-top:14px;padding:20px 22px;border-radius:14px;
+  background:#fff;border:1px solid #CFE8FB;box-shadow:0 10px 26px -18px rgba(0,26,96,.35)}
+.tera-ic{flex:none;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(140deg,#001A60,#0B76C4);color:#fff}
+.tera-ic svg{width:26px;height:26px}
+.tera-rot{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#08ACF2;margin-bottom:3px}
+.tera h3{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:var(--navy);margin:0 0 6px;line-height:1.3;text-wrap:balance}
+.tera p{margin:0;font-size:13px;line-height:1.7;color:#374151}
+.sv-tera{display:flex;gap:12px;align-items:flex-start;margin:0 0 26px;padding:14px 16px;border-radius:12px;background:#F4F9FF;border:1px solid #D8EBFA}
+.sv-tera svg{flex:none;width:22px;height:22px;color:#08ACF2;margin-top:1px}
+.sv-tera p{margin:0;font-size:12.8px;line-height:1.62;color:#1F2937}
+.sv-tera b{color:var(--navy)}
+@media (max-width:560px){.tera{flex-direction:column;gap:12px;padding:18px 16px}}
+
 /* Las tarjetas de sala: las mismas .p2 con la foto, sin la banda del precio */
 .g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:8px}
 .g3 .p2{text-decoration:none;color:inherit;cursor:pointer;text-align:left;font:inherit;padding:0;background:#fff}
@@ -1661,10 +1676,12 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   </div>
   <div class="portada-pie">
     <span class="estilo">Diseñadas para cada institución</span>
-    <p class="bajada">Salas ya diseñadas para elegir, videos de salas funcionando en Chile y en Europa, los
-      materiales que elegimos y la forma en que trabajamos un proyecto de principio a fin.</p>
+    <p class="bajada">Espacios diseñados por nuestro equipo de terapeutas para las personas que los van a usar:
+      salas ya diseñadas para elegir, videos de salas funcionando en Chile y en Europa, los materiales que
+      elegimos y la forma en que trabajamos un proyecto de principio a fin.</p>
     <div class="meta">
       <div><b>Partner europeo</b><span>Qinera · representantes exclusivos en Chile</span></div>
+      <div><b>Diseño</b><span>Equipo de terapeutas</span></div>
       <div><b>Cobertura</b><span>Todo Chile</span></div>
       <div><b>Garantía</b><span>3 años por defectos de fábrica</span></div>
     </div>
@@ -1680,10 +1697,21 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     <div class="cien">
       <div class="cien-n">100<small>%</small></div>
       <p><b>Nuestras salas son 100% personalizables y adaptables</b> a las necesidades de cada institución
-        y a los diagnósticos con los que trabaja su equipo. Cada elemento se elige por lo que logra en las
-        personas que lo van a usar.</p>
+        y a los diagnósticos con los que trabaja su equipo. Cada elemento lo elige nuestro equipo de terapeutas
+        por lo que logra en las personas que lo van a usar.</p>
     </div>
-    <div class="pz-grid"><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5a3 3 0 0 0-3 3v.3A3.2 3.2 0 0 0 4 13a3.2 3.2 0 0 0 2.4 3.1A3 3 0 0 0 9.5 19.5H12V4.5z"/><path d="M15 4.5a3 3 0 0 1 3 3v.3a3.2 3.2 0 0 1 2 5.2 3.2 3.2 0 0 1-2.4 3.1 3 3 0 0 1-3.1 3.4H12"/></svg></span><h3>Según los diagnósticos</h3><p>Partimos por las personas que van a usar la sala y los diagnósticos con que trabaja su equipo, y elegimos los elementos que responden a la necesidad principal.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><rect x="9" y="13" width="6" height="7"/></svg></span><h3>Según el espacio</h3><p>Una sala completa, un rincón dentro de una sala que ya existe o un carrito portátil cuando no hay un espacio fijo: la sala se adapta al lugar.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span><h3>Según el presupuesto</h3><p>Se puede partir con pocos elementos, y si buscan financiamiento público los acompañamos a elaborar el proyecto y a postularlo.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><h3>Crece con el tiempo</h3><p>Las salas son escalables: lo que se compra hoy se integra a lo que venga después, y cada año se pueden sumar nuevos elementos.</p></div></div>
+    <div class="pz-grid"><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5a3 3 0 0 0-3 3v.3A3.2 3.2 0 0 0 4 13a3.2 3.2 0 0 0 2.4 3.1A3 3 0 0 0 9.5 19.5H12V4.5z"/><path d="M15 4.5a3 3 0 0 1 3 3v.3a3.2 3.2 0 0 1 2 5.2 3.2 3.2 0 0 1-2.4 3.1 3 3 0 0 1-3.1 3.4H12"/></svg></span><h3>Según los diagnósticos</h3><p>Nuestros terapeutas parten por las personas que van a usar la sala y los diagnósticos con que trabaja su equipo, y eligen los elementos que responden a la necesidad principal.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><rect x="9" y="13" width="6" height="7"/></svg></span><h3>Según el espacio</h3><p>Una sala completa, un rincón dentro de una sala que ya existe o un carrito portátil cuando no hay un espacio fijo: la sala se adapta al lugar.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span><h3>Según el presupuesto</h3><p>Se puede partir con pocos elementos, y si buscan financiamiento público los acompañamos a elaborar el proyecto y a postularlo.</p></div><div class="pz"><span class="pz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><h3>Crece con el tiempo</h3><p>Las salas son escalables: lo que se compra hoy se integra a lo que venga después, y cada año se pueden sumar nuevos elementos.</p></div></div>
+    <div class="tera">
+      <span class="tera-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/><path d="M17.5 19.5a5.4 5.4 0 0 0-2.6-4.6"/><path d="M19 3v4M17 5h4"/></svg></span>
+      <div>
+        <div class="tera-rot">Quién diseña su sala</div>
+        <h3>Detrás de cada sala hay un equipo de terapeutas</h3>
+        <p>Nuestras salas no las arma un catálogo: las diseña un equipo de terapeutas, profesionales con la
+          formación necesaria, que conocen los diagnósticos y entienden la discapacidad desde el trabajo diario
+          con las personas. Son ellos quienes evalúan a quiénes va a recibir el espacio, determinan qué
+          necesitan y proponen una sala que de verdad sea inclusiva para esa necesidad.</p>
+      </div>
+    </div>
 
     <div class="puerta" style="margin-top:22px">
       <button type="button" class="puerta-foto"
@@ -1804,8 +1832,8 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   <div class="nx" id="salas">
     <div class="rot">Salas ya diseñadas</div>
     <h2>Elijan una sala,<br><em>o partamos desde ella</em></h2>
-    <p class="nx-baja">Junto con los proyectos a la medida, hemos preparado salas ya diseñadas para
-      instituciones en Chile, pensadas para distintas necesidades y presupuestos. Pueden elegirlas tal
+    <p class="nx-baja">Junto con los proyectos a la medida, nuestro equipo de terapeutas ha preparado
+      salas ya diseñadas para instituciones en Chile, pensadas para distintas necesidades y presupuestos. Pueden elegirlas tal
       como están o usarlas como punto de partida: a cualquiera se le pueden sumar, cambiar o quitar
       elementos. <b>Toquen una sala para conocerla</b>: qué la hace especial, qué se logra con ella, a
       quién puede ayudar y cada uno de sus elementos.</p>
@@ -1849,8 +1877,8 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   <div class="cz">
     <h2>Conversemos sobre su sala</h2>
     <p>Cuéntennos quiénes van a usar el espacio, con qué diagnósticos trabajan y cuánto espacio tienen.
-      Con eso les preparamos una propuesta a la medida: puede partir de una de estas salas o armarse
-      desde cero, y siempre se ajusta a su presupuesto.</p>
+      Con eso nuestro equipo de terapeutas les prepara una propuesta a la medida: puede partir de una de
+      estas salas o armarse desde cero, y siempre se ajusta a su presupuesto.</p>
   </div>
   <div class="firma">
     <div class="exec-card">
@@ -2105,6 +2133,8 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
         (s.aviso ? '<div class="op-colum"><div class="op-colum-t">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4.5"/><path d="M12 17.3v.2"/></svg>' +
           esc(s.aviso.t) + '</div>' + s.aviso.p.map(function(x){ return '<p>' + esc(x) + '</p>'; }).join('') + '</div>' : '') +
+        '<div class="sv-tera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/><path d="M17.5 19.5a5.4 5.4 0 0 0-2.6-4.6"/></svg>' +
+          '<p><b>Una sala pensada por terapeutas.</b> Esta combinación de elementos la definió nuestro equipo de terapeutas. Para su institución, ellos la revisan según las personas que la van a usar y sus diagnósticos, y la ajustan hasta que responda a su necesidad.</p></div>' +
         '<div class="sv-t">Elemento por elemento</div><h3 class="sv-h">Qué compone la sala</h3>' +
         '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha: qué es, qué se trabaja con él, para quién está indicado y sus características. Cada elemento se puede cambiar o sumar según lo que necesiten.</p>' +
         '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
