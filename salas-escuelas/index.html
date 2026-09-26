@@ -2572,6 +2572,11 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
 
 
 
+  /* Rayen, 25-sep-2026: en la propuesta para escuelas se ocultan las «Personas mayores» de las fichas */
+  P.forEach(function(p){
+    if (p.ind) p.ind = String(p.ind).split('·').map(function(x){ return x.trim(); }).filter(function(x){ return x && !/mayores/i.test(x); }).join(' · ');
+    if (p.tec) p.tec = String(p.tec).replace(/ *Personas mayores/gi, '');
+  });
   /* El armario del SHX Compact no vive en bodega: entra al mismo arreglo */
   (window.NUESTRAS_EXTRA || []).forEach(function(x){ if (!buscaProd(x.n)) P.push(x); });
 
