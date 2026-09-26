@@ -1471,7 +1471,10 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
 .sl .seg-faq>p{text-align:left}
 @media (max-width:820px){
   .sl-dest{grid-template-columns:minmax(0,1fr);justify-items:start;padding:22px 20px}
-  .sl-dest.sl-dos{grid-template-columns:auto auto;grid-template-areas:"f1 f2" "tx tx";justify-content:start;align-items:center;column-gap:22px}
+  .sl-dest.sl-dos{grid-template-columns:auto auto;grid-template-areas:"f1 f2" "tx tx";justify-content:start;align-items:center;column-gap:14px}
+  /* Rayen, 25-sep-2026: en su celular la foto roja se salía del marco. Las dos se achican con el ancho de la pantalla */
+  .sl-dos>.sl-sello-g{width:min(140px,34vw);height:min(140px,34vw)}
+  .sl-dos>.sl-foto-2{width:min(110px,27vw);height:min(110px,27vw)}
   .sl-dos>.sl-sello-g{grid-area:f1} .sl-dos>.sl-foto-2{grid-area:f2} .sl-dos>.sl-dest-tx{grid-area:tx}
   .seg-grid.sl-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
 }
