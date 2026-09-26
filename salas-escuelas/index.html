@@ -1487,9 +1487,10 @@ body .pg .seg-rot{font-size:36px !important}
 
 /* El logo en blanco a lo largo de la página (Rayen, 25-sep-2026) */
 .logo-bl{position:absolute;top:28px;right:34px;height:64px;width:auto;opacity:.92;pointer-events:none}
-.fin{margin:26px 0 0;padding:26px 16px 22px;background:linear-gradient(160deg,#001A60 0%,#00297F 100%);display:flex;flex-direction:column;align-items:center;gap:8px}
-.fin img{height:78px;width:auto}
-.fin span{font-size:11px;letter-spacing:.08em;color:#8FDDFF}
+.fin{margin:22px 0 0;padding:12px 54px;background:#001A60;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.fin img{height:38px;width:auto}
+.fin span{font-size:11px;letter-spacing:.06em;color:#8FDDFF}
+@media (max-width:560px){.fin{padding:10px 16px}.fin img{height:32px}}
 @media (max-width:820px){.logo-bl{height:52px;right:20px;top:22px}}
 @media (max-width:560px){.logo-bl{display:none}}
 
@@ -1552,26 +1553,26 @@ body.con-op .mnu-btn,body.con-op .arriba{display:none}
 @media (max-width:560px){.opc-foto{width:100px}.opc-tx span{font-size:12.4px}}
 
 /* La tarjeta de contacto del final (Rayen, 25-sep-2026) */
-.ct{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:center;margin-top:18px;padding:22px 24px;border-radius:18px;
-  background:linear-gradient(150deg,#001A60 0%,#02358F 100%);color:#fff;box-shadow:0 18px 40px -26px rgba(0,26,96,.7)}
-.ct-foto{position:relative;width:104px;height:104px;border-radius:50%;box-shadow:0 0 0 3px #FF7E00;background:#08ACF2;display:flex;align-items:center;justify-content:center}
+.ct{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;margin-top:14px;padding:14px 18px;border-radius:14px;
+  background:#F4F9FF;border:1px solid #CFE8FB;color:var(--navy)}
+.ct-foto{position:relative;width:60px;height:60px;border-radius:50%;box-shadow:0 0 0 2px #08ACF2;background:#08ACF2;display:flex;align-items:center;justify-content:center}
 .ct-foto>img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
 .ct-logo{position:absolute;right:-8px;bottom:-6px;width:42px;height:42px;border-radius:50%;background:#001A60;box-shadow:0 0 0 2px #08ACF2;display:flex;align-items:center;justify-content:center}
 .ct-logo img{width:28px;height:auto;display:block}
 .ct-foto span{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:#fff}
 .ct-tx{display:flex;flex-direction:column;gap:3px}
-.ct-tx b{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#fff}
-.ct-rol{font-size:13px;font-weight:700;color:#8FDDFF}
-.ct-dep{font-size:11.5px;color:rgba(255,255,255,.6)}
-.ct-acc{display:flex;flex-direction:column;gap:9px}
-.ct-btn{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.4);color:#fff;
-  text-decoration:none;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800}
-.ct-btn svg{width:18px;height:18px}
-.ct-btn.wa{background:#fff;color:var(--navy);border-color:#fff}
+.ct-tx b{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--navy)}
+.ct-rol{font-size:12px;font-weight:700;color:#0A8FCC}
+.ct-dep{font-size:11px;color:#64748B}
+.ct-acc{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;max-width:440px}
+.ct-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:8px 14px;border-radius:999px;border:1px solid #CFE8FB;color:var(--navy);background:#fff;
+  text-decoration:none;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800}
+.ct-btn svg{width:15px;height:15px}
+.ct-btn.wa{background:var(--navy);color:#fff;border-color:var(--navy)}
 .ct-btn:hover,.ct-btn:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff}
-.ct-dato{font-size:11px;color:#BFE9FF;text-align:center;user-select:all}
-@media (max-width:820px){.ct{grid-template-columns:auto minmax(0,1fr)}.ct-acc{grid-column:1/-1}}
-@media (max-width:560px){.ct{padding:20px 18px;gap:14px}.ct-foto{width:76px;height:76px}.ct-tx b{font-size:17px}}
+.ct-dato{flex-basis:100%;font-size:10.5px;color:#64748B;text-align:right;user-select:all}
+@media (max-width:820px){.ct{grid-template-columns:auto minmax(0,1fr)}.ct-acc{grid-column:1/-1;justify-content:flex-start}.ct-dato{text-align:left}}
+@media (max-width:560px){.ct{padding:12px 14px;gap:12px}.ct-foto{width:52px;height:52px}.ct-btn{flex:1 1 auto}}
 
 /* El menú lateral (Rayen, 25-sep-2026) */
 .mnu-btn{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:14px;z-index:58;display:flex;align-items:center;gap:7px;
