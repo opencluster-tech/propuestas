@@ -1170,6 +1170,7 @@ details.op:not([open])::before{display:none}
   color:#001A60;text-wrap:pretty}
 .fx-desc b{font-weight:800;color:#0A8FCC}
 .fx-desc p{margin:0}
+.fx-der .fx-n + .fx-reg{margin-top:10px}
 .fx-desc .fx-mas{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:'Montserrat',sans-serif;
   font-size:11.5px;font-weight:800;letter-spacing:.02em;color:#0A8FCC;text-decoration:none}
 .fx-desc .fx-mas:hover{text-decoration:underline}
@@ -2329,13 +2330,13 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       '<div class="fx-izq"><div class="fx-foto">' + foto + '</div>' + mini + '</div>' +
       '<div class="fx-der">' +
         '<h2 class="fx-n">' + esc(p.n) + '</h2>' +
+        /* Rayen, 25-sep-2026: bajo el nombre, primero el precio */
+        precio +
         (p.desc ? '<div class="fx-desc"><p>' + descHTML(p.desc) + '</p>' +
           (document.getElementById('materiales') ? '<a class="fx-mas" href="#materiales">Más información sobre los materiales →</a>' : '') +
           '</div>' : '') +
         /* Rayen, 25-sep-2026: las certificaciones, justo bajo el resumen */
         bloqueMateriales(p) +
-        
-        precio +
         seccion('Qué es y para qué sirve', p.que ? '<p class="parrafo">' + esc(p.que) + '</p>' : '') +
         seccion('Qué se trabaja con él', p.trab ? chips(p.trab) : '') +
         (p.ind ? '<div class="seccion sec-clave"><div class="heading">Indicado para</div>' +
