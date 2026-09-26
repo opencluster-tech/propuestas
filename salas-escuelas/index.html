@@ -1493,6 +1493,28 @@ body .pg .seg-rot{font-size:36px !important}
 @media (max-width:820px){.logo-bl{height:52px;right:20px;top:22px}}
 @media (max-width:560px){.logo-bl{display:none}}
 
+/* Una parte a la vez (Rayen, 26-sep-2026) */
+.parte-oculta{display:none !important}
+.cab-p{display:flex;align-items:center;gap:16px;padding:18px 54px 18px 150px;background:linear-gradient(150deg,#001A60 0%,#00297F 100%);color:#fff}
+.cab-p[hidden]{display:none}
+.cab-p img{height:46px;width:auto}
+.cab-p div{display:flex;flex-direction:column}
+.cab-p-t{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8FDDFF}
+.cab-p-n{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1.2}
+.nav-p{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:26px 54px 6px}
+.nav-p button{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:14px 18px;border-radius:14px;border:1px solid #CFE8FB;background:#F4F9FF;
+  cursor:pointer;font:inherit;text-align:left;color:inherit}
+.nav-p button.sig{align-items:flex-end;text-align:right;background:var(--navy);border-color:var(--navy)}
+.nav-p button span{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0A8FCC}
+.nav-p button b{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--navy)}
+.nav-p button.sig span{color:#8FDDFF}
+.nav-p button.sig b{color:#fff}
+.nav-p button:hover,.nav-p button:focus-visible{border-color:#08ACF2}
+.nav-p button.sig:hover,.nav-p button.sig:focus-visible{background:#08ACF2;border-color:#08ACF2}
+@media (max-width:820px){.cab-p{padding:16px 20px 16px 70px}.nav-p{padding:22px 20px 4px}}
+@media (max-width:560px){.cab-p{padding:64px 16px 14px;gap:10px}.cab-p img{height:34px}.cab-p-n{font-size:17px}.nav-p{padding:20px 16px 4px;gap:8px}.nav-p button{padding:12px}.nav-p button b{font-size:13px}}
+@media print{.parte-oculta{display:block !important}.cab-p,.nav-p{display:none !important}}
+
 /* Opciones de salas: el centro y su ventana (Rayen, 25-sep-2026) */
 .opc{background:linear-gradient(180deg,#F4F9FF 0%,#FFFFFF 100%)}
 .opc h2{font-size:26px}
@@ -2949,6 +2971,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     document.body.classList.add('con-op'); document.body.style.overflow = 'hidden';
   }
   function abrirOpcion(n){
+    if (window.__mostrarParte && window.__parteActual !== 'opciones') window.__mostrarParte('opciones', true);
     try { if (!opAbierta) { history.pushState({op: n}, '', '#op=' + n); opHist = true; } else history.replaceState({op: n}, '', '#op=' + n); } catch(e){}
     pintarOp(n);
   }
@@ -3001,6 +3024,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 12, behavior: 'smooth' });
   });
   function marcar(){
+    if (window.__parteActual) return;
     var activa = -1;
     partes.forEach(function(p, i){ if (p && p.getBoundingClientRect().top <= 90) activa = i; });
     [].forEach.call(mnu.querySelectorAll('.mnu-l a'), function(a, i){ a.classList.toggle('act', i === activa); });
@@ -3009,6 +3033,69 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
   function achicar(){ mnuBtn.classList.toggle('chico', window.scrollY > 300); }
   window.addEventListener('scroll', achicar, {passive: true}); achicar();
   marcar();
+
+  /* 3c · Una parte a la vez (Rayen, 26-sep-2026) */
+  (function(){
+    var hoja = document.querySelector('.hoja');
+    if (!hoja) return;
+    var ORDEN = ['inicio', 'materiales', 'ley', 'fondos', 'pasos', 'opciones', 'videos', 'compromiso'];
+    var NOMBRE = { inicio: 'Inicio', materiales: 'Materiales', ley: 'Lo que pide la ley', fondos: 'Cómo financiarla', pasos: 'Cómo trabajamos',
+      opciones: 'Opciones de salas', videos: 'Videos', compromiso: 'Nuestro compromiso' };
+    var grupos = {}, actual = 'inicio';
+    ORDEN.forEach(function(k){ grupos[k] = []; });
+    [].slice.call(hoja.children).forEach(function(el){
+      if (el.classList.contains('filo')) return;
+      if (el.classList.contains('cz') || el.classList.contains('fin')) return;   /* el pie queda siempre */
+      if (el.id && grupos[el.id]) actual = el.id;
+      grupos[actual].push(el);
+    });
+    /* encabezado corto, para todas las partes menos Inicio */
+    var cab = document.createElement('div');
+    cab.className = 'cab-p';
+    cab.innerHTML = '<img src="oct-logo-blanco.png" alt="OpenCluster Tech"><div><span class="cab-p-t">Salas Multisensoriales para Escuelas</span><span class="cab-p-n" id="cabPN"></span></div>';
+    var filo = hoja.querySelector('.filo');
+    hoja.insertBefore(cab, filo ? filo.nextSibling : hoja.firstChild);
+    /* Anterior / Siguiente, antes del pie */
+    var nav = document.createElement('div');
+    nav.className = 'nav-p';
+    var cz = hoja.querySelector('.cz');
+    hoja.insertBefore(nav, cz || null);
+    function mostrar(k, sinSubir){
+      if (!grupos[k]) return;
+      window.__parteActual = k;
+      ORDEN.forEach(function(x){ grupos[x].forEach(function(el){ el.classList.toggle('parte-oculta', x !== k); }); });
+      cab.hidden = (k === 'inicio');
+      document.getElementById('cabPN').textContent = NOMBRE[k];
+      var i = ORDEN.indexOf(k), ant = ORDEN[i - 1], sig = ORDEN[i + 1];
+      nav.innerHTML = (ant ? '<button type="button" data-parte="' + ant + '"><span>← Anterior</span><b>' + NOMBRE[ant] + '</b></button>' : '<span></span>') +
+        (sig ? '<button type="button" class="sig" data-parte="' + sig + '"><span>Siguiente →</span><b>' + NOMBRE[sig] + '</b></button>' : '<span></span>');
+      [].forEach.call(document.querySelectorAll('#mnu .mnu-l a'), function(a){ a.classList.toggle('act', a.dataset.ir === k); });
+      if (!sinSubir) window.scrollTo(0, 0);
+    }
+    window.__mostrarParte = mostrar;
+    document.addEventListener('click', function(ev){
+      var t = ev.target;
+      var b = t.closest && t.closest('[data-parte]');
+      if (b){ mostrar(b.dataset.parte); return; }
+      /* «Más información sobre los materiales» desde una ficha: se muestra Materiales, y «Volver a la ficha»
+         devuelve también a la parte (y a la opción) donde estaba la persona */
+      if (t.closest && t.closest('#fx a[href="#materiales"]')){
+        var parteAntes = window.__parteActual, opAntes = (typeof opAbierta !== 'undefined') ? opAbierta : 0;
+        var prev = window.__antesDeVolverFicha;
+        if (opAntes && typeof cerrarVistaOp === 'function'){ cerrarVistaOp(); opHist = false; try { history.replaceState(null, '', location.pathname); } catch(e){} }
+        mostrar('materiales', true);
+        window.__antesDeVolverFicha = function(){ mostrar(parteAntes, true); if (opAntes) abrirOpcion(opAntes); if (typeof prev === 'function') prev(); };
+        return;
+      }
+      /* enlaces a una parte (menú lateral y enlaces del texto) */
+      var a = t.closest && t.closest('a[href^="#"]');
+      if (a && !a.closest('#fx') && !a.closest('#sv') && !a.closest('#opv')){
+        var id = a.getAttribute('href').slice(1);
+        if (grupos[id]){ ev.preventDefault(); ev.stopImmediatePropagation(); if (typeof cerrarMenu === 'function') cerrarMenu(); mostrar(id); }
+      }
+    }, true);
+    mostrar('inicio', true);
+  })();
 
   /* 4 · Subir */
   var arriba = document.getElementById('btnArriba');
