@@ -88,6 +88,34 @@ const PRODUCTOS = {
     "oferta": 736544,
     "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026.",
     "semana": "2026-09-21"
+  },
+  "RAMPAS": {
+    "nombre": "Rampa portátil plegable de aluminio",
+    "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_rampa_main.jpg",
+    "lista": 155658,
+    "oferta": 147875,
+    "vigencia": "Oferta válida hasta el viernes 2 de octubre de 2026.",
+    "semana": "2026-09-28",
+    "medidas": [
+      {
+        "codigo": "OC-2285",
+        "medida": "120 cm",
+        "lista": 155658,
+        "oferta": 147875
+      },
+      {
+        "codigo": "OC-2286",
+        "medida": "150 cm",
+        "lista": 176496,
+        "oferta": 167671
+      },
+      {
+        "codigo": "OC-2287",
+        "medida": "180 cm",
+        "lista": 192323,
+        "oferta": 182707
+      }
+    ]
   }
 };
 
@@ -95,6 +123,9 @@ const q = new URLSearchParams(location.search);
 const cod = (q.get('p') || Object.keys(PRODUCTOS)[0]).toUpperCase();
 const P = PRODUCTOS[cod] || PRODUCTOS[Object.keys(PRODUCTOS)[0]];
 const app = document.getElementById('app');
+// Las líneas que se pueden pedir: una sola, o una por medida.
+const LINEAS = P.medidas || [{ codigo: cod, medida: '', lista: P.lista, oferta: P.oferta }];
+const nombreLinea = l => P.nombre + (l.medida ? ' — ' + l.medida : '');
 const clp = n => '$' + Number(n || 0).toLocaleString('es-CL');
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
@@ -102,16 +133,19 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;
    abra el precotizador de Roberto con el producto y la cantidad puestos */
 function aB64(s){ const u = new TextEncoder().encode(s); let b=''; for(let i=0;i<u.length;i++) b += String.fromCharCode(u[i]);
   return btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
-function enlacePrecotizador(codigo, qty, cl){
+function corto(codigo, qty){
   const m = String(codigo).match(/^OC-0*(\d{1,4})$/);
-  const corto = (m ? m[1] : encodeURIComponent(codigo)) + (qty > 1 ? 'x' + qty : '');
+  return (m ? m[1] : encodeURIComponent(codigo)) + (qty > 1 ? 'x' + qty : '');
+}
+function enlacePrecotizador(items, cl){
   const d = { v:1, n:'Oferta de la semana · ortopedias',
-    cl:{ i: cl.nombre||'', n: cl.nombre||'', e:'', t: cl.telefono||'', d: cl.direccion||'' }, i: corto };
+    cl:{ i: cl.nombre||'', n: cl.nombre||'', e:'', t: cl.telefono||'', d: cl.direccion||'' },
+    i: items.map(it => corto(it.codigo, it.qty)).join(',') };
   return BASE_LISTAS + LISTA_ROBERTO + '#precot=' + aB64(JSON.stringify(d));
 }
 
-function correoHtml(cl, qty){
-  const sub = P.oferta * qty;
+function correoHtml(cl, items){
+  const sub = items.reduce((s, it) => s + it.sub, 0);
   return '<div style="font-family:Arial,sans-serif;color:#182233;max-width:600px;">' +
     '<h2 style="color:#0a2e8a;">Solicitud de cotización — oferta de la semana</h2>' +
     '<p><b>Nombre:</b> ' + esc(cl.nombre) + '<br>' +
@@ -123,20 +157,20 @@ function correoHtml(cl, qty){
     '<th style="padding:8px 6px;">Producto</th><th style="padding:8px 6px;">Cant.</th>' +
     '<th style="padding:8px 6px;text-align:right;">Precio oferta</th>' +
     '<th style="padding:8px 6px;text-align:right;">Subtotal</th></tr></thead><tbody>' +
-    '<tr style="border-bottom:1px solid #e5e9f0;">' +
-    '<td style="padding:8px 6px;">' + esc(P.nombre) +
-    '<div style="font-family:monospace;font-size:11px;color:#8b96a5;">' + esc(cod) + '</div></td>' +
-    '<td style="padding:8px 6px;text-align:center;">' + qty + '</td>' +
-    '<td style="padding:8px 6px;text-align:right;">' + clp(P.oferta) + '</td>' +
-    '<td style="padding:8px 6px;text-align:right;font-weight:700;">' + clp(sub) + '</td>' +
-    '</tr></tbody></table>' +
+    items.map(it => '<tr style="border-bottom:1px solid #e5e9f0;">' +
+    '<td style="padding:8px 6px;">' + esc(it.nombre) +
+    '<div style="font-family:monospace;font-size:11px;color:#8b96a5;">' + esc(it.codigo) + '</div></td>' +
+    '<td style="padding:8px 6px;text-align:center;">' + it.qty + '</td>' +
+    '<td style="padding:8px 6px;text-align:right;">' + clp(it.unit) + '</td>' +
+    '<td style="padding:8px 6px;text-align:right;font-weight:700;">' + clp(it.sub) + '</td>' +
+    '</tr>').join('') + '</tbody></table>' +
     '<p style="text-align:right;font-size:15px;font-weight:800;margin-top:10px;">Total: ' + clp(sub) + '</p>' +
     '<p style="font-size:11.5px;color:#8b96a5;">Precio de la oferta de la semana, con IVA incluido. ' +
     'El despacho se calcula con la dirección de destino.</p>' +
     '<div style="margin-top:20px;padding:16px 18px;background:#fff6ee;border:1px solid #ffd7b3;border-radius:12px;">' +
       '<p style="margin:0 0 12px;font-size:13px;color:#5b4632;">Este pedido ya viene armado: ábrelo en tu ' +
       'precotizador con el producto, la cantidad y tus márgenes puestos.</p>' +
-      '<a href="' + enlacePrecotizador(cod, qty, cl) + '" style="display:inline-block;background:#ff7a1a;' +
+      '<a href="' + enlacePrecotizador(items, cl) + '" style="display:inline-block;background:#ff7a1a;' +
       'color:#ffffff;font-weight:bold;font-size:14px;padding:13px 20px;border-radius:9px;text-decoration:none;">' +
       'Abrir esta lista en el precotizador</a></div></div>';
 }
@@ -144,9 +178,13 @@ function correoHtml(cl, qty){
 function tarjetaProducto(){
   return '<div class="prod"><img src="' + P.img + '" alt="' + esc(P.nombre) + '">' +
     '<div><div class="n">' + esc(P.nombre) + '</div>' +
-    '<div class="c">Código ' + esc(cod) + '</div>' +
-    '<div class="p">' + clp(P.oferta) + ' <s>' + clp(P.lista) + '</s>' +
-    '<span class="pill">−5%</span></div>' +
+    (P.medidas
+      ? P.medidas.map(m => '<div class="c" style="margin-top:6px"><b style="color:#001A60">' + esc(m.medida) +
+          '</b> · <b style="color:#001A60;font-size:15px">' + clp(m.oferta) + '</b> <s>' + clp(m.lista) + '</s></div>').join('') +
+        '<div style="margin-top:6px"><span class="pill" style="margin-left:0">−5%</span></div>'
+      : '<div class="c">Código ' + esc(cod) + '</div>' +
+        '<div class="p">' + clp(P.oferta) + ' <s>' + clp(P.lista) + '</s>' +
+        '<span class="pill">−5%</span></div>') +
     '<div class="c">IVA incluido · ' + esc(P.vigencia) + '</div></div></div>';
 }
 
@@ -165,7 +203,12 @@ function vistaCotizar(){
     '<h1>Cotiza este producto</h1>' +
     '<p class="sub">Completa estos datos y Roberto te responde con la cotización formal.</p>' +
     tarjetaProducto() +
-    '<label>Cantidad</label><input id="f_qty" type="number" min="1" value="1" inputmode="numeric">' +
+    (P.medidas
+      ? '<label>Cantidad por medida <span>· deja en 0 las que no necesitas</span></label>' +
+        LINEAS.map((l, i) => '<div style="display:flex;align-items:center;gap:10px;margin-top:8px">' +
+          '<span style="flex:1;font-size:14px"><b>' + esc(l.medida) + '</b> · ' + clp(l.oferta) + '</span>' +
+          '<input id="f_qty' + i + '" type="number" min="0" value="' + (i === 0 ? 1 : 0) + '" inputmode="numeric" style="width:90px"></div>').join('')
+      : '<label>Cantidad</label><input id="f_qty0" type="number" min="1" value="1" inputmode="numeric">') +
     '<label>Nombre <span>· tuyo o de la ortopedia</span></label><input id="f_nombre" type="text" placeholder="Ortopedia Ejemplo / María Pérez">' +
     '<label>Teléfono <span>· opcional</span></label><input id="f_tel" type="tel" placeholder="+56 9 ...">' +
     '<label>Dirección exacta de destino</label><input id="f_dir" type="text" placeholder="Calle 123, comuna, ciudad">' +
@@ -183,8 +226,13 @@ function vistaCotizar(){
       direccion: document.getElementById('f_dir').value.trim(),
       comentario: document.getElementById('f_com').value.trim()
     };
-    const qty = Math.max(1, parseInt(document.getElementById('f_qty').value, 10) || 1);
+    const items = LINEAS.map((l, i) => {
+      const qty = Math.max(0, parseInt(document.getElementById('f_qty' + i).value, 10) || 0);
+      return { codigo: l.codigo, nombre: nombreLinea(l), qty: qty, unit: l.oferta, sub: l.oferta * qty };
+    }).filter(it => it.qty > 0);
+    const total = items.reduce((s, it) => s + it.sub, 0);
     const estado = document.getElementById('estado');
+    if(!items.length){ estado.style.color = '#C0392B'; estado.textContent = 'Indica al menos una cantidad.'; return; }
     if(!cl.nombre){ estado.style.color = '#C0392B'; estado.textContent = 'Falta tu nombre.'; return; }
     if(!cl.direccion){ estado.style.color = '#C0392B'; estado.textContent = 'Falta la dirección de destino.'; return; }
     this.disabled = true; estado.style.color = '#6B7280'; estado.textContent = 'Enviando…';
@@ -194,8 +242,8 @@ function vistaCotizar(){
           accion:'cotizacion_enviar', correoEjecutivo: CORREO_ROBERTO,
           distribuidora: cl.nombre, contacto: cl.nombre, correoContacto: '',
           telefono: cl.telefono, direccion: cl.direccion, comentario: cl.comentario,
-          items: [{ codigo: cod, nombre: P.nombre, qty: qty, unit: P.oferta, sub: P.oferta * qty }],
-          total: P.oferta * qty, emailHtml: correoHtml(cl, qty)
+          items: items,
+          total: total, emailHtml: correoHtml(cl, items)
         })
       });
       const j = await r.json();
