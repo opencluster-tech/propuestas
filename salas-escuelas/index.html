@@ -1757,6 +1757,20 @@ body.con-sala .barra{transform:translateY(-110%)}
 @media (max-width:560px){.go-in{padding:34px 16px 30px}.go-letra{font-size:34px}}
 
 /* La sala en etapas (Rayen, 25-sep-2026) */
+/* La etapa 1 por Compra Ágil (Rayen, 28-sep-2026) */
+.et-ca{display:flex;gap:18px;align-items:flex-start;margin:18px 0 6px;padding:20px 22px;border-radius:16px;
+  background:#FFF8EF;border:1px solid #FFD9B0;box-shadow:0 12px 28px -20px rgba(180,83,9,.45)}
+.et-ca-ic{flex:none;display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;background:#FF7E00;color:#fff}
+.et-ca-ic svg{width:25px;height:25px}
+.et-ca-rot{display:block;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#B45309}
+.et-ca h3{margin:4px 0 8px;font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:var(--navy)}
+.et-ca p{margin:0;font-size:13.2px;line-height:1.68;color:#374151}
+.et-ca-l{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.et-ca-l li{display:flex;gap:8px;align-items:flex-start;font-size:12.6px;line-height:1.5;color:#374151;background:#fff;border:1px solid #FFE6CC;border-radius:10px;padding:9px 11px}
+.et-ca-l svg{flex:none;width:17px;height:17px;color:#FF7E00;margin-top:1px}
+.et-ca-l b{color:var(--navy)}
+.et-ca .et-ca-nota{margin-top:10px;font-size:11.5px;color:#6B7280}
+@media (max-width:720px){.et-ca{flex-direction:column;gap:12px;padding:18px}.et-ca-l{grid-template-columns:1fr}}
 .et-chica{display:flex;gap:14px;align-items:flex-start;margin-top:12px;padding:14px 18px;border-radius:14px;background:#FFF8EF;border:1px solid #FFD9B0}
 .et-chica-ic{flex:none;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#FF7E00;color:#fff}
 .et-chica-ic svg{width:20px;height:20px}
@@ -2365,20 +2379,29 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       etapa, nada se repite y todo se suma: lo que compran en una etapa sigue funcionando en la siguiente, y con la tercera
       tienen una sala SHX completa. Nuestros profesionales expertos en entornos sensoriales y neurodivergencia los acompañan a definir el orden, les preparan el proyecto
       y, si lo necesitan, los asesoran para postular a fondos.</p>
+    <div class="et-ca">
+      <div class="et-ca-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11l2 2 4-4"/><path d="M9 17h6"/></svg></div>
+      <div class="et-ca-tx">
+        <span class="et-ca-rot">El primer año · Etapa 1</span>
+        <h3>Su primera etapa, por Compra Ágil</h3>
+        <p>La primera etapa está concebida para que su escuela la adquiera por <b>Compra Ágil</b>, la modalidad de Mercado Público
+          para compras de hasta 100 UTM (unos $7,2 millones, con todo incluido). Es la vía más simple y expedita del Estado:
+          la unidad de compras de su municipio, DAEM o Servicio Local publica la solicitud, recibe las cotizaciones y la compra
+          se concreta con la orden de compra. Nosotros les enviamos la cotización y las especificaciones técnicas que necesitan.</p>
+        <ul class="et-ca-l">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Sin licitación, bases ni contrato</b></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>El valor lo incluye todo:</b> no requiere instalación, capacitación presencial ni visita</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Un espacio completo</b> que funciona por sí solo desde el primer día</span></li>
+        </ul>
+        <p class="et-ca-nota">La modalidad de compra la define la unidad de compras de su sostenedor, según su Plan Anual de Compras y la normativa vigente.</p>
+      </div>
+    </div>
     <ol class="et-ruta" id="etRuta"></ol>
     <div class="et-total">
       <div><span class="et-total-l">Sala SHX completa</span><b>$31.493.276</b><span class="et-total-s">IVA incluido, en 3 etapas</span></div>
       <p><b>La etapa 1 no tiene costo de visita:</b> no necesita instalación y llega lista para usar. En las etapas 2 y 3,
         la capacitación, la instalación y el transporte se cobran en cada visita al establecimiento, según la región
         donde está la escuela, y no están incluidos en estos valores.</p>
-    </div>
-    <div class="et-chica">
-      <span class="et-chica-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 3.5h5l-1.3 3.2h-2.4z"/><path d="M8.6 6.7h6.8c2.6 2.4 4.1 5.3 4.1 7.9a5 5 0 0 1-5 5H9.5a5 5 0 0 1-5-5c0-2.6 1.5-5.5 4.1-7.9z"/><path d="M12 10v7.5"/><path d="M14.3 11.4h-3a1.3 1.3 0 0 0 0 2.6h1.4a1.3 1.3 0 0 1 0 2.6H9.7"/></svg></span>
-      <p><b>¿Tienen un monto anual más pequeño?</b> Si su escuela cuenta con unos $5 o 6 millones al año, por ejemplo de la
-        SEP o del PIE, también les armamos un proyecto más chico, pensado para comprarse por <b>Compra Ágil</b>: la forma
-        más simple y rápida de comprar por Mercado Público, sin licitación, para montos de hasta unos $7,2 millones con todo
-        incluido. La compra la hace la oficina de adquisiciones de su municipio, DAEM o Servicio Local, y nosotros les
-        enviamos la cotización y las especificaciones técnicas que necesitan.</p>
     </div>
   </div>
 
@@ -2631,7 +2654,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
 
   /* 1b · La sala en 4 etapas */
   var ETP = window.NUESTRAS_ETAPAS || [];
-  function selloEtapa(e){ return e.sinVisita ? '<span class="et-sello">Sin costo de visita</span>' : ''; }
+  function selloEtapa(e){ return (e.ca ? '<span class="et-sello">Por Compra Ágil</span>' : '') + (e.sinVisita ? '<span class="et-sello">Sin costo de visita</span>' : ''); }
   var etRuta = document.getElementById('etRuta');
   if (etRuta) etRuta.innerHTML = ETP.map(function(e, j){
     var fotos = e.items.map(function(it){ var p = buscaProd(it.n) || {}; return p.img; }).filter(Boolean).slice(0, 4);
@@ -2657,7 +2680,8 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
         '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha. Ninguno se repite en las otras etapas.</p>' +
         '<div class="op-grid">' + e.items.map(tarjeta).join('') + '</div>' +
         '<div class="sv-tera" style="margin:22px 0 0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>' +
-          (e.sinVisita ? '<p><b>Sin costo de visita.</b> Esta etapa no necesita instalación: los elementos llegan a la escuela listos para usar, en cualquier lugar de Chile, y el valor es el total.</p></div>'
+          (e.sinVisita ? '<p><b>Sin costo de visita.</b> Esta etapa no necesita instalación: los elementos llegan a la escuela listos para usar, en cualquier lugar de Chile, y el valor es el total.' +
+              (e.ca ? ' Por eso su escuela la puede adquirir por <b>Compra Ágil</b>, la modalidad más simple de Mercado Público, sin licitación.' : '') + '</p></div>'
             : '<p><b>Lo que no incluye este valor.</b> La capacitación, la instalación y el transporte se cobran en cada visita al establecimiento, según la región donde está la escuela.</p></div>') +
       '</div>' +
       '<div class="sv-pie">' +
