@@ -3120,7 +3120,10 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
         if (grupos[id]){ ev.preventDefault(); ev.stopImmediatePropagation(); if (typeof cerrarMenu === 'function') cerrarMenu(); mostrar(id); }
       }
     }, true);
-    mostrar('inicio', true);
+    /* Rayen, 28-sep-2026: un enlace con #materiales, #ley, #fondos… (desde el correo) abre esa parte directo */
+    var h0 = location.hash.slice(1);
+    if (grupos[h0] && h0 !== 'inicio'){ mostrar(h0, true); try { history.replaceState(null, '', location.pathname + location.search); } catch(e){} setTimeout(function(){ window.scrollTo(0, 0); }, 60); }
+    else mostrar('inicio', true);
   })();
 
   /* 4 · Subir */
