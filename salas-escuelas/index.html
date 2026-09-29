@@ -2389,7 +2389,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
           se concreta con la orden de compra. Nosotros les enviamos la cotización y las especificaciones técnicas que necesitan.</p>
         <ul class="et-ca-l">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Sin licitación, bases ni contrato</b></span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>El valor lo incluye todo:</b> no requiere instalación, capacitación presencial ni visita</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>El valor lo incluye todo:</b> sin instalación ni visita, y con una capacitación virtual de 2 horas</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Un espacio completo</b> que funciona por sí solo desde el primer día</span></li>
         </ul>
         <p class="et-ca-nota">La modalidad de compra la define la unidad de compras de su sostenedor, según su Plan Anual de Compras y la normativa vigente.</p>
@@ -2398,7 +2398,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
     <ol class="et-ruta" id="etRuta"></ol>
     <div class="et-total">
       <div><span class="et-total-l">Sala SHX completa</span><b>$31.493.276</b><span class="et-total-s">IVA incluido, en 3 etapas</span></div>
-      <p><b>La etapa 1 no tiene costo de visita:</b> no necesita instalación y llega lista para usar. En las etapas 2 y 3,
+      <p><b>La etapa 1 no tiene costo de visita:</b> no necesita instalación, llega lista para usar e incluye una capacitación virtual de 2 horas. En las etapas 2 y 3,
         la capacitación, la instalación y el transporte se cobran en cada visita al establecimiento, según la región
         donde está la escuela, y no están incluidos en estos valores.</p>
     </div>
@@ -2653,7 +2653,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
 
   /* 1b · La sala en 4 etapas */
   var ETP = window.NUESTRAS_ETAPAS || [];
-  function selloEtapa(e){ return (e.ca ? '<span class="et-sello">Por Compra Ágil</span>' : '') + (e.sinVisita ? '<span class="et-sello">Sin costo de visita</span>' : ''); }
+  function selloEtapa(e){ return (e.ca ? '<span class="et-sello">Por Compra Ágil</span>' : '') + (e.sinVisita ? '<span class="et-sello">Sin costo de visita</span><span class="et-sello">Capacitación virtual incluida</span>' : ''); }
   var etRuta = document.getElementById('etRuta');
   if (etRuta) etRuta.innerHTML = ETP.map(function(e, j){
     var fotos = e.items.map(function(it){ var p = buscaProd(it.n) || {}; return p.img; }).filter(Boolean).slice(0, 4);
@@ -2679,8 +2679,9 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
         '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha. Ninguno se repite en las otras etapas.</p>' +
         '<div class="op-grid">' + e.items.map(tarjeta).join('') + '</div>' +
         '<div class="sv-tera" style="margin:22px 0 0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>' +
-          (e.sinVisita ? '<p><b>Sin costo de visita.</b> Esta etapa no necesita instalación: los elementos llegan a la escuela listos para usar, en cualquier lugar de Chile, y el valor es el total.' +
-              (e.ca ? ' Por eso su escuela la puede adquirir por <b>Compra Ágil</b>, la modalidad más simple de Mercado Público, sin licitación.' : '') + '</p></div>'
+          (e.sinVisita ? '<p><b>Sin costo de visita.</b> Esta etapa no necesita instalación: los elementos llegan a la escuela listos para usar, en cualquier lugar de Chile, y el valor es el total.</p></div>' +
+              '<div class="sv-tera" style="margin:12px 0 0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="m10 8.5 4 1.5-4 1.5z"/></svg><p><b>Con capacitación virtual de 2 horas.</b> Aunque no haya visita, la etapa incluye una capacitación virtual de 2 horas con nuestro profesional experto en implementación de salas, para aprender a usar cada elemento en la regulación sensorial, en especial de estudiantes autistas, que es lo más frecuente en las escuelas, y resolver todas las dudas del equipo. Nuestras salas siempre van de la mano con capacitación.' +
+              (e.ca ? ' Y se puede adquirir por <b>Compra Ágil</b>, la modalidad más simple de Mercado Público, sin licitación.' : '') + '</p></div>'
             : '<p><b>Lo que no incluye este valor.</b> La capacitación, la instalación y el transporte se cobran en cada visita al establecimiento, según la región donde está la escuela.</p></div>') +
       '</div>' +
       '<div class="sv-pie">' +
