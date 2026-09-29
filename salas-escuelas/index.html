@@ -1912,6 +1912,13 @@ body.con-sala .barra{transform:translateY(-110%)}
 .pq-c:first-child .pq-n{background:#08ACF2}
 .pq-c h4{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--navy);margin:3px 0 5px;line-height:1.3}
 .pq-c p{margin:0;font-size:12.6px;line-height:1.62;color:#374151}
+.pq-exp{display:block;font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:600;color:#0A8FCC;margin-top:2px;line-height:1.4}
+.sv-vent{margin:-12px 0 26px;padding:14px 16px;border-radius:12px;background:#F1F8FF;border:1px solid #CFE8FB;font-size:13px;line-height:1.65;color:#374151}
+.sv-vent b{color:var(--navy)}
+.fz{margin:18px 0 0;border:1px solid #E3E9F2;border-radius:12px;padding:10px 14px;background:#fff}
+.fz summary{cursor:pointer;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--navy)}
+.fz ol{margin:10px 0 2px;padding-left:20px;font-size:11.8px;line-height:1.55;color:#4B5563}
+.fz li{margin-bottom:5px}.fz a{color:#0A8FCC;text-decoration:none;word-break:break-word}.fz a:hover{text-decoration:underline}
 
 .lg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;margin:0 0 28px;padding:16px 18px;border-radius:14px;background:#F4F9FF;border:1px solid #D8EBFA}
 .lg-i{display:flex;align-items:flex-start;gap:8px;font-size:12.8px;line-height:1.45;color:#1F2937}
@@ -2663,7 +2670,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       '<div class="et-v"><b>' + pesos(e.total) + '</b><span>IVA incluido · ' + e.items.length + ' elementos</span></div>' +
       selloEtapa(e) +
       '<div class="et-fotos">' + fotos.map(function(f){ return '<span><img src="' + esc(f) + '" alt="" loading="lazy"></span>'; }).join('') + '</div>' +
-      '<p class="et-tx">' + esc(e.txt) + '</p>' +
+      '<p class="et-tx">' + esc(e.corto || e.txt) + '</p>' +
       '<button type="button" class="et-ver" data-etapa="' + j + '">Ver los ' + e.items.length + ' elementos' + IC_FLECHA + '</button>' +
     '</li>';
   }).join('');
@@ -2674,7 +2681,11 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
         '<h2>' + esc(e.n) + '</h2>' +
         '<div class="sv-et-fila"><b>' + pesos(e.total) + '</b><span>IVA incluido · ' + e.items.length + ' elementos</span>' + selloEtapa(e) + '</div></div>' +
       '<div class="sv-in">' +
-        '<p class="sv-lead">' + esc(e.txt) + '</p>' +
+        '<p class="sv-lead">' + esc(e.desc || e.txt) + '</p>' +
+        (e.estimulos ? '<div class="sv-t">Cómo actúa en el cuerpo</div><h3 class="sv-h">Cómo trabajan juntos <em>los estímulos</em></h3>' + estimulosHTML(e.estimulos) +
+          (e.ventaja ? '<p class="sv-vent"><b>La ventaja del conjunto.</b> ' + esc(e.ventaja) + '</p>' : '') : '') +
+        (e.logros ? '<div class="sv-t">Desde el primer día</div><h3 class="sv-h">Lo que se logra con esta etapa</h3>' +
+          '<div class="lg">' + e.logros.map(function(t){ return '<div class="lg-i">' + IC_OK + '<span>' + esc(t) + '</span></div>'; }).join('') + '</div>' : '') +
         '<div class="sv-t">Elemento por elemento</div><h3 class="sv-h">Qué trae esta etapa</h3>' +
         '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha. Ninguno se repite en las otras etapas.</p>' +
         '<div class="op-grid">' + e.items.map(tarjeta).join('') + '</div>' +
@@ -2683,6 +2694,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
               '<div class="sv-tera" style="margin:12px 0 0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="m10 8.5 4 1.5-4 1.5z"/></svg><p><b>Con capacitación virtual de 2 horas.</b> Aunque no haya visita, la etapa incluye una capacitación virtual de 2 horas con nuestro profesional experto en implementación de salas, para aprender a usar cada elemento en la regulación sensorial, en especial de estudiantes autistas, que es lo más frecuente en las escuelas, y resolver todas las dudas del equipo. Nuestras salas siempre van de la mano con capacitación.' +
               (e.ca ? ' Y se puede adquirir por <b>Compra Ágil</b>, la modalidad más simple de Mercado Público, sin licitación.' : '') + '</p></div>'
             : '<p><b>Lo que no incluye este valor.</b> La capacitación, la instalación y el transporte se cobran en cada visita al establecimiento, según la región donde está la escuela.</p></div>') +
+        fuentesHTML(e.fuentesD) +
       '</div>' +
       '<div class="sv-pie">' +
         '<button type="button" data-ir-etapa="' + ant + '">' + IC_ANT + 'Etapa ' + (ant + 1) + '</button>' +
@@ -2708,6 +2720,12 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
       }).join('') + '</div>';
   }
 
+  /* Las fuentes de cada descripción, plegadas (Rayen, 29-sep-2026) */
+  function fuentesHTML(L){ if (!L || !L.length) return '';
+    return '<details class="fz"><summary>Fuentes de esta descripción (' + L.length + ')</summary><ol>' + L.map(function(f){ return '<li><a href="' + esc(f.url) + '" target="_blank" rel="noopener">' + esc(f.t) + '</a></li>'; }).join('') + '</ol></details>'; }
+  function estimulosHTML(L){ return '<div class="pq">' + L.map(function(p, i){
+      return '<div class="pq-c"><span class="pq-n">' + (i + 1) + '</span><div><h4>' + esc(p[0]) + (p[2] ? '<span class="pq-exp">' + esc(p[2]) + '</span>' : '') + '</h4><p>' + esc(p[1]) + '</p></div></div>';
+    }).join('') + '</div>'; }
   function salaHTML(k){
     var s = SL[k];
     var ant = (k + SL.length - 1) % SL.length, sig = (k + 1) % SL.length;
@@ -2724,10 +2742,9 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
         '</div>' +
         '<p class="sv-lead">' + esc(s.txt) + '</p>' +
         (s.porque && s.porque.length
-          ? '<div class="sv-t">Lo que la hace distinta</div><h3 class="sv-h">Por qué esta sala <em>es especial</em></h3>' +
-            '<div class="pq">' + s.porque.map(function(p, i){
-              return '<div class="pq-c"><span class="pq-n">' + (i + 1) + '</span><div><h4>' + esc(p[0]) + '</h4><p>' + esc(p[1]) + '</p></div></div>';
-            }).join('') + '</div>'
+          ? '<div class="sv-t">Cómo actúa en el cuerpo</div><h3 class="sv-h">Cómo trabajan juntos <em>los estímulos</em></h3>' +
+            estimulosHTML(s.porque) +
+            (s.ventaja ? '<p class="sv-vent"><b>La ventaja del conjunto.</b> ' + esc(s.ventaja) + '</p>' : '')
           : '') +
         (s.logra && s.logra.length
           ? '<div class="sv-t">Desde el primer día</div><h3 class="sv-h">Lo que se logra con esta sala</h3>' +
@@ -2743,6 +2760,7 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
             '<div class="evi-c">' + s.evi.map(function(e){ return '<p class="evi-p">' + e + '</p>'; }).join('') + '</div>' +
             (s.fue ? '<div class="evi-f"><b>Fuentes</b> · ' + esc(s.fue) + '</div>' : '') + '</div>'
           : '') +
+        fuentesHTML(s.fuentesD) +
         (s.aviso ? '<div class="op-colum"><div class="op-colum-t">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9.5 16.5h-19L12 3z"/><path d="M12 10v4.5"/><path d="M12 17.3v.2"/></svg>' +
           esc(s.aviso.t) + '</div>' + s.aviso.p.map(function(x){ return '<p>' + esc(x) + '</p>'; }).join('') + '</div>' : '') +
