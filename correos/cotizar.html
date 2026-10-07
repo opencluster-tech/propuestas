@@ -78,7 +78,7 @@ const PRODUCTOS = {
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_colchon_main.jpg",
     "lista": 53908,
     "oferta": 51212,
-    "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026.",
+    "vigencia": "Oferta válida por 15 días a contar del envío de este correo.",
     "semana": "2026-09-21"
   },
   "OC-1107": {
@@ -86,7 +86,7 @@ const PRODUCTOS = {
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_grua_main.jpg",
     "lista": 775309,
     "oferta": 736544,
-    "vigencia": "Oferta válida hasta el viernes 26 de septiembre de 2026.",
+    "vigencia": "Oferta válida por 15 días a contar del envío de este correo.",
     "semana": "2026-09-21"
   },
   "RAMPAS": {
@@ -94,7 +94,7 @@ const PRODUCTOS = {
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_rampa_main.jpg",
     "lista": 155658,
     "oferta": 147875,
-    "vigencia": "Oferta válida hasta el viernes 2 de octubre de 2026.",
+    "vigencia": "Oferta válida por 15 días a contar del envío de este correo.",
     "semana": "2026-09-28",
     "medidas": [
       {
@@ -122,7 +122,7 @@ const PRODUCTOS = {
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_theradense_main.jpg",
     "lista": 164720,
     "oferta": 156484,
-    "vigencia": "Oferta válida hasta el viernes 9 de octubre de 2026.",
+    "vigencia": "Oferta válida por 15 días a contar del envío de este correo.",
     "semana": "2026-10-05"
   },
   "OC-2226": {
@@ -130,7 +130,7 @@ const PRODUCTOS = {
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_silla_transf_main.jpg",
     "lista": 59599,
     "oferta": 56619,
-    "vigencia": "Oferta válida hasta el viernes 16 de octubre de 2026.",
+    "vigencia": "Oferta válida por 15 días a contar del envío de este correo.",
     "semana": "2026-10-12"
   },
   "BARRA-TRIPLE": {
@@ -138,7 +138,7 @@ const PRODUCTOS = {
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_barra_triple_main.jpg",
     "lista": 75408,
     "oferta": 71638,
-    "vigencia": "Oferta válida hasta el viernes 23 de octubre de 2026.",
+    "vigencia": "Oferta válida por 15 días a contar del envío de este correo.",
     "semana": "2026-10-19",
     "medidas": [
       {
@@ -160,7 +160,7 @@ const PRODUCTOS = {
     "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_lupa_main.jpg",
     "lista": 199731,
     "oferta": 189744,
-    "vigencia": "Oferta válida hasta el viernes 30 de octubre de 2026.",
+    "vigencia": "Oferta válida por 15 días a contar del envío de este correo.",
     "semana": "2026-10-26"
   }
 };
@@ -231,7 +231,7 @@ function tarjetaProducto(){
       : '<div class="c">Código ' + esc(cod) + '</div>' +
         '<div class="p">' + clp(P.oferta) + ' <s>' + clp(P.lista) + '</s>' +
         '<span class="pill">−5%</span></div>') +
-    '<div class="c">IVA incluido · ' + esc(P.vigencia) + '</div></div></div>';
+    '<div class="c">IVA incluido · ' + esc(P.vigencia.replace('de este correo', 'del correo')) + '</div></div></div>';
 }
 
 function vistaGracias(titulo, texto){
