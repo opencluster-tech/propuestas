@@ -1667,17 +1667,25 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .inst-c li{margin:0 0 6px}
 .inst-tr{margin-top:14px;background:#FFF7EE;border:1px solid #FFD9B0;border-radius:8px;padding:12px 16px;font-size:13px;color:var(--texto)}
 .inst-tr b{color:#B45309}
-body .g2 .p2.p2-foto .p2-cab{position:static !important;height:auto !important;min-height:84px !important;padding:13px 14px 12px !important;justify-content:flex-start !important;background:linear-gradient(120deg,#001A60 0%,#0A4FB0 100%) !important}
-body .g2 .p2.p2-foto.p2-des .p2-cab{background:linear-gradient(120deg,#02358F 0%,#08ACF2 115%) !important}
-body .g2 .p2.p2-foto .p2-l{height:24px !important;padding:0 11px !important;border-radius:999px !important;background:#fff !important;color:var(--navy) !important;font-size:11.5px !important;letter-spacing:.05em !important;text-transform:uppercase;text-shadow:none !important}
-body .g2 .p2.p2-foto .p2-n{font-size:16px !important;text-shadow:none !important}
-body .g2.g2-niv{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:12px;row-gap:12px}
+body .g2 .p2.p2-foto .p2-cab{position:static !important;height:auto !important;min-height:62px !important;gap:6px !important;padding:11px 13px 11px !important;justify-content:flex-start !important}
+body .g2 .p2.p2-foto .p2-l{height:20px !important;padding:0 9px !important;border-radius:999px !important;background:#fff !important;font-size:9.5px !important;letter-spacing:.06em !important;text-transform:uppercase;text-shadow:none !important}
+body .g2 .p2.p2-foto .p2-n{font-size:13.5px !important;line-height:1.25 !important;text-shadow:none !important}
+:root{--eco:#0A8FCC;--prem:#001A60}
+body .g2 .p2.p2-eco .p2-cab{background:var(--eco) !important}
+body .g2 .p2.p2-eco .p2-l{color:var(--eco) !important}
+body .g2 .p2.p2-eco .p2-ir{background:var(--eco) !important;border-color:var(--eco) !important}
+body .g2 .p2.p2-prem .p2-cab{background:linear-gradient(120deg,var(--prem) 0%,#0A3C96 100%) !important}
+body .g2 .p2.p2-prem .p2-l{color:var(--prem) !important}
+body .g2 .p2.p2-prem .p2-ir{background:var(--prem) !important;border-color:var(--prem) !important}
+body .g2 .p2:hover .p2-ir{background:var(--naranja) !important;border-color:var(--naranja) !important}
+body .g2.g2-niv{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 22px minmax(0,1fr) minmax(0,1fr);column-gap:12px;row-gap:12px}
 body .g2-niv .p2-eco.p2-reg{grid-row:2;grid-column:1}body .g2-niv .p2-eco.p2-int{grid-row:2;grid-column:2}
-body .g2-niv .p2-prem.p2-reg{grid-row:2;grid-column:3}body .g2-niv .p2-prem.p2-int{grid-row:2;grid-column:4}
-.niv-h{grid-row:1;display:flex;flex-direction:column;gap:2px;padding:0 2px 8px;border-bottom:2px solid var(--sky)}
-.niv-h-eco{grid-column:1 / span 2}.niv-h-prem{grid-column:3 / span 2;border-bottom-color:var(--navy)}
-.niv-t{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.2}
-.niv-s{font-size:12.5px;color:var(--suave);line-height:1.35}
+body .g2-niv .p2-prem.p2-reg{grid-row:2;grid-column:4}body .g2-niv .p2-prem.p2-int{grid-row:2;grid-column:5}
+.niv-h{grid-row:1;display:flex;flex-direction:column;gap:2px;padding:0 2px 7px;border-bottom:2px solid var(--eco)}
+.niv-h-eco{grid-column:1 / span 2}.niv-h-prem{grid-column:4 / span 2;border-bottom-color:var(--prem)}
+.niv-t{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--eco);letter-spacing:.01em;line-height:1.2}
+.niv-h-prem .niv-t{color:var(--prem)}
+.niv-s{font-size:12px;color:var(--suave);line-height:1.35}
 @media(max-width:900px){body .g2.g2-niv{grid-template-columns:repeat(2,minmax(0,1fr))}.niv-h-eco{grid-row:1;grid-column:1 / span 2}body .g2-niv .p2-eco.p2-reg{grid-row:2;grid-column:1}body .g2-niv .p2-eco.p2-int{grid-row:2;grid-column:2}.niv-h-prem{grid-row:3;grid-column:1 / span 2;margin-top:16px}body .g2-niv .p2-prem.p2-reg{grid-row:4;grid-column:1}body .g2-niv .p2-prem.p2-int{grid-row:4;grid-column:2}}
 @media(max-width:560px){body .g2.g2-niv{grid-template-columns:minmax(0,1fr)}.niv-h-eco,.niv-h-prem{grid-column:1}.niv-h-eco{grid-row:1}body .g2-niv .p2-eco.p2-reg{grid-row:2;grid-column:1}body .g2-niv .p2-eco.p2-int{grid-row:3;grid-column:1}.niv-h-prem{grid-row:4}body .g2-niv .p2-prem.p2-reg{grid-row:5;grid-column:1}body .g2-niv .p2-prem.p2-int{grid-row:6;grid-column:1}}
 .pg .g2 .p2.p2-foto .p2-cab{min-height:0 !important;padding:9px 10px !important}
