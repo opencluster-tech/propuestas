@@ -1671,6 +1671,23 @@ body .g2 .p2.p2-foto .p2-cab{position:static !important;height:auto !important;m
 body .g2 .p2.p2-foto.p2-des .p2-cab{background:linear-gradient(120deg,#02358F 0%,#08ACF2 115%) !important}
 body .g2 .p2.p2-foto .p2-l{height:24px !important;padding:0 11px !important;border-radius:999px !important;background:#fff !important;color:var(--navy) !important;font-size:11.5px !important;letter-spacing:.05em !important;text-transform:uppercase;text-shadow:none !important}
 body .g2 .p2.p2-foto .p2-n{font-size:16px !important;text-shadow:none !important}
+:root{--eco-fondo:#EAF7FE;--eco-borde:#9ADCFA;--eco-txt:#001A60;--prem-fondo:#001A60;--prem-fondo2:#02358F;--prem-acento:#FF7E00}
+body .g2 .p2.p2-eco{border-color:var(--eco-borde)}
+body .g2 .p2.p2-eco .p2-cab{background:var(--eco-fondo) !important;border-top:4px solid var(--sky)}
+body .g2 .p2.p2-eco .p2-n{color:var(--eco-txt) !important}
+body .g2 .p2.p2-eco .p2-l{background:var(--sky) !important;color:#fff !important}
+body .g2 .p2.p2-prem{border-color:var(--prem-fondo);box-shadow:0 10px 24px rgba(0,26,96,.22)}
+body .g2 .p2.p2-prem .p2-cab{background:linear-gradient(135deg,var(--prem-fondo) 0%,var(--prem-fondo2) 100%) !important;border-top:4px solid var(--prem-acento)}
+body .g2 .p2.p2-prem .p2-l{background:var(--prem-acento) !important;color:#fff !important}
+body .g2 .p2.p2-prem .p2-cuerpo{background:#F3F6FC}
+body .g2 .p2.p2-prem .p2-banda{background:var(--prem-fondo) !important;border-top-color:var(--prem-fondo) !important}
+body .g2 .p2.p2-prem .p2-lab{color:#9FB6E0 !important}
+body .g2 .p2.p2-prem .p2-v{color:#fff !important}
+body .g2 .p2.p2-prem .p2-antes,body .g2 .p2.p2-prem .p2-antes s{color:#8FA6D3 !important}
+body .g2 .p2.p2-prem .p2-ir{background:var(--prem-acento) !important;border-color:var(--prem-acento) !important;color:#fff !important}
+details.op.op-eco > .op-cab{background:linear-gradient(120deg,#0A8FCC 0%,#08ACF2 100%);border-bottom-color:var(--sky)}
+details.op.op-prem > .op-cab{background:linear-gradient(120deg,#000F3D 0%,#001A60 55%,#02358F 100%);border-bottom-color:var(--prem-acento)}
+details.op.op-prem .op-letra{border-color:var(--prem-acento)}
 .pg .g2 .p2.p2-foto .p2-cab{min-height:0 !important;padding:9px 10px !important}
 .pg .g2 .p2.p2-foto .p2-l{font-size:8.5px !important;height:18px !important}
 .pg .g2 .p2.p2-foto .p2-n{font-size:12px !important}
@@ -2202,7 +2219,7 @@ body .g2 .p2.p2-foto .p2-n{font-size:16px !important;text-shadow:none !important
         /* Rayen, 23-sep-2026: la letra y el nombre van DENTRO de la foto de la opción (campo portada; si no
            trae, la primera foto de la sala) */
         var pf = s.portada || (Array.isArray(s.img) ? s.img[0] : s.img) || '';
-        return '<a class="p2' + (k === SALAS.length - 1 ? ' p2-des' : '') + (pf ? ' p2-foto' : '') + '" href="#opcion-' + LETRA[k] + '">' +
+        return '<a class="p2 p2-' + (s.nivel || 'eco') + (pf ? ' p2-foto' : '') + '" href="#opcion-' + LETRA[k] + '">' +
           (pf ? '<span class="p2-portada"><img src="' + esc(pf) + '" alt="' + esc(s.n) + '" loading="eager"></span>' : '') +
           '<span class="p2-cab"><span class="p2-l">Opción ' + LETRA[k] + (s.nivelTxt ? ' · ' + esc(s.nivelTxt) : '') + '</span>' +
             '<span class="p2-n">' + esc(s.tipoTxt || s.n) + '</span></span>' +
@@ -2259,7 +2276,7 @@ body .g2 .p2.p2-foto .p2-n{font-size:16px !important;text-shadow:none !important
 
     /* 2 · Cada opción: lo que logra, su valor, y después sus productos uno por uno */
     SALAS.forEach(function(s, k){
-      hs += '<details class="op" id="opcion-' + LETRA[k] + '">' +
+      hs += '<details class="op op-' + (s.nivel || 'eco') + '" id="opcion-' + LETRA[k] + '">' +
         '<summary class="op-cab">' +
           '<div class="op-letra"><span class="ol-rot">Opción</span>' +
             '<span class="ol-l">' + LETRA[k] + '</span></div>' +
