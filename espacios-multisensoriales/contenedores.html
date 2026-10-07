@@ -1667,6 +1667,13 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .inst-c li{margin:0 0 6px}
 .inst-tr{margin-top:14px;background:#FFF7EE;border:1px solid #FFD9B0;border-radius:8px;padding:12px 16px;font-size:13px;color:var(--texto)}
 .inst-tr b{color:#B45309}
+body .g2 .p2.p2-foto .p2-cab{position:static !important;height:auto !important;min-height:84px !important;padding:13px 14px 12px !important;justify-content:flex-start !important;background:linear-gradient(120deg,#001A60 0%,#0A4FB0 100%) !important}
+body .g2 .p2.p2-foto.p2-des .p2-cab{background:linear-gradient(120deg,#02358F 0%,#08ACF2 115%) !important}
+body .g2 .p2.p2-foto .p2-l{height:24px !important;padding:0 11px !important;border-radius:999px !important;background:#fff !important;color:var(--navy) !important;font-size:11.5px !important;letter-spacing:.05em !important;text-transform:uppercase;text-shadow:none !important}
+body .g2 .p2.p2-foto .p2-n{font-size:16px !important;text-shadow:none !important}
+.pg .g2 .p2.p2-foto .p2-cab{min-height:0 !important;padding:9px 10px !important}
+.pg .g2 .p2.p2-foto .p2-l{font-size:8.5px !important;height:18px !important}
+.pg .g2 .p2.p2-foto .p2-n{font-size:12px !important}
 @media(max-width:760px){.inst{padding:26px 16px}.inst-grid{grid-template-columns:1fr}.cb-t td,.cb-t th{padding:8px 9px}}
 </style>
 </head>
@@ -2197,8 +2204,8 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
         var pf = s.portada || (Array.isArray(s.img) ? s.img[0] : s.img) || '';
         return '<a class="p2' + (k === SALAS.length - 1 ? ' p2-des' : '') + (pf ? ' p2-foto' : '') + '" href="#opcion-' + LETRA[k] + '">' +
           (pf ? '<span class="p2-portada"><img src="' + esc(pf) + '" alt="' + esc(s.n) + '" loading="eager"></span>' : '') +
-          '<span class="p2-cab"><span class="p2-l">Opción ' + LETRA[k] + '</span>' +
-            '<span class="p2-n">' + esc(s.n) + '</span></span>' +
+          '<span class="p2-cab"><span class="p2-l">Opción ' + LETRA[k] + (s.nivelTxt ? ' · ' + esc(s.nivelTxt) : '') + '</span>' +
+            '<span class="p2-n">' + esc(s.tipoTxt || s.n) + '</span></span>' +
           '<span class="p2-cuerpo">' +
             '<span class="p2-p">' + esc(s.para) + '</span>' +
             '<span class="p2-prod">' + IC_CAJA + '<span>' + s.items.length + ' productos</span></span>' +
