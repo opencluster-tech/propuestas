@@ -1763,6 +1763,9 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .op-foto:has(img[src*="butaca"]){background:#fff}
 body .cat4 .g2 .p2.p2-foto .p2-portada img[src*="butaca"]{object-fit:contain;object-position:50% 62%;background:#EEF3FA;padding:70px 40px 150px;box-sizing:border-box}
 .pg .p2-desg{font-size:8px}
+/* REGLA de Rayen: NINGÚN botón se pone naranjo; el hover es el celeste de la página web (#06b3fd) con texto blanco */
+.ficha-pleg>summary:hover .ver-ficha,.comp:hover .comp-ir,.vid-btn:hover,.subir:hover,.obra-c:hover .obra-play,.tarj:hover .tver,.fx-x:hover,.lb-x:hover,.p2:hover .p2-ir{background:#06b3fd !important;border-color:#06b3fd !important;color:#fff !important}
+.comp:hover .comp-letra{color:#06b3fd !important}
 /* Rayen, 9-oct: el encabezado de cada sala era «desordenado» y repetía la descripción. Ahora: el nombre de la sala
    (Sala grande, Sala de adultos…), una línea corta con establecimientos y capacitación, y el valor. Nada más. */
 .op-cab .op-letra,.op-cab .op-para{display:none !important}
@@ -1804,14 +1807,14 @@ body .cat4 .g2 .p2.p2-foto::after{content:'';position:absolute;inset:0;z-index:-
 /* El caminito: una línea punteada que une las paradas; cada año se abre y se cierra (details) */
 .camino{position:relative;margin:18px 0 6px;padding-left:4px}
 .camino::before{content:'';position:absolute;left:30px;top:30px;bottom:30px;width:5px;border-radius:5px;
-  background:repeating-linear-gradient(180deg,#08ACF2 0 10px,transparent 10px 18px),linear-gradient(180deg,#001A60,#08ACF2 55%,#FF7E00);
+  background:repeating-linear-gradient(180deg,#08ACF2 0 10px,transparent 10px 18px),linear-gradient(180deg,#001A60,#0A4BAE 55%,#06B3FD);
   background-blend-mode:normal;-webkit-mask:repeating-linear-gradient(180deg,#000 0 10px,transparent 10px 18px);mask:repeating-linear-gradient(180deg,#000 0 10px,transparent 10px 18px)}
 .cm-nodo{position:relative;margin:0 0 14px}
 .cm-fila{display:flex;align-items:center;gap:18px;padding:0;cursor:pointer;list-style:none}
 .cm-fila::-webkit-details-marker{display:none}
 .cm-fila .cm-sum{padding:14px 18px;border-radius:16px;background:#fff;border:1px solid #DCEBFA;box-shadow:0 10px 24px -18px rgba(0,26,96,.5);transition:transform .2s,box-shadow .2s,border-color .2s}
 details.cm-nodo > summary:hover .cm-sum{transform:translateX(4px);border-color:#9FD8F7;box-shadow:0 14px 28px -16px rgba(0,26,96,.55)}
-details[open] > summary .cm-sum{border-color:#FFB347;background:linear-gradient(90deg,#FFF6EC,#fff 60%)}
+details[open] > summary .cm-sum{border-color:#06B3FD;background:linear-gradient(90deg,#E8F7FF,#fff 60%)}
 .cm-hoy .cm-sum::after{content:'Hoy';align-self:flex-start;margin-top:4px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#001A60;border-radius:999px;padding:2px 9px}
 .crece .cm-cuerpo .op-grid{margin-left:0;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
 .cm-fila .cm-ab{margin-left:-6px}
@@ -1820,8 +1823,8 @@ details[open] > summary .cm-sum{border-color:#FFB347;background:linear-gradient(
   box-shadow:0 0 0 6px #fff,0 8px 18px -6px rgba(0,26,96,.6);transition:transform .25s}
 .cm-hoy .cm-pt{background:#001A60}
 .cm-hoy .cm-fila{cursor:default}
-details[open] > summary .cm-pt{transform:scale(1.08);background:linear-gradient(135deg,var(--naranja),#FF9A3D)}
-.cm-pt-meta{background:linear-gradient(135deg,#FF7E00,#FFB347)}
+details[open] > summary .cm-pt{transform:scale(1.08);background:linear-gradient(135deg,#06B3FD,#2FC1FF)}
+.cm-pt-meta{background:linear-gradient(135deg,#001A60,#0A4BAE)}
 .cm-pt-meta svg{width:24px;height:24px}
 .cm-sum{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
 .cm-sum b{font-family:'Montserrat',sans-serif;font-size:17px;color:var(--navy, #001A60)}
@@ -1855,7 +1858,7 @@ body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opaci
 .cat4 .p2-desg{color:#D6E4F5;font-size:12.5px;margin:0 0 12px}
 .cat4 .p2-desg b{color:#fff}
 .cat4 .p2-ir{background:#fff;color:#001A60;border-color:#fff;font-weight:800}
-.cat4 .p2:hover .p2-ir{background:var(--naranja);border-color:var(--naranja);color:#fff}
+.cat4 .p2:hover .p2-ir,.p2:hover .p2-ir{background:#06b3fd !important;border-color:#06b3fd !important;color:#fff !important}
 @media (max-width:760px){.cat4{grid-template-columns:minmax(0,1fr);gap:16px}body .cat4 .g2 .p2.p2-foto{min-height:440px}.cat4 .p2-cat{font-size:40px}}
 .pg .cat4{gap:10px}.pg body .cat4 .g2 .p2.p2-foto,.pg .cat4 .p2.p2-foto{min-height:300px}.pg .cat4 .p2-cat{font-size:28px}.pg .cat4 .p2-v{font-size:18px}
 /* Etapas 2026 · 2027 · 2028 (9-oct) */
