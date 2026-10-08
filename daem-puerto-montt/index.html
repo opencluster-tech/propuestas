@@ -1744,6 +1744,30 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .p2-des b{color:var(--navy, #001A60);font-weight:700}
 .op-des{display:block;margin-top:6px;font-size:12.5px;opacity:.9}
 .pg .p2-des{font-size:8px}
+/* Etapas 2026 · 2027 · 2028 (9-oct) */
+.etapas{padding:34px 40px 10px;border-top:1px solid #E3EAF4}
+.etapas .rot{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
+.et-h{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--navy, #001A60);margin:6px 0 8px}
+.et-i{font-size:14px;color:var(--suave);max-width:760px;margin:0 0 18px}
+.et-paso{display:flex;gap:12px;align-items:flex-start;margin:18px 0 10px}
+.et-paso b{font-family:'Montserrat',sans-serif;font-size:16px;color:var(--navy, #001A60)}
+.et-paso p{margin:3px 0 0;font-size:13.5px;color:var(--suave)}
+.et-n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--sky);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.et-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:0 0 8px 42px}
+.et-c{border:1px solid #DCE6F2;border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.et-img{height:150px;background-size:cover;background-position:center}
+.et-img[style*="shx-compact"]{background-size:contain;background-repeat:no-repeat;background-color:#fff}
+.et-b{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.et-t{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--navy, #001A60)}
+.et-t span{font-size:12px;font-weight:700;color:var(--sky);margin-left:6px}
+.et-b p{margin:0;font-size:12.5px;color:var(--suave)}
+.et-b ul{margin:0;padding-left:18px;font-size:12.5px}
+.et-v{margin-top:auto;padding-top:8px;border-top:1px dashed #D3DEEE;display:flex;flex-direction:column}
+.et-v span{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--suave)}
+.et-v b{font-family:'Montserrat',sans-serif;font-size:18px;color:var(--navy, #001A60)}
+.et-pend{background:#F5F8FC;border-style:dashed}
+.et-nota{font-size:12px;color:var(--suave);margin:14px 0 0 42px}
+@media (max-width:700px){.etapas{padding:28px 16px 6px}.et-g,.et-nota{margin-left:0}}
 @media (min-width:821px){.g2.g2-1{grid-template-columns:minmax(0,1fr);max-width:360px}.g2.g2-2{grid-template-columns:repeat(2,minmax(0,1fr))}.g2.g2-3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2.g2-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .op-letra .ol-l{font-size:15px}
 .pg .cat-h{margin:12px 0 8px}
@@ -1808,7 +1832,8 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
       <div class="puerta-tx">
         <div class="puerta-rot">Para empezar</div>
         <h3>Una idea del espacio<br><em>que queremos implementar en sus establecimientos</em></h3>
-        <p>Antes del detalle de cada sala, un video corto que muestra cómo se ve y cómo se siente una sala multisensorial en funcionamiento.</p>
+        <p>En este video pueden ver hasta dónde pueden escalar nuestras salas: cómo un espacio se convierte en un lugar completo, con todos los elementos que permiten la regulación y la integración de todos los sentidos.</p>
+        <p>En esta propuesta estamos considerando justamente el presupuesto que nos han asignado, por lo que los elementos van a diferir un poco de los que verán en los videos, especialmente en las salas con menor presupuesto. Sin embargo, para nosotros siempre es un comienzo: nuestros espacios se pueden escalar y transformar poco a poco, año a año, hasta convertirse en salas que cumplen plenamente su rol. Al final les mostramos cómo.</p>
         <p><b>Los invitamos a verlo.</b></p>
       </div>
     </div>
@@ -1977,6 +2002,35 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 
 
 
+
+  <section class="etapas" id="etapas">
+    <div class="rot">Las salas crecen con los años</div>
+    <h2 class="et-h">Cómo crecen estas salas</h2>
+    <p class="et-i">Esta propuesta es la primera etapa. Cada año las mismas salas pueden sumar elementos y subir de nivel, hasta llegar a espacios completos como los de los videos. Les proponemos tres etapas.</p>
+    <div class="et-paso"><span class="et-n">1</span><div><b>2026 · Esta propuesta</b><p>Las 64 salas, con el presupuesto asignado para este año.</p></div></div>
+    <div class="et-paso"><span class="et-n">2</span><div><b>2027 · Un segundo nivel</b><p>Las salas de adultos suman el Rincón Luminea, y las grandes, la Piscina Luminea vibroacústica y la Ducha Luminea.</p></div></div>
+    <div class="et-g">
+      <div class="et-c"><div class="et-img" style="background-image:url('SalasMultisensoriales_Recortadas/rincon-luminea-1.jpg')"></div><div class="et-b">
+        <div class="et-t">Adultos <span>3 salas</span></div><p>El Rincón Luminea reúne un tubo de burbujas y un haz de fibra óptica sobre su base, y se maneja desde su propia tablet.</p>
+        <ul><li>Rincón Luminea con tablet</li><li>Espejo grande recto</li></ul>
+        <div class="et-v"><span>Valor referencial por sala, con IVA</span><b>$6.000.000</b></div></div></div>
+      
+      <div class="et-c"><div class="et-img" style="background-image:url('SalasMultisensoriales_Recortadas/piscina-luminea-vibroacustica-1.jpg')"></div><div class="et-b">
+        <div class="et-t">Grandes <span>8 salas</span></div><p>En la Piscina Luminea vibroacústica el cuerpo queda contenido entre las bolas mientras la música se siente como vibración. La Ducha Luminea, una cascada de 150 hilos de fibra óptica, crea un espacio envolvente de luz.</p>
+        <ul><li>Piscina Luminea vibroacústica</li><li>Ducha Luminea</li><li>Un segundo espejo grande recto</li><li>Button 6</li></ul>
+        <div class="et-v"><span>Valor referencial por sala, con IVA</span><b>$9.100.000</b></div></div></div>
+      <div class="et-c et-pend"><div class="et-b"><div class="et-t">Pequeñas y medianas <span>53 salas</span></div>
+        <p>Por confirmar. Las proponemos cuando esté definida su primera etapa, para que cada paso se sume a lo que ya tiene la sala.</p></div></div></div>
+    <div class="et-paso"><span class="et-n">3</span><div><b>2028 · El Sistema SHX</b><p>Las salas que ya tienen Rincón Luminea —adultos y grandes— suman el Sistema SHX Compact, que controla toda la sala desde un solo lugar.</p></div></div>
+    <div class="et-g">
+      <div class="et-c"><div class="et-img" style="background-image:url('SalasMultisensoriales_Recortadas/shx-compact-1.jpg')"></div><div class="et-b">
+        <div class="et-t">Adultos y grandes <span>11 salas</span></div><p>Con una sola acción de la persona, toda la sala responde a la vez: la luz, el sonido, la imagen y la vibración. Alguien con movilidad muy reducida provoca un cambio grande en su entorno y comprueba que lo que hace tiene efecto. El equipo puede crear escenas propias, que combinan la luz de los equipos, la música, la vibración y las imágenes proyectadas.</p>
+        <ul><li>Sistema SHX Compact, con su proyector, altavoces y tableta de control</li><li>Armario para el SHX Compact</li><li>Estrellas SHX</li></ul>
+        <div class="et-v"><span>Valor referencial por sala, con IVA</span><b>$9.900.000</b></div></div></div>
+      <div class="et-c et-pend"><div class="et-b"><div class="et-t">Pequeñas y medianas <span>53 salas</span></div>
+        <p>Por confirmar. Las proponemos cuando esté definida su primera etapa, para que cada paso se sume a lo que ya tiene la sala.</p></div></div></div>
+    <p class="et-nota">Valores referenciales por sala, con IVA, que incluyen el flete, la instalación y la capacitación. Se confirman al momento de cotizar cada etapa, sujetos a la disponibilidad de stock a nivel nacional.</p>
+  </section>
   <div class="cierre">
     Valores por sala, con IVA incluido, válidos por 30 días. Incluyen el flete, la instalación y la capacitación; no incluyen trabajos de preinstalación.
   </div>
@@ -2189,7 +2243,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
             '<span class="p2-n">' + esc(s.n) + '</span></span>' +
           '<span class="p2-cuerpo">' +
             '<span class="p2-p">' + esc(s.para) + '</span>' +
-            '<span class="p2-prod">' + IC_CAJA + '<span>' + s.items.length + ' productos</span></span>' +
+            '<span class="p2-prod">' + IC_CAJA + '<span>' + (/por confirmar/.test(s.n) ? 'Por confirmar' : s.items.length + ' productos') + '</span></span>' +
           '</span>' +
           '<span class="p2-banda">' +
             ((s.total - totalConDto(s)) > 0
@@ -2221,7 +2275,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
             '<span class="ol-l">' + LETRA[k] + '</span></div>' +
           '<div class="op-tit"><h3>' + esc(s.n) + '</h3>' +
             '<div class="op-para">' + esc(s.para) + '</div>' +
-            '<div class="op-meta"><span>' + s.items.length + ' productos</span><span>' + s.salas + (s.salas === 1 ? ' establecimiento' : ' establecimientos') + '</span>' +
+            '<div class="op-meta"><span>' + (/por confirmar/.test(s.n) ? 'Por confirmar' : s.items.length + ' productos') + '</span><span>' + s.salas + (s.salas === 1 ? ' establecimiento' : ' establecimientos') + '</span>' +
               '<span>' + (s.items.some(function(i){ return /Rincón Luminea/.test(i.n); }) ? 'Capacitación presencial' : 'Capacitación virtual') + '</span></div></div>' +
 
           '<div class="op-valor">' +
@@ -2316,7 +2370,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
             s.aviso.p.map(function(x){ return '<p>' + esc(x) + '</p>'; }).join('') + '</div>' : '') +
 '<div class="op-lo">' +
             '<h4 class="op-lo-tit">Qué incluye la sala' +
-              '<span class="op-lo-n">' + s.items.length + ' productos</span></h4>' +
+              '<span class="op-lo-n">' + (/por confirmar/.test(s.n) ? 'Por confirmar' : s.items.length + ' productos') + '</span></h4>' +
             '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
           '</div>' +
           '</div>' +
