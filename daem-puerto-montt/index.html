@@ -1654,7 +1654,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .pg .op-valor .op-regular{font-size:9.5px}
 </style>
 <style>
-/* 4 opciones, lado a lado */
+/* 12 opciones, lado a lado */
 @media (min-width:821px){.g2{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (max-width:560px){.g2{grid-template-columns:1fr}}
 </style>
@@ -1732,6 +1732,22 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .pg .obra{padding-top:20px;padding-bottom:14px}
 .pg .obra-baja{margin-bottom:10px;font-size:10.5px}
 </style>
+<style>
+/* DAEM Puerto Montt: títulos por categoría (Rayen, 7-oct: títulos, no colores) */
+.cat-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:30px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--sky)}
+.cat-h:first-of-type{margin-top:18px}
+.cat-t{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:var(--navy, #001A60)}
+.cat-n{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--sky)}
+.cat-s{flex-basis:100%;font-size:12.5px;color:var(--suave)}
+.cat-h-det{margin-top:40px}
+@media (min-width:821px){.g2.g2-1{grid-template-columns:minmax(0,1fr);max-width:360px}.g2.g2-2{grid-template-columns:repeat(2,minmax(0,1fr))}.g2.g2-3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2.g2-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.op-letra .ol-l{font-size:15px}
+.pg .cat-h{margin:12px 0 8px}
+.pg .g2.g2-1{max-width:none}
+.pg .g2.g2-1 .p2,.pg .g2.g2-2 .p2,.pg .g2.g2-3 .p2{width:calc(33.333% - 7px)}
+.pg .g2.g2-4 .p2{width:calc(25% - 7px)}
+.pg .cat-t{font-size:14px}
+</style>
 </head>
 <body>
 <div class="hoja">
@@ -1757,7 +1773,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
   </div>
   <div class="portada-pie">
       <span class="estilo">Preparado para el DAEM de Puerto Montt</span>
-    <p class="bajada">Cuatro salas multisensoriales, una para cada tipo de establecimiento, con su valor, el detalle de cada elemento que las compone y la forma en que trabajamos un proyecto de principio a fin.</p>
+    <p class="bajada">Sesenta y cuatro espacios sensoriales en cuatro categorías, con variantes dentro de cada una, el valor de cada sala, el detalle de cada elemento y la forma en que trabajamos un proyecto de principio a fin.</p>
     <div class="meta">
       <div><b>Para</b><span>Coordinación de Educación Especial</span></div>
       <div><b>Fecha</b><span id="mFecha">—</span></div>
@@ -1773,8 +1789,9 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
       <span>DAEM Puerto Montt</span>
     </div>
     <h2>Un espacio sensorial para cada establecimiento</h2>
-    <p>Renata, gracias por la confianza y por pensar en nosotros para este proyecto. Con la información que nos compartiste armamos cuatro salas multisensoriales, una para cada tipo de establecimiento: los que atienden a personas adultas, y los pequeños, medianos y grandes que atienden a niños y adolescentes. Todas las salas de un mismo tipo son iguales, para que el equipo de cada establecimiento trabaje con los mismos elementos y la capacitación sirva a todos por igual.</p>
-    <p>Cada sala está pensada para personas neurodivergentes y con discapacidad: luz y color que se pueden manejar, texturas para explorar con las manos y los pies, presión profunda para volver a la calma, aromas y, en las salas medianas y grandes, música que se siente en el cuerpo. Cada sala queda dentro del presupuesto que nos indicaste e incluye el transporte, la implementación y la capacitación del equipo.</p>
+    <p>Renata, gracias por la confianza y por pensar en nosotros para este proyecto. Con la información que nos compartiste armamos los espacios sensoriales de los 64 establecimientos en cuatro categorías: los que atienden a personas adultas y los pequeños, medianos y grandes que atienden a niños y adolescentes.</p>
+    <p>Dentro de cada categoría proponemos variantes: salas que comparten una misma base y se diferencian en su elemento principal. Así cada establecimiento recibe un espacio completo, y entre todos se cubren formas distintas de trabajar la calma, la luz, el tacto, el movimiento y la vibración. Cada sala queda dentro del valor indicado para su categoría.</p>
+    <p>Todas están pensadas para personas neurodivergentes y con discapacidad. La implementación se realiza durante el mes de diciembre de 2026.</p>
     <div class="puerta">
       <button type="button" class="puerta-foto"
         data-lb-src="https://www.instagram.com/p/DbwQFPURW0-/embed/" data-lb-fmt="ig"
@@ -1792,7 +1809,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
       </div>
     </div>
 
-    <p class="intro-nota">Estos valores no consideran trabajos de preinstalación en ventanas, suelo, techo ni electricidad. La ubicación de cada elemento la definimos con el equipo de cada establecimiento al momento de la implementación.</p>
+    <p class="intro-nota">Los valores incluyen el transporte y la capacitación del equipo: presencial en las salas que llevan Rincón Luminea, y virtual en las demás. No consideran trabajos de preinstalación en ventanas, suelo, techo ni electricidad.</p>
   </div>
 
   <!-- ── Cómo trabajamos ─────────────────────────────────────── -->
@@ -1816,7 +1833,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
           cotización: lo ejecutamos nosotros, pero no está incluido en el valor de la sala.</p></div>
       <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg></div><h3>Instalamos</h3>
         <p>Nos encargamos de la instalación y de la implementación del espacio, en todo el país.
-          Tenemos stock propio, así que la entrega no queda esperando una importación.</p></div>
+          Tenemos stock propio en Chile para gran parte de los elementos.</p></div>
       <div class="serv"><div class="sn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20a5.8 5.8 0 0 1 11.6 0"/><path d="M16.2 5.4a3.2 3.2 0 0 1 0 5.2"/><path d="M18 20a5.6 5.6 0 0 0-2.7-4.8"/></svg></div><h3>Capacitamos</h3>
         <p>Realizamos capacitaciones a todos aquellos que vayan a estar en contacto directo con el
           uso de la sala y de sus elementos.</p></div>
@@ -1957,7 +1974,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 
 
   <div class="cierre">
-    Valores con IVA incluido, válidos por 30 días. Incluyen el transporte, la implementación y la capacitación; no incluyen trabajos de preinstalación.
+    Valores por sala, con IVA incluido, válidos por 30 días. Incluyen el transporte y la capacitación; no incluyen trabajos de preinstalación.
   </div>
 
   <!-- La firma, la misma del cotizador -->
@@ -2049,11 +2066,12 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
   function totalConDto(s){ return s.final; }
   function lineaDe(it){ return it.iva * (it.cant || 1); }
 
-  var LETRA = ['A', 'B', 'C', 'D', 'E'];
+  var LETRA = SALAS.map(function(s){ return s.cod; });
+  var CATS = [{"cat":"Adultos","n":3,"sub":"Establecimientos que atienden a personas adultas"},{"cat":"Pequeñas","n":24,"sub":"Establecimientos pequeños · niños y adolescentes"},{"cat":"Medianas","n":29,"sub":"Establecimientos medianos · niños y adolescentes"},{"cat":"Grandes","n":8,"sub":"Establecimientos grandes · niños y adolescentes"}];
   /* Rayen, 16-sep-2026: «es el único costo que no podemos darles; aparte de eso, ese debe ser
      el valor de la sala». Va en cada opción, no solo una vez al principio. */
   function avisoDe(s){
-    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Todos los elementos que se detallan, más el transporte, la implementación y la capacitación del equipo del establecimiento ({servicio}). No contempla trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valores con IVA incluido, válidos por 30 días."
+    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Todos los elementos que se detallan, más el transporte y la capacitación del equipo del establecimiento ({servicio}): presencial en las salas con Rincón Luminea y virtual en las demás. No contempla trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valor por sala, con IVA incluido, válido por 30 días."
       .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)) + '</div>';
   }
   var numFicha = 0;                       /* la numeración corre por todo el documento */
@@ -2090,9 +2108,6 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
       '<h4>' + esc(it.n) + (it.cant > 1 ? ' <span style="color:#0B76C4">×' + it.cant + '</span>' : '') + '</h4>' +
       /* Rayen, 22-sep-2026: «código OC fuera siempre, no lo necesitan». */
       
-      '<div class="tpre">' + (valor
-        ? pesos(lineaDe(it))
-        : 'A consultar') + '</div>' +
       (corto(p) ? '<div class="ttx">' + esc(corto(p)) + '</div>' : '') +
       (it.con ? '<div class="tcon">' + esc(it.con) + '</div>' : '') +
       (((p.sellos && p.sellos.length) || esUV(p)) ? '<span class="tsello">' +
@@ -2121,11 +2136,11 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
     'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
     '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg>';
 
-  var CAPACIDADES = [["Bajar la activación y volver a la calma",1,1,1,1],["Luz y color que cambian",0,1,1,1],["Estrellas de luz en el techo",1,1,1,1],["Luz ultravioleta y material que brilla",0,1,1,1],["Burbujas en movimiento",0,0,0,1],["Una luz que se toca (fibra óptica)",0,1,1,1],["Vibración de la música en el cuerpo",0,0,1,1],["Aromas",1,1,1,1],["Estimulación táctil con texturas",1,1,1,1],["Presión profunda con peso",1,1,1,1],["Movimiento y equilibrio",0,1,1,1],["Causa-efecto con un pulsador",0,1,1,1],["Luz controlada desde una tablet",0,0,0,1]];
+  var CAPACIDADES = [["Bajar la activación y volver a la calma",1,1,1,1,1,1,1,1,1,1,1,1],["Luz y color que cambian",1,1,1,0,1,1,1,1,1,1,1,1],["Una luz que se toca (fibra óptica)",0,1,1,0,0,1,1,1,1,1,1,1],["Estrellas de luz en el techo",0,1,1,1,0,1,1,1,1,0,0,1],["Luz ultravioleta y material que brilla",1,1,1,1,1,1,1,1,1,1,1,1],["Burbujas en movimiento",0,0,0,0,0,0,0,0,0,1,1,1],["Vibración de la música en el cuerpo",0,0,0,1,1,1,0,0,0,0,1,1],["Aromas",1,1,0,1,1,1,1,1,1,1,1,1],["Estimulación táctil con texturas",1,1,1,1,1,1,1,1,1,0,1,1],["Presión profunda con peso",1,1,1,1,1,1,1,1,1,1,1,1],["Movimiento y equilibrio",0,1,1,1,1,1,1,1,1,1,1,1],["Causa-efecto con un pulsador",0,1,1,0,1,1,1,1,1,0,0,0],["Cambiar la luz lanzando un dado",0,0,1,0,0,0,0,0,0,0,0,0],["Cambiar la luz con los pasos",0,0,0,0,0,0,1,1,0,0,0,0],["Luz controlada desde una tablet",0,0,0,0,0,0,0,0,0,1,1,1]];
 
   /* Los mismos trece renglones de arriba, ordenados en bloques para que el cuadro se lea.
      Se apunta por posición: no se repite ni un texto ni un dato. */
-  var GRUPOS_CAP = [["Para qué sirve",[0]],["Los estímulos de la sala",[1,2,3,4,5,6,7]],["Cuerpo y movimiento",[8,9,10]],["Quién controla la sala",[11,12]]];
+  var GRUPOS_CAP = [["Para qué sirve",[0]],["Los estímulos de la sala",[1,2,3,4,5,6,7]],["Cuerpo y movimiento",[8,9,10]],["Quién controla la sala",[11,12,13,14]]];
 
   /* Rayen, 21-sep-2026: «me gustaron las dos cosas, impleméntalas juntas»: el cuadro comparativo
      antes de las salas, y dentro de cada sala su propia ficha de lo que sí y lo que no. */
@@ -2152,17 +2167,21 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
   if(SALAS.length){
     /* 1 · Las cuatro opciones juntas, para decidir de una mirada */
     var hs = '<div class="salas-intro">' +
-      '<div class="rot" id="opciones">Una sala para cada tipo de establecimiento</div>' +
-      '<h2>Las cuatro salas</h2>' +
-      '<p>Cada sala tiene su valor con IVA, con el transporte, la implementación y la capacitación incluidos: <b>adultos $2.026.693</b> (3 establecimientos), <b>pequeña $5.903.716</b> (24), <b>mediana $7.371.678</b> (29) y <b>grande $10.485.131</b> (8). Más abajo va el detalle de cada una, producto por producto.</p>' +
+      '<div class="rot" id="opciones">Las salas por categoría</div>' +
+      '<h2>Las cuatro categorías</h2>' +
+      '<p>Para cada categoría indicamos cuántos establecimientos son y cuántos recibirían cada variante. Cada sala muestra su valor con IVA, con el transporte y la capacitación incluidos. Más abajo va el detalle de cada una, producto por producto.</p>' +
       /* Rayen, 16-sep-2026: «quiero que sean clickeables, para ir directo a la opción que busco» */
-      '<div class="g2">' + SALAS.map(function(s, k){
+      CATS.map(function(c){
+        var ks = SALAS.map(function(s, k){ return k; }).filter(function(k){ return SALAS[k].cat === c.cat; });
+        return '<div class="cat-h"><span class="cat-t">' + c.cat + '</span><span class="cat-n">' + c.n + ' establecimientos</span>' +
+          '<span class="cat-s">' + c.sub + (ks.length > 1 ? ' · ' + ks.length + ' variantes' : '') + '</span></div>' +
+        '<div class="g2 g2-' + Math.min(ks.length, 4) + '">' + ks.map(function(k){ var s = SALAS[k];
         /* Rayen, 23-sep-2026: la letra y el nombre van DENTRO de la foto de la opción (campo portada; si no
            trae, la primera foto de la sala) */
         var pf = s.portada || (Array.isArray(s.img) ? s.img[0] : s.img) || '';
         return '<a class="p2' + (k === SALAS.length - 1 ? ' p2-des' : '') + (pf ? ' p2-foto' : '') + '" href="#opcion-' + LETRA[k] + '">' +
           (pf ? '<span class="p2-portada"><img src="' + esc(pf) + '" alt="' + esc(s.n) + '" loading="eager"></span>' : '') +
-          '<span class="p2-cab"><span class="p2-l">Opción ' + LETRA[k] + '</span>' +
+          '<span class="p2-cab"><span class="p2-l">' + LETRA[k] + ' · ' + s.salas + (s.salas === 1 ? ' sala' : ' salas') + '</span>' +
             '<span class="p2-n">' + esc(s.n) + '</span></span>' +
           '<span class="p2-cuerpo">' +
             '<span class="p2-p">' + esc(s.para) + '</span>' +
@@ -2182,42 +2201,10 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
             '<span class="p2-ir">Ver esta sala' + IC_FLECHA + '</span>' +
           '</span>' +
         '</a>';
-      }).join('') + '</div>' +
+      }).join('') + '</div>'; }).join('') +
 
       /* qué sabe hacer cada sala: una fila por capacidad, verificada producto por producto */
 
-      '<div class="q1">' +
-        '<div class="q1-cab">' +
-          '<span class="q1-tit">Qué permite trabajar</span>' +
-          '<span class="q1-leg">' + IC_SI + 'lo incluye' + IC_NO + 'no lo incluye</span>' +
-        '</div>' +
-        /* en el teléfono la cabecera deja solo la letra: los nombres se leen acá */
-        '<div class="q1-map">' + SALAS.map(function (x, k) {
-          return '<span class="q1-mi"><span class="q1-ml">' + LETRA[k] + '</span>' +
-            esc(x.n.replace(' Inmersión', '')) + '</span>';
-        }).join('') + '</div>' +
-        '<div class="q1-env"><table class="t1">' +
-        '<colgroup><col class="cw-q">' + SALAS.map(function(){ return '<col>'; }).join('') + '</colgroup>' +
-        '<thead><tr><th class="t1-h0"><span class="sr">Capacidad</span></th>' +
-          SALAS.map(function (x, k) {
-            return '<th class="' + (k === SALAS.length - 1 ? 'des' : '') + '">' +
-              '<span class="t1-l">' + LETRA[k] + '</span>' +
-              '<span class="t1-n">' + esc(x.n.replace(' Inmersión', '')) + '</span></th>';
-          }).join('') +
-        '</tr></thead><tbody>' +
-        GRUPOS_CAP.map(function (g, gi) {
-          return '<tr class="t1-g' + (gi === 0 ? ' t1-g1' : '') + '">' +
-              '<td colspan="' + SALAS.length + '">' + g[0] + '</td><td class="des"></td></tr>' +
-            g[1].map(function (i) {
-              var f = CAPACIDADES[i];
-              return '<tr><td class="t1-q">' + esc(f[0]) + '</td>' +
-                f.slice(1).map(function (v, c) {
-                  return '<td class="' + (c === SALAS.length - 1 ? 'des ' : '') + (v ? 'si' : 'no') + '">' +
-                    (v ? IC_SI : IC_NO) + '</td>';
-                }).join('') + '</tr>';
-            }).join('');
-        }).join('') +
-        '</tbody></table></div></div>' +
         
       '</div>';
 
@@ -2225,11 +2212,12 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
     SALAS.forEach(function(s, k){
       hs += '<details class="op" id="opcion-' + LETRA[k] + '">' +
         '<summary class="op-cab">' +
-          '<div class="op-letra"><span class="ol-rot">Opción</span>' +
+          '<div class="op-letra"><span class="ol-rot">' + s.salas + (s.salas === 1 ? ' sala' : ' salas') + '</span>' +
             '<span class="ol-l">' + LETRA[k] + '</span></div>' +
           '<div class="op-tit"><h3>' + esc(s.n) + '</h3>' +
             '<div class="op-para">' + esc(s.para) + '</div>' +
-            '<div class="op-meta"><span>' + s.items.length + ' productos</span></div></div>' +
+            '<div class="op-meta"><span>' + s.items.length + ' productos</span><span>' + s.salas + (s.salas === 1 ? ' establecimiento' : ' establecimientos') + '</span>' +
+              '<span>' + (s.items.some(function(i){ return /Rincón Luminea/.test(i.n); }) ? 'Capacitación presencial' : 'Capacitación virtual') + '</span></div></div>' +
 
           '<div class="op-valor">' +
             ((s.total - totalConDto(s)) > 0
@@ -2421,7 +2409,8 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
             '><img src="' + esc(f) + '" alt="" loading="lazy"></button>';
         }).join('') + '</div>'
       : '';
-    var precio = p.iva
+    var precio = '';
+    var _sinPrecio = p.iva
       /* «todas las fichas deben decir valor regular» (base, 23-sep): aquí es nuestro precio de lista */
       ? '<div class="fx-reg">Valor regular</div><div class="fx-precio"><span class="fx-v">' + pesos(p.iva) + '</span></div>' +
         '<div class="fx-iva">Valor unitario, IVA incluido</div>'
