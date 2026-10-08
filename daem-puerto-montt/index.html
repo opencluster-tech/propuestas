@@ -1763,6 +1763,16 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .op-foto:has(img[src*="butaca"]){background:#fff}
 body .cat4 .g2 .p2.p2-foto .p2-portada img[src*="butaca"]{object-fit:contain;object-position:50% 62%;background:#EEF3FA;padding:70px 40px 150px;box-sizing:border-box}
 .pg .p2-desg{font-size:8px}
+/* Rayen, 9-oct: el encabezado de cada sala era «desordenado» y repetía la descripción. Ahora: el nombre de la sala
+   (Sala grande, Sala de adultos…), una línea corta con establecimientos y capacitación, y el valor. Nada más. */
+.op-cab .op-letra,.op-cab .op-para{display:none !important}
+.op-cab{grid-template-columns:minmax(0,1fr) auto auto !important;padding:26px 30px !important}
+.op-cab .op-tit h3{font-family:'Kaushan Script',cursive !important;font-weight:400 !important;font-size:40px !important;letter-spacing:0 !important;margin:0 0 6px !important}
+.op-cab .op-meta{gap:0 !important;margin-top:0 !important}
+.op-cab .op-meta span{background:none !important;border:0 !important;padding:0 !important;font-size:12.5px !important;font-weight:600 !important;letter-spacing:.02em !important;opacity:.85}
+.op-cab .op-meta span + span::before{content:'·';margin:0 9px;opacity:.6}
+.cat4 .p2-n{display:none}
+@media (max-width:820px){.op-cab{grid-template-columns:minmax(0,1fr) !important}.op-cab .op-tit h3{font-size:32px !important}}
 /* Rayen, 9-oct: «la parte que más esperan, y la más fea»: las cuatro categorías como cuatro tarjetas grandes,
    foto a sangre, la categoría en letra manuscrita (Kaushan Script, la de «Materiales») y el valor sobre la foto */
 .cat4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:26px}
@@ -1791,6 +1801,45 @@ body .cat4 .g2 .p2.p2-foto::after{content:'';position:absolute;inset:0;z-index:-
 .cr-txt{font-size:13.5px;line-height:1.6;color:#374151;margin:10px 0 12px 42px}
 .cr-img{display:block;width:calc(100% - 42px);margin:0 0 14px 42px;max-height:340px;object-fit:cover;border-radius:14px;box-shadow:0 12px 26px -14px rgba(0,26,96,.55)}
 @media (max-width:700px){.cr-img{width:100%;margin-left:0}}
+/* El caminito: una línea punteada que une las paradas; cada año se abre y se cierra (details) */
+.camino{position:relative;margin:18px 0 6px;padding-left:4px}
+.camino::before{content:'';position:absolute;left:30px;top:30px;bottom:30px;width:5px;border-radius:5px;
+  background:repeating-linear-gradient(180deg,#08ACF2 0 10px,transparent 10px 18px),linear-gradient(180deg,#001A60,#08ACF2 55%,#FF7E00);
+  background-blend-mode:normal;-webkit-mask:repeating-linear-gradient(180deg,#000 0 10px,transparent 10px 18px);mask:repeating-linear-gradient(180deg,#000 0 10px,transparent 10px 18px)}
+.cm-nodo{position:relative;margin:0 0 14px}
+.cm-fila{display:flex;align-items:center;gap:18px;padding:0;cursor:pointer;list-style:none}
+.cm-fila::-webkit-details-marker{display:none}
+.cm-fila .cm-sum{padding:14px 18px;border-radius:16px;background:#fff;border:1px solid #DCEBFA;box-shadow:0 10px 24px -18px rgba(0,26,96,.5);transition:transform .2s,box-shadow .2s,border-color .2s}
+details.cm-nodo > summary:hover .cm-sum{transform:translateX(4px);border-color:#9FD8F7;box-shadow:0 14px 28px -16px rgba(0,26,96,.55)}
+details[open] > summary .cm-sum{border-color:#FFB347;background:linear-gradient(90deg,#FFF6EC,#fff 60%)}
+.cm-hoy .cm-sum::after{content:'Hoy';align-self:flex-start;margin-top:4px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#001A60;border-radius:999px;padding:2px 9px}
+.crece .cm-cuerpo .op-grid{margin-left:0;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+.cm-fila .cm-ab{margin-left:-6px}
+.cm-pt{position:relative;z-index:1;flex:none;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:#fff;background:linear-gradient(135deg,#08ACF2,#0A4BAE);
+  box-shadow:0 0 0 6px #fff,0 8px 18px -6px rgba(0,26,96,.6);transition:transform .25s}
+.cm-hoy .cm-pt{background:#001A60}
+.cm-hoy .cm-fila{cursor:default}
+details[open] > summary .cm-pt{transform:scale(1.08);background:linear-gradient(135deg,var(--naranja),#FF9A3D)}
+.cm-pt-meta{background:linear-gradient(135deg,#FF7E00,#FFB347)}
+.cm-pt-meta svg{width:24px;height:24px}
+.cm-sum{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.cm-sum b{font-family:'Montserrat',sans-serif;font-size:17px;color:var(--navy, #001A60)}
+.cm-sum span{font-size:12.5px;color:var(--suave)}
+.cm-sum em{font-style:normal;font-weight:800;color:var(--sky)}
+.cm-ab{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid #CFE3F6;position:relative;transition:transform .25s,background .2s}
+.cm-ab::before,.cm-ab::after{content:'';position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;background:var(--navy, #001A60);border-radius:2px}
+.cm-ab::after{transform:rotate(90deg);transition:transform .25s}
+details[open] > summary .cm-ab{background:#001A60;border-color:#001A60}
+details[open] > summary .cm-ab::before{background:#fff}
+details[open] > summary .cm-ab::after{transform:rotate(0);background:#fff}
+.cm-cuerpo{margin:4px 0 8px 72px;padding:16px 18px;border-radius:16px;background:#fff;border:1px solid #DCEBFA;box-shadow:0 14px 30px -20px rgba(0,26,96,.45);animation:cmAbre .35s ease}
+.cm-cuerpo .cr-txt{margin:0 0 12px}
+.cm-cuerpo .cr-img{width:100%;margin:0 0 14px}
+.cm-cuerpo .op-grid{margin-left:0}
+@keyframes cmAbre{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.cm-ayuda{font-size:12px;color:var(--suave);margin:2px 0 0 76px;font-style:italic}
+@media (max-width:700px){.cm-cuerpo{margin-left:0}.cm-ayuda{margin-left:0}.cm-sum b{font-size:15px}}
 .crece .op-grid{margin-left:42px}
 @media (max-width:700px){.cr-txt,.crece .op-grid{margin-left:0}.crece{padding:18px 14px 6px}}
 body .cat4 .g2 .p2.p2-foto .p2-cab{position:relative;height:auto;min-height:0;background:none;padding:26px 26px 0;gap:2px}
@@ -2165,13 +2214,30 @@ body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opaci
   /* Rayen, 16-sep-2026: «es el único costo que no podemos darles; aparte de eso, ese debe ser
      el valor de la sala». Va en cada opción, no solo una vez al principio. */
   var CRECE = {"A":{"intro":"Esta sala es la primera etapa. En los próximos dos años puede sumar luz, control y sistema, hasta llegar al nivel de las salas del video.","vid":{"id":"OtfA9g2l_OQ","t":"Lo que podrían llegar a tener: la sala multisensorial con Sistema SHX del centro de personas mayores STIMA Embajadores (Madrid)."},"nota":"Valores referenciales por sala, con IVA, que incluyen el flete, la instalación y la capacitación. Se confirman al momento de cotizar cada etapa, sujetos a la disponibilidad de stock a nivel nacional.","pasos":[{"anio":"2027","t":"El Rincón Luminea","img":"SalasMultisensoriales_Recortadas/adultos-stima-tubo.jpg","txt":"La sala suma el Rincón Luminea: un tubo de burbujas y un haz de fibra óptica sobre su base, que se manejan desde su propia tablet, y un espejo grande que multiplica su luz.","items":["Rincón Luminea con tablet","Espejo grande recto"],"valor":"$6.000.000"},{"anio":"2028","t":"El Sistema SHX","img":"SalasMultisensoriales_Recortadas/adultos-stima-sala-shx.jpg","txt":"Con una sola acción de la persona, toda la sala responde a la vez: la luz, el sonido, la imagen y la vibración. Alguien con movilidad muy reducida provoca un cambio grande en su entorno y comprueba que lo que hace tiene efecto. El equipo puede crear escenas propias, que combinan la luz de los equipos, la música, la vibración y las imágenes proyectadas. El sistema incluye su proyector, altavoces, tableta de control y armario.","items":["Sistema SHX Compact","Estrellas SHX"],"valor":"$9.900.000"}]},"G":{"intro":"Esta sala es la primera etapa. En los próximos dos años puede sumar nuevos espacios de luz y vibración y, después, el sistema que la controla entera.","vid":{"id":"4TCPc5Bjs-M","t":"Lo que podrían llegar a tener: una sala con Sistema SHX en una escuela primaria (Bar-le-Duc, Francia)."},"nota":"Valores referenciales por sala, con IVA, que incluyen el flete, la instalación y la capacitación. Se confirman al momento de cotizar cada etapa, sujetos a la disponibilidad de stock a nivel nacional.","pasos":[{"anio":"2027","t":"Piscina y Ducha Luminea","txt":"En la Piscina Luminea vibroacústica el cuerpo queda contenido entre las bolas mientras la música se siente como vibración. La Ducha Luminea, una cascada de 150 hilos de fibra óptica, crea un espacio envolvente de luz. Un segundo espejo multiplica los efectos, y el Button 6 permite cambiar los colores con un pulsador.","items":["Piscina Luminea vibroacústica","Ducha Luminea","Espejo grande recto","Button 6"],"valor":"$9.100.000"},{"anio":"2028","t":"El Sistema SHX","txt":"Con una sola acción de la persona, toda la sala responde a la vez: la luz, el sonido, la imagen y la vibración. Alguien con movilidad muy reducida provoca un cambio grande en su entorno y comprueba que lo que hace tiene efecto. El equipo puede crear escenas propias, que combinan la luz de los equipos, la música, la vibración y las imágenes proyectadas. El sistema incluye su proyector, altavoces, tableta de control y armario.","items":["Sistema SHX Compact","Estrellas SHX"],"valor":"$9.900.000"}]},"P":{"intro":"Cuando esté definida la primera etapa de esta sala, les proponemos cómo seguir haciéndola crecer en 2027 y 2028, para que cada paso se sume a lo que ya tiene.","pasos":[]},"M":{"intro":"Cuando esté definida la primera etapa de esta sala, les proponemos cómo seguir haciéndola crecer en 2027 y 2028, para que cada paso se sume a lo que ya tiene.","pasos":[]}};
+  /* «Cómo crece esta sala» como un CAMINITO (Rayen, 9-oct-2026): cada año es una parada; al tocarla se abre lo de
+     ese año y se puede volver a cerrar, y el camino se acorta. Lo inserta ajusta_puerto_montt.js en la página. */
   function creceDe(s){ var c = CRECE[s.cod]; if (!c) return '';
+    var hoy = '<div class="cm-nodo cm-hoy"><div class="cm-fila"><span class="cm-pt">2026</span>' +
+      '<span class="cm-sum"><b>Esta propuesta</b><span>La sala que se implementa este año</span></span></div></div>';
+    var pasos = c.pasos.map(function(p){
+      return '<details class="cm-nodo"><summary class="cm-fila"><span class="cm-pt">' + p.anio + '</span>' +
+        '<span class="cm-sum"><b>' + p.t + '</b><span>Valor referencial por sala, con IVA: <em>' + p.valor + '</em></span></span>' +
+        '<span class="cm-ab" aria-hidden="true"></span></summary>' +
+        '<div class="cm-cuerpo"><p class="cr-txt">' + p.txt + '</p>' +
+        (p.img ? '<img class="cr-img" src="' + p.img + '" alt="' + p.t + '" loading="lazy">' : '') +
+        '<div class="op-grid">' + p.items.map(function(n){ return tarjeta({ n: n, cant: 1, iva: 0 }); }).join('') + '</div></div></details>';
+    }).join('');
+    var meta = c.vid ? '<details class="cm-nodo cm-meta"><summary class="cm-fila"><span class="cm-pt cm-pt-meta">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h11l-2 4 2 4H5"/></svg></span>' +
+        '<span class="cm-sum"><b>Lo que podrían llegar a tener</b><span>Véanlo funcionando</span></span><span class="cm-ab" aria-hidden="true"></span></summary>' +
+        '<div class="cm-cuerpo"><div class="cr-vid"><iframe src="https://www.youtube-nocookie.com/embed/' + c.vid.id + '?rel=0&modestbranding=1" title="' + c.vid.t + '" loading="lazy" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>' +
+        '<p class="cr-vt">' + c.vid.t + '</p></div></details>' : '';
     return '<div class="crece"><div class="cr-h">Cómo crece esta sala</div><p class="cr-i">' + c.intro + '</p>' +
-      (c.vid ? '<div class="cr-vid"><iframe src="https://www.youtube-nocookie.com/embed/' + c.vid.id + '?rel=0&modestbranding=1" title="' + c.vid.t + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="cr-vt">' + c.vid.t + '</p>' : '') +
-      c.pasos.map(function(p, i){ return '<div class="cr-paso"><div class="cr-cab"><span class="et-n">' + (i + 2) + '</span><div><b>' + p.anio + ' · ' + p.t + '</b>' +
-        '<span class="cr-v">Valor referencial por sala, con IVA: <b>' + p.valor + '</b></span></div></div>' +
-        '<p class="cr-txt">' + p.txt + '</p>' + (p.img ? '<img class="cr-img" src="' + p.img + '" alt="' + p.t + '" loading="lazy">' : '') + '<div class="op-grid">' + p.items.map(function(n){ return tarjeta({ n: n, cant: 1, iva: 0 }); }).join('') + '</div></div>'; }).join('') +
-      (c.nota ? '<p class="et-nota">' + c.nota + '</p>' : '') + '</div>'; }
+      (c.pasos.length ? '<div class="camino">' + hoy + pasos + meta + '</div>' +
+        '<p class="cm-ayuda">Toquen cada año para ver lo que suma la sala.</p>' : '') +
+      (c.nota ? '<p class="et-nota">' + c.nota + '</p>' : '') + '</div>';
+  }
   function avisoDe(s){
     return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Los elementos de la sala ({productos}) más el flete, la instalación y la capacitación {capac} del equipo del establecimiento ({servicio}). No contempla trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valor por sala, con IVA incluido, válido por 30 días."
       .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)).replace('{capac}', s.cat === 'Grandes' ? 'presencial' : 'virtual') + '</div>';
@@ -2287,7 +2353,7 @@ body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opaci
             '<span class="p2-n">' + esc(s.n) + '</span></span>' +
           '<span class="p2-cuerpo">' +
             '<span class="p2-p">' + esc(s.para) + '</span>' +
-            '<span class="p2-prod">' + IC_CAJA + '<span>' + (/por confirmar/.test(s.n) ? 'Por confirmar' : s.items.length + ' productos') + '</span></span>' +
+            '<span class="p2-prod">' + IC_CAJA + '<span>' + ((s.items.length === 1 && s.items[0].n === 'Elementos por confirmar') ? 'Por confirmar' : s.items.length + ' productos') + '</span></span>' +
           '</span>' +
           '<span class="p2-banda">' +
             ((s.total - totalConDto(s)) > 0
@@ -2319,7 +2385,7 @@ body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opaci
             '<span class="ol-l">' + LETRA[k] + '</span></div>' +
           '<div class="op-tit"><h3>' + esc(s.n) + '</h3>' +
             '<div class="op-para">' + esc(s.para) + '</div>' +
-            '<div class="op-meta"><span>' + (/por confirmar/.test(s.n) ? 'Por confirmar' : s.items.length + ' productos') + '</span><span>' + s.salas + (s.salas === 1 ? ' establecimiento' : ' establecimientos') + '</span>' +
+            '<div class="op-meta"><span>' + ((s.items.length === 1 && s.items[0].n === 'Elementos por confirmar') ? 'Por confirmar' : s.items.length + ' productos') + '</span><span>' + s.salas + (s.salas === 1 ? ' establecimiento' : ' establecimientos') + '</span>' +
               '<span>' + (s.items.some(function(i){ return /Rincón Luminea/.test(i.n); }) ? 'Capacitación presencial' : 'Capacitación virtual') + '</span></div></div>' +
 
           '<div class="op-valor">' +
@@ -2414,7 +2480,7 @@ body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opaci
             s.aviso.p.map(function(x){ return '<p>' + esc(x) + '</p>'; }).join('') + '</div>' : '') +
 '<div class="op-lo">' +
             '<h4 class="op-lo-tit">Qué incluye la sala' +
-              '<span class="op-lo-n">' + (/por confirmar/.test(s.n) ? 'Por confirmar' : s.items.length + ' productos') + '</span></h4>' +
+              '<span class="op-lo-n">' + ((s.items.length === 1 && s.items[0].n === 'Elementos por confirmar') ? 'Por confirmar' : s.items.length + ' productos') + '</span></h4>' +
             '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
           '</div>' +
           '</div>' +
