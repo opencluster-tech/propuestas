@@ -1740,10 +1740,50 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .cat-n{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--sky)}
 .cat-s{flex-basis:100%;font-size:12.5px;color:var(--suave)}
 .cat-h-det{margin-top:40px}
-.p2-des{display:flex;flex-direction:column;gap:2px;margin:4px 0 10px;font-size:12px;color:var(--suave)}
-.p2-des b{color:var(--navy, #001A60);font-weight:700}
+.p2-desg{display:flex;flex-direction:column;gap:2px;margin:4px 0 10px;font-size:12px;color:var(--suave)}
+.p2-desg b{color:var(--navy, #001A60);font-weight:700}
 .op-des{display:block;margin-top:6px;font-size:12.5px;opacity:.9}
-.pg .p2-des{font-size:8px}
+.pg .p2-desg{font-size:8px}
+/* Rayen, 9-oct: «la parte que más esperan, y la más fea»: las cuatro categorías como cuatro tarjetas grandes,
+   foto a sangre, la categoría en letra manuscrita (Kaushan Script, la de «Materiales») y el valor sobre la foto */
+.cat4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:26px}
+.cat4 .cat-h{display:none}
+.cat4 .g2{display:block !important;margin:0 !important;max-width:none !important}
+body .cat4 .g2 .p2.p2-foto{position:relative;display:block;min-height:470px;border:0;border-radius:22px;overflow:hidden;
+  background:#001A60;box-shadow:0 18px 40px -18px rgba(0,26,96,.55);isolation:isolate}
+body .cat4 .g2 .p2.p2-foto .p2-portada{position:absolute;inset:0;height:auto;z-index:-2}
+body .cat4 .g2 .p2.p2-foto .p2-portada img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+body .cat4 .g2 .p2.p2-foto:hover .p2-portada img{transform:scale(1.05)}
+body .cat4 .g2 .p2.p2-foto::after{content:'';position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(0,22,85,.82) 0%,rgba(0,26,96,.35) 26%,rgba(0,26,96,.08) 42%,rgba(0,20,75,.78) 64%,rgba(0,15,60,.96) 100%)}
+/* Cómo crece esta sala (dentro de cada sala) */
+.crece{margin-top:26px;padding:22px 22px 8px;border-radius:16px;background:linear-gradient(180deg,#F2F8FF 0%,#fff 70%);border:1px solid #DCEBFA}
+.cr-h{font-family:'Kaushan Script',cursive;font-size:30px;color:var(--navy, #001A60);line-height:1.1}
+.cr-i{font-size:14px;color:var(--suave);margin:6px 0 4px}
+.cr-paso{margin-top:20px}
+.cr-cab{display:flex;gap:12px;align-items:center}
+.cr-cab b{font-family:'Montserrat',sans-serif;font-size:17px;color:var(--navy, #001A60);display:block}
+.cr-v{display:block;font-size:12.5px;color:var(--suave);margin-top:2px}
+.cr-v b{font-size:13px;display:inline;color:var(--sky)}
+.cr-txt{font-size:13.5px;line-height:1.6;color:#374151;margin:10px 0 12px 42px}
+.crece .op-grid{margin-left:42px}
+@media (max-width:700px){.cr-txt,.crece .op-grid{margin-left:0}.crece{padding:18px 14px 6px}}
+body .cat4 .g2 .p2.p2-foto .p2-cab{position:relative;height:auto;min-height:0;background:none;padding:26px 26px 0;gap:2px}
+.cat4 .p2-cat{font-family:'Kaushan Script',cursive;font-size:46px;line-height:1.05;color:#fff;text-shadow:0 2px 14px rgba(0,26,96,.55)}
+body .cat4 .g2 .p2.p2-foto .p2-l{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:#8FDDFF;height:auto;padding:0;background:none}
+body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opacity:.95;margin-top:4px;text-shadow:0 1px 8px rgba(0,26,96,.5)}
+.cat4 .p2-cuerpo{display:none}
+.cat4 .p2-banda{position:absolute;left:16px;right:16px;bottom:16px;padding:16px 18px 16px;border:1px solid rgba(255,255,255,.22) !important;
+  border-radius:16px;background:rgba(255,255,255,.12) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.cat4 .p2-lab{color:#BFE6FB}
+.cat4 .p2-v{color:#fff;font-size:30px;letter-spacing:-.01em;margin:2px 0 6px}
+.cat4 .p2-desg{color:#D6E4F5;font-size:12.5px;margin:0 0 12px}
+.cat4 .p2-desg b{color:#fff}
+.cat4 .p2-ir{background:#fff;color:#001A60;border-color:#fff;font-weight:800}
+.cat4 .p2:hover .p2-ir{background:var(--naranja);border-color:var(--naranja);color:#fff}
+@media (max-width:760px){.cat4{grid-template-columns:minmax(0,1fr);gap:16px}body .cat4 .g2 .p2.p2-foto{min-height:440px}.cat4 .p2-cat{font-size:40px}}
+.pg .cat4{gap:10px}.pg body .cat4 .g2 .p2.p2-foto,.pg .cat4 .p2.p2-foto{min-height:300px}.pg .cat4 .p2-cat{font-size:28px}.pg .cat4 .p2-v{font-size:18px}
 /* Etapas 2026 · 2027 · 2028 (9-oct) */
 .etapas{padding:34px 40px 10px;border-top:1px solid #E3EAF4}
 .etapas .rot{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
@@ -2002,35 +2042,6 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 
 
 
-
-  <section class="etapas" id="etapas">
-    <div class="rot">Las salas crecen con los años</div>
-    <h2 class="et-h">Cómo crecen estas salas</h2>
-    <p class="et-i">Esta propuesta es la primera etapa. Cada año las mismas salas pueden sumar elementos y subir de nivel, hasta llegar a espacios completos como los de los videos. Les proponemos tres etapas.</p>
-    <div class="et-paso"><span class="et-n">1</span><div><b>2026 · Esta propuesta</b><p>Las 64 salas, con el presupuesto asignado para este año.</p></div></div>
-    <div class="et-paso"><span class="et-n">2</span><div><b>2027 · Un segundo nivel</b><p>Las salas de adultos suman el Rincón Luminea, y las grandes, la Piscina Luminea vibroacústica y la Ducha Luminea.</p></div></div>
-    <div class="et-g">
-      <div class="et-c"><div class="et-img" style="background-image:url('SalasMultisensoriales_Recortadas/rincon-luminea-1.jpg')"></div><div class="et-b">
-        <div class="et-t">Adultos <span>3 salas</span></div><p>El Rincón Luminea reúne un tubo de burbujas y un haz de fibra óptica sobre su base, y se maneja desde su propia tablet.</p>
-        <ul><li>Rincón Luminea con tablet</li><li>Espejo grande recto</li></ul>
-        <div class="et-v"><span>Valor referencial por sala, con IVA</span><b>$6.000.000</b></div></div></div>
-      
-      <div class="et-c"><div class="et-img" style="background-image:url('SalasMultisensoriales_Recortadas/piscina-luminea-vibroacustica-1.jpg')"></div><div class="et-b">
-        <div class="et-t">Grandes <span>8 salas</span></div><p>En la Piscina Luminea vibroacústica el cuerpo queda contenido entre las bolas mientras la música se siente como vibración. La Ducha Luminea, una cascada de 150 hilos de fibra óptica, crea un espacio envolvente de luz.</p>
-        <ul><li>Piscina Luminea vibroacústica</li><li>Ducha Luminea</li><li>Un segundo espejo grande recto</li><li>Button 6</li></ul>
-        <div class="et-v"><span>Valor referencial por sala, con IVA</span><b>$9.100.000</b></div></div></div>
-      <div class="et-c et-pend"><div class="et-b"><div class="et-t">Pequeñas y medianas <span>53 salas</span></div>
-        <p>Por confirmar. Las proponemos cuando esté definida su primera etapa, para que cada paso se sume a lo que ya tiene la sala.</p></div></div></div>
-    <div class="et-paso"><span class="et-n">3</span><div><b>2028 · El Sistema SHX</b><p>Las salas que ya tienen Rincón Luminea —adultos y grandes— suman el Sistema SHX Compact, que controla toda la sala desde un solo lugar.</p></div></div>
-    <div class="et-g">
-      <div class="et-c"><div class="et-img" style="background-image:url('SalasMultisensoriales_Recortadas/shx-compact-1.jpg')"></div><div class="et-b">
-        <div class="et-t">Adultos y grandes <span>11 salas</span></div><p>Con una sola acción de la persona, toda la sala responde a la vez: la luz, el sonido, la imagen y la vibración. Alguien con movilidad muy reducida provoca un cambio grande en su entorno y comprueba que lo que hace tiene efecto. El equipo puede crear escenas propias, que combinan la luz de los equipos, la música, la vibración y las imágenes proyectadas.</p>
-        <ul><li>Sistema SHX Compact, con su proyector, altavoces y tableta de control</li><li>Armario para el SHX Compact</li><li>Estrellas SHX</li></ul>
-        <div class="et-v"><span>Valor referencial por sala, con IVA</span><b>$9.900.000</b></div></div></div>
-      <div class="et-c et-pend"><div class="et-b"><div class="et-t">Pequeñas y medianas <span>53 salas</span></div>
-        <p>Por confirmar. Las proponemos cuando esté definida su primera etapa, para que cada paso se sume a lo que ya tiene la sala.</p></div></div></div>
-    <p class="et-nota">Valores referenciales por sala, con IVA, que incluyen el flete, la instalación y la capacitación. Se confirman al momento de cotizar cada etapa, sujetos a la disponibilidad de stock a nivel nacional.</p>
-  </section>
   <div class="cierre">
     Valores por sala, con IVA incluido, válidos por 30 días. Incluyen el flete, la instalación y la capacitación; no incluyen trabajos de preinstalación.
   </div>
@@ -2128,9 +2139,16 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
   var CATS = [{"cat":"Adultos","n":3,"sub":"Establecimientos que atienden a personas adultas"},{"cat":"Pequeñas","n":24,"sub":"Establecimientos pequeños · niños y adolescentes"},{"cat":"Medianas","n":29,"sub":"Establecimientos medianos · niños y adolescentes"},{"cat":"Grandes","n":8,"sub":"Establecimientos grandes · niños y adolescentes"}];
   /* Rayen, 16-sep-2026: «es el único costo que no podemos darles; aparte de eso, ese debe ser
      el valor de la sala». Va en cada opción, no solo una vez al principio. */
+  var CRECE = {"A":{"intro":"Esta sala es la primera etapa. En los próximos dos años puede sumar luz, control y sistema, hasta llegar al nivel de las salas del video.","nota":"Valores referenciales por sala, con IVA, que incluyen el flete, la instalación y la capacitación. Se confirman al momento de cotizar cada etapa, sujetos a la disponibilidad de stock a nivel nacional.","pasos":[{"anio":"2027","t":"El Rincón Luminea","txt":"La sala suma el Rincón Luminea: un tubo de burbujas y un haz de fibra óptica sobre su base, que se manejan desde su propia tablet, y un espejo grande que multiplica su luz.","items":["Rincón Luminea con tablet","Espejo grande recto"],"valor":"$6.000.000"},{"anio":"2028","t":"El Sistema SHX","txt":"Con una sola acción de la persona, toda la sala responde a la vez: la luz, el sonido, la imagen y la vibración. Alguien con movilidad muy reducida provoca un cambio grande en su entorno y comprueba que lo que hace tiene efecto. El equipo puede crear escenas propias, que combinan la luz de los equipos, la música, la vibración y las imágenes proyectadas. El sistema incluye su proyector, altavoces, tableta de control y armario.","items":["Sistema SHX Compact","Estrellas SHX"],"valor":"$9.900.000"}]},"G":{"intro":"Esta sala es la primera etapa. En los próximos dos años puede sumar nuevos espacios de luz y vibración y, después, el sistema que la controla entera.","nota":"Valores referenciales por sala, con IVA, que incluyen el flete, la instalación y la capacitación. Se confirman al momento de cotizar cada etapa, sujetos a la disponibilidad de stock a nivel nacional.","pasos":[{"anio":"2027","t":"Piscina y Ducha Luminea","txt":"En la Piscina Luminea vibroacústica el cuerpo queda contenido entre las bolas mientras la música se siente como vibración. La Ducha Luminea, una cascada de 150 hilos de fibra óptica, crea un espacio envolvente de luz. Un segundo espejo multiplica los efectos, y el Button 6 permite cambiar los colores con un pulsador.","items":["Piscina Luminea vibroacústica","Ducha Luminea","Espejo grande recto","Button 6"],"valor":"$9.100.000"},{"anio":"2028","t":"El Sistema SHX","txt":"Con una sola acción de la persona, toda la sala responde a la vez: la luz, el sonido, la imagen y la vibración. Alguien con movilidad muy reducida provoca un cambio grande en su entorno y comprueba que lo que hace tiene efecto. El equipo puede crear escenas propias, que combinan la luz de los equipos, la música, la vibración y las imágenes proyectadas. El sistema incluye su proyector, altavoces, tableta de control y armario.","items":["Sistema SHX Compact","Estrellas SHX"],"valor":"$9.900.000"}]},"P":{"intro":"Cuando esté definida la primera etapa de esta sala, les proponemos cómo seguir haciéndola crecer en 2027 y 2028, para que cada paso se sume a lo que ya tiene.","pasos":[]},"M":{"intro":"Cuando esté definida la primera etapa de esta sala, les proponemos cómo seguir haciéndola crecer en 2027 y 2028, para que cada paso se sume a lo que ya tiene.","pasos":[]}};
+  function creceDe(s){ var c = CRECE[s.cod]; if (!c) return '';
+    return '<div class="crece"><div class="cr-h">Cómo crece esta sala</div><p class="cr-i">' + c.intro + '</p>' +
+      c.pasos.map(function(p, i){ return '<div class="cr-paso"><div class="cr-cab"><span class="et-n">' + (i + 2) + '</span><div><b>' + p.anio + ' · ' + p.t + '</b>' +
+        '<span class="cr-v">Valor referencial por sala, con IVA: <b>' + p.valor + '</b></span></div></div>' +
+        '<p class="cr-txt">' + p.txt + '</p><div class="op-grid">' + p.items.map(function(n){ return tarjeta({ n: n, cant: 1, iva: 0 }); }).join('') + '</div></div>'; }).join('') +
+      (c.nota ? '<p class="et-nota">' + c.nota + '</p>' : '') + '</div>'; }
   function avisoDe(s){
-    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Los elementos de la sala ({productos}) más el flete, la instalación y la capacitación del equipo del establecimiento ({servicio}): capacitación presencial en las salas grandes y virtual en las demás. No contempla trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valor por sala, con IVA incluido, válido por 30 días."
-      .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)) + '</div>';
+    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Los elementos de la sala ({productos}) más el flete, la instalación y la capacitación {capac} del equipo del establecimiento ({servicio}). No contempla trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valor por sala, con IVA incluido, válido por 30 días."
+      .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)).replace('{capac}', s.cat === 'Grandes' ? 'presencial' : 'virtual') + '</div>';
   }
   var numFicha = 0;                       /* la numeración corre por todo el documento */
   /* Rayen, 22-sep-2026: el Foco UV lleva un icono propio, un ojo con destello. Su fabricante
@@ -2194,7 +2212,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
     'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
     '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg>';
 
-  var CAPACIDADES = [["Bajar la activación y volver a la calma",1,1,1,1,1,1,1,1,1,1,1,1],["Luz y color que cambian",1,1,1,0,1,1,1,1,1,1,1,1],["Una luz que se toca (fibra óptica)",0,1,1,0,0,1,1,1,1,1,1,1],["Estrellas de luz en el techo",0,1,1,1,0,1,1,1,1,0,0,1],["Luz ultravioleta y material que brilla",1,1,1,1,1,1,1,1,1,1,1,1],["Burbujas en movimiento",0,0,0,0,0,0,0,0,0,1,1,1],["Vibración de la música en el cuerpo",0,0,0,1,1,1,0,0,0,0,1,1],["Aromas",1,1,0,1,1,1,1,1,1,1,1,1],["Estimulación táctil con texturas",1,1,1,1,1,1,1,1,1,0,1,1],["Presión profunda con peso",1,1,1,1,1,1,1,1,1,1,1,1],["Movimiento y equilibrio",0,1,1,1,1,1,1,1,1,1,1,1],["Causa-efecto con un pulsador",0,1,1,0,1,1,1,1,1,0,0,0],["Cambiar la luz lanzando un dado",0,0,1,0,0,0,0,0,0,0,0,0],["Cambiar la luz con los pasos",0,0,0,0,0,0,1,1,0,0,0,0],["Luz controlada desde una tablet",0,0,0,0,0,0,0,0,0,1,1,1]];
+  var CAPACIDADES = [["Bajar la activación y volver a la calma",1,0,0,1],["Luz y color que cambian",0,0,0,1],["Una luz que se toca (fibra óptica)",0,0,0,1],["Estrellas de luz en el techo",0,0,0,0],["Luz ultravioleta y material que brilla",0,0,0,0],["Burbujas en movimiento",0,0,0,1],["Vibración de la música en el cuerpo",1,0,0,1],["Aromas",1,0,0,0],["Estimulación táctil con texturas",0,0,0,0],["Presión profunda con peso",0,0,0,0],["Movimiento y equilibrio",0,0,0,0],["Causa-efecto con un pulsador",0,0,0,0],["Cambiar la luz lanzando un dado",0,0,0,0],["Cambiar la luz con los pasos",0,0,0,0],["Luz controlada desde una tablet",0,0,0,1]];
 
   /* Los mismos trece renglones de arriba, ordenados en bloques para que el cuadro se lea.
      Se apunta por posición: no se repite ni un texto ni un dato. */
@@ -2229,7 +2247,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
       '<h2>Las cuatro categorías</h2>' +
       '<p>Para cada categoría indicamos cuántos establecimientos son y el valor de cada sala con IVA, con el flete, la instalación y la capacitación incluidos. Más abajo va el detalle de cada una.</p>' +
       /* Rayen, 16-sep-2026: «quiero que sean clickeables, para ir directo a la opción que busco» */
-      CATS.map(function(c){
+      '<div class="cat4">' + CATS.map(function(c){
         var ks = SALAS.map(function(s, k){ return k; }).filter(function(k){ return SALAS[k].cat === c.cat; });
         return '<div class="cat-h"><span class="cat-t">' + c.cat + '</span><span class="cat-n">' + c.n + ' establecimientos</span>' +
           '<span class="cat-s">' + c.sub + (ks.length > 1 ? ' · ' + ks.length + ' variantes' : '') + '</span></div>' +
@@ -2239,7 +2257,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
         var pf = s.portada || (Array.isArray(s.img) ? s.img[0] : s.img) || '';
         return '<a class="p2' + (k === SALAS.length - 1 ? ' p2-des' : '') + (pf ? ' p2-foto' : '') + '" href="#opcion-' + LETRA[k] + '">' +
           (pf ? '<span class="p2-portada"><img src="' + esc(pf) + '" alt="' + esc(s.n) + '" loading="eager"></span>' : '') +
-          '<span class="p2-cab"><span class="p2-l">' + LETRA[k] + ' · ' + s.salas + (s.salas === 1 ? ' sala' : ' salas') + '</span>' +
+          '<span class="p2-cab"><span class="p2-cat">' + s.cat + '</span><span class="p2-l">' + s.salas + (s.salas === 1 ? ' establecimiento' : ' establecimientos') + '</span>' +
             '<span class="p2-n">' + esc(s.n) + '</span></span>' +
           '<span class="p2-cuerpo">' +
             '<span class="p2-p">' + esc(s.para) + '</span>' +
@@ -2256,11 +2274,11 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
               /* sin descuento (U. de los Andes, 2-oct-2026): solo el valor, sin «Valor regular» ni etiqueta */
               : '<span class="p2-fila"><span class="p2-lab">Valor con IVA</span></span>') +
             '<span class="p2-v">' + pesos(totalConDto(s)) + '</span>' +
-            '<span class="p2-des"><span>Elementos <b>' + pesos(s.productos) + '</b></span><span>Flete, instalación y capacitación <b>' + pesos(s.servicio) + '</b></span></span>' +
+            '<span class="p2-desg"><span>Elementos <b>' + pesos(s.productos) + '</b></span><span>Flete, instalación y capacitación <b>' + pesos(s.servicio) + '</b></span></span>' +
             '<span class="p2-ir">Ver esta sala' + IC_FLECHA + '</span>' +
           '</span>' +
         '</a>';
-      }).join('') + '</div>'; }).join('') +
+      }).join('') + '</div>'; }).join('') + '</div>' +
 
       /* qué sabe hacer cada sala: una fila por capacidad, verificada producto por producto */
 
@@ -2374,7 +2392,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
             '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
           '</div>' +
           '</div>' +
-          avisoDe(s) +
+          avisoDe(s) + creceDe(s) +
           /* Rayen, 21-sep-2026: la forma de salir de una sala es este botón. */
           '<button type="button" class="volver" data-volver="1">' +
             '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
