@@ -1654,7 +1654,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .pg .op-valor .op-regular{font-size:9.5px}
 </style>
 <style>
-/* 12 opciones, lado a lado */
+/* 4 opciones, lado a lado */
 @media (min-width:821px){.g2{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (max-width:560px){.g2{grid-template-columns:1fr}}
 </style>
@@ -1740,6 +1740,10 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .cat-n{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--sky)}
 .cat-s{flex-basis:100%;font-size:12.5px;color:var(--suave)}
 .cat-h-det{margin-top:40px}
+.p2-des{display:flex;flex-direction:column;gap:2px;margin:4px 0 10px;font-size:12px;color:var(--suave)}
+.p2-des b{color:var(--navy, #001A60);font-weight:700}
+.op-des{display:block;margin-top:6px;font-size:12.5px;opacity:.9}
+.pg .p2-des{font-size:8px}
 @media (min-width:821px){.g2.g2-1{grid-template-columns:minmax(0,1fr);max-width:360px}.g2.g2-2{grid-template-columns:repeat(2,minmax(0,1fr))}.g2.g2-3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2.g2-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .op-letra .ol-l{font-size:15px}
 .pg .cat-h{margin:12px 0 8px}
@@ -1773,7 +1777,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
   </div>
   <div class="portada-pie">
       <span class="estilo">Preparado para el DAEM de Puerto Montt</span>
-    <p class="bajada">Sesenta y cuatro espacios sensoriales en cuatro categorías, con variantes dentro de cada una, el valor de cada sala, el detalle de cada elemento y la forma en que trabajamos un proyecto de principio a fin.</p>
+    <p class="bajada">Sesenta y cuatro espacios sensoriales en cuatro categorías, el valor de cada sala, el detalle de cada elemento y la forma en que trabajamos un proyecto de principio a fin.</p>
     <div class="meta">
       <div><b>Para</b><span>Renata · Coordinadora PIE</span></div>
       <div><b>Fecha</b><span id="mFecha">—</span></div>
@@ -1790,7 +1794,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
     </div>
     <h2>Un espacio sensorial para cada establecimiento</h2>
     <p>Renata, gracias por la confianza y por pensar en nosotros para este proyecto. Con la información que nos compartiste armamos los espacios sensoriales de los 64 establecimientos en cuatro categorías: los que atienden a personas adultas y los pequeños, medianos y grandes que atienden a niños y adolescentes.</p>
-    <p>Dentro de cada categoría proponemos variantes: salas que comparten una misma base y se diferencian en su elemento principal. Así cada establecimiento recibe un espacio completo, y entre todos se cubren formas distintas de trabajar la calma, la luz, el tacto, el movimiento y la vibración. Cada sala queda dentro del valor indicado para su categoría.</p>
+    <p>Ya tenemos definidas las salas de adultos y las salas grandes. Las salas pequeñas y medianas están por confirmar: el valor de cada una ya está fijo y estamos terminando de definir sus elementos. Cada sala muestra su valor y, dentro de él, el valor del flete, la instalación y la capacitación.</p>
     <p>Todas están pensadas para personas neurodivergentes y con discapacidad. La implementación se realiza durante el mes de diciembre de 2026, sujeta a la disponibilidad de stock a nivel nacional al momento de la orden de compra.</p>
     <div class="puerta">
       <button type="button" class="puerta-foto"
@@ -1809,7 +1813,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
       </div>
     </div>
 
-    <p class="intro-nota">Los valores incluyen el transporte y la capacitación del equipo: presencial en las salas que llevan Rincón Luminea, y virtual en las demás. No consideran trabajos de preinstalación en ventanas, suelo, techo ni electricidad.</p>
+    <p class="intro-nota">Los valores incluyen el flete, la instalación y la capacitación del equipo: presencial en las salas grandes, y virtual en las demás. No consideran trabajos de preinstalación en ventanas, suelo, techo ni electricidad.</p>
   </div>
 
   <!-- ── Cómo trabajamos ─────────────────────────────────────── -->
@@ -1974,7 +1978,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 
 
   <div class="cierre">
-    Valores por sala, con IVA incluido, válidos por 30 días. Incluyen el transporte y la capacitación; no incluyen trabajos de preinstalación.
+    Valores por sala, con IVA incluido, válidos por 30 días. Incluyen el flete, la instalación y la capacitación; no incluyen trabajos de preinstalación.
   </div>
 
   <!-- La firma, la misma del cotizador -->
@@ -2071,7 +2075,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
   /* Rayen, 16-sep-2026: «es el único costo que no podemos darles; aparte de eso, ese debe ser
      el valor de la sala». Va en cada opción, no solo una vez al principio. */
   function avisoDe(s){
-    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Todos los elementos que se detallan, más el transporte y la capacitación del equipo del establecimiento ({servicio}): presencial en las salas con Rincón Luminea y virtual en las demás. No contempla trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valor por sala, con IVA incluido, válido por 30 días."
+    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Los elementos de la sala ({productos}) más el flete, la instalación y la capacitación del equipo del establecimiento ({servicio}): capacitación presencial en las salas grandes y virtual en las demás. No contempla trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valor por sala, con IVA incluido, válido por 30 días."
       .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)) + '</div>';
   }
   var numFicha = 0;                       /* la numeración corre por todo el documento */
@@ -2169,7 +2173,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
     var hs = '<div class="salas-intro">' +
       '<div class="rot" id="opciones">Las salas por categoría</div>' +
       '<h2>Las cuatro categorías</h2>' +
-      '<p>Para cada categoría indicamos cuántos establecimientos son y cuántos recibirían cada variante. Cada sala muestra su valor con IVA, con el transporte y la capacitación incluidos. Más abajo va el detalle de cada una, producto por producto.</p>' +
+      '<p>Para cada categoría indicamos cuántos establecimientos son y el valor de cada sala con IVA, con el flete, la instalación y la capacitación incluidos. Más abajo va el detalle de cada una.</p>' +
       /* Rayen, 16-sep-2026: «quiero que sean clickeables, para ir directo a la opción que busco» */
       CATS.map(function(c){
         var ks = SALAS.map(function(s, k){ return k; }).filter(function(k){ return SALAS[k].cat === c.cat; });
@@ -2198,6 +2202,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
               /* sin descuento (U. de los Andes, 2-oct-2026): solo el valor, sin «Valor regular» ni etiqueta */
               : '<span class="p2-fila"><span class="p2-lab">Valor con IVA</span></span>') +
             '<span class="p2-v">' + pesos(totalConDto(s)) + '</span>' +
+            '<span class="p2-des"><span>Elementos <b>' + pesos(s.productos) + '</b></span><span>Flete, instalación y capacitación <b>' + pesos(s.servicio) + '</b></span></span>' +
             '<span class="p2-ir">Ver esta sala' + IC_FLECHA + '</span>' +
           '</span>' +
         '</a>';
@@ -2225,7 +2230,8 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
                 '<span class="op-sep">·</span>Descuento <b class="op-dto">−' + pesos(s.total - totalConDto(s)) + '</b></span>'
               : '') +
             '<span class="op-rot">' + ((s.total - totalConDto(s)) > 0 ? 'Valor final con IVA incluido' : 'Valor con IVA incluido') + '</span>' +
-            '<span class="op-num">' + pesos(totalConDto(s)) + '</span></div>' +
+            '<span class="op-num">' + pesos(totalConDto(s)) + '</span>' +
+            '<span class="op-des">Elementos ' + pesos(s.productos) + ' · Flete, instalación y capacitación ' + pesos(s.servicio) + '</span></div>' +
           '<span class="op-plegar"><span class="op-plegar-t">Expandir</span>' +
             '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" ' +
             'stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>' +
