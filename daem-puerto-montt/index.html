@@ -2315,8 +2315,8 @@ body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opaci
   </div>
 </div>
 
-<script src="SensorialBodega.js?v=1791569329649"></script>
-<script src="SensorialSalas.js?v=1791569329649"></script>
+<script src="SensorialBodega.js?v=1791569899409"></script>
+<script src="SensorialSalas.js?v=1791569899409"></script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -2447,7 +2447,7 @@ body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opaci
     var o = document.createElement('div'); o.className = 'apx-ov';
     o.innerHTML = '<div class="apx"><button type="button" class="cr-ov-x apx-x" aria-label="Cerrar">×</button>' +
       '<div class="appl-rot">App Luminea · gratuita</div><div class="appl-h">Toda la luz, desde un teléfono o una tablet</div>' +
-      '<p class="appl-i">Basta con un solo elemento Luminea para empezar a usar la app. Desde ella se cambian los colores, se encienden los equipos y se juega con la luz. Las fotos, los colores, la música y las actividades los elige el equipo del establecimiento: la sala se adapta a cada estudiante, y no al revés.</p>' +
+      '<p class="appl-i">Los equipos de luz Luminea —el tubo de burbujas, la fibra óptica, la piscina de bolas, el cielo de estrellas— son versátiles y crecen con la sala: se puede empezar con un tubo o una fibra e ir sumando elementos, y cada uno abre nuevas formas de interactuar con la luz y nuevas oportunidades terapéuticas.</p><p class="appl-i">Basta con un solo elemento Luminea para empezar a usar la app. Desde ella se cambian los colores, se encienden los equipos y se juega con la luz. Las fotos, los colores, la música y las actividades los elige el equipo del establecimiento: la sala se adapta a cada estudiante, y no al revés.</p>' +
       '<p class="appl-idi"><b>Captar la atención es el primer paso de cualquier terapia.</b> A todos nos pasa: cuando algo no nos interesa, desconectamos. Con niños y adultos con autismo o discapacidad intelectual, lograr esa atención es muchas veces el mayor desafío, y es uno de los grandes objetivos de una sala multisensorial. La luz la capta, y la app la vuelve personal: la sala responde con lo que a cada estudiante le importa. Así, sin comprar nada más, la misma luz sirve para calmar, para estimular y para trabajar lo que el profesional se propone.</p>' +
       '<button type="button" class="apx-vb" onclick="appVid()"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Ver el video de la app</button>' +
       '<div class="appl-g">' + APP_C.map(function(c){ return '<div class="appl-c"><img src="SalasMultisensoriales_Recortadas/' + c.img + '" alt="' + c.t + '" loading="lazy">' +
@@ -3407,7 +3407,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 })();
 </script>
 <!-- TEMA-OSCURO-FIN -->
-<div id="verPill" class="ver-pill">Versión del 9 de octubre a las 15:08</div>
+<div id="verPill" class="ver-pill">Versión del 9 de octubre a las 15:18</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -3418,7 +3418,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1791569329649';
+(function(){ var V = '1791569899409';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
