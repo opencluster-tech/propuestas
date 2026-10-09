@@ -1822,6 +1822,71 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .pg .obra{padding-top:20px;padding-bottom:14px}
 .pg .obra-baja{margin-bottom:10px;font-size:10.5px}
 </style>
+<style>
+/* App Luminea dentro de cada sala con equipos Luminea (9-oct) */
+.appl{margin-top:26px;padding:24px 24px 14px;border-radius:18px;color:#fff;
+  background:radial-gradient(120% 140% at 100% 0%,rgba(8,172,242,.5) 0%,rgba(8,172,242,0) 55%),linear-gradient(125deg,#00124A 0%,#002A80 60%,#0A4BAE 100%);
+  box-shadow:0 18px 40px -22px rgba(0,26,96,.65)}
+.appl-cab{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:start}
+.appl-rot{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8FDDFF}
+.appl-h{font-family:'Kaushan Script',cursive;font-size:32px;line-height:1.1;margin:4px 0 8px}
+.appl-i{font-size:14px;line-height:1.6;margin:0 0 10px;color:#E3EEFB;max-width:640px}
+.appl-s{font-size:13px;line-height:1.55;margin:0;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);max-width:640px}
+.appl .appl-vid{position:static;margin:0}
+.appl-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+.appl-c{background:#fff;color:#1F2937;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.appl-c img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#F2F8FF}
+.appl-b{padding:12px 14px 14px}
+.appl-b b{display:block;font-family:'Montserrat',sans-serif;font-size:14px;color:var(--navy, #001A60);margin-bottom:5px}
+.appl-b p{margin:0;font-size:12.5px;line-height:1.55;color:#4B5563}
+.appl-n{font-size:12px;color:#BFE6FB;margin:12px 0 0}
+.appl-id{margin-top:18px;padding:18px 18px 8px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+.appl-idh{font-family:'Kaushan Script',cursive;font-size:26px;line-height:1.1}
+.appl-idi{font-size:13.5px;line-height:1.6;color:#E3EEFB;margin:6px 0 12px;max-width:820px}.appl-idi b{color:#fff}
+.appl-idg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 18px}
+.appl-ix{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.appl-in{flex:none;width:26px;height:26px;border-radius:50%;background:#06B3FD;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.appl-ix b{display:block;font-family:'Montserrat',sans-serif;font-size:13.5px;margin:2px 0 4px}
+.appl-ix p{margin:0;font-size:12.5px;line-height:1.55;color:#D6E4F5}
+@media (max-width:900px){.appl-idg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.appl-idg{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){.appl-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.appl-cab{grid-template-columns:minmax(0,1fr)}.appl-g{grid-template-columns:minmax(0,1fr)}.appl{padding:20px 16px 12px}.appl-h{font-size:27px}}
+.pg .appl-vid{display:none}
+/* Recuadro corto de la app en cada sala + ventana con la explicación completa (9-oct) */
+.appb{display:grid;grid-template-columns:260px minmax(0,1fr);margin-top:26px;border-radius:18px;overflow:hidden;color:#fff;
+  background:radial-gradient(120% 160% at 100% 0%,rgba(8,172,242,.55) 0%,rgba(8,172,242,0) 55%),linear-gradient(125deg,#00124A 0%,#002A80 60%,#0A4BAE 100%);
+  box-shadow:0 18px 40px -22px rgba(0,26,96,.65)}
+.appb-img{width:100%;height:100%;min-height:200px;object-fit:cover;object-position:62% 50%;display:block}
+.appb-t{padding:20px 24px}
+.appb-h{font-family:'Kaushan Script',cursive;font-size:27px;line-height:1.15;margin:4px 0 8px}
+.appb-t p{font-size:13.5px;line-height:1.6;color:#E3EEFB;margin:0 0 14px}
+.appb-bt{display:flex;flex-wrap:wrap;gap:10px}
+.appb-bt button{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;border-radius:999px;padding:9px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border:1.5px solid #fff;transition:background .2s,border-color .2s,color .2s}
+.appb-bt svg{width:16px;height:16px}
+.appb-b1{background:#fff;color:#001A60}
+.appb-b2{background:transparent;color:#fff}
+.appb-bt button:hover,.apx-vb:hover{background:#06b3fd !important;border-color:#06b3fd !important;color:#fff !important}
+.apx-ov{position:fixed;inset:0;z-index:9998;background:rgba(0,16,60,.78);backdrop-filter:blur(6px);overflow-y:auto;padding:30px 16px}
+.apx{position:relative;max-width:1000px;margin:0 auto;padding:28px 28px 18px;border-radius:20px;color:#fff;
+  background:radial-gradient(120% 140% at 100% 0%,rgba(8,172,242,.5) 0%,rgba(8,172,242,0) 55%),linear-gradient(125deg,#00124A 0%,#002A80 60%,#0A4BAE 100%)}
+.apx .apx-x{position:absolute;top:-12px;right:-12px}
+.apx .appl-i,.apx .appl-idi{max-width:none}
+.apx-vb{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;border-radius:999px;padding:9px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border:1.5px solid #fff;background:#fff;color:#001A60;margin:4px 0 2px}
+.apx-vb svg{width:16px;height:16px}
+.cr-ov{z-index:9999}
+@media (max-width:700px){.appb{grid-template-columns:minmax(0,1fr)}.appb-img{min-height:0;aspect-ratio:16/9}.appb-h{font-size:23px}.apx{padding:22px 16px 12px}}
+.pg .appb-bt{display:none}
+.cr-ov{position:fixed;inset:0;z-index:9999;background:rgba(0,16,60,.78);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px}
+.cr-ov-c{position:relative;width:min(900px,100%);background:#001A60;border-radius:16px;padding:12px;color:#fff}
+.cr-ov-c iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px;display:block}
+.cr-ov-c p{font-size:13px;margin:10px 4px 2px;opacity:.85}
+.cr-ov-x{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:#001A60;font-size:22px;cursor:pointer}
+.cr-ov-x:hover{background:#06b3fd;color:#fff}
+/* REGLA de Rayen: NINGÚN botón se pone naranjo; el hover es el celeste de la página web (#06b3fd) con texto blanco */
+.ficha-pleg>summary:hover .ver-ficha,.comp:hover .comp-ir,.vid-btn:hover,.subir:hover,.obra-c:hover .obra-play,.tarj:hover .tver,.fx-x:hover,.lb-x:hover,.p2:hover .p2-ir,.mas:hover .mas-ir,.puerta:hover .puerta-play,.puerta:hover .puerta-btn,.btn-pdf:hover{background:#06b3fd !important;border-color:#06b3fd !important;color:#fff !important}
+.comp:hover .comp-letra{color:#06b3fd !important}
+</style>
 </head>
 <body>
 <div class="hoja">
@@ -2070,8 +2135,8 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
   </div>
 </div>
 
-<script src="SensorialBodega.js"></script>
-<script src="SensorialSalas.js"></script>
+<script src="SensorialBodega.js?v=1791571994199"></script>
+<script src="SensorialSalas.js?v=1791571994199"></script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -2144,6 +2209,39 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
   var LETRA = ['A', 'B', 'C', 'D', 'E'];
   /* Rayen, 16-sep-2026: «es el único costo que no podemos darles; aparte de eso, ese debe ser
      el valor de la sala». Va en cada opción, no solo una vez al principio. */
+  var APP = {"Sala SHX":"En esta sala, la app maneja la línea de luz del techo. El Sistema SHX trae su propia red, y la línea de luz del techo llega configurada para ella."}, APP_C = [{"img":"app-luminea-pixel.jpg","t":"Tocar una foto y cambiar la luz","p":"Se carga cualquier imagen: una foto de internet, una tomada con la tablet o un dibujo propio. Al tocar un color de la imagen, la luz se vuelve de ese color. Con el «color mágico», el equipo se enciende solo cuando el estudiante encuentra el color elegido."},{"img":"app-luminea-actividad.jpg","t":"Actividades listas y sin límite","p":"Trae más de doce actividades listas —reconocer colores, seguir laberintos con el dedo, elegir— que sirven de punto de partida. Desde ahí, cada profesional crea las suyas, sin límite."},{"img":"app-luminea-paleta.jpg","t":"La luz al ritmo de la música","p":"Se graba una secuencia de colores al ritmo de una canción, de un sonido o de la propia voz, y queda guardada para repetirla las veces que se quiera. Sirve para trabajar el ritmo, la memoria, la relajación y las emociones."},{"img":"app-luminea-fibra-tablet.jpg","t":"Un equipo o todos a la vez","p":"Cada equipo se maneja por separado o todos juntos, y se ajusta su luminosidad. Cada elemento Luminea que la sala sume en los próximos años se agrega a la misma app."}], APP_IDEAS = [["Lo que le apasiona, como motor","A un estudiante al que le encantan los tiburones quizás el tubo de burbujas solo no le llame la atención. Pero si en la tablet aparecen tres tiburones y, al tocarlos uno a uno mientras los cuenta, el tubo cambia de color, la luz se vuelve el premio y los números, un juego. Lo mismo con su equipo de fútbol favorito para trabajar los colores."],["Su propio paisaje","En vez de imágenes genéricas, fotos de la cordillera de los Andes, del cerro San Cristóbal o de los lugares que recorren cada día. Las actividades hablan de su ciudad y de lo que conocen."],["Letras y palabras","Letras blancas sobre fondo negro: al tocar la letra, toda la luz se vuelve blanca; al tocar el fondo, se apaga. Con frutas, animales o medios de transporte, cada imagen tiñe la sala de su color mientras se nombra."],["Precisión con el dedo","Caminos y laberintos que hay que seguir sin salirse: si el dedo se sale, la luz cambia. O una diana que se enciende de un color al acertar al centro y de otro al fallar."],["Los contenidos del curso","Las estaciones o los climas de la zona: el otoño llena la sala de tonos café, el verano de verde y el invierno de blanco nieve."],["De la calma a la activación","Una imagen del mar que vuelve azul la sala para ayudar a un estudiante a calmarse, o colores intensos cuando lo que se busca es activarlo."]];
+  window.appVid = function(){
+    var o = document.createElement('div'); o.className = 'cr-ov';
+    o.innerHTML = '<div class="cr-ov-c"><button type="button" class="cr-ov-x" aria-label="Cerrar">×</button>' +
+      '<iframe src="https://www.youtube-nocookie.com/embed/___WPYNAI4c?rel=0&modestbranding=1&autoplay=1" title="App Luminea" ' +
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+      '<p>La app Luminea en funcionamiento (video del fabricante).</p></div>';
+    o.addEventListener('click', function(e){ if (e.target === o || e.target.className === 'cr-ov-x') o.remove(); });
+    document.body.appendChild(o);
+  };
+  window.appInfo = function(){
+    var o = document.createElement('div'); o.className = 'apx-ov';
+    o.innerHTML = '<div class="apx"><button type="button" class="cr-ov-x apx-x" aria-label="Cerrar">×</button>' +
+      '<div class="appl-rot">App Luminea · gratuita</div><div class="appl-h">Toda la luz, desde un teléfono o una tablet</div>' +
+      '<p class="appl-i">Los equipos de luz Luminea —el tubo de burbujas, la fibra óptica, la piscina de bolas, el cielo de estrellas— son versátiles y crecen con la sala: se puede empezar con un tubo o una fibra e ir sumando elementos, y cada uno abre nuevas formas de interactuar con la luz y nuevas oportunidades terapéuticas.</p><p class="appl-i">Basta con un solo elemento Luminea para empezar a usar la app. Desde ella se cambian los colores, se encienden los equipos y se juega con la luz. Las fotos, los colores, la música y las actividades los elige el equipo del establecimiento: la sala se adapta a cada estudiante, y no al revés.</p>' +
+      '<p class="appl-idi"><b>Captar la atención es el primer paso de cualquier terapia.</b> A todos nos pasa: cuando algo no nos interesa, desconectamos. Con niños y adultos con autismo o discapacidad intelectual, lograr esa atención es muchas veces el mayor desafío, y es uno de los grandes objetivos de una sala multisensorial. La luz la capta, y la app la vuelve personal: la sala responde con lo que a cada estudiante le importa. Así, sin comprar nada más, la misma luz sirve para calmar, para estimular y para trabajar lo que el profesional se propone.</p>' +
+      '<button type="button" class="apx-vb" onclick="appVid()"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Ver el video de la app</button>' +
+      '<div class="appl-g">' + APP_C.map(function(c){ return '<div class="appl-c"><img src="SalasMultisensoriales_Recortadas/' + c.img + '" alt="' + c.t + '" loading="lazy">' +
+        '<div class="appl-b"><b>' + c.t + '</b><p>' + c.p + '</p></div></div>'; }).join('') + '</div>' +
+      '<div class="appl-id"><div class="appl-idh">Ideas para llevarla a su realidad</div>' +
+      '<div class="appl-idg">' + APP_IDEAS.map(function(x, i){ return '<div class="appl-ix"><span class="appl-in">' + (i + 1) + '</span><div><b>' + x[0] + '</b><p>' + x[1] + '</p></div></div>'; }).join('') + '</div></div>' +
+      '<p class="appl-n">La app es gratuita: se descarga desde Google Play para teléfonos y tablets Android, y también está disponible para Windows.</p></div>';
+    o.addEventListener('click', function(e){ if (e.target === o || /apx-x/.test(e.target.className)) o.remove(); });
+    document.body.appendChild(o);
+  };
+  function appDe(s){ var a = APP[s.n]; if (!a) return '';
+    return '<div class="appb"><img class="appb-img" src="SalasMultisensoriales_Recortadas/app-luminea-fibra-tablet.jpg" alt="App Luminea" loading="lazy">' +
+      '<div class="appb-t"><div class="appl-rot">App Luminea · gratuita</div>' +
+      '<div class="appb-h">Todos los elementos Luminea de esta sala, desde un teléfono o una tablet</div>' +
+      '<p>' + a + ' Colores, fotos, música y actividades creadas por el propio equipo, a la medida de cada estudiante.</p>' +
+      '<div class="appb-bt"><button type="button" class="appb-b1" onclick="appVid()"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Ver el video</button>' +
+      '<button type="button" class="appb-b2" onclick="appInfo()">Conocer la app y sus ideas →</button></div></div></div>';
+  }
   function avisoDe(s){
     return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Todos los elementos que se detallan, más el transporte, la instalación y la capacitación en Santiago ({servicio}). No contempla los trabajos de preinstalación en ventanas, suelo, techo ni electricidad. Valores con IVA incluido, válidos por 60 días."
       .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)) + '</div>';
@@ -2418,7 +2516,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
             '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
           '</div>' +
           '</div>' +
-          avisoDe(s) +
+          appDe(s) + avisoDe(s) +
           /* Rayen, 21-sep-2026: la forma de salir de una sala es este botón. */
           '<button type="button" class="volver" data-volver="1">' +
             '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
@@ -3105,5 +3203,24 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 })();
 </script>
 <!-- TEMA-OSCURO-FIN -->
+<!--VERSION-INI · lo pone app_luminea.js-->
+<div id="verPill" class="ver-pill">Versión del 9 de octubre a las 15:53</div>
+<div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
+<style>
+.ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
+.ver-aviso{position:fixed;top:0;left:0;right:0;z-index:9995;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 16px;padding:12px 16px;background:#001A60;color:#fff;font-size:14px;box-shadow:0 8px 24px -10px rgba(0,26,96,.7)}
+.ver-aviso[hidden]{display:none}
+.ver-aviso button{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;border:0;border-radius:999px;padding:8px 18px;background:#06b3fd;color:#fff;cursor:pointer}
+.ver-aviso button:hover{background:#fff;color:#001A60}
+@media print{.ver-pill,.ver-aviso{display:none !important}}
+</style>
+<script>
+(function(){ var V = '1791571994199';
+  function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
+    var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
+  setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
+})();
+</script>
+<!--VERSION-FIN-->
 </body>
 </html>
