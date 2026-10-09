@@ -1808,6 +1808,9 @@ body .cat4 .g2 .p2.p2-foto .p2-portada img[src*="butaca"]{object-fit:contain;obj
 .op-cab .op-meta span{background:none !important;border:0 !important;padding:0 !important;font-size:12.5px !important;font-weight:600 !important;letter-spacing:.02em !important;opacity:.85}
 .op-cab .op-meta span + span::before{content:'·';margin:0 9px;opacity:.6}
 .cat4 .p2-n{display:none}
+/* Rayen, 9-oct: «Qué incluye la sala» con las tarjetas ordenadas en filas de cuatro, igual que en las etapas */
+.op-grid{grid-template-columns:repeat(4,minmax(0,1fr)) !important}
+@media (max-width:900px){.op-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
 .op-inst{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:.02em;color:#fff}
 .op-inst svg{width:15px;height:15px;color:#8FDDFF}
 @media (max-width:820px){.op-cab{grid-template-columns:minmax(0,1fr) !important}.op-cab .op-tit h3{font-size:32px !important}}
