@@ -3407,5 +3407,22 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 })();
 </script>
 <!-- TEMA-OSCURO-FIN -->
+<div id="verPill" class="ver-pill">Versión del 9 de octubre a las 15:07</div>
+<div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
+<style>
+.ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
+.ver-aviso{position:fixed;top:0;left:0;right:0;z-index:9995;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 16px;padding:12px 16px;background:#001A60;color:#fff;font-size:14px;box-shadow:0 8px 24px -10px rgba(0,26,96,.7)}
+.ver-aviso[hidden]{display:none}
+.ver-aviso button{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;border:0;border-radius:999px;padding:8px 18px;background:#06b3fd;color:#fff;cursor:pointer}
+.ver-aviso button:hover{background:#fff;color:#001A60}
+@media print{.ver-pill,.ver-aviso{display:none !important}}
+</style>
+<script>
+(function(){ var V = '1791569234816';
+  function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
+    var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
+  setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
+})();
+</script>
 </body>
 </html>
