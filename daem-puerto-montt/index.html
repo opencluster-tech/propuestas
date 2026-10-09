@@ -1808,6 +1808,8 @@ body .cat4 .g2 .p2.p2-foto .p2-portada img[src*="butaca"]{object-fit:contain;obj
 .op-cab .op-meta span{background:none !important;border:0 !important;padding:0 !important;font-size:12.5px !important;font-weight:600 !important;letter-spacing:.02em !important;opacity:.85}
 .op-cab .op-meta span + span::before{content:'·';margin:0 9px;opacity:.6}
 .cat4 .p2-n{display:none}
+/* Las salas por confirmar no ofrecen una ficha vacía */
+.tarj[data-ficha="Elementos por confirmar"]{pointer-events:none}.tarj[data-ficha="Elementos por confirmar"] .tver{display:none}
 /* Rayen, 9-oct: «Qué incluye la sala» con las tarjetas ordenadas en filas de cuatro, igual que en las etapas */
 .op-grid{grid-template-columns:repeat(4,minmax(0,1fr)) !important}
 @media (max-width:900px){.op-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
@@ -1977,7 +1979,7 @@ body .cat4 .g2 .p2.p2-foto .p2-n{font-size:15px;font-weight:700;color:#fff;opaci
       <span class="estilo">Preparado para el DAEM de Puerto Montt</span>
     <p class="bajada">Sesenta y cuatro espacios sensoriales en cuatro categorías, el valor de cada sala, el detalle de cada elemento y la forma en que trabajamos un proyecto de principio a fin.</p>
     <div class="meta">
-      <div><b>Para</b><span>Renata · Coordinadora PIE</span></div>
+      <div><b>Para</b><span>Renata Piderit · Coordinadora PIE</span></div>
       <div><b>Fecha</b><span id="mFecha">—</span></div>
       <div><b>Establecimientos</b><span>64</span></div>
     </div>
