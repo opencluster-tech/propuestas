@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark"><!-- 23-sep-2026: el celular en modo oscuro no la oscurece (se veía el logo negro sobre fondo oscuro) -->
+<meta name="color-scheme" content="light dark">
 <title>Columpios para terapia · CORESAM Conchalí</title>
 <link rel="icon" href="isotipo-oct.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,25 +14,24 @@
 *{box-sizing:border-box}
 body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;color:var(--texto);font-size:13px;line-height:1.6}
 .hoja{
-  /* Rayen, 21-sep-2026: la hoja era de 816 px (tamaño carta) y se veía angosta. */
+  
   max-width:1020px;margin:0 auto;background:#fff;padding:0 0 30px;
   box-shadow:0 2px 18px rgba(0,26,96,.10);
 }
 .filo{height:6px;background:linear-gradient(90deg,var(--navy),var(--sky) 60%,var(--naranja))}
 
-/* ── Portada ──────────────────────────────────────────── */
-/* Rayen, 21-sep-2026: «reduce el tamaño de las tres primeras, queda muy alargado hacia abajo;
-   así podemos usar ocho imágenes». Cuatro columnas en vez de tres y la portada más baja. */
+
+
 .portada{position:relative;height:286px;overflow:hidden;text-align:center}
 .portada-mosaico{
   position:absolute;inset:0;display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:2px;
 }
 .portada-mosaico img{width:100%;height:100%;object-fit:cover;display:block}
-/* el velo, aclarado: las fotos tienen que respirar */
+
 .portada-velo{
   position:absolute;inset:0;
-  /* aclarado y virado al calipso de la marca, para que las fotos se vean */
+  
   background:radial-gradient(ellipse at center,rgba(0,26,96,.68) 0%,rgba(12,105,190,.52) 45%,rgba(8,172,242,.32) 100%);
 }
 .portada-centro{
@@ -61,7 +60,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
 .meta b{display:block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;color:var(--sky);margin-bottom:3px}
 .meta span{font-size:14px;font-weight:600;color:var(--navy)}
 
-/* ── La colaboración y los servicios ──────────────────── */
+
 .intro{padding:34px 54px 30px;border-bottom:1px solid #E5E9F0}
 .alianza{
   display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px;
@@ -77,7 +76,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
   padding:12px 16px;margin-top:16px !important;
 }
 .intro-dto b{color:var(--navy)}
-/* el «6,06 × 2,44 × 2,59 m» no se parte y empujaba 7 px fuera de la pantalla del teléfono */
+
 .intro-nota{font-size:11.8px !important;color:var(--suave);font-style:italic;margin-top:12px !important;
   overflow-wrap:anywhere}
 
@@ -103,7 +102,7 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
 }
 .serv-pie b{color:var(--navy)}
 
-/* ── Índice ───────────────────────────────────────────── */
+
 .indice{padding:30px 54px;border-bottom:1px solid #E5E9F0}
 .heading{
   font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;
@@ -116,12 +115,10 @@ body{margin:0;background:#EEF1F5;font-family:'Manrope',system-ui,sans-serif;colo
   ;letter-spacing:.015em;padding:12px 0 4px;break-after:avoid;display:block}
 .indice .grupo:first-child{padding-top:0}
 
-/* ── Ficha de producto ────────────────────────────────── */
-/* Los productos corren uno tras otro, como el anexo que Rayen aprobó: nada de una hoja
-   por producto, que deja la mitad de cada página en blanco. */
+
+
 .prod{padding:0 54px;margin-top:11mm}
-/* Rayen, 17-sep-2026: lo que va retráctil es la ficha técnica de cada elemento, no los productos
-   de la sala. Se abre la que a cada uno le interese. */
+
 .ficha-pleg{margin-top:9px}
 .ficha-pleg>summary{list-style:none;cursor:pointer}
 .ficha-pleg>summary::-webkit-details-marker{display:none}
@@ -161,10 +158,10 @@ summary.banner h2{color:#fff}
 .foto img{width:100%;height:100%;object-fit:contain;padding:8px}
 .foto .sin{color:#C3CEDD;font-size:11px}
 .resumen p{margin:0 0 10px;font-size:13px;line-height:1.62}
-/* «qué estimula» va dentro del párrafo, en el mismo tamaño, solo en navy */
+
 .estim{color:var(--navy);font-weight:600}
 
-/* ── Materiales: lo que el papel acredita ─────────────── */
+
 .mat{
   margin-top:14px;border:1.5px solid #0A7D63;border-radius:8px;overflow:hidden;background:#F2FBF8;
 }
@@ -214,7 +211,7 @@ summary.banner h2{color:#fff}
 .chips span{border:1px solid #E5E9F0;background:#fff;border-radius:6px;padding:4px 10px;font-size:11.5px}
 .pendiente{background:#FAEEDA;color:#412402;border-radius:6px;padding:9px 13px;font-size:12px}
 
-/* ── Las 3 salas ──────────────────────────────────────── */
+
 .salas-intro{padding:34px 54px 0}
 .salas-intro .rot{
   font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;
@@ -228,17 +225,16 @@ summary.banner h2{color:#fff}
 }
 .salas-intro .prox b{color:var(--navy)}
 
-/* Las cuatro opciones, una al lado de la otra */
+
 .comparar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:20px}
 .comp{
   border:1.5px solid var(--navy);border-radius:10px;padding:14px 12px;background:#fcfdff;
   display:flex;flex-direction:column;gap:3px;
-  /* la tarjeta entera es el enlace a su sala */
+  
   text-decoration:none;color:inherit;cursor:pointer;position:relative;
   transition:box-shadow .18s,transform .18s,border-color .18s,background .18s;
 }
-/* Rayen, 17-sep-2026: «que se destaque más cuando le pones el cursor encima, para que sea
-   muy evidente que puede usarlas para desplazarse a lo largo del documento». */
+
 .comp:hover{
   border-color:var(--naranja);background:#fff;
   box-shadow:0 12px 28px rgba(0,26,96,.22);transform:translateY(-5px);
@@ -252,8 +248,7 @@ summary.banner h2{color:#fff}
   border:1.5px solid var(--linea);border-radius:999px;padding:6px 6px;text-align:center;
   transition:background .18s,color .18s,border-color .18s;
 }
-/* Rayen, 17-sep-2026: el respaldo en estudios, dentro de cada sala. El documento va a
-   corporativos que no manejan los conceptos: la cifra tiene que verse antes que el texto. */
+
 .evi{
   margin-top:16px;border:1px solid #DCE6F2;border-radius:10px;overflow:hidden;
   background:linear-gradient(180deg,#F4F9FF,#fff 55%);
@@ -284,11 +279,7 @@ summary.banner h2{color:#fff}
 }
 .evi-f b{font-style:normal;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
   letter-spacing:.015em;color:var(--sky);font-style:normal}
-/* Rayen, 17-sep-2026: «estás usando demasiado espacio para mostrar un video; eso puede ir en un
-   icono pequeño y al lado la invitación». Así que el video de cada sala va igual que el de la
-   introducción: miniatura chica, invitación y un botón. El marco (y con él el iframe) solo se
-   carga cuando lo piden. Los de Instagram van por su propio marco de inserción, que funciona sin
-   que nadie tenga que iniciar sesión mientras la publicación sea pública. */
+
 .vid-lista{margin-top:16px;display:flex;flex-direction:column;gap:10px}
 .vid-uno{break-inside:avoid;page-break-inside:avoid}
 .vid-it{
@@ -311,12 +302,12 @@ summary.banner h2{color:#fff}
 .vid-marco{margin-top:10px;display:flex;justify-content:center}
 .vid-marco iframe{width:560px;max-width:100%;height:auto;aspect-ratio:16/9;border:0;
   border-radius:10px;background:#fafafa}
-/* un video grabado con el teléfono es vertical: marco angosto, sin franjas negras a los lados */
+
 .vid-marco.vert iframe{width:322px;aspect-ratio:9/16}
 .vid-marco.ig iframe{width:326px;height:560px;aspect-ratio:auto}
 @media(max-width:560px){ .vid-it{flex-wrap:wrap} .vid-btn{width:100%} }
 @media print{ .vid-lista{display:none} }
-/* La invitación a ver el video: chica, y el video aparece solo si lo piden */
+
 .invita{
   margin-top:16px;display:flex;align-items:center;gap:14px;
   border:1.5px solid var(--linea);border-radius:10px;background:#fff;padding:12px 14px;
@@ -328,9 +319,7 @@ summary.banner h2{color:#fff}
   display:block;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;
   letter-spacing:.015em;color:var(--sky);margin-bottom:2px;
 }
-/* ⚠️ A este bloque le faltaba su selector desde antes del 21-sep-2026: sin él, el navegador
-   descartaba también la regla siguiente y la vitrina del video salía sin estilo, con la
-   miniatura a tamaño completo. */
+
 .vitrina{
   margin-top:20px;border-top:1px solid #E5E9F0;padding-top:14px;break-inside:avoid;
 }
@@ -368,7 +357,7 @@ summary.banner h2{color:#fff}
 .invita-marco iframe{width:326px;max-width:100%;height:560px;border:0;border-radius:10px;background:#fafafa}
 
 @media print{ .invita,.invita-marco{display:none} }
-/* un video grabado con el teléfono es vertical: marco angosto, sin franjas negras a los lados */
+
 .video-c-vert .video-marco{width:322px;max-width:100%}
 .video-c-vert .video-marco iframe{height:auto;aspect-ratio:9/16}
 .video-ancho .video-c-vert{flex-direction:row}
@@ -378,11 +367,10 @@ summary.banner h2{color:#fff}
 .video-ancho .video-marco iframe{height:auto;aspect-ratio:16/9}
 @media(max-width:820px){ .video-c{flex-direction:column} .video-marco{width:100%} }
 @media print{ .video{display:none} }
-/* La foto de referencia que abre cada sala */
+
 .op-foto{margin:0 0 16px;border-radius:10px;overflow:hidden;border:1px solid var(--linea);background:#F4F9FF}
 .op-foto-fila{display:flex}
-/* Rayen, 21-sep-2026: «estas imágenes están muy grandes, se ven grotescas». Se les pone tope
-   de alto y se recortan al centro, en vez de ocupar todo lo que dé su proporción. */
+
 .op-foto-fila img{display:block;width:100%;height:auto;max-height:225px;object-fit:cover;min-width:0}
 .op-foto-dos .op-foto-fila{gap:2px}
 .op-foto-dos .op-foto-fila img{width:50%;object-fit:cover;aspect-ratio:16/10;max-height:225px}
@@ -392,8 +380,7 @@ summary.banner h2{color:#fff}
   display:block;padding:7px 12px;font-size:10.5px;color:var(--suave);font-style:italic;
   border-top:1px solid var(--linea);background:#fff;
 }
-/* Rayen, 17-sep-2026: «que el detalle de productos no aparezca todo hacia abajo como un archivo;
-   un botoncito, y si lo quieren ver se abre». */
+
 .plegable{margin-top:16px;border:1.5px solid var(--linea);border-radius:10px;background:#fff;overflow:hidden}
 .plegable>summary{
   list-style:none;cursor:pointer;padding:12px 16px;display:flex;align-items:center;gap:10px;
@@ -413,8 +400,7 @@ summary.banner h2{color:#fff}
 html{scroll-behavior:smooth}
 .op{scroll-margin-top:14px}
 #opciones{scroll-margin-top:14px}
-/* Rayen, 17-sep-2026: «un botón que les permita volver arriba, a donde aparecen las opciones
-   de salas, siempre en pantalla, para que no tengan que hacer tanto scrolling». */
+
 .subir{
   position:fixed;right:22px;bottom:22px;z-index:50;
   display:flex;align-items:center;gap:8px;
@@ -449,14 +435,11 @@ html{scroll-behavior:smooth}
 }
 .comp-antes s{text-decoration:line-through}
 .comp-iva{font-size:9.5px;color:var(--suave)}
-/* en pantalla mediana y en el teléfono: dos y dos */
+
 @media(max-width:820px){ .comparar{grid-template-columns:repeat(2,minmax(0,1fr))} }
 
-/* ── Lo que ya está funcionando ───────────────────────── */
-/* ── Los cuatro videos de salas instaladas ─────────────
-   Rayen, 21-sep-2026: «los cuatro videos, si se abre una página web, en una fila; si se abre en
-   celular, dos arriba y dos abajo». Antes era auto-fit con mínimo 178 px y el ancho útil de la
-   hoja son 708 px: cabían tres y el cuarto bajaba solo. Ahora las columnas son fijas. */
+
+
 .obra{padding:34px 54px 22px;border-top:1px solid #E5E9F0}
 .obra .rot{
   font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;
@@ -479,11 +462,10 @@ html{scroll-behavior:smooth}
 .obra-foto{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#0A0F1E}
 .obra-foto img{width:100%;height:100%;object-fit:cover;display:block;opacity:.95;
   transition:opacity .25s,transform .45s}
-/* el velo de abajo: para que el nombre del lugar se lea encima de cualquier foto */
+
 .obra-velo{position:absolute;inset:0;
   background:linear-gradient(to top,rgba(0,10,40,.84) 0%,rgba(0,10,40,.34) 40%,rgba(0,10,40,0) 70%)}
-/* el play va en la esquina, no al centro: si el nombre del lugar ocupa dos líneas el
-   círculo le pasaba por encima (Rayen lo vio el 21-sep en Escuela Amapolas) */
+
 .obra-play{
   position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;
   background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.9);
@@ -502,11 +484,11 @@ html{scroll-behavior:smooth}
 .obra-donde{display:block;margin-top:2px;font-family:'Montserrat',sans-serif;font-size:9.5px;
   font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9FDCFB}
 .obra-que{flex:1;padding:10px 12px 12px;font-size:11.5px;line-height:1.5;color:#4B5563}
-/* la tarjeta cuyo video ya está abierto queda marcada, no apagada */
+
 .obra-c[disabled]{cursor:default;transform:none;border-color:var(--sky);
   box-shadow:0 0 0 1px var(--sky) inset,0 1px 2px rgba(0,26,96,.05)}
 .obra-c[disabled] .obra-play{background:var(--sky);border-color:var(--sky)}
-/* el video se abre en su propia fila, justo debajo de la tarjeta que lo pidió */
+
 .obra-grid .invita-marco{grid-column:1/-1;margin:2px 0 6px}
 @media(max-width:820px){
   .obra{padding-left:20px;padding-right:20px}
@@ -521,14 +503,14 @@ html{scroll-behavior:smooth}
 @media print{ .obra-play{display:none} .obra-c{break-inside:avoid;page-break-inside:avoid} }
 
 
-/* la tarjeta de producto ahora se toca y abre su ficha */
+
 .tarj{width:100%;text-align:center;font:inherit;color:inherit;cursor:pointer;
   transition:box-shadow .2s,transform .2s,border-color .2s}
 .tarj:hover{border-color:var(--sky);box-shadow:0 10px 24px rgba(0,26,96,.16);transform:translateY(-3px)}
 .tarj:hover .tf img{transform:scale(1.05)}
 .tarj .tf img{transition:transform .3s}
 .tarj:hover .tver{background:var(--naranja);border-color:var(--naranja);color:#fff}
-/* pastilla visible siempre, para que se note que hay algo que abrir */
+
 .tver{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:10px;
   font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.02em;
   color:var(--sky);border:1px solid #CBE4F7;border-radius:999px;padding:4px 9px;margin-top:7px;
@@ -536,9 +518,7 @@ html{scroll-behavior:smooth}
 .tver svg{width:12px;height:12px}
 @media print{ .tver{display:none} }
 
-/* ── La ficha del producto, en ventana ──────────────────────────────
-   Rayen, 21-sep-2026: que la ficha se despliegue al tocar el producto, en vez del listado
-   que iba al final del documento. */
+
 .fx{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;
   padding:24px 18px;background:rgba(2,8,26,.62);
   backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);animation:fxEntra .2s ease both}
@@ -585,10 +565,7 @@ html{scroll-behavior:smooth}
 }
 @media print{ .fx{display:none} }
 
-/* ── La ventana del video ─────────────────────────────
-   Rayen, 21-sep-2026: «que el video se abra abajo, así parece de esos videos que aparecen en
-   internet, se ve súper ordinario». Antes el iframe se desplegaba dentro del documento y
-   empujaba la página. Ahora se abre encima, con su propio marco, y el documento no se mueve. */
+
 .lb{
   position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;
   padding:26px 20px;background:rgba(2,8,26,.84);
@@ -617,20 +594,10 @@ html{scroll-behavior:smooth}
 .lb-x:hover{background:var(--naranja);border-color:var(--naranja);transform:rotate(90deg)}
 .lb-cuerpo{position:relative;background:#000;overflow:hidden}
 .lb-cuerpo iframe{display:block;border:0;width:100%;height:100%}
-/* Cada video tiene su forma: el de YouTube es horizontal, los otros son de teléfono.
-   El min() de tres términos hace que la ventana nunca se salga de la pantalla, ni de ancho
-   ni de alto, sin necesidad de media queries. */
+
 .lb-yt .lb-cuerpo{width:min(900px,92vw,calc(74vh * 16 / 9));aspect-ratio:16/9}
 .lb-vert .lb-cuerpo{width:min(400px,88vw,calc(76vh * 9 / 16));aspect-ratio:9/16}
-/* ⚠️ Instagram no entrega el video pelado: su embed trae arriba la barra del perfil con
-   «Ver perfil» y abajo los «me gusta» y el «añade un comentario». Eso era lo que se veía
-   ordinario. Aquí el iframe se pide grande y la ventana deja ver SOLO el rectángulo del video;
-   el resto queda fuera del recorte. Nada se estira: agrandar el iframe con transform dejaba
-   el video borroso.
-   Medido con regla el 21-sep-2026 sobre el embed real (post de Teletón, iframe de 600 px):
-   barra de arriba 55 px · el área del video mide 1,247 × el ancho del iframe y el video ocupa
-   0,70 de ese ancho, centrado. Los números de abajo llevan un par de píxeles de holgura para
-   que nunca asome el pie blanco. */
+
 .lb-ig{--w:min(500px,calc(86vw / .688),calc(72vh / 1.224))}
 .lb-ig .lb-cuerpo{width:calc(var(--w) * .688);height:calc(var(--w) * 1.224)}
 .lb-ig .lb-cuerpo iframe{
@@ -640,9 +607,8 @@ html{scroll-behavior:smooth}
 @media print{ .lb{display:none} }
 
 
-/* ── Qué permite trabajar cada sala ───────────────────── */
-/* Rayen, 21-sep-2026: «está usando demasiado espacio esta parte, hay que comprimirla».
-   Filas más juntas y la primera columna más ancha, para que ninguna frase caiga a dos líneas. */
+
+
 .cuadro-env{margin-top:20px;overflow-x:auto}
 .cuadro{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;min-width:520px}
 .cuadro th,.cuadro td{padding:5px 8px;line-height:1.35;text-align:center;border-bottom:1px solid #EDF1F7}
@@ -661,7 +627,7 @@ html{scroll-behavior:smooth}
 .cuadro tbody tr:hover td{background:#F2F8FF}
 .cuadro td.si{color:var(--navy);font-weight:700;font-size:14px;line-height:1}
 .cuadro td.no{color:#CBD5E1}
-/* la columna de la sala más completa, marcada sin gritar */
+
 .cuadro th:last-child,.cuadro td:last-child{background:#F4F9FF}
 .cuadro thead th:last-child{border-bottom-color:var(--sky)}
 .cuadro-pie{
@@ -670,13 +636,11 @@ html{scroll-behavior:smooth}
 @media(max-width:560px){ .cuadro{font-size:11px} .cuadro th,.cuadro td{padding:4px 5px} }
 
 
-/* ═══ Lo que eligió Rayen el 21-sep-2026 de las dos opciones de diseño ═══
-   Las tarjetas de sala con banda de precio · el comparativo como matriz agrupada ·
-   y la misma ficha de capacidades, ahora dentro de cada sala. */
+
 .ic{width:16px;height:16px;display:block;flex:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* ── Las cuatro opciones, una al lado de la otra ───────────── */
+
 .g2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
 .p2{container-type:inline-size;display:flex;flex-direction:column;border:1px solid #E3E9F2;
   border-radius:12px;background:#fff;overflow:hidden;text-decoration:none;color:inherit;
@@ -687,7 +651,7 @@ html{scroll-behavior:smooth}
 .p2-cab{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:14px 14px 13px;
   min-height:92px;background:linear-gradient(120deg,#001A60 0%,#0A4FB0 100%)}
 .p2-des .p2-cab{background:linear-gradient(120deg,#02358F 0%,#08ACF2 115%)}
-/* la letra, como etiqueta chica sobre el nombre: el protagonista es el nombre */
+
 .p2-l{display:inline-flex;align-items:center;justify-content:center;height:19px;padding:0 9px;flex:none;
   border-radius:999px;background:rgba(255,255,255,.18);color:#fff;letter-spacing:.09em;
   font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;line-height:1}
@@ -704,7 +668,7 @@ html{scroll-behavior:smooth}
 .p2-lab{font-size:8.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A94A6}
 .p2-badge{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;color:#fff;
   background:var(--naranja);border-radius:999px;padding:2px 7px;line-height:1.35;flex:none}
-/* el valor se ajusta al ancho de su propia tarjeta: nunca se corta, tenga los dígitos que tenga */
+
 .p2-v{display:block;font-family:'Montserrat',sans-serif;font-weight:800;color:var(--navy);
   font-variant-numeric:tabular-nums;letter-spacing:-.025em;white-space:nowrap;line-height:1.15;
   margin-top:4px;font-size:clamp(13px,11.5cqw,17px)}
@@ -717,7 +681,7 @@ html{scroll-behavior:smooth}
 .p2-ir .ic{width:13px;height:13px}
 .p2:hover .p2-ir{background:var(--naranja);border-color:var(--naranja)}
 
-/* ── El comparativo, matriz agrupada ───────────────────────── */
+
 .q1{border:1px solid #E3E9F2;border-radius:12px;overflow:hidden;background:#fff;
   box-shadow:0 1px 3px rgba(0,26,96,.05);margin-top:22px}
 .q1-cab{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
@@ -764,7 +728,7 @@ html{scroll-behavior:smooth}
 .t1 tbody tr:hover td.des{background:#E9F5FF}
 .t1 tbody tr:last-child td{border-bottom:0}
 
-/* ── La ficha de capacidades, dentro de cada sala ──────────── */
+
 .c2{display:flex;flex-direction:column;border:1px solid #E3E9F2;border-radius:12px;background:#fff;
   box-shadow:0 1px 3px rgba(0,26,96,.05);overflow:hidden;margin-top:16px;
   break-inside:avoid;page-break-inside:avoid}
@@ -807,9 +771,7 @@ html{scroll-behavior:smooth}
 }
 
 
-/* ── El puente a los demás productos disponibles ─────────────
-   Rayen, 21-sep-2026: «una página al final o un link a otras opciones, otros productos
-   disponibles, con sus fichas integradas de la misma manera». */
+
 .mas{margin:34px 54px 0;display:flex;align-items:center;gap:16px;padding:18px 22px;
   border:1px solid #E3E9F2;border-radius:14px;background:linear-gradient(120deg,#FBFDFF,#F4F9FF);
   text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,26,96,.05);
@@ -831,10 +793,7 @@ html{scroll-behavior:smooth}
 @media print{ .mas{display:none} }
 
 
-/* ── Los materiales, contados una vez y arriba ───────────────
-   Rayen, 21-sep-2026: «para nosotros los materiales son muy importantes porque los usuarios de
-   nuestras salas pueden tener contacto directo con su boca». El texto sigue el molde que ella
-   aprobó el 14-sep: propiedad primero, respaldo después, sin nombres técnicos de certificados. */
+
 .seg{margin:34px 54px 0;padding:26px 28px 24px;border:1px solid #CFE3D9;border-radius:16px;
   background:linear-gradient(140deg,#F4FBF8 0%,#FBFDFC 55%,#F7FBFF 100%);
   box-shadow:0 1px 3px rgba(4,52,44,.06)}
@@ -862,7 +821,7 @@ html{scroll-behavior:smooth}
 @media(max-width:560px){ .seg{margin-left:16px;margin-right:16px} .seg h2{font-size:18px}
   .seg-grid{grid-template-columns:minmax(0,1fr)} }
 
-/* el distintivo en la tarjeta del producto y la línea dentro de la ficha */
+
 .tsello{display:flex;align-items:center;justify-content:center;margin-top:6px;color:#0F7A5F}
 .tsello .ic{width:15px;height:15px}
 .mat-linea{display:flex;align-items:flex-start;gap:9px;margin-top:14px;padding:11px 13px;
@@ -874,8 +833,7 @@ html{scroll-behavior:smooth}
 
 
 
-/* ── Las salas, plegables ────────────────────────────────────
-   Rayen, 21-sep-2026: que puedan recoger cada opción y quedarse con un documento corto. */
+
 details.op > .op-cab{cursor:pointer;list-style:none;position:relative}
 details.op > .op-cab::-webkit-details-marker{display:none}
 .op-plegar{
@@ -887,11 +845,11 @@ details.op > .op-cab::-webkit-details-marker{display:none}
 }
 .op-plegar .ic{width:13px;height:13px;transition:transform .2s}
 details.op[open] > .op-cab .op-plegar .ic{transform:rotate(180deg)}
-/* cerrada dice «Expandir»; abierta, «No mostrar» */
+
 details.op[open] > .op-cab .op-plegar-t{font-size:0}
 details.op[open] > .op-cab .op-plegar-t::before{content:'Volver a las opciones';font-size:10px}
 .op-cab:hover .op-plegar{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.5)}
-/* cerrada, la cabecera cierra sus esquinas */
+
 details.op:not([open]) > .op-cab{border-radius:10px;border-bottom-color:var(--naranja)}
 
 .plegar-todo{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
@@ -903,7 +861,7 @@ details.op:not([open]) > .op-cab{border-radius:10px;border-bottom-color:var(--na
   cursor:pointer;transition:background .18s,color .18s,border-color .18s;
 }
 .plegar-btn:hover{background:var(--navy);border-color:var(--navy);color:#fff}
-/* impreso, todo se ve: una sala recogida no puede desaparecer del PDF */
+
 @media print{
   .plegar-todo{display:none}
   .op-plegar{display:none}
@@ -911,21 +869,19 @@ details.op:not([open]) > .op-cab{border-radius:10px;border-bottom-color:var(--na
 }
 
 
-/* ── Recogida, la sala desaparece ────────────────────────────
-   Rayen, 21-sep-2026: no quiere ver la barra de cada sala repetida abajo. El acceso es la
-   tarjeta de arriba: al tocar «Ver esta sala» se abre la sala y el documento salta a ella. */
+
 details.op:not([open]){display:none}
 details.op + details.op[open]{margin-top:44px}
-/* el separador entre salas solo tiene sentido si hay una sala abierta antes */
+
 details.op:not([open])::before{display:none}
-/* impreso, todas se ven completas */
+
 @media print{
   details.op:not([open]){display:block !important}
   details.op:not([open]) > *:not(.op-cab){display:block !important}
 }
 
 
-/* el botón para volver a las opciones, al pie de cada sala */
+
 .volver{
   display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:18px;
   padding:11px 16px;border:1px solid #CBD8EA;border-radius:999px;background:#fff;cursor:pointer;
@@ -937,8 +893,7 @@ details.op:not([open])::before{display:none}
 @media print{ .volver{display:none} }
 
 
-/* ── La puerta de entrada: el video de la introducción ───────
-   Rayen, 21-sep-2026: «es la puerta de entrada para que conozcan nuestras salas». */
+
 .puerta{
   display:grid;grid-template-columns:300px minmax(0,1fr);gap:22px;align-items:center;
   margin-top:24px;padding:20px;border:1px solid #E3E9F2;border-radius:16px;
@@ -988,24 +943,23 @@ details.op:not([open])::before{display:none}
 @media(max-width:560px){ .puerta{padding:15px} .puerta-tx h3{font-size:17px} }
 @media print{ .puerta-play,.puerta-btn,.puerta-dura{display:none} }
 
-/* El valor de antes, tachado. Va en todas partes donde se muestra la rebaja del 10%. */
+
 .antes{text-decoration:line-through;opacity:.62;font-weight:400;margin-right:6px;font-size:.78em}
 .antes-bloque{
   display:block;text-decoration:line-through;color:var(--suave);font-size:11px;font-weight:400;
   line-height:1.2;font-variant-numeric:tabular-nums;
 }
 
-/* La sección de cada opción */
+
 .op{padding:0 54px;margin-top:30px}
-/* aire entre el cierre de una sala y el encabezado de la siguiente: los dos son
-   bloques navy con precio y se confundian al quedar pegados */
+
 .op + .op{margin-top:44px}
 .op + .op::before{content:"";display:block;height:1px;background:var(--linea);margin:0 0 44px}
 .op-cab{
-  /* navy casi plano: el degradado de cuatro colores se veía de plantilla */
+  
   background:linear-gradient(120deg,#001A60 0%,#0A4BAE 50%,#08ACF2 100%);
   border-bottom:3px solid var(--naranja);border-radius:10px 10px 0 0;
-  /* grid, no flex: así la columna del medio absorbe y el valor nunca se sale del recuadro */
+  
   padding:22px 24px;display:grid;grid-template-columns:54px minmax(0,1fr) auto auto;
   align-items:center;gap:18px;color:#fff;
 }
@@ -1027,8 +981,7 @@ details.op:not([open])::before{display:none}
   border-radius:999px;padding:3px 10px;line-height:1.35;
 }
 .op-valor{text-align:right;flex:none;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
-/* OJO: no usar la clase «num» aquí — es la del círculo numerado de las fichas y
-   le mete un fondo blanco de 32 px al precio. */
+
 .op-valor .op-rot{font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:700;
   letter-spacing:.13em;text-transform:uppercase;opacity:.66;line-height:1}
 .op-valor .op-num{font-family:'Montserrat',sans-serif;font-size:27px;font-weight:800;font-variant-numeric:tabular-nums;display:block;line-height:1.05;letter-spacing:-.015em}
@@ -1038,8 +991,7 @@ details.op:not([open])::before{display:none}
   font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.06em;
   background:var(--naranja);color:#2A1400;border-radius:999px;padding:3px 9px;line-height:1.2;
 }
-/* Rayen, 21-sep-2026: «siguen las líneas alrededor del texto». Era un borde navy de 1,5 px:
-   en un bloque tan alto quedan dos rayas azules largas a los lados. */
+
 .op-cuerpo{border:1px solid #E3E9F2;border-top:0;border-radius:0 0 10px 10px;padding:20px 22px;
   background:#fff;box-shadow:0 1px 3px rgba(0,26,96,.05)}
 .op-txt{font-size:13px;line-height:1.65;margin:0 0 13px;color:#334155}
@@ -1060,8 +1012,7 @@ details.op:not([open])::before{display:none}
 .sala-chips.perfil span{border-color:#E5E9F0;background:#fff;color:#334155;font-weight:400}
 .op-nota{font-size:11.5px;color:var(--suave);font-style:italic;margin-top:14px}
 
-/* El combo: las fotos de todo lo que entra en la sala, como las opciones A/B/C.
-   Foto, nombre, código, valor y una línea de para qué sirve. */
+
 .op-lo{margin-top:22px}
 .op-lo-tit{
   font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:var(--navy);
@@ -1080,20 +1031,19 @@ details.op:not([open])::before{display:none}
 .tarj .tf{height:74px;display:flex;align-items:center;justify-content:center;margin-bottom:7px}
 .tarj .tf img{max-width:100%;max-height:74px;object-fit:contain}
 .tarj .tf .sin{color:#C3CEDD;font-size:10.5px}
-/* min-height de dos líneas: así el precio queda a la misma altura en las tres tarjetas
-   aunque un nombre ocupe una línea y el de al lado dos. */
+
 .tarj h4{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--navy);margin:0 0 2px;line-height:1.25;min-height:29px}
 .tarj .toc{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;color:var(--naranja)}
 .tarj .tpre{
   font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#0B76C4;
   border-top:1px solid #E5E9F0;margin-top:7px;padding-top:7px;font-variant-numeric:tabular-nums;
 }
-/* tres líneas como máximo: si no, una tarjeta con texto largo estira toda la fila */
+
 .tarj .ttx{font-size:10.5px;line-height:1.45;color:#4B5563;text-align:left;margin-top:6px;
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .tarj .tcon{font-size:10.5px;line-height:1.5;color:var(--navy);text-align:left;margin-top:7px;padding-top:7px;border-top:1px dashed var(--linea)}
 
-/* La sección de detalle, después de las tres opciones */
+
 .det-cab{
   margin:26px 54px 0;background:#F4F7FC;border-left:5px solid var(--navy);border-radius:0 8px 8px 0;
   padding:12px 18px;display:flex;align-items:center;gap:12px;break-after:avoid;
@@ -1106,8 +1056,7 @@ details.op:not([open])::before{display:none}
 .det-cab .dsub{font-size:11px;color:var(--suave)}
 .det-ya{margin:10px 54px 0;font-size:11.5px;color:#4B5563;background:#FFF7EC;border:1px solid #F3DFC2;border-radius:6px;padding:9px 13px}
 
-/* Lo único que el documento no puede valorizar: depende del destino. Va en CADA opción,
-   para que nadie lea un total pensando que ya está todo dentro. */
+
 .op-aviso{
   margin-top:14px;background:#FFF7EC;border:1px solid #F3DFC2;border-left:4px solid var(--naranja);
   border-radius:0 6px 6px 0;padding:10px 14px;font-size:11.5px;line-height:1.55;color:#412402;
@@ -1121,7 +1070,7 @@ details.op:not([open])::before{display:none}
 
 .cierre{text-align:center;padding:34px 54px 10px;color:var(--suave);font-size:11.5px;border-top:1px solid #E5E9F0;margin-top:30px}
 
-/* ── La firma, calcada de la del cotizador ───────────────── */
+
 .firma{padding:6px 54px 8px}
 .exec-card{
   display:flex;align-items:center;justify-content:space-between;gap:12px;
@@ -1149,7 +1098,7 @@ details.op:not([open])::before{display:none}
   .seccion{break-inside:avoid}
   .portada{break-after:page}
 }
-/* ── Tableta ─────────────────────────────────────────── */
+
 @media(max-width:820px){
   .hoja{max-width:none}
   .portada{padding:38px 20px 30px}
@@ -1161,7 +1110,7 @@ details.op:not([open])::before{display:none}
   .portada h1{font-size:24px}
   .portada img.logo{height:84px;margin-bottom:18px}
 }
-/* ── Teléfono ────────────────────────────────────────── */
+
 @media(max-width:560px){
   .portada{padding:30px 16px 24px}
   .indice,.prod,.colab,.salas-intro,.op{padding-left:16px;padding-right:16px}
@@ -1171,11 +1120,11 @@ details.op:not([open])::before{display:none}
   .meta{gap:16px;margin-top:20px}
   .meta div{min-width:132px}
   .salas-intro h2{font-size:19px}
-  /* una tarjeta por fila. La comparadora no: Rayen la quiere de a dos también en el teléfono */
+  
   .serv-grid,.op-cols{grid-template-columns:1fr}
   .comparar{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .comp{padding:12px 10px} .comp-n{font-size:13px} .comp-v{font-size:15px}
-  /* minmax(0,1fr): sin el 0 la tarjeta impone el ancho de su contenido y estira la pagina */
+  
   .op-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
   .tarj{min-width:0}
   .tarj h4,.tarj .toc,.tarj .tpre,.tarj .ttx{overflow-wrap:anywhere}
@@ -1194,8 +1143,7 @@ details.op:not([open])::before{display:none}
   .tarj .tf img{max-height:78px}
 }
 
-/* ── La ficha del producto, por dentro ───────────────────────
-   Rayen, 21-sep-2026: encabezados con su marca de color y cada dato con su punto celeste. */
+
 .fx-der .seccion{margin-top:18px;padding-top:15px;border-top:1px solid #EEF2F7}
 .fx-der .seccion:first-of-type{border-top:0;padding-top:0}
 .fx-der .seccion .heading{
@@ -1203,13 +1151,13 @@ details.op:not([open])::before{display:none}
   font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.09em;
   text-transform:uppercase;color:var(--navy);
 }
-/* la barrita de color que abre cada apartado */
+
 .fx-der .seccion .heading::before{
   content:'';width:4px;height:14px;border-radius:2px;background:var(--sky);flex:none;
 }
 .fx-der .seccion.sec-clave .heading{color:var(--navy)}
 .fx-der .seccion.sec-clave .heading::before{background:var(--naranja)}
-/* cada dato con su punto celeste */
+
 .fx-der .chips{display:flex;flex-wrap:wrap;gap:7px}
 .fx-der .chips span{
   display:flex;align-items:center;gap:7px;border:1px solid #E3EBF5;background:#FBFDFF;
@@ -1222,7 +1170,7 @@ details.op:not([open])::before{display:none}
 .fx-der .seccion.sec-clave .chips span::before{background:var(--naranja)}
 .fx-der .parrafo{margin:0;font-size:12.5px;line-height:1.65;color:#334155}
 .fx-der .fx-n{margin-bottom:2px}
-/* Rayen, 25-sep-2026: bajo el nombre, la descripción destacada: «la gente no siempre lee todo hacia abajo, pero lee arriba» */
+
 .fx-desc{margin:12px 0 4px;padding:14px 16px 14px 15px;border-radius:12px;background:#EEF8FE;border:1px solid #CDEBFB;
   border-left:4px solid #08ACF2;font-family:'Manrope',sans-serif;font-size:14px;line-height:1.62;font-weight:500;
   color:#001A60;text-wrap:pretty}
@@ -1232,7 +1180,7 @@ details.op:not([open])::before{display:none}
 .fx-desc .fx-mas{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:'Montserrat',sans-serif;
   font-size:11.5px;font-weight:800;letter-spacing:.02em;color:#0A8FCC;text-decoration:none}
 .fx-desc .fx-mas:hover{text-decoration:underline}
-/* Rayen, 25-sep-2026: al llegar a Materiales desde una ficha, un botón para volver exactamente a donde estaba */
+
 .fx-volver{position:fixed;left:50%;bottom:22px;z-index:80;display:flex;align-items:center;gap:4px;max-width:min(560px,calc(100% - 44px));
   transform:translate(-50%,12px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
   background:#001A60;border:2px solid #08ACF2;border-radius:999px;box-shadow:0 10px 28px rgba(0,26,96,.38);padding:3px}
@@ -1246,49 +1194,45 @@ details.op:not([open])::before{display:none}
   .fx-volver.on{transform:translateY(0)} .fx-volver .fxv-ir{flex:1;font-size:11.5px;padding:10px 12px}}
 @media print{.fx-volver{display:none !important}}
 @media(max-width:700px){.fx-desc{font-size:13.5px;padding:12px 13px 12px 13px}}
-/* el precio, con su franja */
+
 .fx-precio{padding:13px 15px;background:#F6FAFF;border:1px solid #E3EBF5;border-radius:11px;
   margin:14px 0 2px;gap:10px}
 .fx-iva{margin-top:6px;padding-left:2px}
 
-/* ── Rayen, 21-sep-2026: «esto aplica a los dos diseños de propuesta». Lo mismo que se le
-   corrigió a NeuroMed, traído aquí el 22-sep. ── */
+
 .serv-baja,.obra-baja,.seg-baja{max-width:none}
 .serv .sn{color:#fff;display:flex;align-items:center;justify-content:center}
 .serv .sn svg{width:15px;height:15px;display:block}
 .seg-t{display:flex;align-items:center;gap:7px}
 .seg-ic{flex:none;color:#0F7A5F;display:flex}
 .seg-ic svg{width:17px;height:17px;display:block}
-/* «un poquito más grande el ticket de la materialidad segura» */
+
 .seg-li .ic{width:26px;height:26px}
 .seg-pie .ic{width:22px;height:22px}
 .tarj .tsello svg,.tarj .tsello .ic{width:22px;height:22px}
 .fx .sellos svg,.fx .sellos .ic{width:18px;height:18px}
-/* «algunas imágenes están muy chiquititas»: la foto usa el ancho de la tarjeta */
+
 .tarj .tf{height:152px;background:#F7FAFD;border:1px solid #EEF2F8;border-radius:9px;
   padding:9px;box-sizing:border-box;margin-bottom:9px}
 .tarj .tf img{max-height:132px;max-width:100%;width:auto}
-/* El hover de «Ver la ficha»: una sola regla, celeste de la página web, texto blanco.
-   Antes eran dos y la segunda pintaba el texto del mismo naranja del fondo. */
+
 .tarj:hover .tver,.tarj:focus-visible .tver{background:#08ACF2;border-color:#08ACF2;color:#fff}
 .tarj:hover .tver svg{color:#fff}
-/* El lettering va en el TÍTULO de la sección: la palabra «Materiales» */
+
 .seg-rot{font-family:'Kaushan Script',cursive !important;font-size:27px !important;
   font-weight:400 !important;letter-spacing:0 !important;text-transform:none !important;
   color:#0F7A5F;line-height:1.1;margin-bottom:6px}
 @media (max-width:560px){ .seg-rot{font-size:23px !important} }
-/* Rayen, 22-sep-2026, viendo las tarjetas de NeuroMed: el botón quedaba a media tarjeta y abajo
-   sobraba espacio. La descripción se estira y el uso, el escudo y «Ver la ficha» van al pie,
-   parejos en toda la fila. */
+
 .tarj .ttx{flex-grow:1}
 .tarj:not(:has(.ttx)) .tver{margin-top:auto}
-/* Rayen, 22-sep-2026: la quinta tarjeta va a lo ancho, «que no se expanda tanto esa sección». */
+
 .seg-c.seg-ancha{grid-column:1/-1}
 .tsello{gap:8px}
 .tsello>span{display:flex}
 .ic-uv{color:#6D28D9}
 .mat-uv{margin-top:8px}
-/* «¿Qué son los ftalatos?»: se abre al tocarla, para que la tarjeta no crezca */
+
 .seg-faq{margin-top:7px}
 .seg-faq>summary{display:inline-flex;align-items:center;gap:5px;cursor:pointer;list-style:none;
   font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#0F7A5F}
@@ -1296,14 +1240,14 @@ details.op:not([open])::before{display:none}
 .seg-faq>summary::after{content:'+';display:inline-flex;align-items:center;justify-content:center;
   width:15px;height:15px;border:1.5px solid currentColor;border-radius:50%;font-size:11px;line-height:1}
 .seg-faq[open]>summary::after{content:'−'}
-/* en el papel no se toca: sin el botón de abrir y cerrar */
+
 .pg .seg-faq>summary::after{display:none}
 :root{color-scheme:light dark}
-/* El apartado «Certificaciones» de cada ficha (23-sep-2026) */
+
 .cert-lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
 .cert-lista li{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;line-height:1.55;color:#334155}
 .cert-lista li svg{width:17px;height:17px;color:#B8860B;flex:none;margin-top:1px}
-/* Rayen, 23-sep-2026: «destácalo en gold lo de certificaciones» */
+
 body .fx-der .seccion.sec-cert{margin-top:18px;padding:13px 14px;border:1.5px solid #D4A017;border-radius:12px;
   background:#FFF8E6;-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid}
 body .fx-der .seccion.sec-cert .heading{background:#D4A017;color:#0B1F3A}
@@ -1313,42 +1257,35 @@ body .fx-der .seccion.sec-cert .cert-mas{color:#8A6508}
 
 .cert-lista li b{color:var(--navy)}
 .cert-mas{display:inline-block;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#0A8FCC}
-/* «Los acompañamos siempre», debajo de los seis pasos */
+
 .serv-acomp{display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 16px;border-radius:12px;
   background:#EAF8FF;border:1.5px solid #08ACF2;font-size:13px;line-height:1.55;color:#1F2937}
 .serv-acomp svg{width:22px;height:22px;color:#08ACF2;flex:none}
 .serv-acomp b{color:var(--navy)}
-/* Rayen, 23-sep-2026: «todos los videos que se abren quedan flotando en pantalla» y con un botón
-   visible para cerrarlos. */
+
 .lb-pie{display:flex;justify-content:center;padding:12px 0 2px}
 .lb-cerrar{all:unset;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;
   color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);border-radius:999px;
   padding:8px 18px}
 .lb-cerrar:hover,.lb-cerrar:focus-visible{background:#08ACF2;border-color:#08ACF2}
-/* Rayen, 23-sep-2026: «para mí el bullet no es el punto delante de toda una frase: es la pastilla en la
-   que se envuelve un título, un subtítulo; el texto está demasiado plano». Los títulos de las fichas y
-   de la descripción de cada sala van en pastilla calipso con letra blanca. */
+
 body .fx-der .seccion .heading,body .op-cols .et{display:inline-flex;align-items:center;gap:0;
   background:#08ACF2;color:#fff;border-radius:999px;padding:5px 13px;line-height:1.2;
   font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 body .fx-der .seccion .heading::before,body .fx-der .seccion.sec-clave .heading::before{display:none}
 body .fx-der .seccion.sec-clave .heading{color:#fff}
 body .op-cols .et{margin-bottom:8px}
-/* Rayen, 23-sep-2026: «en todas las propuestas achica el primer video» (Para empezar) */
+
 body .puerta{grid-template-columns:220px minmax(0,1fr)}
 @media(max-width:820px){ body .puerta{grid-template-columns:minmax(0,1fr)} body .puerta-foto{max-width:260px;width:100%} }
-/* Rayen, 23-sep-2026: «estos botones, cuando uno va a ver las fichas o la sala, sin importar cuál sea
-   la propuesta, no los quiero en naranja; los quiero en el celeste de nuestra marca». Todos los botones
-   pasan al calipso al pasar el cursor. Las etiquetas de descuento siguen naranjas: no son botones.
-   Con «body» delante, para ganarle a las reglas que vienen más abajo (el PDF y NeuroMed). */
+
 body .p2:hover .p2-ir,body .comp:hover .comp-ir,body .mas:hover .mas-ir,body .tarj:hover .tver,
 body .ficha-pleg>summary:hover .ver-ficha,body .vid-btn:hover,body .subir:hover,body .puerta:hover .puerta-btn,
 body .btn-pdf:hover{background:#08ACF2;border-color:#08ACF2;color:#fff}
 body .comp:hover .comp-letra{color:#08ACF2}
 body .obra-c:hover .obra-play,body .puerta:hover .puerta-play{background:#08ACF2;border-color:#08ACF2}
 body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:#fff}
-/* Rayen, 23-sep-2026: «las preguntas tienen que ir dentro de un bullet celeste, como el que hemos usado
-   muchas otras veces»: la misma pastilla de «Ver la ficha». */
+
 .fx-reg{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
   color:#0A8FCC;margin:0 0 4px}
 .seg .seg-faq>summary{border:1px solid #9EDCFF;background:#fff;border-radius:999px;padding:5px 12px 5px 13px;
@@ -1359,14 +1296,14 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
 .seg .sl-dest .seg-faq>summary:hover,.seg .sl-dest .seg-faq.activo>summary{background:#08ACF2;color:var(--navy)}
 .seg .sl-dest .seg-faq+.seg-faq{margin-top:8px}
 .pg .seg .seg-faq>summary{border:none;padding:0;background:none}
-/* el círculo del destacado, con la foto del bebé */
+
 .seg .sl-foto{border:none;padding:0;position:relative;overflow:visible;box-shadow:0 0 0 3px #08ACF2,0 10px 26px rgba(0,0,0,.28)}
 .seg .sl-foto img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
 .seg .sl-badge{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);width:128px;text-align:center;white-space:normal;line-height:1.25 !important;
   background:#08ACF2;color:var(--navy);font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;
   letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:999px;line-height:1}
 .seg .sl-dest{row-gap:28px}
-/* El aviso de los columpios en la Sala de Integración Sensorial (23-sep-2026) */
+
 .op-colum{margin:18px 0 0;padding:16px 20px;border-radius:12px;background:#FFF8EE;border:1px solid #F7D9A8;
   border-left:4px solid var(--naranja)}
 .op-colum-t{display:flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:14px;
@@ -1374,9 +1311,7 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
 .op-colum-t svg{width:19px;height:19px;color:var(--naranja);flex:none}
 .op-colum p{margin:0 0 7px;font-size:13px;line-height:1.65;color:#334155}
 .op-colum p:last-child{margin-bottom:0;font-weight:600;color:var(--navy)}
-/* ── Materiales en el calipso de la marca (Rayen, 23-sep-2026) ──
-   #08ACF2 es el de la página web. Para letra chica sobre blanco se usa un calipso más hondo (#0A8FCC):
-   el de la marca, como texto, casi no se lee. ── */
+
 .seg{border-color:#BFE9FF;background:linear-gradient(180deg,#F2FBFF 0%,#fff 60%)}
 .seg-rot{color:#08ACF2 !important}
 .seg h2 em{color:#0A8FCC}
@@ -1402,15 +1337,15 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
 .gar{border-color:#08ACF2}
 .gar-n{border-right-color:#BFE9FF}
 .gar-n b{color:#08ACF2}
-/* Rayen, 23-sep-2026: «estas tarjetas las quiero con borde de color» (los seis pasos) */
+
 .serv{border:1.5px solid #08ACF2}
-/* con más especificidad: las reglas de la opción C van más abajo y ganaban */
+
 .seg .sl-dest .seg-faq>summary{color:#7FD9FF}
 .seg .sl-sello-g svg{color:#7FD9FF}
 .seg .gar-n b{color:#08ACF2}
 .seg .gar{border-color:#08ACF2}
 .seg .sl-c{border:3px solid #fff}
-/* La garantía (2 años desde el 28-sep-2026), al cierre de Materiales */
+
 .gar{display:flex;align-items:center;gap:22px;margin:22px 0 0;padding:18px 24px;border-radius:14px;
   border:1.5px solid var(--navy);background:#fff}
 .gar-n{flex:none;display:flex;align-items:center;gap:8px;color:var(--navy);padding-right:22px;
@@ -1424,9 +1359,7 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
   .gar{flex-direction:column;align-items:flex-start;gap:12px;padding:16px 18px}
   .gar-n{border-right:none;padding-right:0}
 }
-/* ── «¿Qué significa?» en tarjeta flotante (Rayen, 23-sep-2026: «que la información esté flotando
-   en pantalla, en vez de que se abra hacia abajo»). En pantalla el texto del <details> no se despliega;
-   se muestra en #segPop. En el papel (.pg y @media print) sigue impreso debajo, como antes. ── */
+
 .seg-faq>p{display:none}
 .pg .seg-faq>p{display:block}
 @media print{ .seg-faq>p{display:block} }
@@ -1452,7 +1385,7 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
 }
 @media (prefers-reduced-motion:reduce){ .seg-pop{transition:none} }
 @media print{ .seg-pop{display:none!important} }
-/* ── Materiales, opción C (23-sep-2026): un destacado y cuatro sellos ── */
+
 .sl-dest{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center;background:var(--navy);
   color:#fff;border-radius:14px;padding:26px 30px;margin:0 0 20px}
 .sl-sello-g{width:140px;height:140px;padding:0 18px;box-sizing:border-box;border-radius:50%;border:2px dashed rgba(255,255,255,.55);display:flex;
@@ -1464,7 +1397,7 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
 .sl-dest-tx>p{margin:0 0 8px;font-size:13px;line-height:1.7;color:#DDE6F7}
 .sl-dest .seg-faq>summary{color:#7FE3C2}
 .sl-dest .seg-faq>p{background:rgba(255,255,255,.08);color:#DDE6F7}
-/* Rayen, 25-sep-2026 (opción A): una segunda foto a la derecha, en un círculo más chico con el mismo aro */
+
 .sl-dest.sl-dos{grid-template-columns:140px minmax(0,1fr) 110px}
 .sl-foto-2{width:110px;height:110px;border-radius:50%;justify-self:center;flex:none}
 .seg-grid.sl-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
@@ -1479,18 +1412,18 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
 @media (max-width:820px){
   .sl-dest{grid-template-columns:minmax(0,1fr);justify-items:start;padding:22px 20px}
   .sl-dest.sl-dos{grid-template-columns:auto auto;grid-template-areas:"f1 f2" "tx tx";justify-content:start;align-items:center;column-gap:14px}
-  /* Rayen, 25-sep-2026: en su celular la foto roja se salía del marco. Las dos se achican con el ancho de la pantalla */
+  
   .sl-dos>.sl-sello-g{width:min(140px,34vw);height:min(140px,34vw)}
   .sl-dos>.sl-foto-2{width:min(110px,27vw);height:min(110px,27vw)}
   .sl-dos>.sl-sello-g{grid-area:f1} .sl-dos>.sl-foto-2{grid-area:f2} .sl-dos>.sl-dest-tx{grid-area:tx}
   .seg-grid.sl-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
 }
-/* en el papel: los sellos de a dos por fila, así la hoja se parte por filas */
+
 .pg .sl-grid{gap:12px}
 .pg .sl-grid .sl{width:calc(50% - 6px);box-sizing:border-box}
 .pg .sl .seg-faq{margin-top:0}
 .pg .sl-dest{padding:18px 20px;gap:16px}
-/* La franja del respaldo europeo, sobre las tarjetas de materiales */
+
 .seg-resp{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0 0 14px}
 .seg-resp-t{width:100%;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
   letter-spacing:.04em;text-transform:uppercase;color:#0F7A5F;margin-bottom:2px}
@@ -1505,7 +1438,7 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
   .tarj .tf{height:74px;padding:4px;margin-bottom:5px}
   .tarj .tf img{max-height:64px}
 }
-/* 23-sep-2026: en el celular la firma se apretaba y los contactos se montaban sobre el nombre */
+
 @media screen and (max-width:640px){
   body .firma{padding-left:0;padding-right:0}
   body .exec-card{flex-wrap:wrap;align-items:center;row-gap:12px;padding:16px}
@@ -1513,7 +1446,7 @@ body .fx-x:hover,body .lb-x:hover{background:#08ACF2;border-color:#08ACF2;color:
   body .exec-contacts{flex:1 1 100%;align-items:flex-start;padding-top:10px;border-top:1px solid rgba(255,255,255,.15)}
   body .exec-contact{word-break:break-word}
 }
-/* 23-sep-2026: el recuadro de la visión, por etapas; el corazón va arriba */
+
 body .serv-acomp{align-items:flex-start;padding:16px 18px;line-height:1.6}
 body .serv-acomp svg{margin-top:2px}
 body .serv-acomp>span{display:block}
@@ -1521,14 +1454,13 @@ body .serv-acomp .acomp-tit{display:block;font-family:'Montserrat',sans-serif;fo
 body .serv-acomp .acomp-lista{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:4px}
 body .serv-acomp .acomp-lista li::marker{color:#08ACF2}
 body .serv-acomp .acomp-fin{display:block;margin-top:8px}
-/* Rayen, 23-sep-2026: «la palabra Materiales debería ir más grande para llamar más la atención» */
+
 body .seg-rot{font-size:44px !important;line-height:1.1 !important}
 @media(max-width:560px){body .seg-rot{font-size:38px !important}}
 body .pg .seg-rot{font-size:36px !important}
-/* 24-sep-2026: el celeste es el «celeste saturado» de la web, #08ACF2 (paleta de la persona de diseño) */
 
-/* El pie azul (Rayen, 8-oct-2026): tarjeta navy con la foto grande de Rayen (aro celeste), la web bajo el cargo,
-   botones chicos y el logo blanco dentro de la tarjeta. Sin la línea de teléfono/email ni la banda del logo. */
+
+
 .ct{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:center;margin:18px 0 26px;padding:24px 28px 24px 24px;border-radius:18px;
   background:linear-gradient(135deg,#001A60 0%,#02358F 100%);color:#fff;box-shadow:0 14px 32px -16px rgba(0,26,96,.55);overflow:hidden}
 .ct::before{content:"";position:absolute;right:-70px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(47,193,255,.16) 0%,rgba(47,193,255,0) 70%);pointer-events:none}
@@ -1553,13 +1485,13 @@ body .pg .seg-rot{font-size:36px !important}
   .ct-acc{grid-column:auto;flex-direction:column;align-self:center;align-items:stretch;padding-right:0;margin:0;width:100%;max-width:250px}
   .ct-marca{position:static;order:9;height:52px;margin-top:2px}}
 
-/* en el celular la tarjeta queda con el mismo aire a los lados que en salas-escuelas */
+
 @media (max-width:820px){body div.firma{padding-left:20px;padding-right:20px}}
 @media (max-width:560px){body div.firma{padding-left:16px;padding-right:16px}}
-/* REGLA de Rayen: NINGÚN botón se pone naranjo; el hover es el celeste de la página web (#06b3fd) con texto blanco (8-oct-2026) */
+
 .ficha-pleg>summary:hover .ver-ficha,.comp:hover .comp-ir,.vid-btn:hover,.subir:hover,.obra-c:hover .obra-play,.tarj:hover .tver,.fx-x:hover,.lb-x:hover,.p2:hover .p2-ir,.btn-pdf:hover,.mas:hover .mas-ir,.puerta:hover .puerta-btn,.puerta:hover .puerta-play{background:#06b3fd !important;border-color:#06b3fd !important;color:#fff !important}
 .comp:hover .comp-letra{color:#06b3fd !important}
-/* ── Nuestro compromiso (25-sep-2026) ── */
+
 .cp{position:relative;overflow:hidden;padding:46px 54px 40px;color:#fff;
   background:radial-gradient(120% 90% at 100% 0%,rgba(8,172,242,.28) 0%,rgba(8,172,242,0) 55%),
     linear-gradient(160deg,#001A60 0%,#00297F 100%)}
@@ -1605,19 +1537,14 @@ body .pg .seg-rot{font-size:36px !important}
   .cp-sub{font-size:17px}
   .cp-fin{align-items:flex-start;padding:16px}
 }
-/* Rayen, 8-oct-2026: las tarjetas de producto en filas de cuatro (como en DAEM Puerto Montt y las salas generales) */
+
 .op-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:900px){.op-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-/* el compromiso, separado de lo que va antes */
+
 .cp{margin-top:44px}
 </style>
 <style id="papel-pdf">
-/* ══ EL PDF: LAS HOJAS LAS ARMAMOS NOSOTROS (Rayen, 23-sep-2026) ══════════════
-   Mismo método que la propuesta de NeuroMed y que el cotizador: cada bloque se
-   mide al ancho real del papel y se va llenando hoja por hoja. Va en su propio
-   <style> para que el generador de propuestas, que copia el primero, no lo arrastre.
-   Las reglas cuelgan de .pg y no de @media print: al imprimir la hoja mide menos
-   de 820 px y se activarían los cortes de tableta, así que aquí se fija todo. */
+
 .btn-pdf{position:fixed;left:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:8px;
   font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.03em;
   color:#fff;background:var(--navy);border:2px solid #fff;border-radius:999px;padding:12px 18px;
@@ -1636,17 +1563,17 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 .pg .filo{margin:0 -10mm 0}
 .pg-final>.firma{margin-top:auto}
 
-/* dentro de la hoja el margen lo pone .pg */
+
 .pg .intro,.pg .servicios,.pg .obra,.pg .salas-intro,.pg .portada-pie,.pg .cierre,.pg .firma{
   padding-left:0;padding-right:0}
 .pg .seg{margin-left:0;margin-right:0;padding:22px 24px 20px}
 .pg .portada{height:300px;padding:0}
-/* Rayen, 23-sep: el encabezado va de extremo a extremo, igual que la línea de color de arriba */
+
 .pg>.portada{margin-left:-10mm;margin-right:-10mm}
 .pg .portada h1{font-size:30px}
 .pg .portada img.logo{height:78px;margin-bottom:14px}
 
-/* los cortes de tableta, desarmados a mano */
+
 .pg .serv-grid{display:flex;flex-wrap:wrap;gap:9px}
 .pg .serv-grid .serv{width:calc(33.333% - 6px);box-sizing:border-box}
 .pg .seg-grid{display:flex;flex-wrap:wrap;gap:9px}
@@ -1661,17 +1588,17 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 .pg .puerta-tx p{font-size:10.5px}
 .pg .g2{display:flex;flex-wrap:wrap;gap:9px}
 .pg .g2 .p2{width:calc(25% - 7px);box-sizing:border-box}
-/* Rayen, 23-sep: en el PDF las 4 opciones van en UNA fila, para que quepan con Materiales */
+
 .pg .g2 .p2-cab,.pg .g2 .p2-cuerpo,.pg .g2 .p2-banda{padding-left:10px;padding-right:10px}
 .pg .g2 .p2-n{font-size:12px}
 .pg .g2 .p2-p{font-size:9.5px}
 .pg .g2 .p2-v{font-size:15px}
 .pg .c2-lista{grid-template-columns:repeat(2,minmax(0,1fr))}
 
-/* cada opción de sala, abierta y sin sus productos (Rayen, 23-sep) */
+
 .pg .op-trozo{padding:0;display:flow-root}
 .pg .op-trozo .op-cuerpo{display:flow-root}
-/* la tabla partida: un solo recuadro visual aunque vaya en trozos */
+
 .pg .q1-trozo{margin-top:14px}
 .pg .q1-sigue{margin-top:0 !important}
 .pg .q1-corta{border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0}
@@ -1682,7 +1609,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 .pg .op-trozo.op-arriba{margin-top:18px}
 .pg .op-trozo .op-cab{border-radius:10px}
 
-/* lo que en papel no sirve */
+
 .pg .puerta-play,.pg .puerta-dura,.pg .obra-play,.pg .op-plegar,.pg .volver,
 .pg .invita-marco,.pg .video,.pg .vid-lista,.pg .comp-ir,.pg .p2-ir{display:none !important}
 
@@ -1701,9 +1628,7 @@ body.ver-hojas .pg{margin:0 auto 14px;box-shadow:0 2px 14px rgba(0,26,96,.18)}
 </style>
 
 <style>
-/* ── Tarjetas de «Las opciones»: la letra y el nombre DENTRO de la foto (Rayen, 23-sep-2026) ──
-   «Se me hace extraño imagen arriba y el azul abajo… prefiero que el nombre de la sala y la letra
-   estén dentro de la imagen». Sin el bloque azul; la foto se aclara al mostrarla (el archivo no se toca). */
+
 .p2-portada{display:block;overflow:hidden;background:#0A0F1E}
 .p2-portada img{display:block;width:100%;height:100%;object-fit:cover;filter:brightness(1.18) saturate(1.06)}
 body .g2 .p2.p2-foto{position:relative}
@@ -1715,7 +1640,7 @@ body .g2 .p2.p2-foto .p2-cab{position:absolute;top:0;left:0;right:0;height:190px
 body .g2 .p2.p2-foto .p2-l{height:auto;padding:0;background:none;border-radius:0;color:#8FDDFF;
   font-size:10px;letter-spacing:.16em;text-transform:uppercase}
 body .g2 .p2.p2-foto .p2-n{font-size:19px;text-shadow:0 1px 8px rgba(0,26,96,.35)}
-/* tarjeta angosta (4 opciones, o 2 por fila en el celular): el nombre más chico para que no tape la foto */
+
 @container (max-width:260px){body .g2 .p2.p2-foto .p2-n{font-size:15.5px}body .g2 .p2.p2-foto .p2-cab{padding:0 12px 11px;background:linear-gradient(180deg,rgba(0,26,96,0) 18%,rgba(0,26,96,.6) 52%,rgba(0,26,96,.9) 100%)}}
 body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 @media (max-width:560px){body .g2 .p2.p2-foto .p2-portada,body .g2 .p2.p2-foto .p2-cab{height:170px}}
@@ -1725,100 +1650,168 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 .pg .g2 .p2.p2-foto .p2-n{font-size:13px}
 </style>
 <style>
-/* ── Propuesta corta de productos (gen_propuesta_productos.js, 13-oct-2026) ── */
+:root{
+  --pr-bg:#FFFFFF; --pr-stage:#FFFFFF; --pr-ink:#1B2740; --pr-navy:#001A60; --pr-muted:#56627A;
+  --pr-line:#DCE3ED; --pr-line-2:#EDF1F6; --pr-sky:#08ACF2; --pr-sky-ink:#0478B5;
+  --pr-titulo:'Montserrat',system-ui,sans-serif; --pr-texto:'Manrope',system-ui,sans-serif;
+}
+@media screen and (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --pr-bg:#111E42; --pr-ink:#DCE4F2; --pr-navy:#FFFFFF; --pr-muted:#A7B3C9;
+    --pr-line:rgba(127,217,255,.18); --pr-line-2:rgba(127,217,255,.10); --pr-sky:#2FC1FF; --pr-sky-ink:#7FD9FF;
+  }
+}
 .portada-mosaico img{object-position:center 35%;background:#fff}
-.cl{padding:34px 54px 6px}
-.cl .rot{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.015em;color:var(--sky);margin-bottom:6px}
-.cl h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:var(--navy);margin:0 0 8px}
-.cl-baja{margin:0 0 20px;color:#4B5563;font-size:13px;max-width:680px}
-.cl-grid{display:flex;flex-direction:column;gap:18px}
-.cl-t{display:grid;grid-template-columns:270px minmax(0,1fr);background:#fff;border:1px solid #E1E8F2;border-radius:14px;overflow:hidden;
-  box-shadow:0 2px 10px rgba(0,26,96,.06);min-width:0}
-.cl-foto{position:relative;background:#F7FAFD;border-right:1px solid #EEF2F8;display:flex;align-items:flex-start;justify-content:center;padding:44px 14px 14px}
-.cl-foto img{width:100%;max-height:300px;object-fit:contain;display:block}
-.cl-marca{position:absolute;top:12px;left:12px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.03em;
-  color:var(--navy);background:#fff;border:1px solid #CBE4F7;border-radius:999px;padding:3px 11px}
-.cl-cuerpo{display:flex;flex-direction:column;padding:18px 22px 20px;min-width:0}
-.cl-n{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:var(--navy);margin:0 0 6px;line-height:1.25}
-.cl-que{margin:0 0 12px;font-size:13px;line-height:1.65;color:#334155}
-.cl-secs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px;margin-bottom:14px}
-.cl-b{min-width:0}
-.cl-b h4{font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;letter-spacing:.015em;color:var(--navy);margin:0 0 4px;
-  padding-bottom:3px;border-bottom:2px solid #D6EEFB}
-.cl-b p{margin:0;font-size:12px;line-height:1.55;color:#4B5563}
-.cl-ul{margin:0;padding:0;list-style:none}
-.cl-ul li{position:relative;padding-left:14px;font-size:12px;line-height:1.55;color:#4B5563;margin-bottom:2px}
-.cl-ul li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--sky)}
-.cl-dl{margin:0;display:flex;flex-direction:column;gap:2px}
-.cl-dl div{display:flex;justify-content:space-between;gap:10px;font-size:12px;line-height:1.5;border-bottom:1px dotted #DCE5F0;padding:1px 0}
-.cl-dl dt{color:#4B5563;margin:0}
-.cl-dl dd{margin:0;font-weight:700;color:var(--navy);text-align:right}
-.cl-pie{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:12px;border-top:1px dashed #D3DEEE;margin-top:auto}
-.cl-disp{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#4B5563;line-height:1.35}
-.cl-disp svg{width:24px;height:24px;color:var(--sky);flex:none}
-.cl-disp b{display:block;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--navy)}
-.cl-precio{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
-.cl-lab{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.015em;color:var(--sky)}
-.cl-v{font-family:'Montserrat',sans-serif;font-size:23px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1.15}
-.cl-op{margin-top:14px;border:1px solid #CBE4F7;border-radius:10px;background:#F4F9FF;padding:12px 14px 13px}
-.cl-op-tit{display:flex;align-items:center;gap:6px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;letter-spacing:.015em;color:var(--navy);
-  margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid #DCEBF8}
-.cl-op-tit svg{width:13px;height:13px;color:var(--sky);flex:none}
-.cl-op-fila{display:flex;gap:12px;align-items:flex-start}
-.cl-op-foto{flex:none;width:84px;height:84px;background:#fff;border:1px solid #E1E8F2;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:4px}
-.cl-op-foto img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-.cl-op-tx{min-width:0;flex:1}
-.cl-op-tx b{display:block;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:3px}
-.cl-op-tx p{margin:0 0 5px;font-size:11.8px;line-height:1.55;color:#4B5563}
-.cl-op-tx p i{font-style:normal;font-weight:700;color:var(--navy)}
-.cl-op-tx .cl-dl{margin:4px 0 6px;max-width:420px}
-.cl-op-nota{font-size:11.2px !important;color:var(--suave) !important}
-.cl-op-pie{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px;padding-top:9px;border-top:1px dashed #CFE0F2}
-.cl-v-op{font-size:18px}
-.cl-aviso{margin:20px 54px 0}
-.cl-final{margin:16px 54px 0;font-size:13.2px;line-height:1.7;color:#334155}
-@media(max-width:820px){ .cl-t{grid-template-columns:200px minmax(0,1fr)} }
+.intro{border-bottom:0}
+.cat{padding:30px 54px 0;color:var(--pr-ink)}
+.cat-cab{max-width:680px;padding-bottom:6px}
+.cat-rot{font-family:var(--pr-titulo);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pr-sky-ink);margin:0 0 6px}
+.cat h2{font-family:var(--pr-titulo);font-size:24px;font-weight:800;color:var(--pr-navy);margin:0 0 8px;text-wrap:balance}
+.cat-baja{margin:0;color:var(--pr-muted);font-size:13.5px;line-height:1.65}
+
+.pr{padding:34px 0 36px;border-top:1px solid var(--pr-line)}
+.cat-cab + .pr{margin-top:22px}
+.pr-cab{display:flex;align-items:flex-end;justify-content:space-between;gap:12px 28px;flex-wrap:wrap}
+.pr-tit{min-width:0}
+.pr-marca{display:block;font-family:var(--pr-titulo);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pr-sky-ink);margin-bottom:4px}
+.pr-tit h3{font-family:var(--pr-titulo);font-size:23px;font-weight:800;line-height:1.2;color:var(--pr-navy);margin:0;text-wrap:balance}
+.pr-valor{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+.pr-lab{font-family:var(--pr-titulo);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--pr-muted)}
+.pr-v{font-family:var(--pr-titulo);font-size:26px;font-weight:800;line-height:1.15;color:var(--pr-navy);font-variant-numeric:tabular-nums}
+.pr-stock{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;margin:10px 0 0;padding:9px 0 0;border-top:1px solid var(--pr-line-2);font-size:12.5px;color:var(--pr-muted)}
+.pr-stock b{font-family:var(--pr-titulo);font-weight:700;color:var(--pr-navy)}
+.pr-stock b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pr-sky);margin-right:8px;vertical-align:1px}
+
+.pr-cuerpo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:30px;margin-top:20px;align-items:start}
+.pr-info{min-width:0;display:flex;flex-direction:column;gap:18px}
+.pr-que{margin:0;font-size:14px;line-height:1.7;color:var(--pr-ink)}
+.pr-sec h4,.pr-op h5{font-family:var(--pr-titulo);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pr-sky-ink);margin:0 0 7px}
+.pr-sec p{margin:0;font-size:13px;line-height:1.65;color:var(--pr-ink)}
+.pr-ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+.pr-ul li{position:relative;padding-left:16px;font-size:13px;line-height:1.6;color:var(--pr-ink)}
+.pr-ul li::before{content:"";position:absolute;left:1px;top:.68em;width:6px;height:6px;border-radius:50%;background:var(--pr-sky)}
+.pr-dl{margin:0;display:flex;flex-direction:column}
+.pr-dl div{display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--pr-line-2);font-size:13px;line-height:1.45}
+.pr-dl div:first-child{border-top:1px solid var(--pr-line-2)}
+.pr-dl dt{margin:0;color:var(--pr-muted)}
+.pr-dl dd{margin:0;font-weight:700;color:var(--pr-navy);text-align:right;font-variant-numeric:tabular-nums}
+.pr-secs{columns:2;column-gap:44px;margin-top:26px;padding-top:22px;border-top:1px solid var(--pr-line-2)}
+.pr-secs .pr-sec{break-inside:avoid;margin:0 0 20px}
+
+.gal{min-width:0}
+.gal-main{display:block;width:100%;aspect-ratio:1/1;padding:0;border:1px solid var(--pr-line-2);border-radius:6px;background:var(--pr-stage);cursor:zoom-in;overflow:hidden}
+.gal-main img{display:block;width:100%;height:100%;object-fit:contain}
+.gal-main:focus-visible,.gal-th:focus-visible,.gx button:focus-visible{outline:2px solid var(--pr-sky);outline-offset:2px}
+.gal-ths{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.gal-th{width:60px;height:60px;padding:0;border:1px solid var(--pr-line);border-radius:5px;background:var(--pr-stage);cursor:pointer;overflow:hidden;opacity:.72}
+.gal-th img{display:block;width:100%;height:100%;object-fit:contain}
+.gal-th[aria-current="true"]{opacity:1;border-color:var(--pr-sky);box-shadow:0 0 0 1px var(--pr-sky)}
+.gal-th:hover{opacity:1}
+
+.pr-op{margin-top:6px;padding-top:22px;border-top:1px dashed var(--pr-line)}
+.pr-op-rot{font-family:var(--pr-titulo);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--pr-navy);margin:0 0 14px}
+.pr-op-cuerpo{display:grid;grid-template-columns:150px minmax(0,1fr) 220px;gap:22px;align-items:start}
+.gal-chica .gal-ths{gap:6px}.gal-chica .gal-th{width:40px;height:40px}
+.pr-op-info{min-width:0}
+.pr-op-n{font-family:var(--pr-titulo);font-size:17px;font-weight:800;color:var(--pr-navy);margin:0 0 6px}
+.pr-op-info p{margin:0 0 12px;font-size:13px;line-height:1.6;color:var(--pr-ink)}
+.pr-op-info h5{margin-top:4px}
+.pr-op-info .pr-ul,.pr-op-info .pr-dl{margin-bottom:12px}
+.pr-op-pie{display:flex;flex-direction:column;align-items:flex-end;gap:2px;min-width:0}
+.pr-op-pie .pr-stock{border-top:0;padding-top:0;justify-content:flex-end;text-align:right;font-size:12px}
+.pr-valor-op .pr-v{font-size:21px}
+
+.fin{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;padding:34px 54px 0;border-top:1px solid var(--pr-line);margin-top:4px;color:var(--pr-ink)}
+.fin h2{font-family:var(--pr-titulo);font-size:18px;font-weight:800;color:var(--pr-navy);margin:0 0 12px}
+.fin .pr-ul li{font-size:12.8px}
+.cond{margin:0;display:flex;flex-direction:column}
+.cond div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;padding:9px 0;border-bottom:1px solid var(--pr-line-2);font-size:12.8px;line-height:1.55}
+.cond div:first-child{border-top:1px solid var(--pr-line-2)}
+.cond dt{margin:0;font-family:var(--pr-titulo);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--pr-sky-ink);padding-top:2px}
+.cond dd{margin:0;color:var(--pr-ink)}
+.cl-final{margin:26px 54px 0;font-size:14px;line-height:1.7;color:var(--pr-ink)}
+
+.gx{position:fixed;inset:0;z-index:9000;background:rgba(4,10,28,.9);display:flex;align-items:center;justify-content:center;padding:56px 64px}
+.gx[hidden]{display:none}
+.gx-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;max-width:100%;max-height:100%}
+.gx-fig img{max-width:min(92vw,1100px);max-height:calc(100vh - 150px);object-fit:contain;background:#fff;border-radius:4px}
+.gx-pie{display:flex;gap:14px;font-family:'Montserrat',system-ui,sans-serif;font-size:13px;color:#E6ECF7}
+.gx-pie span:last-child{color:#9FB0CC;font-variant-numeric:tabular-nums}
+.gx button{position:absolute;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(255,255,255,.35);background:rgba(4,10,28,.55);color:#fff;font-family:'Montserrat',system-ui,sans-serif;font-size:12.5px;font-weight:700;border-radius:999px;cursor:pointer}
+.gx button:hover{background:#08ACF2;border-color:#08ACF2}
+.gx button[hidden]{display:none}
+.gx-x{top:14px;right:14px;padding:9px 16px}
+.gx-ant,.gx-sig{top:50%;width:44px;height:44px;margin-top:-22px}
+.gx-ant{left:12px}.gx-sig{right:12px}
+.gx svg{width:20px;height:20px}
+
+@media(max-width:820px){
+  .pr-cuerpo{grid-template-columns:minmax(0,1fr)}
+  .gal{max-width:460px}
+  .pr-op-cuerpo{grid-template-columns:120px minmax(0,1fr)}
+  .pr-op-pie{grid-column:1 / -1;align-items:flex-start;min-width:0}
+  .pr-op-pie .pr-valor{align-items:flex-start;text-align:left}
+  .pr-op-pie .pr-stock{justify-content:flex-start;text-align:left}
+  .fin{grid-template-columns:minmax(0,1fr)}
+}
 @media(max-width:640px){
-  .cl-t{grid-template-columns:minmax(0,1fr)}
-  .cl-foto{border-right:0;border-bottom:1px solid #EEF2F8;height:250px;align-items:center;padding:12px}
-  .cl-foto img{height:100%;max-height:none;width:auto;max-width:100%}
-  .cl-secs{grid-template-columns:minmax(0,1fr)}
+  .pr-secs{columns:1}
+  .pr-cab{align-items:flex-start;flex-direction:column}
+  .pr-valor{align-items:flex-start;text-align:left}
+  .pr-op-cuerpo{grid-template-columns:minmax(0,1fr)}
+  .gal-chica{max-width:220px}
 }
 @media(max-width:560px){
-  .cl{padding:26px 16px 4px} .cl-aviso,.cl-final{margin-left:16px;margin-right:16px}
-  .cl-cuerpo{padding:14px 14px 16px}
-  .cl-op-fila{flex-direction:column}
+  .cat{padding:24px 16px 0}
+  .fin{padding:28px 16px 0}
+  .cl-final{margin-left:16px;margin-right:16px}
   .intro{padding:26px 16px 22px}
+  .gx{padding:56px 12px 70px}
+  .gx-ant,.gx-sig{top:auto;bottom:14px;margin-top:0}
+  .gx-ant{left:calc(50% - 54px)}.gx-sig{right:calc(50% - 54px)}
+  .cond div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .pr-v{font-size:24px}
 }
-/* ── En papel (?imprimir=1): una tarjeta por fila, compacta ── */
-.pg .cl{padding:14px 0 0}
-.pg .cl h2{font-size:18px;margin-bottom:4px}
-.pg .cl-baja{font-size:10.5px;margin-bottom:8px}
-.pg .cl-grid{gap:0}
-.pg .cl-t{grid-template-columns:130px minmax(0,1fr);box-shadow:none;break-inside:avoid}
-.pg .cl-foto{padding:30px 8px 8px}
-.pg .cl-foto img{max-height:170px}
-.pg .cl-cuerpo{padding:10px 14px 11px}
-.pg .cl-n{font-size:14px;margin-bottom:3px}
-.pg .cl-que{font-size:9.6px;line-height:1.5;margin-bottom:7px}
-.pg .cl-secs{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 14px;margin-bottom:7px}
-.pg .cl-b h4{font-size:9px;margin-bottom:2px}
-.pg .cl-b p,.pg .cl-ul li,.pg .cl-dl div{font-size:8.8px;line-height:1.42}
-.pg .cl-ul li{margin-bottom:1px;padding-left:11px}.pg .cl-ul li::before{width:5px;height:5px}
-.pg .cl-pie{padding-top:7px}
-.pg .cl-disp{font-size:8.6px}.pg .cl-disp b{font-size:9.2px}.pg .cl-disp svg{width:17px;height:17px}
-.pg .cl-lab{font-size:8.4px}.pg .cl-v{font-size:17px}.pg .cl-v-op{font-size:13.5px}
-.pg .cl-op{margin-top:8px;padding:8px 10px 9px}
-.pg .cl-op-tit{font-size:9px;margin-bottom:5px;padding-bottom:4px}
-.pg .cl-op-foto{width:56px;height:56px}
-.pg .cl-op-tx b{font-size:10px}.pg .cl-op-tx p{font-size:8.6px;line-height:1.42;margin-bottom:3px}
-.pg .cl-op-nota{font-size:8.2px !important}
-.pg .cl-op-pie{margin-top:5px;padding-top:6px}
-.pg .cl-marca{font-size:8.5px;padding:2px 8px;top:8px;left:8px}
-.pg .cl-aviso,.pg .cl-final{margin-left:0;margin-right:0}
-.pg .cl-final{font-size:11px}
-.pg .cl-fila{padding-top:10px}
-.pg .cierre{padding-top:12px;margin-top:12px}
+@media print{ .gx{display:none !important} }
+
+.pg .cat{padding:12px 0 0}
+.pg .cat h2{font-size:18px;margin-bottom:4px}
+.pg .cat-baja{font-size:10px}
+.pg .pr{padding:12px 0 10px}
+.pg .pr-cont{border-top:0;padding-top:0}
+.pg .pr-tit h3{font-size:15px}
+.pg .pr-marca,.pg .pr-lab{font-size:8px}
+.pg .pr-v{font-size:17px}
+.pg .pr-stock{font-size:9px;margin-top:6px;padding-top:6px}
+.pg .pr-cuerpo{grid-template-columns:150px minmax(0,1fr);gap:16px;margin-top:10px}
+.pg .gal{max-width:none}
+.pg .gal-main{aspect-ratio:auto;height:150px}
+.pg .gal-th{width:32px;height:32px}
+.pg .gal-th:nth-child(n+4){display:none}
+.pg .gal-ths{gap:5px;margin-top:5px}
+.pg .pr-info{gap:8px}
+.pg .pr-que{font-size:9.6px;line-height:1.5}
+.pg .pr-sec h4,.pg .pr-op h5{font-size:8px;margin-bottom:3px}
+.pg .pr-sec p,.pg .pr-ul li,.pg .pr-dl div,.pg .pr-op-info p{font-size:8.8px;line-height:1.42}
+.pg .pr-ul{gap:2px}.pg .pr-ul li{padding-left:11px}.pg .pr-ul li::before{width:4px;height:4px}
+.pg .pr-dl div{padding:2px 0}
+.pg .pr-secs{columns:3;column-gap:18px;margin-top:0;padding-top:8px}
+.pg .pr-secs .pr-sec{margin-bottom:8px}
+.pg .pr-op{padding-top:8px}
+.pg .pr-op-rot{font-size:9px;margin-bottom:6px}
+.pg .pr-op-cuerpo{grid-template-columns:90px minmax(0,1fr) 130px;gap:12px}
+.pg .gal-chica .gal-main{height:90px}
+.pg .pr-op-n{font-size:11px;margin-bottom:3px}
+.pg .pr-op-info p{margin-bottom:5px}
+.pg .pr-op-info .pr-ul,.pg .pr-op-info .pr-dl{margin-bottom:5px}
+.pg .pr-op-pie{min-width:0}
+.pg .pr-valor-op .pr-v{font-size:14px}
+.pg .fin{padding:14px 0 0;gap:12px 22px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pg .fin h2{font-size:12px;margin-bottom:6px}
+.pg .fin .pr-ul li,.pg .cond div{font-size:8.8px}
+.pg .cond div{grid-template-columns:80px minmax(0,1fr);padding:4px 0}
+.pg .cond dt{font-size:7.6px}
+.pg .cl-final{margin:12px 0 0;font-size:10.5px}
 .pg .firma .ct{margin:10px 0 0}
 </style>
 </head>
@@ -1828,14 +1821,14 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
 
   <div class="portada">
     <div class="portada-mosaico">
-      <img src="img/web-columpio-flexor.jpg" alt="" loading="eager">
-      <img src="img/web-columpio-de-rollo-2-en-1.jpg" alt="" loading="eager">
-      <img src="img/web-columpio-plataforma-de-balanceo-modificada.jpg" alt="" loading="eager">
-      <img src="img/columpio-saco-cocoon-southpaw-nino.jpg" alt="" loading="eager">
-      <img src="img/web-columpio-saco-elastico-nino.jpg" alt="" loading="eager">
-      <img src="img/web-columpio-hamaca-adulto.jpg" alt="" loading="eager">
-      <img src="img/plataforma-de-balanceo-advantage.jpg" alt="" loading="eager">
-      <img src="img/kit-de-suspension-y-ajuste-en-altura.jpg" alt="" loading="eager">
+      <img src="img/flexor-1.jpg" alt="" loading="eager">
+      <img src="img/rollo-1.jpg" alt="" loading="eager">
+      <img src="img/platmod-1.jpg" alt="" loading="eager">
+      <img src="img/cocoon-1.jpg" alt="" loading="eager">
+      <img src="img/saco-1.jpg" alt="" loading="eager">
+      <img src="img/hamaca-1.jpg" alt="" loading="eager">
+      <img src="img/plataforma-1.jpg" alt="" loading="eager">
+      <img src="img/kit-1.jpg" alt="" loading="eager">
     </div>
     <div class="portada-velo"></div>
     <div class="portada-centro">
@@ -1865,27 +1858,32 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
     <p>Pueden elegir solo los que les sirvan para su sala; no es necesario llevarlos todos. En dos de ellos les sugerimos un accesorio opcional, que va con su valor aparte.</p>
   </div>
 
-  <section class="cl" id="productos">
-    <div class="rot">Stock disponible al 13 de octubre de 2026</div>
-    <h2>Los columpios</h2>
-    <p class="cl-baja">Siete columpios de las marcas Southpaw y Advantage, pensados para el trabajo de integración sensorial. Todas las unidades están en nuestra bodega, para entrega inmediata.</p>
-    <div class="cl-grid">
-      <article class="cl-t"><div class="cl-foto"><img src="img/web-columpio-flexor.jpg" alt="Columpio Flexor" loading="lazy"><span class="cl-marca">Southpaw</span></div><div class="cl-cuerpo"><h3 class="cl-n">Columpio Flexor</h3><p class="cl-que">Columpio de disco con un poste central acolchado. Se mueve de lado a lado o en círculos, y la intensidad la pone quien lo empuja: desde mecerlo suave hasta sacudirlo, girarlo o hacerlo dar vueltas en órbita.</p><div class="cl-secs"><div class="cl-b"><h4>Para qué sirve en terapia</h4><ul class="cl-ul"><li>Da estimulación vestibular, que es la que trabaja el equilibrio y la noción de movimiento.</li><li>Da estimulación propioceptiva, que ayuda a sentir el propio cuerpo y su posición.</li><li>Ayuda a mejorar el equilibrio y la coordinación, a tomar conciencia del cuerpo y a desarrollar los movimientos grandes.</li><li>Especialmente útil con personas en el espectro autista y con discapacidad intelectual.</li></ul></div><div class="cl-b"><h4>Cómo se usa</h4><ul class="cl-ul"><li>Movimientos de lado a lado o en círculos, con la intensidad ajustada según la fuerza que se aplique.</li></ul></div><div class="cl-b"><h4>Medidas y peso</h4><dl class="cl-dl"><div><dt>Disco</dt><dd>61 cm de diámetro</dd></div><div><dt>Alto</dt><dd>90 cm</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>8,8 kg</dd></div><div><dt>Altura mínima de techo</dt><dd>2,5 m</dd></div></dl></div><div class="cl-b"><h4>Materiales</h4><p>Base alfombrada, con el borde y el poste central muy acolchados.</p></div><div class="cl-b"><h4>Qué incluye</h4><p>Correa de control que se puede sacar y un mosquetón de seguridad.</p></div><div class="cl-b"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura. Para ajustar la altura se recomienda ese mismo kit.</p></div></div><div class="cl-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v">$1.939.394</span></span></div><div class="cl-op"><div class="cl-op-tit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Opcional para este columpio</div><div class="cl-op-fila"><div class="cl-op-foto"><img src="img/kit-de-suspension-y-ajuste-en-altura.jpg" alt="Kit de Suspensión y Ajuste en Altura" loading="lazy"></div><div class="cl-op-tx"><b>Kit de Suspensión y Ajuste en Altura</b><p>Todo lo necesario para colgar el columpio de forma segura y ajustar su altura según cada persona y cada sesión.</p><p><i>Incluye:</i> Mosquetón de seguridad, dispositivo de rotación con su mosquetón, cuerda de terapia de 3 m con bucle en la punta y ajustador de altura con su mosquetón.</p><dl class="cl-dl"><div><dt>Para techos de hasta</dt><dd>4,25 m</dd></div><div><dt>Soporta hasta</dt><dd>455 kg</dd></div><div><dt>Peso del kit</dt><dd>3 kg</dd></div></dl><p class="cl-op-nota">No incluye los pernos que van anclados al techo. Conviene revisar todas las piezas con regularidad, por desgaste.</p></div></div><div class="cl-op-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 4 unidades</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v cl-v-op">$812.600</span></span></div></div></div></article>
-      <article class="cl-t"><div class="cl-foto"><img src="img/web-columpio-de-rollo-2-en-1.jpg" alt="Columpio de Rollo 2 en 1" loading="lazy"><span class="cl-marca">Advantage</span></div><div class="cl-cuerpo"><h3 class="cl-n">Columpio de Rollo 2 en 1</h3><p class="cl-que">Dos columpios en uno: un rollo acolchado para subirse encima y balancearse, y una barra de trapecio, que se usa al descolgar el rollo. Así, con un solo equipo se trabajan distintas necesidades en terapia.</p><div class="cl-secs"><div class="cl-b"><h4>Para qué sirve en terapia</h4><ul class="cl-ul"><li>Da estimulación vestibular, que trabaja el equilibrio y la coordinación.</li><li>Ayuda a tomar conciencia del propio cuerpo.</li><li>Fomenta el desarrollo de los movimientos grandes.</li><li>Especialmente indicado para personas en el espectro autista y con discapacidad intelectual.</li></ul></div><div class="cl-b"><h4>Cómo se usa</h4><ul class="cl-ul"><li>Como rollo: la persona va encima del cilindro.</li><li>Como trapecio: se descuelga el rollo y se usa la barra.</li></ul></div><div class="cl-b"><h4>Medidas y peso</h4><dl class="cl-dl"><div><dt>Rollo</dt><dd>20 cm de diámetro × 90 cm de largo</dd></div><div><dt>Alto total</dt><dd>175 cm</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>9 kg</dd></div></dl></div><div class="cl-b"><h4>Materiales</h4><p>Materiales resistentes y acolchados.</p></div><div class="cl-b"><h4>Qué incluye</h4><p>El rollo y la barra de trapecio.</p></div><div class="cl-b"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura.</p></div></div><div class="cl-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 2 unidades</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v">$1.874.833</span></span></div></div></article>
-      <article class="cl-t"><div class="cl-foto"><img src="img/web-columpio-plataforma-de-balanceo-modificada.jpg" alt="Columpio Plataforma de Balanceo Modificada" loading="lazy"><span class="cl-marca">Southpaw</span></div><div class="cl-cuerpo"><h3 class="cl-n">Columpio Plataforma de Balanceo Modificada</h3><p class="cl-que">Plataforma de balanceo igual a la clásica, pero con el disco de arriba más grande, para que quede más espacio entre las cuerdas y la puedan usar también jóvenes grandes y adultos.</p><div class="cl-secs"><div class="cl-b"><h4>Para qué sirve en terapia</h4><ul class="cl-ul"><li>Permite hacer una gran variedad de movimientos de inclinación y vaivén.</li><li>Trabaja el equilibrio y la coordinación.</li><li>Da estimulación vestibular y propioceptiva: ayuda a organizar lo que se siente y a percibir el propio cuerpo.</li><li>Como la inclinación se gradúa, la sesión se adapta a lo que necesita cada persona.</li></ul></div><div class="cl-b"><h4>Cómo se usa</h4><ul class="cl-ul"><li>La inclinación se ajusta de forma sencilla con cuatro cuerdas de control, unidas al disco de arriba.</li><li>Sirve para niños y adultos.</li></ul></div><div class="cl-b"><h4>Medidas y peso</h4><dl class="cl-dl"><div><dt>Medidas</dt><dd>78 × 78 cm, 150 cm de alto</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>10 kg</dd></div></dl></div><div class="cl-b"><h4>Materiales</h4><p>Plataforma con acolchado que se fija con velcro.</p></div><div class="cl-b"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura. Se recomienda complementarla con el ajuste de altura.</p></div></div><div class="cl-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v">$1.559.778</span></span></div></div></article>
-      <article class="cl-t"><div class="cl-foto"><img src="img/columpio-saco-cocoon-southpaw-nino.jpg" alt="Columpio Saco Cocoon Niño" loading="lazy"><span class="cl-marca">Southpaw</span></div><div class="cl-cuerpo"><h3 class="cl-n">Columpio Saco Cocoon Niño</h3><p class="cl-que">Columpio tipo saco, talla niño, que entrega el estímulo de movimiento desde otra perspectiva. El niño va envuelto o sentado dentro, y se siente seguro y contenido. La malla se estira y se adapta a la forma y al tamaño de cada niño.</p><div class="cl-secs"><div class="cl-b"><h4>Para qué sirve en terapia</h4><ul class="cl-ul"><li>Da estimulación vestibular, la que trabaja el equilibrio y la noción de movimiento.</li><li>Da una gran sensación de seguridad y contención.</li></ul></div><div class="cl-b"><h4>Cómo se usa</h4><ul class="cl-ul"><li>Se usa en varias posiciones: envuelto o sentado dentro.</li><li>Si se sueltan las cintas de adelante y de atrás, se convierte en una hamaca que cuelga de un solo punto y sostiene todo el cuerpo estirado.</li></ul></div><div class="cl-b"><h4>Medidas y peso</h4><dl class="cl-dl"><div><dt>Alto</dt><dd>127 cm</dd></div><div><dt>Soporta hasta</dt><dd>70 kg</dd></div><div><dt>Peso del columpio</dt><dd>1 kg</dd></div></dl></div><div class="cl-b"><h4>Materiales</h4><p>Malla de nylon blanda que no pellizca. Cuelga de seis cintas.</p></div><div class="cl-b"><h4>Para colgarlo</h4><p>Debe usarse con un cilindro de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura.</p></div></div><div class="cl-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v">$1.323.531</span></span></div></div></article>
-      <article class="cl-t"><div class="cl-foto"><img src="img/web-columpio-saco-elastico-nino.jpg" alt="Columpio Saco Elástico Niño" loading="lazy"><span class="cl-marca">Southpaw</span></div><div class="cl-cuerpo"><h3 class="cl-n">Columpio Saco Elástico Niño</h3><p class="cl-que">Columpio tipo saco, talla niño, que envuelve el cuerpo y entrega presión profunda junto con el estímulo de movimiento. Tiene un lado más alto que el otro, para ir sentado de forma más natural. Es suave y cómodo.</p><div class="cl-secs"><div class="cl-b"><h4>Para qué sirve en terapia</h4><ul class="cl-ul"><li>La presión profunda calma y ayuda a organizar lo que se siente.</li><li>Da estimulación vestibular: trabaja el equilibrio, la coordinación y la orientación en el espacio.</li><li>Favorece que el cuerpo se recoja (posición de flexión) y la conciencia del propio cuerpo.</li><li>Sirve para pausas sensoriales o momentos de relajación.</li><li>Ayuda a trabajar el control de la postura para actividades del día a día, como sentarse en un escritorio o hacer tareas con las manos.</li></ul></div><div class="cl-b"><h4>Cómo se usa</h4><ul class="cl-ul"><li>Acostado o sentado dentro del saco, con el cuerpo recogido.</li></ul></div><div class="cl-b"><h4>Medidas y peso</h4><dl class="cl-dl"><div><dt>Largo</dt><dd>125 cm</dd></div><div><dt>Soporta hasta</dt><dd>90 kg</dd></div><div><dt>Peso del columpio</dt><dd>1 kg</dd></div></dl></div><div class="cl-b"><h4>Materiales</h4><p>Malla de nylon suave y tela resistente.</p></div><div class="cl-b"><h4>Qué incluye</h4><p>Un mosquetón de seguridad.</p></div><div class="cl-b"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura.</p></div></div><div class="cl-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v">$883.186</span></span></div></div></article>
-      <article class="cl-t"><div class="cl-foto"><img src="img/web-columpio-hamaca-adulto.jpg" alt="Columpio Hamaca Adulto" loading="lazy"><span class="cl-marca">Southpaw</span></div><div class="cl-cuerpo"><h3 class="cl-n">Columpio Hamaca Adulto</h3><p class="cl-que">Hamaca, talla adulto, que cuelga de un solo punto y sostiene el cuerpo de forma completa y pareja: no se junta ni se arruga con el peso de la persona. Funciona como una red, pero sin enredarse.</p><div class="cl-secs"><div class="cl-b"><h4>Para qué sirve en terapia</h4><ul class="cl-ul"><li>Da estimulación vestibular, que trabaja el equilibrio y la coordinación.</li><li>Ayuda a sentir el propio cuerpo y a orientarse en el espacio.</li><li>Su presión suave da seguridad y calma.</li><li>Sostiene a la persona con el cuerpo recogido (posición de flexión).</li></ul></div><div class="cl-b"><h4>Cómo se usa</h4><ul class="cl-ul"><li>Boca abajo o sentado.</li><li>Al colgar de un solo punto, se mueve en todas las direcciones.</li></ul></div><div class="cl-b"><h4>Medidas y peso</h4><dl class="cl-dl"><div><dt>Alto</dt><dd>150 cm</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>1,8 kg</dd></div></dl></div><div class="cl-b"><h4>Materiales</h4><p>Tela de nylon tejida, suave al tacto, con refuerzos de vinilo resistente para darle fuerza y duración.</p></div><div class="cl-b"><h4>Qué incluye</h4><p>Un mosquetón de seguridad.</p></div><div class="cl-b"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura.</p></div></div><div class="cl-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v">$750.622</span></span></div></div></article>
-      <article class="cl-t"><div class="cl-foto"><img src="img/plataforma-de-balanceo-advantage.jpg" alt="Columpio Plataforma de Balanceo" loading="lazy"><span class="cl-marca">Advantage</span></div><div class="cl-cuerpo"><h3 class="cl-n">Columpio Plataforma de Balanceo</h3><p class="cl-que">Plataforma de balanceo acolchada, una versión más simple de la plataforma clásica. Cuelga de cuatro puntos y, desde las cuerdas, se provocan balanceos e inclinaciones en cualquier dirección.</p><div class="cl-secs"><div class="cl-b"><h4>Para qué sirve en terapia</h4><ul class="cl-ul"><li>Trabaja el equilibrio, la postura y el control del tronco.</li><li>El movimiento se gradúa según lo que cada persona tolera.</li><li>Da estimulación vestibular completa, en varias direcciones.</li><li>El uso continuo fortalece los músculos que dan estabilidad y equilibrio.</li></ul></div><div class="cl-b"><h4>Cómo se usa</h4><ul class="cl-ul"><li>Acostado boca abajo, sentado, de rodillas o de pie.</li></ul></div><div class="cl-b"><h4>Medidas y peso</h4><dl class="cl-dl"><div><dt>Medidas</dt><dd>78 × 78 cm, 150 cm de alto</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>8 kg</dd></div></dl></div><div class="cl-b"><h4>Materiales</h4><p>Base de madera con bordes acolchados y alfombra de nylon que se saca.</p></div><div class="cl-b"><h4>Qué incluye</h4><p>Un mosquetón.</p></div><div class="cl-b"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura.</p></div></div><div class="cl-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 2 unidades</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v">$671.838</span></span></div><div class="cl-op"><div class="cl-op-tit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Opcional para este columpio</div><div class="cl-op-fila"><div class="cl-op-foto"><img src="img/web-correa-elastica-vertical.jpg" alt="Correa Elástica Vertical" loading="lazy"></div><div class="cl-op-tx"><b>Correa Elástica Vertical</b><p>Correa elástica que va entre el techo y el columpio y le agrega rebote hacia arriba y hacia abajo al balanceo, de forma controlada. Da estimulación vestibular y propioceptiva.</p><p><i>Incluye:</i> 2 mosquetones de seguridad con seguro y 4 bucles elásticos de uso industrial: 2 simples y 2 dobles.</p><dl class="cl-dl"><div><dt>Alto</dt><dd>50 cm</dd></div><div><dt>Soporta</dt><dd>de 15 a 80 kg; hasta 110 kg cambiando bucles simples por dobles</dd></div><div><dt>Peso</dt><dd>1 kg</dd></div></dl><p class="cl-op-nota">Los bucles elásticos se desgastan con el uso; cuánto duran depende de la intensidad, la frecuencia y el tiempo de uso.</p></div></div><div class="cl-op-pie"><span class="cl-disp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg><span><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b>En bodega, entrega inmediata</span></span><span class="cl-precio"><span class="cl-lab">Valor unitario con IVA</span><span class="cl-v cl-v-op">$732.258</span></span></div></div></div></article>
+  <section class="cat" id="columpios">
+    <div class="cat-cab">
+      <p class="cat-rot">Stock disponible al 13 de octubre de 2026</p>
+      <h2>Los columpios</h2>
+      <p class="cat-baja">Siete columpios de las marcas Southpaw y Advantage, pensados para el trabajo de integración sensorial. Todas las unidades están en nuestra bodega, para entrega inmediata. Toquen una foto para verla en grande.</p>
     </div>
+    <article class="pr" id="columpio-1"><header class="pr-cab"><div class="pr-tit"><span class="pr-marca">Southpaw</span><h3>Columpio Flexor</h3></div><div class="pr-valor"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$1.939.394</span></div></header><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b><span>En bodega, entrega inmediata</span></p><div class="pr-cuerpo"><div class="gal" data-gal="g1" data-tit="Columpio Flexor"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Columpio Flexor"><img src="img/flexor-1.jpg" alt="Columpio Flexor" loading="lazy" data-i="0"></button></div><div class="pr-info"><p class="pr-que">Columpio de disco con un poste central muy acolchado. En la foto del fabricante, la persona va sentada sobre la base alfombrada, abrazada al poste. Entrega estímulo de movimiento y de presión, y la intensidad la pone quien lo mueve.</p><section class="pr-sec"><h4>Para qué sirve en terapia</h4><ul class="pr-ul"><li>Da estimulación vestibular, que es la que trabaja el equilibrio y la noción de movimiento.</li><li>Da estimulación propioceptiva, que ayuda a sentir el propio cuerpo y su posición.</li><li>Ayuda a mejorar el equilibrio y la coordinación, a tomar conciencia del cuerpo y a desarrollar los movimientos grandes.</li><li>Especialmente útil con personas en el espectro autista y con discapacidad intelectual.</li></ul></section><section class="pr-sec"><h4>Cómo se usa</h4><ul class="pr-ul"><li>El movimiento se gradúa: desde empujarlo y mecerlo suave hasta sacudirlo, girarlo o hacerlo dar vueltas en órbita.</li><li>Se mueve de lado a lado o en círculos, con la intensidad según la fuerza que se aplique.</li><li>Trae una correa de control que se engancha arriba, en la argolla superior, o abajo, en la argolla de la base, para guiar el movimiento.</li><li>Se puede usar con la Correa Elástica Vertical para agregarle rebote: mide 90 cm de alto sin la correa y unos 140 cm con ella.</li></ul></section></div></div><div class="pr-secs"><section class="pr-sec"><h4>Medidas y peso</h4><dl class="pr-dl"><div><dt>Disco</dt><dd>61 cm de diámetro</dd></div><div><dt>Alto</dt><dd>90 cm</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>8,8 kg</dd></div><div><dt>Altura mínima de techo</dt><dd>2,5 m</dd></div><div><dt>Espacio libre alrededor</dt><dd>1,8 m</dd></div></dl></section><section class="pr-sec"><h4>Materiales</h4><p>Base alfombrada, con el borde y el poste central muy acolchados.</p></section><section class="pr-sec"><h4>Qué incluye</h4><p>Base alfombrada, poste acolchado, pernos con golillas y llave Allen para armarlo (es un armado simple), correa de control que se puede sacar y un mosquetón de seguridad.</p></section><section class="pr-sec"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura. El mosquetón se engancha al cable de la parte de arriba del columpio.</p></section><section class="pr-sec"><h4>Cuidados y limpieza</h4><ul class="pr-ul"><li>Una vez al mes: revisar que los pernos de la base estén apretados, porque con el uso se sueltan.</li><li>Revisar el mosquetón y la argolla de arriba; si la argolla está gastada en más de un 30 % de su grosor, dejar de usarlo.</li><li>Revisar las costuras de la correa, que la cubierta no esté rota, las grapas de la alfombra y el acolchado del borde.</li><li>Limpieza: paño húmedo con agua y jabón o desinfectante. No sumergir. La alfombra no va a la lavadora: aspirarla seguido y limpiarla con espuma para alfombras. Secar antes de usar.</li></ul></section></div><div class="pr-op"><p class="pr-op-rot">Opcional para este columpio</p><div class="pr-op-cuerpo"><div class="gal gal-chica" data-gal="g2" data-tit="Kit de Suspensión y Ajuste en Altura"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Kit de Suspensión y Ajuste en Altura"><img src="img/kit-1.jpg" alt="Kit de Suspensión y Ajuste en Altura" loading="lazy" data-i="0"></button><div class="gal-ths"><button type="button" class="gal-th" aria-current="true" data-i="0" data-src="img/kit-1.jpg" aria-label="Foto 1 de 2"><img src="img/kit-1.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="1" data-src="img/kit-2.jpg" aria-label="Foto 2 de 2"><img src="img/kit-2.jpg" alt="" loading="lazy"></button></div></div><div class="pr-op-info"><h4 class="pr-op-n">Kit de Suspensión y Ajuste en Altura</h4><p>Todo lo necesario para colgar un columpio de forma segura y ajustar su altura según cada persona y cada sesión. Viene armado y listo para colgar.</p><h5>Cómo se usa</h5><ul class="pr-ul"><li>El mosquetón de la punta de la cuerda se engancha al perno del techo.</li><li>Para subir el columpio: sujetar la cuerda bajo el ajustador y empujar el ajustador hacia arriba hasta la altura que se quiere.</li><li>Para bajarlo: sujetar la cuerda bajo el ajustador, empujar hacia arriba su gatillo de seguridad y, al mismo tiempo, presionar el ajustador hacia arriba; así se suelta y se lleva a la altura que se quiere.</li><li>El dispositivo de rotación va con su etiqueta derecha y su argolla arriba, para que no le entre polvo.</li></ul><h5>Qué incluye</h5><p>Ajustador de altura, dispositivo de rotación, cuerda de terapia de 3 m con un lazo forrado en metal en una punta y 3 mosquetones de seguridad.</p><h5>Medidas y peso</h5><dl class="pr-dl"><div><dt>Para techos de hasta</dt><dd>4,25 m</dd></div><div><dt>Altura mínima de techo</dt><dd>2,4 m</dd></div><div><dt>Soporta hasta</dt><dd>455 kg</dd></div><div><dt>Peso del kit</dt><dd>3 kg</dd></div></dl><h5>Cuidados y seguridad</h5><p>No incluye el perno que va anclado al techo. Un perno que se mueve más de 6 mm en cualquier dirección no es seguro. Cuidados: el ajustador no se aceita ni se moja (solo sacudir o soplar con aire); la cuerda no se lava y se guarda lejos del sol y de productos químicos; si el dispositivo de rotación suena, se le pone un poco de lubricante liviano.</p></div><div class="pr-op-pie"><div class="pr-valor pr-valor-op"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$812.600</span></div><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 4 unidades</b><span>En bodega, entrega inmediata</span></p></div></div></div></article>
+    <article class="pr" id="columpio-2"><header class="pr-cab"><div class="pr-tit"><span class="pr-marca">Advantage</span><h3>Columpio de Rollo 2 en 1</h3></div><div class="pr-valor"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$1.874.833</span></div></header><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 2 unidades</b><span>En bodega, entrega inmediata</span></p><div class="pr-cuerpo"><div class="gal" data-gal="g3" data-tit="Columpio de Rollo 2 en 1"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Columpio de Rollo 2 en 1"><img src="img/rollo-1.jpg" alt="Columpio de Rollo 2 en 1" loading="lazy" data-i="0"></button><div class="gal-ths"><button type="button" class="gal-th" aria-current="true" data-i="0" data-src="img/rollo-1.jpg" aria-label="Foto 1 de 3"><img src="img/rollo-1.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="1" data-src="img/rollo-2.jpg" aria-label="Foto 2 de 3"><img src="img/rollo-2.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="2" data-src="img/rollo-3.jpg" aria-label="Foto 3 de 3"><img src="img/rollo-3.jpg" alt="" loading="lazy"></button></div></div><div class="pr-info"><p class="pr-que">Dos columpios en uno: un rollo acolchado y una barra de trapecio. Con el rollo puesto se usa como columpio de rollo; al descolgar el rollo, queda la barra para usarla como trapecio. Así, con un solo equipo se trabajan distintas necesidades en terapia.</p><section class="pr-sec"><h4>Para qué sirve en terapia</h4><ul class="pr-ul"><li>Da estimulación vestibular, que trabaja el equilibrio y la coordinación.</li><li>Ayuda a tomar conciencia del propio cuerpo.</li><li>Fomenta el desarrollo de los movimientos grandes.</li><li>Especialmente indicado para personas en el espectro autista y con discapacidad intelectual.</li></ul></section><section class="pr-sec"><h4>Cómo se usa</h4><ul class="pr-ul"><li>Como rollo: viene con un mosquetón para colgarlo de un solo punto. Agregando otro mosquetón se puede colgar de dos puntos separados entre 76 y 91 cm.</li><li>Como trapecio: se sacan los mosquetones de las cintas y se dejan puestos en las puntas de las cuerdas del rollo, para que no golpeen a quien usa la barra. Para volver a armarlo se hace al revés.</li><li>Los mosquetones tienen que quedar bien cerrados al usarlo; si quedan abiertos se pueden doblar o romper.</li></ul></section></div></div><div class="pr-secs"><section class="pr-sec"><h4>Medidas y peso</h4><dl class="pr-dl"><div><dt>Rollo</dt><dd>20 cm de diámetro × 90 cm de largo</dd></div><div><dt>Alto total</dt><dd>175 cm</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>9 kg</dd></div><div><dt>Altura mínima de techo</dt><dd>2,4 m</dd></div><div><dt>Espacio libre alrededor</dt><dd>1,8 m</dd></div></dl></section><section class="pr-sec"><h4>Materiales</h4><p>Rollo acolchado y resistente, barra de madera barnizada y cuerdas con cintas.</p></section><section class="pr-sec"><h4>Qué incluye</h4><p>El columpio 2 en 1 (rollo y barra de trapecio) y 3 mosquetones de seguridad.</p></section><section class="pr-sec"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura. Para ajustar la altura con facilidad se recomienda el ajustador de altura, que viene en el mismo kit.</p></section><section class="pr-sec"><h4>Cuidados y limpieza</h4><ul class="pr-ul"><li>Una vez al mes: revisar que las cuerdas no estén deshilachadas, también bajo la funda negra.</li><li>Revisar los mosquetones y que no falten ni estén sueltas las abrazaderas metálicas de las cuerdas; si es así, dejar de usarlo hasta repararlo.</li><li>Revisar la barra: si tiene trizaduras, dejar de usarla; si tiene astillas, lijarla hasta que quede lisa y volver a barnizarla.</li><li>Limpieza: paño húmedo con agua y jabón suave, sin limpiadores abrasivos. Secar antes de usar.</li></ul></section></div></article>
+    <article class="pr" id="columpio-3"><header class="pr-cab"><div class="pr-tit"><span class="pr-marca">Southpaw</span><h3>Columpio Plataforma de Balanceo Modificada</h3></div><div class="pr-valor"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$1.559.778</span></div></header><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b><span>En bodega, entrega inmediata</span></p><div class="pr-cuerpo"><div class="gal" data-gal="g4" data-tit="Columpio Plataforma de Balanceo Modificada"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Columpio Plataforma de Balanceo Modificada"><img src="img/platmod-1.jpg" alt="Columpio Plataforma de Balanceo Modificada" loading="lazy" data-i="0"></button></div><div class="pr-info"><p class="pr-que">Plataforma de balanceo igual a la clásica, pero con el disco de arriba más grande, para que quede más espacio entre las cuerdas y la puedan usar también jóvenes grandes y adultos.</p><section class="pr-sec"><h4>Para qué sirve en terapia</h4><ul class="pr-ul"><li>Permite hacer una gran variedad de movimientos de inclinación y vaivén.</li><li>Trabaja el equilibrio y la coordinación.</li><li>Da estimulación vestibular y propioceptiva: ayuda a organizar lo que se siente y a percibir el propio cuerpo.</li><li>Como la inclinación se gradúa, la sesión se adapta a lo que necesita cada persona.</li></ul></section><section class="pr-sec"><h4>Cómo se usa</h4><ul class="pr-ul"><li>Se cuelga enganchando el mosquetón de arriba de la plataforma al sistema de ajuste de altura.</li><li>Con las cuatro cuerdas de control unidas a la línea principal, la plataforma queda bastante estable.</li><li>Para tener todo el rango de movimiento, se suelta una o todas las cuerdas de control de la línea principal.</li><li>Sirve para niños, jóvenes y adultos.</li></ul></section></div></div><div class="pr-secs"><section class="pr-sec"><h4>Medidas y peso</h4><dl class="pr-dl"><div><dt>Medidas</dt><dd>78 × 78 cm, 150 cm de alto</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>10 kg</dd></div><div><dt>Altura mínima de techo</dt><dd>2,4 m</dd></div><div><dt>Espacio libre alrededor</dt><dd>1,8 m</dd></div></dl></section><section class="pr-sec"><h4>Materiales</h4><p>Plataforma de madera con borde acolchado y cubierta acolchada que se fija con velcro.</p></section><section class="pr-sec"><h4>Qué incluye</h4><p>La plataforma con su cubierta y un mosquetón de seguridad.</p></section><section class="pr-sec"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura. Se recomienda también el ajustador de altura, que viene en el mismo kit.</p></section><section class="pr-sec"><h4>Cuidados y limpieza</h4><ul class="pr-ul"><li>Una vez al mes: revisar la cadena, el mosquetón y que los eslabones con rosca donde se unen las cuerdas estén bien cerrados.</li><li>Revisar el perno en U bajo la funda negra: si está gastado en más de un 30 % de su grosor, dejar de usarla.</li><li>Revisar que no falten ni estén sueltos los seguros metálicos de las cuerdas, que la madera no tenga trizaduras (si las tiene, dejar de usarla; las astillas se lijan) y que el acolchado del borde esté firme.</li><li>Un poco de grasa de litio de vez en cuando en el perno en U evita que haga ruido.</li><li>Limpieza: sacudir o pasar un paño húmedo; la cubierta de vinilo se puede limpiar con desinfectante. Secar antes de usar.</li></ul></section><section class="pr-sec"><h4>Seguridad</h4><ul class="pr-ul"><li>El borde está acolchado, pero igual puede dar un buen golpe: hay que usarla con cuidado.</li></ul></section></div></article>
+    <article class="pr" id="columpio-4"><header class="pr-cab"><div class="pr-tit"><span class="pr-marca">Southpaw</span><h3>Columpio Saco Cocoon Niño</h3></div><div class="pr-valor"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$1.323.531</span></div></header><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b><span>En bodega, entrega inmediata</span></p><div class="pr-cuerpo"><div class="gal" data-gal="g5" data-tit="Columpio Saco Cocoon Niño"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Columpio Saco Cocoon Niño"><img src="img/cocoon-1.jpg" alt="Columpio Saco Cocoon Niño" loading="lazy" data-i="0"></button><div class="gal-ths"><button type="button" class="gal-th" aria-current="true" data-i="0" data-src="img/cocoon-1.jpg" aria-label="Foto 1 de 3"><img src="img/cocoon-1.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="1" data-src="img/cocoon-2.jpg" aria-label="Foto 2 de 3"><img src="img/cocoon-2.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="2" data-src="img/cocoon-3.jpg" aria-label="Foto 3 de 3"><img src="img/cocoon-3.jpg" alt="" loading="lazy"></button></div></div><div class="pr-info"><p class="pr-que">Columpio tipo saco, talla niño, que entrega el estímulo de movimiento desde otra perspectiva. El niño va envuelto o sentado dentro, y se siente seguro y contenido. La malla se estira y se adapta a la forma y al tamaño de cada niño.</p><section class="pr-sec"><h4>Para qué sirve en terapia</h4><ul class="pr-ul"><li>Da estimulación vestibular, la que trabaja el equilibrio y la noción de movimiento.</li><li>Da una gran sensación de seguridad y contención.</li></ul></section><section class="pr-sec"><h4>Cómo se usa</h4><ul class="pr-ul"><li>Se usa en varias posiciones: envuelto o sentado dentro, con todas las cintas conectadas.</li><li>Si se sueltan la cinta de adelante y la del centro de atrás, se convierte en una hamaca que cuelga de un solo punto y sostiene todo el cuerpo estirado.</li><li>La puerta de adelante se puede bajar para entrar y salir con facilidad. El niño puede necesitar ayuda para entrar.</li><li>Viene con los mosquetones puestos en las cintas: se enganchan al sistema de suspensión y se ajusta la altura para cada niño.</li></ul></section></div></div><div class="pr-secs"><section class="pr-sec"><h4>Medidas y peso</h4><dl class="pr-dl"><div><dt>Alto</dt><dd>127 cm</dd></div><div><dt>Soporta hasta</dt><dd>70 kg</dd></div><div><dt>Peso del columpio</dt><dd>1 kg</dd></div><div><dt>Altura mínima de techo</dt><dd>2,4 m</dd></div><div><dt>Espacio libre alrededor</dt><dd>1,8 m</dd></div></dl></section><section class="pr-sec"><h4>Materiales</h4><p>Malla de nylon blanda que no pellizca, partes de vinilo y seis cintas para colgarlo.</p></section><section class="pr-sec"><h4>Qué incluye</h4><p>El columpio y 2 mosquetones de seguridad.</p></section><section class="pr-sec"><h4>Para colgarlo</h4><p>Debe usarse con un cilindro de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura. Según la altura del techo, puede necesitar también la cuerda de terapia y el ajustador de altura del mismo kit.</p></section><section class="pr-sec"><h4>Cuidados y limpieza</h4><ul class="pr-ul"><li>Una vez al mes: revisar los mosquetones y las cintas en el punto donde rozan con ellos; si hay mucho desgaste, dejar de usarlo.</li><li>Revisar las costuras (tela con tela, tela con vinilo y cinta con vinilo): si hay puntadas sueltas, dejar de usarlo hasta repararlo.</li><li>Limpieza: el vinilo se limpia con un paño húmedo con agua y jabón o desinfectante, sin sumergirlo. La tela se puede lavar a mano, cuidando de no mojar el vinilo.</li></ul></section></div></article>
+    <article class="pr" id="columpio-5"><header class="pr-cab"><div class="pr-tit"><span class="pr-marca">Southpaw</span><h3>Columpio Saco Elástico Niño</h3></div><div class="pr-valor"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$883.186</span></div></header><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b><span>En bodega, entrega inmediata</span></p><div class="pr-cuerpo"><div class="gal" data-gal="g6" data-tit="Columpio Saco Elástico Niño"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Columpio Saco Elástico Niño"><img src="img/saco-1.jpg" alt="Columpio Saco Elástico Niño" loading="lazy" data-i="0"></button><div class="gal-ths"><button type="button" class="gal-th" aria-current="true" data-i="0" data-src="img/saco-1.jpg" aria-label="Foto 1 de 5"><img src="img/saco-1.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="1" data-src="img/saco-2.jpg" aria-label="Foto 2 de 5"><img src="img/saco-2.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="2" data-src="img/saco-3.jpg" aria-label="Foto 3 de 5"><img src="img/saco-3.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="3" data-src="img/saco-4.jpg" aria-label="Foto 4 de 5"><img src="img/saco-4.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="4" data-src="img/saco-5.jpg" aria-label="Foto 5 de 5"><img src="img/saco-5.jpg" alt="" loading="lazy"></button></div></div><div class="pr-info"><p class="pr-que">Columpio tipo saco, talla niño, que envuelve el cuerpo y entrega presión profunda junto con el estímulo de movimiento. Tiene un lado más alto que el otro, para ir sentado de forma más natural. La malla cede, pero no es súper elástica: está hecha así a propósito, para recoger el cuerpo y dar presión.</p><section class="pr-sec"><h4>Para qué sirve en terapia</h4><ul class="pr-ul"><li>La presión profunda calma y ayuda a organizar lo que se siente.</li><li>Da estimulación vestibular: trabaja el equilibrio, la coordinación y la orientación en el espacio.</li><li>Favorece que el cuerpo se recoja y la conciencia del propio cuerpo.</li><li>Sirve para pausas sensoriales o momentos de relajación.</li><li>Ayuda a trabajar el control de la postura para actividades del día a día, como sentarse en un escritorio o hacer tareas con las manos.</li></ul></section><section class="pr-sec"><h4>Cómo se usa</h4><ul class="pr-ul"><li>Se engancha un mosquetón a la argolla de arriba del columpio y luego al punto de suspensión. Con el ajustador de altura se deja a la altura de cada persona.</li><li>Da apoyo completo y parejo a quien va sentado o acostado dentro, con el cuerpo recogido.</li><li>Para cualquier actividad con giro se debe usar el dispositivo de rotación.</li><li>La persona puede necesitar ayuda para entrar y salir.</li></ul></section></div></div><div class="pr-secs"><section class="pr-sec"><h4>Medidas y peso</h4><dl class="pr-dl"><div><dt>Largo</dt><dd>125 cm</dd></div><div><dt>Soporta hasta</dt><dd>90 kg</dd></div><div><dt>Peso del columpio</dt><dd>1 kg</dd></div><div><dt>Espacio libre alrededor</dt><dd>1,8 m</dd></div></dl></section><section class="pr-sec"><h4>Materiales</h4><p>Malla de nylon suave y tela resistente de larga duración.</p></section><section class="pr-sec"><h4>Qué incluye</h4><p>Un mosquetón de seguridad.</p></section><section class="pr-sec"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura.</p></section><section class="pr-sec"><h4>Cuidados y limpieza</h4><ul class="pr-ul"><li>Una vez al mes: revisar la argolla en el punto donde roza con el mosquetón y las costuras; si hay desgaste o puntadas sueltas, dejar de usarlo hasta repararlo.</li><li>Limpieza: se lava en lavadora con agua tibia y detergente suave, y se seca en secadora a temperatura baja.</li></ul></section></div></article>
+    <article class="pr" id="columpio-6"><header class="pr-cab"><div class="pr-tit"><span class="pr-marca">Southpaw</span><h3>Columpio Hamaca Adulto</h3></div><div class="pr-valor"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$750.622</span></div></header><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b><span>En bodega, entrega inmediata</span></p><div class="pr-cuerpo"><div class="gal" data-gal="g7" data-tit="Columpio Hamaca Adulto"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Columpio Hamaca Adulto"><img src="img/hamaca-1.jpg" alt="Columpio Hamaca Adulto" loading="lazy" data-i="0"></button></div><div class="pr-info"><p class="pr-que">Hamaca, talla adulto, que cuelga de un solo punto y sostiene el cuerpo de forma completa y pareja: no se junta ni se arruga con el peso de la persona. Funciona como una red, pero sin enredarse.</p><section class="pr-sec"><h4>Para qué sirve en terapia</h4><ul class="pr-ul"><li>Da estimulación vestibular, que trabaja el equilibrio y la coordinación.</li><li>Ayuda a sentir el propio cuerpo y a orientarse en el espacio.</li><li>Su presión suave da seguridad y calma.</li><li>Sostiene a la persona con el cuerpo recogido.</li></ul></section><section class="pr-sec"><h4>Cómo se usa</h4><ul class="pr-ul"><li>Boca abajo o sentado.</li><li>Al colgar de un solo punto, se mueve en todas las direcciones.</li><li>Se cuelga pasando el mosquetón por las argollas de las puntas de la cinta y enganchándolo al sistema de suspensión; luego se ajusta la altura para cada persona.</li><li>La etiqueta a ambos lados marca el centro de gravedad y de equilibrio.</li><li>La persona puede necesitar ayuda para entrar.</li></ul></section></div></div><div class="pr-secs"><section class="pr-sec"><h4>Medidas y peso</h4><dl class="pr-dl"><div><dt>Alto</dt><dd>150 cm</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>1,8 kg</dd></div><div><dt>Altura mínima de techo</dt><dd>2,4 m</dd></div><div><dt>Espacio libre alrededor</dt><dd>1,8 m</dd></div></dl></section><section class="pr-sec"><h4>Materiales</h4><p>Tela de nylon tejida, suave al tacto, con refuerzos de vinilo resistente para darle fuerza y duración.</p></section><section class="pr-sec"><h4>Qué incluye</h4><p>Un mosquetón de seguridad con seguro.</p></section><section class="pr-sec"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura. Según la altura del techo, puede necesitar también la cuerda de terapia y el ajustador de altura del mismo kit.</p></section><section class="pr-sec"><h4>Cuidados y limpieza</h4><ul class="pr-ul"><li>Una vez al mes: revisar el mosquetón y la cinta en el punto donde roza con él; si hay desgaste, dejar de usarla.</li><li>Revisar las costuras entre la tela, el vinilo y la cinta; si hay puntadas sueltas, dejar de usarla hasta repararla.</li><li>Limpieza: el vinilo con un paño húmedo, sin sumergirlo; la tela se puede lavar a mano cuidando de no mojar el vinilo. Secar colgada.</li></ul></section></div></article>
+    <article class="pr" id="columpio-7"><header class="pr-cab"><div class="pr-tit"><span class="pr-marca">Advantage</span><h3>Columpio Plataforma de Balanceo</h3></div><div class="pr-valor"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$671.838</span></div></header><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 2 unidades</b><span>En bodega, entrega inmediata</span></p><div class="pr-cuerpo"><div class="gal" data-gal="g8" data-tit="Columpio Plataforma de Balanceo"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Columpio Plataforma de Balanceo"><img src="img/plataforma-1.jpg" alt="Columpio Plataforma de Balanceo" loading="lazy" data-i="0"></button><div class="gal-ths"><button type="button" class="gal-th" aria-current="true" data-i="0" data-src="img/plataforma-1.jpg" aria-label="Foto 1 de 2"><img src="img/plataforma-1.jpg" alt="" loading="lazy"></button><button type="button" class="gal-th" data-i="1" data-src="img/plataforma-2.jpg" aria-label="Foto 2 de 2"><img src="img/plataforma-2.jpg" alt="" loading="lazy"></button></div></div><div class="pr-info"><p class="pr-que">Plataforma de balanceo acolchada, una versión más simple de la plataforma clásica. Cuelga de cuatro puntos y, desde las cuerdas, se provocan balanceos e inclinaciones en cualquier dirección.</p><section class="pr-sec"><h4>Para qué sirve en terapia</h4><ul class="pr-ul"><li>Trabaja el equilibrio, la postura y el control del tronco.</li><li>El movimiento se gradúa según lo que cada persona tolera.</li><li>Da estimulación vestibular completa, en varias direcciones.</li><li>El uso continuo fortalece los músculos que dan estabilidad y equilibrio.</li></ul></section><section class="pr-sec"><h4>Cómo se usa</h4><ul class="pr-ul"><li>Acostado boca abajo, sentado, de rodillas o de pie.</li><li>Se cuelga enganchando el mosquetón que trae arriba al sistema de ajuste de altura.</li></ul></section></div></div><div class="pr-secs"><section class="pr-sec"><h4>Medidas y peso</h4><dl class="pr-dl"><div><dt>Medidas</dt><dd>78 × 78 cm, 150 cm de alto</dd></div><div><dt>Soporta hasta</dt><dd>135 kg</dd></div><div><dt>Peso del columpio</dt><dd>8 kg</dd></div><div><dt>Altura mínima de techo</dt><dd>2,4 m</dd></div><div><dt>Espacio libre alrededor</dt><dd>1,8 m</dd></div></dl></section><section class="pr-sec"><h4>Materiales</h4><p>Base de madera con bordes acolchados y alfombra de nylon que se saca.</p></section><section class="pr-sec"><h4>Qué incluye</h4><p>La plataforma, su alfombra y un mosquetón.</p></section><section class="pr-sec"><h4>Para colgarlo</h4><p>Se cuelga con un dispositivo de rotación y un mosquetón de seguridad, que vienen en el Kit de Suspensión y Ajuste en Altura. Se recomienda también el ajustador de altura, que viene en el mismo kit.</p></section><section class="pr-sec"><h4>Cuidados y limpieza</h4><ul class="pr-ul"><li>Una vez al mes: revisar que no falten ni estén sueltos los seguros metálicos de las cuerdas; si es así, dejar de usarla hasta repararla.</li><li>Revisar que la madera no tenga trizaduras (si las tiene, dejar de usarla; las astillas se lijan) y que el acolchado del borde esté firme.</li><li>Limpieza: sacudir o pasar un paño húmedo.</li></ul></section><section class="pr-sec"><h4>Seguridad</h4><ul class="pr-ul"><li>El borde está acolchado, pero igual puede dar un buen golpe: hay que usarla con cuidado.</li></ul></section></div><div class="pr-op"><p class="pr-op-rot">Opcional para este columpio</p><div class="pr-op-cuerpo"><div class="gal gal-chica" data-gal="g9" data-tit="Correa Elástica Vertical"><button type="button" class="gal-main" aria-label="Ver la foto en grande: Correa Elástica Vertical"><img src="img/correa-1.jpg" alt="Correa Elástica Vertical" loading="lazy" data-i="0"></button></div><div class="pr-op-info"><h4 class="pr-op-n">Correa Elástica Vertical</h4><p>Correa elástica que va entre el techo y el columpio y le agrega rebote hacia arriba y hacia abajo al balanceo, de forma controlada. Da estimulación vestibular y propioceptiva.</p><h5>Cómo se usa</h5><ul class="pr-ul"><li>Se engancha al sistema de suspensión con el mosquetón de arriba, y el columpio va en el mosquetón de abajo.</li><li>Para elegir cuántos bucles usar: sumar el peso de la persona y el del columpio, y poner bucles que en total soporten más o menos ese peso (cada bucle simple, 15 kg; cada doble, 30 kg).</li><li>Si en cada rebote los bucles se estiran al máximo, hay que agregar más bucles.</li><li>Girar el seguro de cada mosquetón hasta que quede cerrado.</li></ul><h5>Qué incluye</h5><p>2 mosquetones de seguridad con seguro y 4 bucles elásticos de uso industrial: 2 simples y 2 dobles.</p><h5>Medidas y peso</h5><dl class="pr-dl"><div><dt>Alto</dt><dd>50 cm</dd></div><div><dt>Soporta</dt><dd>de 15 a 80 kg; hasta 110 kg cambiando bucles simples por dobles</dd></div><div><dt>Peso</dt><dd>1 kg</dd></div><div><dt>Altura mínima de techo</dt><dd>2,4 m</dd></div></dl><h5>Cuidados y seguridad</h5><p>El sistema de suspensión del techo tiene que aguantar el movimiento más fuerte que provoca el rebote, y la conexión de arriba se revisa antes de cada uso. Los bucles se desgastan con el uso: si se ve o está roto el elástico de adentro, se cambian. No se moja; el polvo se aspira.</p></div><div class="pr-op-pie"><div class="pr-valor pr-valor-op"><span class="pr-lab">Valor unitario con IVA</span><span class="pr-v">$732.258</span></div><p class="pr-stock"><b>Disponibles hoy (13 de octubre de 2026): 1 unidad</b><span>En bodega, entrega inmediata</span></p></div></div></div></article>
   </section>
 
-  <div class="op-aviso cl-aviso"><b>Lo que incluyen estos valores</b>Solo los productos, con IVA incluido. No incluyen despacho, instalación ni la fijación al techo. Ninguno de los columpios trae su fijación al techo, porque no hay una solución igual para todos los techos: lo recomendable es que un arquitecto, un ingeniero o un constructor revise el techo y les indique en cada caso la mejor forma de fijarlos.</div>
+  <section class="fin">
+    <div>
+      <h2>Seguridad en todos los columpios</h2>
+      <ul class="pr-ul"><li>Úsenlos siempre con supervisión. Están pensados para terapia, no para juego libre ni para exteriores.</li><li>Pongan colchonetas del grosor adecuado debajo y alrededor de cada columpio, y protección en los muros.</li><li>Dejen al menos 1,8 m libres hacia las paredes y otros obstáculos.</li><li>Cuélguenlos siempre con dispositivo de rotación y mosquetones de acero. El fabricante no recomienda mosquetones de aluminio, porque se gastan mucho más rápido.</li><li>Una vez al mes revisen mosquetones, costuras, cuerdas y el perno del techo. Un perno que se mueve más de 6 mm en cualquier dirección no es seguro.</li><li>Guárdenlos lejos del sol directo y donde no se puedan usar sin supervisión. Antes de limpiarlos, revisen si alguien tiene alergias.</li></ul>
+    </div>
+    <div>
+      <h2>Condiciones</h2>
+      <dl class="cond"><div><dt>Valores</dt><dd>Por unidad, con IVA incluido.</dd></div><div><dt>Validez</dt><dd>60 días desde el 13 de octubre de 2026.</dd></div><div><dt>Stock</dt><dd>Al 13 de octubre de 2026, en nuestra bodega y para entrega inmediata. Sujeto a disponibilidad.</dd></div><div><dt>No incluye</dt><dd>Despacho, instalación ni fijación al techo.</dd></div><div><dt>Fijación al techo</dt><dd>Ninguno de los columpios trae su fijación al techo, porque no hay una solución igual para todos los techos. Lo recomendable es que un arquitecto, un ingeniero o un constructor revise el techo y les indique la mejor forma de fijar cada columpio.</dd></div></dl>
+    </div>
+  </section>
   <p class="cl-final">Déjennos saber cuáles les interesan y les preparamos la cotización. Quedo muy pendiente a sus comentarios.</p>
-
-  <div class="cierre">
-    Valores por unidad, con IVA incluido, válidos por 60 días. Solo productos: no incluyen despacho, instalación ni fijación al techo. Stock al 13 de octubre de 2026, sujeto a disponibilidad en bodega.
-  </div>
 
   <div class="firma">
     <div class="ct">
@@ -1903,26 +1901,59 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
     </div>
   </div>
 </div>
+<div class="gx" id="gx" hidden role="dialog" aria-modal="true" aria-label="Foto en grande">
+  <figure class="gx-fig"><img id="gxImg" alt=""><figcaption class="gx-pie"><span id="gxTit"></span><span id="gxN"></span></figcaption></figure>
+  <button type="button" class="gx-x" id="gxX">Cerrar</button>
+  <button type="button" class="gx-ant" id="gxAnt" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button type="button" class="gx-sig" id="gxSig" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
 <script>
-/* ══ EL PAPEL (?imprimir=1 o Ctrl+P): las hojas las armamos nosotros, igual que en la base ══
-   Cada bloque se mide al ancho real del papel y se va llenando hoja por hoja; las tarjetas
-   van de a dos por fila; un título no queda solo al pie; la firma va al fondo de la última. */
+(function(){
+  var gx = document.getElementById('gx'), gImg = document.getElementById('gxImg'), gTit = document.getElementById('gxTit'), gN = document.getElementById('gxN');
+  var actual = null, idx = 0;
+  function fotosDe(g){ var t = g.querySelectorAll('.gal-th'); if (!t.length) return [g.querySelector('.gal-main img').getAttribute('src')]; return [].map.call(t, function(b){ return b.getAttribute('data-src'); }); }
+  function marcar(g, i){
+    var t = g.querySelectorAll('.gal-th'); if (!t.length) return;
+    [].forEach.call(t, function(b, k){ if (k === i) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+    var m = g.querySelector('.gal-main img'); m.src = t[i].getAttribute('data-src'); m.setAttribute('data-i', i);
+  }
+  function mostrar(){ var f = fotosDe(actual); idx = (idx + f.length) % f.length; gImg.src = f[idx]; gImg.alt = actual.getAttribute('data-tit'); gTit.textContent = actual.getAttribute('data-tit'); gN.textContent = f.length > 1 ? (idx + 1) + ' de ' + f.length : ''; document.getElementById('gxAnt').hidden = document.getElementById('gxSig').hidden = f.length < 2; }
+  function abrir(g, i){ actual = g; idx = i; mostrar(); gx.hidden = false; document.body.style.overflow = 'hidden'; document.getElementById('gxX').focus(); }
+  function cerrar(){ gx.hidden = true; document.body.style.overflow = ''; gImg.removeAttribute('src'); }
+  document.addEventListener('click', function(ev){
+    var t = ev.target.closest ? ev.target.closest('.gal-th, .gal-main, #gxX, #gxAnt, #gxSig') : null;
+    if (!t) { if (ev.target === gx) cerrar(); return; }
+    if (t.id === 'gxX') return cerrar();
+    if (t.id === 'gxAnt'){ idx--; mostrar(); return; }
+    if (t.id === 'gxSig'){ idx++; mostrar(); return; }
+    var g = t.closest('.gal'); if (!g || t.closest('#impresion')) return;
+    if (t.classList.contains('gal-th')) { marcar(g, +t.getAttribute('data-i')); return; }
+    abrir(g, +(t.querySelector('img').getAttribute('data-i') || 0));
+  });
+  document.addEventListener('keydown', function(ev){
+    if (gx.hidden) return;
+    if (ev.key === 'Escape') cerrar();
+    else if (ev.key === 'ArrowLeft'){ idx--; mostrar(); }
+    else if (ev.key === 'ArrowRight'){ idx++; mostrar(); }
+  });
+})();
 (function(){
   var HOLGURA = 12;
   function piezasDe(hoja){
     var lista = [];
     [].forEach.call(hoja.children, function(el){
       if (el.classList.contains('filo')) return;
-      if (el.classList.contains('cl')){
-        var grid = el.querySelector('.cl-grid'), cab = el.cloneNode(false);
-        for (var n = el.firstElementChild; n && n !== grid; n = n.nextElementSibling) cab.appendChild(n.cloneNode(true));
-        cab.dataset.titulo = '1'; lista.push(cab);
-        var t = [].slice.call(grid.children);
-        for (var i = 0; i < t.length; i += 1){
-          var c = el.cloneNode(false); c.removeAttribute('id'); c.classList.add('cl-fila');
-          var g = grid.cloneNode(false); t.slice(i, i + 1).forEach(function(x){ g.appendChild(x.cloneNode(true)); });
-          c.appendChild(g); lista.push(c);
-        }
+      if (el.classList.contains('cat')){
+        [].forEach.call(el.children, function(h){
+          if (h.classList.contains('cat-cab')){ var c = el.cloneNode(false); c.removeAttribute('id'); c.appendChild(h.cloneNode(true)); c.dataset.titulo = '1'; lista.push(c); return; }
+          if (!h.classList.contains('pr')) return;
+          var a = h.cloneNode(false); a.removeAttribute('id');
+          [].forEach.call(h.children, function(x){ if (x.classList.contains('pr-cab') || x.classList.contains('pr-stock') || x.classList.contains('pr-cuerpo')) a.appendChild(x.cloneNode(true)); });
+          a.dataset.titulo = '1'; lista.push(a);
+          [].forEach.call(h.children, function(x){
+            if (x.classList.contains('pr-secs') || x.classList.contains('pr-op')){ var b = h.cloneNode(false); b.removeAttribute('id'); b.classList.add('pr-cont'); b.appendChild(x.cloneNode(true)); lista.push(b); }
+          });
+        });
         return;
       }
       lista.push(el.cloneNode(true));
@@ -1951,7 +1982,7 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
       if (desborda() && !sola()){
         var previo = p.classList.contains('firma') ? p.previousElementSibling : null;
         nuevaHoja();
-        if (previo && previo.classList.contains('cierre')) pagina.appendChild(previo);
+        if (previo && previo.classList.contains('cl-final')) pagina.appendChild(previo);
         pagina.appendChild(p);
       }
     });
@@ -1972,21 +2003,19 @@ body .g2 .p2.p2-foto .p2-l{text-shadow:0 1px 6px rgba(0,26,96,.6)}
     return fotosListas(hoja).then(function(){ var c = paginar(); return fotosListas(c).then(function(){ document.body.dataset.hojas = c.children.length; }); });
   }
   window.addEventListener('afterprint', function(){
-    if (/[?&]imprimir=1/.test(location.search)) return;
+    if (location.search.indexOf('imprimir=1') >= 0) return;
     document.body.classList.remove('imprimiendo'); var c = document.getElementById('impresion'); if (c) c.parentNode.removeChild(c);
   });
   window.addEventListener('beforeprint', function(){
     if (document.getElementById('impresion')) return;
     document.body.classList.add('imprimiendo'); paginar();
   });
-  if (/[?&]imprimir=1/.test(location.search)){ document.body.classList.add('imprimiendo', 'ver-hojas'); armarHojas(); }
+  if (location.search.indexOf('imprimir=1') >= 0){ document.body.classList.add('imprimiendo', 'ver-hojas'); armarHojas(); }
 })();
 </script>
-<!-- TEMA-OSCURO-INI · 23-sep-2026: si el celular está en modo oscuro, la propuesta se muestra en NUESTRA
-     versión oscura (azul marino, textos claros, calipso) en vez de que el navegador la oscurezca a su manera
-     (Rayen lo vio así en su celular: fondo negro y el logo negro). En el PDF siempre sale clara. -->
+
 <style>
-/* Rayen, 23-sep-2026: «agranda nuestro logo en la portada, está muy pequeño» */
+
 body .portada img.logo{height:124px;margin-bottom:18px;filter:none}
 @media(max-width:560px){body .portada img.logo{height:104px;margin-bottom:14px}}
 body .pg .portada img.logo{height:112px;margin-bottom:14px}
@@ -2001,18 +2030,18 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
   function rgb(s){ var m = /rgba?\(([^)]+)\)/.exec(s || ''); if(!m) return null; var p = m[1].split(/[ ,/]+/).map(parseFloat); return {r:p[0], g:p[1], b:p[2], a:(p.length > 3 && !isNaN(p[3])) ? p[3] : 1}; }
   function luz(c){ return (0.2126*c.r + 0.7152*c.g + 0.0722*c.b) / 255; }
   function sat(c){ var mx = Math.max(c.r,c.g,c.b), mn = Math.min(c.r,c.g,c.b); return mx ? (mx - mn) / mx : 0; }
-  /* fondos claros → azules marinos; mientras más blanco, más oscuro */
+  
   function fondo(c){
     var l = luz(c);
-    if (l > 0.97) return 'rgba(17,30,66,' + c.a + ')';          /* blanco: tarjeta */
-    if (l > 0.90) return 'rgba(21,36,78,' + c.a + ')';          /* casi blanco: recuadro */
-    return 'rgba(28,46,96,' + c.a + ')';                        /* celeste pálido */
+    if (l > 0.97) return 'rgba(17,30,66,' + c.a + ')';          
+    if (l > 0.90) return 'rgba(21,36,78,' + c.a + ')';          
+    return 'rgba(28,46,96,' + c.a + ')';                        
   }
   function texto(c){
     var l = luz(c), s = sat(c);
-    if (l < 0.18 && c.b > c.r + 20) return '#FFFFFF';           /* azul marino de títulos */
-    if (l < 0.45 && s < 0.35) return l < 0.25 ? '#E8EEF8' : '#B9C5D9';  /* grises de texto */
-    if (l < 0.45) return '#7FD9FF';                             /* azules oscuros: calipso claro */
+    if (l < 0.18 && c.b > c.r + 20) return '#FFFFFF';           
+    if (l < 0.45 && s < 0.35) return l < 0.25 ? '#E8EEF8' : '#B9C5D9';  
+    if (l < 0.45) return '#7FD9FF';                             
     return null;
   }
   function poner(el, prop, val){ guardado.push([el, prop, el.style.getPropertyValue(prop), el.style.getPropertyPriority(prop)]); el.style.setProperty(prop, val, 'important'); }
@@ -2048,7 +2077,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
   }
   function revisar(){ if (mq && mq.matches) aplicar(); else if (document.documentElement.classList.contains('tema-oscuro')) quitar(); }
   window.__temaOscuro = {aplicar: aplicar, quitar: quitar, revisar: revisar};
-  /* las fichas y ventanas que se arman después también se oscurecen */
+  
   var tMo = null;
   if (window.MutationObserver) new MutationObserver(function(){
     if (!document.documentElement.classList.contains('tema-oscuro')) return;
@@ -2060,6 +2089,6 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
   if (document.readyState === 'complete') setTimeout(revisar, 50); else window.addEventListener('load', function(){ setTimeout(revisar, 50); });
 })();
 </script>
-<!-- TEMA-OSCURO-FIN -->
+
 </body>
 </html>
