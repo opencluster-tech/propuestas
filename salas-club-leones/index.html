@@ -2913,8 +2913,69 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
   }
 </script>
 <!--APP-LUMINEA-FIN-->
-<script src="SensorialBodega.js?v=1792697095421"></script>
-<script src="NuestrasSalas.js?v=1792697095421"></script>
+<script src="SensorialBodega.js?v=1792697474853"></script>
+<script src="NuestrasSalas.js?v=1792697474853"></script>
+<style>
+/* sensory_go_trae.js */
+.sgt{margin:18px 0 20px}
+.sgt-h{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#001A60;margin:0 0 4px}
+.sgt-p{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:#4B5563}
+.sgt-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
+.sgt-c{display:flex;flex-direction:column;padding:0;border:1px solid #DCE6FA;border-radius:12px;background:#fff;overflow:hidden;cursor:pointer;font:inherit;text-align:left;color:#001A60}
+.sgt-c:hover,.sgt-c:focus-visible{border-color:#08ACF2;outline:none;box-shadow:0 8px 18px -14px rgba(0,26,96,.6)}
+.sgt-f{display:block;position:relative;aspect-ratio:1/1;background:#F4F8FF;overflow:hidden}
+.sgt-f img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:contain}
+.sgt-n{display:block;padding:7px 8px 8px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;line-height:1.25}
+.sgt-n small{display:block;font-weight:600;font-size:10px;color:#0A8FCC;margin-top:2px}
+.go .sgt,.go-in .sgt{background:#fff;border-radius:16px;padding:16px}
+@media (max-width:560px){.sgt-g{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.sgt-n{font-size:10.5px;padding:6px}}
+</style>
+<script>
+/* sensory_go_trae.js: lo que trae el Sensory Go, elemento por elemento */
+(function(){
+  var GO = [["Carro del Sensory Go","Carro con ruedas"],["Sistema SHX Compact","SHX Compact con proyector"],["Tablet SHX/Luminea","Tablet de control"],["Amplificador de sonido y altavoz","Amplificador y altavoz"],["Tubo de burbujas de 120 cm","Tubo de burbujas 120 cm"],["Fibra óptica Luminea 3m","Fibra óptica 3 m"],["Unidad de vibración","Unidad de vibración"],["Cojín vibroacústico","Cojín vibroacústico"],["Button 6","Button 6"],["Button 1","Button 1"],["SHX Proximity","SHX Proximity"],["Estrellas SHX","Estrellas SHX"],["Router Luminea","Router"]], FULL = [["Piscina Luminea vibroacústica","Piscina de bolas Luminea"],["Puff transformable vibroacústico","Puff vibroacústico"],["Amplificador vibroacústico adicional","Amplificador vibroacústico"],["Difusor de aromaterapia","Difusor de aromas"],["Kit de iniciación de aromaterapia","Kit de aromaterapia"],["Suelo Luminoso","Suelo Luminoso"]], CORTAS = [{"n":"Carro del Sensory Go","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-6.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Carro con ruedas, estanterías y espejo acolchado, de 46 × 96 × 130 cm con el tubo. Guarda todo el equipo y se lleva de una sala a otra. Viene incluido en el Sensory Go.","que":"Carro con ruedas, estanterías y espejo acolchado, de 46 × 96 × 130 cm con el tubo. Guarda todo el equipo y se lleva de una sala a otra. Viene incluido en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Carro con ruedas, estanterías y espejo acolchado, de 46 × 96 × 130 cm con el tubo. Guarda todo el equipo y se lleva de una sala a otra. Viene incluido en el Sensory Go.","sgCorta":true},{"n":"Tablet SHX/Luminea","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-1.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"La tablet de control del Sensory Go, para el Sistema SHX y los equipos Luminea. Viene incluida en el Sensory Go.","que":"La tablet de control del Sensory Go, para el Sistema SHX y los equipos Luminea. Viene incluida en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"La tablet de control del Sensory Go, para el Sistema SHX y los equipos Luminea. Viene incluida en el Sensory Go.","sgCorta":true},{"n":"Amplificador de sonido y altavoz","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-3.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Amplificador de sonido y altavoz integrados en el carro, para la música y el sonido de cada escena. Vienen incluidos en el Sensory Go.","que":"Amplificador de sonido y altavoz integrados en el carro, para la música y el sonido de cada escena. Vienen incluidos en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Amplificador de sonido y altavoz integrados en el carro, para la música y el sonido de cada escena. Vienen incluidos en el Sensory Go.","sgCorta":true},{"n":"Tubo de burbujas de 120 cm","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-8.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Tubo de burbujas de 120 cm, montado en el carro. Viene incluido en el Sensory Go.","que":"Tubo de burbujas de 120 cm, montado en el carro. Viene incluido en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Tubo de burbujas de 120 cm, montado en el carro. Viene incluido en el Sensory Go.","sgCorta":true},{"n":"Unidad de vibración","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-5.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"La unidad de vibración del carro, que lleva la música al cojín vibroacústico. Viene incluida en el Sensory Go.","que":"La unidad de vibración del carro, que lleva la música al cojín vibroacústico. Viene incluida en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"La unidad de vibración del carro, que lleva la música al cojín vibroacústico. Viene incluida en el Sensory Go.","sgCorta":true},{"n":"Router Luminea","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/router-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"El router de la red propia del Sensory Go. Viene incluido en el Sensory Go.","que":"El router de la red propia del Sensory Go. Viene incluido en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"El router de la red propia del Sensory Go. Viene incluido en el Sensory Go.","sgCorta":false},{"n":"Suelo Luminoso","oc":"OC-2406","cat":4,"tam":2,"img":"SalasMultisensoriales_Recortadas/suelo-luminoso.jpg","imgs":["SalasMultisensoriales_Recortadas/suelo-luminoso-1.jpg","SalasMultisensoriales_Recortadas/suelo-luminoso-2.jpg"],"aprox":false,"est":["Vista","Movimiento"],"fun":"","frase":"Superficie que cambia de color con cada movimiento.","que":"Una superficie que cambia de color con cada movimiento y convierte el suelo en un lugar de juego, aprendizaje y exploración.","trab":"Movimiento · Atención · Reconocimiento de colores · Secuencias y circuitos · Causa-efecto · Coordinación y equilibrio","ind":"","inc":"","tec":"Medidas de 60 × 60 × 13 cm. Recargable, con adaptador de corriente. Fosforescente.","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Superficie luminosa de 60 × 60 × 13 cm que cambia de color con cada movimiento. Convierte el suelo en un lugar para moverse, jugar y explorar, solo o en grupo. Es recargable, con su adaptador de corriente."}];
+
+      function todos() { return (window.SENSORIAL_BODEGA || []).concat(window.NUESTRAS_EXTRA || []); }
+      function busca(n) { var l = todos(); for (var i = 0; i < l.length; i++) if (l[i].n === n) return l[i]; return null; }
+      window.NUESTRAS_EXTRA = window.NUESTRAS_EXTRA || [];
+      CORTAS.forEach(function (c) { if (!busca(c.n)) window.NUESTRAS_EXTRA.push(c); });
+      function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+      function card(e, nota) { var p = busca(e[0]) || {}; return '<button type="button" class="sgt-c" data-ficha="' + esc(e[0]) + '"><span class="sgt-f"><img src="' + esc(p.img || 'isotipo-oct.png') + '" alt="" loading="lazy"></span>' +
+        '<span class="sgt-n">' + esc(e[1]) + (nota ? '<small>' + esc(nota) + '</small>' : '') + '</span></button>'; }
+      function html(full) {
+        return '<div class="sgt" data-sgt-hecho="1"><h4 class="sgt-h">' + (full ? 'Qué trae el Sensory Go SHX Full' : 'Qué trae el Sensory Go SHX') + '</h4>' +
+          '<p class="sgt-p">' + (full ? 'Todo lo del Sensory Go SHX, más la piscina, el puff, el aroma y la luz en el suelo. ' : '') + 'Toquen cada elemento para ver su ficha.</p>' +
+          '<div class="sgt-g">' + GO.map(function (e) { return card(e, full ? 'En el carro' : ''); }).join('') + (full ? FULL.map(function (e) { return card(e, 'Se suma en el Full'); }).join('') : '') + '</div></div>';
+      }
+      window.sgtHTML = html;
+      function llena(root) {
+        [].forEach.call((root || document).querySelectorAll('[data-sgt]'), function (c) { if (!c.querySelector('[data-sgt-hecho]')) c.innerHTML = html(c.getAttribute('data-sgt') === 'full'); });
+      }
+      /* en la ficha del Sensory Go y del Full, y en la ventana de una sala/opción con ese nombre */
+      function enFicha() {
+        var cu = document.getElementById('fxCuerpo'); if (!cu) return;
+        var h = cu.querySelector('.fx-n'), der = cu.querySelector('.fx-der'); if (!h || !der || der.querySelector('[data-sgt-hecho]')) return;
+        var n = h.textContent; if (n !== 'Sensory Go SHX' && n !== 'Sensory Go SHX Full') return;
+        var d = der.querySelector('.fx-desc'); var w = document.createElement('div'); w.innerHTML = html(n === 'Sensory Go SHX Full');
+        if (d && d.nextSibling) der.insertBefore(w.firstChild, d.nextSibling); else der.appendChild(w.firstChild);
+      }
+      function enSala() {
+        var t = document.getElementById('svTopN'), cu = document.getElementById('svCuerpo'); if (!t || !cu || cu.querySelector('[data-sgt-hecho]')) return;
+        var n = (cu.querySelector('.sv-hero h2') || {}).textContent || t.textContent;
+        if (n !== 'Sensory Go SHX' && n !== 'Sensory Go SHX Full') return;
+        var lead = cu.querySelector('.sv-lead'); if (!lead) return;
+        var w = document.createElement('div'); w.innerHTML = html(n === 'Sensory Go SHX Full'); lead.parentNode.insertBefore(w.firstChild, lead.nextSibling);
+      }
+      function arranca() {
+        llena();
+        var fc = document.getElementById('fxCuerpo'); if (fc) new MutationObserver(enFicha).observe(fc, { childList: true });
+        var sc = document.getElementById('svCuerpo'); if (sc) new MutationObserver(enSala).observe(sc, { childList: true });
+        enSala();
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arranca); else arranca();
+    
+})();
+</script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -3167,6 +3228,10 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
           (s.total ? '<div class="sv-dato sv-dato-v"><b>' + pesos(s.total) + '</b><span>valor de la sala<br>completa, IVA incluido</span></div>' : '') +
         '</div>' +
         '<p class="sv-lead">' + esc(s.txt) + '</p>' +
+        /* Rayen, 22-oct-2026: «los productos tienen que estar al principio… la gente se motiva al ver los productos»: los elementos van justo después de la descripción */
+        '<div class="sv-t">Elemento por elemento</div><h3 class="sv-h">Qué compone la sala</h3>' +
+        '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha: qué es, qué se trabaja con él, para quién está indicado y sus características. Cada elemento se puede cambiar o sumar según lo que necesiten.</p>' +
+        '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
         (s.porque && s.porque.length
           ? '<div class="sv-t">Cómo actúa en el cuerpo</div><h3 class="sv-h">Cómo trabajan juntos <em>los estímulos</em></h3>' +
             estimulosHTML(s.porque) +
@@ -3193,9 +3258,6 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
         '<div class="sv-tera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/><path d="M17.5 19.5a5.4 5.4 0 0 0-2.6-4.6"/></svg>' +
           '<p><b>Una sala pensada por expertos.</b> Esta combinación de elementos la definieron nuestros profesionales expertos en entornos sensoriales y neurodivergencia. Para su institución, ellos la revisan según las personas que la van a usar y sus diagnósticos, y la ajustan hasta que responda a su necesidad.</p></div>' +
         (s.total ? '<div class="sv-tera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg><p><b>El valor de ' + pesos(s.total) + ' es el de la sala completa, con IVA incluido.</b> La capacitación, la instalación y el transporte se cobran en cada visita al establecimiento, según la región donde está la escuela.</p></div>' : '') +
-        '<div class="sv-t">Elemento por elemento</div><h3 class="sv-h">Qué compone la sala</h3>' +
-        '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha: qué es, qué se trabaja con él, para quién está indicado y sus características. Cada elemento se puede cambiar o sumar según lo que necesiten.</p>' +
-        '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
         appDe(s) + /*APP-LUMINEA*/
       '</div>' +
       '<div class="sv-pie">' +
@@ -3765,7 +3827,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 22 de octubre a las 16:24</div>
+<div id="verPill" class="ver-pill">Versión del 22 de octubre a las 16:31</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -3776,7 +3838,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1792697095421';
+(function(){ var V = '1792697474853';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });

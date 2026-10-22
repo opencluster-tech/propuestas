@@ -2353,6 +2353,10 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
           (s.logra && s.logra.length ? '<div class="sv-dato"><b>' + s.logra.length + '</b><span>cosas que se trabajan<br>desde el primer día</span></div>' : '') +
         '</div>' +
         '<p class="sv-lead">' + esc(s.txt) + '</p>' +
+        /* Rayen, 22-oct-2026: «los productos tienen que estar al principio… la gente se motiva al ver los productos»: los elementos van justo después de la descripción */
+        '<div class="sv-t">Elemento por elemento</div><h3 class="sv-h">Qué compone la sala</h3>' +
+        '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha: qué es, qué se trabaja con él, para quién está indicado y sus características. Cada elemento se puede cambiar o sumar según lo que necesiten.</p>' +
+        '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
         (s.porque && s.porque.length
           ? (s.ventaja ? '<div class="sv-t">Cómo actúa en el cuerpo</div><h3 class="sv-h">Cómo trabajan juntos <em>los estímulos</em></h3>' : '<div class="sv-t">Lo que la hace distinta</div><h3 class="sv-h">Por qué esta sala <em>es especial</em></h3>') +
             estimulosHTML(s.porque) +
@@ -2378,9 +2382,6 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
           esc(s.aviso.t) + '</div>' + s.aviso.p.map(function(x){ return '<p>' + esc(x) + '</p>'; }).join('') + '</div>' : '') +
         '<div class="sv-tera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/><path d="M17.5 19.5a5.4 5.4 0 0 0-2.6-4.6"/></svg>' +
           '<p><b>Una sala pensada por expertos.</b> Esta combinación de elementos la definieron nuestros profesionales expertos en entornos sensoriales y neurodivergencia. Para su institución, ellos la revisan según las personas que la van a usar y sus diagnósticos, y la ajustan hasta que responda a su necesidad.</p></div>' +
-        '<div class="sv-t">Elemento por elemento</div><h3 class="sv-h">Qué compone la sala</h3>' +
-        '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha: qué es, qué se trabaja con él, para quién está indicado y sus características. Cada elemento se puede cambiar o sumar según lo que necesiten.</p>' +
-        '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
         appDe(s) + /*APP-LUMINEA*/
       '</div>' +
       '<div class="sv-pie">' +
