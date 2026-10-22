@@ -2414,6 +2414,94 @@ body:has(#mnuVelo:not([hidden])) #verPill{display:none !important}
   </div>
 
 
+  <!-- ── Opciones de salas: tres formas (Rayen, 25-sep-2026) ── -->
+  <div class="nx opc" id="opciones">
+    <div class="rot">Opciones de salas</div>
+    <h2>Tres formas de adquirir<br><em>su espacio sensorial</em></h2>
+    <p class="nx-baja">Elijan la que mejor calce con su centro. Toquen una opción para ver todo lo que incluye, con sus valores.</p>
+    <div class="opc-g">
+      <button type="button" class="opc-c" data-op="1">
+        <span class="opc-n">1</span>
+        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/opcion-shx2-portada.jpg" alt="" loading="lazy"></span>
+        <span class="opc-tx"><b>Una sala completa</b><span>Diseñamos su sala a su medida. Como ejemplo, ocho salas pensadas para el centro de salud, cada una con su valor.</span></span>
+        <span class="opc-ir">Ver las salas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+      </button>
+      <button type="button" class="opc-c" data-op="2">
+        <span class="opc-n">2</span>
+        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/opcion-luminea-tablet.jpg" alt="" loading="lazy"></span>
+        <span class="opc-tx"><b>Una sala por etapas</b><span>Cuatro de las salas de la opción 1, divididas en tres etapas, una por año. La sala funciona desde la primera etapa.</span></span>
+        <span class="opc-ir">Ver las etapas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+      </button>
+      <button type="button" class="opc-c" data-op="3">
+        <span class="opc-n">3</span>
+        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg" alt="" loading="lazy"></span>
+        <span class="opc-tx"><b>Una estación sensorial móvil</b><span>Si no tienen espacio para una sala: todo en un mueble con ruedas que va de una sala a otra.</span></span>
+        <span class="opc-ir">Ver la estación<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+<!--APP-LUMINEA-SECCION-INI · lo pone app_luminea.js; no se edita a mano-->
+<style>
+/* La sección «App Luminea» en la parte principal (9-oct-2026; más lujo el 11-oct-2026). Nada clickeable en naranjo. */
+.lum{padding:30px 54px 30px;border-bottom:1px solid #E5E9F0;background:linear-gradient(180deg,#fff 0%,#F5FAFF 100%)}
+.lum-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;border-radius:20px;overflow:hidden;color:#fff;
+  background:radial-gradient(120% 160% at 100% 0%,rgba(8,172,242,.55) 0%,rgba(8,172,242,0) 55%),linear-gradient(125deg,#00124A 0%,#002A80 60%,#0A4BAE 100%);
+  box-shadow:0 22px 46px -24px rgba(0,26,96,.7)}
+.lum-t{padding:24px 28px 22px}
+.lum-rot{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8FDDFF}
+.lum-h{font-family:'Kaushan Script',cursive;font-weight:400;font-size:32px;line-height:1.12;margin:4px 0 10px;color:#fff}
+.lum-t p{font-size:13.5px;line-height:1.65;color:#E3EEFB;margin:0 0 12px}
+.lum-t p b{color:#fff}
+.lum-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0;list-style:none}
+.lum-chips li{font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(143,221,255,.4);border-radius:999px;padding:5px 11px}
+.lum-img{width:100%;height:100%;min-height:240px;object-fit:cover;object-position:62% 50%;display:block}
+.lum-sello{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:7px;padding:7px 12px 7px 9px;border-radius:999px;
+  background:rgba(0,18,74,.78);backdrop-filter:blur(4px);border:1px solid rgba(143,221,255,.55);color:#fff;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.06em;line-height:1.25}
+.lum-sello svg{width:17px;height:17px;color:#8FDDFF;flex:none}
+.lum-sello span{display:block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8FDDFF}
+a.lum-sello{text-decoration:none;transition:background .2s}
+a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-color:#8FDDFF}
+.lum-pil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0 0}
+.lum-pi{padding:14px 14px 13px;border-radius:14px;background:#fff;border:1px solid #DCE8F5;box-shadow:0 10px 24px -20px rgba(0,26,96,.45)}
+.lum-pi-c{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.lum-pi-ic{flex:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#001A60,#0B76C4);color:#fff}
+.lum-pi-ic svg{width:17px;height:17px}
+.lum-pi b{font-family:'Kaushan Script',cursive;font-weight:400;font-size:21px;line-height:1.1;color:#001A60}
+.lum-pi p{margin:0;font-size:12px;line-height:1.55;color:#4B5563}
+.lum-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:26px 0 12px}
+.lum-sub h3{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#001A60;margin:0}
+.lum-sub span{font-size:12.5px;color:#4B5563}
+.lum-g{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.lum-c{border:1px solid #DCE8F5;border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 8px 20px -18px rgba(0,26,96,.5)}
+.lum-c img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#F2F8FF}
+.lum-c div{padding:8px 9px 10px}
+.lum-c b{display:block;font-family:'Montserrat',sans-serif;font-size:11.5px;line-height:1.3;color:#001A60;margin-bottom:3px}
+.lum-c p{margin:0;font-size:11px;line-height:1.45;color:#4B5563}
+.lum-n{font-size:12px;line-height:1.55;color:#4B5563;margin:14px 0 0}
+.lum-n b{color:#001A60}
+@media (max-width:900px){.lum-g{grid-template-columns:repeat(3,minmax(0,1fr))}.lum-pil{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.lum{padding:26px 20px 24px}}
+@media (max-width:700px){.lum-hero{grid-template-columns:minmax(0,1fr)}.lum-img{min-height:0;aspect-ratio:16/9;order:-1}.lum-h{font-size:26px}.lum-t{padding:18px 18px 16px}.lum-sello{top:12px;bottom:auto;right:12px}}
+@media (max-width:560px){.lum{padding:24px 16px 22px}.lum-g{grid-template-columns:repeat(2,minmax(0,1fr))}.lum-pil{grid-template-columns:minmax(0,1fr)}}
+.pg .lum .appb-bt{display:none}
+</style>
+  <section class="lum" id="app-luminea">
+    <div class="lum-hero"><div class="lum-t">
+      <div class="lum-rot">Luminea · App gratuita</div>
+      <h2 class="lum-h">Con cualquier elemento Luminea, ya pueden usar la app</h2>
+      <p>Luminea es la línea de luz interactiva de Qinera: tubos de burbujas, fibras ópticas, piscinas de bolas, cielos de estrellas y más. Basta con que la sala tenga <b>un solo elemento Luminea</b> para usar la app Luminea, que es gratuita. Y eso es excepcional: <b>la luz de la sala se maneja y se personaliza desde un teléfono o una tablet</b>, con las fotos, los colores, la música y las actividades que elige el propio equipo.</p>
+      <ul class="lum-chips"><li>Una foto que se vuelve luz</li><li>Secuencias al ritmo de la música</li><li>Más de doce actividades listas</li><li>Actividades propias, sin límite</li></ul>
+      <div class="appb-bt"><button type="button" class="appb-b1" onclick="appVid()"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Ver el video</button><button type="button" class="appb-b2" onclick="appInfo()">Conocer la app y sus ideas →</button></div>
+    </div><img class="lum-img" src="SalasMultisensoriales_Recortadas/app-luminea-fibra-tablet.jpg" alt="La app Luminea en una tablet, junto a la fibra óptica" loading="lazy"><a class="lum-sello" href="https://opencluster-tech.github.io/propuestas/acreditacion/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg><div>Distribuidor exclusivo en Chile<span>Ver la acreditación ›</span></div></a></div>
+    <div class="lum-pil"><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></span><b>Versátiles</b></div><p>El mismo elemento calma o despierta la atención: depende de los colores y del ritmo que elija el profesional.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><b>Escalables</b></div><p>Se parte con un tubo de burbujas o una fibra óptica y se suma de a un elemento. Todos se entienden entre sí y se integran después al Sistema SHX.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>Inmersivos</b></div><p>Luz y color que envuelven el espacio. Con el Sistema SHX, la luz se sincroniza con la imagen, el sonido y la vibración de toda la sala.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11"/><path d="M12 10.5V4.5a1.5 1.5 0 0 1 3 0v6"/><path d="M15 10.5V6.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-.6a6 6 0 0 1-4.6-2.2L3.4 15.6a1.6 1.6 0 0 1 2.4-2.1L9 16V11"/></svg></span><b>Al alcance de cada uno</b></div><p>Cada persona toma el control como puede: con la app, el mando de seis botones, el dado gigante, la alfombra de colores, su pulsador adaptado o en modo automático.</p></div></div>
+    <div class="lum-sub"><h3>Conoce todos nuestros elementos Luminea</h3><span>Se puede partir con un tubo o una fibra e ir sumando: cada elemento nuevo se maneja desde la misma app.</span></div>
+    <div class="lum-g"><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/tubo-de-burbujas-luminea.jpg" alt="Tubo de burbujas Luminea" loading="lazy"><div><b>Tubo de burbujas Luminea</b><p>Burbujas que suben entre luz y color, con un modo de «burbuja suelta» para seguirla con la mirada. 180 cm de alto.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/fibra-optica-luminea-3m.jpg" alt="Fibra óptica Luminea 3m" loading="lazy"><div><b>Fibra óptica Luminea 3m</b><p>Hebras de luz suaves para tocar, explorar y abrazar. También de 2 metros.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/ducha-luminea-violeta.jpg" alt="Ducha Luminea" loading="lazy"><div><b>Ducha Luminea</b><p>150 hebras de luz de 3 m que caen del techo: un espacio envolvente para entrar, tocar y explorar.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/cortina-luminea.jpg" alt="Cortina Luminea" loading="lazy"><div><b>Cortina Luminea</b><p>Una cortina de luz para tocar y recorrer desde distintas posiciones. También oscilante.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/cielo-luminea-circular.jpg" alt="Cielo Luminea circular" loading="lazy"><div><b>Cielo Luminea circular</b><p>Estrellas que cambian de color sobre las cabezas, en un círculo de 122 cm: ideal para nombrar colores.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/piscina-luminea-en-uso.jpg" alt="Piscina Luminea" loading="lazy"><div><b>Piscina Luminea</b><p>Una piscina de bolas de luz para sumergirse: sus botones de color cambian la luz de la sala.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/piscina-luminea-vibroacustica-web.jpg" alt="Piscina Luminea vibroacústica" loading="lazy"><div><b>Piscina Luminea vibroacústica</b><p>Luz, música y una vibración que se siente en todo el cuerpo, tendido entre las bolas.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/planeta-luminea.jpg" alt="Planeta Luminea" loading="lazy"><div><b>Planeta Luminea</b><p>Una esfera de luz suave que invita a la calma o despierta la atención. En dos tamaños.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/lampara-luminea.jpg" alt="Lámpara Luminea" loading="lazy"><div><b>Lámpara Luminea</b><p>Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/linea-led-luminea-techo.jpg" alt="Línea LED Luminea Para Techo 5 Metros" loading="lazy"><div><b>Línea LED Luminea Para Techo 5 Metros</b><p>Cinco metros de luz que siguen el contorno de la sala y la tiñen de color. También para respaldos.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/alfombra-luminea-oficial.jpg" alt="Alfombra Luminea" loading="lazy"><div><b>Alfombra Luminea</b><p>Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/rincon-luminea.jpg" alt="Rincón Luminea con tablet" loading="lazy"><div><b>Rincón Luminea con tablet</b><p>Tubo de burbujas, fibra óptica y la app en un rincón de 180 cm, fácil de instalar. También sin tablet.</p></div></div></div>
+    <p class="lum-n">Cada elemento de luz Luminea trae una <b>guía de ideas de actividades</b> pensada por profesionales. Para salas con varios equipos, el <b>Router Luminea</b> los reúne en una red propia de la sala.</p>
+  </section>
+<!--APP-LUMINEA-SECCION-FIN-->
+  <!-- ── Los videos: en salud van justo después de Inicio. Aquí queda el ancla de la sección App Luminea -->
+
   <!-- ── Lo que pide la ley (salud, 21-oct-2026) ─────────── -->
   <div class="nx ley" id="ley">
     <div class="rot">Inclusión en salud</div>
@@ -2650,93 +2738,6 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
   </div>
 
 </div>
-  <!-- ── Opciones de salas: tres formas (Rayen, 25-sep-2026) ── -->
-  <div class="nx opc" id="opciones">
-    <div class="rot">Opciones de salas</div>
-    <h2>Tres formas de adquirir<br><em>su espacio sensorial</em></h2>
-    <p class="nx-baja">Elijan la que mejor calce con su centro. Toquen una opción para ver todo lo que incluye, con sus valores.</p>
-    <div class="opc-g">
-      <button type="button" class="opc-c" data-op="1">
-        <span class="opc-n">1</span>
-        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/opcion-shx2-portada.jpg" alt="" loading="lazy"></span>
-        <span class="opc-tx"><b>Una sala completa</b><span>Diseñamos su sala a su medida. Como ejemplo, ocho salas pensadas para el centro de salud, cada una con su valor.</span></span>
-        <span class="opc-ir">Ver las salas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
-      </button>
-      <button type="button" class="opc-c" data-op="2">
-        <span class="opc-n">2</span>
-        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/opcion-luminea-tablet.jpg" alt="" loading="lazy"></span>
-        <span class="opc-tx"><b>Una sala por etapas</b><span>Cuatro de las salas de la opción 1, divididas en tres etapas, una por año. La sala funciona desde la primera etapa.</span></span>
-        <span class="opc-ir">Ver las etapas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
-      </button>
-      <button type="button" class="opc-c" data-op="3">
-        <span class="opc-n">3</span>
-        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg" alt="" loading="lazy"></span>
-        <span class="opc-tx"><b>Una estación sensorial móvil</b><span>Si no tienen espacio para una sala: todo en un mueble con ruedas que va de una sala a otra.</span></span>
-        <span class="opc-ir">Ver la estación<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
-      </button>
-    </div>
-  </div>
-
-<!--APP-LUMINEA-SECCION-INI · lo pone app_luminea.js; no se edita a mano-->
-<style>
-/* La sección «App Luminea» en la parte principal (9-oct-2026; más lujo el 11-oct-2026). Nada clickeable en naranjo. */
-.lum{padding:30px 54px 30px;border-bottom:1px solid #E5E9F0;background:linear-gradient(180deg,#fff 0%,#F5FAFF 100%)}
-.lum-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;border-radius:20px;overflow:hidden;color:#fff;
-  background:radial-gradient(120% 160% at 100% 0%,rgba(8,172,242,.55) 0%,rgba(8,172,242,0) 55%),linear-gradient(125deg,#00124A 0%,#002A80 60%,#0A4BAE 100%);
-  box-shadow:0 22px 46px -24px rgba(0,26,96,.7)}
-.lum-t{padding:24px 28px 22px}
-.lum-rot{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8FDDFF}
-.lum-h{font-family:'Kaushan Script',cursive;font-weight:400;font-size:32px;line-height:1.12;margin:4px 0 10px;color:#fff}
-.lum-t p{font-size:13.5px;line-height:1.65;color:#E3EEFB;margin:0 0 12px}
-.lum-t p b{color:#fff}
-.lum-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0;list-style:none}
-.lum-chips li{font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(143,221,255,.4);border-radius:999px;padding:5px 11px}
-.lum-img{width:100%;height:100%;min-height:240px;object-fit:cover;object-position:62% 50%;display:block}
-.lum-sello{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:7px;padding:7px 12px 7px 9px;border-radius:999px;
-  background:rgba(0,18,74,.78);backdrop-filter:blur(4px);border:1px solid rgba(143,221,255,.55);color:#fff;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.06em;line-height:1.25}
-.lum-sello svg{width:17px;height:17px;color:#8FDDFF;flex:none}
-.lum-sello span{display:block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8FDDFF}
-a.lum-sello{text-decoration:none;transition:background .2s}
-a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-color:#8FDDFF}
-.lum-pil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0 0}
-.lum-pi{padding:14px 14px 13px;border-radius:14px;background:#fff;border:1px solid #DCE8F5;box-shadow:0 10px 24px -20px rgba(0,26,96,.45)}
-.lum-pi-c{display:flex;align-items:center;gap:9px;margin-bottom:6px}
-.lum-pi-ic{flex:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#001A60,#0B76C4);color:#fff}
-.lum-pi-ic svg{width:17px;height:17px}
-.lum-pi b{font-family:'Kaushan Script',cursive;font-weight:400;font-size:21px;line-height:1.1;color:#001A60}
-.lum-pi p{margin:0;font-size:12px;line-height:1.55;color:#4B5563}
-.lum-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:26px 0 12px}
-.lum-sub h3{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#001A60;margin:0}
-.lum-sub span{font-size:12.5px;color:#4B5563}
-.lum-g{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
-.lum-c{border:1px solid #DCE8F5;border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 8px 20px -18px rgba(0,26,96,.5)}
-.lum-c img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#F2F8FF}
-.lum-c div{padding:8px 9px 10px}
-.lum-c b{display:block;font-family:'Montserrat',sans-serif;font-size:11.5px;line-height:1.3;color:#001A60;margin-bottom:3px}
-.lum-c p{margin:0;font-size:11px;line-height:1.45;color:#4B5563}
-.lum-n{font-size:12px;line-height:1.55;color:#4B5563;margin:14px 0 0}
-.lum-n b{color:#001A60}
-@media (max-width:900px){.lum-g{grid-template-columns:repeat(3,minmax(0,1fr))}.lum-pil{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:820px){.lum{padding:26px 20px 24px}}
-@media (max-width:700px){.lum-hero{grid-template-columns:minmax(0,1fr)}.lum-img{min-height:0;aspect-ratio:16/9;order:-1}.lum-h{font-size:26px}.lum-t{padding:18px 18px 16px}.lum-sello{top:12px;bottom:auto;right:12px}}
-@media (max-width:560px){.lum{padding:24px 16px 22px}.lum-g{grid-template-columns:repeat(2,minmax(0,1fr))}.lum-pil{grid-template-columns:minmax(0,1fr)}}
-.pg .lum .appb-bt{display:none}
-</style>
-  <section class="lum" id="app-luminea">
-    <div class="lum-hero"><div class="lum-t">
-      <div class="lum-rot">Luminea · App gratuita</div>
-      <h2 class="lum-h">Con cualquier elemento Luminea, ya pueden usar la app</h2>
-      <p>Luminea es la línea de luz interactiva de Qinera: tubos de burbujas, fibras ópticas, piscinas de bolas, cielos de estrellas y más. Basta con que la sala tenga <b>un solo elemento Luminea</b> para usar la app Luminea, que es gratuita. Y eso es excepcional: <b>la luz de la sala se maneja y se personaliza desde un teléfono o una tablet</b>, con las fotos, los colores, la música y las actividades que elige el propio equipo.</p>
-      <ul class="lum-chips"><li>Una foto que se vuelve luz</li><li>Secuencias al ritmo de la música</li><li>Más de doce actividades listas</li><li>Actividades propias, sin límite</li></ul>
-      <div class="appb-bt"><button type="button" class="appb-b1" onclick="appVid()"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Ver el video</button><button type="button" class="appb-b2" onclick="appInfo()">Conocer la app y sus ideas →</button></div>
-    </div><img class="lum-img" src="SalasMultisensoriales_Recortadas/app-luminea-fibra-tablet.jpg" alt="La app Luminea en una tablet, junto a la fibra óptica" loading="lazy"><a class="lum-sello" href="https://opencluster-tech.github.io/propuestas/acreditacion/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg><div>Distribuidor exclusivo en Chile<span>Ver la acreditación ›</span></div></a></div>
-    <div class="lum-pil"><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></span><b>Versátiles</b></div><p>El mismo elemento calma o despierta la atención: depende de los colores y del ritmo que elija el profesional.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><b>Escalables</b></div><p>Se parte con un tubo de burbujas o una fibra óptica y se suma de a un elemento. Todos se entienden entre sí y se integran después al Sistema SHX.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>Inmersivos</b></div><p>Luz y color que envuelven el espacio. Con el Sistema SHX, la luz se sincroniza con la imagen, el sonido y la vibración de toda la sala.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11"/><path d="M12 10.5V4.5a1.5 1.5 0 0 1 3 0v6"/><path d="M15 10.5V6.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-.6a6 6 0 0 1-4.6-2.2L3.4 15.6a1.6 1.6 0 0 1 2.4-2.1L9 16V11"/></svg></span><b>Al alcance de cada uno</b></div><p>Cada persona toma el control como puede: con la app, el mando de seis botones, el dado gigante, la alfombra de colores, su pulsador adaptado o en modo automático.</p></div></div>
-    <div class="lum-sub"><h3>Conoce todos nuestros elementos Luminea</h3><span>Se puede partir con un tubo o una fibra e ir sumando: cada elemento nuevo se maneja desde la misma app.</span></div>
-    <div class="lum-g"><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/tubo-de-burbujas-luminea.jpg" alt="Tubo de burbujas Luminea" loading="lazy"><div><b>Tubo de burbujas Luminea</b><p>Burbujas que suben entre luz y color, con un modo de «burbuja suelta» para seguirla con la mirada. 180 cm de alto.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/fibra-optica-luminea-3m.jpg" alt="Fibra óptica Luminea 3m" loading="lazy"><div><b>Fibra óptica Luminea 3m</b><p>Hebras de luz suaves para tocar, explorar y abrazar. También de 2 metros.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/ducha-luminea-violeta.jpg" alt="Ducha Luminea" loading="lazy"><div><b>Ducha Luminea</b><p>150 hebras de luz de 3 m que caen del techo: un espacio envolvente para entrar, tocar y explorar.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/cortina-luminea.jpg" alt="Cortina Luminea" loading="lazy"><div><b>Cortina Luminea</b><p>Una cortina de luz para tocar y recorrer desde distintas posiciones. También oscilante.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/cielo-luminea-circular.jpg" alt="Cielo Luminea circular" loading="lazy"><div><b>Cielo Luminea circular</b><p>Estrellas que cambian de color sobre las cabezas, en un círculo de 122 cm: ideal para nombrar colores.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/piscina-luminea-en-uso.jpg" alt="Piscina Luminea" loading="lazy"><div><b>Piscina Luminea</b><p>Una piscina de bolas de luz para sumergirse: sus botones de color cambian la luz de la sala.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/piscina-luminea-vibroacustica-web.jpg" alt="Piscina Luminea vibroacústica" loading="lazy"><div><b>Piscina Luminea vibroacústica</b><p>Luz, música y una vibración que se siente en todo el cuerpo, tendido entre las bolas.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/planeta-luminea.jpg" alt="Planeta Luminea" loading="lazy"><div><b>Planeta Luminea</b><p>Una esfera de luz suave que invita a la calma o despierta la atención. En dos tamaños.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/lampara-luminea.jpg" alt="Lámpara Luminea" loading="lazy"><div><b>Lámpara Luminea</b><p>Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/linea-led-luminea-techo.jpg" alt="Línea LED Luminea Para Techo 5 Metros" loading="lazy"><div><b>Línea LED Luminea Para Techo 5 Metros</b><p>Cinco metros de luz que siguen el contorno de la sala y la tiñen de color. También para respaldos.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/alfombra-luminea-oficial.jpg" alt="Alfombra Luminea" loading="lazy"><div><b>Alfombra Luminea</b><p>Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar.</p></div></div><div class="lum-c"><img src="SalasMultisensoriales_Recortadas/rincon-luminea.jpg" alt="Rincón Luminea con tablet" loading="lazy"><div><b>Rincón Luminea con tablet</b><p>Tubo de burbujas, fibra óptica y la app en un rincón de 180 cm, fácil de instalar. También sin tablet.</p></div></div></div>
-    <p class="lum-n">Cada elemento de luz Luminea trae una <b>guía de ideas de actividades</b> pensada por profesionales. Para salas con varios equipos, el <b>Router Luminea</b> los reúne en una red propia de la sala.</p>
-  </section>
-<!--APP-LUMINEA-SECCION-FIN-->
-  <!-- ── Los videos: en salud van justo después de Inicio. Aquí queda el ancla de la sección App Luminea -->
 
   <section class="cp" id="compromiso"><img class="logo-bl" src="oct-logo-blanco.png" alt="OpenCluster Tech · Construyendo inclusión"><div class="cp-cab"><div class="cp-rot">Nuestro compromiso</div><h2 class="cp-h"><span class="cp-letra">Los acompañamos</span><span class="cp-sub">en todo el camino</span></h2></div><ol class="cp-ruta"><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M2.8 19.5a5.2 5.2 0 0 1 10.4 0"/><path d="M14 19.5a4.4 4.4 0 0 1 7.2-3.4"/></svg></span><span class="cp-n">Etapa 1</span><h3>Para conocerlos</h3><p>Los acompañamos desde el primer contacto, reuniéndonos con ustedes las veces que sea necesario, respondiendo sus preguntas y, cuando es posible, visitando sus instalaciones, para entender bien sus necesidades.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="cp-n">Etapa 2</span><h3>Para definir la sala</h3><p>Los acompañamos a categorizar a la población que la usará, para que obtengan el espacio sensorial adecuado a su perfil.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5 9 3.5l6 2 5-2v15l-5 2-6-2-5 2z"/><path d="M9 3.5v15"/><path d="M15 5.5v15"/></svg></span><span class="cp-n">Etapa 3</span><h3>Una propuesta personalizada</h3><p>Los acompañamos con una propuesta adaptada a cada uno de nuestros clientes, con sus planos, que vamos mejorando a medida que los conocemos más.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="cp-n">Etapa 4</span><h3>Para la compra</h3><p>Les preparamos la cotización, las especificaciones técnicas y toda la información que necesite su unidad de compras.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0 4.8 5.2l-8.6 8.6a2.1 2.1 0 0 1-3-3l8.6-8.6"/><path d="M5 5l3.5 3.5"/><path d="M3.5 7.5 7.5 3.5"/></svg></span><span class="cp-n">Etapa 5</span><h3>En la implementación</h3><p>Los acompañamos aconsejándolos y guiándolos en los trabajos de preinstalación que requiere el espacio, instalamos la sala y capacitamos a su equipo.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-8"/><path d="M12 12c0-4 2.8-6.5 7-6.5 0 4-2.8 6.5-7 6.5z"/><path d="M12 14.5c0-3-2.2-5-5.5-5 0 3 2.2 5 5.5 5z"/></svg></span><span class="cp-n">Etapa 6</span><h3>Y después</h3><p>Los seguimos acompañando años después de haber comprado su sala, para que puedan seguir escalándola y transformándola año a año en un espacio cada vez más adecuado a sus necesidades.</p></li></ol><div class="cp-fin"><span class="cp-fin-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><p><b>Los acompañamos permanentemente.</b> Cuando algo falla o cuando surgen dudas, seguimos presentes.</p></div></section>
 
@@ -2763,7 +2764,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
   <!-- Rayen, 25-sep-2026: sin la firma del cotizador, porque se contradecía con la tarjeta de contacto -->
 </div>
 
-<button type="button" class="mnu-btn" id="mnuBtn" aria-expanded="false" aria-controls="mnu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Contenido</span></button><div class="mnu-velo" id="mnuVelo" hidden></div><nav class="mnu" id="mnu" aria-label="Contenido de la propuesta" aria-hidden="true"><div class="mnu-cab"><span>En esta propuesta</span><button type="button" class="mnu-x" id="mnuX" aria-label="Cerrar el menú">&#10005;</button></div><div class="mnu-l"><a href="#inicio" data-ir="inicio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/></svg></span><span><b>Nuestras salas</b><i>100% personalizables, diseñadas por expertos</i></span></a><a href="#videos" data-ir="videos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span><b>Videos</b><i>Salas en salud y rehabilitación</i></span></a><a href="#materiales" data-ir="materiales"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><b>Materiales</b><i>Seguros aunque se los lleven a la boca</i></span></a><a href="#ley" data-ir="ley"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7h6z"/><path d="M19 7l-3 7h6z"/></svg></span><span><b>Lo que pide la ley</b><i>Ley TEA y atención en salud</i></span></a><a href="#caa" data-ir="caa"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></span><span><b>Comunicación en la sala</b><i>Pictogramas, pulsadores y comunicadores</i></span></a><a href="#pasos" data-ir="pasos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/></svg></span><span><b>Cómo trabajamos</b><i>De la evaluación a la instalación</i></span></a><a href="#salas" data-ir="salas"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>1 · Una sala completa</b><i>Ocho salas para el centro de salud, con su valor</i></span></a><a href="#etapas" data-ir="etapas"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><span><b>2 · Una sala por etapas</b><i>Cuatro de las salas, en tres años</i></span></a><a href="#sin-espacio" data-ir="sin-espacio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 9h14"/><circle cx="8" cy="20.5" r="1.3"/><circle cx="16" cy="20.5" r="1.3"/></svg></span><span><b>3 · Estación sensorial móvil</b><i>Si no tienen espacio para una sala</i></span></a><a href="#compromiso" data-ir="compromiso"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><span><b>Nuestro compromiso</b><i>Los acompañamos en todo el camino</i></span></a></div></nav>
+<button type="button" class="mnu-btn" id="mnuBtn" aria-expanded="false" aria-controls="mnu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Contenido</span></button><div class="mnu-velo" id="mnuVelo" hidden></div><nav class="mnu" id="mnu" aria-label="Contenido de la propuesta" aria-hidden="true"><div class="mnu-cab"><span>En esta propuesta</span><button type="button" class="mnu-x" id="mnuX" aria-label="Cerrar el menú">&#10005;</button></div><div class="mnu-l"><a href="#inicio" data-ir="inicio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/></svg></span><span><b>Nuestras salas</b><i>100% personalizables, diseñadas por expertos</i></span></a><a href="#videos" data-ir="videos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span><b>Videos</b><i>Salas en salud y rehabilitación</i></span></a><a href="#materiales" data-ir="materiales"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><b>Materiales</b><i>Seguros aunque se los lleven a la boca</i></span></a><a href="#salas" data-ir="salas"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>1 · Una sala completa</b><i>Ocho salas para el centro de salud, con su valor</i></span></a><a href="#etapas" data-ir="etapas"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><span><b>2 · Una sala por etapas</b><i>Cuatro de las salas, en tres años</i></span></a><a href="#sin-espacio" data-ir="sin-espacio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 9h14"/><circle cx="8" cy="20.5" r="1.3"/><circle cx="16" cy="20.5" r="1.3"/></svg></span><span><b>3 · Estación sensorial móvil</b><i>Si no tienen espacio para una sala</i></span></a><a href="#ley" data-ir="ley"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7h6z"/><path d="M19 7l-3 7h6z"/></svg></span><span><b>Lo que pide la ley</b><i>Ley TEA y atención en salud</i></span></a><a href="#caa" data-ir="caa"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></span><span><b>Comunicación en la sala</b><i>Pictogramas, pulsadores y comunicadores</i></span></a><a href="#pasos" data-ir="pasos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/></svg></span><span><b>Cómo trabajamos</b><i>De la evaluación a la instalación</i></span></a><a href="#compromiso" data-ir="compromiso"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><span><b>Nuestro compromiso</b><i>Los acompañamos en todo el camino</i></span></a></div></nav>
 <button type="button" class="arriba" id="btnArriba" aria-label="Subir">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   Subir
@@ -3010,8 +3011,8 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
   }
 </script>
 <!--APP-LUMINEA-FIN-->
-<script src="SensorialBodega.js?v=1792674937226"></script>
-<script src="NuestrasSalas.js?v=1792674937226"></script>
+<script src="SensorialBodega.js?v=1792680680078"></script>
+<script src="NuestrasSalas.js?v=1792680680078"></script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -3605,7 +3606,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
   (function(){
     var hoja = document.querySelector('.hoja');
     if (!hoja) return;
-    var ORDEN = ['inicio', 'videos', 'materiales', 'ley', 'caa', 'pasos', 'opciones', 'compromiso'];
+    var ORDEN = ['inicio', 'videos', 'materiales', 'opciones', 'ley', 'caa', 'pasos', 'compromiso'];
     var NOMBRE = { inicio: 'Inicio', materiales: 'Materiales', ley: 'Lo que pide la ley', caa: 'Comunicación en la sala', pasos: 'Cómo trabajamos',
       opciones: 'Opciones de salas', videos: 'Videos', compromiso: 'Nuestro compromiso' };
     var grupos = {}, actual = 'inicio';
@@ -3856,7 +3857,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 22 de octubre a las 10:15</div>
+<div id="verPill" class="ver-pill">Versión del 22 de octubre a las 11:51</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -3867,7 +3868,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1792674937226';
+(function(){ var V = '1792680680078';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
