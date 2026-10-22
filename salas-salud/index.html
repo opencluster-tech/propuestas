@@ -2194,6 +2194,52 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
 @media print{.arriba,.sv{display:none !important}}
 </style>
 <style>
+/* ── ronda 3: tres productos destacados con la misma estructura + «Todos nuestros productos» ── */
+.pd-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:6px}
+.pd{display:flex;flex-direction:column;background:#fff;border:1px solid #DCE6FA;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px -26px rgba(0,26,96,.55)}
+.pd-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0A0F1E}
+.pd-img img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.pd-num{position:absolute;left:12px;top:12px;width:34px;height:34px;border-radius:50%;background:#001A60;color:#fff;border:2px solid #fff;
+  display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800}
+.pd-cu{display:flex;flex-direction:column;flex:1;padding:16px 18px 18px}
+.pd-rot{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0A8FCC;margin-bottom:4px}
+.pd h3{font-family:'Montserrat',sans-serif;font-size:21px;font-weight:800;color:#001A60;margin:0 0 6px;line-height:1.2}
+.pd-que{margin:0 0 12px;font-size:13px;line-height:1.55;color:#334155}
+.pd-que b{color:#001A60}
+.pd-dl{margin:0 0 12px}
+.pd-dl dt{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#001A60;margin:0 0 3px}
+.pd-dl dd{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:#475569}
+.pd-dl ul{margin:0;padding:0;list-style:none;display:grid;gap:3px}
+.pd-dl li{position:relative;padding-left:13px}
+.pd-dl li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:#08ACF2}
+.pd-pie{margin-top:auto;padding-top:12px;border-top:1px solid #E5E9F0;display:grid;gap:8px}
+.pd-pt{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#001A60}
+.pd-fila{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 10px;padding:10px 12px;border-radius:12px;background:#F4F8FF;border:1px solid #E1EAFB}
+.pd-fn{grid-column:1 / -1}
+.pd-fn b{display:block;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#001A60}
+.pd-fn span{display:block;font-size:11.5px;color:#64748B;line-height:1.4}
+.pd-fv{display:flex;flex-direction:column;line-height:1.15}
+.pd-fv b{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#001A60;font-variant-numeric:tabular-nums;margin-right:5px}
+.pd-fv span{font-size:10.5px;color:#64748B}
+.pd-fila-l .pd-fn b{font-size:13px}
+.pd-fila-l .pd-ficha{grid-column:1 / -1;justify-self:start}
+.pd-ficha{display:inline-flex;align-items:center;padding:7px 13px;border-radius:999px;border:0;background:#001A60;color:#fff;cursor:pointer;text-decoration:none;
+  font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;white-space:nowrap}
+.pd-ficha:hover,.pd-ficha:focus-visible{background:#08ACF2;outline:none}
+.pd-bts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pd-wa,.pd-vid,.pd-app{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:999px;border:1.5px solid #CEDBFF;background:#fff;color:#001A60;cursor:pointer;
+  text-decoration:none;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800}
+.pd-wa svg{width:15px;height:15px}
+.pd-vid svg{width:11px;height:11px;fill:#08ACF2}
+.pd-wa:hover,.pd-vid:hover,.pd-app:hover,.pd-wa:focus-visible,.pd-vid:focus-visible,.pd-app:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff;outline:none}
+.pd-vid:hover svg{fill:#fff}
+.todos{padding:24px;border-radius:20px;background:#fff;border:1px solid #DCE6FA;box-shadow:0 14px 30px -26px rgba(0,26,96,.55)}
+.todos-c h3{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#001A60;margin:0 0 6px}
+.todos-c p{margin:0 0 12px;font-size:13px;color:#4B5563}
+.cat-gr-c h4{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#001A60;margin:0}
+.nx.cat-lista{border-top:0;padding-top:4px}
+@media (max-width:980px){.pd-g{grid-template-columns:minmax(0,1fr);max-width:560px}}
+@media (max-width:560px){.todos{padding:16px 12px}.pd-cu{padding:14px 14px 16px}.pd h3{font-size:19px}}
 /* ── salud · catálogo (salud_catalogo.js, 22-oct-2026) ── */
 .vs-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:22px 0 10px}
 .vs-sub:first-of-type{margin-top:6px}
@@ -2424,6 +2470,86 @@ body:has(#mnuVelo:not([hidden])) #verPill{display:none !important}
     </div>
   </div>
 
+  <!-- ── Productos (salud_catalogo.js, ronda 3) ── -->
+  <div class="nx cat" id="catalogo">
+    <div class="rot">Productos</div>
+    <h2>Tres productos destacados<br><em>y todo nuestro catálogo</em></h2>
+    <p class="nx-baja">Primero, los tres productos que más nos distinguen. Más abajo, todos nuestros productos, cada uno con su valor con IVA y su ficha.</p>
+    <div class="pd-g"><article class="pd" id="cat-sensory-go"><div class="pd-img"><img src="SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg" alt="El tubo de burbujas del Sensory Go encendido" loading="lazy"><span class="pd-num">1</span></div><div class="pd-cu"><div class="pd-rot">Producto destacado 1</div><h3>Sensory Go</h3><p class="pd-que">Una <b>sala multisensorial completa dentro de un carro con ruedas</b>, con la tecnología SHX.</p><dl class="pd-dl"><dt>Para qué sirve</dt><dd>Para el centro que no tiene una sala libre: va al box de atención, a la sala de rehabilitación o a la de talleres, y al terminar se guarda en un rincón.</dd><dt>Qué trae</dt><dd><ul><li>Unidad SHX Compact con proyector y tableta</li><li>Tubo de burbujas de 120 cm y fibra óptica de 3 m</li><li>Vibración, con cojín vibroacústico</li><li>Button 6, Button 1 y reconocimiento de objetos</li></ul></dd></dl><div class="pd-pie"><div class="pd-pt">Dos opciones</div><div class="pd-fila"><div class="pd-fn"><b>Sensory Go SHX</b><span>La estación completa</span></div><div class="pd-fv"><b>$18.707.446</b><span>IVA incluido</span></div><button type="button" class="pd-ficha" data-ficha="Sensory Go SHX">Ver la ficha</button></div><div class="pd-fila"><div class="pd-fn"><b>Sensory Go SHX Full</b><span>+ piscina de bolas, puff, aroma y luz en el suelo</span></div><div class="pd-fv"><b>$26.541.432</b><span>IVA incluido</span></div><button type="button" class="pd-ficha" data-ficha="Sensory Go SHX Full">Ver la ficha</button></div></div><div class="pd-bts"><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20para%20salud%20y%20quiero%20consultar%20por%3A%20Sensory%20Go." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a><button type="button" class="pd-vid" data-lb-src="https://www.youtube-nocookie.com/embed/dLMqDZ2LXGw?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Cómo se usa el Sensory Go" data-lb-donde=""><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Ver el video</button></div></div></article><article class="pd" id="cat-proximity"><div class="pd-img"><img src="SalasMultisensoriales_Recortadas/shx-proximity-1.jpg" alt="La plataforma SHX Proximity con sus tarjetas" loading="lazy"><span class="pd-num">2</span></div><div class="pd-cu"><div class="pd-rot">Producto destacado 2</div><h3>SHX Proximity</h3><p class="pd-que">Una <b>plataforma que reconoce objetos reales</b>: al apoyar un objeto, toda la sala cambia.</p><dl class="pd-dl"><dt>Para qué sirve</dt><dd>Elegir, recordar y conversar con objetos de la vida real —una foto, una taza, un peluche—, también con quien no lee ni habla. Funciona con el Sistema SHX de la sala.</dd><dt>Qué trae</dt><dd><ul><li>La plataforma, con cable USB de 5 m</li><li>Tarjetas listas: volumen, detener, botones 1 al 6</li><li>18 tarjetas y 18 adhesivos que se regraban sin límite</li></ul></dd></dl><div class="pd-pie"><div class="pd-pt">Valor</div><div class="pd-fila"><div class="pd-fn"><b>SHX Proximity</b></div><div class="pd-fv"><b>$1.223.620</b><span>IVA incluido</span></div><button type="button" class="pd-ficha" data-ficha="SHX Proximity">Ver la ficha</button></div></div><div class="pd-bts"><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20para%20salud%20y%20quiero%20consultar%20por%3A%20SHX%20Proximity." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a><button type="button" class="pd-vid" data-lb-src="https://www.youtube-nocookie.com/embed/Q9uYpvsxzDU?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde=""><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Ver el video</button></div></div></article><article class="pd" id="cat-luminea"><div class="pd-img"><img src="SalasMultisensoriales_Recortadas/app-luminea-fibra-tablet.jpg" alt="La app Luminea en una tablet, junto a la fibra óptica" loading="lazy"><span class="pd-num">3</span></div><div class="pd-cu"><div class="pd-rot">Producto destacado 3</div><h3>Luminea</h3><p class="pd-que">Una <b>línea de equipos de luz</b> —tubos, fibras, cortinas, piscinas— que se maneja con una <b>app gratuita</b>.</p><dl class="pd-dl"><dt>Para qué sirve</dt><dd>Personalizar la luz de la sala desde un teléfono o una tablet, con fotos, colores, música y actividades. Somos los únicos en Chile con Luminea: un sistema sin comparación.</dd><dt>Qué incluye</dt><dd><ul><li>La app Luminea, gratuita</li><li>12 productos Luminea, cada uno con su valor</li><li>Se parte con uno y se van sumando</li></ul></dd></dl><div class="pd-pie"><div class="pd-pt">Valor</div><div class="pd-fila pd-fila-l"><div class="pd-fn"><b>Según los equipos que elijan</b><span>12 productos Luminea, cada uno con su valor</span></div><a class="pd-ficha" href="#cg-luminea">Ver los productos</a></div></div><div class="pd-bts"><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20para%20salud%20y%20quiero%20consultar%20por%3A%20Luminea." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a><button type="button" class="pd-vid" data-lb-src="https://www.youtube-nocookie.com/embed/___WPYNAI4c?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Luminea" data-lb-donde=""><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Ver el video</button><button type="button" class="pd-app" onclick="appInfo()">Conocer la app</button></div></div></article></div>
+  </div>
+
+
+  <!-- ── Los videos (ancla de la sección App Luminea: en salud se saca, la app vive en la tarjeta Luminea) -->
+
+  <div class="nx cat cat-lista">
+    <section class="todos" id="todos-productos">
+      <div class="todos-c"><div class="pd-rot">Catálogo completo</div><h3>Todos nuestros productos</h3><p>Toquen un producto para ver su ficha: fotos, qué es, para quién está indicado y sus características.</p><ul class="cat-intro"><li><a href="#cg-shx">Sistema SHX</a></li><li><a href="#cg-luminea">Luminea</a></li><li><a href="#cg-vibro">Vibroacústicos</a></li><li><a href="#cg-presion">Presión profunda</a></li><li><a href="#cg-mov">Movimiento y juego</a></li><li><a href="#cg-otros">Aromaterapia, tacto y luz ultravioleta</a></li></ul></div>
+      <section class="cat-gr" id="cg-shx"><div class="cat-gr-c"><h4>Sistema SHX</h4><span>Une la luz, el sonido, la imagen y la vibración en una sola escena, y todo lo que se le conecta.</span></div><div class="cat-g" data-cat-grupo="cg-shx"></div></section>
+      <section class="cat-gr" id="cg-luminea"><div class="cat-gr-c"><h4>Luminea</h4><span>La línea de luz interactiva: tubos, fibras, cortinas y piscinas que se manejan desde la app gratuita.</span></div><div class="cat-g" data-cat-grupo="cg-luminea"></div></section>
+      <section class="cat-gr" id="cg-vibro"><div class="cat-gr-c"><h4>Vibroacústicos</h4><span>La música se escucha y se siente en el cuerpo como una vibración suave.</span></div><div class="cat-g" data-cat-grupo="cg-vibro"></div></section>
+      <section class="cat-gr" id="cg-presion"><div class="cat-gr-c"><h4>Presión profunda</h4><span>Peso y presión firme y pareja, que ayudan a volver a la calma.</span></div><div class="cat-g" data-cat-grupo="cg-presion"></div></section>
+      <section class="cat-gr" id="cg-mov"><div class="cat-gr-c"><h4>Movimiento y juego</h4><span>Para balancearse, girar, buscar el equilibrio y dejarse caer sin riesgo.</span></div><div class="cat-g" data-cat-grupo="cg-mov"></div></section>
+      <section class="cat-gr" id="cg-otros"><div class="cat-gr-c"><h4>Aromaterapia, tacto y luz ultravioleta</h4><span>El olfato, el tacto, la propia imagen en el espejo y los materiales que brillan con luz ultravioleta.</span></div><div class="cat-g" data-cat-grupo="cg-otros"></div></section>
+      <p class="cat-nota"><b>Qué incluye cada valor.</b> El valor de cada producto, con IVA. No incluye el transporte, la instalación ni la capacitación, porque dependen de la ubicación del centro: los sumamos en la cotización. Son valores referenciales, sujetos a la disponibilidad de stock al momento de la orden de compra.</p>
+    </section>
+  </div>
+<script>
+/* salud · catálogo: las tarjetas (con la ficha de cada producto) y lo que se le suma a la ficha */
+(function(){
+  var GR = [["cg-shx",["Sistema SHX Compact","Estrellas SHX","Kit Voz SHX","Ventilador SHX","Sensory Cube grande","Barra LED UV SHX","Foco de luz UV LED SHX"]],["cg-luminea",["Rincón Luminea con tablet","Tubo de burbujas Luminea","Fibra óptica Luminea 2m","Fibra óptica Luminea 3m","Ducha Luminea","Cortina Luminea","Planeta Luminea","Línea LED Luminea Para Techo 5 Metros","Piscina Luminea vibroacústica","Button 1","Button 6","Router Luminea"]],["cg-vibro",["Butaca relax vibroacústica","Puff transformable vibroacústico","Cojín vibroacústico","Almohada vibrante","Kit vibroacústico Bluetooth","Amplificador vibroacústico adicional"]],["cg-presion",["Manta de peso azul y roja mediana 2,2 kg","Manta de peso gris y roja grande 3,6 kg","Peso para hombros Lola la Oruga grande","Saco de danza propioceptivo talla M","Set De Peso Muñecas y Tobillos"]],["cg-mov",["Piscina de bolas alta","Piscina de bolas mediana","Columpio Rulo 2 en 1","Peonza gigante","Pelota cacahuete","Pelota de terapia de diámetro 45 cm","Pelota de terapia de diámetro 55 cm","Tabla Scooter 40cm"]],["cg-otros",["Difusor de aromaterapia","Kit de iniciación de aromaterapia","Kit de masaje","Conjunto de discos táctiles para pies y manos","Sensory Feet 1.1","Espejo grande recto","Bolsa material Ultravioleta","Foco de luz UV LED"]]], PRE = {"Sistema SHX Compact":8519524,"Estrellas SHX":563132,"Kit Voz SHX":391329,"Ventilador SHX":502047,"Sensory Cube grande":881922,"Barra LED UV SHX":440961,"Foco de luz UV LED SHX":450506,"Rincón Luminea con tablet":4972745,"Tubo de burbujas Luminea":2395698,"Fibra óptica Luminea 2m":1393514,"Fibra óptica Luminea 3m":1593951,"Ducha Luminea":2494962,"Cortina Luminea":1964282,"Planeta Luminea":992640,"Línea LED Luminea Para Techo 5 Metros":891467,"Piscina Luminea vibroacústica":4800942,"Button 1":297792,"Button 6":691030,"Router Luminea":94491,"Butaca relax vibroacústica":2004369,"Puff transformable vibroacústico":1477506,"Cojín vibroacústico":582222,"Almohada vibrante":112626,"Kit vibroacústico Bluetooth":1183532,"Amplificador vibroacústico adicional":752116,"Manta de peso azul y roja mediana 2,2 kg":200437,"Manta de peso gris y roja grande 3,6 kg":303519,"Peso para hombros Lola la Oruga grande":101173,"Saco de danza propioceptivo talla M":197827,"Set De Peso Muñecas y Tobillos":19089,"Piscina de bolas alta":2118905,"Piscina de bolas mediana":1718031,"Columpio Rulo 2 en 1":1607000,"Peonza gigante":194710,"Pelota cacahuete":131716,"Pelota de terapia de diámetro 45 cm":32452,"Pelota de terapia de diámetro 55 cm":38178,"Tabla Scooter 40cm":93537,"Difusor de aromaterapia":125989,"Kit de iniciación de aromaterapia":104991,"Kit de masaje":334062,"Conjunto de discos táctiles para pies y manos":293974,"Sensory Feet 1.1":524954,"Espejo grande recto":521136,"Bolsa material Ultravioleta":301610,"Foco de luz UV LED":150805,"Sensory Go SHX":18707446,"Sensory Go SHX Full":26541432,"SHX Proximity":1223620}, EN = {"Sistema SHX Compact":["Amanecer y anochecer en hospitalización","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Estrellas SHX":["Box sensorial de urgencia","Espacio de pausa para el equipo","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Kit Voz SHX":["Espacio de calma integral"],"Ventilador SHX":["Espacio de calma integral"],"Sensory Cube grande":["Sala de estimulación sensorial"],"Barra LED UV SHX":["Espacio de calma integral"],"Foco de luz UV LED SHX":["Sala de estimulación sensorial"],"Rincón Luminea con tablet":["Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Tubo de burbujas Luminea":["Espacio de pausa para el equipo"],"Fibra óptica Luminea 2m":["Box sensorial de urgencia"],"Fibra óptica Luminea 3m":["Espacio de pausa para el equipo"],"Ducha Luminea":["Espacio de calma integral"],"Cortina Luminea":["Sala de estimulación del desarrollo infantil"],"Planeta Luminea":["Box sensorial de urgencia","Espacio de pausa para el equipo","Espacio de calma integral"],"Línea LED Luminea Para Techo 5 Metros":["Amanecer y anochecer en hospitalización","Sala de estimulación sensorial"],"Piscina Luminea vibroacústica":["Sala de estimulación sensorial"],"Button 1":["Sala de estimulación del desarrollo infantil","Sala para personas mayores"],"Button 6":["Sala de estimulación sensorial"],"Router Luminea":["Box sensorial de urgencia","Sala de estimulación del desarrollo infantil","Espacio de pausa para el equipo"],"Butaca relax vibroacústica":["Espacio de pausa para el equipo","Sala para personas mayores","Espacio de calma integral"],"Puff transformable vibroacústico":["Box sensorial de urgencia","Sala de estimulación sensorial"],"Cojín vibroacústico":["Box sensorial de urgencia","Amanecer y anochecer en hospitalización"],"Almohada vibrante":["Box sensorial de urgencia","Sala de estimulación del desarrollo infantil"],"Kit vibroacústico Bluetooth":["Box sensorial de urgencia","Espacio de pausa para el equipo","Espacio de calma integral"],"Amplificador vibroacústico adicional":["Sala de estimulación sensorial"],"Manta de peso azul y roja mediana 2,2 kg":["Box sensorial de urgencia","Sala de estimulación del desarrollo infantil","Sala de estimulación sensorial"],"Manta de peso gris y roja grande 3,6 kg":["Box sensorial de urgencia","Espacio de pausa para el equipo","Sala de rehabilitación sensorial","Sala para personas mayores","Espacio de calma integral"],"Peso para hombros Lola la Oruga grande":["Box sensorial de urgencia"],"Saco de danza propioceptivo talla M":["Sala de rehabilitación sensorial"],"Set De Peso Muñecas y Tobillos":["Sala de rehabilitación sensorial"],"Piscina de bolas alta":["Sala de estimulación del desarrollo infantil"],"Piscina de bolas mediana":["Sala de rehabilitación sensorial"],"Columpio Rulo 2 en 1":["Sala de rehabilitación sensorial"],"Peonza gigante":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial"],"Pelota cacahuete":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial"],"Pelota de terapia de diámetro 45 cm":["Sala de estimulación del desarrollo infantil"],"Pelota de terapia de diámetro 55 cm":["Sala de estimulación del desarrollo infantil"],"Tabla Scooter 40cm":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial"],"Difusor de aromaterapia":["Box sensorial de urgencia","Espacio de pausa para el equipo","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Kit de iniciación de aromaterapia":["Box sensorial de urgencia","Espacio de pausa para el equipo","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Kit de masaje":["Sala para personas mayores","Espacio de calma integral"],"Conjunto de discos táctiles para pies y manos":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial","Sala para personas mayores"],"Sensory Feet 1.1":["Sala de estimulación del desarrollo infantil"],"Espejo grande recto":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Bolsa material Ultravioleta":["Sala de estimulación del desarrollo infantil","Espacio de calma integral","Sala de estimulación sensorial"],"Foco de luz UV LED":["Sala de estimulación del desarrollo infantil"],"Sensory Go SHX":[],"Sensory Go SHX Full":[],"SHX Proximity":["Sala para personas mayores"]}, WA = "56956294723";
+  var IC_WA = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 20l1.3-3.9A8 8 0 1 1 8.2 19z\"/><path d=\"M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z\"/></svg>";
+
+      function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+      function pesos(n) { return '$' + Number(n).toLocaleString('es-CL'); }
+      function prod(n) {
+        var l = (window.SENSORIAL_BODEGA || []).concat(window.NUESTRAS_EXTRA || []);
+        for (var i = 0; i < l.length; i++) if (l[i].n === n) return l[i];
+        return null;
+      }
+      function primera(t) { t = String(t || ''); var k = t.indexOf('. '); return k > 0 ? t.slice(0, k + 1) : t; }
+      function pinta() {
+        GR.forEach(function (g) {
+          var cont = document.querySelector('[data-cat-grupo="' + g[0] + '"]');
+          if (!cont) return;
+          cont.innerHTML = g[1].map(function (n) {
+            var p = prod(n) || { n: n };
+            return '<button type="button" class="cat-c" data-ficha="' + esc(n) + '">' +
+              '<span class="cc-f"><img src="' + esc(p.img || 'isotipo-oct.png') + '" alt="" loading="lazy"></span>' +
+              '<span class="cc-tx"><span class="cc-n">' + esc(n) + '</span><span class="cc-d">' + esc(primera(p.desc || p.que)) + '</span>' +
+              '<span class="cc-p"><b>' + pesos(PRE[n]) + '</b><span>IVA incluido</span></span><span class="cc-ir">Ver la ficha ›</span></span></button>';
+          }).join('');
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pinta); else pinta();
+      /* La ficha: valor (si se abrió desde el catálogo), en qué salas de ejemplo va y «Consultar». */
+      var desdeCat = false;
+      document.addEventListener('click', function (ev) {
+        var t = ev.target.closest && ev.target.closest('[data-ficha]');
+        if (t) desdeCat = !!t.closest('.cat');
+      }, true);
+      function completa() {
+        var fx = document.getElementById('fx'), cu = document.getElementById('fxCuerpo');
+        if (!fx || fx.hidden || !cu) return;
+        var der = cu.querySelector('.fx-der'), h = cu.querySelector('.fx-n');
+        if (!der || !h || der.querySelector('.cat-fx-bt')) return;
+        var n = h.textContent;
+        if (desdeCat && PRE[n]) h.insertAdjacentHTML('afterend', '<div class="cat-fx-v"><b>' + pesos(PRE[n]) + '</b><span>IVA incluido</span></div>');
+        var en = EN[n] || [];
+        der.insertAdjacentHTML('beforeend',
+          (en.length ? '<div class="cat-fx-en"><b>Lo incluimos en ' + (en.length === 1 ? 'esta sala de ejemplo' : 'estas salas de ejemplo') + ':</b> ' + en.map(esc).join(' · ') + '.</div>' : '') +
+          '<a class="cat-fx-bt" href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Rayen, vi el catálogo de salas multisensoriales para salud y quiero consultar por: ' + n + '.') +
+          '" target="_blank" rel="noopener">' + IC_WA + 'Consultar</a>');
+      }
+      function vigila() {
+        var cu = document.getElementById('fxCuerpo');
+        if (!cu) return;
+        new MutationObserver(function () { completa(); }).observe(cu, { childList: true });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', vigila); else vigila();
+    
+})();
+</script>
+
   <div class="seg" id="materiales">
     <div class="seg-rot">Materiales</div>
     <h2>Lo que va a estar en contacto con ellos<br><em>lo elegimos con conciencia, porque nos importa</em></h2>
@@ -2486,165 +2612,27 @@ body:has(#mnuVelo:not([hidden])) #verPill{display:none !important}
   </div>
 
 
-  <!-- ── Catálogo de productos (salud_catalogo.js) ── -->
-  <div class="nx cat" id="catalogo">
-    <div class="rot">Catálogo de productos</div>
-    <h2>Nuestros productos,<br><em>cada uno con su valor</em></h2>
-    <p class="nx-baja">Los productos con que armamos las salas para salud. Toquen uno para ver su ficha: fotos, qué es, para quién está indicado y sus características. Los valores incluyen IVA.</p>
-    <ul class="cat-intro"><li><a href="#cg-shx">Sistema SHX</a></li><li><a href="#cg-luminea">Luminea</a></li><li><a href="#cg-go">Sensory Go</a></li><li><a href="#cg-vibro">Vibroacústicos</a></li><li><a href="#cg-presion">Presión profunda</a></li><li><a href="#cg-mov">Movimiento y juego</a></li><li><a href="#cg-otros">Aromaterapia, tacto y luz ultravioleta</a></li></ul>
-    <div class="cat-dest" id="cat-proximity">
-      <div>
-        <div class="cd-rot">Destacado · Sistema SHX</div>
-        <h3>SHX Proximity: <em>los objetos reales encienden la sala</em></h3>
-        <p>Una pequeña plataforma que convierte <b>objetos reales</b> en el comienzo de una experiencia multisensorial. A una fotografía, un peluche, una prenda de ropa, un alimento, una miniatura o cualquier objeto significativo se le pone una tarjeta o un adhesivo, y basta con <b>apoyarlo en la plataforma</b> para que <b>la sala completa se convierta en el ambiente de ese objeto</b>: luz, sonido, imagen, vibración y otros efectos.</p>
-        <ol class="cd-pasos"><li><span>1</span>En el programa del Sistema SHX, cada tarjeta o adhesivo se vincula a un objeto y a una escena.</li><li><span>2</span>La persona apoya o acerca el objeto a la plataforma (a 1 o 2 cm).</li><li><span>3</span>La sala lo reconoce y cambia sola: nadie tiene que tocar un control.</li></ol>
-        <div class="cd-info"><div><b>Ambientes temáticos</b><p>Una selva, el espacio, una playa, un campo de fútbol, o cualquier ambiente ligado a los intereses, los recuerdos o los objetivos terapéuticos de cada persona.</p></div><div><b>En salud</b><p>Con las personas mayores, los objetos de su historia abren camino a los recuerdos y a la conversación. A quien no lee ni habla le permite elegir con un objeto real.</p></div><div><b>Tarjetas listas para usar</b><p>Trae tarjetas para subir y bajar el volumen, detener, los botones 1 al 6 y los modos secuencial y aleatorio, más 18 tarjetas y 18 adhesivos que se regraban sin límite. Se pueden sumar paquetes de 12 o 24.</p></div><div><b>Indicado para</b><p>Parálisis cerebral, autismo, daño cerebral (ictus, traumatismo), discapacidad intelectual, personas mayores y discapacidad visual.</p></div></div>
-        <ul class="cd-chips"><li>Atención</li><li>Interacción</li><li>Asociación</li><li>Memoria</li><li>Causa y efecto</li><li>Recuerdos</li><li>Lenguaje</li></ul>
-        <p class="cd-nota">Se conecta por USB, con un cable de 5 m, al Sistema SHX de la sala (SHX Compact), con el que funciona.</p>
-        <div class="cd-pie"><div class="cd-val"><b>$1.223.620</b><span>IVA incluido</span></div><button type="button" class="cd-bt" data-ficha="SHX Proximity">Ver la ficha</button><a class="cd-bt cd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20para%20salud%20y%20quiero%20consultar%20por%3A%20SHX%20Proximity." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a></div>
-      </div>
-      <div class="cd-vids"><button type="button" class="cd-v" data-lb-src="https://www.youtube-nocookie.com/embed/Q9uYpvsxzDU?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde="Los objetos reales cobran vida"><img src="SalasMultisensoriales_Recortadas/video-mini-proximity.jpg" alt="" loading="lazy"><span class="cd-v-p"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span><span class="cd-v-t">Los objetos reales cobran vida</span></button><button type="button" class="cd-v" data-lb-src="https://www.youtube-nocookie.com/embed/UgrQCj3r4TY?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde="Sesiones más interactivas"><img src="SalasMultisensoriales_Recortadas/yt-UgrQCj3r4TY.jpg" alt="" loading="lazy"><span class="cd-v-p"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span><span class="cd-v-t">Sesiones más interactivas, con objetos reales</span></button><button type="button" class="cd-v" data-lb-src="https://www.youtube-nocookie.com/embed/1LnX2wQvhIU?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde="Guía de inicio"><img src="SalasMultisensoriales_Recortadas/yt-1LnX2wQvhIU.jpg" alt="" loading="lazy"><span class="cd-v-p"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span><span class="cd-v-t">Guía de inicio: cómo se usa</span></button><div class="cd-foto"><img src="SalasMultisensoriales_Recortadas/shx-proximity-1.jpg" alt="SHX Proximity" loading="lazy"></div></div>
+  <!-- ── Opciones de salas: tres formas (Rayen, 25-sep-2026) ── -->
+  <div class="nx opc" id="opciones">
+    <div class="rot">Opciones de sala</div>
+    <h2>Salas preconfiguradas<br><em>para un centro de salud</em></h2>
+    <p class="nx-baja">Estas son salas de ejemplo, como las que hemos instalado o las que podemos instalar en su centro. Pueden comprar nuestros productos por separado o una sala completa: cada sala se adapta a su espacio, a las personas que atienden y a su presupuesto. Toquen una opción para verlas con su valor.</p>
+    <div class="opc-g opc-2">
+      <button type="button" class="opc-c" data-op="1">
+        <span class="opc-n">1</span>
+        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/opcion-shx2-portada.jpg" alt="" loading="lazy"></span>
+        <span class="opc-tx"><b>Una sala completa</b><span>Diseñamos su sala a su medida. Como ejemplo, ocho salas pensadas para el centro de salud, cada una con su valor.</span></span>
+        <span class="opc-ir">Ver las salas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+      </button>
+      <button type="button" class="opc-c" data-op="3">
+        <span class="opc-n">2</span>
+        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg" alt="" loading="lazy"></span>
+        <span class="opc-tx"><b>Sensory Go SHX: la estación sensorial móvil</b><span>Si no tienen espacio para una sala: todo en un mueble con ruedas que va de una sala a otra.</span></span>
+        <span class="opc-ir">Ver la estación<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+      </button>
     </div>
   </div>
 
-<!--APP-LUMINEA-SECCION-INI · lo pone app_luminea.js; no se edita a mano-->
-<style>
-/* La sección «App Luminea» en la parte principal (9-oct-2026; más lujo el 11-oct-2026). Nada clickeable en naranjo. */
-.lum{padding:30px 54px 30px;border-bottom:1px solid #E5E9F0;background:linear-gradient(180deg,#fff 0%,#F5FAFF 100%)}
-.lum-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;border-radius:20px;overflow:hidden;color:#fff;
-  background:radial-gradient(120% 160% at 100% 0%,rgba(8,172,242,.55) 0%,rgba(8,172,242,0) 55%),linear-gradient(125deg,#00124A 0%,#002A80 60%,#0A4BAE 100%);
-  box-shadow:0 22px 46px -24px rgba(0,26,96,.7)}
-.lum-t{padding:24px 28px 22px}
-.lum-rot{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8FDDFF}
-.lum-h{font-family:'Kaushan Script',cursive;font-weight:400;font-size:32px;line-height:1.12;margin:4px 0 10px;color:#fff}
-.lum-t p{font-size:13.5px;line-height:1.65;color:#E3EEFB;margin:0 0 12px}
-.lum-t p b{color:#fff}
-.lum-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0;list-style:none}
-.lum-chips li{font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(143,221,255,.4);border-radius:999px;padding:5px 11px}
-.lum-img{width:100%;height:100%;min-height:240px;object-fit:cover;object-position:62% 50%;display:block}
-.lum-sello{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:7px;padding:7px 12px 7px 9px;border-radius:999px;
-  background:rgba(0,18,74,.78);backdrop-filter:blur(4px);border:1px solid rgba(143,221,255,.55);color:#fff;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.06em;line-height:1.25}
-.lum-sello svg{width:17px;height:17px;color:#8FDDFF;flex:none}
-.lum-sello span{display:block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8FDDFF}
-a.lum-sello{text-decoration:none;transition:background .2s}
-a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-color:#8FDDFF}
-.lum-pil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0 0}
-.lum-pi{padding:14px 14px 13px;border-radius:14px;background:#fff;border:1px solid #DCE8F5;box-shadow:0 10px 24px -20px rgba(0,26,96,.45)}
-.lum-pi-c{display:flex;align-items:center;gap:9px;margin-bottom:6px}
-.lum-pi-ic{flex:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#001A60,#0B76C4);color:#fff}
-.lum-pi-ic svg{width:17px;height:17px}
-.lum-pi b{font-family:'Kaushan Script',cursive;font-weight:400;font-size:21px;line-height:1.1;color:#001A60}
-.lum-pi p{margin:0;font-size:12px;line-height:1.55;color:#4B5563}
-.lum-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:26px 0 12px}
-.lum-sub h3{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#001A60;margin:0}
-.lum-sub span{font-size:12.5px;color:#4B5563}
-.lum-g{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
-.lum-c{border:1px solid #DCE8F5;border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 8px 20px -18px rgba(0,26,96,.5)}
-.lum-c img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#F2F8FF}
-.lum-c div{padding:8px 9px 10px}
-.lum-c b{display:block;font-family:'Montserrat',sans-serif;font-size:11.5px;line-height:1.3;color:#001A60;margin-bottom:3px}
-.lum-c p{margin:0;font-size:11px;line-height:1.45;color:#4B5563}
-.lum-n{font-size:12px;line-height:1.55;color:#4B5563;margin:14px 0 0}
-.lum-n b{color:#001A60}
-@media (max-width:900px){.lum-g{grid-template-columns:repeat(3,minmax(0,1fr))}.lum-pil{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:820px){.lum{padding:26px 20px 24px}}
-@media (max-width:700px){.lum-hero{grid-template-columns:minmax(0,1fr)}.lum-img{min-height:0;aspect-ratio:16/9;order:-1}.lum-h{font-size:26px}.lum-t{padding:18px 18px 16px}.lum-sello{top:12px;bottom:auto;right:12px}}
-@media (max-width:560px){.lum{padding:24px 16px 22px}.lum-g{grid-template-columns:repeat(2,minmax(0,1fr))}.lum-pil{grid-template-columns:minmax(0,1fr)}}
-.pg .lum .appb-bt{display:none}
-</style>
-  <section class="lum" id="app-luminea">
-    <div class="lum-hero"><div class="lum-t">
-      <div class="lum-rot">Destacado · Luminea · Únicos en Chile</div>
-      <h2 class="lum-h">Luminea: la luz que se maneja desde una app</h2>
-      <p><b>Somos los únicos en Chile con la línea Luminea</b>, como sus distribuidores exclusivos autorizados: un sistema sin comparación en el país.</p>
-      <p>Luminea es la línea de luz interactiva de Qinera: tubos de burbujas, fibras ópticas, piscinas de bolas, cielos de estrellas y más. Basta con que la sala tenga <b>un solo elemento Luminea</b> para usar la app Luminea, que es gratuita. Y eso es excepcional: <b>la luz de la sala se maneja y se personaliza desde un teléfono o una tablet</b>, con las fotos, los colores, la música y las actividades que elige el propio equipo.</p>
-      <ul class="lum-chips"><li>Una foto que se vuelve luz</li><li>Secuencias al ritmo de la música</li><li>Más de doce actividades listas</li><li>Actividades propias, sin límite</li></ul>
-      <div class="appb-bt"><button type="button" class="appb-b1" onclick="appVid()"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Ver el video</button><button type="button" class="appb-b2" onclick="appInfo()">Conocer la app y sus ideas →</button></div>
-    </div><img class="lum-img" src="SalasMultisensoriales_Recortadas/app-luminea-fibra-tablet.jpg" alt="La app Luminea en una tablet, junto a la fibra óptica" loading="lazy"><a class="lum-sello" href="https://opencluster-tech.github.io/propuestas/acreditacion/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg><div>Distribuidor exclusivo en Chile<span>Ver la acreditación ›</span></div></a></div>
-    <div class="lum-pil"><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></span><b>Versátiles</b></div><p>El mismo elemento calma o despierta la atención: depende de los colores y del ritmo que elija el profesional.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4v-6H4z"/><path d="M10 20h4V10h-4z"/><path d="M16 20h4V4h-4z"/></svg></span><b>Escalables</b></div><p>Se parte con un tubo de burbujas o una fibra óptica y se suma de a un elemento. Todos se entienden entre sí y se integran después al Sistema SHX.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>Inmersivos</b></div><p>Luz y color que envuelven el espacio. Con el Sistema SHX, la luz se sincroniza con la imagen, el sonido y la vibración de toda la sala.</p></div><div class="lum-pi"><div class="lum-pi-c"><span class="lum-pi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11"/><path d="M12 10.5V4.5a1.5 1.5 0 0 1 3 0v6"/><path d="M15 10.5V6.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-.6a6 6 0 0 1-4.6-2.2L3.4 15.6a1.6 1.6 0 0 1 2.4-2.1L9 16V11"/></svg></span><b>Al alcance de cada uno</b></div><p>Cada persona toma el control como puede: con la app, el mando de seis botones, el dado gigante, la alfombra de colores, su pulsador adaptado o en modo automático.</p></div></div>
-    <p class="lum-n">Cada elemento de luz Luminea trae una <b>guía de ideas de actividades</b> pensada por profesionales. Para salas con varios equipos, el <b>Router Luminea</b> los reúne en una red propia de la sala.</p>
-  </section>
-<!--APP-LUMINEA-SECCION-FIN-->
-  <!-- ── Los videos (ancla de la sección App Luminea: en salud es el destacado Luminea del catálogo) -->
-
-  <div class="nx cat cat-lista">
-    <section class="cat-gr cat-go" id="cg-go">
-      <div class="cg-foto"><img src="SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg" alt="El tubo de burbujas del Sensory Go encendido" loading="lazy"></div>
-      <div class="cg-tx">
-        <div class="cd-rot">Destacado · Estación sensorial móvil</div>
-        <h3>Sensory Go: <em>la sala multisensorial sobre ruedas</em></h3>
-        <p><b>Qué es.</b> Un carro con ruedas de 46 × 96 × 130 cm que guarda todo lo de una sala multisensorial con tecnología SHX.</p>
-        <p><b>Para qué sirve en salud.</b> Para el centro que no tiene una sala libre: se lleva al box de atención, a la sala de rehabilitación o a la sala de talleres, se enciende y ese lugar se transforma en un espacio sensorial. Al terminar, se guarda en un rincón.</p>
-        <p><b>Cómo se usa.</b> Con una sola acción cambian juntas la luz, las burbujas, la imagen en la pared, la música y la vibración. Se maneja desde su tableta, y la persona participa con un pulsador, con el Button 6 o acercando un objeto.</p>
-        <div class="cg-trae"><b>Qué trae</b><ul><li>Unidad central SHX Compact con proyector</li><li>Tableta de control</li><li>Amplificador y altavoz integrados</li><li>Tubo de burbujas de 120 cm</li><li>Fibra óptica de 3 m</li><li>Unidad de vibración y cojín vibroacústico</li><li>Button 6 y Button 1</li><li>Reconocimiento de objetos</li></ul></div>
-        <button type="button" class="cg-vid" data-lb-src="https://www.youtube-nocookie.com/embed/dLMqDZ2LXGw?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Cómo se usa el Sensory Go" data-lb-donde=""><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Ver cómo se usa (video)</button>
-      </div>
-      <div class="cg-dos"><div class="go-p"><b>Sensory Go SHX</b><p>La estación completa, lista para llevar de una sala a otra.</p><div class="go-p-v"><b>$18.707.446</b><span>IVA incluido</span></div><div class="go-p-bt"><button type="button" class="cat-fx-bt go-p-f" data-ficha="Sensory Go SHX">Ver la ficha</button><a class="go-p-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20para%20salud%20y%20quiero%20consultar%20por%3A%20Sensory%20Go%20SHX." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a></div></div><div class="go-p"><b>Sensory Go SHX Full</b><p>El mismo Sensory Go SHX con piscina de bolas, puff, aroma y luz en el suelo: una sala completa donde se necesite.</p><div class="go-p-v"><b>$26.541.432</b><span>IVA incluido</span></div><div class="go-p-bt"><button type="button" class="cat-fx-bt go-p-f" data-ficha="Sensory Go SHX Full">Ver la ficha</button><a class="go-p-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20para%20salud%20y%20quiero%20consultar%20por%3A%20Sensory%20Go%20SHX%20Full." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a></div></div></div>
-    </section>
-    <section class="cat-gr" id="cg-shx"><div class="cat-gr-c"><h3>Sistema SHX</h3><span>Une la luz, el sonido, la imagen y la vibración en una sola escena, y todo lo que se le conecta.</span></div><div class="cat-g" data-cat-grupo="cg-shx"></div></section>
-    <section class="cat-gr" id="cg-luminea"><div class="cat-gr-c"><h3>Luminea</h3><span>La línea de luz interactiva: tubos, fibras, cortinas y piscinas que se manejan desde la app gratuita.</span></div><div class="cat-g" data-cat-grupo="cg-luminea"></div></section>
-    <section class="cat-gr" id="cg-vibro"><div class="cat-gr-c"><h3>Vibroacústicos</h3><span>La música se escucha y se siente en el cuerpo como una vibración suave.</span></div><div class="cat-g" data-cat-grupo="cg-vibro"></div></section>
-    <section class="cat-gr" id="cg-presion"><div class="cat-gr-c"><h3>Presión profunda</h3><span>Peso y presión firme y pareja, que ayudan a volver a la calma.</span></div><div class="cat-g" data-cat-grupo="cg-presion"></div></section>
-    <section class="cat-gr" id="cg-mov"><div class="cat-gr-c"><h3>Movimiento y juego</h3><span>Para balancearse, girar, buscar el equilibrio y dejarse caer sin riesgo.</span></div><div class="cat-g" data-cat-grupo="cg-mov"></div></section>
-    <section class="cat-gr" id="cg-otros"><div class="cat-gr-c"><h3>Aromaterapia, tacto y luz ultravioleta</h3><span>El olfato, el tacto, la propia imagen en el espejo y los materiales que brillan con luz ultravioleta.</span></div><div class="cat-g" data-cat-grupo="cg-otros"></div></section>
-    <p class="cat-nota"><b>Qué incluye cada valor.</b> El valor de cada producto, con IVA. No incluye el transporte, la instalación ni la capacitación, porque dependen de la ubicación del centro: los sumamos en la cotización. Son valores referenciales, sujetos a la disponibilidad de stock al momento de la orden de compra.</p>
-  </div>
-<script>
-/* salud · catálogo: las tarjetas (con la ficha de cada producto) y lo que se le suma a la ficha */
-(function(){
-  var GR = [["cg-shx",["Sistema SHX Compact","SHX Proximity","Estrellas SHX","Kit Voz SHX","Ventilador SHX","Sensory Cube grande","Barra LED UV SHX","Foco de luz UV LED SHX"]],["cg-luminea",["Rincón Luminea con tablet","Tubo de burbujas Luminea","Fibra óptica Luminea 2m","Fibra óptica Luminea 3m","Ducha Luminea","Cortina Luminea","Planeta Luminea","Línea LED Luminea Para Techo 5 Metros","Piscina Luminea vibroacústica","Button 1","Button 6","Router Luminea"]],["cg-vibro",["Butaca relax vibroacústica","Puff transformable vibroacústico","Cojín vibroacústico","Almohada vibrante","Kit vibroacústico Bluetooth","Amplificador vibroacústico adicional"]],["cg-presion",["Manta de peso azul y roja mediana 2,2 kg","Manta de peso gris y roja grande 3,6 kg","Peso para hombros Lola la Oruga grande","Saco de danza propioceptivo talla M","Set De Peso Muñecas y Tobillos"]],["cg-mov",["Piscina de bolas alta","Piscina de bolas mediana","Columpio Rulo 2 en 1","Peonza gigante","Pelota cacahuete","Pelota de terapia de diámetro 45 cm","Pelota de terapia de diámetro 55 cm","Tabla Scooter 40cm"]],["cg-otros",["Difusor de aromaterapia","Kit de iniciación de aromaterapia","Kit de masaje","Conjunto de discos táctiles para pies y manos","Sensory Feet 1.1","Espejo grande recto","Bolsa material Ultravioleta","Foco de luz UV LED"]]], PRE = {"Sistema SHX Compact":8519524,"SHX Proximity":1223620,"Estrellas SHX":563132,"Kit Voz SHX":391329,"Ventilador SHX":502047,"Sensory Cube grande":881922,"Barra LED UV SHX":440961,"Foco de luz UV LED SHX":450506,"Rincón Luminea con tablet":4972745,"Tubo de burbujas Luminea":2395698,"Fibra óptica Luminea 2m":1393514,"Fibra óptica Luminea 3m":1593951,"Ducha Luminea":2494962,"Cortina Luminea":1964282,"Planeta Luminea":992640,"Línea LED Luminea Para Techo 5 Metros":891467,"Piscina Luminea vibroacústica":4800942,"Button 1":297792,"Button 6":691030,"Router Luminea":94491,"Butaca relax vibroacústica":2004369,"Puff transformable vibroacústico":1477506,"Cojín vibroacústico":582222,"Almohada vibrante":112626,"Kit vibroacústico Bluetooth":1183532,"Amplificador vibroacústico adicional":752116,"Manta de peso azul y roja mediana 2,2 kg":200437,"Manta de peso gris y roja grande 3,6 kg":303519,"Peso para hombros Lola la Oruga grande":101173,"Saco de danza propioceptivo talla M":197827,"Set De Peso Muñecas y Tobillos":19089,"Piscina de bolas alta":2118905,"Piscina de bolas mediana":1718031,"Columpio Rulo 2 en 1":1607000,"Peonza gigante":194710,"Pelota cacahuete":131716,"Pelota de terapia de diámetro 45 cm":32452,"Pelota de terapia de diámetro 55 cm":38178,"Tabla Scooter 40cm":93537,"Difusor de aromaterapia":125989,"Kit de iniciación de aromaterapia":104991,"Kit de masaje":334062,"Conjunto de discos táctiles para pies y manos":293974,"Sensory Feet 1.1":524954,"Espejo grande recto":521136,"Bolsa material Ultravioleta":301610,"Foco de luz UV LED":150805,"Sensory Go SHX":18707446,"Sensory Go SHX Full":26541432}, EN = {"Sistema SHX Compact":["Amanecer y anochecer en hospitalización","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"SHX Proximity":["Sala para personas mayores"],"Estrellas SHX":["Box sensorial de urgencia","Espacio de pausa para el equipo","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Kit Voz SHX":["Espacio de calma integral"],"Ventilador SHX":["Espacio de calma integral"],"Sensory Cube grande":["Sala de estimulación sensorial"],"Barra LED UV SHX":["Espacio de calma integral"],"Foco de luz UV LED SHX":["Sala de estimulación sensorial"],"Rincón Luminea con tablet":["Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Tubo de burbujas Luminea":["Espacio de pausa para el equipo"],"Fibra óptica Luminea 2m":["Box sensorial de urgencia"],"Fibra óptica Luminea 3m":["Espacio de pausa para el equipo"],"Ducha Luminea":["Espacio de calma integral"],"Cortina Luminea":["Sala de estimulación del desarrollo infantil"],"Planeta Luminea":["Box sensorial de urgencia","Espacio de pausa para el equipo","Espacio de calma integral"],"Línea LED Luminea Para Techo 5 Metros":["Amanecer y anochecer en hospitalización","Sala de estimulación sensorial"],"Piscina Luminea vibroacústica":["Sala de estimulación sensorial"],"Button 1":["Sala de estimulación del desarrollo infantil","Sala para personas mayores"],"Button 6":["Sala de estimulación sensorial"],"Router Luminea":["Box sensorial de urgencia","Sala de estimulación del desarrollo infantil","Espacio de pausa para el equipo"],"Butaca relax vibroacústica":["Espacio de pausa para el equipo","Sala para personas mayores","Espacio de calma integral"],"Puff transformable vibroacústico":["Box sensorial de urgencia","Sala de estimulación sensorial"],"Cojín vibroacústico":["Box sensorial de urgencia","Amanecer y anochecer en hospitalización"],"Almohada vibrante":["Box sensorial de urgencia","Sala de estimulación del desarrollo infantil"],"Kit vibroacústico Bluetooth":["Box sensorial de urgencia","Espacio de pausa para el equipo","Espacio de calma integral"],"Amplificador vibroacústico adicional":["Sala de estimulación sensorial"],"Manta de peso azul y roja mediana 2,2 kg":["Box sensorial de urgencia","Sala de estimulación del desarrollo infantil","Sala de estimulación sensorial"],"Manta de peso gris y roja grande 3,6 kg":["Box sensorial de urgencia","Espacio de pausa para el equipo","Sala de rehabilitación sensorial","Sala para personas mayores","Espacio de calma integral"],"Peso para hombros Lola la Oruga grande":["Box sensorial de urgencia"],"Saco de danza propioceptivo talla M":["Sala de rehabilitación sensorial"],"Set De Peso Muñecas y Tobillos":["Sala de rehabilitación sensorial"],"Piscina de bolas alta":["Sala de estimulación del desarrollo infantil"],"Piscina de bolas mediana":["Sala de rehabilitación sensorial"],"Columpio Rulo 2 en 1":["Sala de rehabilitación sensorial"],"Peonza gigante":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial"],"Pelota cacahuete":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial"],"Pelota de terapia de diámetro 45 cm":["Sala de estimulación del desarrollo infantil"],"Pelota de terapia de diámetro 55 cm":["Sala de estimulación del desarrollo infantil"],"Tabla Scooter 40cm":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial"],"Difusor de aromaterapia":["Box sensorial de urgencia","Espacio de pausa para el equipo","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Kit de iniciación de aromaterapia":["Box sensorial de urgencia","Espacio de pausa para el equipo","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Kit de masaje":["Sala para personas mayores","Espacio de calma integral"],"Conjunto de discos táctiles para pies y manos":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial","Sala para personas mayores"],"Sensory Feet 1.1":["Sala de estimulación del desarrollo infantil"],"Espejo grande recto":["Sala de estimulación del desarrollo infantil","Sala de rehabilitación sensorial","Sala para personas mayores","Espacio de calma integral","Sala de estimulación sensorial"],"Bolsa material Ultravioleta":["Sala de estimulación del desarrollo infantil","Espacio de calma integral","Sala de estimulación sensorial"],"Foco de luz UV LED":["Sala de estimulación del desarrollo infantil"],"Sensory Go SHX":[],"Sensory Go SHX Full":[]}, WA = "56956294723";
-  var IC_WA = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 20l1.3-3.9A8 8 0 1 1 8.2 19z\"/><path d=\"M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z\"/></svg>";
-
-      function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-      function pesos(n) { return '$' + Number(n).toLocaleString('es-CL'); }
-      function prod(n) {
-        var l = (window.SENSORIAL_BODEGA || []).concat(window.NUESTRAS_EXTRA || []);
-        for (var i = 0; i < l.length; i++) if (l[i].n === n) return l[i];
-        return null;
-      }
-      function primera(t) { t = String(t || ''); var k = t.indexOf('. '); return k > 0 ? t.slice(0, k + 1) : t; }
-      function pinta() {
-        GR.forEach(function (g) {
-          var cont = document.querySelector('[data-cat-grupo="' + g[0] + '"]');
-          if (!cont) return;
-          cont.innerHTML = g[1].map(function (n) {
-            var p = prod(n) || { n: n };
-            return '<button type="button" class="cat-c" data-ficha="' + esc(n) + '">' +
-              '<span class="cc-f"><img src="' + esc(p.img || 'isotipo-oct.png') + '" alt="" loading="lazy"></span>' +
-              '<span class="cc-tx"><span class="cc-n">' + esc(n) + '</span><span class="cc-d">' + esc(primera(p.desc || p.que)) + '</span>' +
-              '<span class="cc-p"><b>' + pesos(PRE[n]) + '</b><span>IVA incluido</span></span><span class="cc-ir">Ver la ficha ›</span></span></button>';
-          }).join('');
-        });
-      }
-      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pinta); else pinta();
-      /* La ficha: valor (si se abrió desde el catálogo), en qué salas de ejemplo va y «Consultar». */
-      var desdeCat = false;
-      document.addEventListener('click', function (ev) {
-        var t = ev.target.closest && ev.target.closest('[data-ficha]');
-        if (t) desdeCat = !!t.closest('.cat');
-      }, true);
-      function completa() {
-        var fx = document.getElementById('fx'), cu = document.getElementById('fxCuerpo');
-        if (!fx || fx.hidden || !cu) return;
-        var der = cu.querySelector('.fx-der'), h = cu.querySelector('.fx-n');
-        if (!der || !h || der.querySelector('.cat-fx-bt')) return;
-        var n = h.textContent;
-        if (desdeCat && PRE[n]) h.insertAdjacentHTML('afterend', '<div class="cat-fx-v"><b>' + pesos(PRE[n]) + '</b><span>IVA incluido</span></div>');
-        var en = EN[n] || [];
-        der.insertAdjacentHTML('beforeend',
-          (en.length ? '<div class="cat-fx-en"><b>Lo incluimos en ' + (en.length === 1 ? 'esta sala de ejemplo' : 'estas salas de ejemplo') + ':</b> ' + en.map(esc).join(' · ') + '.</div>' : '') +
-          '<a class="cat-fx-bt" href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Rayen, vi el catálogo de salas multisensoriales para salud y quiero consultar por: ' + n + '.') +
-          '" target="_blank" rel="noopener">' + IC_WA + 'Consultar</a>');
-      }
-      function vigila() {
-        var cu = document.getElementById('fxCuerpo');
-        if (!cu) return;
-        new MutationObserver(function () { completa(); }).observe(cu, { childList: true });
-      }
-      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', vigila); else vigila();
-    
-})();
-</script>
 
   <!-- ── Comunicación en la sala (Rayen, 21-oct-2026) ── -->
   <div class="nx caa" id="caa">
@@ -2867,28 +2855,6 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
 
 </div>
 
-  <!-- ── Opciones de salas: tres formas (Rayen, 25-sep-2026) ── -->
-  <div class="nx opc" id="opciones">
-    <div class="rot">Opciones de sala</div>
-    <h2>Salas preconfiguradas<br><em>para un centro de salud</em></h2>
-    <p class="nx-baja">Son ejemplos: cada sala se adapta a su espacio, a las personas que atienden y a su presupuesto, y se le pueden sumar, cambiar o quitar elementos. Toquen una opción para verlas con su valor.</p>
-    <div class="opc-g opc-2">
-      <button type="button" class="opc-c" data-op="1">
-        <span class="opc-n">1</span>
-        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/opcion-shx2-portada.jpg" alt="" loading="lazy"></span>
-        <span class="opc-tx"><b>Una sala completa</b><span>Diseñamos su sala a su medida. Como ejemplo, ocho salas pensadas para el centro de salud, cada una con su valor.</span></span>
-        <span class="opc-ir">Ver las salas<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
-      </button>
-      <button type="button" class="opc-c" data-op="3">
-        <span class="opc-n">2</span>
-        <span class="opc-foto"><img src="SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg" alt="" loading="lazy"></span>
-        <span class="opc-tx"><b>Sensory Go SHX: la estación sensorial móvil</b><span>Si no tienen espacio para una sala: todo en un mueble con ruedas que va de una sala a otra.</span></span>
-        <span class="opc-ir">Ver la estación<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
-      </button>
-    </div>
-  </div>
-
-
   <section class="cp" id="compromiso"><img class="logo-bl" src="oct-logo-blanco.png" alt="OpenCluster Tech · Construyendo inclusión"><div class="cp-cab"><div class="cp-rot">Nuestro compromiso</div><h2 class="cp-h"><span class="cp-letra">Los acompañamos</span><span class="cp-sub">en todo el camino</span></h2></div><ol class="cp-ruta"><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M2.8 19.5a5.2 5.2 0 0 1 10.4 0"/><path d="M14 19.5a4.4 4.4 0 0 1 7.2-3.4"/></svg></span><span class="cp-n">Etapa 1</span><h3>Para conocerlos</h3><p>Los acompañamos desde el primer contacto, reuniéndonos con ustedes las veces que sea necesario, respondiendo sus preguntas y, cuando es posible, visitando sus instalaciones, para entender bien sus necesidades.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="cp-n">Etapa 2</span><h3>Para definir la sala</h3><p>Los acompañamos a categorizar a la población que la usará, para que obtengan el espacio sensorial adecuado a su perfil.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5 9 3.5l6 2 5-2v15l-5 2-6-2-5 2z"/><path d="M9 3.5v15"/><path d="M15 5.5v15"/></svg></span><span class="cp-n">Etapa 3</span><h3>Una propuesta personalizada</h3><p>Los acompañamos con una propuesta adaptada a cada uno de nuestros clientes, con sus planos, que vamos mejorando a medida que los conocemos más.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="cp-n">Etapa 4</span><h3>Para la compra</h3><p>Les preparamos la cotización, las especificaciones técnicas y toda la información que necesite su unidad de compras.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0 4.8 5.2l-8.6 8.6a2.1 2.1 0 0 1-3-3l8.6-8.6"/><path d="M5 5l3.5 3.5"/><path d="M3.5 7.5 7.5 3.5"/></svg></span><span class="cp-n">Etapa 5</span><h3>En la implementación</h3><p>Los acompañamos aconsejándolos y guiándolos en los trabajos de preinstalación que requiere el espacio, instalamos la sala y capacitamos a su equipo.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-8"/><path d="M12 12c0-4 2.8-6.5 7-6.5 0 4-2.8 6.5-7 6.5z"/><path d="M12 14.5c0-3-2.2-5-5.5-5 0 3 2.2 5 5.5 5z"/></svg></span><span class="cp-n">Etapa 6</span><h3>Y después</h3><p>Los seguimos acompañando años después de haber comprado su sala, para que puedan seguir escalándola y transformándola año a año en un espacio cada vez más adecuado a sus necesidades.</p></li></ol><div class="cp-fin"><span class="cp-fin-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><p><b>Los acompañamos permanentemente.</b> Cuando algo falla o cuando surgen dudas, seguimos presentes.</p></div></section>
 
   <!-- ── El cierre ──────────────────────────────────────── -->
@@ -2914,7 +2880,7 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
   <!-- Rayen, 25-sep-2026: sin la firma del cotizador, porque se contradecía con la tarjeta de contacto -->
 </div>
 
-<button type="button" class="mnu-btn" id="mnuBtn" aria-expanded="false" aria-controls="mnu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Contenido</span></button><div class="mnu-velo" id="mnuVelo" hidden></div><nav class="mnu" id="mnu" aria-label="Contenido de la propuesta" aria-hidden="true"><div class="mnu-cab"><span>En esta propuesta</span><button type="button" class="mnu-x" id="mnuX" aria-label="Cerrar el menú">&#10005;</button></div><div class="mnu-l"><a href="#inicio" data-ir="inicio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span><b>Inicio y videos</b><i>Salas funcionando en Chile y en el mundo</i></span></a><a href="#distribuidores" data-ir="distribuidores"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></span><span><b>Distribuidores exclusivos</b><i>Sistema SHX y Luminea en Chile</i></span></a><a href="#materiales" data-ir="materiales"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><b>Materiales</b><i>Seguros aunque se los lleven a la boca</i></span></a><a href="#catalogo" data-ir="catalogo"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>Catálogo de productos</b><i>Cada producto con su valor</i></span></a><a href="#caa" data-ir="caa"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></span><span><b>Comunicación en la sala</b><i>Pictogramas, pulsadores y comunicadores</i></span></a><a href="#pasos" data-ir="pasos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/></svg></span><span><b>Cómo trabajamos</b><i>De la evaluación a la instalación</i></span></a><a href="#opciones" data-ir="opciones"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><rect x="9" y="13" width="6" height="7"/></svg></span><span><b>Opciones de sala</b><i>Ocho salas de ejemplo y la estación móvil</i></span></a><a href="#compromiso" data-ir="compromiso"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><span><b>Nuestro compromiso</b><i>Los acompañamos en todo el camino</i></span></a></div></nav>
+<button type="button" class="mnu-btn" id="mnuBtn" aria-expanded="false" aria-controls="mnu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Contenido</span></button><div class="mnu-velo" id="mnuVelo" hidden></div><nav class="mnu" id="mnu" aria-label="Contenido de la propuesta" aria-hidden="true"><div class="mnu-cab"><span>En esta propuesta</span><button type="button" class="mnu-x" id="mnuX" aria-label="Cerrar el menú">&#10005;</button></div><div class="mnu-l"><a href="#inicio" data-ir="inicio"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></svg></span><span><b>Inicio y videos</b><i>Salas funcionando en Chile y en el mundo</i></span></a><a href="#distribuidores" data-ir="distribuidores"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></span><span><b>Distribuidores exclusivos</b><i>Sistema SHX y Luminea en Chile</i></span></a><a href="#catalogo" data-ir="catalogo"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>Productos</b><i>Tres destacados y todo el catálogo</i></span></a><a href="#materiales" data-ir="materiales"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><b>Materiales</b><i>Seguros aunque se los lleven a la boca</i></span></a><a href="#opciones" data-ir="opciones"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16"/><rect x="9" y="13" width="6" height="7"/></svg></span><span><b>Opciones de sala</b><i>Ocho salas de ejemplo y la estación móvil</i></span></a><a href="#caa" data-ir="caa"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></span><span><b>Comunicación en la sala</b><i>Pictogramas, pulsadores y comunicadores</i></span></a><a href="#pasos" data-ir="pasos"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19.4 8.6a2.8 2.8 0 0 0-4-4L4 16v4z"/></svg></span><span><b>Cómo trabajamos</b><i>De la evaluación a la instalación</i></span></a><a href="#compromiso" data-ir="compromiso"><span class="idx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><span><b>Nuestro compromiso</b><i>Los acompañamos en todo el camino</i></span></a></div></nav>
 <button type="button" class="arriba" id="btnArriba" aria-label="Subir">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   Subir
@@ -3134,8 +3100,8 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
   }
 </script>
 <!--APP-LUMINEA-FIN-->
-<script src="SensorialBodega.js?v=1792693112034"></script>
-<script src="NuestrasSalas.js?v=1792693112034"></script>
+<script src="SensorialBodega.js?v=1792693792666"></script>
+<script src="NuestrasSalas.js?v=1792693792666"></script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -3730,8 +3696,8 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
   (function(){
     var hoja = document.querySelector('.hoja');
     if (!hoja) return;
-    var ORDEN = ['inicio', 'distribuidores', 'materiales', 'catalogo', 'caa', 'pasos', 'opciones', 'compromiso'];   /* salud · 29 */
-    var NOMBRE = { inicio: 'Inicio', distribuidores: 'Distribuidores exclusivos', materiales: 'Materiales', catalogo: 'Catálogo de productos', caa: 'Comunicación en la sala', pasos: 'Cómo trabajamos',
+    var ORDEN = ['inicio', 'distribuidores', 'catalogo', 'materiales', 'opciones', 'caa', 'pasos', 'compromiso'];   /* salud · 29 (ronda 3: Productos antes que Materiales; Opciones de sala después de Materiales) */
+    var NOMBRE = { inicio: 'Inicio', distribuidores: 'Distribuidores exclusivos', materiales: 'Materiales', catalogo: 'Productos', caa: 'Comunicación en la sala', pasos: 'Cómo trabajamos',
       opciones: 'Opciones de sala', compromiso: 'Nuestro compromiso' };
     var grupos = {}, actual = 'inicio';
     ORDEN.forEach(function(k){ grupos[k] = []; });
@@ -3984,7 +3950,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 22 de octubre a las 15:18</div>
+<div id="verPill" class="ver-pill">Versión del 22 de octubre a las 15:29</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -3995,7 +3961,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1792693112034';
+(function(){ var V = '1792693792666';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
