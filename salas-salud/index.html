@@ -2194,6 +2194,24 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
 @media print{.arriba,.sv{display:none !important}}
 </style>
 <style>
+</style>
+<script>
+/* salud · 26: red de seguridad contra la página «pegada» */
+(function(){
+  function hay(){ var v = ['sv', 'opv', 'fx', 'cxf', 'lb'].some(function(i){ var e = document.getElementById(i); return e && !e.hidden; });
+    var m = document.getElementById('mnu'); return v || !!(m && m.classList.contains('on')); }
+  function suelta(){ if (hay()) return; document.body.classList.remove('con-op', 'con-sala');
+    if (document.body.style.overflow) document.body.style.overflow = ''; if (document.documentElement.style.overflow) document.documentElement.style.overflow = ''; }
+  function revisa(){ setTimeout(suelta, 60); setTimeout(suelta, 450); }
+  ['click', 'keydown'].forEach(function(t){ document.addEventListener(t, revisa); });
+  ['popstate', 'hashchange'].forEach(function(t){ window.addEventListener(t, revisa); });
+})();
+</script>
+<style>
+/* salud · 23: el aviso de versión no tapa las ventanas */
+body.con-sala #verPill,body.con-op #verPill,body:has(#fx:not([hidden])) #verPill,body:has(#cxf:not([hidden])) #verPill,
+body:has(#sv:not([hidden])) #verPill,body:has(#opv:not([hidden])) #verPill,body:has(#lb:not([hidden])) #verPill,
+body:has(#mnuVelo:not([hidden])) #verPill{display:none !important}
 /* salud · 18: cierre sincronizado */
 .nav-p{padding:30px 54px 0;gap:8px}
 .nav-p .np-sig{background:#001A60;border:0;color:#fff;padding:20px 22px 20px 26px;border-radius:16px}
@@ -2765,7 +2783,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
     <h2>Salas pensadas para el centro de salud,<br><em>o diseñadas a su medida</em></h2>
     <p class="nx-baja">Nuestros profesionales expertos en entornos sensoriales y neurodivergencia diseñan la sala que necesitan las personas que atienden, como ustedes la quieran.
       Para que se hagan una idea, han preparado
-      <b>ocho ejemplos de salas</b> pensadas para lo que hace un centro de salud —la urgencia, el programa TEA, la rehabilitación, el control de desarrollo, la hospitalización, las personas mayores, la calma de jóvenes y adultos y el propio equipo—, cada una con el valor
+      <b>ocho ejemplos de salas</b> pensadas para lo que hace un centro de salud —la urgencia, el control de desarrollo, el propio equipo, la hospitalización, la rehabilitación, las personas mayores, la regulación sensorial de jóvenes y adultos y el programa TEA—, cada una con el valor
       de la sala completa. Son ejemplos: pueden elegirlos tal
       como están o usarlos como punto de partida, y a cualquiera se le pueden sumar, cambiar o quitar
       elementos. Para su centro armamos siempre <b>una propuesta personalizada</b>. <b>Toquen una sala para conocerla</b>: qué la hace especial, qué se logra con ella, a
@@ -2789,7 +2807,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
       otra sala u otro orden,
       lo armamos con ustedes.</p>
     <div class="alt-nota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg>
-      <p><b>Qué incluye cada valor.</b> Los valores son los de los elementos de cada etapa, con IVA. <b>No incluyen el transporte,
+      <p><b>Qué incluye cada valor.</b> Los valores son los de los elementos, con IVA: el de la sala completa (el mismo de la opción 1) y el de cada etapa. <b>No incluyen el transporte,
         la instalación ni la capacitación</b>, porque dependen de la ubicación final del centro: los sumamos en la cotización.
         Son valores referenciales, sujetos a la disponibilidad de stock a nivel nacional al momento de la orden de compra.</p></div>
     <div class="alt-g" id="altGrid"></div>
@@ -2957,7 +2975,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
 .comp:hover .comp-letra{color:#06b3fd !important}
 </style>
 <script>
-  var APP = {"Box sensorial de urgencia":"En esta sala, la app maneja el planeta de luz. El teléfono o la tablet y el planeta de luz se conectan a la red Wi-Fi del lugar.","Sala de estimulación sensorial":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, y la línea de luz del techo, juntos o por separado. El Sistema SHX trae su propia red, y los equipos Luminea llegan configurados para ella.","Sala de estimulación del desarrollo infantil":"En esta sala, la app maneja la cortina de luz. El teléfono o la tablet y la cortina de luz se conectan a la red Wi-Fi del lugar.","Amanecer y anochecer en hospitalización":"En esta sala, la app maneja la línea de luz del techo. El Sistema SHX trae su propia red, y la línea de luz del techo llega configurada para ella.","Sala para personas mayores":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Sistema SHX trae su propia red, y el tubo de burbujas y la fibra óptica del Rincón Luminea llega configurado para ella.","Espacio de calma integral":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, la ducha de fibra óptica y el planeta de luz, juntos o por separado. El Sistema SHX trae su propia red, y los equipos Luminea llegan configurados para ella.","Espacio de pausa para el equipo":"En esta sala, la app maneja el planeta de luz. El teléfono o la tablet y el planeta de luz se conectan a la red Wi-Fi del lugar.","alt:Espacio de calma integral":"En esta sala, la app maneja el planeta de luz. El teléfono o la tablet y el planeta de luz se conectan a la red Wi-Fi del lugar.","alt:Sala de estimulación sensorial":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red.","alt:Sala para personas mayores":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red."}, APP_T = {"Box sensorial de urgencia":"El planeta de luz de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","Sala de estimulación del desarrollo infantil":"La cortina de luz de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","Amanecer y anochecer en hospitalización":"La línea de luz de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","Sala para personas mayores":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","Espacio de pausa para el equipo":"El planeta de luz de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","alt:Espacio de calma integral":"El planeta de luz de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","alt:Sala de estimulación sensorial":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","alt:Sala para personas mayores":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet"}, APP_C = [{"img":"app-luminea-pixel.jpg","t":"Tocar una foto y cambiar la luz","p":"Se carga cualquier imagen: una foto de internet, una tomada con la tablet o un dibujo propio. Al tocar un color de la imagen, la luz se vuelve de ese color. Con el «color mágico», el equipo se enciende solo cuando la persona encuentra el color elegido."},{"img":"app-luminea-actividad.jpg","t":"Actividades listas y sin límite","p":"Trae más de doce actividades listas —reconocer colores, seguir laberintos con el dedo, elegir— que sirven de punto de partida. Desde ahí, cada profesional crea las suyas, sin límite."},{"img":"app-luminea-paleta.jpg","t":"La luz al ritmo de la música","p":"Se graba una secuencia de colores al ritmo de una canción, de un sonido o de la propia voz, y queda guardada para repetirla las veces que se quiera. Sirve para trabajar el ritmo, la memoria, la relajación y las emociones."},{"img":"app-luminea-fibra-tablet.jpg","t":"Un equipo o todos a la vez","p":"Cada equipo se maneja por separado o todos juntos, y se ajusta su luminosidad. Cada elemento Luminea que la sala sume en los próximos años se agrega a la misma app."}], APP_IDEAS = [["Lo que le apasiona, como motor","A un niño al que le encantan los tiburones quizás el tubo de burbujas solo no le llame la atención. Pero si en la tablet aparecen tres tiburones y, al tocarlos uno a uno mientras los cuenta, el tubo cambia de color, la luz se vuelve el premio y los números, un juego. Lo mismo con su superhéroe favorito para trabajar los colores."],["Su propio paisaje","En vez de imágenes genéricas, fotos del paisaje de su región: el cerro, el mar, el río o la plaza que ven cada día. Las actividades hablan de su entorno y de lo que conocen."],["Letras y palabras","Letras blancas sobre fondo negro: al tocar la letra, toda la luz se vuelve blanca; al tocar el fondo, se apaga. Con frutas, animales o medios de transporte, cada imagen tiñe la sala de su color mientras se nombra."],["Precisión con el dedo","Caminos y laberintos que hay que seguir sin salirse: si el dedo se sale, la luz cambia. O una diana que se enciende de un color al acertar al centro y de otro al fallar."],["Las estaciones del año","El otoño llena la sala de tonos café, el verano de verde y el invierno de blanco nieve, mientras se conversa sobre cada una."],["De la calma a la activación","Una imagen del mar que vuelve azul la sala para ayudar a alguien a calmarse, o colores intensos cuando lo que se busca es activarlo."]];
+  var APP = {"Box sensorial de urgencia":"En esta sala, la app maneja el planeta de luz y la fibra óptica, juntos o por separado. El teléfono o la tablet y los equipos se conectan a la red Wi-Fi del lugar.","Sala de estimulación del desarrollo infantil":"En esta sala, la app maneja la cortina de luz. El teléfono o la tablet y la cortina de luz se conectan a la red Wi-Fi del lugar.","Amanecer y anochecer en hospitalización":"En esta sala, la app maneja la línea de luz del techo. El Sistema SHX trae su propia red, y la línea de luz del techo llega configurada para ella.","Espacio de pausa para el equipo":"En esta sala, la app maneja el planeta de luz, el tubo de burbujas y la fibra óptica, juntos o por separado. El Router Luminea crea la red propia de la sala: los equipos llegan configurados y no necesita internet.","Sala para personas mayores":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red.","Espacio de calma integral":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, la ducha de fibra óptica y el planeta de luz, juntos o por separado. El Rincón Luminea llega con su tablet y su propia red, y los demás equipos llegan configurados para ella.","Sala de estimulación sensorial":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, la línea de luz del techo y la piscina de bolas, juntos o por separado. El Rincón Luminea llega con su tablet y su propia red, y los demás equipos llegan configurados para ella.","alt:Sala para personas mayores":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red.","alt:Espacio de calma integral":"En esta sala, la app maneja el planeta de luz. El teléfono o la tablet y el planeta de luz se conectan a la red Wi-Fi del lugar.","alt:Sala de estimulación sensorial":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red."}, APP_T = {"Sala de estimulación del desarrollo infantil":"La cortina de luz de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","Amanecer y anochecer en hospitalización":"La línea de luz de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","Sala para personas mayores":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","alt:Sala para personas mayores":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","alt:Espacio de calma integral":"El planeta de luz de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","alt:Sala de estimulación sensorial":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet"}, APP_C = [{"img":"app-luminea-pixel.jpg","t":"Tocar una foto y cambiar la luz","p":"Se carga cualquier imagen: una foto de internet, una tomada con la tablet o un dibujo propio. Al tocar un color de la imagen, la luz se vuelve de ese color. Con el «color mágico», el equipo se enciende solo cuando la persona encuentra el color elegido."},{"img":"app-luminea-actividad.jpg","t":"Actividades listas y sin límite","p":"Trae más de doce actividades listas —reconocer colores, seguir laberintos con el dedo, elegir— que sirven de punto de partida. Desde ahí, cada profesional crea las suyas, sin límite."},{"img":"app-luminea-paleta.jpg","t":"La luz al ritmo de la música","p":"Se graba una secuencia de colores al ritmo de una canción, de un sonido o de la propia voz, y queda guardada para repetirla las veces que se quiera. Sirve para trabajar el ritmo, la memoria, la relajación y las emociones."},{"img":"app-luminea-fibra-tablet.jpg","t":"Un equipo o todos a la vez","p":"Cada equipo se maneja por separado o todos juntos, y se ajusta su luminosidad. Cada elemento Luminea que la sala sume en los próximos años se agrega a la misma app."}], APP_IDEAS = [["Lo que le apasiona, como motor","A un niño al que le encantan los tiburones quizás el tubo de burbujas solo no le llame la atención. Pero si en la tablet aparecen tres tiburones y, al tocarlos uno a uno mientras los cuenta, el tubo cambia de color, la luz se vuelve el premio y los números, un juego. Lo mismo con su superhéroe favorito para trabajar los colores."],["Su propio paisaje","En vez de imágenes genéricas, fotos del paisaje de su región: el cerro, el mar, el río o la plaza que ven cada día. Las actividades hablan de su entorno y de lo que conocen."],["Letras y palabras","Letras blancas sobre fondo negro: al tocar la letra, toda la luz se vuelve blanca; al tocar el fondo, se apaga. Con frutas, animales o medios de transporte, cada imagen tiñe la sala de su color mientras se nombra."],["Precisión con el dedo","Caminos y laberintos que hay que seguir sin salirse: si el dedo se sale, la luz cambia. O una diana que se enciende de un color al acertar al centro y de otro al fallar."],["Las estaciones del año","El otoño llena la sala de tonos café, el verano de verde y el invierno de blanco nieve, mientras se conversa sobre cada una."],["De la calma a la activación","Una imagen del mar que vuelve azul la sala para ayudar a alguien a calmarse, o colores intensos cuando lo que se busca es activarlo."]];
   window.appVid = function(){
     var o = document.createElement('div'); o.className = 'cr-ov';
     o.innerHTML = '<div class="cr-ov-c"><button type="button" class="cr-ov-x" aria-label="Cerrar">×</button>' +
@@ -2992,8 +3010,8 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
   }
 </script>
 <!--APP-LUMINEA-FIN-->
-<script src="SensorialBodega.js?v=1792637713412"></script>
-<script src="NuestrasSalas.js?v=1792637713412"></script>
+<script src="SensorialBodega.js?v=1792668157065"></script>
+<script src="NuestrasSalas.js?v=1792668157065"></script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -3133,7 +3151,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
       '<span class="p2-cuerpo">' +
         '<span class="p2-p">' + esc(s.para) + '</span>' +
         '<span class="p2-prod">' + IC_CAJA + '<span>' + s.items.length + ' elementos distintos</span></span>' +
-        (s.total ? '<span class="p2-val"><span>Valor de la sala completa</span><b>' + pesos(s.total) + '</b><span>IVA incluido</span></span>' : '') +
+        (s.total ? '<span class="p2-val"><span>' + (s.porBox ? 'Valor por box' : 'Valor de la sala completa') + '</span><b>' + pesos(s.total) + '</b><span>IVA incluido</span></span>' : '') +
         '<span class="p2-ir">Conocer esta sala' + IC_FLECHA + '</span>' +
       '</span>' +
     '</button>';
@@ -3151,7 +3169,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
     return '<button type="button" class="alt-c" data-alt="' + j + '">' +
       '<span class="alt-cab"><span class="alt-l">Alternativa ' + (j + 1) + ' de ' + ALT.length + '</span>' +
         '<span class="alt-n">' + esc(a.n) + '</span><span class="alt-p">' + esc(a.para) + '</span>' +
-        '<span class="alt-v"><b>' + pesos(a.total) + '</b><span>Etapa 1 · IVA incluido</span></span></span>' +
+        '<span class="alt-v"><b>' + pesos(totalAlt(a)) + '</b><span>Sala completa · Etapa 1 desde ' + pesos(a.total) + ' · IVA incluido</span></span></span>' +
       '<span class="alt-fotos">' + fotos.map(function(f){ return '<span><img src="' + esc(f) + '" alt="" loading="lazy"></span>'; }).join('') + '</span>' +
       '<span class="alt-meta"><span>' + a.items.length + ' elementos en la etapa 1</span><span>' + (a.pasos.length + 1) + ' etapas, una por año</span></span>' +
       '<span class="alt-ir">Conocer la sala y cómo crece' + IC_FLECHA + '</span>' +
@@ -3169,8 +3187,8 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
         '<div class="op-grid">' + p.items.map(tarjeta).join('') + '</div></div></details>';
     }).join('');
     var meta = a.vid ? '<details class="cm-nodo cm-meta"><summary class="cm-fila"><span class="cm-pt cm-pt-meta">' + IC_BANDERA + '</span>' +
-        '<span class="cm-sum"><b>Lo que podrían llegar a tener</b><span>Véanlo funcionando</span></span><span class="cm-ab" aria-hidden="true"></span></summary>' +
-        '<div class="cm-cuerpo"><div class="cr-vid"><iframe src="https://www.youtube-nocookie.com/embed/' + a.vid.id + '?rel=0&modestbranding=1" title="' + esc(a.vid.t) + '" loading="lazy" ' +
+        '<span class="cm-sum"><b>Una sala similar</b><span>Véanla en video</span></span><span class="cm-ab" aria-hidden="true"></span></summary>' +
+        '<div class="cm-cuerpo"><div class="cr-vid"' + (a.vid.drive ? ' style="aspect-ratio:9/16;max-width:320px;margin:0 auto"' : '') + '><iframe src="' + (a.vid.drive ? 'https://drive.google.com/file/d/' + a.vid.drive + '/preview' : 'https://www.youtube-nocookie.com/embed/' + a.vid.id + '?rel=0&modestbranding=1') + '" title="' + esc(a.vid.t) + '" loading="lazy" ' +
         'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>' +
         '<p class="cr-vt">' + esc(a.vid.t) + '</p></div></details>' : '';
     return '<div class="crece"><div class="cr-h">Cómo crece esta sala</div>' +
@@ -3182,9 +3200,9 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
     var a = ALT[j], ant = (j + ALT.length - 1) % ALT.length, sig = (j + 1) % ALT.length;
     return '<div class="sv-et-cab"><span class="sv-num">Alternativa ' + (j + 1) + ' de ' + ALT.length + '</span>' +
         '<h2>' + esc(a.n) + '</h2>' +
-        '<div class="sv-et-fila"><b>' + pesos(a.total) + '</b><span>Etapa 1 · IVA incluido · ' + a.items.length + ' elementos</span></div></div>' +
+        '<div class="sv-et-fila"><b>' + pesos(totalAlt(a)) + '</b><span>Sala completa, en ' + (a.pasos.length + 1) + ' etapas · Etapa 1 desde ' + pesos(a.total) + ' (' + a.items.length + ' elementos) · IVA incluido</span></div></div>' +
       '<div class="sv-in">' +
-        '<div class="sv-tera" style="margin:0 0 22px">' + IC_PESOS + '<p><b>Qué incluye este valor.</b> Los elementos de la etapa, con IVA. ' +
+        '<div class="sv-tera" style="margin:0 0 22px">' + IC_PESOS + '<p><b>Qué incluyen estos valores.</b> Los elementos de la sala y de cada etapa, con IVA. ' +
           'No incluye el transporte, la instalación ni la capacitación, porque dependen de la ubicación final del centro: los sumamos en la cotización.</p></div>' +
         '<p class="sv-lead">' + esc(a.txt) + '</p>' +
         '<div class="sv-t">Elemento por elemento</div><h3 class="sv-h">Qué trae la etapa 1</h3>' +
@@ -3206,7 +3224,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
   function videosDe(s){
     var l = (Array.isArray(s.vid) ? s.vid : (s.vid ? [s.vid] : [])).filter(function(x){ return x && (x.yt || x.ig || x.drive); });
     if (!l.length) return '';
-    return '<div class="sv-t">Para verla funcionando</div><h3 class="sv-h">' + (l.length > 1 ? 'Dos videos' : 'Un video') + ' de una sala así</h3>' +
+    return '<div class="sv-t">Una sala similar</div><h3 class="sv-h">' + (l.length > 1 ? 'Dos videos' : 'Un video') + ' de una sala similar</h3>' +
       '<div class="sv-vids">' + l.map(function(x){
         var src = x.drive ? 'https://drive.google.com/file/d/' + esc(x.drive) + '/preview'
           : x.yt ? 'https://www.youtube-nocookie.com/embed/' + esc(x.yt) + '?rel=0&modestbranding=1'
@@ -3237,7 +3255,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
           '<div class="sv-dato"><b>' + s.items.length + '</b><span>elementos<br>distintos</span></div>' +
           '<div class="sv-dato"><b>' + unidades(s) + '</b><span>unidades<br>en total</span></div>' +
           (s.logra && s.logra.length ? '<div class="sv-dato"><b>' + s.logra.length + '</b><span>cosas que se trabajan<br>desde el primer día</span></div>' : '') +
-          (s.total ? '<div class="sv-dato sv-dato-v"><b>' + pesos(s.total) + '</b><span>valor de la sala<br>completa, IVA incluido</span></div>' : '') +
+          (s.total ? '<div class="sv-dato sv-dato-v"><b>' + pesos(s.total) + '</b><span>' + (s.porBox ? 'valor por box,<br>IVA incluido' : 'valor de la sala<br>completa, IVA incluido') + '</span></div>' : '') +
         '</div>' +
         '<p class="sv-lead">' + esc(s.txt) + '</p>' +
         (s.porque && s.porque.length
@@ -3265,7 +3283,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
           esc(s.aviso.t) + '</div>' + s.aviso.p.map(function(x){ return '<p>' + esc(x) + '</p>'; }).join('') + '</div>' : '') +
         '<div class="sv-tera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 4.8a3 3 0 0 1 0 5.4"/><path d="M17.5 19.5a5.4 5.4 0 0 0-2.6-4.6"/></svg>' +
           '<p><b>Una sala pensada por expertos.</b> Esta combinación de elementos la definieron nuestros profesionales expertos en entornos sensoriales y neurodivergencia. Para su institución, ellos la revisan según las personas que la van a usar y sus diagnósticos, y la ajustan hasta que responda a su necesidad.</p></div>' +
-        (s.total ? '<div class="sv-tera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg><p><b>El valor de ' + pesos(s.total) + ' es el de la sala completa, con IVA incluido.</b> La capacitación, la instalación y el transporte se cobran en cada visita al establecimiento, según la región donde está el centro.</p></div>' : '') +
+        (s.total ? '<div class="sv-tera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg><p><b>El valor de ' + pesos(s.total) + (s.porBox ? ' es el de un box —una cama— de cuidados intensivos o de larga estadía, con IVA incluido.' : ' es el de la sala completa, con IVA incluido.') + '</b> La capacitación, la instalación y el transporte se cobran en cada visita al establecimiento, según la región donde está el centro.</p></div>' : '') +
         '<div class="sv-t">Elemento por elemento</div><h3 class="sv-h">Qué compone la sala</h3>' +
         '<p class="nx-baja" style="margin-bottom:12px">Toquen cualquier elemento para abrir su ficha: qué es, qué se trabaja con él, para quién está indicado y sus características. Cada elemento se puede cambiar o sumar según lo que necesiten.</p>' +
         '<div class="op-grid">' + s.items.map(tarjeta).join('') + '</div>' +
@@ -3351,7 +3369,7 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
     cerrarSala();
   }, true);
   /* La ficha y el video, al cerrarse, sueltan el scroll de la página: con la sala abierta se vuelve a fijar */
-  function fijar(){ if (abierta >= 0 || document.body.classList.contains('con-op')) setTimeout(function(){ document.body.style.overflow = 'hidden'; }, 0); }
+  function fijar(){ setTimeout(function(){ if (abierta >= 0 || document.body.classList.contains('con-op')) document.body.style.overflow = 'hidden'; }, 0); }   /* salud · 26: decide dentro del setTimeout */
   document.addEventListener('click', fijar);
   document.addEventListener('keydown', fijar);
 
@@ -3838,7 +3856,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 21 de octubre a las 23:55</div>
+<div id="verPill" class="ver-pill">Versión del 22 de octubre a las 08:22</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -3849,7 +3867,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1792637713412';
+(function(){ var V = '1792668157065';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
