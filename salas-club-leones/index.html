@@ -1491,6 +1491,22 @@ body .pg .seg-rot{font-size:36px !important}
 
 .ficha-pleg>summary:hover .ver-ficha,.comp:hover .comp-ir,.vid-btn:hover,.subir:hover,.obra-c:hover .obra-play,.tarj:hover .tver,.fx-x:hover,.lb-x:hover,.p2:hover .p2-ir,.btn-pdf:hover,.mas:hover .mas-ir,.puerta:hover .puerta-btn,.puerta:hover .puerta-play{background:#06b3fd !important;border-color:#06b3fd !important;color:#fff !important}
 .comp:hover .comp-letra{color:#06b3fd !important}
+.go-caso{display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px;align-items:center;margin-top:22px;padding:18px;border-radius:16px;background:radial-gradient(90% 70% at 0% 0%,rgba(8,172,242,.22),rgba(8,172,242,0) 60%),linear-gradient(165deg,#001A60 0%,#00297F 100%);border:1px solid rgba(143,221,255,.25)}
+.go-caso-vid{position:relative;display:block;width:100%;padding:0;border:0;border-radius:12px;overflow:hidden;cursor:pointer;background:#0A0F1E}
+.go-caso-vid img{width:100%;height:340px;object-fit:cover;object-position:50% 40%;display:block;transition:transform .3s}
+.go-caso-vid .obra-play{left:50%;top:50%;right:auto;bottom:auto;width:58px;height:58px;margin:-29px 0 0 -29px}
+.go-caso-vid .obra-play::after{border-left-width:18px;border-top-width:11px;border-bottom-width:11px}
+.go-caso-vid:hover img{transform:scale(1.04)}
+.go-caso-vid:hover .obra-play{background:var(--naranja);border-color:var(--naranja)}
+.go-caso-et{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#fff;background:linear-gradient(180deg,rgba(0,26,96,0),rgba(0,26,96,.85))}
+.go-caso-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.go-caso-btns .fo-btn{padding:11px 18px}
+.go-caso-rot{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8FDDFF}
+.go-caso h3{margin:6px 0 10px;font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#fff;line-height:1.25}
+.go-caso p{margin:0 0 10px;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.9)}
+.go-caso p:last-child{margin-bottom:0}
+.go-caso b{color:#fff}
+@media (max-width:820px){.go-caso{grid-template-columns:1fr}.go-caso-vid img{height:300px}.go-caso-btns .fo-btn{flex:1 1 100%}}
 </style>
 
 <style>
@@ -2426,6 +2442,21 @@ body:has(#mnuVelo:not([hidden])) #verPill{display:none !important}
         estudiantes, a su espacio y a la forma en que trabaja su equipo— y también a un presupuesto mayor o menor. Con mucho gusto
         las ajustamos junto a ustedes.</p></div>
     <div class="g3" id="gSalas"></div>
+      <div class="go-caso">
+        <button type="button" class="go-caso-vid" data-lb-src="videos/sensory-go-jacaranda-pica.mp4" data-lb-fmt="mp4" data-lb-lugar="Escuela Especial Jacarandá" data-lb-donde="Pica · Región de Tarapacá" aria-label="Ver el video de la Escuela Especial Jacarandá">
+          <img src="SalasMultisensoriales_Recortadas/video-mini-jacaranda.jpg" alt="La estación sensorial móvil encendida en la Escuela Especial Jacarandá de Pica" loading="lazy"><span class="obra-play"></span><span class="go-caso-et">Véanla funcionando en la escuela</span>
+        </button>
+        <div>
+          <div class="go-caso-rot">Ya funciona en Chile</div>
+          <h3>Escuela Especial Jacarandá, Pica · Región de Tarapacá</h3>
+          <p>En septiembre de 2026 instalamos aquí <b>la primera estación sensorial móvil con tecnología SHX de Chile</b>, <b>sin costo para la escuela</b>.</p>
+          <p>La obtuvo con el proyecto «Sensory GO Pica: Estrategias Multisensoriales para la Inclusión Educativa», que preparamos en conjunto con su Centro General de Padres y Apoderados, y que el <b>FNDR Social 2026 del Gobierno Regional de Tarapacá</b> financió con <b>cerca de 20 millones de pesos</b>.</p>
+          <p>Esta tecnología no es solo para quienes tienen recursos. Los fondos regionales existen en la mayoría de las regiones de Chile, y su línea de inclusión está pensada justamente para esto. Los montos varían: en algunas regiones son más acotados y en otras son muy altos, suficientes para costear un espacio como este.</p>
+          <p>Por eso <b>asesoramos y acompañamos gratuitamente</b> a las escuelas, y elaboramos el proyecto junto a ellas, aunque nunca hayan postulado a un fondo. Queremos que en todas las regiones de Chile haya espacios así, con esta tecnología y esta calidad, a puro esfuerzo, determinación y trabajo en alianza.</p>
+          <p><b>¿Quieren replicar en las escuelas de Chiloé lo que hizo la Escuela Especial Jacarandá?</b> Contáctenos.</p>
+          <div class="go-caso-btns"><a class="fo-btn prim" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20lo%20que%20hizo%20la%20Escuela%20Especial%20Jacarand%C3%A1%20de%20Pica%20y%20queremos%20replicarlo%20en%20escuelas%20de%20Chilo%C3%A9.%20Nos%20gustar%C3%ADa%20su%20asesor%C3%ADa%20para%20preparar%20el%20proyecto." target="_blank" rel="noopener">Escríbanos por WhatsApp</a><a class="fo-btn" href="mailto:rayen.ogalde@opencluster-tech.cl?subject=Queremos%20replicar%20lo%20de%20la%20Escuela%20Especial%20Jacarand%C3%A1&body=Hola%20Rayen%2C%20vi%20lo%20que%20hizo%20la%20Escuela%20Especial%20Jacarand%C3%A1%20de%20Pica%20y%20queremos%20replicarlo%20en%20escuelas%20de%20Chilo%C3%A9.%20Nos%20gustar%C3%ADa%20su%20asesor%C3%ADa%20para%20preparar%20el%20proyecto.">Escríbanos un correo</a></div>
+        </div>
+      </div>
     <p class="lc-iva">Los valores son con IVA incluido y corresponden a los elementos de cada sala. El transporte, la instalación y la
       capacitación dependen de la ubicación de cada escuela y se suman en la cotización.</p>
   </div>
