@@ -1725,6 +1725,323 @@ body.con-sala .arriba{opacity:0;pointer-events:none}
 @media (prefers-reduced-motion:reduce){.g3 .p2 .p2-portada img{transition:none}}
 @media print{.arriba,.sv{display:none !important}}
 </style>
+<style>
+/* Salas general · 28-oct-2026: distribuidores, estación sensorial móvil y catálogo (desde salud y escuelas) */
+/* Nuestro rol: distribuidores exclusivos del Sistema SHX y Luminea (Rayen, 11-oct-2026; carta de Qinera del 8-oct-2026).
+   20-oct-2026 (Rayen): botón «Ver nuestra acreditación» → la ficha propuestas/acreditacion/ (resumen de la carta, con «Pedir la carta original»). */
+.dx-pie{padding:0 26px 24px}
+.dx-bt{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#08ACF2;color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;transition:background .2s}
+.dx-bt:hover,.dx-bt:focus-visible{background:#0087B2}
+.dx-bt svg{width:16px;height:16px}
+.meta-acr{display:inline-block;margin-top:4px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:#08ACF2;text-decoration:none}
+.meta-acr:hover,.meta-acr:focus-visible{text-decoration:underline}
+@media (max-width:600px){.dx-pie{padding:0 16px 18px}}
+.dx{position:relative;margin-top:16px;border-radius:18px;overflow:hidden;color:#fff;
+  background:radial-gradient(120% 150% at 100% 0%,rgba(8,172,242,.45) 0%,rgba(8,172,242,0) 55%),linear-gradient(125deg,#00124A 0%,#001A60 45%,#0A3F99 100%);
+  box-shadow:0 22px 44px -26px rgba(0,26,96,.75)}
+.dx-cab{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;padding:24px 26px 6px}
+.dx-sello{width:116px;height:116px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  border:2px solid rgba(143,221,255,.75);box-shadow:inset 0 0 0 5px rgba(255,255,255,.06),0 0 0 6px rgba(8,172,242,.14);
+  background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.18),rgba(255,255,255,0) 60%)}
+.dx-sello svg{width:26px;height:26px;color:#8FDDFF;margin-bottom:3px}
+.dx-sello b{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;line-height:1.2}
+.dx-sello span{font-family:'Montserrat',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8FDDFF;margin-top:2px}
+.dx-rot{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8FDDFF}
+.dx-h{font-family:'Kaushan Script',cursive;font-weight:400;font-size:30px;line-height:1.12;margin:3px 0 6px;color:#fff}
+.dx-h small{display:block;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;line-height:1.35;color:#fff;margin-top:6px;letter-spacing:0}
+.dx-p{font-size:13.5px;line-height:1.7;color:#E3EEFB;margin:0;padding:6px 26px 0}
+.dx-p b{color:#fff}
+.dx-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:16px 26px 24px}
+.dx-i{display:flex;gap:11px;align-items:flex-start;padding:12px 13px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(143,221,255,.22)}
+.dx-i svg{flex:none;width:22px;height:22px;color:#8FDDFF;margin-top:1px}
+.dx-i b{display:block;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#fff;margin-bottom:3px;line-height:1.3}
+.dx-i p{margin:0;font-size:12px;line-height:1.55;color:#D6E4F5}
+@media (max-width:900px){.dx-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* 11-oct-2026: «Ver más sobre los materiales» de la ficha salía en dorado; nada clickeable en naranjo ni dorado */
+#fx .cert-mas,.cert-mas{color:#0A8FCC !important}
+#fx .cert-mas:hover,.cert-mas:hover{color:#06b3fd !important}
+.comp:hover{border-color:#06b3fd !important}
+/* ── ronda 3: tres productos destacados con la misma estructura + «Todos nuestros productos» ── */
+/* ── ronda 7: cuatro tarjetas y su ventana ── */
+.pd-g.pd-g4{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.pd-g4 .pd h3{font-size:19px}
+.pd-img{border:0;padding:0;cursor:pointer;width:100%}
+.pd-abre{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:999px;border:0;background:#001A60;color:#fff;cursor:pointer;
+  font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800}
+.pd-abre svg{width:15px;height:15px}
+.pd-abre:hover,.pd-abre:focus-visible{background:#08ACF2;outline:none}
+.pdv{position:fixed;inset:0;z-index:78;background:rgba(0,16,60,.6);overflow-y:auto;padding:24px 16px;-webkit-overflow-scrolling:touch}
+.pdv[hidden],.pdv-p[hidden]{display:none !important}
+.pdv-caja{max-width:1060px;margin:0 auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.pdv-top{position:sticky;top:0;z-index:6;display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,.97);border-bottom:1px solid #E5E9F0}
+.pdv-top .sv-top-n{flex:1;min-width:0;font-family:'Montserrat',sans-serif;font-weight:800;color:#001A60;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pdv-p{padding:20px 22px 26px}
+.pdv-lead{margin:0 0 14px;font-size:13.5px;line-height:1.65;color:#334155}
+.pdv-lead b{color:#001A60}
+.pdo-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.pdo{border:1px solid #DCE6FA;border-radius:16px;padding:16px;background:#F8FAFF}
+.pdo-c h3{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#001A60;margin:0 0 4px}
+.pdo-c p{margin:0 0 8px;font-size:12.8px;color:#475569}
+.pdo .pd-fv{margin-bottom:10px}
+.pdo .pd-bts{margin:0 0 4px}
+.pdo .sgt{margin:12px 0 0}
+.pdo-img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin:0 0 12px;background:#F4F8FF}
+.pdo .sgt-g{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
+.pd-ir{display:inline-flex;align-items:center;padding:7px 13px;border-radius:999px;background:#F4F8FF;border:1px solid #DCE6FA;color:#001A60;cursor:pointer;
+  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700}
+.pd-ir:hover,.pd-ir:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff;outline:none}
+.pdv .cat-intro{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+.pdv .cat-dest{margin:0}
+body.con-pd{overflow:hidden}
+body.con-pd #verPill{display:none !important}
+@media (max-width:1080px){.pd-g.pd-g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.pd-g.pd-g4{grid-template-columns:minmax(0,1fr)}.pdo-g{grid-template-columns:minmax(0,1fr)}.pdv{padding:0}.pdv-caja{border-radius:0;min-height:100%}.pdv-p{padding:16px 14px 22px}}
+
+.pd-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:6px}
+.pd{display:flex;flex-direction:column;background:#fff;border:1px solid #DCE6FA;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px -26px rgba(0,26,96,.55)}
+.pd-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0A0F1E}
+.pd-img img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.pd-num{position:absolute;left:12px;top:12px;width:34px;height:34px;border-radius:50%;background:#001A60;color:#fff;border:2px solid #fff;
+  display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800}
+.pd-cu{display:flex;flex-direction:column;flex:1;padding:16px 18px 18px}
+.pd-rot{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0A8FCC;margin-bottom:4px}
+.pd h3{font-family:'Montserrat',sans-serif;font-size:21px;font-weight:800;color:#001A60;margin:0 0 6px;line-height:1.2}
+.pd-que{margin:0 0 12px;font-size:13px;line-height:1.55;color:#334155}
+.pd-que b{color:#001A60}
+.pd-dl{margin:0 0 12px}
+.pd-dl dt{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#001A60;margin:0 0 3px}
+.pd-dl dd{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:#475569}
+.pd-dl ul{margin:0;padding:0;list-style:none;display:grid;gap:3px}
+.pd-dl li{position:relative;padding-left:13px}
+.pd-dl li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:#08ACF2}
+.pd-pie{margin-top:auto;padding-top:12px;border-top:1px solid #E5E9F0;display:grid;gap:8px}
+.pd-pt{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#001A60}
+.pd-fila{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 10px;padding:10px 12px;border-radius:12px;background:#F4F8FF;border:1px solid #E1EAFB}
+.pd-fn{grid-column:1 / -1}
+.pd-fn b{display:block;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#001A60}
+.pd-fn span{display:block;font-size:11.5px;color:#64748B;line-height:1.4}
+.pd-fv{display:flex;flex-direction:column;line-height:1.15}
+.pd-fv b{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#001A60;font-variant-numeric:tabular-nums;margin-right:5px}
+.pd-fv span{font-size:10.5px;color:#64748B}
+.pd-fila-l .pd-fn b{font-size:13px}
+.pd-fila-l .pd-ficha{grid-column:1 / -1;justify-self:start}
+.pd-ficha{display:inline-flex;align-items:center;padding:7px 13px;border-radius:999px;border:0;background:#001A60;color:#fff;cursor:pointer;text-decoration:none;
+  font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;white-space:nowrap}
+.pd-ficha:hover,.pd-ficha:focus-visible{background:#08ACF2;outline:none}
+.pd-bts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pd-wa,.pd-vid,.pd-app{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:999px;border:1.5px solid #CEDBFF;background:#fff;color:#001A60;cursor:pointer;
+  text-decoration:none;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800}
+.pd-wa svg{width:15px;height:15px}
+.pd-vid svg{width:11px;height:11px;fill:#08ACF2}
+.pd-wa:hover,.pd-vid:hover,.pd-app:hover,.pd-wa:focus-visible,.pd-vid:focus-visible,.pd-app:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff;outline:none}
+.pd-vid:hover svg{fill:#fff}
+.todos{padding:24px;border-radius:20px;background:#fff;border:1px solid #DCE6FA;box-shadow:0 14px 30px -26px rgba(0,26,96,.55)}
+.todos-c h3{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#001A60;margin:0 0 6px}
+.todos-c p{margin:0 0 12px;font-size:13px;color:#4B5563}
+.cat-gr-c h4{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#001A60;margin:0}
+.nx.cat-lista{border-top:0;padding-top:4px}
+@media (max-width:980px){.pd-g{grid-template-columns:minmax(0,1fr);max-width:560px}}
+@media (max-width:560px){.todos{padding:16px 12px}.pd-cu{padding:14px 14px 16px}.pd h3{font-size:19px}}
+/* ── salud · catálogo (salud_catalogo.js, 22-oct-2026) ── */
+.vs-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:22px 0 10px}
+.vs-sub:first-of-type{margin-top:6px}
+.vs-sub h3{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#001A60;margin:0}
+.vs-sub span{font-size:12.5px;color:#4B5563}
+.nx .obra-grid.vs-g{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.vs-g .obra-foto{aspect-ratio:16/10}
+.vs-g .obra-lugar{font-size:12px;line-height:1.25}
+.vs-g .obra-donde{font-size:10.5px}
+.vs-g .obra-rotulo{right:44px;bottom:8px;left:10px}
+.vs-g .obra-play{width:32px;height:32px;right:8px;bottom:8px}
+.vs-g .obra-que{padding:8px 10px 10px;font-size:11px;line-height:1.45}
+.obra-c:hover .obra-play,.obra-c:focus-visible .obra-play{background:#08ACF2 !important;border-color:#08ACF2 !important}
+.cat-intro{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0;padding:0;list-style:none}
+.cat-intro a{display:inline-flex;align-items:center;padding:7px 13px;border-radius:999px;background:#F4F8FF;border:1px solid #DCE6FA;color:#001A60;
+  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-decoration:none}
+.cat-intro a:hover,.cat-intro a:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff;outline:none}
+.cat-dest{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px;margin:22px 0 4px;padding:26px;border-radius:20px;background:#001A60;color:#fff}
+.cat-dest .cd-rot{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8FDDFF;margin-bottom:6px}
+.cat-dest h3{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;line-height:1.2;margin:0 0 10px;color:#fff}
+.cat-dest h3 em{font-family:'Kaushan Script',cursive;font-style:normal;font-weight:400;color:#8FDDFF;font-size:1.1em}
+.cat-dest p{margin:0 0 10px;font-size:13.4px;line-height:1.65;color:#E3EEFB}
+.cat-dest p b{color:#fff}
+.cd-pasos{list-style:none;margin:12px 0 14px;padding:0;display:grid;gap:8px}
+.cd-pasos li{display:flex;gap:10px;align-items:flex-start;font-size:12.8px;line-height:1.5;color:#E3EEFB}
+.cd-pasos li span{flex:none;display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#08ACF2;color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800}
+.cd-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0;list-style:none}
+.cd-chips li{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(143,221,255,.4);border-radius:999px;padding:5px 10px}
+.cd-pie{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.cd-val b{display:block;font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1.1}
+.cd-val span{font-size:11px;color:#9FDCFA}
+.cd-bt{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:999px;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;
+  cursor:pointer;text-decoration:none;border:1.5px solid #fff;background:#fff;color:#001A60}
+.cd-bt.cd-wa{background:transparent;color:#fff;border-color:#8FDDFF}
+.cd-bt svg{width:16px;height:16px}
+.cd-bt:hover,.cd-bt:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff;outline:none}
+.cd-vids{display:grid;gap:12px;align-content:start}
+.cd-v{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;background:#0A0F1E;cursor:pointer;position:relative;text-align:left}
+.cd-v img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.92}
+.cd-v .cd-v-t{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px 52px;background:linear-gradient(transparent,rgba(0,10,40,.85));
+  font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;color:#fff}
+.cd-v .cd-v-p{position:absolute;left:12px;bottom:10px;width:30px;height:30px;border-radius:50%;background:#08ACF2;display:flex;align-items:center;justify-content:center}
+.cd-v .cd-v-p svg{width:13px;height:13px;margin-left:2px}
+.cd-v:hover .cd-v-p,.cd-v:focus-visible .cd-v-p{background:#fff;color:#001A60}
+.cd-foto{border-radius:14px;overflow:hidden;background:#fff}
+.cd-foto img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.cat-gr{margin:30px 0 0;scroll-margin-top:80px}
+.cat-gr:first-child{margin-top:8px}
+.cat-gr-c{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid #E5E9F0}
+.cat-gr-c h3{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#001A60;margin:0}
+.cat-gr-c span{font-size:12.5px;color:#4B5563}
+.cat-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat-c{display:flex;flex-direction:column;padding:0;border:1px solid #DCE6FA;border-radius:14px;background:#fff;overflow:hidden;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  transition:border-color .2s,transform .2s,box-shadow .2s}
+.cat-c:hover,.cat-c:focus-visible{border-color:#08ACF2;transform:translateY(-2px);box-shadow:0 12px 24px -18px rgba(0,26,96,.6);outline:none}
+.cat-c .cc-f{display:block;position:relative;overflow:hidden;aspect-ratio:4/3;min-height:0;background:#F4F8FF}
+.cat-c .cc-f img{position:absolute;top:8px;left:8px;width:calc(100% - 16px);height:calc(100% - 16px);object-fit:contain}
+.cat-c .cc-tx{display:flex;flex-direction:column;flex:1;padding:9px 11px 11px;gap:4px}
+.cat-c .cc-n{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;line-height:1.3;color:#001A60;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:2.6em;min-height:2.6em}
+.cat-c .cc-d{font-size:11px;line-height:1.45;color:#4B5563;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:2.9em;white-space:normal}
+.cat-c .cc-tx>.cc-d{margin-bottom:auto}
+.cat-c .cc-p{display:flex;align-items:baseline;justify-content:space-between;gap:6px;margin-top:4px}
+.cat-c .cc-p b{font-family:'Montserrat',sans-serif;font-size:14.5px;font-weight:800;color:#001A60;font-variant-numeric:tabular-nums}
+.cat-c .cc-p span{font-size:9.5px;color:#64748B;white-space:nowrap}
+.cat-c .cc-ir{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#0A8FCC}
+.cat-nota{margin:18px 0 0;font-size:12px;line-height:1.6;color:#4B5563}
+.cat-nota b{color:#001A60}
+.cat-fx-v{margin:6px 0 12px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.cat-fx-v b{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#001A60}
+.cat-fx-v span{font-size:12px;color:#64748B}
+.cat-fx-en{margin:14px 0 0;padding:12px 14px;border-radius:12px;background:#F4F8FF;border:1px solid #DCE6FA;font-size:12.5px;line-height:1.55;color:#334155}
+.cat-fx-en b{color:#001A60}
+.cat-fx-bt{display:inline-flex;align-items:center;gap:8px;margin:16px 0 4px;padding:11px 20px;border-radius:999px;background:#001A60;color:#fff;text-decoration:none;
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800}
+.cat-fx-bt svg{width:17px;height:17px}
+.cat-fx-bt:hover,.cat-fx-bt:focus-visible{background:#08ACF2;color:#fff;outline:none}
+.opc-g.opc-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cd-info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0 14px}
+.cd-info>div{padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(143,221,255,.28)}
+.cd-info b{display:block;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;color:#8FDDFF;margin-bottom:4px}
+.cd-info p{margin:0;font-size:12.3px;line-height:1.55;color:#E3EEFB}
+.cat-dest p.cd-nota{font-size:12px;color:#9FDCFA;margin:0 0 14px}
+.cat-go{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:22px;margin:8px 0 6px;padding:22px;border-radius:20px;background:#F4F8FF;border:1px solid #DCE6FA}
+.cat-go .cg-foto{border-radius:14px;overflow:hidden;background:#0A0F1E;min-height:260px}
+.cat-go .cg-foto img{display:block;width:100%;height:100%;object-fit:cover}
+.cat-go .cd-rot{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#0A8FCC;margin-bottom:6px}
+.cat-go h3{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;line-height:1.2;margin:0 0 10px;color:#001A60}
+.cat-go h3 em{font-family:'Kaushan Script',cursive;font-style:normal;font-weight:400;color:#0A8FCC;font-size:1.08em}
+.cat-go .cg-tx p{margin:0 0 9px;font-size:13px;line-height:1.6;color:#334155}
+.cat-go .cg-tx p b{color:#001A60}
+.cg-trae{margin:10px 0 12px}
+.cg-trae b{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;color:#001A60}
+.cg-trae ul{margin:6px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px}
+.cg-trae li{font-size:12.3px;line-height:1.45;color:#334155;padding-left:14px;position:relative}
+.cg-trae li::before{content:'';position:absolute;left:0;top:.5em;width:6px;height:6px;border-radius:50%;background:#08ACF2}
+.cg-vid{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1.5px solid #CEDBFF;background:#fff;color:#001A60;cursor:pointer;
+  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800}
+.cg-vid svg{width:12px;height:12px;fill:#08ACF2}
+.cg-vid:hover,.cg-vid:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff;outline:none}
+.cg-vid:hover svg{fill:#fff}
+.cg-dos{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.go-p{padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #DCE6FA;display:flex;flex-direction:column;gap:6px}
+.go-p>b{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#001A60}
+.go-p>p{margin:0;font-size:12.3px;line-height:1.5;color:#4B5563;flex:1}
+.go-p-v b{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#001A60;margin-right:6px}
+.go-p-v span{font-size:11px;color:#64748B}
+.go-p-bt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.go-p-bt .cat-fx-bt{margin:0;padding:9px 16px;font-size:12.5px;border:0;cursor:pointer}
+.go-p-wa{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1.5px solid #CEDBFF;color:#001A60;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800}
+.go-p-wa svg{width:15px;height:15px}
+.go-p-wa:hover,.go-p-wa:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff;outline:none}
+@media (max-width:980px){.cat-g{grid-template-columns:repeat(3,minmax(0,1fr))}.nx .obra-grid.vs-g{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:820px){.cat-dest{grid-template-columns:minmax(0,1fr);padding:22px 20px}.cat-go{grid-template-columns:minmax(0,1fr);padding:18px}.cat-go .cg-foto{min-height:0;aspect-ratio:16/10}.opc-g.opc-2{grid-template-columns:1fr}}
+@media (max-width:560px){.cd-info,.cg-trae ul,.cg-dos{grid-template-columns:minmax(0,1fr)}.cat-go{padding:16px}.cat-go h3{font-size:20px}.cat-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.nx .obra-grid.vs-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .cat-dest{padding:20px 16px}.cat-dest h3{font-size:21px}.cat-c .cc-tx{padding:8px 9px 10px}.cat-c .cc-n{font-size:12px}.cat-c .cc-p b{font-size:13.5px}
+  .vs-g .obra-que{display:none}.vs-g .obra-lugar{font-size:11px}.vs-g .obra-donde{font-size:9.5px}.vs-g .obra-rotulo{right:38px}.vs-g .obra-play{width:26px;height:26px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cat-c{background:#fff}}
+</style>
+<style>
+.fo-btn{display:flex;align-items:center;justify-content:center;padding:13px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;
+  font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800}
+.fo-btn.prim{background:#fff;color:var(--navy);border-color:#fff}
+.fo-btn:hover,.fo-btn:focus-visible{background:#08ACF2;border-color:#08ACF2;color:#fff}
+/* Estación sensorial móvil: qué es y la galería */
+.go-que{margin-top:16px;max-width:820px;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(143,221,255,.3);
+  font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.9)}
+.go-que b{color:#8FDDFF;font-family:'Montserrat',sans-serif}
+.go-gal{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:200px 200px;gap:10px;margin-top:22px}
+.go-gal figure{position:relative;margin:0;border-radius:14px;overflow:hidden;background:#0A0F1E}
+
+.go-gal img{width:100%;height:100%;object-fit:cover;display:block}
+.go-gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#fff;
+  background:linear-gradient(180deg,rgba(0,26,96,0),rgba(0,26,96,.85))}
+.go-caso{display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px;align-items:center;margin-top:22px;padding:16px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(143,221,255,.25)}
+.go-caso-vid{position:relative;display:block;width:100%;padding:0;border:0;border-radius:12px;overflow:hidden;cursor:pointer;background:#0A0F1E}
+.go-caso-vid img{width:100%;height:340px;object-fit:cover;object-position:50% 40%;display:block;transition:transform .3s}
+.go-caso-vid .obra-play{left:50%;top:50%;right:auto;bottom:auto;width:58px;height:58px;margin:-29px 0 0 -29px}
+.go-caso-vid .obra-play::after{border-left-width:18px;border-top-width:11px;border-bottom-width:11px}
+.go-caso-vid:hover img{transform:scale(1.04)}
+.go-caso-vid:hover .obra-play{background:var(--naranja);border-color:var(--naranja)}
+.go-caso-et{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#fff;background:linear-gradient(180deg,rgba(0,26,96,0),rgba(0,26,96,.85))}
+.go-caso-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.go-caso-btns .fo-btn{padding:11px 18px}
+.go-caso-rot{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8FDDFF}
+.go-caso h3{margin:6px 0 10px;font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#fff;line-height:1.25}
+.go-caso p{margin:0 0 10px;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.9)}
+.go-caso p:last-child{margin-bottom:0}
+.go-caso b{color:#fff}
+@media (max-width:820px){.go-caso{grid-template-columns:1fr}.go-caso-vid img{height:300px}.go-caso-btns .fo-btn{flex:1 1 100%}}
+@media (max-width:820px){.go-gal{grid-template-columns:1fr 1fr;grid-template-rows:150px 150px 150px}}
+
+/* Sin sala libre: el carrito */
+.go{position:relative;overflow:hidden;background:radial-gradient(90% 70% at 0% 0%,rgba(8,172,242,.22),rgba(8,172,242,0) 60%),linear-gradient(165deg,#001A60 0%,#00297F 100%);color:#fff}
+.go-in{padding:46px 54px 44px}
+.go-rot{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#08ACF2;margin-bottom:6px}
+.go h2{margin:0 0 12px}
+.go-letra{font-family:'Kaushan Script',cursive;font-weight:400;font-size:50px;line-height:1.05;color:#fff}
+.go-baja{margin:0;max-width:760px;font-size:14px;line-height:1.75;color:rgba(255,255,255,.85)}
+.go-baja b{color:#fff}
+.go-datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:26px 0 0}
+.go-dato{padding:16px 16px 14px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(143,221,255,.25)}
+.go-dato b{display:block;font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:#8FDDFF;line-height:1.1;font-variant-numeric:tabular-nums}
+.go-dato p{margin:6px 0 8px;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.88)}
+.go-dato a{font-size:10.5px;color:rgba(191,233,255,.75);text-decoration:underline;text-underline-offset:2px}
+.go-pasos{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.go-pasos li{position:relative;border-radius:16px;background:#fff;color:var(--texto);overflow:hidden;padding:0 0 16px}
+.go-foto{display:block;height:190px;background:#F4F8FC;overflow:hidden}
+.go-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.go-n{position:absolute;top:12px;left:12px;width:30px;height:30px;border-radius:50%;background:#08ACF2;color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;box-shadow:0 4px 12px rgba(0,26,96,.35)}
+.go-pasos h3{margin:14px 16px 4px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--navy)}
+.go-pasos p{margin:0 16px;font-size:12.5px;line-height:1.55;color:#374151}
+.go-pie{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px;margin-top:14px}
+.go-videos{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:12px;align-items:stretch}
+.go-video-v .go-video-foto{aspect-ratio:auto;flex:1;min-height:200px}
+@media (max-width:560px){.go-videos{grid-template-columns:1fr}.go-video-v .go-video-foto{min-height:0;aspect-ratio:4/5}}
+.go-video{display:flex;flex-direction:column;border:0;padding:0;border-radius:16px;overflow:hidden;background:rgba(255,255,255,.07);cursor:pointer;text-align:left;color:#fff;font:inherit}
+.go-video-foto{position:relative;display:block;aspect-ratio:16/9;overflow:hidden}
+.go-video-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.go-video-foto .obra-play{position:absolute;right:14px;bottom:14px}
+.go-video-tx{display:block;padding:14px 16px 16px;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.85)}
+.go-video-tx b{display:block;font-family:'Montserrat',sans-serif;font-size:14px;color:#fff;margin-bottom:3px}
+.go-video:hover .go-video-tx b{color:#8FDDFF}
+.go-ficha{border-radius:16px;background:#fff;color:var(--texto);padding:18px 18px 16px;display:flex;flex-direction:column}
+.go-ficha-t{font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0A8FCC;margin-bottom:8px}
+.go-ficha-p{margin:0 0 10px;font-size:12.6px;line-height:1.55;color:#374151}
+.go-ficha ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.go-ficha li{display:flex;gap:8px;font-size:12.8px;line-height:1.45;color:#1F2937}
+.go-ficha li::before{content:'';flex:none;width:7px;height:7px;margin-top:6px;border-radius:50%;background:#08ACF2}
+.go-valor{margin-top:auto;padding-top:14px;display:flex;flex-direction:column}
+.go-valor span{font-size:10.5px;color:var(--suave)}
+.go-valor b{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
+.go-ver{margin-top:12px;align-self:flex-start;border:0;border-radius:999px;padding:9px 15px;background:var(--navy);color:#fff;cursor:pointer;
+  font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700}
+.go-ver:hover,.go-ver:focus-visible{background:#08ACF2}
+@media (max-width:820px){.go-in{padding:38px 20px 34px}.go-letra{font-size:40px}.go-pasos{grid-template-columns:1fr}.go-pie{grid-template-columns:1fr}.go-foto{height:200px}}
+@media (max-width:560px){.go-in{padding:34px 16px 30px}.go-letra{font-size:34px}}
+</style>
 </head>
 <body>
 <div class="hoja">
@@ -2003,6 +2320,110 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
     <div class="g3" id="gSalas"></div>
   </div>
 
+  <!-- ── Estación sensorial móvil (Salas general, 28-oct-2026: desde escuelas, en palabras generales) ── -->
+  <section class="go" id="sensory-go"><img class="logo-bl" src="oct-logo-blanco.png" alt="OpenCluster Tech · Construyendo inclusión">
+    <div class="go-in">
+      <div class="go-cab">
+        <div class="go-rot">Estación sensorial móvil · ¿No tienen espacio para una sala?</div>
+        <h2><span class="go-letra">El espacio sensorial va a ustedes</span></h2>
+        <p class="go-baja">Sabemos que el espacio es uno de los grandes problemas de los colegios, los centros de salud y las residencias. Muchos nos cuentan
+          que quieren una sala multisensorial, pero no tienen una sala que puedan destinar a eso. Es un problema del que estamos
+          conscientes, y para el que encontramos una solución: <b>la estación sensorial móvil</b>.</p>
+        <div class="go-que">
+          <b>¿Qué es?</b> Un mueble con ruedas que guarda dentro todo lo que tiene una sala multisensorial: el tubo de
+          burbujas, la fibra óptica, un proyector, parlantes, vibración y los pulsadores, con la tecnología SHX. Se lleva a
+          la sala de clases, al box de atención, a la sala de talleres o a la habitación, se enciende y ese lugar se transforma en un espacio
+          sensorial. Al terminar, se guarda en un rincón.
+        </div>
+      </div>
+      <div class="go-gal">
+        <figure class="go-g1"><img src="SalasMultisensoriales_Recortadas/sensory-go-presentacion.jpg" alt="La estación sensorial móvil con sus tubos de burbujas y la fibra óptica" loading="lazy"><figcaption>Todo en un solo mueble con ruedas</figcaption></figure>
+        <figure><img src="SalasMultisensoriales_Recortadas/sensory-go-botonera.jpg" alt="Una persona usa los pulsadores de colores frente a la proyección" loading="lazy"><figcaption>Los pulsadores, para elegir con las manos</figcaption></figure>
+        <figure><img src="SalasMultisensoriales_Recortadas/sensory-go-tubo-manos.jpg" alt="Una persona toca el tubo de burbujas encendido en azul" loading="lazy"><figcaption>El tubo de burbujas de 120 cm</figcaption></figure>
+        <figure><img src="SalasMultisensoriales_Recortadas/sensory-go-fibra-verde.jpg" alt="Manos que toman la fibra óptica encendida en verde" loading="lazy"><figcaption>La fibra óptica, que se toma con las manos</figcaption></figure>
+        <figure><img src="SalasMultisensoriales_Recortadas/sensory-go-proyeccion.jpg" alt="Proyección en la pared y estrellas en la sala" loading="lazy"><figcaption>Luz e imagen que cambian la sala</figcaption></figure>
+        <figure><img src="SalasMultisensoriales_Recortadas/sensory-go-tableta.jpg" alt="Una tableta controla la estación" loading="lazy" style="object-position:30% 60%"><figcaption>Todo se maneja desde una tableta</figcaption></figure>
+      </div>
+      <div class="go-caso">
+        <button type="button" class="go-caso-vid" data-lb-src="videos/sensory-go-jacaranda-pica.mp4" data-lb-fmt="mp4" data-lb-lugar="Escuela Especial Jacarandá" data-lb-donde="Pica · Región de Tarapacá" aria-label="Ver el video de la Escuela Especial Jacarandá">
+          <img src="SalasMultisensoriales_Recortadas/video-mini-jacaranda.jpg" alt="La estación sensorial móvil encendida en la Escuela Especial Jacarandá de Pica" loading="lazy"><span class="obra-play"></span><span class="go-caso-et">Véanla funcionando en la escuela</span>
+        </button>
+        <div>
+          <div class="go-caso-rot">Ya funciona en Chile</div>
+          <h3>Escuela Especial Jacarandá, Pica · Región de Tarapacá</h3>
+          <p>En septiembre de 2026 instalamos aquí <b>la primera estación sensorial móvil con tecnología SHX de Chile</b>, <b>sin costo para la escuela</b>.</p>
+          <p>La obtuvo con el proyecto «Sensory GO Pica: Estrategias Multisensoriales para la Inclusión Educativa», que preparamos en conjunto con su Centro General de Padres y Apoderados, y que el <b>FNDR Social 2026 del Gobierno Regional de Tarapacá</b> financió con <b>cerca de 20 millones de pesos</b>.</p>
+          <p>Esta tecnología no es solo para quienes tienen recursos. Los fondos regionales existen en la mayoría de las regiones de Chile, y su línea de inclusión está pensada justamente para esto. Los montos varían: en algunas regiones son más acotados y en otras son muy altos, suficientes para costear un espacio como este.</p>
+          <p>Por eso <b>asesoramos y acompañamos gratuitamente</b> a las escuelas, y elaboramos el proyecto junto a ellas, aunque nunca hayan postulado a un fondo. Queremos que en todas las regiones de Chile haya espacios así, con esta tecnología y esta calidad, a puro esfuerzo, determinación y trabajo en alianza.</p>
+          <p><b>¿Su institución quiere replicar lo que hizo la Escuela Especial Jacarandá?</b> Contáctenos.</p>
+          <div class="go-caso-btns"><a class="fo-btn prim" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20lo%20que%20hizo%20la%20Escuela%20Especial%20Jacarand%C3%A1%20de%20Pica%20y%20queremos%20replicarlo%20en%20nuestra%20instituci%C3%B3n.%20Nos%20gustar%C3%ADa%20su%20asesor%C3%ADa%20para%20preparar%20el%20proyecto." target="_blank" rel="noopener">Escríbanos por WhatsApp</a><a class="fo-btn" href="mailto:rayen.ogalde@opencluster-tech.cl?subject=Queremos%20replicar%20lo%20de%20la%20Escuela%20Especial%20Jacarand%C3%A1&body=Hola%20Rayen%2C%20vi%20lo%20que%20hizo%20la%20Escuela%20Especial%20Jacarand%C3%A1%20de%20Pica%20y%20queremos%20replicarlo%20en%20nuestra%20instituci%C3%B3n.%20Nos%20gustar%C3%ADa%20su%20asesor%C3%ADa%20para%20preparar%20el%20proyecto.">Escríbanos un correo</a></div>
+        </div>
+      </div>
+      <ol class="go-pasos">
+        <li><span class="go-foto"><img src="SalasMultisensoriales_Recortadas/sensory-go-guardado-rincon.jpg" alt="El carrito guardado en la esquina de una sala" loading="lazy" style="object-position:50% 35%"></span>
+          <span class="go-n">1</span><h3>Se guarda en un rincón</h3><p>Así se ve de verdad: guardado en una esquina, con todos sus elementos juntos, en un mueble de 46 × 96 cm.</p></li>
+        <li><span class="go-foto"><img src="SalasMultisensoriales_Recortadas/sensory-go-shx-6.jpg" alt="Una persona lleva el carrito" loading="lazy"></span>
+          <span class="go-n">2</span><h3>Se lleva a cualquier sala</h3><p>Tiene ruedas: va a la sala de clases, al box de atención, a la sala de talleres o a donde se necesite.</p></li>
+        <li><span class="go-foto"><img src="SalasMultisensoriales_Recortadas/sensory-go-shx-3.jpg" alt="El carrito encendido en una sala a oscuras" loading="lazy"></span>
+          <span class="go-n">3</span><h3>Se enciende y la sala cambia</h3><p>Luz, burbujas, fibra óptica, imagen en la pared, sonido y vibración, con la tecnología SHX.</p></li>
+      </ol>
+      <div data-sgt="go"></div>
+      <div class="go-pie">
+        <div class="go-videos">
+        <button type="button" class="go-video go-video-v" data-lb-src="https://www.youtube-nocookie.com/embed/wrFScWAnDqg?rel=0&modestbranding=1" data-lb-fmt="vert" data-lb-lugar="La estación móvil, con niños" data-lb-donde="">
+          <span class="go-video-foto"><img src="SalasMultisensoriales_Recortadas/video-mini-aspasim.jpg" alt="" loading="lazy"><span class="obra-play"></span></span>
+          <span class="go-video-tx"><b>Los niños, jugando con la estación</b>Alessia y Leo juegan con la estación móvil.</span>
+        </button>
+        <button type="button" class="go-video" data-lb-src="https://www.youtube-nocookie.com/embed/dLMqDZ2LXGw?rel=0&modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Cómo se usa la estación sensorial móvil" data-lb-donde="">
+          <span class="go-video-foto"><img src="SalasMultisensoriales_Recortadas/yt-dLMqDZ2LXGw.jpg" alt="" loading="lazy"><span class="obra-play"></span></span>
+          <span class="go-video-tx"><b>Véanlo funcionando</b>Cómo se usa la estación móvil con tecnología SHX: el tubo, la fibra óptica, las escenas y cada forma de manejarla.</span>
+        </button>
+        </div>
+        <div class="go-ficha">
+          <div class="go-ficha-t">Sensory Go SHX</div>
+          <p class="go-ficha-p">La estación que ven en los videos. Trae:</p>
+          <ul><li>Unidad central SHX Compact con proyector</li><li>Tableta de control</li><li>Amplificador y altavoz integrados</li><li>Tubo de burbujas de 120 cm</li><li>Fibra óptica de 3 m</li><li>Unidad de vibración y cojín vibroacústico</li><li>Button 6 y Button 1</li><li>Reconocimiento de objetos</li></ul>
+          <div class="go-valor"><span>Sensory Go SHX · valor con IVA</span><b>$18.707.446</b></div>
+          <button type="button" class="go-ver" data-ficha="Sensory Go SHX">Ver la ficha completa</button>
+          <p class="go-ficha-p" style="margin-top:14px"><b>Sensory Go SHX Full</b>: el mismo Sensory Go con piscina de bolas, puff, aroma y luz en el suelo, por $26.541.432, IVA incluido. Lo que trae cada versión está más arriba y en Productos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Productos (Salas general, 28-oct-2026: el catálogo de salud, con precios) ── -->
+  <div class="nx cat" id="catalogo">
+    <div class="rot">Productos</div>
+    <h2>Tres productos destacados<br><em>y todo nuestro catálogo</em></h2>
+    <p class="nx-baja">Toquen una tarjeta para ver todo lo que incluye, con sus valores con IVA y sus fichas.</p>
+    <div class="pd-g pd-g4"><article class="pd" id="cat-sensory-go"><button type="button" class="pd-img" data-pd="go" aria-label="Abrir Sensory Go"><img src="SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg" alt="El tubo de burbujas del Sensory Go encendido" loading="lazy"><span class="pd-num">1</span></button><div class="pd-cu"><div class="pd-rot">Producto destacado 1</div><h3>Sensory Go</h3><p class="pd-que">Un <b>espacio sensorial móvil</b>: luz, sonido, imagen y vibración con la tecnología SHX, en un carro con ruedas.</p><dl class="pd-dl"><dt>Para qué sirve</dt><dd>Para la institución que no tiene una sala libre: va a la sala de clases, al box de atención o a la sala de talleres, y al terminar se guarda en un rincón.</dd><dt>Dos opciones</dt><dd><ul><li>Sensory Go SHX: el espacio sensorial móvil completo</li><li>Sensory Go SHX Full: con piscina de bolas, puff, aroma y luz en el suelo</li></ul></dd></dl><div class="pd-pie"><div class="pd-fila pd-fila-l"><div class="pd-fn"><b>Desde $18.707.446</b><span>IVA incluido · dos opciones</span></div></div></div><div class="pd-bts"><button type="button" class="pd-abre" data-pd="go">Ver las dos opciones<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></button><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20y%20quiero%20consultar%20por%3A%20Sensory%20Go." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a></div></div></article><article class="pd" id="cat-proximity"><button type="button" class="pd-img" data-pd="prox" aria-label="Abrir SHX Proximity"><img src="SalasMultisensoriales_Recortadas/shx-proximity-1.jpg" alt="La plataforma SHX Proximity con sus tarjetas" loading="lazy"><span class="pd-num">2</span></button><div class="pd-cu"><div class="pd-rot">Producto destacado 2</div><h3>SHX Proximity</h3><p class="pd-que">Una <b>plataforma que reconoce objetos reales</b>: al apoyar un objeto, toda la sala cambia.</p><dl class="pd-dl"><dt>Para qué sirve</dt><dd>Elegir, recordar y conversar con objetos de la vida real —una foto, una taza, un peluche—, también con quien no lee ni habla. Funciona con el Sistema SHX de la sala.</dd><dt>Qué trae</dt><dd><ul><li>La plataforma, con cable USB de 5 m</li><li>Tarjetas listas: volumen, detener, botones 1 al 6</li><li>18 tarjetas y 18 adhesivos que se regraban sin límite</li></ul></dd></dl><div class="pd-pie"><div class="pd-fila pd-fila-l"><div class="pd-fn"><b>$1.223.620</b><span>IVA incluido</span></div></div></div><div class="pd-bts"><button type="button" class="pd-abre" data-pd="prox">Ver el SHX Proximity<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></button><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20y%20quiero%20consultar%20por%3A%20SHX%20Proximity." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a></div></div></article><article class="pd" id="cat-luminea"><button type="button" class="pd-img" data-pd="lum" aria-label="Abrir Luminea"><img src="SalasMultisensoriales_Recortadas/app-luminea-fibra-tablet.jpg" alt="La app Luminea en una tablet, junto a la fibra óptica" loading="lazy"><span class="pd-num">3</span></button><div class="pd-cu"><div class="pd-rot">Producto destacado 3</div><h3>Luminea</h3><p class="pd-que">Una <b>línea de equipos de luz</b> —tubos, fibras, cortinas, piscinas— que se maneja con una <b>app gratuita</b>.</p><dl class="pd-dl"><dt>Para qué sirve</dt><dd>Personalizar la luz de la sala desde un teléfono o una tablet, con fotos, colores, música y actividades. Somos los únicos en Chile con Luminea: un sistema sin comparación.</dd><dt>Qué incluye</dt><dd><ul><li>La app Luminea, gratuita</li><li>12 productos Luminea, cada uno con su valor</li><li>Se parte con uno y se van sumando</li></ul></dd></dl><div class="pd-pie"><div class="pd-fila pd-fila-l"><div class="pd-fn"><b>Según los equipos que elijan</b><span>12 productos Luminea, cada uno con su valor</span></div></div></div><div class="pd-bts"><button type="button" class="pd-abre" data-pd="lum">Ver los productos Luminea<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></button><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20y%20quiero%20consultar%20por%3A%20Luminea." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a></div></div></article><article class="pd" id="cat-todos"><button type="button" class="pd-img" data-pd="todos" aria-label="Abrir Todos nuestros productos"><img src="SalasMultisensoriales_Recortadas/opcion-shx2-portada.jpg" alt="Una sala multisensorial con sus productos" loading="lazy"><span class="pd-num">4</span></button><div class="pd-cu"><div class="pd-rot">Catálogo completo</div><h3>Todos nuestros productos</h3><p class="pd-que">Todo nuestro <b>catálogo para espacios multisensoriales</b>, cada producto con su valor y su ficha.</p><dl class="pd-dl"><dt>Para qué sirve</dt><dd>Armar su sala a la medida, o sumar elementos a la que ya tienen.</dd><dt>Qué incluye</dt><dd><ul><li>Sistema SHX</li><li>Luminea</li><li>Vibroacústicos</li><li>Presión profunda</li><li>Movimiento y juego</li><li>Para colgar los columpios</li><li>Aromaterapia, tacto y luz ultravioleta</li></ul></dd></dl><div class="pd-pie"><div class="pd-fila pd-fila-l"><div class="pd-fn"><b>64 productos</b><span>Cada uno con su valor con IVA y su ficha</span></div></div></div><div class="pd-bts"><button type="button" class="pd-abre" data-pd="todos">Ver todos los productos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></button></div></div></article></div>
+    <div class="pdv cat" id="pdv" hidden><div class="pdv-caja" role="dialog" aria-modal="true" aria-labelledby="pdvT"><div class="pdv-top"><button type="button" class="sv-volver" data-pd-cerrar="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>Volver</button><span class="sv-top-n" id="pdvT"></span><button type="button" class="sv-x" data-pd-cerrar="1" aria-label="Cerrar">&#10005;</button></div><div class="pdv-p" data-pdp="go" data-t="Sensory Go" hidden><p class="pdv-lead">Un <b>espacio sensorial móvil</b>: un carro con ruedas de 46 × 96 × 130 cm que guarda todo el equipo, con tecnología SHX. Se lleva a la sala de clases, al box de atención o a la sala de talleres, se enciende y ese lugar se transforma. Elijan una de las dos opciones; toquen cada elemento de «Qué trae» para ver su ficha.</p><div class="pdo-g"><div class="pdo"><img class="pdo-img" src="SalasMultisensoriales_Recortadas/sensory-go-shx-5.jpg" alt="El Sensory Go con todos sus elementos" loading="lazy"><div class="pdo-c"><div class="pd-rot">Opción 1</div><h3>Sensory Go SHX</h3><p>El espacio sensorial móvil completo.</p><div class="pd-fv"><b>$18.707.446</b><span>IVA incluido</span></div></div><div data-sgt="go"></div><div class="pd-bts" style="margin-top:12px"><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20y%20quiero%20consultar%20por%3A%20Sensory%20Go%20SHX." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a><button type="button" class="pd-vid" data-lb-src="https://www.youtube-nocookie.com/embed/dLMqDZ2LXGw?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Cómo se usa el Sensory Go" data-lb-donde=""><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Ver el video</button></div></div><div class="pdo"><img class="pdo-img" src="SalasMultisensoriales_Recortadas/sensory-go-shx-5.jpg" alt="El Sensory Go con todos sus elementos" loading="lazy"><div class="pdo-c"><div class="pd-rot">Opción 2</div><h3>Sensory Go SHX Full</h3><p>El mismo Sensory Go SHX, con piscina de bolas, puff, aroma y luz en el suelo.</p><div class="pd-fv"><b>$26.541.432</b><span>IVA incluido</span></div></div><div data-sgt="full"></div><div class="pd-bts" style="margin-top:12px"><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20y%20quiero%20consultar%20por%3A%20Sensory%20Go%20SHX%20Full." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a><button type="button" class="pd-vid" data-lb-src="https://www.youtube-nocookie.com/embed/dLMqDZ2LXGw?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Cómo se usa el Sensory Go" data-lb-donde=""><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Ver el video</button></div></div></div></div><div class="pdv-p" data-pdp="prox" data-t="SHX Proximity" hidden>    <div class="cat-dest">
+      <div>
+        <h3>SHX Proximity: <em>los objetos reales encienden la sala</em></h3>
+        <p>Una pequeña plataforma que convierte <b>objetos reales</b> en el comienzo de una experiencia multisensorial. A una fotografía, un peluche, una prenda de ropa, un alimento, una miniatura o cualquier objeto significativo se le pone una tarjeta o un adhesivo, y basta con <b>apoyarlo en la plataforma</b> para que <b>la sala completa se convierta en el ambiente de ese objeto</b>: luz, sonido, imagen, vibración y otros efectos.</p>
+        <ol class="cd-pasos"><li><span>1</span>En el programa del Sistema SHX, cada tarjeta o adhesivo se vincula a un objeto y a una escena.</li><li><span>2</span>La persona apoya o acerca el objeto a la plataforma (a 1 o 2 cm).</li><li><span>3</span>La sala lo reconoce y cambia sola: nadie tiene que tocar un control.</li></ol>
+        <div class="cd-info"><div><b>Ambientes temáticos</b><p>Una selva, el espacio, una playa, un campo de fútbol, o cualquier ambiente ligado a los intereses, los recuerdos o los objetivos terapéuticos de cada persona.</p></div><div><b>Con personas mayores</b><p>Con las personas mayores, los objetos de su historia abren camino a los recuerdos y a la conversación. A quien no lee ni habla le permite elegir con un objeto real.</p></div><div><b>Tarjetas listas para usar</b><p>Trae tarjetas para subir y bajar el volumen, detener, los botones 1 al 6 y los modos secuencial y aleatorio, más 18 tarjetas y 18 adhesivos que se regraban sin límite. Se pueden sumar paquetes de 12 o 24.</p></div><div><b>Indicado para</b><p>Parálisis cerebral, autismo, daño cerebral (ictus, traumatismo), discapacidad intelectual, personas mayores y discapacidad visual.</p></div></div>
+        <ul class="cd-chips"><li>Atención</li><li>Interacción</li><li>Asociación</li><li>Memoria</li><li>Causa y efecto</li><li>Recuerdos</li><li>Lenguaje</li></ul>
+        <p class="cd-nota">Se conecta por USB, con un cable de 5 m, al Sistema SHX de la sala (SHX Compact), con el que funciona.</p>
+        <div class="cd-pie"><div class="cd-val"><b>$1.223.620</b><span>IVA incluido</span></div><button type="button" class="cd-bt" data-ficha="SHX Proximity">Ver la ficha</button><a class="cd-bt cd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20y%20quiero%20consultar%20por%3A%20SHX%20Proximity." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a></div>
+      </div>
+      <div class="cd-vids"><button type="button" class="cd-v" data-lb-src="https://www.youtube-nocookie.com/embed/Q9uYpvsxzDU?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde="Los objetos reales cobran vida"><img src="SalasMultisensoriales_Recortadas/video-mini-proximity.jpg" alt="" loading="lazy"><span class="cd-v-p"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span><span class="cd-v-t">Los objetos reales cobran vida</span></button><button type="button" class="cd-v" data-lb-src="https://www.youtube-nocookie.com/embed/UgrQCj3r4TY?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde="Sesiones más interactivas"><img src="SalasMultisensoriales_Recortadas/yt-UgrQCj3r4TY.jpg" alt="" loading="lazy"><span class="cd-v-p"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span><span class="cd-v-t">Sesiones más interactivas, con objetos reales</span></button><button type="button" class="cd-v" data-lb-src="https://www.youtube-nocookie.com/embed/1LnX2wQvhIU?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="SHX Proximity" data-lb-donde="Guía de inicio"><img src="SalasMultisensoriales_Recortadas/yt-1LnX2wQvhIU.jpg" alt="" loading="lazy"><span class="cd-v-p"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span><span class="cd-v-t">Guía de inicio: cómo se usa</span></button></div>
+    </div>
+</div><div class="pdv-p" data-pdp="lum" data-t="Luminea" hidden><p class="pdv-lead">Luminea es la línea de luz interactiva: tubos de burbujas, fibras ópticas, cortinas, piscinas y más, que se manejan desde la <b>app Luminea, gratuita</b>, en un teléfono o una tablet. Somos los únicos en Chile con Luminea: un sistema sin comparación. Toquen un producto para ver su ficha.</p><div class="pd-bts" style="margin:0 0 6px"><button type="button" class="pd-app" onclick="appInfo()">Conocer la app</button><button type="button" class="pd-vid" data-lb-src="https://www.youtube-nocookie.com/embed/___WPYNAI4c?rel=0&amp;modestbranding=1" data-lb-fmt="yt" data-lb-lugar="Luminea" data-lb-donde=""><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Ver el video</button><a class="pd-wa" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vi%20el%20cat%C3%A1logo%20de%20salas%20multisensoriales%20y%20quiero%20consultar%20por%3A%20Luminea." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z"/></svg>Consultar</a></div><section class="cat-gr" id="cg-luminea"><div class="cat-gr-c"><h4>Luminea</h4><span>La línea de luz interactiva: tubos, fibras, cortinas y piscinas que se manejan desde la app gratuita.</span></div><div class="cat-g" data-cat-grupo="cg-luminea"></div></section></div><div class="pdv-p" data-pdp="todos" data-t="Todos nuestros productos" id="todos-productos" hidden><p class="pdv-lead">Toquen un producto para ver su ficha: fotos, qué es, para quién está indicado y sus características.</p><div class="cat-intro"><button type="button" class="pd-ir" data-ir-grupo="cg-shx-t">Sistema SHX</button><button type="button" class="pd-ir" data-ir-grupo="cg-luminea-t">Luminea</button><button type="button" class="pd-ir" data-ir-grupo="cg-vibro-t">Vibroacústicos</button><button type="button" class="pd-ir" data-ir-grupo="cg-presion-t">Presión profunda</button><button type="button" class="pd-ir" data-ir-grupo="cg-mov-t">Movimiento y juego</button><button type="button" class="pd-ir" data-ir-grupo="cg-colgar-t">Para colgar los columpios</button><button type="button" class="pd-ir" data-ir-grupo="cg-otros-t">Aromaterapia, tacto y luz ultravioleta</button></div><section class="cat-gr" id="cg-shx-t"><div class="cat-gr-c"><h4>Sistema SHX</h4><span>Une la luz, el sonido, la imagen y la vibración en una sola escena, y todo lo que se le conecta.</span></div><div class="cat-g" data-cat-grupo="cg-shx"></div></section><section class="cat-gr" id="cg-luminea-t"><div class="cat-gr-c"><h4>Luminea</h4><span>La línea de luz interactiva: tubos, fibras, cortinas y piscinas que se manejan desde la app gratuita.</span></div><div class="cat-g" data-cat-grupo="cg-luminea"></div></section><section class="cat-gr" id="cg-vibro-t"><div class="cat-gr-c"><h4>Vibroacústicos</h4><span>La música se escucha y se siente en el cuerpo como una vibración suave.</span></div><div class="cat-g" data-cat-grupo="cg-vibro"></div></section><section class="cat-gr" id="cg-presion-t"><div class="cat-gr-c"><h4>Presión profunda</h4><span>Peso y presión firme y pareja, que ayudan a volver a la calma.</span></div><div class="cat-g" data-cat-grupo="cg-presion"></div></section><section class="cat-gr" id="cg-mov-t"><div class="cat-gr-c"><h4>Movimiento y juego</h4><span>Para balancearse, girar, buscar el equilibrio y dejarse caer sin riesgo.</span></div><div class="cat-g" data-cat-grupo="cg-mov"></div></section><section class="cat-gr" id="cg-colgar-t"><div class="cat-gr-c"><h4>Para colgar los columpios</h4><span>Lo que se necesita para colgar los columpios del techo y ajustar su altura.</span></div><div class="cat-g" data-cat-grupo="cg-colgar"></div></section><section class="cat-gr" id="cg-otros-t"><div class="cat-gr-c"><h4>Aromaterapia, tacto y luz ultravioleta</h4><span>El olfato, el tacto, la propia imagen en el espejo y los materiales que brillan con luz ultravioleta.</span></div><div class="cat-g" data-cat-grupo="cg-otros"></div></section><p class="cat-nota"><b>Qué incluye cada valor.</b> El valor de cada producto, con IVA. No incluye el transporte, la instalación ni la capacitación, porque dependen de la ubicación de cada institución: los sumamos en la cotización. Son valores referenciales, sujetos a la disponibilidad de stock al momento de la orden de compra.</p></div></div></div>
+  </div>
+
+
+  <!-- ── Distribuidores exclusivos (Salas general, 28-oct-2026) ── -->
+  <div class="nx" id="distribuidores">
+    <div class="dx">
+      <div class="dx-cab"><div class="dx-sello"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg><b>Exclusivos<br>en Chile</b><span>SHX · Luminea</span></div>
+        <div><div class="dx-rot">Nuestro rol</div><h3 class="dx-h">Distribuidores exclusivos autorizados<small>del Sistema SHX y la línea Luminea de Qinera en Chile</small></h3></div></div>
+      <p class="dx-p">Qinera, nuestro partner europeo, nos designó como su <b>distribuidor exclusivo autorizado en Chile para el Sistema SHX y la línea Luminea</b>. Así, todo el camino de estos sistemas en el país lo recorre un mismo equipo: los traemos, los instalamos en cada institución y seguimos a su lado mientras la sala esté en uso.</p>
+      <div class="dx-g"><div class="dx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg><div><b>Importamos</b><p>Traemos los equipos desde el fabricante, con su software, sus accesorios y sus actualizaciones.</p></div></div><div class="dx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg><div><b>Implementamos e instalamos</b><p>Montamos cada sistema en el establecimiento y lo dejamos funcionando, en todo Chile.</p></div></div><div class="dx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20a5.8 5.8 0 0 1 11.6 0"/><path d="M16.2 5.4a3.2 3.2 0 0 1 0 5.2"/><path d="M18 20a5.6 5.6 0 0 0-2.7-4.8"/></svg><div><b>Capacitamos a los equipos</b><p>Formamos a los profesionales que van a usar la sala, también después de la instalación.</p></div></div><div class="dx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20a3 3 0 0 1-3 2h-3"/></svg><div><b>Soporte técnico y posventa</b><p>Resolvemos sus consultas técnicas y los acompañamos cuando la sala ya está en uso.</p></div></div><div class="dx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg><div><b>Garantías y repuestos originales</b><p>Gestionamos las garantías y suministramos los repuestos y componentes originales del fabricante.</p></div></div><div class="dx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg><div><b>Compras públicas</b><p>Podemos participar en procesos de compra pública, incluido Mercado Público, y en compras privadas.</p></div></div></div>
+      <div class="dx-pie"><a class="dx-bt" href="https://opencluster-tech.github.io/propuestas/acreditacion/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>Ver nuestra acreditación</a></div>
+    </div>
+  </div>
+
   <section class="cp" id="compromiso"><div class="cp-cab"><div class="cp-rot">Nuestro compromiso</div><h2 class="cp-h"><span class="cp-letra">Los acompañamos</span><span class="cp-sub">en todo el camino</span></h2></div><ol class="cp-ruta"><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M2.8 19.5a5.2 5.2 0 0 1 10.4 0"/><path d="M14 19.5a4.4 4.4 0 0 1 7.2-3.4"/></svg></span><span class="cp-n">Etapa 1</span><h3>Para conocerlos</h3><p>Los acompañamos desde el primer contacto, reuniéndonos con ustedes las veces que sea necesario, respondiendo sus preguntas y, cuando es posible, visitando sus instalaciones, para entender bien sus necesidades.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="cp-n">Etapa 2</span><h3>Para definir la sala</h3><p>Los acompañamos a categorizar a la población que la usará, para que obtengan el espacio sensorial adecuado a su perfil.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5 9 3.5l6 2 5-2v15l-5 2-6-2-5 2z"/><path d="M9 3.5v15"/><path d="M15 5.5v15"/></svg></span><span class="cp-n">Etapa 3</span><h3>Una propuesta personalizada</h3><p>Los acompañamos con una propuesta adaptada a cada uno de nuestros clientes, con sus planos, que vamos mejorando a medida que los conocemos más.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9.5 12 4l8.5 5.5"/><path d="M5.5 10v7"/><path d="M10 10v7"/><path d="M14 10v7"/><path d="M18.5 10v7"/><path d="M3.5 20h17"/></svg></span><span class="cp-n">Etapa 4</span><h3>Si buscan fondos públicos</h3><p>Los acompañamos en la elaboración del proyecto y postulamos juntos para conseguir el financiamiento de su espacio.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0 4.8 5.2l-8.6 8.6a2.1 2.1 0 0 1-3-3l8.6-8.6"/><path d="M5 5l3.5 3.5"/><path d="M3.5 7.5 7.5 3.5"/></svg></span><span class="cp-n">Etapa 5</span><h3>En la implementación</h3><p>Los acompañamos aconsejándolos y guiándolos en los trabajos de preinstalación que requiere el espacio, instalamos la sala y capacitamos a su equipo.</p></li><li class="cp-e"><span class="cp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-8"/><path d="M12 12c0-4 2.8-6.5 7-6.5 0 4-2.8 6.5-7 6.5z"/><path d="M12 14.5c0-3-2.2-5-5.5-5 0 3 2.2 5 5.5 5z"/></svg></span><span class="cp-n">Etapa 6</span><h3>Y después</h3><p>Los seguimos acompañando años después de haber comprado su sala, para que puedan seguir escalándola y transformándola año a año en un espacio cada vez más adecuado a sus necesidades.</p></li></ol><div class="cp-fin"><span class="cp-fin-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></span><p><b>Los acompañamos permanentemente.</b> Cuando algo falla o cuando surgen dudas, seguimos presentes.</p></div></section>
 
   <!-- ── El cierre ──────────────────────────────────────── -->
@@ -2176,6 +2597,188 @@ a.lum-sello:hover,a.lum-sello:focus-visible{background:rgba(0,26,96,.95);border-
 (function(){ var F = [{"n":"Tubo de burbujas Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/tubo-de-burbujas-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Burbujas que suben entre luz y color, con un modo de «burbuja suelta» para seguirla con la mirada. 180 cm de alto.","que":"Burbujas que suben entre luz y color, con un modo de «burbuja suelta» para seguirla con la mirada. 180 cm de alto.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Burbujas que suben entre luz y color, con un modo de «burbuja suelta» para seguirla con la mirada. 180 cm de alto."},{"n":"Fibra óptica Luminea 3m","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/fibra-optica-luminea-3m.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Hebras de luz suaves para tocar, explorar y abrazar. También de 2 metros.","que":"Hebras de luz suaves para tocar, explorar y abrazar. También de 2 metros.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Hebras de luz suaves para tocar, explorar y abrazar. También de 2 metros."},{"n":"Ducha Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/ducha-luminea-violeta.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"150 hebras de luz de 3 m que caen del techo: un espacio envolvente para entrar, tocar y explorar.","que":"150 hebras de luz de 3 m que caen del techo: un espacio envolvente para entrar, tocar y explorar.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"150 hebras de luz de 3 m que caen del techo: un espacio envolvente para entrar, tocar y explorar."},{"n":"Cortina Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/cortina-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Una cortina de luz para tocar y recorrer desde distintas posiciones. También oscilante.","que":"Una cortina de luz para tocar y recorrer desde distintas posiciones. También oscilante.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Una cortina de luz para tocar y recorrer desde distintas posiciones. También oscilante."},{"n":"Cielo Luminea circular","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/cielo-luminea-circular.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Estrellas que cambian de color sobre las cabezas, en un círculo de 122 cm: ideal para nombrar colores.","que":"Estrellas que cambian de color sobre las cabezas, en un círculo de 122 cm: ideal para nombrar colores.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Estrellas que cambian de color sobre las cabezas, en un círculo de 122 cm: ideal para nombrar colores."},{"n":"Piscina Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/piscina-luminea-en-uso.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Una piscina de bolas de luz para sumergirse: sus botones de color cambian la luz de la sala.","que":"Una piscina de bolas de luz para sumergirse: sus botones de color cambian la luz de la sala.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Una piscina de bolas de luz para sumergirse: sus botones de color cambian la luz de la sala."},{"n":"Piscina Luminea vibroacústica","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/piscina-luminea-vibroacustica-web.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Luz, música y una vibración que se siente en todo el cuerpo, tendido entre las bolas.","que":"Luz, música y una vibración que se siente en todo el cuerpo, tendido entre las bolas.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Luz, música y una vibración que se siente en todo el cuerpo, tendido entre las bolas."},{"n":"Planeta Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/planeta-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Una esfera de luz suave que invita a la calma o despierta la atención. En dos tamaños.","que":"Una esfera de luz suave que invita a la calma o despierta la atención. En dos tamaños.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Una esfera de luz suave que invita a la calma o despierta la atención. En dos tamaños."},{"n":"Lámpara Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/lampara-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa.","que":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa."},{"n":"Línea LED Luminea Para Techo 5 Metros","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/linea-led-luminea-techo.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Cinco metros de luz que siguen el contorno de la sala y la tiñen de color. También para respaldos.","que":"Cinco metros de luz que siguen el contorno de la sala y la tiñen de color. También para respaldos.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Cinco metros de luz que siguen el contorno de la sala y la tiñen de color. También para respaldos."},{"n":"Alfombra Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/alfombra-luminea-oficial.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar.","que":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar."},{"n":"Rincón Luminea con tablet","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/rincon-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Tubo de burbujas, fibra óptica y la app en un rincón de 180 cm, fácil de instalar. También sin tablet.","que":"Tubo de burbujas, fibra óptica y la app en un rincón de 180 cm, fácil de instalar. También sin tablet.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Tubo de burbujas, fibra óptica y la app en un rincón de 180 cm, fácil de instalar. También sin tablet."}];
   var l = (window.SENSORIAL_BODEGA || []).concat(window.NUESTRAS_EXTRA || []); window.NUESTRAS_EXTRA = window.NUESTRAS_EXTRA || [];
   F.forEach(function(f){ if (!l.some(function(p){ return p.n === f.n; })) window.NUESTRAS_EXTRA.push(f); }); })();
+</script>
+<script>
+/* Salas general · 28-oct-2026: fichas de productos del catálogo que esta página no traía (copiadas de salud) */
+(function(){ var F = [{"n":"Fibra óptica Luminea 2m","oc":"OC-1795","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/fibra-optica-azul.jpg","imgs":["SalasMultisensoriales_Recortadas/fibra-optica-luminea-2m.jpg","SalasMultisensoriales_Recortadas/fibra-optica-luminea-2m-4.jpg","SalasMultisensoriales_Recortadas/fibra-optica-luminea-2m-5.jpg"],"aprox":false,"est":["Vista","Tacto"],"fun":"Según cómo se use, el mismo equipo regula o activa.","frase":"Estimula la vista y el tacto. Según cómo se use, el mismo equipo regula o activa.","que":"Fibra óptica Luminea de 2 metros, con 150 hilos de luz, para estimulación visual y sensorial: una luz que se mira, se toca y se recorre.","trab":"","ind":"Parálisis cerebral · Trastorno del espectro autista · Daño cerebral: ictus, traumatismo craneoencefálico · Discapacidad intelectual · Personas mayores · Discapacidad visual · Niños pequeños, atención temprana","inc":"Haz de 150 fibras ópticas de 2 m, fuente de luz, cable DMX de 6 m, alimentador y llave para fijar las fibras.","tec":"Fuente de luz de 18 × 8 × 5 cm y 6 W. Necesita un enchufe.","car":"Fibras ópticas de alta calidad para garantizar una mayor durabilidad. Alta luminosidad. Funciona de forma automática sin necesidad de controlador. Entrada de conmutador para modo causa-efecto (alterna encendido/cambio de color) y modo secuencial (secuencia cíclica de colores). Compatible con el Sistema SHX, Luminea App, DMX, y receptor de radiofrecuencia para controladores del sistema.","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Fibra óptica Luminea de 2 m, con 150 hilos de luz muy brillantes, para estimular la vista y el tacto. Una luz que se mira, se toca y se recorre. Al enchufarla funciona sola, en modo automático, sin mando; también con un pulsador, con el mando de seis botones, desde la aplicación Luminea o desde el Sistema SHX."},{"n":"Cobertor para la fuente de luz de la fibra óptica","oc":"OC-ETFFOX-P","cat":2,"tam":3,"img":"isotipo-oct.png","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Protege la fuente de luz de la fibra óptica y la deja fija a la pared.","que":"Cubierta que protege la fuente de luz de la fibra óptica y la deja fija a la pared.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Cubierta que protege la fuente de luz de la fibra óptica y la deja fija a la pared."},{"n":"Módulo protector para el tubo de burbujas","oc":"OC-2305","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/modulo-protector-tubo-burbujas.jpg","imgs":[],"aprox":false,"est":["Vista"],"fun":"Protege el tubo de burbujas y lo deja a baja altura.","frase":"Protege la electrónica del tubo de burbujas y lo deja a baja altura.","que":"Módulo blando de perfil bajo que protege la electrónica del tubo de burbujas y acerca la experiencia sensorial al suelo, para quienes la viven sentados o tumbados.","trab":"","ind":"Discapacidad física (lesión medular, esclerosis múltiple, ELA, enfermedades neuromusculares) · Parálisis cerebral · Trastorno del espectro autista · Daño cerebral (ictus, traumatismo craneoencefálico) · Discapacidad intelectual · Personas mayores · Discapacidad visual","inc":"","tec":"Medidas de 30 × 60 × 60 cm. Tela vinílica de 620 g/m² y espesor de 0,5 a 1 mm, con espumas de poliuretano y polietileno.","car":"Medidas 30 x 60 x 60 cm · Tela vinílica con protección antimicrobiana, antibacteriana y antimicótica · Resiste saliva, sudor, orina y sangre · No propaga el fuego · Disponible en varios colores · Se lava con agua y jabón suave","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Módulo blando de 30 × 60 × 60 cm que protege la electrónica del tubo de burbujas y lo deja a baja altura, para mirarlo sentado o tumbado. Tela vinílica con protección contra bacterias y hongos, que no deja pasar saliva, sudor ni orina, y no propaga el fuego. Se lava con agua y jabón suave."},{"n":"Router Luminea","oc":"OC-2373","cat":1,"tam":3,"img":"SalasMultisensoriales_Recortadas/router-luminea.jpg","imgs":["SalasMultisensoriales_Recortadas/router-luminea-1.jpg"],"aprox":false,"est":["Vista"],"fun":"Permite manejar juntas las luces de la sala.","frase":"Une las luces de la sala para manejarlas juntas.","que":"Gestiona y sincroniza de forma centralizada los dispositivos de iluminación Luminea, para personalizar cada experiencia sensorial y simplificar su control.","trab":"","ind":"Salas multisensoriales y otros espacios equipados con dispositivos Luminea","inc":"","tec":"Medidas de 146 × 111 × 28 mm, sin adaptador. Alimentación de 110 a 240 V AC (50–60 Hz), con salida de 5 V DC y 1 A máximo.","car":"Compatible con el Sistema SHX · Compatible con la aplicación Luminea (Android) · Los equipos Luminea se conectan solos a su red · No necesita internet","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Router que crea la red propia de la sala: el tubo de burbujas y la fibra óptica se conectan solos a ella y se manejan juntos desde la aplicación Luminea, en un teléfono o una tablet Android. Se pide junto con los equipos Luminea para que lleguen configurados de fábrica, y no necesita internet."},{"n":"Enabler Socket+","oc":"OC-2313","cat":1,"tam":3,"img":"SalasMultisensoriales_Recortadas/enabler-socket.jpg","imgs":["SalasMultisensoriales_Recortadas/enabler-socket-1.jpg","SalasMultisensoriales_Recortadas/enabler-socket-2.jpg"],"aprox":false,"est":[],"fun":"Permite encender y apagar un aparato con un pulsador.","frase":"Enciende y apaga un aparato eléctrico con un pulsador o un sistema de acceso adaptado.","que":"Enchufe que permite encender y apagar aparatos eléctricos —como las Estrellas SHX o el difusor de aromas— desde el sistema SHX, junto con la escena, o con cualquier pulsador o sistema de acceso adaptado.","trab":"Causa-efecto · Autonomía · Participación · Elección","ind":"Discapacidad física · Parálisis cerebral · Daño cerebral (ictus, traumatismo craneoencefálico)","inc":"","tec":"Funciona con 230 V. Medidas de 105 × 53 × 46 mm, sin contar el enchufe. Una entrada y una salida para pulsador (conector de 3,5 mm). Tres modos: encendido y apagado, pulsador y temporizado, de 1 segundo a 5 minutos.","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Enchufe que enciende y apaga un aparato eléctrico —como las Estrellas SHX o el difusor de aromas— con un pulsador o desde el Sistema SHX, junto con la escena."},{"n":"Almohada vibrante","img":"SalasMultisensoriales_Recortadas/almohada-vibrante.jpg","que":"Cojín de 35 × 35 cm que vibra al abrazarlo, con un efecto calmante. Se limpia con agua y jabón suave.","ind":"Parálisis cerebral · Trastorno del espectro autista · Daño cerebral · Discapacidad intelectual · Personas mayores · Discapacidad visual · Discapacidad auditiva · Atención temprana"},{"n":"Peso para hombros Lola la Oruga grande","img":"SalasMultisensoriales_Recortadas/lola-la-oruga-grande.jpg","que":"Una oruga de 117 cm que se pone sobre los hombros y, con su peso, da una presión que calma. Trae funda azul suave y se lava a máquina.","ind":"Trastorno del espectro autista · Discapacidad intelectual"},{"n":"Estación sensorial móvil SHX","oc":"OC-2378","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-5.jpg","imgs":["SalasMultisensoriales_Recortadas/sensory-go-shx-5.jpg","SalasMultisensoriales_Recortadas/sensory-go-shx-1.jpg","SalasMultisensoriales_Recortadas/sensory-go-shx-2.jpg","SalasMultisensoriales_Recortadas/sensory-go-shx-3.jpg","SalasMultisensoriales_Recortadas/sensory-go-shx-4.jpg","SalasMultisensoriales_Recortadas/sensory-go-shx-6.jpg","SalasMultisensoriales_Recortadas/sensory-go-shx-7.jpg","SalasMultisensoriales_Recortadas/sensory-go-shx-8.jpg","SalasMultisensoriales_Recortadas/sensory-go-shx-9.jpg"],"iva":20166627,"aprox":false,"est":["Vista","Oído","Vibración"],"fun":"Según cómo se use, el mismo equipo regula o activa.","frase":"Estimula la vista, el oído y la vibración en el cuerpo. Según cómo se use, el mismo equipo regula o activa.","que":"Carrito multisensorial transportable que convierte cualquier espacio en una experiencia inmersiva, interactiva y personalizable con la tecnología SHX. Es la versión más completa de la estación.","trab":"Estimulación multisensorial interactiva · Regulación sensorial · Aprendizaje y desarrollo · Rehabilitación · Bienestar y relajación · Ocio educativo","ind":"Centros de personas mayores · Centros para personas con discapacidad · Hospitales · Bibliotecas · Empresas · Hogares · Museos","inc":"","tec":"","car":"Medidas 46 x 96 x 130 cm · Carro con ruedas y estanterías · Unidad central SHX Compact con proyector · Tableta de control · Amplificador y altavoz integrados · Tubo de burbujas de 120 cm · Fibra óptica de 3 m · Unidad de vibración · Cojín vibroacústico · Button 6 y Button 1 · Sistema de reconocimiento de objetos","logro":"","unico":"","mat":"","sellos":["Resistente a transpiración, saliva, orina y sangre","Tratamiento antimicrobiano en el tejido","Espuma certificada en clase de artículos para bebés","Apto para contacto directo con la piel","Sin metales pesados","Sin aditivos contra el fuego restringidos","Sin sustancias químicas restringidas en Europa","Marcado CE: cumple las normas de seguridad europeas","Verificado en laboratorio europeo"],"fuente":"ficha","matTit":"Materiales","desc":"Carrito multisensorial de 46 × 96 × 130 cm, con ruedas y repisas, que lleva la tecnología SHX a cualquier lugar. Convierte cualquier espacio en una experiencia envolvente e interactiva, adaptada a cada persona. Trae la unidad central SHX Compact con proyector, tableta de control, amplificador y altavoz, tubo de burbujas de 120 cm, fibra óptica de 3 m, unidad de vibración, cojín vibroacústico, Button 6, Button 1 y reconocimiento de objetos: es la versión más completa de los tres carritos. Seguridad eléctrica: Cumple las reglas de seguridad eléctrica de Europa y funciona sin interferir con los demás aparatos."},{"n":"Sensory Go SHX Full","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg","imgs":["SalasMultisensoriales_Recortadas/estacion-tubo-nina.jpg"],"aprox":false,"est":["Vista","Oído","Vibración","Olfato","Movimiento"],"fun":"Según lo que se encienda, la misma estación calma o activa.","frase":"El Sensory Go SHX completado con piscina de bolas, puff, aroma y luz en el suelo.","desc":"Es el mismo Sensory Go SHX, el espacio sensorial móvil, completado con piscina de bolas, puff, aroma y luz en el suelo. La Piscina Luminea vibroacústica envuelve el cuerpo entre las bolas mientras la luz cambia de color y la música se siente como vibración, y el Puff transformable vibroacústico se amolda al cuerpo, sentado o tendido; el amplificador vibroacústico permite que la piscina y el puff vibren junto al cojín que ya trae el carro. El difusor y el kit de aromaterapia suman el olfato, y el difusor se puede encender y apagar con un pulsador. El Suelo Luminoso cambia de color con el movimiento e invita a pisar y moverse.","que":"Estación sensorial móvil Sensory Go SHX con piscina de bolas, puff, aroma y luz en el suelo.","trab":"Regulación sensorial · Causa-efecto · Atención · Movimiento · Bienestar y relajación","ind":"Hospitales · Centros de personas mayores · Centros para personas con discapacidad","inc":"Sensory Go SHX (unidad central SHX Compact con proyector, tableta, amplificador y altavoz, tubo de burbujas de 120 cm, fibra óptica de 3 m, unidad de vibración, cojín vibroacústico, Button 6, Button 1 y reconocimiento de objetos) · Piscina Luminea vibroacústica · Puff transformable vibroacústico · Amplificador vibroacústico adicional · Difusor de aromaterapia · Kit de iniciación de aromaterapia · Suelo Luminoso.","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web"},{"n":"Columpio Saco Cocoon Niño","oc":"OC-2570","cat":4,"tam":1,"img":"SalasMultisensoriales_Recortadas/columpio-saco-cocoon-1.jpg","imgs":["SalasMultisensoriales_Recortadas/columpio-saco-cocoon-2.jpg","SalasMultisensoriales_Recortadas/columpio-saco-cocoon-3.jpg"],"aprox":false,"est":["Movimiento"],"fun":"","frase":"Columpio tipo saco, talla niño, que envuelve y contiene.","desc":"Columpio tipo saco, talla niño, que entrega el estímulo de movimiento desde otra perspectiva. El niño va envuelto o sentado dentro, y se siente seguro y contenido. La malla se estira y se adapta a la forma y al tamaño de cada niño.","que":"Da estimulación vestibular, la que trabaja el equilibrio y la noción de movimiento, y una gran sensación de seguridad y contención. Se usa envuelto o sentado dentro; si se sueltan dos cintas, se convierte en una hamaca que cuelga de un solo punto.","trab":"Equilibrio · Noción de movimiento · Seguridad y contención","ind":"","inc":"El columpio y 2 mosquetones de seguridad.","tec":"Alto 127 cm · Soporta hasta 70 kg · Peso del columpio 1 kg · Altura mínima de techo 2,4 m · Espacio libre alrededor 1,8 m · Malla de nylon blanda que no pellizca, partes de vinilo y seis cintas para colgarlo.","car":"Se usa con un cilindro de rotación y un mosquetón de seguridad de acero, y necesita un anclaje firme en el techo.","logro":"","unico":"","mat":"","sellos":[],"fuente":"web"}];
+  var l = (window.SENSORIAL_BODEGA || []).concat(window.NUESTRAS_EXTRA || []); window.NUESTRAS_EXTRA = window.NUESTRAS_EXTRA || [];
+  F.forEach(function(f){ if (!l.some(function(p){ return p.n === f.n; })) window.NUESTRAS_EXTRA.push(f); }); })();
+</script>
+<style>
+/* sensory_go_trae.js */
+.sgt{margin:18px 0 20px}
+.sgt-h{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#001A60;margin:0 0 4px}
+.sgt-p{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:#4B5563}
+.sgt-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
+.sgt-c{display:flex;flex-direction:column;padding:0;border:1px solid #DCE6FA;border-radius:12px;background:#fff;overflow:hidden;cursor:pointer;font:inherit;text-align:left;color:#001A60}
+.sgt-c:hover,.sgt-c:focus-visible{border-color:#08ACF2;outline:none;box-shadow:0 8px 18px -14px rgba(0,26,96,.6)}
+.sgt-f{display:block;position:relative;aspect-ratio:1/1;background:#F4F8FF;overflow:hidden}
+.sgt-f img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:contain}
+.sgt-n{display:block;padding:7px 8px 8px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;line-height:1.25}
+.sgt-n small{display:block;font-weight:600;font-size:10px;color:#0A8FCC;margin-top:2px}
+.sgt-intro{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:18px;align-items:start}
+.sgt-intro img{width:100%;border-radius:14px;display:block;background:#F4F8FF}
+.sgt-intro .sv-lead{margin-top:0}
+@media (max-width:620px){.sgt-intro{grid-template-columns:minmax(0,1fr)}.sgt-intro img{max-width:320px}}
+.go .sgt,.go-in .sgt{background:#fff;border-radius:16px;padding:16px}
+@media (max-width:560px){.sgt-g{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.sgt-n{font-size:10.5px;padding:6px}}
+</style>
+<script>
+/* sensory_go_trae.js: lo que trae el Sensory Go, elemento por elemento */
+(function(){
+  var GO = [["Carro del Sensory Go","Carro con ruedas"],["Sistema SHX Compact","SHX Compact con proyector"],["Tablet SHX/Luminea","Tablet de control"],["Amplificador de sonido y altavoz","Amplificador y altavoz"],["Tubo de burbujas de 120 cm","Tubo de burbujas 120 cm"],["Fibra óptica Luminea 3m","Fibra óptica 3 m"],["Unidad de vibración","Unidad de vibración"],["Cojín vibroacústico","Cojín vibroacústico"],["Button 6","Button 6"],["Button 1","Button 1"],["SHX Proximity","SHX Proximity"],["Estrellas SHX","Estrellas SHX"],["Router Luminea","Router"]], FULL = [["Piscina Luminea vibroacústica","Piscina de bolas Luminea"],["Puff transformable vibroacústico","Puff vibroacústico"],["Amplificador vibroacústico adicional","Amplificador vibroacústico"],["Difusor de aromaterapia","Difusor de aromas"],["Kit de iniciación de aromaterapia","Kit de aromaterapia"],["Suelo Luminoso","Suelo Luminoso"]], CORTAS = [{"n":"Carro del Sensory Go","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-6.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Carro con ruedas, estanterías y espejo acolchado, de 46 × 96 × 130 cm con el tubo. Guarda todo el equipo y se lleva de una sala a otra. Viene incluido en el Sensory Go.","que":"Carro con ruedas, estanterías y espejo acolchado, de 46 × 96 × 130 cm con el tubo. Guarda todo el equipo y se lleva de una sala a otra. Viene incluido en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Carro con ruedas, estanterías y espejo acolchado, de 46 × 96 × 130 cm con el tubo. Guarda todo el equipo y se lleva de una sala a otra. Viene incluido en el Sensory Go.","sgCorta":true},{"n":"Tablet SHX/Luminea","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-1.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"La tablet de control del Sensory Go, para el Sistema SHX y los equipos Luminea. Viene incluida en el Sensory Go.","que":"La tablet de control del Sensory Go, para el Sistema SHX y los equipos Luminea. Viene incluida en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"La tablet de control del Sensory Go, para el Sistema SHX y los equipos Luminea. Viene incluida en el Sensory Go.","sgCorta":true},{"n":"Amplificador de sonido y altavoz","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/shx-compact-3.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Amplificador de sonido y altavoz integrados en el carro, para la música y el sonido de cada escena. Vienen incluidos en el Sensory Go.","que":"Amplificador de sonido y altavoz integrados en el carro, para la música y el sonido de cada escena. Vienen incluidos en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Amplificador de sonido y altavoz integrados en el carro, para la música y el sonido de cada escena. Vienen incluidos en el Sensory Go.","sgCorta":true},{"n":"Tubo de burbujas de 120 cm","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/sensory-go-shx-9.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Tubo de burbujas de 120 cm, montado en el carro. Viene incluido en el Sensory Go.","que":"Tubo de burbujas de 120 cm, montado en el carro. Viene incluido en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Tubo de burbujas de 120 cm, montado en el carro. Viene incluido en el Sensory Go.","sgCorta":true},{"n":"Unidad de vibración","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/amplificador-vibroacustico-shx-compact.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"La unidad de vibración del carro, que lleva la música al cojín vibroacústico. Viene incluida en el Sensory Go.","que":"La unidad de vibración del carro, que lleva la música al cojín vibroacústico. Viene incluida en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"La unidad de vibración del carro, que lleva la música al cojín vibroacústico. Viene incluida en el Sensory Go.","sgCorta":true},{"n":"Router Luminea","oc":"","cat":2,"tam":3,"img":"SalasMultisensoriales_Recortadas/router-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"El router de la red propia del Sensory Go. Viene incluido en el Sensory Go.","que":"El router de la red propia del Sensory Go. Viene incluido en el Sensory Go.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"El router de la red propia del Sensory Go. Viene incluido en el Sensory Go.","sgCorta":false},{"n":"Suelo Luminoso","oc":"OC-2406","cat":4,"tam":2,"img":"SalasMultisensoriales_Recortadas/suelo-luminoso.jpg","imgs":["SalasMultisensoriales_Recortadas/suelo-luminoso-1.jpg","SalasMultisensoriales_Recortadas/suelo-luminoso-2.jpg"],"aprox":false,"est":["Vista","Movimiento"],"fun":"","frase":"Superficie que cambia de color con cada movimiento.","que":"Una superficie que cambia de color con cada movimiento y convierte el suelo en un lugar de juego, aprendizaje y exploración.","trab":"Movimiento · Atención · Reconocimiento de colores · Secuencias y circuitos · Causa-efecto · Coordinación y equilibrio","ind":"","inc":"","tec":"Medidas de 60 × 60 × 13 cm. Recargable, con adaptador de corriente. Fosforescente.","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Superficie luminosa de 60 × 60 × 13 cm que cambia de color con cada movimiento. Convierte el suelo en un lugar para moverse, jugar y explorar, solo o en grupo. Es recargable, con su adaptador de corriente."}], CARRO = "SalasMultisensoriales_Recortadas/sensory-go-shx-5.jpg";
+
+      function todos() { return (window.SENSORIAL_BODEGA || []).concat(window.NUESTRAS_EXTRA || []); }
+      function busca(n) { var l = todos(); for (var i = 0; i < l.length; i++) if (l[i].n === n) return l[i]; return null; }
+      window.NUESTRAS_EXTRA = window.NUESTRAS_EXTRA || [];
+      CORTAS.forEach(function (c) { if (!busca(c.n)) window.NUESTRAS_EXTRA.push(c); });
+      (function () { var g = busca('Sensory Go SHX'); if (!g) return; var fuego = /sensory-go-shx-8\.jpg$/;
+        g.imgs = (g.imgs || []).filter(function (f) { return !fuego.test(f); }); if (fuego.test(g.img || '')) g.img = g.imgs[0] || CARRO;
+        ['desc', 'que'].forEach(function (k) { if (g[k]) g[k] = String(g[k]).replace(/:\s*es la versión más completa de los tres carritos\./i, '.').replace(/\s*Es la versión más completa de (los tres carritos|la estación)\.?/i, ''); }); })();
+      function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+      function card(e, nota) { var p = busca(e[0]) || {}; return '<button type="button" class="sgt-c" data-ficha="' + esc(e[0]) + '"><span class="sgt-f"><img src="' + esc(p.img || 'isotipo-oct.png') + '" alt="" loading="lazy"></span>' +
+        '<span class="sgt-n">' + esc(e[1]) + (nota ? '<small>' + esc(nota) + '</small>' : '') + '</span></button>'; }
+      function html(full) {
+        return '<div class="sgt" data-sgt-hecho="1"><h4 class="sgt-h">' + (full ? 'Qué trae el Sensory Go SHX Full' : 'Qué trae el Sensory Go SHX') + '</h4>' +
+          '<p class="sgt-p">' + (full ? 'Todo lo del Sensory Go SHX, más la piscina, el puff, el aroma y la luz en el suelo. ' : '') + 'Toquen cada elemento para ver su ficha.</p>' +
+          '<div class="sgt-g">' + GO.map(function (e) { return card(e, full ? 'En el carro' : ''); }).join('') + (full ? FULL.map(function (e) { return card(e, 'Se suma en el Full'); }).join('') : '') + '</div></div>';
+      }
+      window.sgtHTML = html;
+      function llena(root) {
+        [].forEach.call((root || document).querySelectorAll('[data-sgt]'), function (c) { if (!c.querySelector('[data-sgt-hecho]')) c.innerHTML = html(c.getAttribute('data-sgt') === 'full'); });
+      }
+      /* en la ficha del Sensory Go y del Full, y en la ventana de una sala/opción con ese nombre */
+      function enFicha() {
+        var cu = document.getElementById('fxCuerpo'); if (!cu) return;
+        var h = cu.querySelector('.fx-n'), der = cu.querySelector('.fx-der'); if (!h || !der || der.querySelector('[data-sgt-hecho]')) return;
+        var n = h.textContent; if (n !== 'Sensory Go SHX' && n !== 'Sensory Go SHX Full') return;
+        var d = der.querySelector('.fx-desc'); var w = document.createElement('div'); w.innerHTML = html(n === 'Sensory Go SHX Full');
+        if (d && d.nextSibling) der.insertBefore(w.firstChild, d.nextSibling); else der.appendChild(w.firstChild);
+      }
+      function enSala() {
+        var t = document.getElementById('svTopN'), cu = document.getElementById('svCuerpo'); if (!t || !cu || cu.querySelector('[data-sgt-hecho]')) return;
+        var n = (cu.querySelector('.sv-hero h2') || {}).textContent || t.textContent;
+        if (n !== 'Sensory Go SHX' && n !== 'Sensory Go SHX Full') return;
+        var lead = cu.querySelector('.sv-lead'); if (!lead) return;
+        var w = document.createElement('div'); w.innerHTML = html(n === 'Sensory Go SHX Full'); lead.parentNode.insertBefore(w.firstChild, lead.nextSibling);
+        var fig = document.createElement('div'); fig.className = 'sgt-intro'; fig.innerHTML = '<img src="' + CARRO + '" alt="El Sensory Go con todos sus elementos">';
+        lead.parentNode.insertBefore(fig, lead); fig.appendChild(lead);
+        [].forEach.call(cu.querySelectorAll('.sv-t'), function (t) { if (!/Elemento por elemento/.test(t.textContent)) return;
+          var x = t.nextElementSibling, quita = [t]; while (x && quita.length < 4) { quita.push(x); if (x.classList.contains('op-grid')) break; x = x.nextElementSibling; }
+          quita.forEach(function (e) { e.remove(); }); });
+        [].forEach.call(cu.querySelectorAll('.sv-dato span, .sv-tera p'), function (e) { e.innerHTML = e.innerHTML.replace('valor de la sala<br>completa', 'valor del espacio<br>sensorial móvil')
+          .replace('es el de la sala completa', 'es el del espacio sensorial móvil completo').replace('Una sala pensada por expertos', 'Un espacio pensado por expertos'); });
+        /* los números de arriba: los elementos que trae (13 o 19), no los de la lista de precio */
+        var datos = cu.querySelector('.sv-datos'); if (datos) { var nEl = n === 'Sensory Go SHX Full' ? GO.length + FULL.length : GO.length;
+          [].forEach.call(datos.querySelectorAll('.sv-dato'), function (d) { if (!d.classList.contains('sv-dato-v') && !/se trabajan/.test(d.textContent)) d.remove(); });
+          datos.insertAdjacentHTML('afterbegin', '<div class="sv-dato"><b>' + nEl + '</b><span>elementos<br>que trae</span></div>'); }
+        /* el Sensory Go no es una sala: «esta sala» → «este espacio» en lo que muestra la ventana (también el recuadro de la app) */
+        var tw = document.createTreeWalker(cu, NodeFilter.SHOW_TEXT), nd; while ((nd = tw.nextNode())) { var v = nd.nodeValue;
+          var v2 = v.replace(/\b([Ee])sta sala\b/g, function (m, e) { return (e === 'E' ? 'E' : 'e') + 'ste espacio'; }).replace(/\bde la sala completa\b/g, 'del espacio completo').replace(/^Una sala similar$/i, 'En video').replace(/ de una sala similar$/, ' del Sensory Go');
+          if (v2 !== v) nd.nodeValue = v2; }
+      }
+      function arranca() {
+        llena();
+        var sc = document.getElementById('svCuerpo'); if (sc) new MutationObserver(enSala).observe(sc, { childList: true });
+        enSala();
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arranca); else arranca();
+    
+})();
+</script>
+<script>
+/* Salas general · catálogo (desde salud): las tarjetas (con la ficha de cada producto) y lo que se le suma a la ficha */
+(function(){
+  var GR = [["cg-shx",["Sistema SHX Compact","Estrellas SHX","Enabler Socket+","Kit Voz SHX","Ventilador SHX","Sensory Cube grande","Barra LED UV SHX","Foco de luz UV LED SHX"]],["cg-luminea",["Rincón Luminea con tablet","Tubo de burbujas Luminea","Fibra óptica Luminea 2m","Fibra óptica Luminea 3m","Ducha Luminea","Cortina Luminea","Planeta Luminea","Línea LED Luminea Para Techo 5 Metros","Piscina Luminea vibroacústica","Button 1","Button 6","Router Luminea"]],["cg-vibro",["Butaca relax vibroacústica","Puff transformable vibroacústico","Cojín vibroacústico","Almohada vibrante","Kit vibroacústico Bluetooth","Amplificador vibroacústico adicional"]],["cg-presion",["Manta de peso azul y roja mediana 2,2 kg","Manta de peso gris y roja grande 3,6 kg","Peso para hombros Lola la Oruga grande","Saco de danza propioceptivo talla M","Set De Peso Muñecas y Tobillos","Manta De Peso 9KG","Chaleco De Peso","Chaleco De Presión","Rodillo de presión"]],["cg-mov",["Piscina de bolas alta","Piscina de bolas mediana","Columpio Flexor","Columpio Rulo 2 en 1","Columpio Plataforma De Balanceo Modificada","Columpio Saco Cocoon Niño","Columpio Saco Elástico - Niño","Columpio Hamaca - Adulto","Columpio Plataforma de Balanceo Advantage","Correa Elástica Vertical","Muro de Escalada con Colchonetas","Túnel De Espuma Gigante","Set N° 19, 6 Piezas - Espuma","Peonza gigante","Pelota cacahuete","Pelota de terapia de diámetro 45 cm","Pelota de terapia de diámetro 55 cm","Tabla Scooter 40cm"]],["cg-colgar",["Kit De Suspensión y Ajuste En Altura","Chapa + perno de alta resistencia"]],["cg-otros",["Difusor de aromaterapia","Kit de iniciación de aromaterapia","Kit de masaje","Conjunto de discos táctiles para pies y manos","Alfombra Sensorial Tierra Alegre","Sensory Feet 1.1","Espejo grande recto","Bolsa material Ultravioleta","Foco de luz UV LED"]]], PRE = {"Sistema SHX Compact":8519524,"Estrellas SHX":563132,"Enabler Socket+":281673,"Kit Voz SHX":391329,"Ventilador SHX":502047,"Sensory Cube grande":881922,"Barra LED UV SHX":440961,"Foco de luz UV LED SHX":450506,"Rincón Luminea con tablet":4972745,"Tubo de burbujas Luminea":2395698,"Fibra óptica Luminea 2m":1393514,"Fibra óptica Luminea 3m":1593951,"Ducha Luminea":2494962,"Cortina Luminea":1964282,"Planeta Luminea":992640,"Línea LED Luminea Para Techo 5 Metros":891467,"Piscina Luminea vibroacústica":4800942,"Button 1":297792,"Button 6":691030,"Router Luminea":94491,"Butaca relax vibroacústica":2004369,"Puff transformable vibroacústico":1477506,"Cojín vibroacústico":582222,"Almohada vibrante":112626,"Kit vibroacústico Bluetooth":1183532,"Amplificador vibroacústico adicional":752116,"Manta de peso azul y roja mediana 2,2 kg":200437,"Manta de peso gris y roja grande 3,6 kg":303519,"Peso para hombros Lola la Oruga grande":101173,"Saco de danza propioceptivo talla M":197827,"Set De Peso Muñecas y Tobillos":19089,"Manta De Peso 9KG":1111184,"Chaleco De Peso":1056503,"Chaleco De Presión":283167,"Rodillo de presión":1785000,"Piscina de bolas alta":2118905,"Piscina de bolas mediana":1718031,"Columpio Flexor":1939394,"Columpio Rulo 2 en 1":1874833,"Columpio Plataforma De Balanceo Modificada":1559778,"Columpio Saco Cocoon Niño":1323531,"Columpio Saco Elástico - Niño":883186,"Columpio Hamaca - Adulto":750622,"Columpio Plataforma de Balanceo Advantage":671838,"Correa Elástica Vertical":732258,"Muro de Escalada con Colchonetas":893198,"Túnel De Espuma Gigante":731178,"Set N° 19, 6 Piezas - Espuma":1554485,"Peonza gigante":194710,"Pelota cacahuete":131716,"Pelota de terapia de diámetro 45 cm":32452,"Pelota de terapia de diámetro 55 cm":38178,"Tabla Scooter 40cm":93537,"Kit De Suspensión y Ajuste En Altura":812600,"Chapa + perno de alta resistencia":342248,"Difusor de aromaterapia":125989,"Kit de iniciación de aromaterapia":104991,"Kit de masaje":334062,"Conjunto de discos táctiles para pies y manos":293974,"Alfombra Sensorial Tierra Alegre":290858,"Sensory Feet 1.1":524954,"Espejo grande recto":521136,"Bolsa material Ultravioleta":301610,"Foco de luz UV LED":150805,"Sensory Go SHX":18707446,"Sensory Go SHX Full":26541432,"SHX Proximity":1223620}, EN = {}, WA = "56956294723";
+  var IC_WA = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 20l1.3-3.9A8 8 0 1 1 8.2 19z\"/><path d=\"M9 9.5c.3 2.2 2.3 4.4 4.8 5l1.2-1.3 2 .9-.5 1.6c-3.6.6-8.2-3.5-8.2-7.5l1.6-.5.9 2z\"/></svg>";
+
+      function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+      function pesos(n) { return '$' + Number(n).toLocaleString('es-CL'); }
+      function prod(n) {
+        var l = (window.SENSORIAL_BODEGA || []).concat(window.NUESTRAS_EXTRA || []);
+        for (var i = 0; i < l.length; i++) if (l[i].n === n) return l[i];
+        return null;
+      }
+      function primera(t) { t = String(t || ''); var k = t.indexOf('. '); return k > 0 ? t.slice(0, k + 1) : t; }
+      function pinta() {
+        GR.forEach(function (g) {
+          [].forEach.call(document.querySelectorAll('[data-cat-grupo="' + g[0] + '"]'), function (cont) {   /* ronda 7: el grupo Luminea va en dos ventanas */
+          cont.innerHTML = g[1].map(function (n) {
+            var p = prod(n) || { n: n };
+            return '<button type="button" class="cat-c" data-ficha="' + esc(n) + '">' +
+              '<span class="cc-f"><img src="' + esc(p.img || 'isotipo-oct.png') + '" alt="" loading="lazy"></span>' +
+              '<span class="cc-tx"><span class="cc-n">' + esc(n) + '</span><span class="cc-d">' + esc(primera(p.desc || p.que)) + '</span>' +
+              '<span class="cc-p"><b>' + pesos(PRE[n]) + '</b><span>IVA incluido</span></span><span class="cc-ir">Ver la ficha ›</span></span></button>';
+          }).join('');
+        }); });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pinta); else pinta();
+      /* La ficha: valor (si se abrió desde el catálogo), en qué salas de ejemplo va y «Consultar». */
+      var desdeCat = false;
+      document.addEventListener('click', function (ev) {
+        var t = ev.target.closest && ev.target.closest('[data-ficha]');
+        if (t) desdeCat = !!t.closest('.cat');
+      }, true);
+      function completa() {
+        var fx = document.getElementById('fx'), cu = document.getElementById('fxCuerpo');
+        if (!fx || fx.hidden || !cu) return;
+        var der = cu.querySelector('.fx-der'), h = cu.querySelector('.fx-n');
+        if (!der || !h || der.querySelector('.cat-fx-bt')) return;
+        var n = h.textContent;
+        if (desdeCat && PRE[n]) h.insertAdjacentHTML('afterend', '<div class="cat-fx-v"><b>' + pesos(PRE[n]) + '</b><span>IVA incluido</span></div>');
+        if (n === 'Estrellas SHX') h.insertAdjacentHTML('afterend', '<div class="cat-fx-en" style="margin:4px 0 12px"><b>Se conecta con un Enabler Socket+</b>, que permite encenderlas con un pulsador o desde el Sistema SHX' + (PRE['Enabler Socket+'] ? ' (' + pesos(PRE['Enabler Socket+']) + ', IVA incluido).' : '.') + '</div>');
+        var en = EN[n] || [];
+        der.insertAdjacentHTML('beforeend',
+          (en.length ? '<div class="cat-fx-en"><b>Lo incluimos en ' + (en.length === 1 ? 'esta sala de ejemplo' : 'estas salas de ejemplo') + ':</b> ' + en.map(esc).join(' · ') + '.</div>' : '') +
+          '<a class="cat-fx-bt" href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Rayen, vi el catálogo de salas multisensoriales y quiero consultar por: ' + n + '.') +
+          '" target="_blank" rel="noopener">' + IC_WA + 'Consultar</a>');
+      }
+      function vigila() {
+        var cu = document.getElementById('fxCuerpo');
+        if (!cu) return;
+        new MutationObserver(function () { completa(); }).observe(cu, { childList: true });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', vigila); else vigila();
+    
+})();
+</script>
+<script>
+/* Salas general (desde salud): la ventana de cada tarjeta de Productos (#pdv). Se cierra con la X, «Volver», Esc y «atrás». */
+(function(){
+  var v = document.getElementById('pdv'); if (!v) return;
+  var abierta = '', conHist = false;
+  function pinta(k){
+    var p = v.querySelector('[data-pdp="' + k + '"]'); if (!p) return false;
+    [].forEach.call(v.querySelectorAll('[data-pdp]'), function(x){ x.hidden = (x !== p); });
+    document.getElementById('pdvT').textContent = p.getAttribute('data-t');
+    v.hidden = false; v.scrollTop = 0; abierta = k;
+    document.body.classList.add('con-pd'); document.body.style.overflow = 'hidden';
+    return true;
+  }
+  function cierraVista(){ if (!abierta) return; abierta = ''; v.hidden = true; document.body.classList.remove('con-pd'); document.body.style.overflow = ''; }
+  function abre(k){
+    if (window.__mostrarParte && window.__parteActual !== 'catalogo') window.__mostrarParte('catalogo', true);
+    if (!pinta(k)) return;
+    try { if (!conHist) { history.pushState({ pd: k }, '', '#pd=' + k); conHist = true; } else history.replaceState({ pd: k }, '', '#pd=' + k); } catch (e) {}
+  }
+  function cierra(){ if (conHist) { conHist = false; try { history.back(); } catch (e) { cierraVista(); } } else cierraVista(); }
+  window.addEventListener('popstate', function(){ var m = /#pd=([a-z]+)/.exec(location.hash); if (m) pinta(m[1]); else { conHist = false; cierraVista(); } });
+  document.addEventListener('click', function(ev){
+    var t = ev.target;
+    var b = t.closest && t.closest('[data-pd]'); if (b && !b.closest('#fx')) { ev.preventDefault(); abre(b.getAttribute('data-pd')); return; }
+    if ((t.closest && t.closest('[data-pd-cerrar]')) || t === v) { cierra(); return; }
+    var g = t.closest && t.closest('[data-ir-grupo]');
+    if (g) { var s = document.getElementById(g.getAttribute('data-ir-grupo')); if (s) v.scrollTo({ top: s.getBoundingClientRect().top - v.getBoundingClientRect().top + v.scrollTop - 70, behavior: 'smooth' }); }
+  });
+  document.addEventListener('keydown', function(ev){
+    if (ev.key !== 'Escape' || !abierta) return;
+    var f = document.getElementById('fx'), l = document.getElementById('lb');
+    if ((f && !f.hidden) || (l && !l.hidden) || document.querySelector('.apx-ov:not([hidden])')) return;
+    cierra();
+  });
+  var m0 = /#pd=([a-z]+)/.exec(location.hash);
+  if (m0) { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} abre(m0[1]); }
+})();
 </script>
 <script>
 (function(){
