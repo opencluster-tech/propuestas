@@ -2506,6 +2506,13 @@ body:has(#mnuVelo:not([hidden])) #verPill{display:none !important}
   .p5-v-t b{font-size:19px}
 }
 </style>
+<style>
+/* ANCHO · 28-oct-2026 (Rayen): en computador la página usa más ancho y la letra es más grande; en el celular no cambia */
+@media (min-width:1280px){.hoja{max-width:1110px;zoom:1.1}#pdv{zoom:.9091}}
+@media (min-width:1440px){.hoja{max-width:1140px;zoom:1.18}#pdv{zoom:.8475}}
+@media (min-width:1700px){.hoja{max-width:1180px;zoom:1.3}#pdv{zoom:.7692}}
+@media print{.hoja{zoom:1}}
+</style>
 </head>
 <body>
 <div class="hoja">
@@ -3279,8 +3286,8 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
   }
 </script>
 <!--APP-LUMINEA-FIN-->
-<script src="SensorialBodega.js?v=1793231936235"></script>
-<script src="NuestrasSalas.js?v=1793231936235"></script>
+<script src="SensorialBodega.js?v=1793235106171"></script>
+<script src="NuestrasSalas.js?v=1793235106171"></script>
 <script>
 /* salud · 28-oct-2026: fichas de la Alfombra y la Lámpara Luminea para el catálogo (desde la cinta Luminea) */
 (function(){ var F = [{"n":"Alfombra Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/alfombra-luminea-oficial.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar.","que":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar."},{"n":"Lámpara Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/lampara-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa.","que":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa."}];
@@ -4221,7 +4228,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 28 de octubre a las 20:58</div>
+<div id="verPill" class="ver-pill">Versión del 28 de octubre a las 21:51</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -4232,7 +4239,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1793231936235';
+(function(){ var V = '1793235106171';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
