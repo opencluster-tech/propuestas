@@ -1815,7 +1815,7 @@ body.con-sala .barra{transform:translateY(-110%)}
 .go-caso-vid .obra-play::after{border-left-width:18px;border-top-width:11px;border-bottom-width:11px}
 .go-caso-vid:hover img{transform:scale(1.04)}
 .go-caso-vid:hover .obra-play{background:var(--naranja);border-color:var(--naranja)}
-.go-caso-et{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#fff;background:linear-gradient(180deg,rgba(0,26,96,0),rgba(0,26,96,.85))}
+.go-caso-et{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 12px;font-family:'Montserrat',sans-serif;font-size:14.5px;line-height:1.3;font-weight:800;color:#fff;background:linear-gradient(180deg,rgba(0,26,96,0),rgba(0,26,96,.85))}
 .go-caso-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .go-caso-btns .fo-btn{padding:11px 18px}
 .go-caso-rot{display:block;font-family:'Kaushan Script',cursive;font-size:40px;font-weight:400;line-height:1.1;color:#4FD3FF;text-shadow:0 0 22px rgba(8,172,242,.6);margin-bottom:6px}@media (max-width:560px){.go-caso-rot{font-size:32px}}
@@ -3138,7 +3138,7 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
       </div>
       <div class="go-caso">
         <button type="button" class="go-caso-vid" data-lb-src="videos/sensory-go-jacaranda-pica.mp4" data-lb-fmt="mp4" data-lb-lugar="Escuela Especial Jacarandá" data-lb-donde="Pica · Región de Tarapacá" aria-label="Ver el video de la Escuela Especial Jacarandá">
-          <img src="SalasMultisensoriales_Recortadas/video-mini-jacaranda.jpg" alt="La estación sensorial móvil encendida en la Escuela Especial Jacarandá de Pica" loading="lazy"><span class="obra-play"></span><span class="go-caso-et">Véanla funcionando en la escuela</span>
+          <img src="SalasMultisensoriales_Recortadas/video-mini-jacaranda.jpg" alt="La estación sensorial móvil encendida en la Escuela Especial Jacarandá de Pica" loading="lazy"><span class="obra-play"></span><span class="go-caso-et">Si es posible en Pica, es posible en todo Chile</span>
         </button>
         <div>
           <div class="go-caso-rot">Ya funciona en Chile</div>
@@ -3295,8 +3295,8 @@ button.caa-abre{font:inherit;text-align:left;cursor:pointer;width:100%;margin:0;
   }
 </script>
 <!--APP-LUMINEA-FIN-->
-<script src="SensorialBodega.js?v=1793236506343"></script>
-<script src="NuestrasSalas.js?v=1793236506343"></script>
+<script src="SensorialBodega.js?v=1793236936690"></script>
+<script src="NuestrasSalas.js?v=1793236936690"></script>
 <script>
 /* salud · 28-oct-2026: fichas de la Alfombra y la Lámpara Luminea para el catálogo (desde la cinta Luminea) */
 (function(){ var F = [{"n":"Alfombra Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/alfombra-luminea-oficial.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar.","que":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Un suelo de luz de 2 × 1 m que responde al contacto: invita a moverse, pisar y explorar."},{"n":"Lámpara Luminea","oc":"","cat":2,"tam":2,"img":"SalasMultisensoriales_Recortadas/lampara-luminea.jpg","imgs":[],"aprox":false,"est":[],"fun":"","frase":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa.","que":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa.","trab":"","ind":"","inc":"","tec":"","car":"","logro":"","unico":"","mat":"","sellos":[],"fuente":"web","desc":"Luz que cambia de color y ordena el ambiente, en un rincón o en una sala completa."}];
@@ -4237,7 +4237,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 28 de octubre a las 22:15</div>
+<div id="verPill" class="ver-pill">Versión del 28 de octubre a las 22:22</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -4248,7 +4248,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1793236506343';
+(function(){ var V = '1793236936690';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
