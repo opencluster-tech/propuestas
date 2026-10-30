@@ -5,6 +5,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Salas Multisensoriales para Escuelas</title>
+<script>
+/* Seguimiento: si la persona llega desde un correo con su código (?e=...),
+   se anota cuándo abre la página y qué partes mira. Sin código no se anota nada.
+   Lo recibe el proyecto "Feedback Webinars OCT" (pestañas Aperturas_Salas y Resumen_Salas). */
+(function(){
+  var SEG = 'https://script.google.com/macros/s/AKfycbxVcZVFRqA53_3pbx7fQhs7tHu-YD0P_NcO0_DkYvjBSlMOS-3WHHxB0rQmP7WwdyMq/exec';
+  var q = new URLSearchParams(location.search), e = q.get('e');
+  if (!e) return;
+  var base = SEG + '?t=salas&e=' + encodeURIComponent(e) + '&n=' + encodeURIComponent(q.get('n') || '') + '&o=' + encodeURIComponent(q.get('o') || '');
+  function avisa(que){ try { fetch(base + '&s=' + encodeURIComponent(que), { mode: 'no-cors', keepalive: true }).catch(function(){}); } catch (x) {} }
+  var NOMBRES = { materiales: 'Materiales', ley: 'Qué dice la ley', fondos: 'Fondos para financiarla', pasos: 'Pasos', videos: 'Videos', compromiso: 'Compromiso',
+                  'op=1': 'Opción 1 · Una sala completa', 'op=2': 'Opción 2 · Una sala por etapas', 'op=3': 'Opción 3 · Estación sensorial móvil' };
+  function nombreDe(h){ h = String(h || '').replace(/^#/, ''); if (!h) return ''; if (NOMBRES[h]) return NOMBRES[h]; if (h.indexOf('sala=') === 0) return 'Sala: ' + h.slice(5); return h; }
+  avisa('Abrió la página');
+  var vistos = {}, ultimo = location.hash;
+  if (nombreDe(ultimo)) { vistos[ultimo] = 1; avisa(nombreDe(ultimo)); }
+  setInterval(function(){
+    var h = location.hash;
+    if (h === ultimo) return;
+    ultimo = h;
+    if (!nombreDe(h) || vistos[h]) return;
+    vistos[h] = 1; avisa(nombreDe(h));
+  }, 1000);
+})();
+</script>
 <meta name="description" content="Salas multisensoriales para escuelas, diseñadas por profesionales expertos en entornos sensoriales y neurodivergencia: ejemplos de salas con su valor, salas por etapas, la app Luminea, videos, materiales y cómo trabajamos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
