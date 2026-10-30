@@ -6,28 +6,109 @@
 <meta name="color-scheme" content="light dark">
 <title>Salas Multisensoriales para Escuelas</title>
 <script>
-/* Seguimiento: si la persona llega desde un correo con su código (?e=...),
-   se anota cuándo abre la página y qué partes mira. Sin código no se anota nada.
-   Lo recibe el proyecto "Feedback Webinars OCT" (pestañas Aperturas_Salas y Resumen_Salas). */
+/* Seguimiento: solo funciona si la persona llega desde un correo con su código (?e=...).
+   Mide cuánto rato mira, en qué parte y cuánto rato en cada una, hasta dónde baja,
+   qué ventanas abre y qué botones aprieta. Sin código no se anota nada.
+   Lo recibe el proyecto "Feedback Webinars OCT" (pestañas Seg_Personas, Seg_Visitas y Seg_Eventos). */
 (function(){
   var SEG = 'https://script.google.com/macros/s/AKfycbxVcZVFRqA53_3pbx7fQhs7tHu-YD0P_NcO0_DkYvjBSlMOS-3WHHxB0rQmP7WwdyMq/exec';
-  var q = new URLSearchParams(location.search), e = q.get('e');
-  if (!e) return;
-  var base = SEG + '?t=salas&e=' + encodeURIComponent(e) + '&n=' + encodeURIComponent(q.get('n') || '') + '&o=' + encodeURIComponent(q.get('o') || '');
-  function avisa(que){ try { fetch(base + '&s=' + encodeURIComponent(que), { mode: 'no-cors', keepalive: true }).catch(function(){}); } catch (x) {} }
-  var NOMBRES = { materiales: 'Materiales', ley: 'Qué dice la ley', fondos: 'Fondos para financiarla', pasos: 'Pasos', videos: 'Videos', compromiso: 'Compromiso',
-                  'op=1': 'Opción 1 · Una sala completa', 'op=2': 'Opción 2 · Una sala por etapas', 'op=3': 'Opción 3 · Estación sensorial móvil' };
-  function nombreDe(h){ h = String(h || '').replace(/^#/, ''); if (!h) return ''; if (NOMBRES[h]) return NOMBRES[h]; if (h.indexOf('sala=') === 0) return 'Sala: ' + h.slice(5); return h; }
-  avisa('Abrió la página');
-  var vistos = {}, ultimo = location.hash;
-  if (nombreDe(ultimo)) { vistos[ultimo] = 1; avisa(nombreDe(ultimo)); }
+  var PAG = 'Salas para escuelas';
+  var q = new URLSearchParams(location.search), E = q.get('e');
+  if (!E) return;
+  var N = q.get('n') || '', O = q.get('o') || '';
+  var SID = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  var INI = Date.now();
+  var ua = navigator.userAgent;
+  var DISP = (/iPad|Tablet/i.test(ua) ? 'Tablet' : /Mobi|Android|iPhone/i.test(ua) ? 'Celular' : 'Computador') + ' · ' +
+             (/Edg\//.test(ua) ? 'Edge' : /SamsungBrowser/.test(ua) ? 'Samsung' : /CriOS|Chrome\//.test(ua) ? 'Chrome' : /Firefox|FxiOS/.test(ua) ? 'Firefox' : /Safari/.test(ua) ? 'Safari' : 'Otro');
+
+  function manda(obj, salida){
+    obj.t = 'seg'; obj.e = E; obj.n = N; obj.o = O; obj.pag = PAG;
+    var cuerpo = JSON.stringify(obj);
+    try {
+      if (salida && navigator.sendBeacon && navigator.sendBeacon(SEG, new Blob([cuerpo], { type: 'text/plain' }))) return;
+      fetch(SEG, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: cuerpo }).catch(function(){});
+    } catch (x) {}
+  }
+  function evento(que){ manda({ tipo: 'evento', que: que }); }
+
+  // ── Qué está mirando ahora ──
+  var SECC = { inicio: 'Portada', videos: 'Videos', materiales: 'Materiales', ley: 'Qué dice la ley', fondos: 'Fondos para financiarla',
+               pasos: 'Pasos', opciones: 'Opciones', 'app-luminea': 'App Luminea', compromiso: 'Compromiso', salas: 'Nuestras salas',
+               etapas: 'Etapas', 'sin-espacio': 'Sin espacio: estación móvil' };
+  var OPS = { '1': 'Opción 1 · Una sala completa', '2': 'Opción 2 · Una sala por etapas', '3': 'Opción 3 · Estación sensorial móvil' };
+  function titulo(el){
+    var h = el && el.querySelector('h1,h2,h3,h4,figcaption,.tit,[class*="titulo"]');
+    return h ? h.textContent.replace(/\s+/g, ' ').trim().slice(0, 60) : '';
+  }
+  function abierta(id){ var el = document.getElementById(id); return el && !el.hidden ? el : null; }
+  function queMira(){
+    var el;
+    if ((el = abierta('lb'))) { var f = el.querySelector('iframe'); return f ? 'Video: ' + videoDe(f.src) : 'Foto ampliada' + (titulo(el) ? ': ' + titulo(el) : ''); }
+    if ((el = abierta('fx'))) return 'Ficha: ' + (titulo(el) || 'producto');
+    if ((el = abierta('sv'))) { var h = location.hash.match(/sala=([^&]+)/); return 'Sala: ' + (titulo(el) || (h ? decodeURIComponent(h[1]) : '')); }
+    if ((el = abierta('opv'))) { var m = location.hash.match(/op=(\d)/); return m && OPS[m[1]] ? OPS[m[1]] : 'Opción: ' + titulo(el); }
+    // La página funciona por pestañas: cuenta la parte que está a la vista (la más cercana al centro de la pantalla).
+    var y = innerHeight * 0.4, mejor = null, dist = 1e9;
+    for (var id in SECC) {
+      var s = document.getElementById(id); if (!s) continue;
+      var r = s.getBoundingClientRect();
+      if (r.height < 5 || r.bottom < 0 || r.top > innerHeight) continue;
+      var d = r.top <= y && r.bottom >= y ? -1 / r.height : Math.min(Math.abs(r.top - y), Math.abs(r.bottom - y));
+      if (d < dist) { mejor = id; dist = d; }
+    }
+    return mejor ? SECC[mejor] : 'Portada';
+  }
+  var VIDEOS = {};
+  function videoDe(src){ var m = String(src).match(/embed\/([A-Za-z0-9_-]{6,})/); return m ? (VIDEOS[m[1]] || m[1]) : 'video'; }
+
+  // ── Tiempo: cuenta solo con la página a la vista y la persona activa ──
+  var seg = {}, total = 0, scroll = 0, clics = {}, ultimoMov = Date.now(), vistos = {}, cambio = true;
+  ['scroll', 'mousemove', 'touchstart', 'keydown', 'click', 'wheel'].forEach(function(ev){
+    addEventListener(ev, function(){ ultimoMov = Date.now(); }, { passive: true, capture: true });
+  });
   setInterval(function(){
-    var h = location.hash;
-    if (h === ultimo) return;
-    ultimo = h;
-    if (!nombreDe(h) || vistos[h]) return;
-    vistos[h] = 1; avisa(nombreDe(h));
+    var alto = document.documentElement.scrollHeight - innerHeight;
+    if (alto > 0) scroll = Math.max(scroll, Math.min(100, Math.round(scrollY / alto * 100)));
+    if (document.visibilityState !== 'visible') return;
+    var que = queMira();
+    var viendoVideo = que.indexOf('Video:') === 0;
+    if (!viendoVideo && Date.now() - ultimoMov > 90000) return;   // 1,5 min sin moverse: no cuenta
+    total++; seg[que] = (seg[que] || 0) + 1; cambio = true;
+    if (!vistos[que] && que !== 'Portada' && que !== 'Otras partes') { vistos[que] = 1; evento('Miró: ' + que); }
   }, 1000);
+
+  function resumen(salida){
+    if (!cambio && !salida) return;
+    cambio = false;
+    manda({ tipo: 'visita', sid: SID, ini: INI, total: total, seg: seg, scroll: scroll, clics: clics, disp: DISP }, salida);
+  }
+  setInterval(function(){ resumen(false); }, 15000);
+  document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'hidden') resumen(true); });
+  addEventListener('pagehide', function(){ resumen(true); });
+
+  // ── Botones y enlaces que aprieta ──
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest && ev.target.closest('a,button,[role="button"],[data-yt],[data-video]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '', txt = (a.textContent || a.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim().slice(0, 50), et = '';
+    if (/wa\.me|whatsapp/i.test(href)) et = 'WhatsApp';
+    else if (/^mailto:/i.test(href)) et = 'Correo a Rayen';
+    else if (/^tel:/i.test(href)) et = 'Llamada';
+    else if (/^https?:/i.test(href) && href.indexOf(location.host) === -1) et = 'Enlace: ' + (txt || href.replace(/^https?:\/\//, '').slice(0, 40));
+    else {
+      var yt = (String(a.getAttribute('data-lb-src') || href).match(/(?:embed\/|youtu\.be\/|v=)([A-Za-z0-9_-]{11})/) || [])[1];
+      var lugar = (a.getAttribute('data-lb-lugar') || '').trim() || txt || yt;
+      if (yt) { VIDEOS[yt] = lugar; et = 'Play video: ' + lugar; }
+    }
+    if (!et) return;
+    clics[et] = (clics[et] || 0) + 1; cambio = true;
+    evento('Apretó: ' + et);
+    resumen(true);
+  }, true);
+
+  evento('Abrió la página');
+  resumen(false);
 })();
 </script>
 <meta name="description" content="Salas multisensoriales para escuelas, diseñadas por profesionales expertos en entornos sensoriales y neurodivergencia: ejemplos de salas con su valor, salas por etapas, la app Luminea, videos, materiales y cómo trabajamos.">
