@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Opciones de silla neurológica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#D73C70;--rosa-o:#A82A57;--rosa-s:#FBE6EE;--rosa-xs:#FDF4F7;--gris:#514F4F;--gris-s:#F0EEEE;--amar:#FFE7A3;--ink:#2D3748;--dim:#6B6F7B;--line:#F1DCE4;--bg:#FBF3F6;--card:#fff;--cal:#2FC1FF}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Nunito,'Trebuchet MS',Arial,sans-serif;font-size:15.5px;line-height:1.6}
+.franja{display:flex;height:8px}.franja i{background:var(--rosa);flex:7}.franja b{background:var(--gris);flex:3}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.hero{background:var(--card);max-width:1040px;margin:18px auto 0;border-radius:24px;overflow:hidden;box-shadow:0 6px 26px rgba(215,60,112,.10)}
+.banner{position:relative;overflow:hidden;height:clamp(180px,34vw,340px);background:linear-gradient(180deg,#FBE6EE 0%,#FDF0F4 50%,#FEF4F7 80%,#B9D667 84%,#A1C93B 100%)}
+.banner img{position:relative;display:block;height:100%;width:auto;max-width:100%;object-fit:contain;margin:0 auto;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%)}
+.hero .txt{padding:26px 34px 30px}
+.hero h1{margin:0 0 10px;color:var(--rosa);font-size:clamp(24px,4vw,32px);line-height:1.2;font-weight:800}
+.hero p{margin:0 0 10px}
+.benef{margin:20px 0 0;background:var(--rosa);color:#fff;border-radius:20px;padding:20px 26px;display:flex;align-items:center;gap:22px}
+.benef>div:last-child{flex:1;min-width:0}
+.benef .k{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;font-weight:800;color:#FCE3EC}
+.benef .big{font-size:27px;font-weight:800;line-height:1.15}
+.benef .big span{color:var(--amar)}
+.benef .s{font-size:13px;color:#FCE3EC;margin-top:4px}
+.benef .pct{flex:none;width:96px;height:96px;border-radius:50%;background:#fff;color:var(--rosa);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1}
+.benef .pct b{font-size:34px}.benef .pct small{font-size:12px;margin-top:4px;color:var(--gris)}
+section{margin:30px 0}
+h2{font-size:21px;color:var(--rosa);margin:0 0 6px;font-weight:800}
+.sub{margin:0 0 16px;color:var(--dim)}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.paso{background:var(--card);border-radius:16px;padding:16px;border:1px solid var(--line)}
+.paso .n{width:30px;height:30px;border-radius:50%;background:var(--rosa);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.paso b{display:block;color:var(--gris);font-size:15px;margin-bottom:2px}
+.paso span{color:var(--dim);font-size:14px}
+.nota{color:var(--dim);font-size:14px;margin-top:12px}
+.medir{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:center}
+.dibujos{display:grid;grid-template-columns:.85fr 1fr;gap:10px;background:var(--rosa-xs);border-radius:16px;padding:14px}
+.dibujos figure{margin:0;text-align:center}
+.dibujos svg{width:100%;height:auto;display:block}
+.dibujos figcaption{font-size:13px;font-weight:800;color:var(--gris);margin-top:4px}
+.piso{stroke:#D9C9D0;stroke-width:3}
+.silla{fill:#8A8787}.silla-l{stroke:#8A8787;stroke-width:6;stroke-linecap:round}
+.cuerpo{fill:#F4B6CB}.cuerpo2{fill:#EE97B5}
+.guia{stroke:#D73C70;stroke-width:1.5;stroke-dasharray:4 3}
+.fl{stroke:#D73C70;stroke-width:3}
+.letra{fill:#D73C70}.lt{fill:#fff;font:800 15px Nunito,Arial,sans-serif;text-anchor:middle}
+.medidas{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.medidas li{display:flex;gap:12px;align-items:flex-start;padding:0;font-size:14.5px}
+.medidas li:before{display:none}
+.medidas .ml{flex:none;width:30px;height:30px;border-radius:50%;background:var(--rosa);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.medidas b{display:block;color:var(--gris);font-size:15.5px}
+.medidas em{display:block;font-style:normal;color:var(--rosa-o);font-weight:700;margin-top:2px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.card.rec{border:2px solid var(--rosa);box-shadow:0 8px 26px rgba(215,60,112,.16)}
+.foto{position:relative;background:#fff;aspect-ratio:1/1;border-bottom:1px solid var(--line)}
+.foto img{width:100%;height:100%;object-fit:contain;display:block}
+.tag{position:absolute;top:12px;left:12px;border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:800}
+.tag.r{background:var(--rosa);color:#fff}.tag.g{background:var(--gris);color:#fff}
+.body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.body h3{margin:0;font-size:17.5px;color:var(--gris);font-weight:800;line-height:1.3}
+.para{color:var(--dim);font-size:14.5px;margin:0}
+.datos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dato{background:var(--rosa-xs);border-radius:12px;padding:8px 10px}
+.dato .l{display:block;font-size:11px;color:var(--dim);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.dato b{font-size:15.5px;color:var(--rosa-o)}
+ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+li{position:relative;padding-left:17px;font-size:14.5px}
+li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--rosa)}
+.pie{margin-top:auto;border-top:1px dashed var(--line);padding-top:12px}
+.web{color:var(--dim);font-size:14px}.web s{color:var(--ink)}
+.precio{font-size:25px;font-weight:800;color:var(--rosa);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.desc{background:var(--amar);color:var(--rosa-o);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:800}
+.iva{color:var(--dim);font-size:12.5px}
+.tabla{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:18px}
+table{width:100%;border-collapse:collapse;min-width:620px;font-size:14.5px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-weight:800;color:#fff;background:var(--rosa)}
+td:first-child{color:var(--gris);font-weight:700}
+tr:last-child td{border-bottom:0;background:var(--rosa-xs)}
+.quien{background:var(--card);border-radius:22px;padding:26px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center;border:1px solid var(--line)}
+.quien p{margin:0 0 10px}
+.cifras{display:grid;grid-template-columns:1fr;gap:10px}
+.cifra{border-radius:14px;padding:12px 16px;background:var(--rosa-s)}
+.cifra:nth-child(2){background:var(--gris-s)}
+.cifra b{display:block;font-size:19px;color:var(--rosa);font-weight:800;line-height:1.2}
+.cifra:nth-child(2) b{color:var(--gris)}
+.cifra span{font-size:13.5px}
+.contacto{background:var(--gris);color:#fff;border-radius:22px;padding:26px;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.contacto h3{margin:0 0 4px;font-size:20px;font-weight:800}
+.contacto p{margin:0;color:#E9E6E6;max-width:560px}
+.contacto .firma{margin-top:10px;font-size:14px;color:#fff}.contacto .firma b{display:block;font-size:15.5px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:15px;border-radius:999px;padding:12px 20px}
+.btn svg{width:18px;height:18px}
+.btn.w{background:var(--rosa);color:#fff}.btn.w:hover{background:var(--rosa-o)}
+.btn.m{background:#fff;color:var(--gris)}.btn.m:hover{background:var(--rosa-s)}
+.logos{display:flex;align-items:center;justify-content:center;gap:18px;padding:26px 0 6px}
+.logos img{height:56px}
+.logos span{color:var(--dim);font-weight:700}
+.visita{display:flex;align-items:center;gap:6px;color:#2E8B57;font-weight:800;font-size:14px}
+.visita svg{width:18px;height:18px}
+.si{display:inline-block;background:#E3F5EA;color:#2E8B57;border-radius:999px;padding:2px 10px;font-weight:800;font-size:13px}
+.bodega{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 24px;display:flex;gap:16px;align-items:flex-start}
+.bodega svg{flex:none;width:40px;height:40px;color:var(--rosa)}
+.bodega b{font-size:17px;color:var(--gris)}
+.bodega p{margin:4px 0 0}
+.banner-fin{margin:30px 0 14px;border-radius:24px;overflow:hidden;box-shadow:0 6px 26px rgba(215,60,112,.10)}
+footer{color:var(--dim);font-size:12.5px;text-align:center;padding:6px 0 34px;max-width:760px;margin:0 auto}
+@media (max-width:900px){.cards{grid-template-columns:1fr}.pasos{grid-template-columns:1fr 1fr}.quien{grid-template-columns:1fr}.medir{grid-template-columns:1fr}}
+@media (max-width:520px){.benef{flex-direction:column;align-items:flex-start}.pasos{grid-template-columns:1fr}.hero{border-radius:0;margin-top:0}.hero .txt{padding:22px 18px}.benef .big{font-size:24px}}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="franja"><i></i><b></b></div>
+
+<div class="hero">
+  
+  <div class="txt">
+    <h1>Opciones de silla de ruedas neurológica para tu hijo</h1>
+    <p>Gracias al <b>Convenio de colaboración</b> entre el <b>Colegio Amapolas</b> y <b>OpenCluster Tech</b>, las familias de nuestra comunidad tienen un beneficio especial en todas las ayudas técnicas.</p>
+    <p>Preparamos esta guía con las sillas neurológicas que tenemos disponibles hoy, para que puedas conocerlas y compararlas con calma. Te acompañamos a elegir la que mejor se adapta a tu hijo y, cuando la tengas clara, preparamos la cotización.</p>
+    <div class="benef">
+      <div class="pct"><b>10%</b><small>descuento</small></div>
+      <div>
+        <div class="k">Beneficio para la comunidad Amapolas</div>
+        <div class="big">10% de descuento en <span>TODOS</span></div>
+        <div>los productos y ayudas técnicas de OpenCluster Tech*</div>
+        <div class="s">* Sobre el precio de venta normal publicado en opencluster-tech.cl. No se aplica sobre el precio con descuento por transferencia ni sobre ningún otro descuento.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<section>
+  <h2>Antes de elegir: lo que necesitamos saber de tu hijo</h2>
+  <p class="sub">Con estos datos podemos decirte con seguridad qué silla le queda bien.</p>
+  <div class="pasos">
+    <div class="paso"><div class="n">1</div><b>Edad</b><span>Nos ayuda a proyectar cuánto va a crecer y por cuánto tiempo le servirá la silla.</span></div>
+    <div class="paso"><div class="n">2</div><b>Diagnóstico o patología</b><span>Define qué apoyos necesita: cabeza, tronco, caderas o piernas.</span></div>
+    <div class="paso"><div class="n">3</div><b>Peso y estatura</b><span>Cada silla tiene un peso máximo que soporta.</span></div>
+    <div class="paso"><div class="n">4</div><b>Sus medidas</b><span>Las cuatro que te mostramos aquí abajo, en centímetros.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Cómo tomar las medidas</h2>
+  <p class="sub">Sienta a tu hijo en una silla firme (no en un sillón), con la espalda apoyada y los pies en el suelo. Las caderas, las rodillas y los tobillos deben quedar en ángulo recto. Usa una huincha de medir y, si puedes, pide ayuda a otra persona.</p>
+  <div class="medir">
+    <div class="dibujos">
+      <figure>
+        <svg viewBox="0 0 260 320" role="img" aria-label="Niño sentado de frente, medida A ancho de caderas">
+          <defs>
+            <marker id="pa" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0L0 5l10 5z" fill="#D73C70"/></marker>
+            <marker id="pb" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#D73C70"/></marker>
+          </defs>
+          <line x1="20" y1="300" x2="240" y2="300" class="piso"/>
+          <rect x="70" y="196" width="120" height="12" rx="3" class="silla"/>
+          <line x1="80" y1="208" x2="80" y2="300" class="silla-l"/><line x1="180" y1="208" x2="180" y2="300" class="silla-l"/>
+          <circle cx="130" cy="58" r="24" class="cuerpo"/>
+          <rect x="100" y="86" width="60" height="86" rx="18" class="cuerpo"/>
+          <rect x="84" y="94" width="16" height="64" rx="8" class="cuerpo"/><rect x="160" y="94" width="16" height="64" rx="8" class="cuerpo"/>
+          <rect x="92" y="160" width="76" height="38" rx="14" class="cuerpo2"/>
+          <rect x="98" y="196" width="24" height="96" rx="10" class="cuerpo"/><rect x="138" y="196" width="24" height="96" rx="10" class="cuerpo"/>
+          <line x1="92" y1="166" x2="92" y2="240" class="guia"/><line x1="168" y1="166" x2="168" y2="240" class="guia"/>
+          <line x1="94" y1="236" x2="166" y2="236" class="fl" marker-start="url(#pa)" marker-end="url(#pb)"/>
+          <circle cx="130" cy="262" r="13" class="letra"/><text x="130" y="267" class="lt">A</text>
+        </svg>
+        <figcaption>De frente</figcaption>
+      </figure>
+      <figure>
+        <svg viewBox="0 0 300 320" role="img" aria-label="Niño sentado de lado, medidas B, C y D">
+          <line x1="10" y1="300" x2="290" y2="300" class="piso"/>
+          <rect x="88" y="196" width="128" height="12" rx="3" class="silla"/>
+          <rect x="88" y="70" width="10" height="138" rx="3" class="silla"/>
+          <line x1="100" y1="208" x2="100" y2="300" class="silla-l"/><line x1="206" y1="208" x2="206" y2="300" class="silla-l"/>
+          <circle cx="132" cy="54" r="24" class="cuerpo"/>
+          <rect x="102" y="82" width="46" height="112" rx="18" class="cuerpo"/>
+          <rect x="100" y="166" width="104" height="30" rx="14" class="cuerpo2"/>
+          <rect x="184" y="172" width="24" height="120" rx="10" class="cuerpo"/>
+          <rect x="184" y="284" width="52" height="14" rx="6" class="cuerpo"/>
+          <line x1="100" y1="160" x2="100" y2="222" class="guia"/><line x1="184" y1="200" x2="184" y2="222" class="guia"/>
+          <line x1="102" y1="222" x2="182" y2="222" class="fl" marker-start="url(#pa)" marker-end="url(#pb)"/>
+          <circle cx="142" cy="246" r="13" class="letra"/><text x="142" y="251" class="lt">B</text>
+          <line x1="208" y1="198" x2="258" y2="198" class="guia"/>
+          <line x1="250" y1="200" x2="250" y2="296" class="fl" marker-start="url(#pa)" marker-end="url(#pb)"/>
+          <circle cx="274" cy="248" r="13" class="letra"/><text x="274" y="253" class="lt">C</text>
+          <line x1="58" y1="88" x2="104" y2="88" class="guia"/><line x1="58" y1="194" x2="100" y2="194" class="guia"/>
+          <line x1="64" y1="90" x2="64" y2="192" class="fl" marker-start="url(#pa)" marker-end="url(#pb)"/>
+          <circle cx="40" cy="142" r="13" class="letra"/><text x="40" y="147" class="lt">D</text>
+        </svg>
+        <figcaption>De lado</figcaption>
+      </figure>
+    </div>
+    <ol class="medidas">
+      <li><span class="ml">A</span><div><b>Ancho de caderas</b>Sentado, mide la parte más ancha de las caderas, de un lado al otro, con la ropa que usa a diario. <em>El asiento debe ser entre 2 y 4 cm más ancho.</em></div></li>
+      <li><span class="ml">B</span><div><b>Largo del muslo</b>Desde la parte de atrás de la cola, apoyada en el respaldo, hasta el hueco detrás de la rodilla. <em>El asiento debe ser entre 2 y 5 cm más corto, para que no le apriete detrás de la rodilla.</em></div></li>
+      <li><span class="ml">C</span><div><b>Largo de la pierna</b>Desde el hueco detrás de la rodilla hasta la planta del pie, con zapatos puestos. <em>Define la altura del apoyapiés.</em></div></li>
+      <li><span class="ml">D</span><div><b>Altura de la espalda</b>Desde el asiento hasta los hombros. Si necesita apoyo de cabeza, mide hasta la parte alta de la cabeza. <em>Define el respaldo y el cabecero.</em></div></li>
+    </ol>
+  </div>
+  <p class="nota">Si su terapeuta puede tomar o revisar las medidas, mucho mejor. Envíanos los datos y te decimos cuál silla le queda bien.</p>
+</section>
+
+<section>
+  <h2>Las tres opciones disponibles</h2>
+  <p class="sub">Los precios ya incluyen el 10% de descuento del convenio.</p>
+  <div class="cards">
+
+    <article class="card rec">
+      <div class="foto"><span class="tag r">Pensada para niños</span><img src="img/glomax-pediatrica.jpg" alt="Silla de ruedas neurológica pediátrica reclinable"></div>
+      <div class="body">
+        <h3>Silla de Ruedas Neurológica Pediátrica Reclinable</h3>
+        <p class="para">Para niños que necesitan apoyo postural completo durante buena parte del día, en casa, en el colegio y en terapias.</p>
+        <div class="datos">
+          <div class="dato"><span class="l">Ancho asiento</span><b>40 cm</b></div>
+          <div class="dato"><span class="l">Profundidad</span><b>35 cm</b></div>
+          <div class="dato"><span class="l">Peso máximo</span><b>100 kg</b></div>
+          <div class="dato"><span class="l">Peso silla</span><b>23 kg</b></div>
+        </div>
+        <ul>
+          <li>Respaldo reclinable y asiento basculante</li>
+          <li>Cabecero regulable en altura y ancho</li>
+          <li>Apoyos laterales, cojín entre las piernas y cinturón pélvico en X</li>
+          <li>Ruedas traseras de 16" y frenos en ambas ruedas</li>
+          <li>Plegada queda en 29 cm de ancho, cabe en el auto</li>
+        </ul>
+        <div class="visita"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Disponible para ver en bodega</div>
+        <div class="pie">
+          <div class="web">Precio web <s>$399.990</s></div>
+          <div class="precio">$359.991 <span class="desc">-10% convenio</span></div>
+          <div class="iva">IVA incluido</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="foto"><span class="tag g">Asiento que se ajusta</span><img src="img/intco-yk8001.jpg" alt="Coche neurológico Intco YK 8001"></div>
+      <div class="body">
+        <h3>Coche Neurológico Intco YK 8001 · talla Big</h3>
+        <p class="para">Coche liviano de duraluminio, con asiento que se ajusta en ancho y que gira para mirar hacia adelante o hacia quien empuja.</p>
+        <div class="datos">
+          <div class="dato"><span class="l">Ancho asiento</span><b>32 a 40 cm</b></div>
+          <div class="dato"><span class="l">Respaldo</span><b>5° a 45°</b></div>
+          <div class="dato"><span class="l">Peso máximo</span><b>60 kg</b></div>
+          <div class="dato"><span class="l">Ruedas</span><b>8" y 12"</b></div>
+        </div>
+        <ul>
+          <li>Asiento giratorio en 180°</li>
+          <li>Apoyos laterales y sujeción tipo pechera</li>
+          <li>Apoya piernas elevable y reposapiés regulable</li>
+          <li>Manilla de empuje regulable en altura</li>
+          <li>Plegable</li>
+        </ul>
+        <div class="visita"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Disponible para ver en bodega</div>
+        <div class="pie">
+          <div class="web">Precio web <s>$529.990</s></div>
+          <div class="precio">$476.991 <span class="desc">-10% convenio</span></div>
+          <div class="iva">IVA incluido</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="foto"><span class="tag g">Máximo confort</span><img src="img/netti-4u.jpg" alt="Silla de ruedas neurológica Netti 4U CE Plus"></div>
+      <div class="body">
+        <h3>Silla de Ruedas Neurológica Netti 4U CE Plus · talla 40</h3>
+        <p class="para">Silla de confort para uso prolongado, pensada para jóvenes y adultos. Conviene cuando el niño ya tiene medidas de adulto pequeño.</p>
+        <div class="datos">
+          <div class="dato"><span class="l">Talla</span><b>40</b></div>
+          <div class="dato"><span class="l">Profundidad</span><b>42,5 a 50 cm</b></div>
+          <div class="dato"><span class="l">Peso máximo</span><b>135 kg</b></div>
+          <div class="dato"><span class="l">Peso silla</span><b>28 kg</b></div>
+        </div>
+        <ul>
+          <li>Asiento basculante de –5° a +20°</li>
+          <li>Respaldo reclinable de 90° a 135°</li>
+          <li>Apoyacabezas regulable en altura, profundidad y ángulo</li>
+          <li>Apoyabrazos y reposapiés regulables y desmontables</li>
+          <li>Probada según norma europea EN 12183</li>
+        </ul>
+        <div class="visita"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Disponible para ver en bodega</div>
+        <div class="pie">
+          <div class="web">Precio web <s>$1.799.990</s></div>
+          <div class="precio">$1.619.991 <span class="desc">-10% convenio</span></div>
+          <div class="iva">IVA incluido</div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>Comparación rápida</h2>
+  <div class="tabla"><table>
+    <tr><th></th><th>Neurológica Pediátrica</th><th>Coche Intco YK 8001 Big</th><th>Netti 4U CE Plus T40</th></tr>
+    <tr><td>Ancho de asiento</td><td>40 cm</td><td>32 a 40 cm, ajustable</td><td>Talla 40</td></tr>
+    <tr><td>Profundidad de asiento</td><td>35 cm</td><td>—</td><td>42,5 a 50 cm</td></tr>
+    <tr><td>Peso máximo</td><td>100 kg</td><td>60 kg</td><td>135 kg</td></tr>
+    <tr><td>Cambio de posición</td><td>Reclina y bascula</td><td>Reclina de 5° a 45°</td><td>Reclina y bascula</td></tr>
+    <tr><td>Apoyo de cabeza y tronco</td><td>Cabecero, laterales y abductor</td><td>Laterales y pechera</td><td>Apoyacabezas regulable</td></tr>
+    <tr><td>Para ver en bodega</td><td><span class="si">Sí, disponible</span></td><td><span class="si">Sí, disponible</span></td><td><span class="si">Sí, disponible</span></td></tr>
+    <tr><td>Precio con convenio</td><td><b>$359.991</b></td><td><b>$476.991</b></td><td><b>$1.619.991</b></td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Ven a verlas a nuestra bodega</h2>
+  <div class="bodega">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+    <div>
+      <b>Bodega OpenCluster Tech · Quilpué</b>
+      <p>Freire 1388, Quilpué, Región de Valparaíso.</p>
+      <p>Las tres sillas están disponibles para que tu hijo las pruebe. Para recibirte como corresponde, cada visita se agenda con anticipación: escríbeme, coordinamos el día y la hora, y te esperamos en la bodega.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Quiénes somos</h2>
+  <div class="quien">
+    <div>
+      <p><b>OpenCluster Tech</b> es la empresa que implementó la sala multisensorial del Colegio Amapolas y que donó los tableros de comunicación TD Snap que usan sus estudiantes.</p>
+      <p>Llevamos 16 años en el mercado, con una amplia trayectoria en proyectos con SENADIS en todo Chile, y renovamos constantemente nuestro catálogo de ayudas técnicas para personas de todas las edades.</p>
+    </div>
+    <div class="cifras">
+      <div class="cifra"><b>16 años</b><span>construyendo inclusión en Chile</span></div>
+      <div class="cifra"><b>Amplia trayectoria</b><span>en proyectos con SENADIS en todo Chile</span></div>
+      <div class="cifra"><b>Más de 2.500</b><span>productos en bodega</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="contacto">
+    <div>
+      <h3>¿Cuál le sirve a tu hijo?</h3>
+      <p>Envíame sus medidas y te recomiendo la opción adecuada. Con eso preparamos la cotización con tu descuento del convenio.</p>
+      <div class="firma"><b>Rayen Ogalde</b>Directora de Proyectos de Salas Multisensoriales · OpenCluster Tech</div>
+    </div>
+    <div class="btns">
+      <a class="btn w" href="https://wa.me/56956294723?text=Hola%20Rayen%2C%20vengo%20de%20parte%20del%20Colegio%20Amapolas%20por%20la%20silla%20neurol%C3%B3gica." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>WhatsApp a Rayen</a>
+      <a class="btn m" href="mailto:rayen.ogalde@opencluster-tech.cl?subject=Convenio%20Colegio%20Amapolas%20-%20Silla%20neurol%C3%B3gica">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Escribir un correo</a>
+    </div>
+  </div>
+</section>
+
+<div class="banner-fin"><div class="banner"><img src="img/convenio-amapolas-familias.png" alt="Colegio Amapolas, Convenio de colaboración junto a OpenCluster Tech"></div></div>
+<footer>Valores referenciales con IVA incluido, según el precio publicado en opencluster-tech.cl, sujetos a disponibilidad de stock. Este documento no es una cotización. El descuento del convenio es válido para compras directas a OpenCluster Tech mientras el convenio esté vigente y no se suma a otros descuentos.</footer>
+</main>
+</body>
+</html>
