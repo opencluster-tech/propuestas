@@ -2580,6 +2580,52 @@ button.vb-i:hover span.vb-ir,button.vb-i:focus-visible span.vb-ir{background:#08
 @media(max-width:560px){.vb-pres{padding-left:12px}}
 @media(max-width:400px){.vb-vid-f{width:96px;height:64px}}
 </style>
+<style id="pd-diseno-css">
+/* Productos: entrada al catálogo como banda azul compacta; destacados en tarjetas limpias, alineadas por abajo */
+#catalogo .cat-arma{display:block;margin:4px 0 26px;padding:0;background:none;border:0;border-radius:0;box-shadow:none;max-width:78ch}
+#catalogo .cat-arma-ic{display:none}
+#catalogo .cat-arma h3{margin:0 0 4px;font-size:15px;color:#001A60}
+#catalogo .cat-arma p{font-size:13.5px;line-height:1.7;color:#475569}
+#catalogo .pd-todo{margin:0 0 34px}
+#catalogo .pd.pd-ancho{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:#001A60;border:0;border-radius:20px;box-shadow:0 24px 44px -30px rgba(0,26,96,.75);overflow:hidden}
+#catalogo .pd.pd-ancho .pd-img{max-width:none;aspect-ratio:auto;height:100%;min-height:250px}
+#catalogo .pd.pd-ancho .pd-img img{min-height:0}
+#catalogo .pd.pd-ancho .pd-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,26,96,0) 55%,rgba(0,26,96,.9))}
+#catalogo .pd.pd-ancho .pd-cu{padding:26px 30px;justify-content:center;gap:0}
+#catalogo .pd.pd-ancho .pd-rot{color:#7FD3FF}
+#catalogo .pd.pd-ancho h3{font-size:26px;color:#fff;margin:2px 0 8px}
+#catalogo .pd.pd-ancho .pd-que{color:#D6E2F5;font-size:14px;margin:0 0 16px}
+#catalogo .pd.pd-ancho .pd-que b{color:#fff}
+#catalogo .pd.pd-ancho .pd-dl dt:first-of-type,#catalogo .pd.pd-ancho .pd-dl dd:first-of-type,#catalogo .pd.pd-ancho .pd-dl dt{display:none}
+#catalogo .pd.pd-ancho .pd-dl{margin:0 0 18px}
+#catalogo .pd.pd-ancho .pd-dl dd{margin:0}
+#catalogo .pd.pd-ancho .pd-dl ul{display:flex;flex-wrap:wrap;gap:7px}
+#catalogo .pd.pd-ancho .pd-dl li{padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:12px;font-weight:600}
+#catalogo .pd.pd-ancho .pd-dl li::before{display:none}
+#catalogo .pd.pd-ancho .pd-pie{display:none}
+#catalogo .pd.pd-ancho .pd-bts{margin:0}
+#catalogo .pd.pd-ancho .pd-abre{background:#08ACF2;color:#fff}
+#catalogo .pd.pd-ancho .pd-abre:hover,#catalogo .pd.pd-ancho .pd-abre:focus-visible{background:#fff;color:#001A60}
+#catalogo .pd.pd-ancho .pd-cu::after{content:'80 productos, cada uno con su valor con IVA y su ficha';display:block;margin-top:10px;font-size:11.5px;color:#9FB4D6}
+#catalogo .pd-sub{display:flex;align-items:center;gap:14px;margin:0 0 14px;font-size:12px;letter-spacing:.12em;color:#0A8FCC}
+#catalogo .pd-sub::after{content:'';flex:1;height:1px;background:#DCE6FA}
+#catalogo .pd-g{gap:18px;align-items:stretch}
+#catalogo .pd-g .pd{box-shadow:none;transition:transform .18s,box-shadow .18s,border-color .18s}
+#catalogo .pd-g .pd:hover{transform:translateY(-3px);border-color:#A9DCF6;box-shadow:0 20px 36px -24px rgba(0,26,96,.55)}
+#catalogo .pd-g .pd-img{aspect-ratio:16/9}
+#catalogo .pd-g .pd-cu{padding:18px 20px 20px}
+#catalogo .pd-g .pd-rot{display:none}
+#catalogo .pd-g h3{font-size:20px;margin:0 0 6px}
+#catalogo .pd-g .pd-que{margin:0 0 14px}
+#catalogo .pd-g .pd-dl dd{font-size:12.5px}
+#catalogo .pd-g .pd-pie{margin-top:auto;padding-top:12px;border-top:1px solid #EEF2F8}
+#catalogo .pd-g .pd-pie .pd-fila,#catalogo .pd-g .pd-pie .pd-fn{background:none;border:0;padding:0}
+#catalogo .pd-g .pd-fn b{font-size:15px;color:#001A60}
+#catalogo .pd-g .pd-fn span{font-size:11.5px;color:#64748B}
+#catalogo .pd-g .pd-bts{margin-top:12px}
+@media(max-width:860px){#catalogo .pd.pd-ancho{grid-template-columns:1fr}#catalogo .pd.pd-ancho .pd-img{height:auto;aspect-ratio:16/9;min-height:0}#catalogo .pd.pd-ancho .pd-img::after{background:linear-gradient(180deg,rgba(0,26,96,0) 55%,rgba(0,26,96,.9))}#catalogo .pd.pd-ancho .pd-cu{padding:20px 18px 22px}#catalogo .pd.pd-ancho h3{font-size:22px}#catalogo .pd-g{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#catalogo .pd-g .pd{transition:none}#catalogo .pd-g .pd:hover{transform:none}}
+</style>
 </head>
 <body>
 <div class="hoja">
@@ -4307,7 +4353,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 3 de noviembre a las 21:19</div>
+<div id="verPill" class="ver-pill">Versión del 3 de noviembre a las 21:38</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -4318,7 +4364,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1793755199288';
+(function(){ var V = '1793756305870';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
