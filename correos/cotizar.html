@@ -149,20 +149,28 @@ const PRODUCTOS = {
     "vigencia": "Oferta válida hasta el martes 3 de noviembre.",
     "semana": "2026-10-26"
   },
-  "OC-0046": {
-    "nombre": "Almohada Theranight Carbon",
-    "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_theranight_main.jpg",
-    "lista": 30081,
-    "oferta": 27073,
-    "vigencia": "Oferta válida hasta el martes 10 de noviembre.",
+  "OC-0754": {
+    "nombre": "Colchón Antiescaras TheraDays TM526",
+    "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_theradays_main_c.jpg",
+    "lista": 135650,
+    "oferta": 135650,
+    "vigencia": "Oferta válida hasta el miércoles 11 de noviembre.",
     "semana": "2026-11-02"
   },
-  "OC-0940": {
-    "nombre": "Ducha portátil TheraAqua",
-    "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_theraaqua_main.jpg",
-    "lista": 13437,
-    "oferta": 12093,
-    "vigencia": "Oferta válida hasta el martes 10 de noviembre.",
+  "OC-0756": {
+    "nombre": "Colchón Antiescaras TheraFoam TM400",
+    "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_therafoam_main_c.jpg",
+    "lista": 120890,
+    "oferta": 120890,
+    "vigencia": "Oferta válida hasta el miércoles 11 de noviembre.",
+    "semana": "2026-11-02"
+  },
+  "OC-0694": {
+    "nombre": "Cojín Lumbar TheraShape Negro TM322",
+    "img": "https://opencluster-tech.github.io/propuestas/correos/img/oc_therashape_negro_main_c.jpg",
+    "lista": 14390,
+    "oferta": 14390,
+    "vigencia": "Oferta válida hasta el miércoles 11 de noviembre.",
     "semana": "2026-11-02"
   },
   "THERAGEL": {
@@ -253,8 +261,9 @@ function tarjetaProducto(){
           '</b> · <b style="color:#001A60;font-size:15px">' + clp(m.oferta) + '</b> <s>' + clp(m.lista) + '</s></div>').join('') +
         '<div style="margin-top:6px"><span class="pill" style="margin-left:0">−5%</span></div>'
       : '<div class="c">Código ' + esc(cod) + '</div>' +
-        '<div class="p">' + clp(P.oferta) + ' <s>' + clp(P.lista) + '</s>' +
-        '<span class="pill">−5%</span></div>') +
+        '<div class="p">' + clp(P.oferta) + (P.lista > P.oferta
+          ? ' <s>' + clp(P.lista) + '</s><span class="pill">−' + Math.round((1 - P.oferta / P.lista) * 100) + '%</span>'
+          : '') + '</div>') +
     '<div class="c">IVA incluido · ' + esc(P.vigencia.replace('de este correo', 'del correo')) + '</div></div></div>';
 }
 
