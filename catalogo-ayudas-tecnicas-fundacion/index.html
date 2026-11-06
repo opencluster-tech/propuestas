@@ -155,7 +155,9 @@ textarea{width:100%;min-height:140px;font:inherit;font-size:12.5px;border:1px so
   .ficha .cerrar{display:flex;margin-left:auto;margin-bottom:10px}
 }
 @media (max-width:760px){
-  .app{grid-template-columns:1fr}
+  .app{grid-template-columns:minmax(0,1fr)}
+  .riel,.centro{min-width:0}
+  .herr select{flex:1}
   .riel{position:static;height:auto;border-right:0;border-bottom:1px solid var(--linea);padding:18px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));gap:14px}
   .riel .fl,.riel h2,.nota-riel{display:none}
   .famsel{display:block;width:100%;font:inherit;font-weight:600;padding:10px 12px;border-radius:10px;border:1px solid var(--linea);background:var(--papel);color:var(--tinta)}
