@@ -204,7 +204,7 @@ details ul li::marker{color:var(--c)}
     <select id="famsel" class="famsel" aria-label="Elegir familia"></select>
     <h2>Familias</h2>
     <nav class="fl" id="fl" aria-label="Familias"></nav>
-    <p class="nota-riel">Valores con IVA incluido. 10% de descuento sobre el valor de lista de nuestra tienda.</p>
+    <p class="nota-riel">Valores con IVA incluido. Descuentos especiales sobre el valor de lista de nuestra tienda.</p>
   </aside>
   <main class="centro" id="centro">
     <section class="cab" id="cab"></section>
@@ -213,8 +213,6 @@ details ul li::marker{color:var(--c)}
   <aside class="ficha" id="ficha" aria-label="Ficha del producto"></aside>
 </div>
 
-<div class="barra-sel" id="barra" hidden><span><span class="num" id="b-n"></span> en mi selección · <span class="num" id="b-t"></span></span><button type="button" id="ver-sel">Ver mi selección</button></div>
-<div class="cajon" id="cajon" hidden role="dialog" aria-modal="true" aria-labelledby="sel-t"><div class="cajon-b" id="cajon-b"></div></div>
 
 <script src="iconos.js"></script>
 <script src="datos.js"></script>
@@ -223,7 +221,6 @@ details ul li::marker{color:var(--c)}
 var COL={movilidad:'#2F855A',bano:'#1A86C7',catres:'#2E55B0',cojines:'#9C3A78',sillones:'#7350B8',posicionamiento:'#6E7F1A',pie:'#8B5A2E',respiratorio:'#0E7C86',ocular:'#4B47B5',comunicacion:'#C0365F',vision:'#9A7A0C',acceso:'#B23A3A',tecno:'#4F5D73'};
 var F=CAT.fams,P=CAT.prods,fam={},porId={};F.forEach(function(f){fam[f.id]=f;});P.forEach(function(p){porId[p.id]=p;});
 var actual=F[0].id,lista=[],sel=null,foto=0,orden='web',carro={};
-try{carro=JSON.parse(localStorage.getItem('fta-sel')||'{}')||{};}catch(e){carro={};}
 function guarda(){try{localStorage.setItem('fta-sel',JSON.stringify(carro));}catch(e){}}
 var $=function(id){return document.getElementById(id);};
 var q='';
@@ -254,7 +251,7 @@ function ficha(id,abrir){var p=porId[id];if(!p)return;sel=id;foto=0;var c=COL[p.
    '<div class="g-main foto"><img id="g-img" src="img/'+p.i[0]+'" alt="'+esc(p.n)+'">'+(p.i.length>1?'<button class="g-nav a" type="button" id="g-a" aria-label="Foto anterior">'+svg('prev',2.2)+'</button><button class="g-nav b" type="button" id="g-b" aria-label="Foto siguiente">'+svg('next',2.2)+'</button><span class="g-cont" id="g-c">1 / '+p.i.length+'</span>':'')+'</div>'+(p.i.length>1?'<div class="g-ths">'+p.i.map(function(x,n){return '<button class="g-th foto" type="button" data-n="'+n+'" aria-label="Foto '+(n+1)+'" aria-current="'+(n===0)+'"><img src="img/'+x+'" alt=""></button>';}).join('')+'</div>':'')+
    '<p class="chipfam">'+svg(fam[p.f].ic)+esc(fam[p.f].n)+'</p><h2>'+esc(p.n)+'</h2><p class="lead">'+esc(p.d[0]||p.l)+'</p>'+
    '<div class="opciones">'+p.p.map(function(v,i){var k=p.id+'|'+i;return '<div class="op"><div><div class="nm">'+esc(v[0]||'Valor Fundación')+'</div>'+(v[1]?'<div class="li num">Valor de lista '+clp(v[1])+' · '+v[2]+'% de descuento</div>':'<div class="li">Valor a cotizar</div>')+'</div>'+
-     '<div class="fz num">'+(v[3]?clp(v[3]):'')+'</div><div class="add"><button type="button" class="btn-add'+(carro[k]?' ya':'')+'" data-add="'+k+'">'+svg(carro[k]?'check':'mas',2.2)+(carro[k]?'En mi selección':'Agregar a mi selección')+'</button></div></div>';}).join('')+'</div><p class="iva">Valores con IVA incluido.</p>'+
+     '<div class="fz num">'+(v[3]?clp(v[3]):'')+'</div></div>';}).join('')+'</div><p class="iva">Valores con IVA incluido.</p>'+
    grupo('Descripción',p.d.slice(1),'l',false)+grupo('Características',p.c,'l',true)+grupo('Beneficios',p.b,'l',false)+grupo('Especificaciones',p.e,'d',false)+grupo('Medidas',p.m,'d',false)+grupo('Qué incluye',p.k,'l',false)+(p.o&&p.o.length?'<div class="docs"><p class="docs-t">Documentos del fabricante</p>'+p.o.map(function(d){return '<a class="doc" href="'+esc(d[1])+'" target="_blank" rel="noopener">'+svg('doc')+'<span>'+esc(d[0])+'</span></a>';}).join('')+'</div>':'');
   el.scrollTop=0;
   if(p.i.length>1){var mover=function(d,abs){foto=abs!=null?abs:(foto+d+p.i.length)%p.i.length;$('g-img').src='img/'+p.i[foto];$('g-c').textContent=(foto+1)+' / '+p.i.length;el.querySelectorAll('.g-th').forEach(function(t){t.setAttribute('aria-current',+t.getAttribute('data-n')===foto);});};el.querySelectorAll('.g-th').forEach(function(t){t.onclick=function(){mover(0,+t.getAttribute('data-n'));};});$('g-a').onclick=function(){mover(-1);};$('g-b').onclick=function(){mover(1);};}
@@ -280,12 +277,11 @@ document.addEventListener('click',function(e){var b=e.target.closest('[data-f]')
   var r=e.target.closest('.fila');if(r){ficha(lista[+r.getAttribute('data-k')].id,true);return;}
   var a=e.target.closest('[data-add]');if(a){var k=a.getAttribute('data-add');if(carro[k])delete carro[k];else carro[k]=1;guarda();barra();ficha(sel,false);centro();return;}
   var qq=e.target.closest('[data-q]');if(qq){var s=qq.getAttribute('data-q').split('|'),kk=s[0]+'|'+s[1];carro[kk]=(carro[kk]||0)+(+s[2]);if(carro[kk]<=0)delete carro[kk];guarda();barra();cajon();centro();if(sel)ficha(sel,false);return;}
-  if(e.target.id==='cajon')$('cajon').hidden=true;});
-$('ver-sel').onclick=function(){cajon();$('cajon').hidden=false;$('c-x').focus();};
+});
 $('famsel').onchange=function(){actual=this.value;q='';riel();centro();ficha(lista[0].id,false);};
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){$('cajon').hidden=true;$('ficha').classList.remove('abierta');}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){$('ficha').classList.remove('abierta');}});
 var h=location.hash.slice(1);if(fam[h])actual=h;
-riel();centro();ficha(lista[0].id,false);barra();
+riel();centro();ficha(lista[0].id,false);
 })();
 </script>
 </body>
