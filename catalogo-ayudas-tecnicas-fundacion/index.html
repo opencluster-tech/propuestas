@@ -201,6 +201,14 @@ details ul li::marker{color:var(--c)}
 .op .fz{color:var(--marino);font-size:22px;line-height:1.1}
 .op .fz small{display:block;font-size:11px;font-weight:600;color:var(--marino);opacity:.8;letter-spacing:.02em}
 .dto{display:inline-block;margin-left:4px;padding:1px 9px;border-radius:999px;background:#FFFFFF;color:var(--marino);font-weight:700;font-size:11.5px;white-space:nowrap}
+/* 6-nov: botón «Confirmar disponibilidad» (WhatsApp de Maxi) */
+.wa{display:flex;align-items:center;gap:12px;margin-top:12px;padding:12px 16px;border-radius:12px;background:var(--marino);color:#FFFFFF;text-decoration:none;transition:filter .15s}
+.wa:hover{filter:brightness(1.25)}
+.wa:focus-visible{outline:3px solid var(--celeste);outline-offset:2px}
+.wa svg{flex:none}
+.wa span{display:flex;flex-direction:column;line-height:1.25}
+.wa b{font-size:14.5px;font-weight:700}
+.wa small{font-size:12px;opacity:.85}
 </style>
 </head>
 <body>
@@ -211,7 +219,7 @@ details ul li::marker{color:var(--c)}
     <select id="famsel" class="famsel" aria-label="Elegir familia"></select>
     <h2>Familias</h2>
     <nav class="fl" id="fl" aria-label="Familias"></nav>
-    <p class="nota-riel">Valores con IVA incluido. Descuentos especiales sobre el valor de lista de nuestra tienda.</p>
+    <p class="nota-riel">Valores con IVA incluido. Descuentos especiales sobre el valor de lista de nuestra tienda. Disponibilidad y plazo de entrega se confirman antes de cada compra.</p>
   </aside>
   <main class="centro" id="centro">
     <section class="cab" id="cab"></section>
@@ -258,7 +266,7 @@ function ficha(id,abrir){var p=porId[id];if(!p)return;sel=id;foto=0;var c=COL[p.
    '<div class="g-main foto"><img id="g-img" src="img/'+p.i[0]+'" alt="'+esc(p.n)+'">'+(p.i.length>1?'<button class="g-nav a" type="button" id="g-a" aria-label="Foto anterior">'+svg('prev',2.2)+'</button><button class="g-nav b" type="button" id="g-b" aria-label="Foto siguiente">'+svg('next',2.2)+'</button><span class="g-cont" id="g-c">1 / '+p.i.length+'</span>':'')+'</div>'+(p.i.length>1?'<div class="g-ths">'+p.i.map(function(x,n){return '<button class="g-th foto" type="button" data-n="'+n+'" aria-label="Foto '+(n+1)+'" aria-current="'+(n===0)+'"><img src="img/'+x+'" alt=""></button>';}).join('')+'</div>':'')+
    '<p class="chipfam">'+svg(fam[p.f].ic)+esc(fam[p.f].n)+'</p><h2>'+esc(p.n)+'</h2><p class="lead">'+esc(p.d[0]||p.l)+'</p>'+
    '<div class="opciones">'+p.p.map(function(v,i){var k=p.id+'|'+i;return '<div class="op"><div>'+(v[0]?'<div class="nm">'+esc(v[0])+'</div>':'')+(v[1]?'<div class="li num">Valor de lista '+clp(v[1])+' <span class="dto">'+v[2]+'% de descuento</span></div>':'<div class="li">Valor a cotizar</div>')+'</div>'+
-     '<div class="fz num">'+(v[3]?'<small>Valor Fundación</small>'+clp(v[3]):'')+'</div></div>';}).join('')+'</div><p class="iva">Valores con IVA incluido.</p>'+
+     '<div class="fz num">'+(v[3]?'<small>Valor Fundación</small>'+clp(v[3]):'')+'</div></div>';}).join('')+'</div><p class="iva">Valores con IVA incluido. Disponibilidad y plazo de entrega se confirman antes de cada compra.</p>'+'<a class="wa" target="_blank" rel="noopener" href="https://wa.me/56940213164?text='+encodeURIComponent('Hola Maxi, te escribo desde el catálogo de ayudas técnicas de la Fundación Te Apoyamos. ¿Está disponible este producto para entrega en 2 a 3 días?\n\nProducto: '+p.n+(p.p.length===1?(p.p[0][0]?'\nOpción: '+p.p[0][0]:''):'\nOpción: ')+'\n\nMuchas gracias.')+'"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 10.5l2 2 4-4"/></svg><span><b>Confirmar disponibilidad</b><small>Te responde Maximiliano por WhatsApp</small></span></a>'+
    grupo('Descripción',p.d.slice(1),'l',false)+grupo('Características',p.c,'l',true)+grupo('Beneficios',p.b,'l',false)+grupo('Especificaciones',p.e,'d',false)+grupo('Medidas',p.m,'d',false)+grupo('Qué incluye',p.k,'l',false)+(p.o&&p.o.length?'<div class="docs"><p class="docs-t">Documentos del fabricante</p>'+p.o.map(function(d){return '<a class="doc" href="'+esc(d[1])+'" target="_blank" rel="noopener">'+svg('doc')+'<span>'+esc(d[0])+'</span></a>';}).join('')+'</div>':'');
   el.scrollTop=0;
   if(p.i.length>1){var mover=function(d,abs){foto=abs!=null?abs:(foto+d+p.i.length)%p.i.length;$('g-img').src='img/'+p.i[foto];$('g-c').textContent=(foto+1)+' / '+p.i.length;el.querySelectorAll('.g-th').forEach(function(t){t.setAttribute('aria-current',+t.getAttribute('data-n')===foto);});};el.querySelectorAll('.g-th').forEach(function(t){t.onclick=function(){mover(0,+t.getAttribute('data-n'));};});$('g-a').onclick=function(){mover(-1);};$('g-b').onclick=function(){mover(1);};}
