@@ -23,6 +23,14 @@ h1,h2,h3,h4,.pill,.tag,.letra,.valor strong,.btn{font-family:Montserrat,system-u
 .intro{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:20px 22px;margin:-18px auto 26px;position:relative}
 .intro p{margin:0}
 .intro .monto{margin-top:10px;font-family:Montserrat,sans-serif;font-weight:700;color:var(--navy)}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 16px}
+.tabs button{cursor:pointer;background:#fff;border:1.5px solid var(--linea);border-radius:14px;padding:10px 8px;color:var(--navy);font-family:Montserrat,sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;line-height:1.25}
+.tabs button b{background:var(--pastel);color:var(--navy);border-radius:10px;width:36px;height:36px;display:grid;place-items:center;font-size:18px}
+.tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tabs button[aria-selected="true"] b{background:var(--cal);color:#fff}
+.tabs .tb-base{grid-column:1/-1;flex-direction:row;justify-content:center;padding:9px}
+.opcion[hidden]{display:none}
+@media (max-width:600px){.tabs{gap:6px}.tabs button{padding:8px 4px;font-size:0}.tabs button b{font-size:18px}.tabs .tb-base{font-size:13px}}
 .indice{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
 .indice a{flex:1 1 150px;text-decoration:none;background:#fff;border:1px solid var(--linea);border-radius:12px;padding:10px 12px;color:var(--navy);font-family:Montserrat,sans-serif;font-weight:700;font-size:13.5px;display:flex;gap:10px;align-items:center}
 .indice a b{background:var(--navy);color:#fff;border-radius:8px;width:28px;height:28px;display:grid;place-items:center;flex:none}
@@ -80,26 +88,9 @@ footer{text-align:center;color:var(--suave);font-size:12.5px;padding:0 16px 30px
     <p>Todas las opciones parten de la misma sala base y suman productos distintos. Cada una incluye transporte, instalación y capacitación, y la garantía de 24 meses.</p>
     <p class="monto">Valor final de cada opción: $11.132.445 IVA incluido</p>
   </div>
-  <nav class="indice"><a href="#opcion-A"><b>A</b>Aromaterapia y masaje</a><a href="#opcion-B"><b>B</b>Recorrido para los pies</a><a href="#opcion-C"><b>C</b>Espejo</a><a href="#opcion-D"><b>D</b>Masaje y presión profunda</a><a href="#opcion-E"><b>E</b>Butaca en lugar del Puff</a></nav>
+  <p class="secsub">Toque una opción para verla.</p>
+  <nav class="tabs" role="tablist"><button type="button" role="tab" data-p="opcion-A" aria-selected="true"><b>A</b><span>Aromaterapia y masaje</span></button><button type="button" role="tab" data-p="opcion-B" aria-selected="false"><b>B</b><span>Recorrido para los pies</span></button><button type="button" role="tab" data-p="opcion-C" aria-selected="false"><b>C</b><span>Espejo</span></button><button type="button" role="tab" data-p="opcion-D" aria-selected="false"><b>D</b><span>Masaje y presión profunda</span></button><button type="button" role="tab" data-p="opcion-E" aria-selected="false"><b>E</b><span>Butaca en lugar del Puff</span></button><button type="button" role="tab" data-p="sala-base" aria-selected="false" class="tb-base"><span>Fichas de la sala base</span></button></nav>
 
-  <h2 class="sec">Productos base</h2>
-  <p class="secsub">Van en las opciones A, B, C y D. En la opción E, el Puff se reemplaza por la Butaca.</p>
-  <div class="base"><article class="ficha">
-  <div class="foto"><img src="img/rincon-luminea.jpg" alt="Rincón Luminea con tablet"></div>
-  <div class="txt"><h4>Rincón Luminea con tablet</h4><p>Rincón multisensorial de 180 cm de alto y 110 × 110 cm, con tubo de burbujas Luminea y fibra óptica de 2 m sobre una base que se puede elegir en PVC o en tela tacto piel. Arma un espacio multisensorial en cualquier rincón, sin obra y sin dedicarle una sala entera. Trae su tableta de control ya configurada y su propia red inalámbrica: funciona con solo un enchufe.</p><p class="mat"><b>Tejido:</b> Tela vinílica con protección contra bacterias desde su fabricación · No deja pasar sudor, saliva, orina ni sangre · Segura sobre la piel: sin formaldehído (un químico irritante), plomo ni cadmio (metales pesados dañinos) ni ftalatos (sustancias que ablandan el plástico y que, algunas, alteran las hormonas) · Verificado en un laboratorio europeo.</p><p class="mat"><b>Espuma:</b> Relleno con la certificación europea de salud en su nivel más exigente, el de los productos para bebés.</p></div>
-</article><article class="ficha">
-  <div class="foto"><img src="img/kit-vibroacustico-bluetooth.jpg" alt="Kit vibroacústico Bluetooth"></div>
-  <div class="txt"><h4>Kit vibroacústico Bluetooth</h4><p>Kit con receptor Bluetooth, altavoces con su propia amplificación y amplificador de dos canales, que convierte la música y los sonidos en vibración en el cuerpo. Une el oído con el tacto y suma la vibración a los muebles que el centro ya tiene, para sentir el sonido a través del cuerpo. Se conecta sin cables al reproductor de música o a la unidad central de la sala, funciona con los equipos Luminea y necesita tres enchufes.</p></div>
-</article><article class="ficha">
-  <div class="foto"><img src="img/puff-transformable-vibroacustico.jpg" alt="Puff transformable vibroacústico"></div>
-  <div class="txt"><h4>Puff transformable vibroacústico</h4><p>Puff de 140 × 180 cm que cambia de forma para usarse sentado o tendido, con un módulo de vibración integrado que transmite la música por el cuerpo. Su relleno de pequeñas bolas se amolda a la postura de cada persona y reparte su peso. Se conecta al amplificador vibroacústico, al kit vibroacústico inalámbrico o a la unidad central de la sala.</p><p class="mat"><b>Tejido:</b> Tela vinílica con protección contra bacterias y hongos desde su fabricación · No deja pasar sudor, saliva, orina ni sangre · Segura sobre la piel: sin formaldehído (un químico irritante), plomo ni cadmio (metales pesados dañinos) · Segura aunque se la lleven a la boca: cumple la norma europea de juguetes y no tiene ftalatos (sustancias que ablandan el plástico y que, algunas, alteran las hormonas) · Resiste el fuego · Muy resistente al roce · Verificado en un laboratorio europeo.</p><p class="mat"><b>Espuma:</b> Relleno con la certificación europea de salud en su nivel más exigente, el de los productos para bebés. Disponible en 12 colores.</p></div>
-</article><article class="ficha">
-  <div class="foto"><img src="img/button-1.jpg" alt="Button 1"></div>
-  <div class="txt"><h4>Button 1</h4><p>Pulsador inalámbrico de la línea Luminea, con superficie de 12,5 cm de diámetro. Con una sola pulsación la persona cambia el color, pasa al color siguiente, enciende o apaga el equipo o activa las burbujas del Rincón: es el mando para empezar a trabajar causa y efecto con un único movimiento voluntario. Funciona con dos pilas AAA (incluidas), tiene ahorro automático de energía y alcance de hasta 25 m. Compatible con los equipos Luminea y con las salas SHX.</p></div>
-</article></div>
-
-  <h2 class="sec">Opciones</h2>
-  <p class="secsub">Cada opción muestra la sala completa. Lo que se agrega va destacado en celeste.</p>
   <section class="opcion" id="opcion-A">
   <header class="ophead"><div class="letra">A</div><div><span class="pill">Opción A</span><h3>Aromaterapia y masaje</h3></div></header>
   <ul class="lista"><li class="b"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rincón Luminea con tablet</span></li><li class="b"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kit vibroacústico Bluetooth</span></li><li class="b"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Puff transformable vibroacústico</span></li><li class="b"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Button 1</span></li><li class="a"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span><b>Difusor de aromaterapia</b></span></li><li class="a"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span><b>Kit de iniciación de aromaterapia</b></span></li><li class="a"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span><b>Kit de masaje</b></span></li></ul>
@@ -168,6 +159,31 @@ footer{text-align:center;color:var(--suave);font-size:12.5px;padding:0 16px 30px
 </article></div>
   <div class="valor"><span>Valor final de la opción E</span><strong>$11.132.445</strong><small>IVA incluido · con transporte, instalación y capacitación</small></div>
 </section>
+  <section class="opcion" id="sala-base">
+    <header class="ophead"><div><span class="pill">Sala base</span><h3>Productos base</h3></div></header>
+    <p class="nota">Van en las opciones A, B, C y D. En la opción E, el Puff se reemplaza por la Butaca.</p>
+    <div class="nuevos"><article class="ficha">
+  <div class="foto"><img src="img/rincon-luminea.jpg" alt="Rincón Luminea con tablet"></div>
+  <div class="txt"><h4>Rincón Luminea con tablet</h4><p>Rincón multisensorial de 180 cm de alto y 110 × 110 cm, con tubo de burbujas Luminea y fibra óptica de 2 m sobre una base que se puede elegir en PVC o en tela tacto piel. Arma un espacio multisensorial en cualquier rincón, sin obra y sin dedicarle una sala entera. Trae su tableta de control ya configurada y su propia red inalámbrica: funciona con solo un enchufe.</p><p class="mat"><b>Tejido:</b> Tela vinílica con protección contra bacterias desde su fabricación · No deja pasar sudor, saliva, orina ni sangre · Segura sobre la piel: sin formaldehído (un químico irritante), plomo ni cadmio (metales pesados dañinos) ni ftalatos (sustancias que ablandan el plástico y que, algunas, alteran las hormonas) · Verificado en un laboratorio europeo.</p><p class="mat"><b>Espuma:</b> Relleno con la certificación europea de salud en su nivel más exigente, el de los productos para bebés.</p></div>
+</article><article class="ficha">
+  <div class="foto"><img src="img/kit-vibroacustico-bluetooth.jpg" alt="Kit vibroacústico Bluetooth"></div>
+  <div class="txt"><h4>Kit vibroacústico Bluetooth</h4><p>Kit con receptor Bluetooth, altavoces con su propia amplificación y amplificador de dos canales, que convierte la música y los sonidos en vibración en el cuerpo. Une el oído con el tacto y suma la vibración a los muebles que el centro ya tiene, para sentir el sonido a través del cuerpo. Se conecta sin cables al reproductor de música o a la unidad central de la sala, funciona con los equipos Luminea y necesita tres enchufes.</p></div>
+</article><article class="ficha">
+  <div class="foto"><img src="img/puff-transformable-vibroacustico.jpg" alt="Puff transformable vibroacústico"></div>
+  <div class="txt"><h4>Puff transformable vibroacústico</h4><p>Puff de 140 × 180 cm que cambia de forma para usarse sentado o tendido, con un módulo de vibración integrado que transmite la música por el cuerpo. Su relleno de pequeñas bolas se amolda a la postura de cada persona y reparte su peso. Se conecta al amplificador vibroacústico, al kit vibroacústico inalámbrico o a la unidad central de la sala.</p><p class="mat"><b>Tejido:</b> Tela vinílica con protección contra bacterias y hongos desde su fabricación · No deja pasar sudor, saliva, orina ni sangre · Segura sobre la piel: sin formaldehído (un químico irritante), plomo ni cadmio (metales pesados dañinos) · Segura aunque se la lleven a la boca: cumple la norma europea de juguetes y no tiene ftalatos (sustancias que ablandan el plástico y que, algunas, alteran las hormonas) · Resiste el fuego · Muy resistente al roce · Verificado en un laboratorio europeo.</p><p class="mat"><b>Espuma:</b> Relleno con la certificación europea de salud en su nivel más exigente, el de los productos para bebés. Disponible en 12 colores.</p></div>
+</article><article class="ficha">
+  <div class="foto"><img src="img/button-1.jpg" alt="Button 1"></div>
+  <div class="txt"><h4>Button 1</h4><p>Pulsador inalámbrico de la línea Luminea, con superficie de 12,5 cm de diámetro. Con una sola pulsación la persona cambia el color, pasa al color siguiente, enciende o apaga el equipo o activa las burbujas del Rincón: es el mando para empezar a trabajar causa y efecto con un único movimiento voluntario. Funciona con dos pilas AAA (incluidas), tiene ahorro automático de energía y alcance de hasta 25 m. Compatible con los equipos Luminea y con las salas SHX.</p></div>
+</article></div>
+  </section>
+  <script>
+  (function(){
+    var bs=document.querySelectorAll('.tabs button'), ps=document.querySelectorAll('.opcion');
+    function ver(id){ ps.forEach(function(p){ p.hidden = p.id!==id; }); bs.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-p')===id); }); }
+    bs.forEach(function(b){ b.addEventListener('click', function(){ ver(b.getAttribute('data-p')); var t=document.querySelector('.tabs'); if(t.getBoundingClientRect().top<0) t.scrollIntoView({behavior:'smooth'}); }); });
+    var h=(location.hash||'').slice(1); ver(document.getElementById(h)?h:'opcion-A');
+  })();
+  </script>
 
   <div class="elegir">
     <h2>¿Cuál opción prefiere?</h2>
