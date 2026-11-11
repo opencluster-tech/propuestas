@@ -23,7 +23,7 @@ h1,h2,h3,h4,.pill,.tag,.letra,.valor strong,.btn{font-family:Montserrat,system-u
 .intro{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:20px 22px;margin:-18px auto 26px;position:relative}
 .intro p{margin:0}
 .intro .monto{margin-top:10px;font-family:Montserrat,sans-serif;font-weight:700;color:var(--navy)}
-.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 16px}
+.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:0 0 16px}
 .tabs button{cursor:pointer;background:#fff;border:1.5px solid var(--linea);border-radius:14px;padding:10px 8px;color:var(--navy);font-family:Montserrat,sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;line-height:1.25}
 .tabs button b{background:var(--pastel);color:var(--navy);border-radius:10px;width:36px;height:36px;display:grid;place-items:center;font-size:18px}
 .tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
@@ -81,7 +81,7 @@ footer{text-align:center;color:var(--suave);font-size:12.5px;padding:0 16px 30px
   <img src="oct-logo-blanco.png" alt="OpenCluster Tech">
   <span class="pill">I. Municipalidad de Freirina</span>
   <h1>Sala Multisensorial: opciones para elegir</h1>
-  <p>Cinco formas de completar la sala con el monto disponible.</p>
+  <p>Seis formas de completar la sala con el monto disponible.</p>
 </div></div>
 <main class="wrap">
   <div class="intro">
@@ -89,7 +89,7 @@ footer{text-align:center;color:var(--suave);font-size:12.5px;padding:0 16px 30px
     <p class="monto">Valor final de cada opción: $11.132.445 IVA incluido</p>
   </div>
   <p class="secsub">Toque una opción para verla.</p>
-  <nav class="tabs" role="tablist"><button type="button" role="tab" data-p="opcion-A" aria-selected="true"><b>A</b><span>Aromaterapia y masaje</span></button><button type="button" role="tab" data-p="opcion-B" aria-selected="false"><b>B</b><span>Recorrido para los pies</span></button><button type="button" role="tab" data-p="opcion-C" aria-selected="false"><b>C</b><span>Espejo</span></button><button type="button" role="tab" data-p="opcion-D" aria-selected="false"><b>D</b><span>Masaje y presión profunda</span></button><button type="button" role="tab" data-p="opcion-E" aria-selected="false"><b>E</b><span>Butaca en lugar del Puff</span></button><button type="button" role="tab" data-p="sala-base" aria-selected="false" class="tb-base"><span>Fichas de la sala base</span></button></nav>
+  <nav class="tabs" role="tablist"><button type="button" role="tab" data-p="opcion-A" aria-selected="true"><b>A</b><span>Aromaterapia y masaje</span></button><button type="button" role="tab" data-p="opcion-B" aria-selected="false"><b>B</b><span>Recorrido para los pies</span></button><button type="button" role="tab" data-p="opcion-C" aria-selected="false"><b>C</b><span>Espejo</span></button><button type="button" role="tab" data-p="opcion-D" aria-selected="false"><b>D</b><span>Masaje y presión profunda</span></button><button type="button" role="tab" data-p="opcion-E" aria-selected="false"><b>E</b><span>Butaca en lugar del Puff</span></button><button type="button" role="tab" data-p="opcion-F" aria-selected="false"><b>F</b><span>Button 6 en lugar del Button 1</span></button><button type="button" role="tab" data-p="sala-base" aria-selected="false" class="tb-base"><span>Fichas de la sala base</span></button></nav>
 
   <section class="opcion" id="opcion-A">
   <header class="ophead"><div class="letra">A</div><div><span class="pill">Opción A</span><h3>Aromaterapia y masaje</h3></div></header>
@@ -159,9 +159,22 @@ footer{text-align:center;color:var(--suave);font-size:12.5px;padding:0 16px 30px
 </article></div>
   <div class="valor"><span>Valor final de la opción E</span><strong>$11.132.445</strong><small>IVA incluido · con transporte, instalación y capacitación</small></div>
 </section>
+<section class="opcion" id="opcion-F">
+  <header class="ophead"><div class="letra">F</div><div><span class="pill">Opción F</span><h3>Button 6 en lugar del Button 1</h3></div></header>
+  <ul class="lista"><li class="b"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rincón Luminea con tablet</span></li><li class="b"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kit vibroacústico Bluetooth</span></li><li class="b"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Puff transformable vibroacústico</span></li><li class="r"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Button 6</b> en lugar del Button 1</span></li><li class="a"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span><b>Manta de peso mediana</b></span></li></ul>
+  <p class="nota">En esta opción el <b>Button 1 se reemplaza</b> por el Button 6, de seis botones (no se suman los dos), y se agrega una manta de peso mediana.</p>
+  <div class="nuevos"><article class="ficha">
+  <div class="foto"><img src="img/button-6.jpg" alt="Button 6"></div>
+  <div class="txt"><span class="tag">Reemplaza al Button 1</span><h4>Button 6</h4><p>Mando inalámbrico de seis botones iluminados, de 29 × 22 × 12 cm, con tapa transparente para poner pictogramas. Pone la sala entera al alcance de una persona con muy poco control de sus movimientos: seis órdenes distintas desde el pulsador que ya usa. Tiene seis entradas para conectar el pulsador adaptado de cada persona, sin cambiarle su forma de acceder; tiene batería recargable y funciona con los productos Luminea.</p><p class="mat"><b>Seguridad eléctrica:</b> Cumple las reglas de seguridad eléctrica de Europa y funciona sin interferir con los demás aparatos.</p></div>
+</article><article class="ficha">
+  <div class="foto"><img src="img/manta-de-peso-azul-y-roja-mediana-2-2kg.jpg" alt="Manta de peso mediana"></div>
+  <div class="txt"><span class="tag">Se agrega</span><h4>Manta de peso mediana</h4><p>Manta de peso mediana, de 150 × 90 cm, que da una presión profunda y pareja. Ayuda a relajarse, a sentir el propio cuerpo y a regularse, y su forma envolvente da calma y seguridad. Se puede poner en distintas partes del cuerpo; en azul y rojo, se lava solo a mano.</p><p class="mat"><b>Materiales:</b> Tela 100% poliéster.</p></div>
+</article></div>
+  <div class="valor"><span>Valor final de la opción F</span><strong>$11.132.445</strong><small>IVA incluido · con transporte, instalación y capacitación</small></div>
+</section>
   <section class="opcion" id="sala-base">
     <header class="ophead"><div><span class="pill">Sala base</span><h3>Productos base</h3></div></header>
-    <p class="nota">Van en las opciones A, B, C y D. En la opción E, el Puff se reemplaza por la Butaca.</p>
+    <p class="nota">Van en las opciones A, B, C y D. En la opción E, el Puff se reemplaza por la Butaca, y en la F, el Button 1 por el Button 6.</p>
     <div class="nuevos"><article class="ficha">
   <div class="foto"><img src="img/rincon-luminea.jpg" alt="Rincón Luminea con tablet"></div>
   <div class="txt"><h4>Rincón Luminea con tablet</h4><p>Rincón multisensorial de 180 cm de alto y 110 × 110 cm, con tubo de burbujas Luminea y fibra óptica de 2 m sobre una base que se puede elegir en PVC o en tela tacto piel. Arma un espacio multisensorial en cualquier rincón, sin obra y sin dedicarle una sala entera. Trae su tableta de control ya configurada y su propia red inalámbrica: funciona con solo un enchufe.</p><p class="mat"><b>Tejido:</b> Tela vinílica con protección contra bacterias desde su fabricación · No deja pasar sudor, saliva, orina ni sangre · Segura sobre la piel: sin formaldehído (un químico irritante), plomo ni cadmio (metales pesados dañinos) ni ftalatos (sustancias que ablandan el plástico y que, algunas, alteran las hormonas) · Verificado en un laboratorio europeo.</p><p class="mat"><b>Espuma:</b> Relleno con la certificación europea de salud en su nivel más exigente, el de los productos para bebés.</p></div>
