@@ -112,6 +112,7 @@
   .firma img{ width:260px; height:auto; }
   .final{ height:56px; }
 
+  .foto-unica{ border-radius:18px 18px 0 0; overflow:hidden; } .foto-unica img{ display:block; width:100%; height:auto; aspect-ratio:1078/428; object-fit:cover; } @media (max-width:700px){ .foto-unica img{ aspect-ratio:16/10; object-position:40% center; } }
   /* Ventana para videos y fotos */
   .visor{ position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:16px; }
   .visor-fondo{ position:absolute; inset:0; background:rgba(9,18,38,.9); }
@@ -236,21 +237,7 @@
 
     <!-- 3. Proyectos con fondos del Gobierno -->
     <article class="tarjeta ancha" id="proyectos">
-      <div class="mosaico">
-        <button type="button" class="foto f1" data-foto="0" aria-label="Ampliar foto 1 de 3 de la sala de la Escuela Rayito de Sol">
-          <img src="img/sala-rayito-de-sol-01.jpg" alt="Proyección del fondo marino en la Sala Multisensorial de la Escuela Rayito de Sol" width="1088" height="600" loading="lazy">
-          <span class="ver" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
-        </button>
-        <button type="button" class="foto f2" data-foto="1" aria-label="Ampliar foto 2 de 3 de la sala de la Escuela Rayito de Sol">
-          <img src="img/sala-rayito-de-sol-02.jpg" alt="Tubos de burbujas con luz azul" width="532" height="420" loading="lazy">
-          <span class="ver" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
-        </button>
-        <button type="button" class="foto f3" data-foto="2" aria-label="Ampliar foto 3 de 3 de la sala de la Escuela Rayito de Sol">
-          <img src="img/sala-rayito-de-sol-03.jpg" alt="Tablet que controla la proyección del mundo marino" width="532" height="420" loading="lazy">
-          <span class="ver" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
-        </button>
-      </div>
-      <p class="pie-foto">Sala Multisensorial de la Escuela Especial C.T.I. Rayito de Sol, Antofagasta.</p>
+      <div class="foto-unica"><img src="img/proyectos-sala-luminea.jpg" alt="Sala multisensorial con proyección del fondo marino" width="1078" height="428" loading="lazy"></div>
       <div class="texto">
         <div>
           <p class="rotulo"><span class="n">03</span>Proyectos con fondos del Gobierno</p>
@@ -340,8 +327,7 @@
 
   // ── Ventana (videos y fotos) ──
   var VIDEOS = {
-    salas: { tipo: 'mp4', src: 'videos/asi-se-siente-una-sala.mp4', poster: 'videos/asi-se-siente-una-sala.jpg', titulo: 'Así se siente una sala multisensorial' },
-    capacitaciones: { tipo: 'yt', id: 'KvjLgp1cOQ4', titulo: 'Capacitación «El entorno multisensorial»' }
+    salas: { tipo: 'mp4', src: 'videos/asi-se-siente-una-sala.mp4', poster: 'videos/asi-se-siente-una-sala.jpg', titulo: 'Así se siente una sala multisensorial' }
   };
   var FOTOS = [];
   document.querySelectorAll('.foto img').forEach(function (im) { FOTOS.push({ src: im.getAttribute('src'), alt: im.getAttribute('alt') }); });
