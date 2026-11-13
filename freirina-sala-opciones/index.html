@@ -1840,7 +1840,8 @@ body .g2 .p2 .p2-p{font-size:12.5px;line-height:1.35}
 body .g2 .p2 .p2-cuerpo{padding-bottom:6px}
 .op-foto-fila img{object-view-box:inset(3%)}
 @media (min-width:821px){body .g2{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}body .g2>.p2{flex:0 0 calc(25% - 9px);width:auto}}
-@media (min-width:561px){body .op-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}body .op-grid>*{flex:0 0 calc(25% - 9px);min-width:0;box-sizing:border-box}body .op-grid:has(>:nth-child(5):last-child)>*,body .op-grid:has(>:nth-child(3):last-child)>*{flex-basis:calc(33.333% - 8px)}}
+body .op-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}body .op-grid>*{flex:0 0 calc(50% - 5px);width:auto;max-width:none;min-width:0;margin:0;box-sizing:border-box}
+@media (min-width:561px){body .op-grid>*{flex-basis:172px}body .op-grid .tarj .tf{height:120px}body .op-grid .tarj h4{font-size:12.5px;min-height:0}body .op-grid .tarj .ttx{font-size:11.5px;-webkit-line-clamp:3}}
 </style>
 <style>
 /* App Luminea dentro de cada sala con equipos Luminea (9-oct) */
@@ -2156,8 +2157,8 @@ body .g2 .p2 .p2-cuerpo{padding-bottom:6px}
   </div>
 </div>
 
-<script src="SensorialBodega.js?v=1794606500288"></script>
-<script src="SensorialSalas.js?v=1794606500288"></script>
+<script src="SensorialBodega.js?v=1794606886873"></script>
+<script src="SensorialSalas.js?v=1794606886873"></script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -3225,7 +3226,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 13 de noviembre a las 18:48</div>
+<div id="verPill" class="ver-pill">Versión del 13 de noviembre a las 18:54</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -3236,7 +3237,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1794606500288';
+(function(){ var V = '1794606886873';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
