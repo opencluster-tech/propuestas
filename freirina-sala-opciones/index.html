@@ -1843,6 +1843,9 @@ body .g2 .p2 .p2-cuerpo{padding-bottom:6px}
 body .op-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}body .op-grid>*{flex:0 0 calc(50% - 5px);width:auto;max-width:none;min-width:0;margin:0;box-sizing:border-box}
 @media (min-width:561px){body .op-grid>*{flex-basis:172px}body .op-grid .tarj .tf{height:120px}body .op-grid .tarj h4{font-size:12.5px;min-height:0}}
 body .op-grid .tarj .ttx{font-size:11.5px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;max-height:4.35em;margin-bottom:auto}body .op-grid .tarj{display:flex;flex-direction:column}
+body .op-grid .tarj .tpre{display:none}.fx-reg,.fx-precio,.fx-iva{display:none !important}
+body .op-aviso{background:#F2F9FE !important;border-color:#08ACF2 !important;color:#1F2937}body .op-aviso b{color:#001A60 !important}
+.fr-tot{width:100%;max-width:560px;border-collapse:collapse;margin:10px 0 10px;font-variant-numeric:tabular-nums}.fr-tot th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);font-weight:700;text-align:right;padding:4px 10px}.fr-tot td{padding:7px 10px;border-top:1px solid #DCE6F0;text-align:right;white-space:nowrap}.fr-tot td:first-child{text-align:left;white-space:normal}.fr-tot tr.fr-t td{font-family:Montserrat,sans-serif;font-weight:800;color:var(--navy);border-top:2px solid var(--navy)}
 </style>
 <style>
 /* App Luminea dentro de cada sala con equipos Luminea (9-oct) */
@@ -2158,8 +2161,8 @@ body .op-grid .tarj .ttx{font-size:11.5px;line-height:1.45;display:-webkit-box;-
   </div>
 </div>
 
-<script src="SensorialBodega.js?v=1794607482509"></script>
-<script src="SensorialSalas.js?v=1794607482509"></script>
+<script src="SensorialBodega.js?v=1794607882719"></script>
+<script src="SensorialSalas.js?v=1794607882719"></script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -2266,7 +2269,7 @@ body .op-grid .tarj .ttx{font-size:11.5px;line-height:1.45;display:-webkit-box;-
       '<button type="button" class="appb-b2" onclick="appInfo()">Conocer la app y sus ideas →</button></div></div></div>';
   }
   function avisoDe(s){
-    return '<div class="op-aviso">' + "<b>Lo que este valor incluye</b>Los productos que se detallan ({productos}) más el transporte, la instalación y la capacitación en Freirina ({servicio}): en total, $11.132.445. Valores con IVA incluido, válidos por 30 días."
+    return '<div class="op-aviso">' + "<b>Valor de la sala</b><table class=\"fr-tot\"><thead><tr><th></th><th>Neto</th><th>Con IVA</th></tr></thead><tbody><tr><td>Productos</td><td>$7.165.996</td><td>$8.527.535</td></tr><tr><td>Transporte, instalación y capacitación</td><td>$2.189.000</td><td>$2.604.910</td></tr><tr class=\"fr-t\"><td>Total</td><td>$9.354.996</td><td>$11.132.445</td></tr></tbody></table>Incluye todos los elementos que se detallan, el transporte, la instalación y la capacitación en Freirina. Valores válidos por 30 días."
       .replace('{productos}', pesos(s.productos)).replace('{servicio}', pesos(s.servicio)) + '</div>';
   }
   var numFicha = 0;                       /* la numeración corre por todo el documento */
@@ -3227,7 +3230,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 </script>
 <!-- TEMA-OSCURO-FIN -->
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 13 de noviembre a las 19:04</div>
+<div id="verPill" class="ver-pill">Versión del 13 de noviembre a las 19:11</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -3238,7 +3241,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1794607482509';
+(function(){ var V = '1794607882719';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
