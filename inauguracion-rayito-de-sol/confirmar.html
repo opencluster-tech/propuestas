@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#12254B">
+<title>Inauguración Sala Multisensorial · Escuela Rayito de Sol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marino:#12254B; --dorado:#E8A93A; --dorado-osc:#C98A1E; --fondo:#E9EFF7;
+    --texto:#2E3B55; --suave:#6A7893; --celeste:#A9BDE0; --blanco:#FFFFFF;
+    --caja:#EEF4FB; --linea:#DCE5F1;
+    --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
+    --sans:'Lato', Arial, Helvetica, sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  [hidden]{ display:none !important; }
+  html{ -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--fondo); color:var(--texto); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  img{ display:block; max-width:100%; }
+  button, input{ font:inherit; }
+  :focus-visible{ outline:3px solid var(--dorado); outline-offset:2px; }
+
+  .hoja{ max-width:640px; margin:40px auto; background:var(--blanco); border-radius:18px; overflow:hidden; box-shadow:0 14px 44px rgba(18,37,75,.10); }
+
+  /* Encabezado del Centro de Padres */
+  .cab{ background:var(--marino); padding:30px 32px 26px; text-align:center; }
+  .logos{ display:flex; justify-content:center; gap:16px; margin:0 0 18px; }
+  .logo{ width:78px; height:78px; border-radius:50%; background:var(--blanco); padding:5px; box-shadow:0 0 0 2px rgba(232,169,58,.6); }
+  .logo img{ width:100%; height:100%; object-fit:contain; border-radius:50%; }
+  .cab .org{ margin:0; font-size:14px; font-weight:700; color:var(--dorado); }
+  .cab .esc{ margin:6px 0 0; font-family:var(--serif); font-weight:600; font-size:23px; line-height:1.25; color:var(--blanco); }
+  .cab .ciu{ margin:5px 0 0; font-size:13px; letter-spacing:1px; color:var(--celeste); }
+  .franja{ height:6px; background:var(--dorado); }
+
+  /* Mensaje principal */
+  .cuerpo{ padding:40px 48px 8px; }
+  .sello{ width:64px; height:64px; border-radius:50%; border:2px solid var(--dorado); display:flex; align-items:center; justify-content:center; margin:0 0 20px; color:var(--marino); }
+  .sello svg{ width:30px; height:30px; }
+  .rotulo{ margin:0 0 8px; font-size:14px; font-weight:700; color:var(--dorado-osc); }
+  h1{ margin:0; font-family:var(--serif); font-weight:700; font-size:34px; line-height:1.2; color:var(--marino); text-wrap:balance; overflow-wrap:anywhere; }
+  .bajada{ margin:12px 0 0; font-size:18px; line-height:1.55; color:var(--texto); }
+  .mensaje{ transition:opacity .25s ease; }
+  .mensaje.cambiando{ opacity:.25; }
+
+  /* Fecha, hora y lugar (igual que en la invitación) */
+  .evento{ margin:28px 0 0; background:var(--caja); border-radius:14px; padding:20px; display:grid; grid-template-columns:118px minmax(0,1fr); gap:22px; align-items:center; }
+  .fecha{ background:var(--marino); border-radius:12px; text-align:center; padding:10px 0 12px; }
+  .fecha .dia{ display:block; font-size:14px; font-weight:700; color:var(--celeste); }
+  .fecha .num{ display:block; font-family:var(--serif); font-weight:700; font-size:52px; line-height:1.1; color:var(--dorado); font-variant-numeric:lining-nums; }
+  .fecha .mes{ display:block; font-size:14px; font-weight:700; color:var(--blanco); }
+  .dato + .dato{ margin-top:14px; }
+  .dato .et{ margin:0; font-size:14px; font-weight:700; color:var(--suave); }
+  .dato .va{ margin:2px 0 0; font-size:18px; line-height:1.35; font-weight:700; color:var(--marino); text-wrap:balance; }
+  .dato .va span{ display:block; font-size:16px; font-weight:400; color:var(--texto); margin-top:2px; text-wrap:wrap; }
+
+  /* Cuántas personas */
+  .personas{ margin:28px 0 0; padding:22px 0 0; border-top:1px solid var(--linea); }
+  .personas label{ display:block; font-size:16px; font-weight:700; color:var(--marino); }
+  .fila{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:12px; }
+  .paso{ display:inline-flex; align-items:center; border:1.5px solid var(--linea); border-radius:12px; overflow:hidden; background:var(--blanco); }
+  .paso button{ width:48px; height:48px; border:0; background:var(--caja); color:var(--marino); cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .paso button:hover{ background:#E1EAF6; }
+  .paso button:disabled{ color:var(--celeste); cursor:default; background:var(--caja); }
+  .paso svg{ width:18px; height:18px; }
+  .paso input{ width:58px; height:48px; border:0; text-align:center; font-size:20px; font-weight:700; color:var(--marino); background:var(--blanco); -moz-appearance:textfield; appearance:textfield; }
+  .paso input::-webkit-outer-spin-button, .paso input::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:12px 26px; border-radius:40px; font-family:var(--sans); font-weight:700; font-size:16px; text-decoration:none; cursor:pointer; border:0; }
+  .btn svg{ width:18px; height:18px; flex:none; }
+  .btn-prim{ background:var(--marino); color:var(--blanco); }
+  .btn-prim:hover{ background:#1B3466; }
+  .btn-prim:disabled{ background:#5C6E91; cursor:default; }
+  .nota{ margin:10px 0 0; min-height:1.5em; font-size:15px; color:var(--texto); }
+  .nota.error{ color:#A3261B; }
+
+  /* Cambiar la respuesta (discreto) */
+  .cambiar{ margin:22px 0 0; padding:20px 0 0; border-top:1px solid var(--linea); }
+  .cambiar p{ margin:0; font-size:14.5px; color:var(--suave); }
+  .opciones{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .opciones button{ min-height:40px; padding:8px 16px; border-radius:30px; border:1.5px solid var(--linea); background:var(--blanco); color:var(--marino); font-size:14.5px; font-weight:700; cursor:pointer; }
+  .opciones button:hover{ border-color:var(--celeste); }
+  .opciones button[aria-pressed="true"]{ background:var(--marino); border-color:var(--marino); color:var(--blanco); cursor:default; }
+  .sin-resp .cambiar{ border-top:0; padding-top:0; margin-top:26px; }
+  .sin-resp .cambiar p{ font-size:16px; color:var(--texto); font-weight:700; }
+  .sin-resp .opciones button{ min-height:48px; padding:10px 20px; font-size:16px; }
+  .listo{ margin:10px 0 0; min-height:1.4em; font-size:14px; color:var(--texto); }
+
+  /* Conocer más */
+  .mas{ margin:30px 0 0; }
+  .btn-sec{ width:100%; border:1.5px solid var(--marino); color:var(--marino); background:var(--blanco); border-radius:14px; }
+  .btn-sec:hover{ background:var(--caja); }
+
+  /* Pie con el financiamiento */
+  .pie{ margin:36px 48px 0; padding:22px 0 34px; border-top:1px solid var(--linea); }
+  .pie p{ margin:0; font-size:13px; line-height:1.6; color:var(--suave); text-align:center; text-wrap:balance; }
+
+  @media (max-width:560px){
+    .hoja{ margin:0; border-radius:0; box-shadow:none; }
+    .cab{ padding:26px 20px 22px; padding-top:calc(26px + env(safe-area-inset-top)); }
+    .logos{ gap:14px; margin-bottom:16px; }
+    .logo{ width:74px; height:74px; padding:4px; }
+    .btn-sec{ justify-content:space-between; text-align:left; padding:14px 20px; }
+    .cab .esc{ font-size:21px; }
+    .cuerpo{ padding:32px 22px 4px; }
+    h1{ font-size:29px; }
+    .bajada{ font-size:17px; }
+    .evento{ grid-template-columns:96px minmax(0,1fr); gap:16px; padding:16px; }
+    .fecha .num{ font-size:44px; }
+    .dato .va{ font-size:17px; }
+    .dato .va span{ font-size:15px; }
+    .pie{ margin:32px 22px 0; padding-bottom:calc(30px + env(safe-area-inset-bottom)); }
+  }
+  @media (max-width:560px){
+    .sin-resp .opciones{ display:grid; grid-template-columns:1fr; }
+  }
+  @media (max-width:340px){
+    .evento{ grid-template-columns:1fr; }
+    .fecha{ max-width:120px; }
+  }
+  @media (prefers-reduced-motion:reduce){ .mensaje{ transition:none; } }
+</style>
+</head>
+<body>
+
+<main class="hoja" id="hoja">
+  <header class="cab">
+    <div class="logos">
+      <div class="logo"><img src="img/logo-cgpa-rayito-de-sol.png" alt="Logo del Centro General de Padres y Apoderados Escuela Rayito de Sol" width="292" height="292"></div>
+      <div class="logo"><img src="img/logo-escuela-rayito-de-sol.png" alt="Logo de la Escuela Especial C.T.I. Rayito de Sol" width="300" height="292"></div>
+    </div>
+    <p class="org">Centro General de Padres y Apoderados</p>
+    <p class="esc">Escuela Especial C.T.I. Rayito de Sol</p>
+    <p class="ciu">Antofagasta</p>
+  </header>
+  <div class="franja" aria-hidden="true"></div>
+
+  <section class="cuerpo">
+    <div class="mensaje" id="mensaje" aria-live="polite">
+      <div class="sello" id="sello" aria-hidden="true"></div>
+      <p class="rotulo">Inauguración de la Sala Multisensorial</p>
+      <h1 id="titulo">Les invitamos a inaugurar nuestra Sala Multisensorial</h1>
+      <p class="bajada" id="bajada">Por favor, indíquenos si podrá acompañarnos.</p>
+    </div>
+
+    <div class="evento" id="evento">
+      <div class="fecha" aria-label="Lunes 23 de noviembre de 2026">
+        <span class="dia">Lunes</span>
+        <span class="num">23</span>
+        <span class="mes">Nov. 2026</span>
+      </div>
+      <div>
+        <div class="dato"><p class="et">Hora</p><p class="va">12:30 horas</p></div>
+        <div class="dato"><p class="et">Lugar</p><p class="va">Escuela Especial Rayito de Sol<span>Pedro León Gallo&nbsp;707, Antofagasta</span></p></div>
+      </div>
+    </div>
+
+    <form class="personas" id="personas" novalidate hidden>
+      <label for="cant">¿Cuántas personas asistirán en total?</label>
+      <div class="fila">
+        <div class="paso">
+          <button type="button" id="menos" aria-label="Una persona menos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+          <input id="cant" name="a" type="number" inputmode="numeric" min="1" max="10" step="1" value="1" aria-describedby="notaCant">
+          <button type="button" id="mas" aria-label="Una persona más"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        </div>
+        <button type="submit" class="btn btn-prim" id="guardar">Guardar</button>
+      </div>
+      <p class="nota" id="notaCant" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="cambiar">
+      <p id="cambiarTxt">¿Cambió de planes? Puede modificar su respuesta:</p>
+      <div class="opciones" role="group" aria-labelledby="cambiarTxt">
+        <button type="button" data-r="si" aria-pressed="false">Sí, asistiré</button>
+        <button type="button" data-r="talvez" aria-pressed="false">Tal vez</button>
+        <button type="button" data-r="no" aria-pressed="false">No podré asistir</button>
+      </div>
+      <p class="listo" id="listo" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="mas">
+      <a class="btn btn-sec" id="conoce" href="conoce.html">Conocer más sobre las salas multisensoriales
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <p>Iniciativa financiada por el Gobierno Regional de Antofagasta, con recursos del F.N.D.R., Concurso de Vinculación con la Comunidad 8% Antofagasta, Líneas Cultura, Deporte y Social Inclusivo 2026, por un monto de $33.351.427, aprobados por el Consejo Regional de Antofagasta. Proyecto adjudicado al Centro General de Padres y Apoderados Escuela Rayito de Sol.</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  // Registro de respuestas (lo reemplaza Rayen por la URL de Apps Script).
+  var SEG = 'https://script.google.com/macros/s/AKfycbx1IdMwtTIqDRhdUZJEL-xk82YGcxcUPbAv6POUvNFXfPo6j7_eMlOrCcdLvyWSWSBu5w/exec';
+
+  var q = new URLSearchParams(location.search);
+  var E = q.get('e') || '';            // correo en base64 web-safe: se manda tal cual, nunca se muestra
+  var N_RAW = q.get('n') || '';        // nombre tal como viene en el enlace
+  var N = N_RAW.replace(/\s+/g, ' ').trim().slice(0, 80);
+  var R = normaliza(q.get('r'));
+
+  function normaliza(r) {
+    r = (r || '').toLowerCase().replace(/[\s_-]/g, '');
+    if (r === 'si' || r === 'sí') return 'si';
+    if (r === 'talvez') return 'talvez';
+    if (r === 'no') return 'no';
+    return '';
+  }
+
+  function manda(params) {
+    var p = {};
+    for (var k in params) if (Object.prototype.hasOwnProperty.call(params, k)) p[k] = String(params[k]);
+    p.e = E; p.n = N_RAW;
+    if (SEG.indexOf('https') !== 0) {        // sin URL real (prueba local): no se envía nada
+      try { console.log('[registro] ' + new URLSearchParams(p).toString()); } catch (x) {}
+      return;
+    }
+    try { fetch(SEG + '?' + new URLSearchParams(p), { mode: 'no-cors', keepalive: true }).catch(function () {}); } catch (x) {}
+  }
+
+  var ICONOS = {
+    si: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg>',
+    talvez: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>',
+    no: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg>',
+    '': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>'
+  };
+
+  function textos(r) {
+    if (r === 'si') return { h: N ? '¡Gracias, ' + N + '!' : '¡Gracias!', p: 'Su asistencia quedó confirmada.' };
+    if (r === 'talvez') return { h: N ? 'Gracias por responder, ' + N : 'Gracias por responder', p: 'Le esperamos si logra acompañarnos.' };
+    if (r === 'no') return { h: 'Lamentamos que no pueda acompañarnos', p: N ? 'Gracias por avisarnos, ' + N + '.' : 'Gracias por avisarnos.' };
+    return { h: 'Les invitamos a inaugurar nuestra Sala Multisensorial', p: 'Por favor, indíquenos si podrá acompañarnos.' };
+  }
+
+  var hoja = document.getElementById('hoja');
+  var mensaje = document.getElementById('mensaje');
+  var sello = document.getElementById('sello');
+  var titulo = document.getElementById('titulo');
+  var bajada = document.getElementById('bajada');
+  var evento = document.getElementById('evento');
+  var personas = document.getElementById('personas');
+  var cambiarTxt = document.getElementById('cambiarTxt');
+  var listo = document.getElementById('listo');
+  var botones = document.querySelectorAll('.opciones button');
+
+  function pinta() {
+    var t = textos(R);
+    sello.innerHTML = ICONOS[R];
+    titulo.textContent = t.h;
+    bajada.textContent = t.p;
+    evento.hidden = (R === 'no');
+    personas.hidden = (R !== 'si');
+    hoja.classList.toggle('sin-resp', R === '');
+    cambiarTxt.textContent = R === '' ? '¿Podrá acompañarnos?' : '¿Cambió de planes? Puede modificar su respuesta:';
+    for (var i = 0; i < botones.length; i++) {
+      botones[i].setAttribute('aria-pressed', botones[i].getAttribute('data-r') === R ? 'true' : 'false');
+    }
+    document.title = (R === 'si' ? 'Asistencia confirmada' : 'Inauguración Sala Multisensorial') + ' · Escuela Rayito de Sol';
+  }
+
+  function actualizaURL() {
+    try {
+      var nq = new URLSearchParams(location.search);
+      nq.set('r', R);
+      history.replaceState(null, '', location.pathname + '?' + nq.toString());
+    } catch (x) {}
+  }
+
+  // Cambiar la respuesta
+  for (var i = 0; i < botones.length; i++) {
+    botones[i].addEventListener('click', function () {
+      var nuevo = this.getAttribute('data-r');
+      if (nuevo === R) return;
+      R = nuevo;
+      manda({ t: 'rsvp', r: R });
+      actualizaURL();
+      mensaje.classList.add('cambiando');
+      setTimeout(function () {
+        pinta();
+        mensaje.classList.remove('cambiando');
+        var arriba = mensaje.getBoundingClientRect().top;
+        if (arriba < 0) mensaje.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 180);
+      listo.textContent = 'Su respuesta quedó actualizada.';
+    });
+  }
+
+  // Cuántas personas
+  var cant = document.getElementById('cant');
+  var menos = document.getElementById('menos');
+  var mas = document.getElementById('mas');
+  var guardar = document.getElementById('guardar');
+  var notaCant = document.getElementById('notaCant');
+  var guardado = null;
+
+  function valor() { var v = parseInt(cant.value, 10); return isNaN(v) ? null : v; }
+  function refresca() {
+    var v = valor();
+    menos.disabled = !(v > 1);
+    mas.disabled = !(v === null || v < 10);
+    if (guardado !== null && v === guardado) {
+      guardar.disabled = true; guardar.textContent = 'Guardado';
+    } else {
+      guardar.disabled = false; guardar.textContent = 'Guardar';
+    }
+  }
+  function fija(v) { cant.value = Math.max(1, Math.min(10, v)); notaCant.textContent = ''; notaCant.classList.remove('error'); refresca(); }
+  menos.addEventListener('click', function () { fija((valor() || 1) - 1); });
+  mas.addEventListener('click', function () { fija((valor() || 0) + 1); });
+  cant.addEventListener('input', function () { notaCant.textContent = ''; notaCant.classList.remove('error'); refresca(); });
+  personas.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var v = valor();
+    if (v === null || v < 1 || v > 10 || String(v) !== String(cant.value).trim()) {
+      notaCant.textContent = 'Indique un número entre 1 y 10.';
+      notaCant.classList.add('error');
+      return;
+    }
+    manda({ t: 'rsvp', r: 'si', a: v });
+    guardado = v;
+    notaCant.classList.remove('error');
+    notaCant.textContent = 'Listo. Quedó registrado: ' + v + (v === 1 ? ' persona.' : ' personas.');
+    refresca();
+  });
+
+  // Enlace a «Conocer más» con los mismos datos
+  var cq = new URLSearchParams();
+  if (E) cq.set('e', E);
+  if (N_RAW) cq.set('n', N_RAW);
+  var cs = cq.toString();
+  document.getElementById('conoce').href = 'conoce.html' + (cs ? '?' + cs : '');
+
+  pinta();
+  refresca();
+  if (R) manda({ t: 'rsvp', r: R });
+})();
+</script>
+</body>
+</html>
