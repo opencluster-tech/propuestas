@@ -1751,13 +1751,13 @@ body .lum h2.lum-h em{font-family:'Kaushan Script',cursive;font-style:normal;fon
 .pg .op-valor .op-regular{font-size:9.5px}
 </style>
 <style>
-/* 7 opciones, lado a lado */
-@media (min-width:821px){.g2{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* 3 opciones, lado a lado */
+@media (min-width:821px){.g2{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.g2{grid-template-columns:1fr}}
 </style>
 <style>
-/* En papel: 4 opciones por fila, y las tarjetas de producto compactas */
-.pg .g2 .p2{width:calc(25.000% - 7px)}
+/* En papel: 3 opciones por fila, y las tarjetas de producto compactas */
+.pg .g2 .p2{width:calc(33.333% - 7px)}
 .pg .op-lo{margin-top:10px}
 .pg .op-lo-tit{font-size:12px;margin-bottom:6px}
 .pg .op-grid{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch}
@@ -1839,7 +1839,7 @@ body .g2 .p2 .p2-prod,body .g2 .p2 .p2-fila,body .g2 .p2 .p2-v{display:none}
 body .g2 .p2 .p2-p{font-size:12.5px;line-height:1.35}
 body .g2 .p2 .p2-cuerpo{padding-bottom:6px}
 .op-foto-fila img{object-view-box:inset(3%)}
-@media (min-width:821px){body .g2{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}body .g2>.p2{flex:0 0 calc(25% - 9px);width:auto}}
+@media (min-width:821px){body .g2{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}body .g2>.p2{flex:0 0 calc(33.333% - 8px);width:auto}}
 body .op-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}body .op-grid>*{flex:0 0 calc(50% - 5px);width:auto;max-width:none;min-width:0;margin:0;box-sizing:border-box}
 @media (min-width:561px){body .op-grid>*{flex-basis:172px}body .op-grid .tarj .tf{height:120px}body .op-grid .tarj h4{font-size:12.5px;min-height:0}}
 body .op-grid .tarj .ttx{font-size:11.5px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;max-height:4.35em;margin-bottom:auto}body .op-grid .tarj{display:flex;flex-direction:column}
@@ -1938,7 +1938,7 @@ body .op-aviso{background:#fff !important;border:1px solid #CFE6F7 !important;bo
   </div>
   <div class="portada-pie">
       <span class="estilo">Preparado para la I. Municipalidad de Freirina</span>
-    <p class="bajada">Siete opciones de sala para la Oficina de Discapacidad, todas con el mismo valor final, con el detalle de cada elemento que las compone y la forma en que trabajamos un proyecto de principio a fin.</p>
+    <p class="bajada">Tres opciones de sala para la Oficina de Discapacidad, todas con el mismo valor final, con el detalle de cada elemento que las compone y la forma en que trabajamos un proyecto de principio a fin.</p>
     <div class="meta">
       <div><b>Para</b><span>Claudia Norambuena</span></div>
       <div><b>Fecha</b><span id="mFecha">—</span></div>
@@ -1955,7 +1955,7 @@ body .op-aviso{background:#fff !important;border:1px solid #CFE6F7 !important;bo
     </div>
     <h2>Una sala para la comunidad de Freirina</h2>
     <p>Claudia, gracias por la confianza y por todo el trabajo compartido para que Freirina tenga su sala multisensorial.</p>
-    <p>Con el monto de <b>$11.132.445</b> que nos indicaron, armamos siete opciones de sala. Todas parten del Rincón Luminea con tablet y cada una lo combina con elementos distintos, para que puedan elegir la que mejor responde a las personas que la van a usar. Cada opción llega a ese valor e incluye el transporte, la instalación y la capacitación del equipo.</p>
+    <p>Con el monto de <b>$11.132.445</b> que nos indicaron, armamos tres opciones de sala. Todas parten del Rincón Luminea con tablet y cada una lo combina con elementos distintos, para que puedan elegir la que mejor responde a las personas que la van a usar. Cada opción llega a ese valor e incluye el transporte, la instalación y la capacitación del equipo.</p>
     <div class="puerta">
       <button type="button" class="puerta-foto"
         data-lb-src="https://www.instagram.com/p/DbwQFPURW0-/embed/" data-lb-fmt="ig"
@@ -2162,8 +2162,8 @@ body .op-aviso{background:#fff !important;border:1px solid #CFE6F7 !important;bo
   </div>
 </div>
 
-<script src="SensorialBodega.js?v=1794612146215"></script>
-<script src="SensorialSalas.js?v=1794612146215"></script>
+<script src="SensorialBodega.js?v=1794875983219"></script>
+<script src="SensorialSalas.js?v=1794875983219"></script>
 <script>
 (function(){
   var P = window.SENSORIAL_BODEGA || [], CATS = window.SENSORIAL_CATS || [];
@@ -2233,10 +2233,10 @@ body .op-aviso{background:#fff !important;border:1px solid #CFE6F7 !important;bo
   function totalConDto(s){ return s.final; }
   function lineaDe(it){ return it.iva * (it.cant || 1); }
 
-  var LETRA = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+  var LETRA = ['1', '2', '3'];
   /* Rayen, 16-sep-2026: «es el único costo que no podemos darles; aparte de eso, ese debe ser
      el valor de la sala». Va en cada opción, no solo una vez al principio. */
-  var APP = {"Opción A":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red.","Opción B":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red.","Opción C":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, y la línea de luz del techo, juntos o por separado. El Rincón Luminea llega con su tablet y su propia red, y la línea de luz del techo llega configurada para ella.","Opción D":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, y el cielo de luz, juntos o por separado. El Rincón Luminea llega con su tablet y su propia red, y el cielo de luz llega configurado para ella.","Opción E":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, la cortina de luz y la línea de luz del techo, juntos o por separado. El Rincón Luminea llega con su tablet y su propia red, y los demás equipos llegan configurados para ella.","Opción F":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, la ducha de fibra óptica y la línea de luz del techo, juntos o por separado. El Rincón Luminea llega con su tablet y su propia red, y los demás equipos llegan configurados para ella.","Opción G":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, el cielo de luz y la línea de luz del techo, juntos o por separado. El Rincón Luminea llega con su tablet y su propia red, y los demás equipos llegan configurados para ella."}, APP_T = {"Opción A":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","Opción B":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet"}, APP_C = [{"img":"app-luminea-pixel.jpg","t":"Tocar una foto y cambiar la luz","p":"Se carga cualquier imagen: una foto de internet, una tomada con la tablet o un dibujo propio. Al tocar un color de la imagen, la luz se vuelve de ese color. Con el «color mágico», el equipo se enciende solo cuando la persona encuentra el color elegido."},{"img":"app-luminea-actividad.jpg","t":"Actividades listas y sin límite","p":"Trae más de doce actividades listas —reconocer colores, seguir laberintos con el dedo, elegir— que sirven de punto de partida. Desde ahí, cada profesional crea las suyas, sin límite."},{"img":"app-luminea-paleta.jpg","t":"La luz al ritmo de la música","p":"Se graba una secuencia de colores al ritmo de una canción, de un sonido o de la propia voz, y queda guardada para repetirla las veces que se quiera. Sirve para trabajar el ritmo, la memoria, la relajación y las emociones."},{"img":"app-luminea-fibra-tablet.jpg","t":"Un equipo o todos a la vez","p":"Cada equipo se maneja por separado o todos juntos, y se ajusta su luminosidad. Cada elemento Luminea que la sala sume en los próximos años se agrega a la misma app."}], APP_IDEAS = [["Lo que le apasiona, como motor","A un niño al que le encantan los tiburones quizás el tubo de burbujas solo no le llame la atención. Pero si en la tablet aparecen tres tiburones y, al tocarlos uno a uno mientras los cuenta, el tubo cambia de color, la luz se vuelve el premio y los números, un juego. Lo mismo con su superhéroe favorito para trabajar los colores."],["Su propio paisaje","En vez de imágenes genéricas, fotos del valle del Huasco, del desierto florido o de la plaza de Freirina. Las actividades hablan de su comuna y de lo que cada persona conoce."],["Letras y palabras","Letras blancas sobre fondo negro: al tocar la letra, toda la luz se vuelve blanca; al tocar el fondo, se apaga. Con frutas, animales o medios de transporte, cada imagen tiñe la sala de su color mientras se nombra."],["Precisión con el dedo","Caminos y laberintos que hay que seguir sin salirse: si el dedo se sale, la luz cambia. O una diana que se enciende de un color al acertar al centro y de otro al fallar."],["Las estaciones del año","El otoño llena la sala de tonos café, el verano de verde y el invierno de blanco nieve, mientras se conversa sobre cada una."],["De la calma a la activación","Una imagen del mar que vuelve azul la sala para ayudar a alguien a calmarse, o colores intensos cuando lo que se busca es activarlo."]];
+  var APP = {"Opción 1":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red.","Opción 2":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea. El Rincón Luminea llega con su tablet y su propia red.","Opción 3":"En esta sala, la app maneja el tubo de burbujas y la fibra óptica del Rincón Luminea, y la línea de luz del techo, juntos o por separado. El Rincón Luminea llega con su tablet y su propia red, y la línea de luz del techo llega configurada para ella."}, APP_T = {"Opción 1":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet","Opción 2":"El Rincón Luminea de esta sala, y cada elemento Luminea que sumen, desde un teléfono o una tablet"}, APP_C = [{"img":"app-luminea-pixel.jpg","t":"Tocar una foto y cambiar la luz","p":"Se carga cualquier imagen: una foto de internet, una tomada con la tablet o un dibujo propio. Al tocar un color de la imagen, la luz se vuelve de ese color. Con el «color mágico», el equipo se enciende solo cuando la persona encuentra el color elegido."},{"img":"app-luminea-actividad.jpg","t":"Actividades listas y sin límite","p":"Trae más de doce actividades listas —reconocer colores, seguir laberintos con el dedo, elegir— que sirven de punto de partida. Desde ahí, cada profesional crea las suyas, sin límite."},{"img":"app-luminea-paleta.jpg","t":"La luz al ritmo de la música","p":"Se graba una secuencia de colores al ritmo de una canción, de un sonido o de la propia voz, y queda guardada para repetirla las veces que se quiera. Sirve para trabajar el ritmo, la memoria, la relajación y las emociones."},{"img":"app-luminea-fibra-tablet.jpg","t":"Un equipo o todos a la vez","p":"Cada equipo se maneja por separado o todos juntos, y se ajusta su luminosidad. Cada elemento Luminea que la sala sume en los próximos años se agrega a la misma app."}], APP_IDEAS = [["Lo que le apasiona, como motor","A un niño al que le encantan los tiburones quizás el tubo de burbujas solo no le llame la atención. Pero si en la tablet aparecen tres tiburones y, al tocarlos uno a uno mientras los cuenta, el tubo cambia de color, la luz se vuelve el premio y los números, un juego. Lo mismo con su superhéroe favorito para trabajar los colores."],["Su propio paisaje","En vez de imágenes genéricas, fotos del valle del Huasco, del desierto florido o de la plaza de Freirina. Las actividades hablan de su comuna y de lo que cada persona conoce."],["Letras y palabras","Letras blancas sobre fondo negro: al tocar la letra, toda la luz se vuelve blanca; al tocar el fondo, se apaga. Con frutas, animales o medios de transporte, cada imagen tiñe la sala de su color mientras se nombra."],["Precisión con el dedo","Caminos y laberintos que hay que seguir sin salirse: si el dedo se sale, la luz cambia. O una diana que se enciende de un color al acertar al centro y de otro al fallar."],["Las estaciones del año","El otoño llena la sala de tonos café, el verano de verde y el invierno de blanco nieve, mientras se conversa sobre cada una."],["De la calma a la activación","Una imagen del mar que vuelve azul la sala para ayudar a alguien a calmarse, o colores intensos cuando lo que se busca es activarlo."]];
   window.appVid = function(){
     var o = document.createElement('div'); o.className = 'cr-ov';
     o.innerHTML = '<div class="cr-ov-c"><button type="button" class="cr-ov-x" aria-label="Cerrar">×</button>' +
@@ -2338,11 +2338,11 @@ body .op-aviso{background:#fff !important;border:1px solid #CFE6F7 !important;bo
     'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
     '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg>';
 
-  var CAPACIDADES = [["Bajar la activación y volver a la calma",1,1,1,1,1,1,1],["Vibración de la música en el cuerpo",1,1,1,1,0,0,0],["Tubo de burbujas y fibra óptica",1,1,1,1,1,1,1],["Toda la sala cambia de color",0,0,1,0,1,1,1],["Estrellas de luz en el techo",0,0,0,1,0,0,1],["Fibras de luz para entrar y recorrer",0,0,0,0,1,1,0],["Trabajo frente al espejo",1,0,0,0,1,0,1],["Un asiento que se adapta al cuerpo",1,1,1,0,0,0,0],["Causa-efecto con un pulsador",1,1,0,0,1,0,1],["La sala se controla desde una tableta",1,1,1,1,1,1,1]];
+  var CAPACIDADES = [["Bajar la activación y volver a la calma",1,1,1],["Vibración de la música en el cuerpo",1,1,1],["Tubo de burbujas y fibra óptica",1,1,1],["Toda la sala cambia de color",0,0,1],["Trabajo frente al espejo",1,0,0],["Un asiento que se adapta al cuerpo",1,1,1],["Causa-efecto con un pulsador",1,1,0],["La sala se controla desde una tableta",1,1,1]];
 
   /* Los mismos trece renglones de arriba, ordenados en bloques para que el cuadro se lea.
      Se apunta por posición: no se repite ni un texto ni un dato. */
-  var GRUPOS_CAP = [["Para qué sirve",[0]],["Los estímulos de la sala",[1,2,3,4,5]],["Cuerpo y movimiento",[6,7]],["Quién controla la sala",[8,9]]];
+  var GRUPOS_CAP = [["Para qué sirve",[0]],["Los estímulos de la sala",[1,2,3]],["Cuerpo y movimiento",[4,5]],["Quién controla la sala",[6,7]]];
 
   /* Rayen, 21-sep-2026: «me gustaron las dos cosas, impleméntalas juntas»: el cuadro comparativo
      antes de las salas, y dentro de cada sala su propia ficha de lo que sí y lo que no. */
@@ -2369,9 +2369,9 @@ body .op-aviso{background:#fff !important;border:1px solid #CFE6F7 !important;bo
   if(SALAS.length){
     /* 1 · Las cuatro opciones juntas, para decidir de una mirada */
     var hs = '<div class="salas-intro">' +
-      '<div class="rot" id="opciones">Siete formas de armar el espacio</div>' +
+      '<div class="rot" id="opciones">Tres formas de armar el espacio</div>' +
       '<h2>Las opciones</h2>' +
-      '<p>Las siete tienen un valor final de <b>$11.132.445 con IVA</b>, con el transporte, la instalación y la capacitación incluidos. Más abajo va el detalle de cada una, producto por producto.</p>' +
+      '<p>Las tres tienen un valor final de <b>$11.132.445 con IVA</b>, con el transporte, la instalación y la capacitación incluidos. Más abajo va el detalle de cada una, producto por producto.</p>' +
       /* Rayen, 16-sep-2026: «quiero que sean clickeables, para ir directo a la opción que busco» */
       '<div class="g2">' + SALAS.map(function(s, k){
         /* Rayen, 23-sep-2026: la letra y el nombre van DENTRO de la foto de la opción (campo portada; si no
@@ -3233,7 +3233,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 <script src="../comun/visor-fotos.js"></script>
 <script>(function(){function ord(){[].forEach.call(document.querySelectorAll('details.op'),function(d){var a=d.querySelector(':scope>.op-aviso'),b=d.querySelector(':scope>.appb');if(a&&b&&a.compareDocumentPosition(b)&4)return;if(a&&b)d.insertBefore(a,b);});}ord();document.addEventListener('DOMContentLoaded',ord);window.addEventListener('load',ord);})();</script>
 <!--VERSION-INI · lo pone app_luminea.js-->
-<div id="verPill" class="ver-pill">Versión del 13 de noviembre a las 20:22</div>
+<div id="verPill" class="ver-pill">Versión del 16 de noviembre a las 21:39</div>
 <div id="verAviso" class="ver-aviso" hidden><span><b>Hay una nueva versión de esta propuesta.</b> Actualicen la página para ver los últimos cambios.</span><button type="button" onclick="location.reload()">Actualizar página</button></div>
 <style>
 .ver-pill{position:fixed;top:12px;right:12px;z-index:9990;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:#001A60;background:rgba(255,255,255,.92);border:1px solid #CFE3F6;border-radius:999px;padding:6px 12px;box-shadow:0 6px 16px -10px rgba(0,26,96,.5)}
@@ -3244,7 +3244,7 @@ body .pg .portada img.logo{height:112px;margin-bottom:14px}
 @media print{.ver-pill,.ver-aviso{display:none !important}}
 </style>
 <script>
-(function(){ var V = '1794612146215';
+(function(){ var V = '1794875983219';
   function revisa(){ fetch(location.pathname + '?v=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.text(); }).then(function(h){
     var m = h.match(/var V = '(\d+)'/); if (m && m[1] !== V) document.getElementById('verAviso').hidden = false; }).catch(function(){}); }
   setInterval(revisa, 60000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) revisa(); });
